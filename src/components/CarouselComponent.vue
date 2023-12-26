@@ -12,7 +12,7 @@
             <swiper :options="swiperOptions" ref="mySwiper" class="teste" style="margin-right: 0;">
 
                 <swiper-slide v-for="item in items" :key="item.id" >
-          <router-link :to="item.link"> 
+          <!-- <router-link :to="item.link">  -->
                     <div class=" teste-dois">
                         <v-card class="mx-auto content-card-home">
                             <v-card-text class="information-services-content">
@@ -25,7 +25,7 @@
                             </div>
                         </v-card>
                     </div>
-           </router-link> 
+           <!-- </router-link>  -->
                 </swiper-slide>
             </swiper>
 
