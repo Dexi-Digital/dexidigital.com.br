@@ -8,8 +8,8 @@
       <div class="content-no-card" v-else-if="arrayComValoresDoFirebase.length === 0">
         <p class="text-no-card">Não há nenhum card para exibir.</p>
       </div>
-      <v-card v-show="verifyCanPost(item?.dateHourToPost)" v-for="(item, index) in arrayComValoresDoFirebase"
-        :key="index" class="mx-auto content-card" @click="navigateToBlog(item)">
+      <v-card v-show="verifyCanPost(item?.dateHourToPost)" v-for="(item, index) in arrayComValoresDoFirebase" :key="index"
+        class="mx-auto content-card" @click="navigateToBlog(item)">
 
         <v-img class="img-blog" :src="getCardImage(item.pathImgOnFirebase)"></v-img>
         <v-card-text>
@@ -105,15 +105,33 @@ export default {
       const canPost = today >= new Date(postDate);
       return canPost;
     },
-    
+    // navigateToBlog(item) {
+    //   this.$router.push({
+    //     path: `/posts/${encodeURIComponent(item.title)}`,
+    //     query: {
+    //       data: item
+    //     }
+    //   });
+    // },
     navigateToBlog(item) {
+      const cleanedTitle = this.cleanTitleForUrl(item.title);
       this.$router.push({
-        path: `/posts/${encodeURIComponent(item.title)}`,
+        path: `/posts/${cleanedTitle}`,
         query: {
           data: item
         }
       });
     },
+    cleanTitleForUrl(title) {
+    // Remove white spaces, convert to lowercase, keep accented letters
+    return title
+        .toLowerCase()
+        .replace(/ç/g, 'c') // Replace "ç" with "c"
+        .replace(/\s+/g, '-') // Replace spaces with hyphens
+        .replace(/[^a-z0-9\s-áéíóúàèìòùâêîôûãẽĩõũäëïöü-]/g, '') // Remove special characters, except letters, numbers, hyphens, and spaces
+        .replace(/\s+/g, '-') // Replace spaces with hyphens again (there may be additional spaces)
+        .replace(/:/g, ''); // Remove ":"
+},
     async getDonwloadUrlAndSetblogImgUrl() {
       const storage = getStorage();
       await Promise.all(this.arrayComValoresDoFirebase.map(async (item) => {
@@ -223,8 +241,7 @@ export default {
       const date = new Date(milliseconds);
 
       return date;
-    }, 
-    
+    },
   }
 }
 </script>

@@ -15,13 +15,15 @@
                 <div v-else>
                     <div v-for="(post, index) in posts" :key="index">
 
-                        <div v-if="post.title === localUrl" class="content-post">
+                        <div v-if="cleanTitleForUrl(post.title) === cleanTitleForUrl(localUrl)" class="content-post">
+
                             <h2 class="title-post" v-html="post.title"></h2>
                             <p class="date-post" v-html="post.date"></p>
                             <v-img class="img-blog" :src="getPostImage(post.pathImgOnFirebase)"
                                 alt="Imagem do Post"></v-img>
                             <p class="description-post" v-html="post.content"></p>
                         </div>
+
                     </div>
                 </div>
 
@@ -77,6 +79,16 @@ export default {
     },
 
     methods: {
+        cleanTitleForUrl(title) {
+    // Remove white spaces, convert to lowercase, keep accented letters
+    return title
+        .toLowerCase()
+        .replace(/ç/g, 'c') // Replace "ç" with "c"
+        .replace(/\s+/g, '-') // Replace spaces with hyphens
+        .replace(/[^a-z0-9\s-áéíóúàèìòùâêîôûãẽĩõũäëïöü-]/g, '') // Remove special characters, except letters, numbers, hyphens, and spaces
+        .replace(/\s+/g, '-') // Replace spaces with hyphens again (there may be additional spaces)
+        .replace(/:/g, ''); // Remove ":"
+},
         async getDonwloadUrlAndSetblogImgUrl() {
             const storage = getStorage();
             await Promise.all(this.posts.map(async (post) => {
@@ -123,7 +135,6 @@ export default {
 }
 </script>
 <style scoped>
-
 .content-blog {
     padding: 90px 0 90px 0;
     background-color: #f1f1f1;
@@ -146,6 +157,7 @@ export default {
 .login {
     font-weight: 800;
 }
+
 .no-card-height {
     height: calc(100vh - 300px);
 }
@@ -185,7 +197,7 @@ export default {
 }
 
 .content-post {
-    padding-top: 120px!important;
+    padding-top: 120px !important;
     font-family: 'Quicksand', sans-serif;
 }
 
