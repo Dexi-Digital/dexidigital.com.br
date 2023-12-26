@@ -15,13 +15,15 @@
                 <div v-else>
                     <div v-for="(post, index) in posts" :key="index">
 
-                        <div v-if="post.title === localUrl" class="content-post">
+                        <div v-if="cleanTitleForUrl(post.title) === cleanTitleForUrl(localUrl)" class="content-post">
+
                             <h2 class="title-post" v-html="post.title"></h2>
                             <p class="date-post" v-html="post.date"></p>
                             <v-img class="img-blog" :src="getPostImage(post.pathImgOnFirebase)"
                                 alt="Imagem do Post"></v-img>
                             <p class="description-post" v-html="post.content"></p>
                         </div>
+
                     </div>
                 </div>
 
@@ -63,7 +65,13 @@ export default {
     },
     watch: {
         '$route'() {
+            
             this.localUrl = this.$route.params.title;
+        }
+    },
+    created() {
+        if (this.$route.query.data) {
+            this.$router.replace({ query: {} });
         }
     },
     data() {
@@ -77,6 +85,30 @@ export default {
     },
 
     methods: {
+        cleanTitleForUrl(title) {
+  return title
+  .toLowerCase()
+        .replace(/ç/g, 'c') // Replace "ç" with "c"
+        .replace(/â/g, 'a') // Replace "â" with "a"
+        .replace(/ã/g, 'a') // Replace "ã" with "a"
+        .replace(/á/g, 'a') // Replace "á" with "a"
+        .replace(/à/g, 'a') // Replace "à" with "a"
+        .replace(/é/g, 'e') // Replace "é" with "e"
+        .replace(/ê/g, 'e') // Replace "ê" with "e"
+        .replace(/í/g, 'i') // Replace "í" with "i"
+        .replace(/ó/g, 'o') // Replace "ó" with "o"
+        .replace(/ô/g, 'o') // Replace "ô" with "o"
+        .replace(/õ/g, 'o') // Replace "õ" with "o"
+        .replace(/ú/g, 'u') // Replace "ú" with "u"
+        .replace(/ü/g, 'u') // Replace "ü" with "u"
+        .replace(/,/g, '-') //
+        .replace(/\s+/g, '-') // Replace spaces with hyphens again (there may be additional spaces)
+        .replace(/--+/g, '-') // Replace multiple hyphens with a single hyphen
+        .replace(/:/g, '') // Remove ":"
+        .replace(/\?/g, '') // Add this line to replace "?"
+        + '/'; // Adicionar barra no final
+        },
+
         async getDonwloadUrlAndSetblogImgUrl() {
             const storage = getStorage();
             await Promise.all(this.posts.map(async (post) => {
@@ -123,7 +155,6 @@ export default {
 }
 </script>
 <style scoped>
-
 .content-blog {
     padding: 90px 0 90px 0;
     background-color: #f1f1f1;
@@ -146,6 +177,7 @@ export default {
 .login {
     font-weight: 800;
 }
+
 .no-card-height {
     height: calc(100vh - 300px);
 }
@@ -185,7 +217,7 @@ export default {
 }
 
 .content-post {
-    padding-top: 120px!important;
+    padding-top: 120px !important;
     font-family: 'Quicksand', sans-serif;
 }
 

@@ -8,8 +8,8 @@
       <div class="content-no-card" v-else-if="arrayComValoresDoFirebase.length === 0">
         <p class="text-no-card">Não há nenhum card para exibir.</p>
       </div>
-      <v-card v-show="verifyCanPost(item?.dateHourToPost)" v-for="(item, index) in arrayComValoresDoFirebase"
-        :key="index" class="mx-auto content-card" @click="navigateToBlog(item)">
+      <v-card v-show="verifyCanPost(item?.dateHourToPost)" v-for="(item, index) in arrayComValoresDoFirebase" :key="index"
+        class="mx-auto content-card" @click="navigateToBlog(item)">
 
         <v-img class="img-blog" :src="getCardImage(item.pathImgOnFirebase)"></v-img>
         <v-card-text>
@@ -105,14 +105,47 @@ export default {
       const canPost = today >= new Date(postDate);
       return canPost;
     },
-    
+    // navigateToBlog(item) {
+    //   this.$router.push({
+    //     path: `/posts/${encodeURIComponent(item.title)}`,
+    //     query: {
+    //       data: item
+    //     }
+    //   });
+    // },
     navigateToBlog(item) {
+      const cleanedTitle = this.cleanTitleForUrl(item.title);
       this.$router.push({
-        path: `/posts/${encodeURIComponent(item.title)}`,
+        path: `/posts/${cleanedTitle}`,
         query: {
           data: item
         }
       });
+    },
+    cleanTitleForUrl(title) {
+      // Remove white spaces, convert to lowercase, keep accented letters
+      return title
+        .toLowerCase()
+        .replace(/ç/g, 'c') // Replace "ç" with "c"
+        .replace(/â/g, 'a') // Replace "â" with "a"
+        .replace(/ã/g, 'a') // Replace "ã" with "a"
+        .replace(/á/g, 'a') // Replace "á" with "a"
+        .replace(/à/g, 'a') // Replace "à" with "a"
+        .replace(/é/g, 'e') // Replace "é" with "e"
+        .replace(/ê/g, 'e') // Replace "ê" with "e"
+        .replace(/í/g, 'i') // Replace "í" with "i"
+        .replace(/ó/g, 'o') // Replace "ó" with "o"
+        .replace(/ô/g, 'o') // Replace "ô" with "o"
+        .replace(/õ/g, 'o') // Replace "õ" with "o"
+        .replace(/ú/g, 'u') // Replace "ú" with "u"
+        .replace(/ü/g, 'u') // Replace "ü" with "u"
+        .replace(/,/g, '-') //
+        .replace(/\s+/g, '-') // Replace spaces with hyphens again (there may be additional spaces)
+        .replace(/--+/g, '-') // Replace multiple hyphens with a single hyphen
+        .replace(/:/g, '') // Remove ":"
+        .replace(/\?/g, '') // Add this line to replace "?"
+        + '/'; // Adicionar barra no final
+
     },
     async getDonwloadUrlAndSetblogImgUrl() {
       const storage = getStorage();
@@ -223,8 +256,7 @@ export default {
       const date = new Date(milliseconds);
 
       return date;
-    }, 
-    
+    },
   }
 }
 </script>
