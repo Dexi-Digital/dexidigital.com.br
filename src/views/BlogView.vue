@@ -8,12 +8,11 @@
       <div class="content-no-card" v-else-if="arrayComValoresDoFirebase.length === 0">
         <p class="text-no-card">Não há nenhum card para exibir.</p>
       </div>
-      <v-card v-show="verifyCanPost(item?.dateHourToPost) "  v-for="(item, index) in arrayComValoresDoFirebase" :key="index" class="mx-auto content-card"
-        @click="navigateToBlog(item)">
- 
-        <v-img  class="img-blog"
-          :src="getCardImage(item.pathImgOnFirebase)"></v-img>
-        <v-card-text >
+      <v-card v-show="verifyCanPost(item?.dateHourToPost)" v-for="(item, index) in arrayComValoresDoFirebase"
+        :key="index" class="mx-auto content-card" @click="navigateToBlog(item)">
+
+        <v-img class="img-blog" :src="getCardImage(item.pathImgOnFirebase)"></v-img>
+        <v-card-text>
           <div class="infos">
             <p class="title-blog" v-html="item.title"></p>
             <p class="title-data" v-html="item.dateHourToPost ? formatDateHour(item.dateHourToPost) : item.date"></p>
@@ -106,6 +105,7 @@ export default {
       const canPost = today >= new Date(postDate);
       return canPost;
     },
+    
     navigateToBlog(item) {
       this.$router.push({
         path: `/posts/${encodeURIComponent(item.title)}`,
@@ -150,31 +150,31 @@ export default {
     //     });
     // },
     getPostsFromFirebase() {
-  this.loadingFirebaseValue = true;
+      this.loadingFirebaseValue = true;
 
-  this.arrayComValoresDoFirebase = []; // Limpa a array antes de adicionar novos posts
+      this.arrayComValoresDoFirebase = []; // Limpa a array antes de adicionar novos posts
 
-  firebaseDb.collection(this.$store.state.language === 'en' ? 'posts-en' : 'posts').get()
-    .then((querySnapshot) => {
-      this.loadingFirebaseValue = false;
-      querySnapshot.forEach((doc) => {
-        const post = doc.data();
-        this.arrayComValoresDoFirebase.push(post);
-      });
+      firebaseDb.collection(this.$store.state.language === 'en' ? 'posts-en' : 'posts').get()
+        .then((querySnapshot) => {
+          this.loadingFirebaseValue = false;
+          querySnapshot.forEach((doc) => {
+            const post = doc.data();
+            this.arrayComValoresDoFirebase.push(post);
+          });
 
-      // Sorting the array based on dateHourToPost
-      this.arrayComValoresDoFirebase.sort((a, b) => {
-        if (a.dateHourToPost && b.dateHourToPost) {
-          return a.dateHourToPost.seconds - b.dateHourToPost.seconds;
-        } else {
-          return 0;
-        }
-      });
+          // Sorting the array based on dateHourToPost
+          this.arrayComValoresDoFirebase.sort((a, b) => {
+            if (a.dateHourToPost && b.dateHourToPost) {
+              return a.dateHourToPost.seconds - b.dateHourToPost.seconds;
+            } else {
+              return 0;
+            }
+          });
 
-      return this.getDonwloadUrlAndSetblogImgUrl();
-    });
-},
-    
+          return this.getDonwloadUrlAndSetblogImgUrl();
+        });
+    },
+
     formatDateHour(date) {
       const hasPosted = this.verifyCanPost(date);
 
@@ -223,8 +223,8 @@ export default {
       const date = new Date(milliseconds);
 
       return date;
-    }
-
+    }, 
+    
   }
 }
 </script>

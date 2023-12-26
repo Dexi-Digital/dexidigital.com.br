@@ -1,7 +1,12 @@
 {
   "nav": {
     "home": "Home",
-    "content": "Contents"
+    "content": "Contents",
+    "services":"Services",
+    "it-outsourcing": "It Outsourcing",
+    "mobile-apps": "Mobile Apps",
+    "development-squad": "Development Squads",
+    "digital-experience": "Digital Experience"
   },
   "header": {
     "title": "Strengthen Trust and Brand",
@@ -138,5 +143,9 @@
 "return-to":"Return to",
 "sign-in":"Sign In"
 
+},
+"DIGITAL-EXPERIENCE": {
+  "title":"Digital Experience",
+  "description":"In the digital age, customer experience has become one of the most critical factors for the success of any company. As technology continues to evolve and shape the business landscape, companies are increasingly focused on creating exceptional digital experiences for their customers. This is where Dexi Digital comes in."
 }
 }

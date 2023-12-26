@@ -8,7 +8,7 @@ module.exports = defineConfig({
       sass: {
         implementation: require('sass'),
         sassOptions: {
-          indentedSyntax: true // Caso esteja usando a sintaxe indentada (.sass)
+          indentedSyntax: false // Caso esteja usando a sintaxe indentada (.sass)
         },
       },
     },

@@ -1,12 +1,18 @@
 {
     "nav": {
         "home": "Home",
-        "content": "Conteúdos"
+        "content": "Conteúdos",
+        "services": "Serviços",
+        "it-outsourcing": "Outsourcing de Ti",
+        "mobile-apps": "Aplicativos Mobile",
+        "development-squad": "Squad de Desenvolvimento",
+        "digital-experience": "Experiencia Digital"
+    
     },
     "header": {
         "title": "Qualidade e Agilidade em ",
         "title-br": "Aplicações Seguras",
-        "title2":"",
+        "title2": "",
         "description": "Promova a confiança e a lealdade à marca",
         "description-br": "por meio de experiências personalizadas",
         "contact-button": "Solicitar um orçamento"
@@ -26,7 +32,7 @@
     "development-process-section": {
         "development-process": "Nosso processo de desenvolvimento de software",
         "development-process-description": "Somos especialistas em combinar as necessidades dos clientes, as demandas comerciais e as possibilidades técnicas para romper o status quo. Nossa equipe de estrategistas usa uma metodologia centrada no Design Sprint para identificar oportunidades, estimular a inovação e descobrir novos empreendimentos digitais para impulsionar o crescimento fora do seu negócio principal e garantir a entrega no prazo e a agilidade dos projetos."
-    }, 
+    },
     "footer": {
         "description": "A DEXI DIGITAL é uma empresa de tecnologia dinâmica e inovadora dedicada a fornecer soluções de ponta para o mundo digital. Nossa equipe de profissionais qualificados é apaixonada por tecnologia e comprometida em fornecer produtos e serviços de alto nível aos nossos clientes.",
         "service-titles": "Outsourcing de TI e Squads",
@@ -37,7 +43,7 @@
         "mobile-applications": "Aplicativos Mobile"
     },
     "FORM": {
-        "title":"Possui interesse em algum dos nossos serviços?",
+        "title": "Possui interesse em algum dos nossos serviços?",
         "name": "Nome",
         "company": "Empresa",
         "phone": "Telefone",
@@ -123,14 +129,17 @@
     "POSTS": {
         "the-importance-of-hiring": "A Importância de Contratar uma Empresa de Desenvolvimento de Software para Economizar com Projetos",
         "posted": "Postado em:",
-        "read-more":"Leia mais"
-
+        "read-more": "Leia mais"
     },
     "LOGIN": {
         "alert": "E-mail ou senha incorreta.",
-        "without-permission":"Sem permissão!",
-        "return-to":"Retornar para",
-        "sign-in":"Entrar"
-       
+        "without-permission": "Sem permissão!",
+        "return-to": "Retornar para",
+        "sign-in": "Entrar"
+    },
+    "DIGITAL-EXPERIENCE": {
+        "title":"Experiência Digital",
+        "description":"Na era digital, a experiência do cliente tornou-se um dos fatores mais críticos para o sucesso de qualquer empresa. À medida que a tecnologia continua a evoluir e moldar o cenário empresarial, as empresas estão cada vez mais focadas em criar experiências digitais excepcionais para seus clientes. É aqui que entra a Dexi Digital."
+
     }
 }

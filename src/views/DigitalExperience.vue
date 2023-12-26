@@ -1,33 +1,36 @@
-<!-- <template>
+<template>
     <div>
         <NavBar />
         <div class="digital-experience-container">
             <div class="digital-experience-container-navbar">
-                <p class="digital-experience-container-navbar-title">Experiência Digital</p>
+                <p class="digital-experience-container-navbar-title">
+                    {{ $t("DIGITAL-EXPERIENCE.title") }}
+                </p>
+
             </div>
-          <div class="digital-experience-section">
+            <div class="digital-experience-section">
                 <div class="digital-experience-section-description">
-                    Na era digital, a experiência do cliente tornou-se um dos fatores mais críticos para o sucesso de
-                    qualquer empresa. À medida que a tecnologia continua a evoluir e moldar o cenário empresarial, as
-                    empresas estão cada vez mais focadas em criar experiências digitais excepcionais para seus clientes. É
-                    aqui que entra a Dexi Digital.
+                    {{ $t("DIGITAL-EXPERIENCE.description") }}
 
                 </div>
 
-            </div> 
+            </div>
 
             <div class="digital-experience-advantages">
-            
+
                 <h2 class="digital-experience-advantages-span">
                     <span class="digital-experience-advantages-span-title">
-                        A Importância da                    </span>
+                    {{ $t("DIGITAL-EXPERIENCE.title") }}
+                        A Importância da </span>
+                    {{ $t("DIGITAL-EXPERIENCE.title-span") }}
                     Experiência Digital
                 </h2>
-                <p class="digital-experience-advantages-description">  A experiência do cliente é muito mais do que apenas uma transação comercial. É a impressão que sua
+                <p class="digital-experience-advantages-description"> A experiência do cliente é muito mais do que apenas
+                    uma transação comercial. É a impressão que sua
                     empresa deixa em seus clientes em todos os pontos de contato, desde o primeiro toque até o pós-venda.
                     Uma experiência digital de qualidade é fundamental para atrair, reter e encantar os clientes.</p>
             </div>
-            <!-- <div class="digital-experience-services">
+            <div class="digital-experience-services">
                 <h2 class="digital-experience-services-span">
                     <span class="digital-experience-services-span-title">
                         Nossos Serviços de
@@ -37,7 +40,7 @@
                 <p class="digital-experience-services-description">Os Squads de Desenvolvimento da Dexi Digital oferecem
                     uma ampla gama de serviços para atender às necessidades de nossos clientes. Aqui estão algumas das
                     principais áreas em que atuamos:</p>
-            </div> -->
+            </div>
             <div class="digital-experience-container-color">
                 <ul style="margin-top: 0; margin-bottom: 0;">
                     <li class="digital-experience-container-color-item">
@@ -76,12 +79,12 @@
                     </li>
                 </ul>
             </div>
-       
+
             <div class="digital-experience-container-color-img-bottom"></div>
             <div class="digital-experience-content">
                 <img class="digital-experience-content-img" src="../assets/digital-experience.png"
                     alt="imagem de aplicativos mobile">
-            </div> 
+            </div>
 
             <div class="digital-experience-advantages">
                 <h2 class="digital-experience-advantages-span">
@@ -170,12 +173,16 @@
                     O aplicativo não apenas simplificou os processos internos, mas também melhorou significativamente a
                     experiência do cliente, resultando em um aumento de 30% nas taxas de retenção.</p>
 
-                    <p class="digital-experience-advantages-description">
-                Na Dexi Digital, acreditamos que a Experiência Digital é a chave para o sucesso empresarial. Nossos serviços
-                abrangentes, combinados com nossa abordagem ágil, nos permitem ajudar nossos clientes a criar experiências
-                digitais excepcionais que impulsionam o crescimento e a fidelização dos clientes. Se você está procurando
-                melhorar a experiência digital de sua empresa, entre em contato conosco hoje mesmo e descubra como podemos
-                ajudá-lo a alcançar o sucesso digital.</p>
+                <p class="digital-experience-advantages-description">
+                    Na Dexi Digital, acreditamos que a Experiência Digital é a chave para o sucesso empresarial. Nossos
+                    serviços
+                    abrangentes, combinados com nossa abordagem ágil, nos permitem ajudar nossos clientes a criar
+                    experiências
+                    digitais excepcionais que impulsionam o crescimento e a fidelização dos clientes. Se você está
+                    procurando
+                    melhorar a experiência digital de sua empresa, entre em contato conosco hoje mesmo e descubra como
+                    podemos
+                    ajudá-lo a alcançar o sucesso digital.</p>
             </div>
 
 
@@ -212,13 +219,13 @@ export default {
 
 <style scoped lang="scss">
 .digital-experience-container-navbar {
-    background-color: #38b6ed;
 
-    display: flex;
-    justify-content: center;
+    background-color: #38b6ed;
+        display: flex;
+        justify-content: center;
+ 
 
     &-title {
-
         font-size: 30px;
         font-weight: 700;
         color: #ffffff !important;
@@ -258,7 +265,7 @@ export default {
     &-description {
         font-size: 20px;
         padding-top: 20px;
-      
+
         color: #5c5c5c;
     }
 }
@@ -486,4 +493,4 @@ export default {
         padding: 50px 50px 0px 50px;
 
     }
-}</style> -->
+}</style>  

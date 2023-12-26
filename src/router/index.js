@@ -44,6 +44,43 @@ const routes = [
     name: 'posts',
     component: PostsView
   },
+
+
+  // {
+  //   path: '/blog/:title',
+  //   name: 'blog',
+  //   component: BlogView,
+  //   beforeEnter: (to, from, next) => {
+  //     const cleanTitle = to.params.title.replace(/códigos a serem removidos/g, '');
+  //     const formattedTitle = encodeURIComponent(cleanTitle.replace(/[^a-zA-Z0-9]/g, '-'));
+  
+  //     if (to.params.title !== formattedTitle) {
+  //       // Construa uma URL corrigida, mantendo outros parâmetros da rota intactos
+  //       const correctedPath = `/blog/${formattedTitle}`;
+  //       next({ path: correctedPath, replace: true });
+  //     } else {
+  //       next();
+  //     }
+  //   },
+  // },  
+//   {
+//     path: '/posts/:title',
+//     name: 'posts',
+//     component: PostsView,
+//     beforeEnter: (to, from, next) => {
+//       const cleanTitle = to.params.title.replace(/códigos a serem removidos/g, '');
+//       const formattedTitle = encodeURIComponent(cleanTitle.replace(/[^a-zA-Z0-9]/g, '-'));
+  
+//      if (to.params.title !== formattedTitle) {
+//          // Construa uma URL corrigida, mantendo outros parâmetros da rota intactos
+//        const correctedPath = `/posts/${formattedTitle}`;
+//        next({ path: correctedPath, replace: true });
+//      } else {
+//        next();
+//      }
+//    },
+//  },  
+  
   {
     path: '/criar-post/',
     name: 'create-Post',
@@ -114,7 +151,7 @@ const router = new VueRouter({
   scrollBehavior() {
     return { x: 0, y: 0 };
   },
-  
+
 })
 
 export default router

@@ -1,4 +1,4 @@
-<!-- <template>
+ <!-- <template>
     <div>
         <NavBar />
         <div class="mobile-applications-container">
@@ -171,7 +171,6 @@ export default {
     justify-content: center;
 
     &-title {
-
         font-size: 30px;
         font-weight: 700;
         color: #ffffff !important;
@@ -434,4 +433,4 @@ export default {
         }
     }
 }
-</style> -->
+</style>  -->
