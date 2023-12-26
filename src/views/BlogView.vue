@@ -123,15 +123,30 @@ export default {
       });
     },
     cleanTitleForUrl(title) {
-    // Remove white spaces, convert to lowercase, keep accented letters
-    return title
+      // Remove white spaces, convert to lowercase, keep accented letters
+      return title
         .toLowerCase()
         .replace(/ç/g, 'c') // Replace "ç" with "c"
-        .replace(/\s+/g, '-') // Replace spaces with hyphens
-        .replace(/[^a-z0-9\s-áéíóúàèìòùâêîôûãẽĩõũäëïöü-]/g, '') // Remove special characters, except letters, numbers, hyphens, and spaces
+        .replace(/â/g, 'a') // Replace "â" with "a"
+        .replace(/ã/g, 'a') // Replace "ã" with "a"
+        .replace(/á/g, 'a') // Replace "á" with "a"
+        .replace(/à/g, 'a') // Replace "à" with "a"
+        .replace(/é/g, 'e') // Replace "é" with "e"
+        .replace(/ê/g, 'e') // Replace "ê" with "e"
+        .replace(/í/g, 'i') // Replace "í" with "i"
+        .replace(/ó/g, 'o') // Replace "ó" with "o"
+        .replace(/ô/g, 'o') // Replace "ô" with "o"
+        .replace(/õ/g, 'o') // Replace "õ" with "o"
+        .replace(/ú/g, 'u') // Replace "ú" with "u"
+        .replace(/ü/g, 'u') // Replace "ü" with "u"
+        .replace(/,/g, '-') //
         .replace(/\s+/g, '-') // Replace spaces with hyphens again (there may be additional spaces)
-        .replace(/:/g, ''); // Remove ":"
-},
+        .replace(/--+/g, '-') // Replace multiple hyphens with a single hyphen
+        .replace(/:/g, '') // Remove ":"
+        .replace(/\?/g, '') // Add this line to replace "?"
+        + '/'; // Adicionar barra no final
+
+    },
     async getDonwloadUrlAndSetblogImgUrl() {
       const storage = getStorage();
       await Promise.all(this.arrayComValoresDoFirebase.map(async (item) => {
