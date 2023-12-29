@@ -16,10 +16,10 @@
                 <div>
                     <h4> {{ $t("footer.service-titles") }}</h4>
                     <router-link class="links" to="/"> {{ $t("footer.services") }}</router-link><br>
-                    <router-link class="links" to="/">{{ $t("footer.development-squads") }}</router-link><br>
-                    <router-link class="links" to="/"> {{ $t("footer.digital-experience") }}</router-link><br>
-                    <router-link class="links" to="/">{{ $t("footer.it-outsourcing") }}</router-link><br>
-                    <router-link class="links" to="/">{{ $t("footer.mobile-applications") }}</router-link>
+                    <router-link class="links" to="/squad-de-desenvolvimento">{{ $t("footer.development-squads") }}</router-link><br>
+                    <router-link class="links" to="/experiencia-digital"> {{ $t("footer.digital-experience") }}</router-link><br>
+                    <router-link class="links" to="/outsourcing-de-ti">{{ $t("footer.it-outsourcing") }}</router-link><br>
+                    <router-link class="links" to="/aplicativos-mobile">{{ $t("footer.mobile-applications") }}</router-link>
 
                 </div>
             </v-col>
