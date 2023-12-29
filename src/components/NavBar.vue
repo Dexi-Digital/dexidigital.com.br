@@ -32,7 +32,7 @@
 
           </ul>
 
-           <!-- <div class="dropdown">
+            <div class="dropdown">
             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
               data-bs-toggle="dropdown" aria-expanded="false">
              {{$t("nav.services")}}
@@ -43,7 +43,7 @@
               <li><a class="dropdown-item" href="/squad-de-desenvolvimento">  {{$t("nav.development-squad")}}</a></li>
               <li><a class="dropdown-item" href="/experiencia-digital">  {{$t("nav.digital-experience")}}</a></li>
             </ul>
-          </div>   -->
+          </div>   
 
 
           <div class="icon-language" v-if="openedArticle">
