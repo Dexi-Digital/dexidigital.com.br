@@ -1,4 +1,4 @@
-<template>
+ <template>
     <div>
         <NavBar />
         <div class="digital-experience-container">
@@ -10,7 +10,7 @@
             </div>
             <div class="digital-experience-section">
                 <div class="digital-experience-section-description">
-                    {{ $t("DIGITAL-EXPERIENCE.description") }}
+                    {{ $t("DIGITAL-EXPERIENCE.first-description-of-digital-experience") }}
 
                 </div>
 
@@ -20,62 +20,57 @@
 
                 <h2 class="digital-experience-advantages-span">
                     <span class="digital-experience-advantages-span-title">
-                    {{ $t("DIGITAL-EXPERIENCE.title") }}
-                        A Importância da </span>
-                    {{ $t("DIGITAL-EXPERIENCE.title-span") }}
-                    Experiência Digital
-                </h2>
-                <p class="digital-experience-advantages-description"> A experiência do cliente é muito mais do que apenas
-                    uma transação comercial. É a impressão que sua
-                    empresa deixa em seus clientes em todos os pontos de contato, desde o primeiro toque até o pós-venda.
-                    Uma experiência digital de qualidade é fundamental para atrair, reter e encantar os clientes.</p>
-            </div>
-            <div class="digital-experience-services">
-                <h2 class="digital-experience-services-span">
-                    <span class="digital-experience-services-span-title">
-                        Nossos Serviços de
+                        {{ $t("DIGITAL-EXPERIENCE.digital-experience-title-span") }}
                     </span>
-                    Squads de Desenvolvimento
+                    {{ $t("DIGITAL-EXPERIENCE.digital-experience-title") }}
                 </h2>
-                <p class="digital-experience-services-description">Os Squads de Desenvolvimento da Dexi Digital oferecem
-                    uma ampla gama de serviços para atender às necessidades de nossos clientes. Aqui estão algumas das
-                    principais áreas em que atuamos:</p>
+                <p class="digital-experience-advantages-description">
+                    {{ $t("DIGITAL-EXPERIENCE.digital-experience-description") }}
+                </p>
+                <p class="digital-experience-advantages-description">
+                    {{ $t("DIGITAL-EXPERIENCE.companies-that-provide-exceptional") }}
+                </p>
             </div>
+
+
             <div class="digital-experience-container-color">
                 <ul style="margin-top: 0; margin-bottom: 0;">
                     <li class="digital-experience-container-color-item">
                         <span class="digital-experience-container-color-strong">
-                            Fidelização de Clientes:
+                            {{ $t("DIGITAL-EXPERIENCE.customer-loyalty-span") }}
                         </span>
-                        Clientes satisfeitos têm mais probabilidade de permanecer fiéis à sua marca, comprando repetidamente
-                        e recomendando seus produtos ou serviços a outros.
+                        {{ $t("DIGITAL-EXPERIENCE.customer-loyalty-span-description") }}
                     </li>
                     <li class="digital-experience-container-color-item">
                         <span class="digital-experience-container-color-strong">
-                            Aumento da Receita:
+                            {{ $t("DIGITAL-EXPERIENCE.increased-revenue-span") }}
+
                         </span>
-                        Uma experiência digital aprimorada muitas vezes resulta em vendas mais altas e um aumento na
-                        receita.
+                        {{ $t("DIGITAL-EXPERIENCE.increased-revenue-span-description") }}
+
                     </li>
 
                     <li class="digital-experience-container-color-item">
                         <span class="digital-experience-container-color-strong">
-                            Reputação Positiva:</span>
-                        Empresas que priorizam a experiência do cliente geralmente desfrutam de uma reputação positiva no
-                        mercado, o que pode atrair novos clientes.
+                            {{ $t("DIGITAL-EXPERIENCE.positive-reputation-span") }}
+                        </span>
+                        {{ $t("DIGITAL-EXPERIENCE.positive-reputation-span-description") }}
+
                     </li>
 
                     <li class="digital-experience-container-color-item">
                         <span class="digital-experience-container-color-strong">
-                            Eficiência Operacional:</span>
-                        Processos digitais eficientes podem melhorar a produtividade e reduzir os custos operacionais.
+                            {{ $t("DIGITAL-EXPERIENCE.operational-efficiency-span") }}
+                        </span>
+
+                        {{ $t("DIGITAL-EXPERIENCE.operational-efficiency-span-description") }}
                     </li>
 
                     <li class="digital-experience-container-color-item">
                         <span class="digital-experience-container-color-strong">
-                            Inovação Contínua: </span>
-                        Uma abordagem centrada no cliente incentiva a inovação, permitindo que as empresas se adaptem
-                        rapidamente às mudanças nas necessidades e expectativas dos clientes.
+                            {{ $t("DIGITAL-EXPERIENCE.continuous-innovation-span") }}
+                        </span>
+                        {{ $t("DIGITAL-EXPERIENCE.continuous-innovation-span-description") }}
                     </li>
                 </ul>
             </div>
@@ -89,58 +84,57 @@
             <div class="digital-experience-advantages">
                 <h2 class="digital-experience-advantages-span">
                     <span class="digital-experience-advantages-span-title">
-                        Os Nossos Serviços de
+                        {{ $t("DIGITAL-EXPERIENCE.our-digital-experience-services") }}
                     </span>
-                    Experiência Digital
+                    {{ $t("DIGITAL-EXPERIENCE.our-digital-experience-services-span") }}
                 </h2>
-                <p class="digital-experience-advantages-description">Na Dexi Digital, estamos comprometidos em ajudar nossos
-                    clientes a criar experiências digitais excepcionais que impulsionem o sucesso do negócio. Nossos
-                    serviços de Experiência Digital abrangem uma ampla gama de áreas, incluindo:</p>
+                <p class="digital-experience-advantages-description">
+                    {{ $t("DIGITAL-EXPERIENCE.our-digital-experience-services-description") }}
+
+                </p>
             </div>
 
             <div class="digital-experience-container-color">
                 <ul style="margin-top: 0; margin-bottom: 0;">
                     <li class="digital-experience-container-color-item">
                         <span class="digital-experience-container-color-strong">
-                            Estratégia Digital:
+                            {{ $t("DIGITAL-EXPERIENCE.digital-strategy-span") }}
                         </span>
-                        Colaboramos com nossos clientes para desenvolver uma estratégia digital abrangente que se alinhe com
-                        seus objetivos de negócios e atenda às necessidades dos clientes.
+                        {{ $t("DIGITAL-EXPERIENCE.digital-strategy-span-description") }}
+
                     </li>
                     <li class="digital-experience-container-color-item">
                         <span class="digital-experience-container-color-strong">
-                            Análise de Cliente: </span>
-                        Utilizamos análises avançadas para obter insights sobre o comportamento e as preferências dos
-                        clientes, permitindo que as empresas tomem decisões informadas.
+                            {{ $t("DIGITAL-EXPERIENCE.customer-analysis-span") }}
+                        </span>
+                        {{ $t("DIGITAL-EXPERIENCE.customer-analysis-span-description") }}
                     </li>
 
                     <li class="digital-experience-container-color-item">
                         <span class="digital-experience-container-color-strong">
-                            Design de Experiência do Usuário (UX/UI):
+                            {{ $t("DIGITAL-EXPERIENCE.experience-design-span") }}
                         </span>
-                        Nossa equipe de especialistas em design cria interfaces de usuário intuitivas e envolventes que
-                        proporcionam experiências excepcionais.
+                        {{ $t("DIGITAL-EXPERIENCE.experience-design-span-description") }}
                     </li>
                     <li class="digital-experience-container-color-item">
                         <span class="digital-experience-container-color-strong">
-                            Desenvolvimento de Aplicativos:
+                            {{ $t("DIGITAL-EXPERIENCE.app-development-span") }}
                         </span>
-                        Desenvolvemos aplicativos móveis e web de alta qualidade que oferecem funcionalidade e desempenho
-                        excepcionais.
+                        {{ $t("DIGITAL-EXPERIENCE.app-development-span-description") }}
                     </li>
                     <li class="digital-experience-container-color-item">
                         <span class="digital-experience-container-color-strong">
-                            Integração de Tecnologia:
+                            {{ $t("DIGITAL-EXPERIENCE.technology-integration-span") }}
+
                         </span>
-                        Utilizamos a tecnologia mais recente para integrar sistemas e processos, garantindo uma experiência
-                        digital perfeita.
+                        {{ $t("DIGITAL-EXPERIENCE.technology-integration-span-description") }}
+
                     </li>
                     <li class="digital-experience-container-color-item">
                         <span class="digital-experience-container-color-strong">
-                            Sustentação e Suporte:
+                            {{ $t("DIGITAL-EXPERIENCE.support-and-maintenance-span") }}
                         </span>
-                        Oferecemos serviços de sustentação para garantir que as experiências digitais continuem a funcionar
-                        sem problemas e atendam às expectativas dos clientes.
+                        {{ $t("DIGITAL-EXPERIENCE.support-and-maintenance-span-description") }}
                     </li>
                 </ul>
             </div>
@@ -149,54 +143,44 @@
             <div class="digital-experience-advantages">
                 <h2 class="digital-experience-advantages-span">
                     <span class="digital-experience-advantages-span-title">
-                        A Metodologia Ágil na
+                        {{ $t("DIGITAL-EXPERIENCE.agile-methodology-at-dexi-digital-strong") }}
                     </span>
-                    Dexi Digital
+                    {{ $t("DIGITAL-EXPERIENCE.agile-methodology-at-dexi-digital-strong-title") }}
                 </h2>
-                <p class="digital-experience-advantages-description">Nosso processo de Experiência Digital é baseado em uma
-                    metodologia ágil. Isso significa que adotamos uma abordagem iterativa e colaborativa para o
-                    desenvolvimento de soluções digitais. Através de ciclos de desenvolvimento curtos, podemos responder
-                    rapidamente às mudanças nas necessidades do projeto e garantir a entrega oportuna de soluções de alta
-                    qualidade.</p>
+      
+                <p class="digital-experience-advantages-description">
+                    {{ $t("DIGITAL-EXPERIENCE.agile-methodology-at-dexi-digital-description") }}
+                </p>
                 <h2 class="digital-experience-advantages-span">
                     <span class="digital-experience-advantages-span-title">
-                        Exemplos de Projetos
+                        {{ $t("DIGITAL-EXPERIENCE.examples-of-successful-projects-span") }}
                     </span>
-                    Bem-Sucedidos
+                    {{ $t("DIGITAL-EXPERIENCE.examples-of-successful-projects-span-title") }}
                 </h2>
-                <p class="digital-experience-advantages-description">Ao longo dos anos, concluímos com sucesso uma série de
-                    projetos de Experiência Digital para clientes de diversos setores. Desde o desenvolvimento de
-                    aplicativos móveis premiados até a criação de interfaces de usuário inovadoras, estamos orgulhosos de
-                    nossas realizações.</p>
-                <p class="digital-experience-advantages-description">Um exemplo notável é nosso trabalho com a empresa XYZ,
-                    onde desenvolvemos um aplicativo móvel que transformou a maneira como eles interagem com seus clientes.
-                    O aplicativo não apenas simplificou os processos internos, mas também melhorou significativamente a
-                    experiência do cliente, resultando em um aumento de 30% nas taxas de retenção.</p>
+                <p class="digital-experience-advantages-description">
+                    {{ $t("DIGITAL-EXPERIENCE.first-example-of-successful-projects") }}
+
+                </p>
+                <p class="digital-experience-advantages-description">
+                    {{ $t("DIGITAL-EXPERIENCE.second-example-of-successful-projects") }}
+
+                </p>
 
                 <p class="digital-experience-advantages-description">
-                    Na Dexi Digital, acreditamos que a Experiência Digital é a chave para o sucesso empresarial. Nossos
-                    serviços
-                    abrangentes, combinados com nossa abordagem ágil, nos permitem ajudar nossos clientes a criar
-                    experiências
-                    digitais excepcionais que impulsionam o crescimento e a fidelização dos clientes. Se você está
-                    procurando
-                    melhorar a experiência digital de sua empresa, entre em contato conosco hoje mesmo e descubra como
-                    podemos
-                    ajudá-lo a alcançar o sucesso digital.</p>
+                    {{ $t("DIGITAL-EXPERIENCE.third-example-of-successful-projects") }}
+                </p>
             </div>
 
 
-            <div class="digital-experience-container-contact">
+            <div     class="digital-experience-container-contact">
                 <p class="digital-experience-container-contact-background">
-                    Entre em contato conosco hoje mesmo para saber
-                    mais sobre como nossos serviços de Outsourcing de TI podem beneficiar sua empresa.
+                    {{ $t("DIGITAL-EXPERIENCE.get-in-touch") }}
+
                 </p>
                 <div class="form-button-container">
                     <FormButton />
                 </div>
-
             </div>
-
         </div>
         <FooterComponent />
     </div>
@@ -221,9 +205,9 @@ export default {
 .digital-experience-container-navbar {
 
     background-color: #38b6ed;
-        display: flex;
-        justify-content: center;
- 
+    display: flex;
+    justify-content: center;
+
 
     &-title {
         font-size: 30px;
@@ -493,4 +477,5 @@ export default {
         padding: 50px 50px 0px 50px;
 
     }
-}</style>  
+}
+</style>  

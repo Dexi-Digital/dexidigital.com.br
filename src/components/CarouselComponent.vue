@@ -12,7 +12,7 @@
             <swiper :options="swiperOptions" ref="mySwiper" class="teste" style="margin-right: 0;">
 
                 <swiper-slide v-for="item in items" :key="item.id" >
-          <!-- <router-link :to="item.link">  -->
+         <router-link :to="item.link">  
                     <div class=" teste-dois">
                         <v-card class="mx-auto content-card-home">
                             <v-card-text class="information-services-content">
@@ -25,7 +25,7 @@
                             </div>
                         </v-card>
                     </div>
-           <!-- </router-link>  -->
+            </router-link>  
                 </swiper-slide>
             </swiper>
 
@@ -95,7 +95,7 @@ export default {
             items: [
                 { id: 1, title: "services-section.it-outsourcing", src: require('../assets/img-1.png'), alt: "Outsourcing de TI",  link: "/outsourcing-de-ti" },
                 { id: 2, title: "services-section.mobile-applications", src: require('../assets/img-2.png'), alt: "Aplicativos Mobile",  link: "/aplicativos-mobile" },
-                { id: 3, title: "services-section.development-squads", src: require('../assets/img-3.png'), alt: "Squads de Desenvolvimento", link: "/squad de-desenvolvimento" },
+                { id: 3, title: "services-section.development-squads", src: require('../assets/img-3.png'), alt: "Squads de Desenvolvimento", link: "/squad-de-desenvolvimento" },
                 { id: 4, title: "services-section.digital-experience", src: require('../assets/img-4.png'), alt: "Experiência Digital", link: "/experiencia-digital" },
                 // Adicione mais itens conforme necessário
             ],

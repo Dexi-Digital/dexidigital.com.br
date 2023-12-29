@@ -1,71 +1,76 @@
-<!-- <template>
+ <template>
     <div>
         <NavBar />
         <div class="development-squads-container">
             <div class="development-squads-container-navbar">
-                <p class="development-squads-container-navbar-title">Squads de Desenvolvimento</p>
+                <p class="development-squads-container-navbar-title">
+                    {{ $t("DEVELOPMENT-SQUADS.title") }}
+                </p>
             </div>
             <div class="development-squads-section">
-                <div class="development-squads-section-description">
-                    Em um mundo cada vez mais digital, as empresas enfrentam desafios constantes para se manterem
-                    competitivas e inovadoras. A transformação digital não é apenas uma opção, mas uma necessidade para
-                    prosperar no mercado atual. É aqui que entram os Squads de Desenvolvimento da Dexi Digital.
-                    <br>
-                    <br>
-                    Nossos Squads de Desenvolvimento são equipes altamente especializadas e multidisciplinares que combinam
-                    conhecimento técnico profundo com práticas recomendadas do setor. Trabalhamos em estreita colaboração
-                    com nossos clientes para ajudá-los a alcançar a excelência digital, desde o planejamento estratégico até
-                    a execução competente da estratégia de TI delineada.
-                </div>
+                <p class="development-squads-section-description">
+                    {{ $t("DEVELOPMENT-SQUADS.first-description-of-development-squads") }}
+                 
+                </p>
+                <p class="development-squads-section-description">
+                    {{ $t("DEVELOPMENT-SQUADS.second-description-of-development-squads") }}
+                 
+                </p>
 
             </div>
             <div class="development-squads-services">
                 <h2 class="development-squads-services-span">
                     <span class="development-squads-services-span-title">
-                        Nossos Serviços de
+                        {{ $t("DEVELOPMENT-SQUADS.development-squads-title-span") }}
                     </span>
-                    Squads de Desenvolvimento
+                    {{ $t("DEVELOPMENT-SQUADS.development-squads-title") }}
                 </h2>
-                <p class="development-squads-services-description">Os Squads de Desenvolvimento da Dexi Digital oferecem
-                    uma ampla gama de serviços para atender às necessidades de nossos clientes. Aqui estão algumas das
-                    principais áreas em que atuamos:</p>
+                <p class="development-squads-services-description">
+                    {{ $t("DEVELOPMENT-SQUADS.development-squads-description") }}
+
+                </p>
             </div>
             <div class="development-squads-container-color">
                 <ul style="margin-top: 0; margin-bottom: 0;">
                     <li class="development-squads-container-color-item">
                         <span class="development-squads-container-color-strong">
-                            Planejamento Estratégico de TI:
+                            {{ $t("DEVELOPMENT-SQUADS.strategic-it-planning-span") }}
+
                         </span>
-                        Trabalhamos com sua equipe para definir metas e objetivos claros, alinhados com sua estratégia de
-                        negócios.
+                        {{ $t("DEVELOPMENT-SQUADS.strategic-it-planning-span-description") }}
+
                     </li>
                     <li class="development-squads-container-color-item">
                         <span class="development-squads-container-color-strong">
-                            Desenvolvimento de Software Personalizado:
+                            {{ $t("DEVELOPMENT-SQUADS.custom-software-development-span") }}
+
                         </span>
-                        Nossa equipe de desenvolvedores experientes cria soluções de software personalizadas que atendem às
-                        necessidades exclusivas de sua empresa.
+                        {{ $t("DEVELOPMENT-SQUADS.custom-software-development-span-description") }}
+
                     </li>
 
                     <li class="development-squads-container-color-item">
                         <span class="development-squads-container-color-strong">
-                            Gerenciamento de Projetos: </span>
-                        Nossos gerentes de projetos altamente qualificados garantem que os projetos sejam entregues no prazo
-                        e dentro do orçamento.
-                    </li>
-
-                    <li class="development-squads-container-color-item">
-                        <span class="development-squads-container-color-strong">
-                            Integração de Sistemas: </span>
-                        Facilitamos a integração de sistemas existentes para garantir uma operação perfeita.
-                    </li>
-
-                    <li class="development-squads-container-color-item">
-                        <span class="development-squads-container-color-strong">
-                            Suporte Contínuo:
+                            {{ $t("DEVELOPMENT-SQUADS.project-management-span") }}
                         </span>
-                        Estamos disponíveis para oferecer suporte contínuo após a conclusão do projeto, garantindo que sua
-                        empresa continue a prosperar.
+                        {{ $t("DEVELOPMENT-SQUADS.project-management-span-description") }}
+                    </li>
+
+                    <li class="development-squads-container-color-item">
+                        <span class="development-squads-container-color-strong">
+                            {{ $t("DEVELOPMENT-SQUADS.system-integration-span") }}
+                        </span>
+                            {{ $t("DEVELOPMENT-SQUADS.system-integration-span-description") }}                   
+                         </li>
+
+                    <li class="development-squads-container-color-item">
+                        <span class="development-squads-container-color-strong">
+                            {{ $t("DEVELOPMENT-SQUADS.ongoing-support-span") }}                  
+
+
+                        </span>
+                        {{ $t("DEVELOPMENT-SQUADS.ongoing-support-span-description") }}                  
+
                     </li>
                 </ul>
             </div>
@@ -79,44 +84,46 @@
             <div class="development-squads-advantages">
                 <h2 class="development-squads-advantages-span">
                     <span class="development-squads-advantages-span-title">
-                        Vantagens dos Squads de Desenvolvimento da
+                        {{ $t("DEVELOPMENT-SQUADS.advantages-of-development-squads-title") }}                  
                     </span>
-                    Dexi Digital
+                    {{ $t("DEVELOPMENT-SQUADS.advantages-of-development-squads-title-span") }}    
                 </h2>
-                <p class="development-squads-advantages-description">Ao escolher nossos Squads de Desenvolvimento, você se
-                    beneficiará das seguintes vantagens:</p>
+                <p class="development-squads-advantages-description">
+
+                    {{ $t("DEVELOPMENT-SQUADS.advantages-of-development-squads-description") }}    
+                </p>
             </div>
 
             <div class="development-squads-container-color">
                 <ul style="margin-top: 0; margin-bottom: 0;">
                     <li class="development-squads-container-color-item">
                         <span class="development-squads-container-color-strong">
-                            Expertise Diversificada:
+                            {{ $t("DEVELOPMENT-SQUADS.diverse-expertise-span") }}    
+
                         </span>
-                        Nossa equipe possui experiência em uma variedade de tecnologias e setores, o que nos permite
-                        oferecer soluções adaptadas às suas necessidades exclusivas.
+                        {{ $t("DEVELOPMENT-SQUADS.diverse-expertise-span-description") }}    
+
                     </li>
                     <li class="development-squads-container-color-item">
                         <span class="development-squads-container-color-strong">
-                            Foco na Excelência:
+                            {{ $t("DEVELOPMENT-SQUADS.focus-on-excellence-span") }}    
                         </span>
-                        Comprometemo-nos com a excelência em cada projeto, garantindo que todas as entregas atendam aos mais
-                        altos padrões.
+                        {{ $t("DEVELOPMENT-SQUADS.focus-on-excellence-span-description") }}    
+
                     </li>
 
                     <li class="development-squads-container-color-item">
                         <span class="development-squads-container-color-strong">
-                            Metodologia Ágil:
+                            {{ $t("DEVELOPMENT-SQUADS.agile-methodology-span") }}    
                         </span>
-                        Seguimos uma abordagem ágil que permite entregas rápidas e flexíveis, adaptadas às mudanças nas
-                        necessidades do projeto.
+                        {{ $t("DEVELOPMENT-SQUADS.agile-methodology-span-description") }}    
                     </li>
                     <li class="development-squads-container-color-item">
                         <span class="development-squads-container-color-strong">
-                            Suporte Personalizado:
+                            {{ $t("DEVELOPMENT-SQUADS.customized-support-span") }}    
+
                         </span>
-                        Estamos sempre disponíveis para oferecer suporte e orientação personalizados, garantindo o sucesso
-                        contínuo de sua estratégia de TI.
+                        {{ $t("DEVELOPMENT-SQUADS.customized-support-span-description") }}  
                     </li>
                 </ul>
             </div>
@@ -125,8 +132,8 @@
            
             <div class="development-squads-container-contact">
                 <p class="development-squads-container-contact-background">
-                    Entre em contato conosco hoje mesmo para saber
-                    mais sobre como nossos serviços de Outsourcing de TI podem beneficiar sua empresa.
+                    {{ $t("DEVELOPMENT-SQUADS.get-in-touch") }}  
+
                 </p>
                 <div class="form-button-container">
                     <FormButton />
@@ -361,7 +368,7 @@ export default {
 
     .development-squads-container-navbar {
         &-title {
-            padding: 125px 20px 20px 20px;
+            padding:90px 20px 10px 20px;
             text-align: center;
         }
     }
@@ -430,4 +437,4 @@ export default {
        
     }
 }
-</style> -->
+</style>
