@@ -2,7 +2,7 @@
   "nav": {
     "home": "Home",
     "content": "Contents",
-    "services":"Services",
+    "services": "Services",
     "it-outsourcing": "It Outsourcing",
     "mobile-apps": "Mobile Apps",
     "development-squad": "Development Squads",
@@ -10,7 +10,7 @@
   },
   "header": {
     "title": "Strengthen Trust and Brand",
-    "title2":"Loyalty with Customized",
+    "title2": "Loyalty with Customized",
     "title-br": "Digital Experiences ",
     "description": " Excellence in Secure Applications",
     "description-br": "with Agile Delivery",
@@ -31,10 +31,7 @@
   "development-process-section": {
     "development-process": "Our software development process",
     "development-process-description": "We unite client needs, business demands, and technical innovation to break through the conventional. Our Design Sprint-focused approach aims to identify opportunities, stimulate innovation, and explore new digital frontiers, ensuring agile and efficient delivery of your projects."
-
-
   },
-
   "footer": {
     "description": "At DEXI DIGITAL, we blend dynamism and innovation to deliver cutting-edge technology solutions. Our team, driven by a passion for technology and a commitment to excellence, elevates our clients' businesses to the next level.",
     "service-titles": "IT Outsourcing and Squads",
@@ -45,7 +42,7 @@
     "mobile-applications": "Mobile Applications"
   },
   "FORM": {
-    "title":"Are you interested in any of our services?",
+    "title": "Are you interested in any of our services?",
     "name": "Name",
     "company": "Company",
     "phone": "Phone",
@@ -123,29 +120,242 @@
     "first-paragraph-data-retention-period": "We understand the importance of respecting the duration for which we retain your information. If you stop using our website or application or make sporadic visits, your personal data may be kept for audit and rights preservation purposes. However, we adhere to Law 12.965/2014, which states that, after the legal prescriptive period has elapsed, your information may be deleted upon request.",
     "second-paragraph-data-retention-period": "Thank you for trusting Dexi Digital to protect your personal information. We are committed to ensuring the security and responsible use of your information, always in accordance with our Privacy Policy.",
     "date-of-last-review": "Date of last review: August 18, 2023.",
-    "share-this-article":"Share this article:"
+    "share-this-article": "Share this article:"
   },
-  "ROUTES":{
-    "privacy-policy":"Privacy-policy"
+  "ROUTES": {
+    "privacy-policy": "Privacy-policy"
+  },
+  "POSTS": {
+    "the-importance-of-hiring": "The Importance of Hiring a Software Development Company to Save on Projects",
+    "posted": "Posted in:",
+    "read-more": "Read More"
+  },
+  "LOGIN": {
+    "alert": "Email or password incorrect",
+    "without-permission": "Without permission!",
+    "return-to": "Return to",
+    "sign-in": "Sign In"
+  },
+  "IT-OUTSOURCING": {
+    "title": "IT Outsourcing",
+    "first-description-of-it-outsourcing": "IT outsourcing is a fundamental practice for many companies today. With the constant advancement of technology and the growing dependence on digital systems, having a highly competent IT team is crucial for maintaining operational efficiency and ensuring the security of sensitive data.",
+    "second-description-of-it-outsourcing": "At Dexi Digital, we offer high-quality IT outsourcing services for companies of all sizes. Our team of information technology experts is ready to address a wide range of demands, from daily IT infrastructure support to complex software development projects.",
+    "it-outsourcing-title-span": "Our Services of",
+    "it-outsourcing-title": "IT Outsourcing",
+    "it-outsourcing-description": "Our IT Outsourcing services are comprehensive and tailored to the specific needs of each client. Here are some of the key areas where we provide support:",
+    "technical-support-span": "24/7 Technical Support:",
+    "technical-support-span-description": "Our team is available 24 hours a day, 7 days a week, to address any technical issues that may arise. This ensures that your business is always operating without interruptions.",
+    "infrastructure-management-span": "Infrastructure Management:",
+    "infrastructure-management-span-description": "We take care of the maintenance and management of your IT infrastructure, including servers, networks, and data storage. This frees up your internal team to focus on strategic projects.",
+    
+    "custom-software-development-span": "Custom Software Development:",
+    "custom-software-development-span-description": "If your company needs custom software solutions, our team of experienced developers can create tailor-made applications to meet your specific requirements.",
+    "cybersecurity-span": "Cybersecurity:",
+    "cybersecurity-span-description": " Data security is a top priority. We implement rigorous cybersecurity measures to protect your business against online threats.",
+    "disaster-recovery-span": "Disaster Recovery:",
+    "disaster-recovery-span-description": "We prepare disaster recovery plans to ensure that your business can quickly recover from any disruptions.",
+    
+    
+    
+    
+    "advantages-of-it-outsourcing": "Advantages of IT Outsourcing with",
+    "advantages-of-it-outsourcing-span": "Dexi Digital:",
+    "advantages-of-it-outsourcing-description": "There are several advantages to choosing Dexi Digital as your IT outsourcing partner:",
+    
+    
+    
+    
+    "experience-and-expertise-span": "Experience and Expertise:",
+    "experience-and-expertise-span-description": "Our team has extensive experience in a variety of technologies and industries. You can rely on our knowledge to find the best solutions for your company.",
+  
+  
+  
+    "cost-reduction-span": "Cost Reduction:",
+    "cost-reduction-span-description": "IT outsourcing can significantly reduce operational costs by eliminating the need to maintain a full-time in-house IT team.",
+    
+
+
+    
+    "experience-design-span": "Focus on Your Core Business:",
+    "experience-design-span-description": "Delegating IT tasks to specialists allows your internal team to focus on the core business of the company.",
+    
+    "flexibility-and-scalability-span": "Flexibility and Scalability:",
+    "flexibility-and-scalability-span-description": "Our IT Outsourcing services are flexible and scalable, meaning we can meet your ever-evolving needs.",
+    
+    "personalized-customer-service-span": "Personalized Service:",
+    "personalized-customer-service-span-description": "We work closely with each client to understand their unique goals and challenges, providing tailor-made solutions.",
+    
+    "examples-it-personalizado": "IT outsourcing is a smart strategy for companies looking to maintain their competitive advantage and ensure operational efficiency. Dexi Digital is here to be your trusted partner in the world of technology. Contact us today to learn more about how our IT outsourcing services can benefit your company.",
+    "get-in-touch": "Contact us today to learn more about how our IT outsourcing services can benefit your company."
+  },
+  "DIGITAL-EXPERIENCE": {
+    "title": "Digital Experience",
+    "first-description-of-digital-experience": "In the digital era, customer experience has become one of the most critical factors for the success of any company. As technology continues to evolve and shape the business landscape, companies are increasingly focused on creating exceptional digital experiences for their customers. This is where Dexi Digital comes in.",
+    "digital-experience-title-span": "The Importance of",
+    "digital-experience-title": "Digital Experience",
+    "digital-experience-description": "The customer experience is much more than just a business transaction. It is the impression that your company leaves on its customers at every touchpoint, from the initial contact to post-sale. A quality digital experience is fundamental to attract, retain, and delight customers.",
+    "companies-that-provide-exceptional": "Companies that provide exceptional digital experiences reap a series of benefits:",
+    "customer-loyalty-span": "Customer Loyalty:",
+    "customer-loyalty-span-description": "Satisfied customers are more likely to remain loyal to your brand, making repeat purchases and recommending your products or services to others.",
+    "increased-revenue-span": "Increased Revenue:",
+    "increased-revenue-span-description": "An enhanced digital experience often leads to higher sales and an increase in revenue.",
+    "positive-reputation-span": "Positive Reputation:",
+    "positive-reputation-span-description": "Companies that prioritize customer experience often enjoy a positive reputation in the market, which can attract new customers.",
+    "operational-efficiency-span": "Operational Efficiency:",
+    "operational-efficiency-span-description": "Efficient digital processes can enhance productivity and reduce operational costs.",
+    "continuous-innovation-span": "Continuous Innovation:",
+    "continuous-innovation-span-description": "A customer-centric approach encourages innovation, enabling companies to adapt quickly to changes in customer needs and expectations.",
+    "our-digital-experience-services": "The Our Services",
+    "our-digital-experience-services-span": "Digital Experience",
+    "our-digital-experience-services-description": "At Dexi Digital, we are committed to helping our clients create exceptional digital experiences that drive business success. Our Digital Experience services cover a wide range of areas, including:",
+    "digital-strategy-span": "Digital Strategy:",
+    "digital-strategy-span-description": "We collaborate with our clients to develop a comprehensive digital strategy that aligns with their business goals and meets customer needs.",
+    "customer-analysis-span": "Customer Analysis:",
+    "customer-analysis-span-description": "We use advanced analytics to gain insights into customer behavior and preferences, enabling businesses to make informed decisions.",
+    "experience-design-span": "User Experience (UX/UI) Design:",
+    "experience-design-span-description": "Our team of design experts creates intuitive and engaging user interfaces that deliver exceptional experiences.",
+    "app-development-span": "Application Development:",
+    "app-development-span-description": "We develop high-quality mobile and web applications that deliver exceptional functionality and performance.",
+    "technology-integration-span": "Technology Integration:",
+    "technology-integration-span-description": "We leverage the latest technology to integrate systems and processes, ensuring a seamless digital experience.",
+    "support-and-maintenance-span": "Maintenance and Support:",
+    "support-and-maintenance-span-description": "We provide support services to ensure that digital experiences continue to run smoothly and meet customer expectations.",
+    "agile-methodology-at-dexi-digital-strong": "Agile Methodology in",
+    "agile-methodology-at-dexi-digital-strong-title": "Dexi Digital",
+    "agile-methodology-at-dexi-digital-description": "Our Digital Experience process is based on an agile methodology. This means we embrace an iterative and collaborative approach to digital solution development. Through short development cycles, we can quickly respond to changes in project needs and ensure the timely delivery of high-quality solutions.",
+    "examples-of-successful-projects-span": "Examples of",
+    "examples-of-successful-projects-span-title": "Successful Projects:",
+    "first-example-of-successful-projects": "Over the years, we have successfully completed a series of Digital Experience projects for clients across various industries. From the development of award-winning mobile applications to the creation of innovative user interfaces, we take pride in our accomplishments.",
+    "second-example-of-successful-projects": "A notable example is our collaboration with XYZ Company, where we developed a mobile application that transformed how they interact with their customers. The app not only streamlined internal processes but also significantly enhanced the customer experience, resulting in a 30% increase in retention rates.",
+    "third-example-of-successful-projects": "At Dexi Digital, we believe that Digital Experience is the key to business success. Our comprehensive services, combined with our agile approach, enable us to help our clients create exceptional digital experiences that drive growth and customer loyalty. If you are looking to enhance the digital experience of your company, contact us today and discover how we can help you achieve digital success.",
+    "get-in-touch": "Contact us today to learn more about how our IT Outsourcing services can benefit your company."
+},
+"MOBILE-APPLICATIONS": {
+  "title": "Mobile App Development",
+  "first-description-of-mobile-applications": "In the digital era, mobile apps have become an essential part of everyday life. Whether for communication, entertainment, shopping, or productivity, mobile apps play a crucial role in how we interact with technology.",
+  "second-description-of-mobile-applications": "At Dexi Digital, we are passionate about delivering high-quality mobile app solutions that meet the needs of our clients. We develop native apps for Android and iOS, as well as hybrid apps using Flutter technology. Our customer-centric approach and agile methodology enable us to deliver customized app solutions on time and within budget.",
+  "mobile-applications-title-span": "Our Mobile App Development Services",
+  "mobile-applications-title": "Mobile Apps",
+  "mobile-applications-description": "Our mobile app development services cover a wide range of areas and sectors. Here are some of the key services we offer:",
+
+
+  "native-app-development-span": "Native App Development:",
+  "native-app-development-span-description": "If your company is looking for a native app for Android or iOS, our team of highly skilled developers is ready to turn your vision into reality.",
+
+
+  "hybrid-apps-with-flutter-span": "Hybrid Apps with Flutter:",
+  "hybrid-apps-with-flutter-span-description": "Flutter technology enables us to create hybrid apps that work seamlessly on both platforms, saving time and resources.",
+
+
+  "revamping-existing-applications-span": "Revamping Existing Applications:",
+  "revamping-existing-applications-span-description": "If you already have an application, we can assist in revamping it, enhancing both its functionality and design.",
+
+
+  "app-strategy-consulting-span": "App Strategy Consulting:",
+  "app-strategy-consulting-span-description": "We work with you from conception to app launch, providing strategic insights to ensure the success of your project.",
+
+
+  "maintenance-and-ongoing-support-span": "Maintenance and Ongoing Support:",
+  "maintenance-and-ongoing-support-span-description": "After the launch, we are available for maintenance and ongoing support, ensuring that your application operates seamlessly.",
+
+
+  "advantages-of-app-title-span": "Advantages of App Development with",
+  "advantages-of-app-title": "Dexi Digital",
+  "advantages-of-app-description": "Choosing Dexi Digital as your mobile app development partner comes with the following advantages:",
+
+
+  
+  "premium-quality-span": "Premium Quality:",
+  "premium-quality-span-description": "Our team is dedicated to excellence in every detail, ensuring that your application is of high quality and meets user expectations.",
+
+  
+  "agile-methodology-span": "Agile Methodology:",
+  "agile-methodology-span-description": "We follow an agile approach that enables swift and efficient deliveries, keeping you updated at every stage of the process.",
+
+
+
+    
+  "diverse-experience-span": "Diverse Expertise:",
+  "diverse-experience-span-description": "We collaborate with companies across various industries, allowing us to provide insights and solutions tailored to the unique needs of each client.",
+
+
+
+    
+  "customized-support-span": "Customized Support:",
+  "customized-support-span-description": "Our commitment to the success of your application doesn't end at launch. We are always available to provide ongoing support and maintenance.",
+
+
+  "it-outsourcing-strategy": "IT outsourcing is a smart strategy for companies looking to maintain their competitive advantage and ensure operational efficiency. Dexi Digital is here to be your trusted partner in the world of technology.",
+
+  "get-in-touch": "Contact us today to learn more about how our IT outsourcing services can benefit your company."  
 
 },
-"POSTS":{
-  "the-importance-of-hiring":"The Importance of Hiring a Software Development Company to Save on Projects",
-  "posted":"Posted in:",
-  "read-more":"Read More"
+"DEVELOPMENT-SQUADS":{
+  "title": "Development Squads",
+ 
+  "first-description-of-development-squads": "In an increasingly digital world, businesses face constant challenges to remain competitive and innovative. Digital transformation is not just an option but a necessity to thrive in today's market. This is where Dexi Digital's Development Squads come into play.",
+  "second-description-of-development-squads": "Our Development Squads are highly specialized and multidisciplinary teams that combine deep technical expertise with industry best practices. We work closely with our clients to help them achieve digital excellence, from strategic planning to the competent execution of the outlined IT strategy",
+ 
+  "development-squads-title-span": "Our Development",
+  "development-squads-title": "Squads Services",
+  "development-squads-description": "Dexi Digital's Development Squads offer a wide range of services to meet our clients' needs. Here are some of the key areas we operate in:",
 
 
-},
-"LOGIN":{
+     
+  "strategic-it-planning-span": "Strategic IT Planning:",
+  "strategic-it-planning-span-description": "We work with your team to define clear goals and objectives aligned with your business strategy.",
 
-"alert":"Email or password incorrect",
-"without-permission":"Without permission!",
-"return-to":"Return to",
-"sign-in":"Sign In"
 
-},
-"DIGITAL-EXPERIENCE": {
-  "title":"Digital Experience",
-  "description":"In the digital age, customer experience has become one of the most critical factors for the success of any company. As technology continues to evolve and shape the business landscape, companies are increasingly focused on creating exceptional digital experiences for their customers. This is where Dexi Digital comes in."
+
+  "custom-software-development-span": "Custom Software Development:",
+  "custom-software-development-span-description": "Our team of experienced developers creates custom software solutions tailored to the unique needs of your company.",
+
+
+  
+  "project-management-span": "Project Management:",
+  "project-management-span-description": "Our highly skilled project managers ensure that projects are delivered on time and within budget.",
+
+
+
+
+       
+  "system-integration-span": "System Integration:",
+  "system-integration-span-description": "We facilitate the integration of existing systems to ensure seamless operation.",
+
+
+
+              
+  "ongoing-support-span": "Ongoing Support:",
+  "ongoing-support-span-description": "We are available to provide ongoing support after the project completion, ensuring that your company continues to thrive.",
+
+
+
+         
+  "advantages-of-development-squads-title": "Advantages of Development Squads at",
+  "advantages-of-development-squads-title-span": "Dexi Digital",
+  "advantages-of-development-squads-description": "Choosing our Development Squads, you will benefit from the following advantages:",
+
+
+
+                 
+  "diverse-expertise-span": "Diverse Expertise:",
+  "diverse-expertise-span-description": " Our team has experience in a variety of technologies and industries, allowing us to provide solutions tailored to your unique needs.",
+
+
+
+  "focus-on-excellence-span": "Focus on Excellence:",
+  "focus-on-excellence-span-description": "We are committed to excellence in every project, ensuring that all deliverables meet the highest standards.",
+
+
+  "agile-methodology-span": "Agile Methodology:",
+  "agile-methodology-span-description": " We follow an agile approach that allows for fast and flexible deliveries, adapted to changes in project needs.",
+
+
+  "customized-support-span": "Customized Support:",
+  "customized-support-span-description": " We are always available to provide customized support and guidance, ensuring the ongoing success of your IT strategy.",
+
+
+  "get-in-touch": "Contact us today to learn more about how our IT outsourcing services can benefit your company."  
+
 }
 }

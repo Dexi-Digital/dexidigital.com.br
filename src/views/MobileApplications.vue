@@ -1,77 +1,72 @@
- <!-- <template>
+<template>
     <div>
         <NavBar />
         <div class="mobile-applications-container">
             <div class="mobile-applications-container-navbar">
-                <p class="mobile-applications-container-navbar-title">Desenvolvimento de Aplicativos Mobile</p>
+                <p class="mobile-applications-container-navbar-title"> 
+                    {{ $t("MOBILE-APPLICATIONS.title") }}</p>
             </div>
             <div class="mobile-applications-section">
-                <div class="mobile-applications-section-description">
-                    Na era digital, os aplicativos móveis se tornaram uma parte essencial da vida cotidiana. Seja para
-                    comunicação, entretenimento, compras ou produtividade, os aplicativos móveis desempenham um papel
-                    fundamental na forma como interagimos com a tecnologia.<br>
-                    <br>
-                    Na Dexi Digital, somos apaixonados por oferecer soluções de aplicativos móveis de alta qualidade que
-                    atendam
-                    às necessidades de nossos clientes. Desenvolvemos aplicativos nativos para Android e iOS, bem como
-                    aplicativos híbridos usando a tecnologia Flutter. Nossa abordagem centrada no cliente e nossa
-                    metodologia
-                    ágil nos permitem entregar soluções de aplicativos sob medida dentro do prazo e do orçamento.
-                </div>
+                <p class="mobile-applications-section-description">
+                    {{ $t("MOBILE-APPLICATIONS.first-description-of-mobile-applications") }}
 
+
+                </p>
+                <p class="mobile-applications-section-description">
+                    {{ $t("MOBILE-APPLICATIONS.second-description-of-mobile-applications") }}
+
+                </p>
             </div>
             <div class="mobile-applications-services">
                 <h2 class="mobile-applications-services-span">
                     <span class="mobile-applications-services-span-title">
-                        Nossos Serviços de Desenvolvimento de
+                        {{ $t("MOBILE-APPLICATIONS.mobile-applications-title-span") }}
                     </span>
-                    Aplicativos Mobile
+                    {{ $t("MOBILE-APPLICATIONS.mobile-applications-title") }}
                 </h2>
-                <p class="mobile-applications-services-description">Nossos serviços de desenvolvimento de aplicativos mobile
-                    abrangem uma ampla variedade de áreas e setores.
-                    Aqui estão alguns dos principais serviços que oferecemos:</p>
+                <p class="mobile-applications-services-description">
+                    {{ $t("MOBILE-APPLICATIONS.mobile-applications-description") }}
+                </p>
             </div>
             <div class="mobile-applications-container-color">
                 <ul style="margin-top: 0; margin-bottom: 0;">
                     <li class="mobile-applications-container-color-item">
                         <span class="mobile-applications-container-color-strong">
-                            Desenvolvimento de Aplicativos Nativos:
+                            {{ $t("MOBILE-APPLICATIONS.native-app-development-span") }}
                         </span>
-                        Se sua empresa deseja um aplicativo nativo para Android ou iOS, nossa equipe de desenvolvedores
-                        altamente qualificados está pronta para transformar sua visão em realidade.
+                        {{ $t("MOBILE-APPLICATIONS.native-app-development-span-description") }}
                     </li>
                     <li class="mobile-applications-container-color-item">
                         <span class="mobile-applications-container-color-strong">
-                            Aplicativos Híbridos com Flutter:
+                            {{ $t("MOBILE-APPLICATIONS.hybrid-apps-with-flutter-span") }}
                         </span>
-                        A tecnologia Flutter nos permite criar aplicativos híbridos que funcionam perfeitamente em ambas as
-                        plataformas, economizando tempo e recursos.
+                        {{ $t("MOBILE-APPLICATIONS.hybrid-apps-with-flutter-span-description") }}
+
                     </li>
 
                     <li class="mobile-applications-container-color-item">
                         <span class="mobile-applications-container-color-strong">
-                            Reformulação de Aplicativos Existentes:
+                            {{ $t("MOBILE-APPLICATIONS.revamping-existing-applications-span") }}
+
                         </span>
-                        Se você já possui um aplicativo, podemos ajudar a reformulá-lo e melhorar sua funcionalidade e
-                        design.
+                        {{ $t("MOBILE-APPLICATIONS.revamping-existing-applications-span-description") }}
+
                     </li>
 
                     <li class="mobile-applications-container-color-item">
                         <span class="mobile-applications-container-color-strong">
-                            Consultoria em Estratégia de Aplicativos:
+                            {{ $t("MOBILE-APPLICATIONS.app-strategy-consulting-span") }}
                         </span>
-                        Trabalhamos com você desde a concepção até o lançamento do aplicativo, oferecendo insights
-                        estratégicos
-                        para garantir o sucesso de seu projeto.
+                        {{ $t("MOBILE-APPLICATIONS.app-strategy-consulting-span-description") }}
+
                     </li>
 
                     <li class="mobile-applications-container-color-item">
                         <span class="mobile-applications-container-color-strong">
-                            Manutenção e Suporte Contínuo:
+                            {{ $t("MOBILE-APPLICATIONS.maintenance-and-ongoing-support-span") }}
                         </span>
-                        Após o lançamento, estamos disponíveis para manutenção e suporte contínuo, garantindo que seu
-                        aplicativo
-                        funcione perfeitamente.
+                        {{ $t("MOBILE-APPLICATIONS.maintenance-and-ongoing-support-span-description") }}
+
                     </li>
                 </ul>
             </div>
@@ -84,58 +79,62 @@
 
             <div class="mobile-applications-advantages">
                 <h2 class="mobile-applications-advantages-span">
-                    <span class="mobile-applications-advantages-span-title">Vantagens do Desenvolvimento de Aplicativos com
-                        a</span>
-                    Dexi Digital
+                    <span class="mobile-applications-advantages-span-title">
+                        {{ $t("MOBILE-APPLICATIONS.advantages-of-app-title-span") }}
+
+                        </span>
+                        {{ $t("MOBILE-APPLICATIONS.advantages-of-app-title") }}
                 </h2>
-                <p class="mobile-applications-advantages-description">Ao escolher a Dexi Digital como seu parceiro de
-                    desenvolvimento de aplicativos móveis, você se beneficiará das seguintes vantagens:</p>
+                <p class="mobile-applications-advantages-description">
+                    {{ $t("MOBILE-APPLICATIONS.advantages-of-app-description") }}
+                </p>
             </div>
 
             <div class="mobile-applications-container-color">
                 <ul style="margin-top: 0; margin-bottom: 0;">
                     <li class="mobile-applications-container-color-item">
                         <span class="mobile-applications-container-color-strong">
-                            Qualidade Premium:
+                            {{ $t("MOBILE-APPLICATIONS.premium-quality-span") }}
+
                         </span>
-                        Nossa equipe se dedica à excelência em cada detalhe, garantindo que seu aplicativo seja de alta
-                        qualidade e atenda às expectativas dos usuários.
+                        {{ $t("MOBILE-APPLICATIONS.premium-quality-span-description") }}
+
                     </li>
                     <li class="mobile-applications-container-color-item">
                         <span class="mobile-applications-container-color-strong">
-                            Metodologia Ágil:
+                       
+
+                            {{ $t("MOBILE-APPLICATIONS.agile-methodology-span") }}
+
                         </span>
-                        Seguimos uma abordagem ágil que permite entregas rápidas e eficientes, mantendo você atualizado em
-                        cada etapa do processo.
+                        {{ $t("MOBILE-APPLICATIONS.agile-methodology-span-description") }}
+
                     </li>
 
                     <li class="mobile-applications-container-color-item">
                         <span class="mobile-applications-container-color-strong">
-                            Experiência Diversificada:
+                            {{ $t("MOBILE-APPLICATIONS.diverse-experience-span") }}
                         </span>
-                        Trabalhamos com empresas de diversos setores, o que nos permite oferecer insights e soluções
-                        adaptadas às necessidades exclusivas de cada cliente.
+                        {{ $t("MOBILE-APPLICATIONS.diverse-experience-span-description") }}
+
                     </li>
                     <li class="mobile-applications-container-color-item">
                         <span class="mobile-applications-container-color-strong">
-                            Suporte Personalizado:
+                            {{ $t("MOBILE-APPLICATIONS.customized-support-span") }}
+
                         </span>
-                        Nosso compromisso com o sucesso de seu aplicativo não termina no lançamento. Estamos sempre
-                        disponíveis para oferecer suporte e manutenção contínuos.
+                        {{ $t("MOBILE-APPLICATIONS.customized-support-span-description") }}
                     </li>
                 </ul>
             </div>
             <div class="mobile-applications-container-color-img-bottom"></div>
 
-            <p class="mobile-applications-container-description">O Outsourcing de TI é uma estratégia inteligente para
-                empresas
-                que desejam manter sua vantagem competitiva e garantir a eficiência operacional. A Dexi Digital está aqui
-                para ser seu parceiro de confiança no mundo da tecnologia.
+            <p class="mobile-applications-container-description">  
+                 {{ $t("MOBILE-APPLICATIONS.it-outsourcing-strategy") }}
             </p>
             <div class="mobile-applications-container-contact">
                 <p class="mobile-applications-container-contact-background">
-                    Entre em contato conosco hoje mesmo para saber
-                    mais sobre como nossos serviços de Outsourcing de TI podem beneficiar sua empresa.
+                    {{ $t("MOBILE-APPLICATIONS.get-in-touch") }}
                 </p>
                 <div class="form-button-container">
                     <FormButton />
@@ -369,7 +368,7 @@ export default {
 
     .mobile-applications-container-navbar {
         &-title {
-            padding: 125px 20px 20px 20px;
+            padding: 90px 20px 10px 20px;
             text-align: center;
         }
     }
@@ -413,8 +412,9 @@ export default {
         border-radius: 20px;
 
     }
-    .mobile-applications-container-navbar{
-        &-title{
+
+    .mobile-applications-container-navbar {
+        &-title {
             padding: 126px 20px 20px 20px;
         }
     }
@@ -427,10 +427,11 @@ export default {
         width: 70%;
         border-radius: 20px;
     }
-    .mobile-applications-container-navbar{
-        &-title{
+
+    .mobile-applications-container-navbar {
+        &-title {
             padding: 140px 20px 30px 20px;
         }
     }
 }
-</style>  -->
+</style> 
