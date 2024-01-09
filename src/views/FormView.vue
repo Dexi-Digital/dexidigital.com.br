@@ -90,9 +90,6 @@ import WhatsappButton from '../components/WhatsappButton.vue';
 
 export default {
     name: "FormView",
-    mounted() {
-        this.$gtag.pageview('/BlogView');
-    },
     data() {
         return {
             valid: true,

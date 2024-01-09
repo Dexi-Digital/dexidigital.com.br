@@ -112,11 +112,6 @@ export default {
     const language = this.$route.params.language || 'en';
     this.getPostsFromFirebase(language);
   },
-  mounted() {
-    // Exemplo de rastreamento de uma visualização de página
-    this.$gtag.pageview('/BlogView');
-  },
-
 
   // metaInfo() {
   //   const post = this.posts.find((post) => post.url === this.localUrl);

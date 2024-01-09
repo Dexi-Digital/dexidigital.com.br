@@ -54,11 +54,6 @@ export default {
   created() {
     this.getPostsFromFirebase();
   },
-  mounted() {
-    // Exemplo de rastreamento de uma visualização de página
-    this.$gtag.pageview('/BlogView');
-  },
-
 
   // metaInfo() {
   //   const post = this.posts.find((post) => post.url === this.localUrl);
