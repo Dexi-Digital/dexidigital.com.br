@@ -55,35 +55,6 @@ export default {
     this.getPostsFromFirebase();
   },
 
-  // metaInfo() {
-  //   const post = this.posts.find((post) => post.url === this.localUrl);
-  //   return {
-  //     title: post ? post.title : "Posts",
-  //     // meta: [
-  //     //   {
-  //     //     vmid: "description",
-  //     //     name: "description",
-  //     //     content: post ? post.description : "Meu blog sobre diversos temas.",
-  //     //   },
-  //     //   {
-  //     //     vmid: "og:title",
-  //     //     property: "og:title",
-  //     //     content: post ? post.title : "Blog - Meu Site",
-  //     //   },
-  //     //   {
-  //     //     vmid: "og:description",
-  //     //     property: "og:description",
-  //     //     content: post ? post.description : "Meu blog sobre diversos temas.",
-  //     //   },
-  //     //   {
-  //     //     vmid: "og:image",
-  //     //     property: "og:image",
-  //     //     content: post ? post.image : "URL_DA_IMAGEM_PADRAO_PARA_O_BLOG",
-  //     //   },
-  //     // ],
-  //   };
-  // },
-
   data() {
 
     return {
