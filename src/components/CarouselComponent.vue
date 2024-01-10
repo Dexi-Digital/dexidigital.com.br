@@ -11,21 +11,21 @@
 
             <swiper :options="swiperOptions" ref="mySwiper" class="teste" style="margin-right: 0;">
 
-                <swiper-slide v-for="item in items" :key="item.id" >
-         <router-link :to="item.link">  
-                    <div class=" teste-dois">
-                        <v-card class="mx-auto content-card-home">
-                            <v-card-text class="information-services-content">
-                                <div class="information-services">
-                                    <h4 class="title-services">{{ $t(item.title) }}</h4>
+                <swiper-slide v-for="item in items" :key="item.id">
+                    <router-link :to="item.link">
+                        <div class=" teste-dois">
+                            <v-card class="mx-auto content-card-home">
+                                <v-card-text class="information-services-content">
+                                    <div class="information-services">
+                                        <h4 class="title-services">{{ $t(item.title) }}</h4>
+                                    </div>
+                                </v-card-text>
+                                <div class="container-img">
+                                    <img class="img-services" :src="item.src" alt="item.alt">
                                 </div>
-                            </v-card-text>
-                            <div class="container-img">
-                                <img class="img-services" :src="item.src" alt="item.alt">
-                            </div>
-                        </v-card>
-                    </div>
-            </router-link>  
+                            </v-card>
+                        </div>
+                    </router-link>
                 </swiper-slide>
             </swiper>
 
@@ -51,13 +51,13 @@ export default {
             swiperInstance: null,
             spaceBetween: 30,
             grabCursor: true,
-            
+
 
 
             swiperOptions: {
-             autoplay: 2000,
+                autoplay: 2000,
 
-       
+
 
                 slidesPerView: 3,
                 spaceBetween: 10,
@@ -76,7 +76,7 @@ export default {
                     },
                     768: {
                         slidesPerView: 2,
-                        spaceBetween:40,
+                        spaceBetween: 40,
                     },
                     1024: {
                         slidesPerView: 2,
@@ -93,8 +93,8 @@ export default {
                 },
             },
             items: [
-                { id: 1, title: "services-section.it-outsourcing", src: require('../assets/img-1.png'), alt: "Outsourcing de TI",  link: "/outsourcing-de-ti" },
-                { id: 2, title: "services-section.mobile-applications", src: require('../assets/img-2.png'), alt: "Aplicativos Mobile",  link: "/aplicativos-mobile" },
+                { id: 1, title: "services-section.it-outsourcing", src: require('../assets/img-1.png'), alt: "Outsourcing de TI", link: "/outsourcing-de-ti" },
+                { id: 2, title: "services-section.mobile-applications", src: require('../assets/img-2.png'), alt: "Aplicativos Mobile", link: "/aplicativos-mobile" },
                 { id: 3, title: "services-section.development-squads", src: require('../assets/img-3.png'), alt: "Squads de Desenvolvimento", link: "/squad-de-desenvolvimento" },
                 { id: 4, title: "services-section.digital-experience", src: require('../assets/img-4.png'), alt: "Experiência Digital", link: "/experiencia-digital" },
                 // Adicione mais itens conforme necessário
@@ -126,13 +126,13 @@ export default {
 
 
 
-    //    onSwiper(swiper) {
-    //        swiper.on('afterInit', () => {
-    //            this.swiperInstance = swiper;
-    //             // Chame nextSlide após a inicialização completa do Swiper
-    //              this.nextSlide();
-    //          });
-    //      },
+        //    onSwiper(swiper) {
+        //        swiper.on('afterInit', () => {
+        //            this.swiperInstance = swiper;
+        //             // Chame nextSlide após a inicialização completa do Swiper
+        //              this.nextSlide();
+        //          });
+        //      },
     },
     mounted() {
         // Obtenha a instância do Swiper usando refs
@@ -152,8 +152,8 @@ export default {
     
 <style scoped>
 .stella {
-position: relative;
-z-index: 1;
+    position: relative;
+    z-index: 1;
     justify-content: center !important;
     display: flex;
     height: 50px;
@@ -189,6 +189,7 @@ z-index: 1;
     font-weight: bold;
 
 }
+
 .custom-subtitle-services-content {
     display: flex;
     justify-content: center;
@@ -201,9 +202,11 @@ z-index: 1;
     font-size: 20px;
     padding-top: 20px;
 }
-.information-services-content{
-    padding: 10px 0 10px 0 ;
+
+.information-services-content {
+    padding: 10px 0 10px 0;
 }
+
 @media screen and (max-width: 481px) {
     .services {
         margin-top: 50px !important;
@@ -211,25 +214,29 @@ z-index: 1;
         margin-right: 10px !important;
     }
 }
-@media screen and  (min-width: 320px)  and (max-width: 640px) {
-    .title-services{
-        font-size: 18px!important;
-    
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+    .title-services {
+        font-size: 18px !important;
+
     }
-    .content-card-home{
+
+    .content-card-home {
         padding: 20px 10px 20px 10px;
     }
 }
+
 @media screen and (min-width: 640px) and (max-width: 768px) {
-    .title-services{
-        font-size: 12px!important;
-    
-    }
-    .content-card-home{
-        padding: 20px 10px 20px 10px!important;
+    .title-services {
+        font-size: 12px !important;
 
     }
-    
+
+    .content-card-home {
+        padding: 20px 10px 20px 10px !important;
+
+    }
+
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
@@ -244,8 +251,9 @@ z-index: 1;
     .services {
         margin-top: 0;
     }
-    
+
 }
+
 @media screen and (min-width: 768px) and (max-width: 940px) {
     .custom-title-services {
         padding-top: 60px;
@@ -254,18 +262,22 @@ z-index: 1;
     .custom-subtitle-services {
         padding: 0 60px;
     }
-    .title-services{
-        font-size:15px!important;
-    
+
+    .title-services {
+        font-size: 15px !important;
+
     }
-    .content-card-home{
-        padding: 20px 10px 20px 10px!important;
+
+    .content-card-home {
+        padding: 20px 10px 20px 10px !important;
     }
-    .img-services{
-    width: 80%!important;
-    height: 80%!important;
+
+    .img-services {
+        width: 80% !important;
+        height: 80% !important;
+    }
 }
-}
+
 @media screen and (min-width: 941px) and (max-width: 1024px) {
 
     .custom-title-services {
@@ -275,39 +287,42 @@ z-index: 1;
     .custom-subtitle-services {
         padding: 0 60px;
     }
-    .title-services{
-        font-size: 21px!important;
-    
+
+    .title-services {
+        font-size: 21px !important;
+
     }
-    .content-card-home{
-        padding: 20px 0px 20px 0px!important;
+
+    .content-card-home {
+        padding: 20px 0px 20px 0px !important;
     }
-    .img-services{
-    width: 80%!important;
-    height: 80%!important;
-}
+
+    .img-services {
+        width: 80% !important;
+        height: 80% !important;
+    }
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
 
-    .title-services{
-        font-size: 14px!important;
+    .title-services {
+        font-size: 14px !important;
     }
+
     .custom-title-services {
         padding-top: 20px;
     }
 
     .content-card-home {
-        padding: 20px 10px 20px 10px!important;
+        padding: 20px 10px 20px 10px !important;
     }
 
 }
 
 @media screen and (min-width: 1201px) {
-    .title-services{
-        font-size: 18.5px!important;
-        /* background-color: rgb(132, 216, 255); */
-    
+    .title-services {
+        font-size: 14.5px !important;
+
     }
 
     .custom-title-services {
@@ -361,16 +376,41 @@ z-index: 1;
 .content-card-home {
 
 
-    border-radius: 30px;
+ 
     margin-bottom: 20px;
     padding: 20px 20px 20px 20px;
     box-shadow: 0px 22px 25px -13px #6ad2ff !important;
 
+
+
+    margin-bottom: 20px;
+    padding: 20px 20px 20px 20px;
+    background-color: transparent;
+    border-radius: 40px;
+    /* border: 1.5px solid rgb(208 208 208); */
+    box-shadow: 0px 22px 25px -13px #6ad2ff !important;
+    width: 270px;
+    transition: border 300ms ease 0ms,box-shadow 300ms ease 0ms;
+    padding: 20px;
+
 }
-.container-img{
+
+.content-card-home:hover {
+
+    box-shadow: 0px 15px 35px 0px rgba(112,144,176,0.2)!important;
+
+
+}
+
+
+
+
+
+.container-img {
     display: flex;
     justify-content: center;
 }
+
 .img-services {
     width: 150px;
     height: 150px;
@@ -379,9 +419,10 @@ z-index: 1;
 }
 
 
-.v-application a{
-    text-decoration: none!important;
+.v-application a {
+    text-decoration: none !important;
 }
+
 .swiper-button-container-flex {
     justify-content: center;
     position: relative;
@@ -430,7 +471,7 @@ z-index: 1;
 .swiper-next:after {
     font-size: 13px;
     color: #158BBF !important;
-    font-weight: bold!important;
+    font-weight: bold !important;
 }
 
 .swiper-prev:hover,
@@ -443,5 +484,4 @@ z-index: 1;
 .swiper-next:hover:after {
     color: white !important;
     background: #158BBF !important;
-}
-</style>
+}</style>
