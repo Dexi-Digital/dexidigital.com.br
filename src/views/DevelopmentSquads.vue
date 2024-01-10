@@ -307,7 +307,6 @@ export default {
 
 }
 
-.development-squads-content-img {}
 
 @media screen and (max-width: 480px) {
     .development-squads-section {
@@ -407,8 +406,9 @@ export default {
 
 @media screen and (min-width:769px) and (max-width: 1024px) {
     .development-squads-content-img {
-        height: auto;
-        width: 70%;
+        height: 292px;
+    width: 74%;
+    border-radius: 20px;
         border-radius: 20px;
 
     }
@@ -424,7 +424,6 @@ export default {
 @media screen and (min-width: 1025px) {
     .development-squads-content-img {
         height: 65vh;
-        width: 70%;
         border-radius: 20px;
     }
     .development-squads-container-navbar{
