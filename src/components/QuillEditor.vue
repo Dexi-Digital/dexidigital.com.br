@@ -19,31 +19,31 @@
                     </div>
                     <v-row>
                         <v-col cols="6" sm="6" md="6" lg="6" xl="6">
-                            <v-menu ref="menu1" v-model="menu1" :close-on-content-click="false" :nudge-right="40" lazy
-                                transition="scale-transition" offset-y full-width max-width="290px" min-width="290px">
+                            <VMenu ref="menu1" v-model="menu1" :close-on-content-click="false" :nudge-right="40"
+                                transition="scale-transition" offset-y max-width="290px" min-width="290px">
                                 <template v-slot:activator="{ on }">
                                     <v-text-field v-model="dateFormatted" label="Data de Publicação"
                                   
                                         v-on="on"></v-text-field>
                                 </template>
-                                <v-date-picker :locale="ptBR" v-model="date" no-title @input="menu1 = false"
-                                    :format="customDateFormat"></v-date-picker>
-                            </v-menu>
+                                <VDatePicker locale="ptBR" v-model="date" no-title @input="menu1 = false"
+                                    :format="customDateFormat"></VDatePicker>
+                            </VMenu>
 
                         </v-col>
 
                         <v-col cols="6" sm="6" md="6" lg="6" xl="6">
 
-                            <v-menu ref="menu" v-model="menu2" :close-on-content-click="false" :nudge-right="40"
-                                :return-value.sync="time" lazy transition="scale-transition" offset-y full-width
+                            <VMenu ref="menu" v-model="menu2" :close-on-content-click="false" :nudge-right="40"
+                                :return-value.sync="time" transition="scale-transition" offset-y
                                 max-width="290px" min-width="290px">
                                 <template v-slot:activator="{ on }">
                                     <v-text-field v-model="time" label="Hora da Publicação" readonly
                                         v-on="on"></v-text-field>
                                 </template>
-                                <v-time-picker v-if="menu2" v-model="time" format="24hr" full-width
+                                <v-time-picker v-if="menu2" v-model="time" format="24hr"
                                     @click:minute="$refs.menu.save(time)"></v-time-picker>
-                            </v-menu>
+                            </VMenu>
 
                         </v-col>
                     </v-row>
