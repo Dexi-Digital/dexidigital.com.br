@@ -14,7 +14,7 @@ export default {
     name: 'FormButton',
 }
 </script>
-<style>
+<style scoped>
 
 
 .btn-contact {
@@ -27,16 +27,18 @@ export default {
   font-weight: bold;
   width: 80%;
   text-align: center;
-  transition: background-color 2s, box-shadow 2s, transform 2s;
+  transition: background-color 0.5s, box-shadow 0.5s, transform 0.5s;
+  background-color: #38B6ED!important;
   /* Adiciona uma transição de 2 segundos para as propriedades alteradas no hover */
 }
 
 .btn-contact:hover {
-  color: #38B6ED !important;
+  color: #38B6ED!important;
   cursor: pointer;
   box-shadow: none;
-  background-color: white;
-  border: none;
+  background-color: white!important;
+
+  border: 1px solid #38B6ED!important;
 
 }
 

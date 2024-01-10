@@ -98,7 +98,15 @@ export default {
     color: #38B6ED !important;
     cursor: pointer;
 }
+@media screen and (max-width: 480px) {
 
+    .footer {
+    padding: 60px 30px;
+    background-color: #292929;
+    color: white;
+}
+    
+}
 @media screen and (max-width: 570px) {
     .footer {
         text-align: center;
