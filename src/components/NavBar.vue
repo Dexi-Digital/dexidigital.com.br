@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-sm bg-body-tertiary">
     <div class="container-fluid">
-      <router-link class="navbar-brand" to="/">
+      <router-link  to="/">
         <img class="logo" alt="logo-dexi" src="../assets/dexi.svg" />
       </router-link>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
@@ -12,9 +12,6 @@
         <div class="offcanvas-body">
 
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-
-
-
             <li class="nav-item">
               <router-link class="nav-link " to="/" :class="{ 'active': $route.path === '/' }">{{ $t("nav.home")
               }}</router-link>
@@ -24,27 +21,34 @@
                 $t("nav.content") }}
               </router-link>
             </li>
-            <!-- <li class="nav-item">
-              <router-link class="nav-link " to="/services" :class="{ 'active': $route.path === '/services' }">Services
-              </router-link>
-            </li> -->
-
-
           </ul>
 
-            <div class="dropdown">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-              data-bs-toggle="dropdown" aria-expanded="false">
-             {{$t("nav.services")}}
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <li><a class="dropdown-item" href="/outsourcing-de-ti">  {{$t("nav.it-outsourcing")}}</a></li>
-              <li><a class="dropdown-item" href="/aplicativos-mobile">  {{$t("nav.mobile-apps")}}</a></li>
-              <li><a class="dropdown-item" href="/squad-de-desenvolvimento">  {{$t("nav.development-squad")}}</a></li>
-              <li><a class="dropdown-item" href="/experiencia-digital">  {{$t("nav.digital-experience")}}</a></li>
-            </ul>
-          </div>   
+          <router-link class="nav-link-services " @click="goToAnotherPage" to="/"
+            :class="{ 'active': $route.path === '/services' }">
+            {{ $t("nav.services") }}
+          </router-link>
 
+          <v-menu offset-y v-model="menu">
+            <template v-slot:activator="{ on }">
+              <v-btn class="btn-menu" icon v-on="on">
+                <v-icon>mdi-menu-down</v-icon>
+              </v-btn>
+            </template>
+            <v-list class="list">
+              <v-list-item>
+                <v-list-item-title><a class="dropdown-item" href="/outsourcing-de-ti">
+                    {{ $t("nav.it-outsourcing") }}</a></v-list-item-title>
+                <v-list-item-title> <a class="dropdown-item" href="/aplicativos-mobile">
+                    {{ $t("nav.mobile-apps") }}</a></v-list-item-title>
+                <v-list-item-title> <a class="dropdown-item" href="/squad-de-desenvolvimento">
+                    {{ $t("nav.development-squad") }}</a></v-list-item-title>
+                <v-list-item-title> <a class="dropdown-item" href="/experiencia-digital">
+                    {{ $t("nav.digital-experience") }}</a></v-list-item-title>
+
+
+              </v-list-item>
+            </v-list>
+          </v-menu>
 
           <div class="icon-language" v-if="openedArticle">
             <input type="radio" id="en" v-model="$i18n.locale" value="en" style="display: none">
@@ -81,6 +85,8 @@ export default {
   data() {
     return {
       // showLocaleSwitcher: true,
+      menu: false,
+      items: ['Action', 'Another action', 'Something else here...']
     }
   },
   props: {
@@ -97,7 +103,16 @@ export default {
         location.reload();
       }, 300);
 
+    }, selectItem(item) {
+      // Add your logic for handling the selected item here
+      console.log('Selected Item:', item);
+      this.menu = false; // Close the dropdown after selecting an item
     },
+    goToAnotherPage() {
+      // Add your logic to navigate to another page
+      console.log('Navigating to another page');
+      // Example: this.$router.push('/another-page');
+    }
 
     // setLanguageToPortuguese() {
     //   this.switchLanguage('pt-BR');
@@ -111,6 +126,57 @@ export default {
 </script>
 
 <style scoped>
+.v-list-item {
+  display: block !important;
+}
+
+.btn-dropdown {
+  box-shadow: none;
+  background-color: transparent;
+  font-weight: 400;
+  text-transform: lowercase;
+}
+
+.theme--light.v-btn.v-btn--has-bg {
+  background-color: transparent;
+}
+
+.theme--light.v-btn.v-btn--has-bg:before {
+  background-color: transparent;
+}
+
+.btn-menu:before {
+  background-color: transparent;
+
+}
+
+.btn-menu:focus {
+  background-color: transparent;
+
+}
+
+.dropdown-item {
+  color: #1976d2 ;
+  font-weight: bold;
+  padding-bottom: 8px;
+
+}
+
+.dropdown-item:hover {
+  color: #a8c8f7;
+}
+.mdi-menu-down::before {
+
+color: #0566f8!important;
+}
+
+.v-list {
+  padding: 10px 0 2px 0;
+ 
+}
+.v-menu__content{
+  box-shadow: 0px 15px 35px 0px rgba(104, 114, 121, 0.2) !important;
+}
 .form-select {
   width: 130px;
   cursor: pointer;
@@ -140,21 +206,30 @@ export default {
   box-shadow: 0 3px 6px 0 rgba(105, 105, 105, 0.16) !important;
 }
 
-.navbar-brand:hover {
-  color: #1976d2 !important;
-}
-
-.navbar-brand:focus {
-  color: #1976d2 !important;
-}
-
 .active {
-  border-bottom: 2px solid #000000;
+  border-bottom: 2px solid #a8c8f7;
+  color: #a8c8f7 !important;
 }
 
 .nav-link {
-  color: #000000;
+  color: #0566f8;
+  font-weight: bold;
 }
+.nav-link:hover {
+  color: #0566f8 !important;
+  transform: translateY(-2px) !important;
+
+}
+.nav-link-services {
+  padding-top: 8px;
+  color: #0566f8;
+  font-weight: bold;
+  text-decoration: none;
+}
+.nav-link-services:hover{
+  color: #0566f8!important;
+transform: translateY(-2px) !important;
+} 
 
 .container-nav {
   padding: 15px;
@@ -204,7 +279,7 @@ export default {
 .icon-language {
   display: flex;
   align-items: center;
-  padding: 0 25px;
+  padding: 0 0 0 25px;
 }
 
 a#dropdownMenuLink {
@@ -221,11 +296,6 @@ a#dropdownMenuLink {
   padding-left: 24px;
 }
 
-ul.dropdown-menu.show {
-  background-color: rebeccapurple;
-
-  display: none !important;
-}
 
 .dropdown-menu {
   display: none;
@@ -246,15 +316,20 @@ ul.dropdown-menu.show {
 
 @media screen and (max-width: 575px) {
 
-  .dropdown{
+  .nav-link-services {
     padding-left: 24px;
+  }
+
+  .v-menu__content.theme--light.v-menu__content--fixed.menuable__content__active {
+    left: 97px !important;
+
   }
 
 }
 
 @media screen and (min-width: 576px) {
 
-  .dropdown{
+  .dropdown {
     padding-left: 0;
   }
 
@@ -275,4 +350,11 @@ ul.dropdown-menu.show {
     padding: 0 50px 0 50px;
   }
 
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+
+  .container-fluid {
+    padding: 0 50px 0 50px;
+  }
 }</style>

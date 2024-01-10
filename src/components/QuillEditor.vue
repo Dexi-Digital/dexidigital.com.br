@@ -23,7 +23,7 @@
                                 transition="scale-transition" offset-y full-width max-width="290px" min-width="290px">
                                 <template v-slot:activator="{ on }">
                                     <v-text-field v-model="dateFormatted" label="Data de Publicação"
-                                        hint="MM/DD/YYYY format" persistent-hint @blur="date = parseDate(dateFormatted)"
+                                  
                                         v-on="on"></v-text-field>
                                 </template>
                                 <v-date-picker :locale="ptBR" v-model="date" no-title @input="menu1 = false"
@@ -158,7 +158,7 @@ export default {
             }
             try {
                 const options = { year: "numeric", month: "long", day: "numeric" };
-                const postedName = this.blogLanguage === 'en' ? "Posted in " : "Postado em ";
+                const postedName = this.blogLanguage === 'en' ? "Posted on " : "Postado em ";
                 const date = postedName + new Date().toLocaleDateString(this.blogLanguage === "en" ? 'en-US' : 'pt-BR', options);
                 const timestampInSeconds = Math.floor(+new Date() / 1000).toString();
 
@@ -254,7 +254,9 @@ export default {
             if (!date) return null;
             const [year, month, day] = date.split('-')
             // Ajuste para o formato DD/MM/YYYY
-            return `${day.padStart(2, '0')}/${month.padStart(2, '0')}/${year}`;
+            return `${day}/${month}/${year}`;
+
+            // return `${day.padStart(2, '0')}/${month.padStart(2, '0')}/${year}`;
 
         }, parseDate(date) {
             if (!date) return null

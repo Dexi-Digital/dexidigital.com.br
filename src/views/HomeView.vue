@@ -29,8 +29,8 @@
       </div>
 
     </div>
-     <CarouselComponent />  
-<!--   
+    <CarouselComponent />
+    <!--   
      <div class="details-services">
       <div class="services">
         <h1 class="custom-title-services">{{ $t("services-section.our-services") }}</h1>
@@ -187,7 +187,31 @@ export default {
     NavBar,
     FooterComponent,
     WhatsappButton,
-     CarouselComponent
+    CarouselComponent
+  },
+
+  mounted() {
+    this.$gtag.pageview('/HomeView');
+  },
+  metaInfo() {
+    return {
+
+      title: 'Desenvolvimento de Aplicações Seguras | Dexi Digital',
+      meta: [
+        { name: 'description', content: 'Promova a confiança e a lealdade à marca por meio de experiências personalizadas. Conheça nossos serviços de Outsourcing de TI, Aplicativos Mobile, Squads de Desenvolvimento e Experiência Digital.' },
+        { name: 'keywords', content: 'desenvolvimento de aplicações, aplicações seguras, outsourcing de TI, aplicativos mobile, squads de desenvolvimento, experiência digital, empresa XYZ' },
+        { property: 'og:title', content: 'Desenvolvimento de Aplicações Seguras | Dexi Digital' },
+        { property: 'og:description', content: 'Promova a confiança e a lealdade à marca por meio de experiências personalizadas. Conheça nossos serviços de Outsourcing de TI, Aplicativos Mobile, Squads de Desenvolvimento e Experiência Digital.' },
+        { property: 'og:image', content: 'https:dexidigital.com.br/assets/dexi.svg' },
+        { property: 'og:image:width', content: '1200' },
+        { property: 'og:image:height', content: '630' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: 'https:dexidigital.com.br/' },
+        { property: 'og:site_name', content: 'Dexi Digital' },
+        { property: 'instagram:site', content: 'dexi.digital' },
+        { property: 'company', content: 'Dexi Digital' },
+      ]
+    };
   }
 }
 </script> 
@@ -352,34 +376,8 @@ export default {
   color: #1976d2;
 }
 
-.content-home {
-  padding: 70px 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
 
-.content-card-home {
-  background-color: white;
-  border-radius: 10px;
-  border: 1.5px solid rgb(208 208 208);
-  box-shadow: none !important;
-  width: 100%;
-  margin-bottom: 50px;
-  padding: 20px;
-  margin: 10px !important;
-}
 
-.container-img {
-  display: flex;
-  justify-content: center;
-  padding-top: 20px;
-}
-
-.img-services {
-  height: 100px;
-
-}
 
 .title-home {
   color: #333333;
@@ -426,63 +424,30 @@ export default {
   padding: 0 20px 0 20px;
 }
 
-.custom-title-services {
-  font-weight: 700;
-  color: #333333;
-}
-
-.custom-subtitle-services {
-  font-size: 20px;
-  font-weight: 300;
-  color: #333333;
-}
 
 .btn-contact {
-  padding: 10px;
-  color: white;
-  background-color: #000000;
-  border-radius: 30px;
-  font-size: 14px;
-  font-weight: bold;
-  width: 80%;
-  text-align: center;
-  transition: background-color 2s, box-shadow 2s, transform 2s;
-  /* Adiciona uma transição de 2 segundos para as propriedades alteradas no hover */
+    padding: 15px !important;
+    color: white !important;
+    box-shadow: none;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    width: 280px;
+    text-align: center;
+    transition: background-color 0.5s, box-shadow 0.5s, transform 0.5s;
+    background-color: #000000 !important;
+    /* Adiciona uma transição de 2 segundos para as propriedades alteradas no hover */
 }
 
 .btn-contact:hover {
-  color: white;
-  cursor: pointer;
-  box-shadow: 0 0 5px rgb(0, 0, 0);
-  transform: scale(1.06);
+    color: #ffffff !important;
+    cursor: pointer;
+    box-shadow: none;
+    background-color:#1693e7 !important;
+
+
 }
 
-.btn-contact:hover-out {
-
-  box-shadow: none;
-  /* Remove a sombra quando o mouse sai do botão */
-  transform: scale(1);
-  /* Retorna ao tamanho original quando o mouse sai do botão */
-}
-
-
-.services {
-  text-align: center;
-  margin-top: 100px;
-}
-
-.title-services {
-  color: #332e94;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-}
-
-.description-services {
-  text-align: center;
-  font-size: 15px;
-  font-weight: 400;
-}
 
 .process-details-title {
   font-weight: bold;
@@ -499,17 +464,7 @@ export default {
 
 }
 
-.custom-subtitle-services-content {
-  display: flex;
-  justify-content: center;
-}
 
-.details-custom-subtitle-services {
-  font-weight: 300;
-  width: 620px !important;
-  font-size: 20px;
-  padding-top: 20px;
-}
 
 .process-details-subtitle {
   text-align: center;
@@ -542,16 +497,12 @@ export default {
   justify-content: center;
   height: 70px;
 }
-
-.content-home-image {
-
-  padding: 0px 0px 0 50px !important;
+.content-home-image{
+  padding: 0 0 0 50px!important;
 }
 
 @media screen and (min-width:320px) and (max-width: 480px) {
-  .content-card-home {
-    width: 100%;
-  }
+
 
   .content {
     width: 100%;
@@ -565,6 +516,7 @@ export default {
     width: 275px;
     font-size: 17px;
   }
+  
 }
 
 @media screen and (max-width:500px) {
@@ -598,9 +550,7 @@ export default {
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
-  .content-card-home {
-    width: 45%;
-  }
+
 
   .services {
     margin-top: 60px;
@@ -643,34 +593,38 @@ export default {
 }
 
 @media screen and (max-width: 767px) {
-  .content-home-image {
+  .content-home-image{
     padding: 0 !important;
   }
-
   .background-image-content {
     display: none;
   }
 
   .title-home {
-    font-size: 2rem;
     text-align: center;
-    padding: 120px 0 10px 0;
+    padding: 120px 5px 10px 5px!important;
+    font-size: 43px;
+  
   }
 
   .title {
-    font-size: 2rem !important;
-    text-align: center;
+    font-size: 43px!important;
+    font-weight: bold!important;
+        text-align: center;
+
   }
 
   .description-home,
   .description-home-br {
     text-align: center;
+    font-size: 14px;
   }
 
   .content-btn-contact {
     display: flex;
     justify-content: center;
   }
+ 
 }
 
 @media screen and (max-width: 768px) {
@@ -708,17 +662,16 @@ export default {
     font-size: 23px !important;
   }
 
-  .custom-title-services {
-    padding-top: 60px;
+  .btn-contact{
+    width: 250px;
+    font-size: 14px;
   }
 
   .custom-subtitle-services {
     padding: 0 60px;
   }
 
-  .content-card-home {
-    width: 30%;
-  }
+
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
@@ -744,13 +697,6 @@ export default {
     font-size: 36px !important;
   }
 
-  .custom-title-services {
-    padding-top: 20px;
-  }
-
-  .content-card-home {
-    width: 23%;
-  }
 
   .description-home,
   .description-home-br {
@@ -777,9 +723,7 @@ export default {
     font-size: 42px !important;
   }
 
-  .content-card-home {
-    width: 22%;
-  }
+
 
   .description-home,
   .description-home-br {
@@ -790,9 +734,7 @@ export default {
     padding: 0 200px 0 200px;
   }
 
-  .custom-title-services {
-    padding-top: 40px;
-  }
+
 }
 
 @media screen and (min-width: 1201px) and (max-width: 1440px) {
@@ -804,17 +746,10 @@ export default {
     display: flex;
     justify-content: end;
   }
+  
 
   .process-details-subtitle {
     width: 900px !important;
-  }
-
-  .content-card-home {
-    width: 350px !important;
-  }
-
-  .custom-title-services {
-    padding-top: 80px !important;
   }
 
   .content-home {
@@ -837,20 +772,15 @@ export default {
     width: 1300px;
   }
 
-  .content-card-home {
-    width: 400px !important;
 
-  }
 
-  .custom-title-services {
-    padding-top: 120px;
-  }
 }
 
 @media screen and (min-width: 1441px) and (max-width: 1920px) {
   .content-home-image {
     padding: 80px 0px 0 100px;
   }
+  
 
   .background-image {
     height: 580px;
@@ -862,17 +792,23 @@ export default {
   }
 
   .title-home {
-    padding-top: 120px !important;
-    font-size: 42px;
+    padding-top: 210px !important;
+    font-size: 50px;
   }
 
+
   .title {
-    font-size: 42px !important;
+    font-size: 55px !important;
+ 
   }
 
   .description-home,
   .description-home-br {
-    font-size: 28px;
+    font-size: 24px;
+    font-weight: 500;
+  }
+  .btn-contact{
+    margin-top: 30px!important;
   }
 }
 
@@ -891,14 +827,6 @@ export default {
     font-size: 27px;
   }
 
-  .content-home-image {
-    padding: 80px 0px 0 15%;
-  }
-
-  .custom-title-services {
-    padding-top: 287px;
-  }
-
   .background-image {
     height: 28%;
     position: absolute;
@@ -911,9 +839,6 @@ export default {
 }
 
 @media screen and (min-width: 2401px) {
-  .custom-title-services {
-    padding-top: 224px !important;
-  }
 
   .content {
     width: 35%;
@@ -933,9 +858,7 @@ export default {
     font-size: 27px;
   }
 
-  .content-home-image {
-    padding: 80px 0px 0 20% !important;
-  }
+
 
   .background-image {
     height: 28%;

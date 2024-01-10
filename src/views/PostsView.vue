@@ -7,26 +7,32 @@
                 <v-progress-circular v-if="loadingFirebaseValue" class="loading" indeterminate
                     color="primary"></v-progress-circular>
                 <div class="content-no-card" v-else-if="posts.length === 0">
-
                     <div class="content-no-card">
                         <p class="text-no-card">Não há nenhum post para exibir.</p>
                     </div>
                 </div>
                 <div v-else>
-                    <div v-for="(post, index) in posts" :key="index">
-
+                    <div v-for="(post, index) in posts" :key="index"  v-show="verifyCanPost(post.dateHourToPost)">
                         <div v-if="cleanTitleForUrl(post.title) === cleanTitleForUrl(localUrl)" class="content-post">
-
                             <h2 class="title-post" v-html="post.title"></h2>
-                            <p class="date-post" v-html="post.date"></p>
+                            <!-- <p class="date-post" v-html="post.date"></p> -->
+                            <p class="date-post" v-html="post.dateHourToPost ? formatDateHour(post.dateHourToPost) : post.date"></p>
+
                             <v-img class="img-blog" :src="getPostImage(post.pathImgOnFirebase)"
                                 alt="Imagem do Post"></v-img>
                             <p class="description-post" v-html="post.content"></p>
+                            <div class="post-sharing-section">
+          
+                            </div>
                         </div>
 
                     </div>
                 </div>
-
+                      <!-- <div class="share-container">
+    <div class="share-text">Share this post:</div>
+    <button class="share-button" @click="shareToFacebook">Share on Facebook</button>
+    <button class="share-button" @click="shareToTwitter">Share on Twitter</button>
+</div> -->
                 <WhatsappButton />
                 <FooterComponent />
             </div>
@@ -63,7 +69,7 @@ export default {
     },
     watch: {
         '$route'() {
-            
+
             this.localUrl = this.$route.params.title;
         }
     },
@@ -84,27 +90,27 @@ export default {
 
     methods: {
         cleanTitleForUrl(title) {
-  return title
-  .toLowerCase()
-        .replace(/ç/g, 'c') // Replace "ç" with "c"
-        .replace(/â/g, 'a') // Replace "â" with "a"
-        .replace(/ã/g, 'a') // Replace "ã" with "a"
-        .replace(/á/g, 'a') // Replace "á" with "a"
-        .replace(/à/g, 'a') // Replace "à" with "a"
-        .replace(/é/g, 'e') // Replace "é" with "e"
-        .replace(/ê/g, 'e') // Replace "ê" with "e"
-        .replace(/í/g, 'i') // Replace "í" with "i"
-        .replace(/ó/g, 'o') // Replace "ó" with "o"
-        .replace(/ô/g, 'o') // Replace "ô" with "o"
-        .replace(/õ/g, 'o') // Replace "õ" with "o"
-        .replace(/ú/g, 'u') // Replace "ú" with "u"
-        .replace(/ü/g, 'u') // Replace "ü" with "u"
-        .replace(/,/g, '-') //
-        .replace(/\s+/g, '-') // Replace spaces with hyphens again (there may be additional spaces)
-        .replace(/--+/g, '-') // Replace multiple hyphens with a single hyphen
-        .replace(/:/g, '') // Remove ":"
-        .replace(/\?/g, '') // Add this line to replace "?"
-        + '/'; // Adicionar barra no final
+            return title
+                .toLowerCase()
+                .replace(/ç/g, 'c') // Replace "ç" with "c"
+                .replace(/â/g, 'a') // Replace "â" with "a"
+                .replace(/ã/g, 'a') // Replace "ã" with "a"
+                .replace(/á/g, 'a') // Replace "á" with "a"
+                .replace(/à/g, 'a') // Replace "à" with "a"
+                .replace(/é/g, 'e') // Replace "é" with "e"
+                .replace(/ê/g, 'e') // Replace "ê" with "e"
+                .replace(/í/g, 'i') // Replace "í" with "i"
+                .replace(/ó/g, 'o') // Replace "ó" with "o"
+                .replace(/ô/g, 'o') // Replace "ô" with "o"
+                .replace(/õ/g, 'o') // Replace "õ" with "o"
+                .replace(/ú/g, 'u') // Replace "ú" with "u"
+                .replace(/ü/g, 'u') // Replace "ü" with "u"
+                .replace(/,/g, '-') //
+                .replace(/\s+/g, '-') // Replace spaces with hyphens again (there may be additional spaces)
+                .replace(/--+/g, '-') // Replace multiple hyphens with a single hyphen
+                .replace(/:/g, '') // Remove ":"
+                .replace(/\?/g, '') // Add this line to replace "?"
+                + '/'; // Adicionar barra no final
         },
 
         async getDonwloadUrlAndSetblogImgUrl() {
@@ -148,6 +154,52 @@ export default {
             const options = { year: 'numeric', month: 'long', day: 'numeric' };
             return 'Postado em: ' + new Date(date).toLocaleDateString('pt-BR', options);
         },
+        verifyCanPost(dateHourToPost) {
+      const today = new Date();
+      const postDate = this.convertTimestampToDate(dateHourToPost);
+      const canPost = today >= new Date(postDate);
+      return canPost;
+    },
+    formatDateHour(date) {
+      const hasPosted = this.verifyCanPost(date);
+
+       const options = { year: 'numeric', month: 'long', day: 'numeric' };
+
+      if (this.$store.state.language === 'pt-BR') {
+        return hasPosted ? 'Postado em: ' + new Date(date.seconds * 1000).toLocaleDateString('pt-BR', options) : 'Será postado em: ' + new Date(date.seconds * 1000).toLocaleDateString('pt-BR', options);
+      } else {
+        return hasPosted ? 'Posted on: ' + new Date(date.seconds * 1000).toLocaleDateString('en-US', options) : 'Will be posted on: ' + new Date(date.seconds * 1000).toLocaleDateString('en-US', options);
+      }
+    },
+
+//     formatDateHour(date) {
+//   const hasPosted = this.verifyCanPost(date);
+//   const options = { year: 'numeric', month: 'long', day: 'numeric' };
+
+//   if (this.$store.state.language === 'pt-BR') {
+//     return hasPosted ? 'Postado em: ' + new Date(date.seconds * 1000).toLocaleDateString('pt-BR', options) : 'Será postado em: ' + new Date(date.seconds * 1000).toLocaleDateString('pt-BR', options);
+//   } else {
+//     return hasPosted ? 'Posted on: ' + new Date(date.seconds * 1000).toLocaleDateString('en-US', options) : 'Will be posted on: ' + new Date(date.seconds * 1000).toLocaleDateString('en-US', options);
+//   }
+// },
+      convertTimestampToDate(timestamp) {
+      const seconds = timestamp?.seconds;
+      const milliseconds = seconds * 1000;
+
+      // Criar uma instância de Date usando os milissegundos
+      const date = new Date(milliseconds);
+
+      return date;
+    },
+        // shareToFacebook() {
+        //     const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
+        //     window.open(url, '_blank');
+        // },
+
+        // shareToTwitter() {
+        //     const url = `https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}`;
+        //     window.open(url, '_blank');
+        // }
     }
 
 }
@@ -230,6 +282,8 @@ export default {
 .img-blog {
     width: 100%;
     margin-bottom: 20px;
+    border-radius: 20px;
+
 }
 
 ::v-deep .v-application p {
@@ -285,4 +339,22 @@ export default {
 
     }
 }
-</style>
+
+@media screen and (min-width: 1024px) {
+    .img-blog {
+        width: 100%;
+        border-radius: 20px;
+
+    }
+
+    ::v-deep .v-image__placeholder {
+
+        background-position: 100% 30px !important;
+
+    }
+
+    ::v-deep .v-responsive__sizer {
+
+        padding-bottom: 40% !important;
+    }
+}</style>

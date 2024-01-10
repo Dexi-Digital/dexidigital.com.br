@@ -1,4 +1,4 @@
- <template>
+<template>
     <div>
         <NavBar />
         <div class="digital-experience-container">
@@ -147,7 +147,7 @@
                     </span>
                     {{ $t("DIGITAL-EXPERIENCE.agile-methodology-at-dexi-digital-strong-title") }}
                 </h2>
-      
+
                 <p class="digital-experience-advantages-description">
                     {{ $t("DIGITAL-EXPERIENCE.agile-methodology-at-dexi-digital-description") }}
                 </p>
@@ -172,7 +172,7 @@
             </div>
 
 
-            <div     class="digital-experience-container-contact">
+            <div class="digital-experience-container-contact">
                 <p class="digital-experience-container-contact-background">
                     {{ $t("DIGITAL-EXPERIENCE.get-in-touch") }}
 
@@ -445,8 +445,8 @@ export default {
 
 @media screen and (min-width:769px) and (max-width: 1024px) {
     .digital-experience-content-img {
-        height: auto;
-        width: 70%;
+        height: 292px;
+        width: 74%;
         border-radius: 20px;
 
     }
@@ -463,7 +463,6 @@ export default {
 @media screen and (min-width: 1025px) {
     .digital-experience-content-img {
         height: 65vh;
-        width: 70%;
         border-radius: 20px;
     }
 

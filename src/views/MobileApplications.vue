@@ -407,9 +407,9 @@ export default {
 
 @media screen and (min-width:769px) and (max-width: 1024px) {
     .mobile-applications-content-img {
-        height: auto;
-        width: 70%;
-        border-radius: 20px;
+        height: 292px;
+    width: 74%;
+    border-radius: 20px;
 
     }
 
@@ -424,7 +424,6 @@ export default {
 @media screen and (min-width: 1025px) {
     .mobile-applications-content-img {
         height: 65vh;
-        width: 70%;
         border-radius: 20px;
     }
 

@@ -273,7 +273,9 @@ export default {
             padding: 0;
             font-size: 40px;
             font-weight: 700;
-            background: linear-gradient(to right, #158BBF 0%, #4A00E0 100%);
+            background: -webkit-linear-gradient(to right, #158BBF 0%, #4A00E0 100%);
+            background: -moz-linear-gradient(to right, #158BBF 60%, #4A00E0 100%);
+            background: linear-gradient(to right, #158BBF 50%, #2900e0 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -414,8 +416,8 @@ export default {
 
 @media screen and (min-width:769px) and (max-width: 1024px) {
     .it-outsourcing-content-img {
-        height: auto;
-        width: 70%;
+        height: 292px;
+        width: 74%;
         border-radius: 20px;
 
     }
@@ -432,7 +434,6 @@ export default {
 @media screen and (min-width: 1025px) {
     .it-outsourcing-content-img {
         height: 65vh;
-        width: 70%;
         border-radius: 20px;
     }
 
