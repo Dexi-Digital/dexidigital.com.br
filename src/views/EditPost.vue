@@ -234,7 +234,7 @@ export default {
       if (this.$store.state.language === 'pt-BR') {
         return hasPosted ? 'Postado em: ' + new Date(date.seconds * 1000).toLocaleDateString('pt-BR') : 'Será postado em: ' + new Date(date.seconds * 1000).toLocaleDateString('pt-BR');
       } else {
-        return hasPosted ? 'Posted in: ' + new Date(date.seconds * 1000).toLocaleDateString('en-US') : 'Will be posted in: ' + new Date(date.seconds * 1000).toLocaleDateString('en-US');
+        return hasPosted ? 'Posted on: ' + new Date(date.seconds * 1000).toLocaleDateString('en-US') : 'Will be posted on: ' + new Date(date.seconds * 1000).toLocaleDateString('en-US');
       }
     },
     formatDate(date) {
