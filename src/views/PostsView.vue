@@ -65,8 +65,6 @@ export default {
         WhatsappButton
     },
     mounted() {
-        // Exemplo de rastreamento de uma visualização de página
-        this.$gtag.pageview('/PostsView');
         this.getPostsFromFirebase();
     },
     watch: {

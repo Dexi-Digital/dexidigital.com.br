@@ -178,12 +178,8 @@
 <script scoped>
 import NavBar from '../components/NavBar'
 import FooterComponent from '../components/FooterComponent'
-import Vue from 'vue'
 import WhatsappButton from '../components/WhatsappButton.vue';
 import CarouselComponent from '../components/CarouselComponent.vue';
-
-import VueMeta from 'vue-meta'
-Vue.use(VueMeta);
 
 export default {
   name: 'HomeView',
