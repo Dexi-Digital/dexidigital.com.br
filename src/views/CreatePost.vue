@@ -2,7 +2,7 @@
     <div>
         <div v-if="token">
             <NavBarPost />
-            <quill-editor></quill-editor>
+            <quill-editor locale="ptBR"></quill-editor>
 
         </div>
         <div class="page-no-access" v-else>
