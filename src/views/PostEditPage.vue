@@ -22,6 +22,32 @@
                                 </v-col>
                             </v-row>
                         </div>
+                        <v-col cols="6" sm="6" md="3" lg="3" xl="3">
+                            <v-menu ref="menu1" v-model="menu1" :close-on-content-click="false" :nudge-right="40" lazy
+                                transition="scale-transition" offset-y full-width max-width="290px" min-width="290px">
+                                <template v-slot:activator="{ on }">
+                                    <v-text-field v-model="dateFormatted" label="Editar Data de publicação"
+                                        v-on="on"></v-text-field>
+                                </template>
+                                <v-date-picker v-model="date" no-title
+                                    @input="menu1 = false"></v-date-picker>
+                            </v-menu>
+
+                        </v-col>
+                        <v-col cols="6" sm="6" md="6" lg="6" xl="6">
+
+                            <v-menu ref="menu" v-model="menu2" :close-on-content-click="false" :nudge-right="40"
+                                :return-value.sync="time" lazy transition="scale-transition" offset-y full-width
+                                max-width="290px" min-width="290px">
+                                <template v-slot:activator="{ on }">
+                                    <v-text-field v-model="time" label="Hora da Publicação" readonly
+                                        v-on="on"></v-text-field>
+                                </template>
+                                <v-time-picker v-if="menu2" v-model="time" format="24hr" full-width
+                                    @click:minute="$refs.menu.save(time)"></v-time-picker>
+                            </v-menu>
+
+                        </v-col>
                     </div>
                     <v-img v-if="imageControl !== 0" :src="blogImgUrl" :height="200" alt=" Imagem do
                 Blog"></v-img>
@@ -69,49 +95,33 @@ export default {
             blogTitle: '',
             blogImgUrl: '',
             token: localStorage.getItem("token"),
-
-            err: null // O conteúdo do editor será armazenado aqui
-
+            err: null,// O conteúdo do editor será armazenado aqui
+            date: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
+            dateFormatteded: this.formatDate((new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)),
+            menu1: false,
+            menu2: false,
+            time: null,
+            dateFormatted: null,
         };
 
-     },
+    },
+    computed: {
+        computedDateFormatted() {
+            return this.formatDate(this.date)
+        },
+
+    },
+
+    watch: {
+        date() {
+            this.dateFormatted = this.formatDate(this.date)
+        },
+    },
     created() {
         this.loadPostData();
     },
 
     methods: {
-        async sendToFirebase() {
-            this.err = null; // Limpa o erro anterior antes de tentar novamente
-
-            if (this.content.trim() === '' && this.blogTitle.trim() === '') {
-                this.err = 'Todos os campos são obrigatórios.';
-                return;
-            }
-            try {
-                const options = { year: 'numeric', month: 'long', day: 'numeric' };
-                const date = 'Postado em: ' + new Date().toLocaleString('pt-BR', options);
-                const timestampInSeconds = Math.floor(+new Date / 1000)
-                await firebaseDb.collection('posts').add({
-                    content: this.content,
-                    title: this.blogTitle,
-                    pathImgOnFirebase: this.pathImgOnFirebase,
-                    date: date,
-                    id: timestampInSeconds
-
-
-                });
-                // Limpar o campo de conteúdo após o envio bem-sucedido
-                this.content = '';
-                this.blogTitle = '';
-                this.blogImgUrl = '';
-                this.pathImgOnFirebase = '';
-
-                this.$router.push('/editar-post');
-
-            } catch (error) {
-                this.err = error;
-            }
-        },
         async getDonwloadUrlAndSetblogImgUrl() {
             const storage = getStorage();
             const storageRef = ref(storage, 'images/' + document.getElementById("files").files[0].name);
@@ -154,6 +164,7 @@ export default {
                     this.blogTitle = post.title;
                     this.content = post.content;
                     this.pathImgOnFirebase = post.pathImgOnFirebase;
+                    // this.dateFormatted = post.dateHourToPost;
                 }
 
 
@@ -165,15 +176,58 @@ export default {
             try {
                 const postId = this.$route.params.postId;
                 const docRef = firebaseDb.collection(this.$store.state.language === 'en' ? 'posts-en' : 'posts').doc(postId);
+                this.setDateHourToPost();
+
                 await docRef.update({
                     title: this.blogTitle,
                     content: this.content,
                     pathImgOnFirebase: this.pathImgOnFirebase,
+                    dateHourToPost: this.dateHourToPost
                 });
                 console.log("Post atualizado com sucesso");
                 this.$router.push('/editar-post'); // Redirecionar para a página de lista de posts após a atualização
             } catch (error) {
                 console.error("Erro ao atualizar o post:", error);
+            }
+        },
+        // formatDate(date) {
+        //     //formato de data, não exluir 
+        //     const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        //     return new Date(date).toLocaleString('pt-BR', options);
+        // },
+        formatDate(date) {
+            if (!date) return null;
+            const [year, month, day] = date.split('-')
+            // Ajuste para o formato DD/MM/YYYY
+            return `${day}/${month}/${year}`;
+
+            // return `${day.padStart(2, '0')}/${month.padStart(2, '0')}/${year}`;
+
+        },
+        parseDate(date) {
+            if (!date) return null
+            const [month, day, year] = date.split('/')
+            return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`
+        },
+       
+        setDateHourToPost() {
+            //Certifique-se de que a data e a hora estão definidas antes de criar a nova data
+            if (this.dateFormatted && this.time) {
+                const [day, month, year] = this.dateFormatted.split('/');
+                const [hours, minutes] = this.time.split(':');
+
+                // Certifique-se de que todos os valores são numéricos
+                const numericValues = [day, month, year, hours, minutes].map(Number);
+
+                // Verifique se há algum NaN (Not a Number) nos valores
+                if (!numericValues.some(isNaN)) {
+                    //             // Crie a nova data com os valores extraídos
+                    this.dateHourToPost = new Date(numericValues[2], numericValues[1] - 1, numericValues[0], numericValues[3], numericValues[4]);
+                } else {
+                    console.error('Valores não numéricos encontrados ao criar a data.');
+                }
+            } else {
+                console.error('Data ou hora não definidas ao criar a data.');
             }
         },
 
