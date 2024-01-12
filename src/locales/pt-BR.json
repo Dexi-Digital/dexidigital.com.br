@@ -6,7 +6,8 @@
         "it-outsourcing": "Outsourcing de Ti",
         "mobile-apps": "Aplicativos Mobile",
         "development-squad": "Squad de Desenvolvimento",
-        "digital-experience": "Experiência Digital"
+        "digital-experience": "Experiência Digital",
+        "site-map": "Mapa do Site"
     },
     "header": {
         "title": "Qualidade e Agilidade em ",
@@ -15,6 +16,16 @@
         "description": "Promova a confiança e a lealdade à marca",
         "description-br": "por meio de experiências personalizadas",
         "contact-button": "Solicitar um orçamento"
+    },
+    "sitemap": {
+        "map": "Mapa do site",
+        "home": "Home",
+        "content": "Conteúdos",
+        "service": "Serviços",
+        "outsourcing": "Outsourcing de Ti",
+        "app-mobile": "Aplicativos Mobile",
+        "squad-development": "Squad de Desenvolvimento",
+        "digital-experince": "Experiência Digital"
     },
     "services-section": {
         "our-services": "Nossos Serviços",

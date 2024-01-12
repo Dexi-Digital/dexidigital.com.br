@@ -21,6 +21,11 @@
                 $t("nav.content") }}
               </router-link>
             </li>
+            <li class="nav-item">
+              <router-link class="nav-link " to="/Sitemap" :class="{ 'active': $route.path === '/Sitemap' }">{{
+                $t("nav.site-map") }}
+              </router-link>
+            </li>
           </ul>
 
           <router-link class="nav-link-services " @click="goToAnotherPage" to="/"

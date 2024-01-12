@@ -6,7 +6,8 @@
     "it-outsourcing": "It Outsourcing",
     "mobile-apps": "Mobile Apps",
     "development-squad": "Development Squads",
-    "digital-experience": "Digital Experience"
+    "digital-experience": "Digital Experience",
+    "site-map": "Site Map"
   },
   "header": {
     "title": "Strengthen Trust and Brand",
@@ -16,6 +17,16 @@
     "description-br": "with Agile Delivery",
     "contact-button": "Get Your Customized Quote Now"
   },
+  "sitemap": {
+    "map": "Site Map",
+    "home": "Home",
+    "content": "Contents",
+    "service": "Services",
+    "outsourcing": "IT Outsourcing",
+    "app-mobile": "Mobile Applications",
+    "squad-development": "Development Squad",
+    "digital-experince": "Digital Experience"
+},
   "services-section": {
     "our-services": "Our Services",
     "dynamic-teams": "Transform your vision into reality with our dynamic teams, dedicated to strategic projects that drive sustainable growth for your business.",

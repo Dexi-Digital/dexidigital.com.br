@@ -15,6 +15,7 @@ import ItOutsourcing from '../views/ItOutsourcing.vue'
 import MobileApplications from '../views/MobileApplications.vue'
 import DevelopmentSquads from '../views/DevelopmentSquads.vue'
 import DigitalExperience from '../views/DigitalExperience.vue'
+import SiteMap from '../views/Sitemap.vue';
 
 Vue.use(VueRouter)
 
@@ -105,7 +106,12 @@ const routes = [
     name: 'experiencia-digital',
     component: DigitalExperience
 
-  }
+  },
+  {
+    path: '/Sitemap',
+    name: 'Sitemap',
+    component: SiteMap,
+  },
 ]
 
 const router = new VueRouter({
