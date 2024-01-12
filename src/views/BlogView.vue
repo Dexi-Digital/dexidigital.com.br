@@ -24,8 +24,7 @@
         </v-card-text>
 
       </v-card>
-
-    </div>
+  </div>
     <WhatsappButton />
 
     <FooterComponent />
@@ -71,14 +70,6 @@ export default {
       const canPost = today >= new Date(postDate);
       return canPost;
     },
-    // navigateToBlog(item) {
-    //   this.$router.push({
-    //     path: `/posts/${encodeURIComponent(item.title)}`,
-    //     query: {
-    //       data: item
-    //     }
-    //   });
-    // },
     navigateToBlog(item) {
       const cleanedTitle = this.cleanTitleForUrl(item.title);
       this.$router.push({
@@ -133,21 +124,6 @@ export default {
         return text;
       }
     },
-    // getPostsFromFirebase() {
-    //   this.loadingFirebaseValue = true;
-
-    //   this.arrayComValoresDoFirebase = []; // Limpa a array antes de adicionar novos posts
-
-    //   firebaseDb.collection(this.$store.state.language === 'en' ? 'posts-en' : 'posts').get()
-    //     .then((querySnapshot) => {
-    //       this.loadingFirebaseValue = false;
-    //       querySnapshot.forEach((doc) => {
-    //         const post = doc.data();
-    //         this.arrayComValoresDoFirebase.push(post);
-    //       });
-    //       return this.getDonwloadUrlAndSetblogImgUrl();
-    //     });
-    // },
     getPostsFromFirebase() {
       this.loadingFirebaseValue = true;
 
@@ -161,10 +137,10 @@ export default {
             this.arrayComValoresDoFirebase.push(post);
           });
 
-          // Sorting the array based on dateHourToPost
+          // / Classificando o array com base em dateHourToPost, modificando ordem dos posts
           this.arrayComValoresDoFirebase.sort((a, b) => {
             if (a.dateHourToPost && b.dateHourToPost) {
-              return a.dateHourToPost.seconds - b.dateHourToPost.seconds;
+              return b.dateHourToPost.seconds - a.dateHourToPost.seconds;
             } else {
               return 0;
             }
