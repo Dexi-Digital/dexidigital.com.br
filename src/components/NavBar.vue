@@ -24,7 +24,7 @@
           </ul>
 
           <router-link class="nav-link-services " @click="goToAnotherPage" to="/"
-            :class="{ 'active': $route.path === '/services' }">
+            :class="{ 'active': $route.path === '/servicos' }">
             {{ $t("nav.services") }}
           </router-link>
 

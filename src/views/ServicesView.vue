@@ -38,7 +38,7 @@
                 <v-col cols="12" sm="6" md="4" lg="4" xl="3">
                     <v-card class="mx-auto content-card-home">
                         <div class="container-img">
-                            <img class="img-services" src="../assets/services/outsourcing-de-ti.png"
+                            <img class="img-services" src="../assets/servicos/outsourcing-de-ti.png"
                                 alt="Outsourcing de TI">
                         </div>
                     </v-card>
@@ -50,7 +50,7 @@
 
                     <v-card class="mx-auto content-card-home">
                         <div class="container-img">
-                            <img class="img-services" src="../assets/services/aplicativos-mobile.png"
+                            <img class="img-services" src="../assets/servicos/aplicativos-mobile.png"
                                 alt="Aplicativos Mobile">
                         </div>
 
@@ -64,7 +64,7 @@
 
                     <v-card class="mx-auto content-card-home content-card-home-squads">
                         <div class="container-img-squads">
-                            <img class="img-services" src="../assets/services/squads-de-desenvolvimento.png"
+                            <img class="img-services" src="../assets/servicos/squads-de-desenvolvimento.png"
                                 alt="Squads de desenvolvimento">
                         </div>
                     </v-card>
@@ -78,7 +78,7 @@
 
                     <v-card class="mx-auto content-card-home">
                         <div class="container-img">
-                            <img class="img-services" src="../assets/services/experiencia-digital.png"
+                            <img class="img-services" src="../assets/servicos/experiencia-digital.png"
                                 alt="Experiência digital">
                         </div>
 

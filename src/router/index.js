@@ -30,7 +30,7 @@ const routes = [
     component: BlogView
   },
   {
-    path: '/services',
+    path: '/servicos',
     name: 'services',
     component: ServicesView
   },
@@ -82,12 +82,12 @@ const routes = [
   },
   {
     path: '/politica-de-privacidade',
-    name: 'PrivacyPolicy',
+    name: 'privacy-policy',
     component: PrivacyPolicy
   },
   {
     path: '/outsourcing-de-ti',
-    name: 'ItOutsourcing',
+    name: 'it-outsourcing',
     component: ItOutsourcing
   },
   {
