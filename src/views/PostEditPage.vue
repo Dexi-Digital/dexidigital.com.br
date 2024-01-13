@@ -8,10 +8,10 @@
 
                         <div class="blog-row">
                             <v-row>
-                                <v-col cols="12" sm="12" md="12" lg="12" xl="8">
+                                <v-col cols="12" sm="6" md="6" lg="6" xl="6">
                                     <v-text-field v-model="blogTitle" label="Titulo do Post"></v-text-field>
                                 </v-col>
-                                <v-col cols="12" sm="12" md="12" lg="8" xl="4">
+                                <v-col cols="12" sm="6" md="6" lg="6" xl="6">
                                     <v-file-input v-model="imageControl" :disabled="!blogTitle"
                                         :style="{ opacity: blogTitle ? 1 : 0.5, width: '199' }"
                                         :label="blogImgUrl || loadingImage ? null : 'Selecione uma Imagem'" type="file"
@@ -22,7 +22,8 @@
                                 </v-col>
                             </v-row>
                         </div>
-                        <v-col cols="6" sm="6" md="3" lg="3" xl="3">
+                    <v-row>
+                        <v-col cols="12" sm="6" md="6" lg="6" xl="6">
                             <v-menu ref="menu1" v-model="menu1" :close-on-content-click="false" :nudge-right="40" lazy
                                 transition="scale-transition" offset-y full-width max-width="290px" min-width="290px">
                                 <template v-slot:activator="{ on }">
@@ -34,7 +35,7 @@
                             </v-menu>
 
                         </v-col>
-                        <v-col cols="6" sm="6" md="6" lg="6" xl="6">
+                        <v-col cols="12" sm="6" md="6" lg="6" xl="6">
 
                             <v-menu ref="menu" v-model="menu2" :close-on-content-click="false" :nudge-right="40"
                                 :return-value.sync="time" lazy transition="scale-transition" offset-y full-width
@@ -48,6 +49,7 @@
                             </v-menu>
 
                         </v-col>
+                    </v-row>
                     </div>
                     <v-img v-if="imageControl !== 0" :src="blogImgUrl" :height="200" alt=" Imagem do
                 Blog"></v-img>
@@ -97,11 +99,10 @@ export default {
             token: localStorage.getItem("token"),
             err: null,// O conteúdo do editor será armazenado aqui
             date: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
-            dateFormatteded: this.formatDate((new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)),
+            dateFormatted: null,
             menu1: false,
             menu2: false,
             time: null,
-            dateFormatted: null,
         };
 
     },
@@ -109,7 +110,6 @@ export default {
         computedDateFormatted() {
             return this.formatDate(this.date)
         },
-
     },
 
     watch: {
@@ -164,7 +164,8 @@ export default {
                     this.blogTitle = post.title;
                     this.content = post.content;
                     this.pathImgOnFirebase = post.pathImgOnFirebase;
-                    // this.dateFormatted = post.dateHourToPost;
+                    this.dateFormatted = post.dateHourToPost.toDate().toLocaleDateString('pt-BR');
+                    this.time = post.dateHourToPost.toDate().toLocaleTimeString('pt-BR');
                 }
 
 
@@ -235,6 +236,7 @@ export default {
 }
 </script> 
 
+
 <style scoped >
 .page-no-access {
     text-align: center;
@@ -261,12 +263,12 @@ export default {
 
 .input {
     background-color: #158BBF;
-    margin: 5px;
+    /* margin: 5px; */
     color: white !important;
     border-radius: 20px;
-    width: 50%;
     cursor: pointer;
-    margin-bottom: 20px !important;
+    margin-bottom: 0!important;
+    width: 100%;
 
 }
 
