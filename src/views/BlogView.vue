@@ -59,7 +59,7 @@ export default {
       localImages: [],
       arrayComValoresDoFirebase: [],
       loadingFirebaseValue: false,
-      itemsPerPage: 11, // itens por página
+      itemsPerPage: 13, // itens por págin2
       currentPage: 1,  // Página atual
     }
   },
