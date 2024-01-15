@@ -14,6 +14,7 @@
                 <div v-else>
                     <div v-for="(post, index) in posts" :key="index"  v-show="verifyCanPost(post.dateHourToPost)">
                         <div v-if="cleanTitleForUrl(post.title) === cleanTitleForUrl(localUrl)" class="content-post">
+                                                    {{ identifyIfLocalUrlIsEqualToOgTitle(post) }} 
                             <h2 class="title-post" v-html="post.title"></h2>
                             <!-- <p class="date-post" v-html="post.date"></p> -->
                             <p class="date-post" v-html="post.dateHourToPost ? formatDateHour(post.dateHourToPost) : post.date"></p>
@@ -21,18 +22,20 @@
                             <v-img class="img-blog" :src="getPostImage(post.pathImgOnFirebase)"
                                 alt="Imagem do Post"></v-img>
                             <p class="description-post" v-html="post.content"></p>
-                            <div class="post-sharing-section">
-          
-                            </div>
-                        </div>
+                            <!-- Adicione os botões de compartilhamento aqui -->
+                            <div class="share-buttons">
+                                <p class="article-share">{{ $t("POSTS.share-this-post") }}</p>
+                                <div class="content-media">
+                                    <facebook :url="url" scale="2"></facebook>
+                                    <span style=" margin-right: 10px!important;"></span>
+                                    <linkedin class="facebook" :url="url" scale="2"></linkedin>
+                                </div>
 
+                         </div>
+                        </div>
+                      
                     </div>
                 </div>
-                      <!-- <div class="share-container">
-    <div class="share-text">Share this post:</div>
-    <button class="share-button" @click="shareToFacebook">Share on Facebook</button>
-    <button class="share-button" @click="shareToTwitter">Share on Twitter</button>
-</div> -->
                 <WhatsappButton />
                 <FooterComponent />
             </div>
@@ -53,7 +56,9 @@ import Vue from 'vue'
 import WhatsappButton from '../components/WhatsappButton.vue';
 import { firebaseDb } from "../firebaseConfig";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
-import VueMeta from 'vue-meta'
+import VueMeta from 'vue-meta';
+import { Facebook, Linkedin } from "vue-socialmedia-share";
+
 Vue.use(VueMeta);
 
 export default {
@@ -62,7 +67,9 @@ export default {
     components: {
         NavBar,
         FooterComponent,
-        WhatsappButton
+        WhatsappButton,
+        Facebook,
+        Linkedin,
     },
     mounted() {
         this.getPostsFromFirebase();
@@ -81,14 +88,75 @@ export default {
     data() {
         return {
             localUrl: this.$route.params.title,
+            url: "https://www.dexidigital.com.br/posts/" + this.$route.params.title,
             localImages: [],
             posts: [],
             imagesMap: [],
             loadingFirebaseValue: false,
+            metaDescription: 'Aqui, compartilhamos posts detalhados sobre tecnologia e como elas podem impactar e melhorar o seu dia a dia.',
+            ogTitle: 'Post de Dexi Digital',
+            ogImage: 'https://opengraph.b-cdn.net/production/documents/398b8162-e150-4dd6-8c7b-225257bbd3e8.svg?token=LdiL5OSzPVA3CpIL8a9s1YAefstj0lfwbQBiqqIbGX4&height=363&width=765&expires=33241257736',
+            twitterTitle: 'Post de Dexi Digital',
+            twitterImage: 'https://opengraph.b-cdn.net/production/documents/398b8162-e150-4dd6-8c7b-225257bbd3e8.svg?token=LdiL5OSzPVA3CpIL8a9s1YAefstj0lfwbQBiqqIbGX4&height=363&width=765&expires=33241257736',
         };
     },
 
     methods: {
+        createMetaTags() {
+            // const head = document.head;
+
+            // Criar e adicionar as tags meta ao head
+            this.appendMetaTag("description", this.metaDescription);
+            this.appendMetaTag("og:url", "https://www.dexidigital.com.br/politica-de-privacidade", "property", "og:url");
+            this.appendMetaTag("og:type", "website", "property", "og:type");
+            this.appendMetaTag("og:title", this.ogTitle, "property", "og:title");
+            this.appendMetaTag("og:description", this.metaDescription, "property", "og:description");
+            this.appendMetaTag("og:image", this.ogImage, "property", "og:image");
+            this.appendMetaTag("twitter:card", "summary_large_image", "name", "twitter:card");
+            this.appendMetaTag("twitter:domain", "dexidigital.com.br", "property", "twitter:domain");
+            this.appendMetaTag("twitter:url", "https://www.dexidigital.com.br/politica-de-privacidade", "name", "twitter:url");
+            this.appendMetaTag("twitter:title", this.twitterTitle, "name", "twitter:title");
+            this.appendMetaTag("twitter:description", this.metaDescription, "name", "twitter:description");
+            this.appendMetaTag("twitter:image", this.twitterImage, "name", "twitter:image");
+        },
+        appendMetaTag(content, value, attribute = "name", property) {
+            const metaTag = document.createElement("meta");
+            metaTag[attribute] = property ? property : attribute;
+            metaTag.content = content;
+            if (value) {
+                metaTag.setAttribute("content", value);
+            }
+            document.head.appendChild(metaTag);
+        },
+        identifyIfLocalUrlIsEqualToOgTitle(post) {
+            if (this.localUrl === post.title.replaceAll(" ", "-").toLowerCase()
+                .replace(/ç/g, 'c')
+                .replace(/â/g, 'a')
+                .replace(/ã/g, 'a')
+                .replace(/á/g, 'a')
+                .replace(/à/g, 'a')
+                .replace(/é/g, 'e')
+                .replace(/ê/g, 'e')
+                .replace(/í/g, 'i')
+                .replace(/ó/g, 'o')
+                .replace(/ô/g, 'o')
+                .replace(/õ/g, 'o')
+                .replace(/ú/g, 'u')
+                .replace(/ü/g, 'u')
+                .replace(/,/g, '-')
+                .replace(/\s+/g, '-')
+                .replace(/--+/g, '-')
+                .replace(/:/g, ''))
+                 {
+                this.metaDescription = post.content;
+                this.ogTitle = post.title;
+                this.ogImage = post.pathImgOnFirebase;
+                this.twitterTitle = post.title;
+                this.twitterImage = post.pathImgOnFirebase;
+                this.createMetaTags();
+            }
+        },
+
         cleanTitleForUrl(title) {
             return title
                 .toLowerCase()
@@ -155,56 +223,69 @@ export default {
             return 'Postado em: ' + new Date(date).toLocaleDateString('pt-BR', options);
         },
         verifyCanPost(dateHourToPost) {
-      const today = new Date();
-      const postDate = this.convertTimestampToDate(dateHourToPost);
-      const canPost = today >= new Date(postDate);
-      return canPost;
-    },
-    formatDateHour(date) {
-      const hasPosted = this.verifyCanPost(date);
+            const today = new Date();
+            const postDate = this.convertTimestampToDate(dateHourToPost);
+            const canPost = today >= new Date(postDate);
+            return canPost;
+        },
+        formatDateHour(date) {
+            const hasPosted = this.verifyCanPost(date);
 
-       const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
 
-      if (this.$store.state.language === 'pt-BR') {
-        return hasPosted ? 'Postado em: ' + new Date(date.seconds * 1000).toLocaleDateString('pt-BR', options) : 'Será postado em: ' + new Date(date.seconds * 1000).toLocaleDateString('pt-BR', options);
-      } else {
-        return hasPosted ? 'Posted on: ' + new Date(date.seconds * 1000).toLocaleDateString('en-US', options) : 'Will be posted on: ' + new Date(date.seconds * 1000).toLocaleDateString('en-US', options);
-      }
-    },
+            if (this.$store.state.language === 'pt-BR') {
+                return hasPosted ? 'Postado em: ' + new Date(date.seconds * 1000).toLocaleDateString('pt-BR', options) : 'Será postado em: ' + new Date(date.seconds * 1000).toLocaleDateString('pt-BR', options);
+            } else {
+                return hasPosted ? 'Posted on: ' + new Date(date.seconds * 1000).toLocaleDateString('en-US', options) : 'Will be posted on: ' + new Date(date.seconds * 1000).toLocaleDateString('en-US', options);
+            }
+        },
 
-//     formatDateHour(date) {
-//   const hasPosted = this.verifyCanPost(date);
-//   const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        //     formatDateHour(date) {
+        //   const hasPosted = this.verifyCanPost(date);
+        //   const options = { year: 'numeric', month: 'long', day: 'numeric' };
 
-//   if (this.$store.state.language === 'pt-BR') {
-//     return hasPosted ? 'Postado em: ' + new Date(date.seconds * 1000).toLocaleDateString('pt-BR', options) : 'Será postado em: ' + new Date(date.seconds * 1000).toLocaleDateString('pt-BR', options);
-//   } else {
-//     return hasPosted ? 'Posted on: ' + new Date(date.seconds * 1000).toLocaleDateString('en-US', options) : 'Will be posted on: ' + new Date(date.seconds * 1000).toLocaleDateString('en-US', options);
-//   }
-// },
-      convertTimestampToDate(timestamp) {
-      const seconds = timestamp?.seconds;
-      const milliseconds = seconds * 1000;
-
-      // Criar uma instância de Date usando os milissegundos
-      const date = new Date(milliseconds);
-
-      return date;
-    },
-        // shareToFacebook() {
-        //     const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
-        //     window.open(url, '_blank');
+        //   if (this.$store.state.language === 'pt-BR') {
+        //     return hasPosted ? 'Postado em: ' + new Date(date.seconds * 1000).toLocaleDateString('pt-BR', options) : 'Será postado em: ' + new Date(date.seconds * 1000).toLocaleDateString('pt-BR', options);
+        //   } else {
+        //     return hasPosted ? 'Posted on: ' + new Date(date.seconds * 1000).toLocaleDateString('en-US', options) : 'Will be posted on: ' + new Date(date.seconds * 1000).toLocaleDateString('en-US', options);
+        //   }
         // },
+        convertTimestampToDate(timestamp) {
+            const seconds = timestamp?.seconds;
+            const milliseconds = seconds * 1000;
 
-        // shareToTwitter() {
-        //     const url = `https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}`;
-        //     window.open(url, '_blank');
-        // }
+            // Criar uma instância de Date usando os milissegundos
+            const date = new Date(milliseconds);
+
+            return date;
+        },
+        shareToFacebook() {
+            const currentUrl = window.location.href;
+            console.log('Current URL:', currentUrl);
+
+            if (currentUrl) {
+                const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`;
+                console.log('Facebook URL:', facebookUrl);
+
+                window.open(facebookUrl, '_blank');
+            } else {
+                console.error('A URL atual não está definida ou não é válida.');
+            }
+        }
     }
-
 }
 </script>
 <style scoped>
+.share-buttons{
+    font-weight: bold;
+    display: flex;
+    justify-content: start;
+}
+.article-share{
+    padding-right: 20px;
+    padding-top: 10px;
+
+}
 .content-blog {
     padding: 90px 0 90px 0;
     background-color: #f1f1f1;
@@ -357,4 +438,5 @@ export default {
 
         padding-bottom: 40% !important;
     }
-}</style>
+}
+</style>
