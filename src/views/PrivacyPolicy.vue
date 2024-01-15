@@ -43,7 +43,7 @@
                     <p class="title"> {{ $t("PRIVACY-POLICY.introduction-and-data-collection") }}</p>
                     <p>{{ $t("PRIVACY-POLICY.introduction-and-data-collection-description") }}<br><br>
 
-                    {{ $t("PRIVACY-POLICY.second-description-of-introduction-and-data-collection") }}</p>
+                        {{ $t("PRIVACY-POLICY.second-description-of-introduction-and-data-collection") }}</p>
                     <p class="title">{{ $t("PRIVACY-POLICY.use-and-purpose-of-information") }}</p>
                     <p>{{ $t("PRIVACY-POLICY.use-and-purpose-of-information-subtitle") }}</p>
                     <ul>
@@ -111,13 +111,15 @@
 
             </div>
         </div>
+        <div>
+        </div>
         <div class="share-buttons">
             <div class="share-buttons">
                 <p class="article-share">{{ $t("PRIVACY-POLICY.share-this-article") }}</p>
                 <div class="content-media">
                     <facebook :url="url" scale="2"></facebook>
                     <span style=" margin-right: 10px!important;"></span>
-                    <linkedin class="facebook" :url="url" scale="2"></linkedin>
+                    <linkedin  :url="url" scale="2"></linkedin>
                 </div>
             </div>
 
@@ -132,6 +134,23 @@ export default {
     components: {
         Facebook,
         Linkedin,
+    },
+    head: {
+        title: "Termo de uso e política de privacidade",
+        meta: [
+            { hid: "description", name: "description", content: "Aqui, explicamos detalhadamente como coletamos, usamos e protegemos suas informações." },
+            { hid: "og:url", property: "og:url", content: "https://www.dexidigital.com.br/politica-de-privacidade" },
+            { hid: "og:type", property: "og:type", content: "website" },
+            { hid: "og:title", property: "og:title", content: "Termo de uso e política de privacidade" },
+            { hid: "og:description", property: "og:description", content: "Aqui, explicamos detalhadamente como coletamos, usamos e protegemos suas informações." },
+            { hid: "og:image", property: "og:image", content: "https://opengraph.b-cdn.net/production/documents/398b8162-e150-4dd6-8c7b-225257bbd3e8.svg?token=LdiL5OSzPVA3CpIL8a9s1YAefstj0lfwbQBiqqIbGX4&height=363&width=765&expires=33241257736" },
+            { hid: "twitter:card", name: "twitter:card", content: "summary_large_image" },
+            { hid: "twitter:domain", property: "twitter:domain", content: "dexidigital.com.br" },
+            { hid: "twitter:url", name: "twitter:url", content: "https://www.dexidigital.com.br/politica-de-privacidade" },
+            { hid: "twitter:title", name: "twitter:title", content: "Termo de uso e política de privacidade" },
+            { hid: "twitter:description", name: "twitter:description", content: "Aqui, explicamos detalhadamente como coletamos, usamos e protegemos suas informações." },
+            { hid: "twitter:image", name: "twitter:image", content: "https://opengraph.b-cdn.net/production/documents/398b8162-e150-4dd6-8c7b-225257bbd3e8.svg?token=LdiL5OSzPVA3CpIL8a9s1YAefstj0lfwbQBiqqIbGX4&height=363&width=765&expires=33241257736" },
+        ]
     },
     data() {
         return {
@@ -156,9 +175,10 @@ export default {
     }
 }
 
-</script>
+</script>   
 
 <style scoped>
+
 .navbar {
     z-index: 2;
 
