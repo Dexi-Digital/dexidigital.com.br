@@ -128,7 +128,9 @@
   "POSTS": {
     "the-importance-of-hiring": "The Importance of Hiring a Software Development Company to Save on Projects",
     "posted": "Posted on:",
-    "read-more": "Read More"
+    "read-more": "Read More",
+    "share-this-post": "Share this post:"
+
   },
   "LOGIN": {
     "alert": "Email or password incorrect",
