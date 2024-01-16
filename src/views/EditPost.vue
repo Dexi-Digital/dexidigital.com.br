@@ -46,7 +46,7 @@
                   <p class="title-blog" v-html="item.title"></p>
                   <p class="title-data" v-html="item.dateHourToPost ? formatDateHour(item.dateHourToPost) : item.date">
                   </p>
-                  <p v-html="truncateText(item.content, 150)"></p>
+                  <p class="description-blog" v-html="truncateText(item.content, 150)"></p>
                   <div class="content-arrow">
                     <div class="links"> {{ $t("POSTS.read-more") }} » </div>
                   </div>
@@ -169,31 +169,38 @@ export default {
     //  },
 
     getPostsFromFirebase() {
-   this.loadingFirebaseValue = true;
-   this.arrayComValoresDoFirebase = [];  // Limpa a array antes de adicionar novos posts
+      this.loadingFirebaseValue = true;
+      this.arrayComValoresDoFirebase = [];  // Limpa a array antes de adicionar novos posts
 
-   firebaseDb.collection(this.$store.state.language === 'en' ? 'posts-en' : 'posts').get()
-     .then((querySnapshot) => {
-       querySnapshot.forEach((doc) => {
-         const post = doc.data();
-         this.arrayComValoresDoFirebase.push(post);
-       });
+      firebaseDb.collection(this.$store.state.language === 'en' ? 'posts-en' : 'posts').get()
+        .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            const post = doc.data();
+            this.arrayComValoresDoFirebase.push(post);
+          });
 
-        //Filtra e ordena as datas
-         this.arrayComValoresDoFirebase = this.arrayComValoresDoFirebase
-           .filter(item => item.dateHourToPost)
-           .sort((a, b) => {
-             const dateA = new Date(a.dateHourToPost.seconds * 1000);
-             const dateB = new Date(b.dateHourToPost.seconds * 1000);
-             return dateA - dateB;
-           });
-
-         return this.getDonwloadUrlAndSetblogImgUrl();
-       })
-       .finally(() => {
-         this.loadingFirebaseValue = false;
-       });
-   },
+          // //Filtra e ordena as datas
+          //  this.arrayComValoresDoFirebase = this.arrayComValoresDoFirebase
+          //    .filter(item => item.dateHourToPost)
+          //    .sort((a, b) => {
+          //      const dateA = new Date(a.dateHourToPost.seconds * 1000);
+          //      const dateB = new Date(b.dateHourToPost.seconds * 1000);
+          //      return dateA - dateB;
+          //    });
+          //  Classificando o array com base em dateHourToPost, modificando ordem dos posts
+          this.arrayComValoresDoFirebase.sort((a, b) => {
+            if (a.dateHourToPost && b.dateHourToPost) {
+              return b.dateHourToPost.seconds - a.dateHourToPost.seconds;
+            } else {
+              return 0;
+            }
+          });
+          return this.getDonwloadUrlAndSetblogImgUrl();
+        })
+        .finally(() => {
+          this.loadingFirebaseValue = false;
+        });
+    },
     formatDateHour(date) {
       const hasPosted = this.verifyCanPost(date);
 
@@ -255,6 +262,11 @@ export default {
 }
 </script>
 <style scoped>
+.description-blog {
+  color: #777 !important;
+
+}
+
 .icon-language {
   position: fixed;
   top: auto !important;
@@ -441,7 +453,7 @@ button.icon.v-btn.v-btn--is-elevated.v-btn--has-bg.theme--light.v-size--default 
 
 .content-blog {
 
- 
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

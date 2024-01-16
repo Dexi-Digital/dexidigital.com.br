@@ -3,29 +3,32 @@
     <NavBar />
     <div class="content-blog" :class="{ 'no-card-height': arrayComValoresDoFirebase.length === 0 }">
 
-      <v-progress-circular v-if="loadingFirebaseValue" class="loading" indeterminate
-        color="primary"></v-progress-circular>
-      <div class="content-no-card" v-else-if="arrayComValoresDoFirebase.length === 0">
-        <p class="text-no-card">Não há nenhum card para exibir.</p>
-      </div>
-      <v-card v-show="verifyCanPost(item?.dateHourToPost)" v-for="(item, index) in arrayComValoresDoFirebase" :key="index"
-        class="mx-auto content-card" @click="navigateToBlog(item)">
-
-        <v-img class="img-blog" :src="getCardImage(item.pathImgOnFirebase)"></v-img>
-        <v-card-text>
-          <div class="infos">
-            <p class="title-blog" v-html="item.title"></p>
-            <p class="title-data" v-html="item.dateHourToPost ? formatDateHour(item.dateHourToPost) : item.date"></p>
-            <p v-html="truncateText(item.content, 150)"></p>
-            <div class="content-arrow">
-              <div class="links"> {{ $t("POSTS.read-more") }}» </div>
+        <v-progress-circular v-if="loadingFirebaseValue" class="loading" indeterminate
+          color="primary"></v-progress-circular>
+        <div class="content-no-card" v-else-if="arrayComValoresDoFirebase.length === 0">
+          <p class="text-no-card">Não há nenhum card para exibir.</p>
+        </div>
+        <v-card v-show="verifyCanPost(item?.dateHourToPost)" v-for="(item, index) in displayedItems" :key="index"
+          class="mx-auto content-card" @click="navigateToBlog(item)">
+          <v-img class="img-blog" :src="getCardImage(item.pathImgOnFirebase)"></v-img>
+          <v-card-text>
+            <div class="infos">
+              <p class="title-blog" v-html="item.title"></p>
+              <p class="title-data" v-html="item.dateHourToPost ? formatDateHour(item.dateHourToPost) : item.date"></p>
+              <p class="description-blog" v-html="truncateText(item.content, 150)"></p>
+              <div class="content-arrow">
+                <div class="links"> {{ $t("POSTS.read-more") }}» </div>
+              </div>
             </div>
-          </div>
-        </v-card-text>
-
-      </v-card>
-
+          </v-card-text>
+        </v-card>
     </div>
+    <div class="pagination-content">
+      <v-pagination class="pagination" v-if="pageCount > 1" v-model="currentPage" :length="pageCount"
+        @input="changePage"></v-pagination>
+      <!-- <v-pagination :length="5"></v-pagination> -->
+    </div>
+
     <WhatsappButton />
 
     <FooterComponent />
@@ -38,14 +41,9 @@ import WhatsappButton from '../components/WhatsappButton.vue';
 import { firebaseDb } from "../firebaseConfig";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
-// // import { mapGetters } from 'vuex';
-
 export default {
   name: 'BlogView',
-  // computed: {
-  //   ...mapGetters(['isLoggedIn']), // Certifique-se de ter o getter 'isLoggedIn' no seu store
 
-  // },
   components: {
     NavBar,
     FooterComponent,
@@ -60,25 +58,38 @@ export default {
     return {
       localImages: [],
       arrayComValoresDoFirebase: [],
-      loadingFirebaseValue: false
-      // item: []
+      loadingFirebaseValue: false,
+      itemsPerPage: 15, // itens por página
+      currentPage: 1,  // Página atual
     }
   },
+  computed: {
+    totalItems() {
+      return this.arrayComValoresDoFirebase.length;
+    },
+
+    pageCount() {
+      return Math.ceil(this.arrayComValoresDoFirebase.length / this.itemsPerPage);
+    },
+    displayedItems() {
+      const start = (this.currentPage - 1) * this.itemsPerPage;
+      const end = start + this.itemsPerPage;
+      return this.arrayComValoresDoFirebase.slice(start, end);
+    },
+  },
+
+
   methods: {
+    changePage(page) {
+      this.currentPage = page;
+      window.scrollTo(0, 0);
+    },
     verifyCanPost(dateHourToPost) {
       const today = new Date();
       const postDate = this.convertTimestampToDate(dateHourToPost);
       const canPost = today >= new Date(postDate);
       return canPost;
     },
-    // navigateToBlog(item) {
-    //   this.$router.push({
-    //     path: `/posts/${encodeURIComponent(item.title)}`,
-    //     query: {
-    //       data: item
-    //     }
-    //   });
-    // },
     navigateToBlog(item) {
       const cleanedTitle = this.cleanTitleForUrl(item.title);
       this.$router.push({
@@ -92,20 +103,20 @@ export default {
       // Remove white spaces, convert to lowercase, keep accented letters
       return title
         .toLowerCase()
-        .replace(/ç/g, 'c') // Replace "ç" with "c"
-        .replace(/â/g, 'a') // Replace "â" with "a"
-        .replace(/ã/g, 'a') // Replace "ã" with "a"
-        .replace(/á/g, 'a') // Replace "á" with "a"
-        .replace(/à/g, 'a') // Replace "à" with "a"
-        .replace(/é/g, 'e') // Replace "é" with "e"
-        .replace(/ê/g, 'e') // Replace "ê" with "e"
-        .replace(/í/g, 'i') // Replace "í" with "i"
-        .replace(/ó/g, 'o') // Replace "ó" with "o"
-        .replace(/ô/g, 'o') // Replace "ô" with "o"
-        .replace(/õ/g, 'o') // Replace "õ" with "o"
-        .replace(/ú/g, 'u') // Replace "ú" with "u"
-        .replace(/ü/g, 'u') // Replace "ü" with "u"
-        .replace(/,/g, '-') //
+        .replace(/ç/g, 'c')
+        .replace(/â/g, 'a')
+        .replace(/ã/g, 'a')
+        .replace(/á/g, 'a')
+        .replace(/à/g, 'a')
+        .replace(/é/g, 'e')
+        .replace(/ê/g, 'e')
+        .replace(/í/g, 'i')
+        .replace(/ó/g, 'o')
+        .replace(/ô/g, 'o')
+        .replace(/õ/g, 'o')
+        .replace(/ú/g, 'u')
+        .replace(/ü/g, 'u')
+        .replace(/,/g, '-')
         .replace(/\s+/g, '-') // Replace spaces with hyphens again (there may be additional spaces)
         .replace(/--+/g, '-') // Replace multiple hyphens with a single hyphen
         .replace(/:/g, '') // Remove ":"
@@ -133,21 +144,6 @@ export default {
         return text;
       }
     },
-    // getPostsFromFirebase() {
-    //   this.loadingFirebaseValue = true;
-
-    //   this.arrayComValoresDoFirebase = []; // Limpa a array antes de adicionar novos posts
-
-    //   firebaseDb.collection(this.$store.state.language === 'en' ? 'posts-en' : 'posts').get()
-    //     .then((querySnapshot) => {
-    //       this.loadingFirebaseValue = false;
-    //       querySnapshot.forEach((doc) => {
-    //         const post = doc.data();
-    //         this.arrayComValoresDoFirebase.push(post);
-    //       });
-    //       return this.getDonwloadUrlAndSetblogImgUrl();
-    //     });
-    // },
     getPostsFromFirebase() {
       this.loadingFirebaseValue = true;
 
@@ -161,14 +157,14 @@ export default {
             this.arrayComValoresDoFirebase.push(post);
           });
 
-          // Sorting the array based on dateHourToPost
-          this.arrayComValoresDoFirebase.sort((a, b) => {
-            if (a.dateHourToPost && b.dateHourToPost) {
-              return a.dateHourToPost.seconds - b.dateHourToPost.seconds;
-            } else {
-              return 0;
-            }
-          });
+          //  Classificando o array com base em dateHourToPost, modificando ordem dos posts
+         this.arrayComValoresDoFirebase.sort((a, b) => {
+           if (a.dateHourToPost && b.dateHourToPost) {
+             return b.dateHourToPost.seconds - a.dateHourToPost.seconds;
+           } else {
+             return 0;
+           }
+         });
 
           return this.getDonwloadUrlAndSetblogImgUrl();
         });
@@ -191,7 +187,6 @@ export default {
     editPost(post) {
       // Aqui você pode abrir um diálogo/modal de edição do post com os campos preenchidos
       // E depois atualizar o post no Firebase
-      // Por exemplo:
       const updatedPost = { ...post, title: "Novo Título", content: "Novo conteúdo" };
 
       // Atualizar o post no Firebase
@@ -227,6 +222,9 @@ export default {
 }
 </script>
 <style scoped>
+.description-blog {
+  color: #777 !important;
+}
 ::v-deep.v-progress-circular>svg {
   width: auto !important;
   position: relative;
@@ -302,7 +300,6 @@ div p img {
   padding: 120px 20px 70px 20px !important;
   background-color: #f1f1f1;
   display: flex;
-  /* flex-direction: row-reverse; */
   flex-wrap: wrap;
   justify-content: center;
   flex-direction: inherit;
@@ -364,6 +361,12 @@ div p img {
   font-size: 12px;
 }
 
+@media screen and (max-width:320px) {
+  ::v-deep .v-pagination__item {
+    min-width: 24px !important;
+  }
+}
+
 @media screen and (min-width:320px) and (max-width: 480px) {
 
   .content-card {
@@ -409,9 +412,43 @@ div p img {
   }
 }
 
+
 .content-card:hover {
   transform: rotate(-1deg) scale(1.01);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);
 
+}
+
+.pagination-content {
+  background-color: #f1f1f1;
+  padding: 20px 0 50px 0;
+}
+
+/* ::v-deep .v-pagination__navigation{
+background-color:  #1561ff!important;
+} */
+::v-deep .theme--light.v-pagination .v-pagination__navigation {
+  background-color: #1561ff !important;
+  color: #ffffff !important;
+}
+
+::v-deep .theme--light.v-pagination .v-pagination__item--active {
+  background-color: #1561ff !important;
+  color: #ffffff !important;
+}
+
+::v-deep .mdi-chevron-right::before,
+::v-deep .mdi-chevron-left::before {
+  color: #ffffff !important;
+}
+
+::v-deep .v-pagination__item {
+  box-shadow: 0px 3px 1px -2px rgb(159 155 155 / 15%), 0px 2px 2px 0px rgb(205 204 204 / 20%), 0px 1px 5px 0px rgb(45 45 45 / 21%);
+
+}
+
+::v-deep .theme--light.v-pagination .v-pagination__item:hover {
+  background-color: #1561ff !important;
+  color: #ffffff;
 }
 </style>

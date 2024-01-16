@@ -24,11 +24,11 @@
           </ul>
 
           <router-link class="nav-link-services " @click="goToAnotherPage" to="/"
-            :class="{ 'active': $route.path === '/services' }">
+            :class="{ 'active': $route.path === '/servicos' }">
             {{ $t("nav.services") }}
           </router-link>
 
-          <v-menu offset-y v-model="menu">
+          <VMenu offset-y v-model="menu">
             <template v-slot:activator="{ on }">
               <v-btn class="btn-menu" icon v-on="on">
                 <v-icon>mdi-menu-down</v-icon>
@@ -48,7 +48,7 @@
 
               </v-list-item>
             </v-list>
-          </v-menu>
+          </VMenu>
 
           <div class="icon-language" v-if="openedArticle">
             <input type="radio" id="en" v-model="$i18n.locale" value="en" style="display: none">
