@@ -30,6 +30,7 @@
 
                 </p>
             </div>
+            <div class="development-squads-container-color-img-top"></div>
             <div class="development-squads-container-color">
                 <ul style="margin-top: 0; margin-bottom: 0;">
                     <li class="development-squads-container-color-item">
@@ -93,7 +94,7 @@
                     {{ $t("DEVELOPMENT-SQUADS.advantages-of-development-squads-description") }}    
                 </p>
             </div>
-
+            <div class="development-squads-container-color-img-top"></div>
             <div class="development-squads-container-color">
                 <ul style="margin-top: 0; margin-bottom: 0;">
                     <li class="development-squads-container-color-item">
@@ -217,14 +218,12 @@ export default {
 
 .development-squads-container-color {
     background-color: #38b6ed;
-    background-image: url('../assets/top2.png');
     padding-top: 70px;
+    padding-bottom: 30px;
     padding-left: 50px;
     padding-right: 50px;
-
     &-item {
         padding-bottom: 10px;
-
         color: white;
 
     }
@@ -233,11 +232,17 @@ export default {
         font-weight: 700;
         font-size: 20px;
     }
-
+    &-img-top {
+        background-image: url('../assets/top2.png');
+        height: 100px;
+        width: 100%;
+        background-repeat: round;
+    }
     &-img-bottom {
         background-image: url('../assets/bottom2.png');
         height: 100px;
         width: 100%;
+        background-repeat: round;
     }
 }
 
