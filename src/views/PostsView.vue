@@ -26,7 +26,7 @@
                             <div class="share-buttons">
                                 <p class="article-share">{{ $t("POSTS.share-this-post") }}</p>
                                 <div class="content-media">
-                                    <facebook :url="url" scale="2"></facebook>
+                                    <facebook :url="url" class="content-media-facebook" scale="2"></facebook>
                                     <span style=" margin-right: 10px!important;"></span>
                                     <linkedin class="facebook" :url="url" scale="2"></linkedin>
                                 </div>
@@ -276,6 +276,13 @@ export default {
 }
 </script>
 <style scoped>
+
+.content-media{
+    cursor: pointer;
+}
+.content-media-facebook{
+    border-radius: 20px;
+}
 .share-buttons{
     font-weight: bold;
     display: flex;
