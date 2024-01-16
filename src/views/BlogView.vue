@@ -3,25 +3,25 @@
     <NavBar />
     <div class="content-blog" :class="{ 'no-card-height': arrayComValoresDoFirebase.length === 0 }">
 
-      <v-progress-circular v-if="loadingFirebaseValue" class="loading" indeterminate
-        color="primary"></v-progress-circular>
-      <div class="content-no-card" v-else-if="arrayComValoresDoFirebase.length === 0">
-        <p class="text-no-card">Não há nenhum card para exibir.</p>
-      </div>
-      <v-card v-show="verifyCanPost(item?.dateHourToPost)" v-for="(item, index) in displayedItems" :key="index"
-        class="mx-auto content-card" @click="navigateToBlog(item)">
-        <v-img class="img-blog" :src="getCardImage(item.pathImgOnFirebase)"></v-img>
-        <v-card-text>
-          <div class="infos">
-            <p class="title-blog" v-html="item.title"></p>
-            <p class="title-data" v-html="item.dateHourToPost ? formatDateHour(item.dateHourToPost) : item.date"></p>
-            <p v-html="truncateText(item.content, 150)"></p>
-            <div class="content-arrow">
-              <div class="links"> {{ $t("POSTS.read-more") }}» </div>
+        <v-progress-circular v-if="loadingFirebaseValue" class="loading" indeterminate
+          color="primary"></v-progress-circular>
+        <div class="content-no-card" v-else-if="arrayComValoresDoFirebase.length === 0">
+          <p class="text-no-card">Não há nenhum card para exibir.</p>
+        </div>
+        <v-card v-show="verifyCanPost(item?.dateHourToPost)" v-for="(item, index) in displayedItems" :key="index"
+          class="mx-auto content-card" @click="navigateToBlog(item)">
+          <v-img class="img-blog" :src="getCardImage(item.pathImgOnFirebase)"></v-img>
+          <v-card-text>
+            <div class="infos">
+              <p class="title-blog" v-html="item.title"></p>
+              <p class="title-data" v-html="item.dateHourToPost ? formatDateHour(item.dateHourToPost) : item.date"></p>
+              <p class="description-blog" v-html="truncateText(item.content, 150)"></p>
+              <div class="content-arrow">
+                <div class="links"> {{ $t("POSTS.read-more") }}» </div>
+              </div>
             </div>
-          </div>
-        </v-card-text>
-      </v-card>
+          </v-card-text>
+        </v-card>
     </div>
     <div class="pagination-content">
       <v-pagination class="pagination" v-if="pageCount > 1" v-model="currentPage" :length="pageCount"
@@ -59,7 +59,7 @@ export default {
       localImages: [],
       arrayComValoresDoFirebase: [],
       loadingFirebaseValue: false,
-      itemsPerPage: 13, // itens por págin2
+      itemsPerPage: 15, // itens por página
       currentPage: 1,  // Página atual
     }
   },
@@ -158,13 +158,13 @@ export default {
           });
 
           //  Classificando o array com base em dateHourToPost, modificando ordem dos posts
-          this.arrayComValoresDoFirebase.sort((a, b) => {
-            if (a.dateHourToPost && b.dateHourToPost) {
-              return b.dateHourToPost.seconds - a.dateHourToPost.seconds;
-            } else {
-              return 0;
-            }
-          });
+         this.arrayComValoresDoFirebase.sort((a, b) => {
+           if (a.dateHourToPost && b.dateHourToPost) {
+             return b.dateHourToPost.seconds - a.dateHourToPost.seconds;
+           } else {
+             return 0;
+           }
+         });
 
           return this.getDonwloadUrlAndSetblogImgUrl();
         });
@@ -222,6 +222,9 @@ export default {
 }
 </script>
 <style scoped>
+.description-blog {
+  color: #777 !important;
+}
 ::v-deep.v-progress-circular>svg {
   width: auto !important;
   position: relative;
