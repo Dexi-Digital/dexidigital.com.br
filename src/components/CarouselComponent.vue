@@ -9,15 +9,15 @@
         </div>
         <div class="swiper-container">
 
-            <swiper :options="swiperOptions" ref="mySwiper" class="teste" style="margin-right: 0;">
+            <swiper :options="swiperOptions" ref="mySwiper" class="swiper-component">
 
                 <swiper-slide v-for="item in items" :key="item.id">
                     <router-link :to="item.link">
-                        <div class=" teste-dois">
+                        <div class="swiper-content">
                             <v-card class="mx-auto content-card-home">
                                 <v-card-text class="information-services-content">
                                     <div class="information-services">
-                                        <h4 class="title-services">{{ $t(item.title) }}</h4>
+                                        <p class="title-services">{{ $t(item.title) }}</p>
                                     </div>
                                 </v-card-text>
                                 <div class="container-img">
@@ -28,19 +28,17 @@
                     </router-link>
                 </swiper-slide>
             </swiper>
-
         </div>
-
-        <div class="stella">
-            <button id="swiper-button-next-id" class="swiper-next swiper-button-next" @click="nextSlide"></button>
-            <button class="swiper-prev swiper-button-prev" @click="prevSlide"></button>
+        <div class="swiper-button-container">
+            <button id="swiper-button-next-id" class="swiper-next swiper-button-next" @click="nextSlide"
+                aria-label="Next"></button>
+            <button class="swiper-prev swiper-button-prev" @click="prevSlide" aria-label="Prev"></button>
         </div>
     </div>
 </template>
 <script>
 import { swiper, swiperSlide } from 'vue-awesome-swiper';
 
-import 'swiper/swiper-bundle.css'; // Atualize esta linha
 import 'swiper/swiper-bundle.css'; // Atualize esta linha
 
 export default {
@@ -51,14 +49,8 @@ export default {
             swiperInstance: null,
             spaceBetween: 30,
             grabCursor: true,
-
-
-
             swiperOptions: {
                 autoplay: 2000,
-
-
-
                 slidesPerView: 3,
                 spaceBetween: 10,
                 loop: true,
@@ -123,84 +115,56 @@ export default {
                 this.swiperInstance.slidePrev();
             }
         },
-
-
-
-        //    onSwiper(swiper) {
-        //        swiper.on('afterInit', () => {
-        //            this.swiperInstance = swiper;
-        //             // Chame nextSlide após a inicialização completa do Swiper
-        //              this.nextSlide();
-        //          });
-        //      },
     },
     mounted() {
         // Obtenha a instância do Swiper usando refs
         this.swiperInstance = this.$refs.mySwiper.swiper;
-
-        // Forca o clique do botão de proximo a cada 3s
-        // this.intervalOfLoop = setInterval(() => {
-        //     document.getElementById('swiper-button-next-id').click();
-        // }, 2000);
-
     },
-    // onDestroy() {
-    //     clearInterval(this.intervalOfLoop);
-    // }
 }
 </script>
-    
 <style scoped>
-.stella {
+.swiper-button-container {
     position: relative;
     z-index: 1;
     justify-content: center !important;
     display: flex;
     height: 50px;
 }
-
-.teste {
+.swiper-component {
     width: 70% !important;
     padding: 10px;
+    margin-right: 0;
 }
-
-.teste-dois {
+.swiper-content {
     padding: 8px;
     margin-right: 0;
 }
-
-
 .services {
     text-align: center;
     margin-top: 100px;
 }
-
 .custom-title-services {
     font-weight: 700;
-
     color: #333333;
 }
-
-
 .title-services {
     font-size: 14px;
     text-align: center;
     color: #2b2b2b;
     font-weight: bold;
-
 }
-
 .custom-subtitle-services-content {
     display: flex;
     justify-content: center;
 }
-
 .details-custom-subtitle-services {
     font-weight: 300;
-    width: 620px !important;
+    max-width: 100%; /* Torna o elemento responsivo */
+    margin: 0 auto; /* Centraliza horizontalmente */
     text-align: center;
-    font-size: 20px;
+    font-size: 1.25rem; /* Utiliza unidade relativa para font-size */
     padding-top: 20px;
+    box-sizing: border-box; /* Inclui padding na largura total */
 }
 
 .information-services-content {
@@ -229,19 +193,14 @@ export default {
 @media screen and (min-width: 640px) and (max-width: 768px) {
     .title-services {
         font-size: 12px !important;
-
     }
 
     .content-card-home {
         padding: 20px 10px 20px 10px !important;
-
     }
-
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
-
-
     .services {
         margin-top: 60px;
     }
@@ -265,7 +224,6 @@ export default {
 
     .title-services {
         font-size: 15px !important;
-
     }
 
     .content-card-home {
@@ -273,13 +231,12 @@ export default {
     }
 
     .img-services {
-        width: 80% !important;
-        height: 80% !important;
+        width: 234px;
+        height: 244px;
     }
 }
 
 @media screen and (min-width: 941px) and (max-width: 1024px) {
-
     .custom-title-services {
         padding-top: 60px;
     }
@@ -298,8 +255,8 @@ export default {
     }
 
     .img-services {
-        width: 80% !important;
-        height: 80% !important;
+        width: 234px;
+        height: 244px;
     }
 }
 
@@ -349,8 +306,6 @@ export default {
 }
 
 @media screen and (min-width: 1921px) and (max-width: 2400px) {
-
-
     .custom-title-services {
         padding-top: 287px;
     }
@@ -360,7 +315,6 @@ export default {
     .custom-title-services {
         padding-top: 224px !important;
     }
-
 }
 
 .swiper-container {
@@ -374,75 +328,37 @@ export default {
 }
 
 .content-card-home {
-
-
- 
     margin-bottom: 20px;
     padding: 20px 20px 20px 20px;
     box-shadow: 0px 22px 25px -13px #6ad2ff !important;
-
-
-
     margin-bottom: 20px;
     padding: 20px 20px 20px 20px;
     background-color: transparent;
     border-radius: 40px;
-    /* border: 1.5px solid rgb(208 208 208); */
     box-shadow: 0px 22px 25px -13px #6ad2ff !important;
     width: 270px;
-    transition: border 300ms ease 0ms,box-shadow 300ms ease 0ms;
+    transition: border 300ms ease 0ms, box-shadow 300ms ease 0ms;
     padding: 20px;
-
 }
 
 .content-card-home:hover {
-
-    box-shadow: 0px 15px 35px 0px rgba(112,144,176,0.2)!important;
-
-
+    box-shadow: 0px 15px 35px 0px rgba(112, 144, 176, 0.2) !important;
 }
-
-
-
-
 
 .container-img {
     display: flex;
     justify-content: center;
 }
-
 .img-services {
-    width: 150px;
-    height: 150px;
+    width: 134px;
+    height: 144px;
     align-items: center;
-
 }
-
-
 .v-application a {
     text-decoration: none !important;
 }
-
-.swiper-button-container-flex {
-    justify-content: center;
-    position: relative;
-}
-
-.swiper-button-container {
-
-    display: flex;
-
-    margin-top: 10px;
-    /* Ajuste conforme necessário */
-
-    width: 100px;
-    height: 100px;
-    align-items: center;
-}
-
 .swiper-prev,
 .swiper-next {
-
     font-size: 10px !important;
     border-radius: 100%;
     border: 1px solid #158BBF;
@@ -451,37 +367,30 @@ export default {
     height: 25px;
     width: 25px;
 }
-
 .swiper-prev {
     position: relative;
     top: 40px;
     left: -30px;
-
 }
-
 .swiper-next {
-
     position: relative;
     top: 40px;
     left: 30px;
-
 }
-
 .swiper-prev:after,
 .swiper-next:after {
     font-size: 13px;
     color: #158BBF !important;
     font-weight: bold !important;
 }
-
 .swiper-prev:hover,
 .swiper-next:hover {
     color: white !important;
     background: #158BBF !important;
 }
-
 .swiper-prev:hover:after,
 .swiper-next:hover:after {
     color: white !important;
     background: #158BBF !important;
-}</style>
+}
+</style>
