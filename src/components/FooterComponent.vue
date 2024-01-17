@@ -14,7 +14,7 @@
             <v-col class="content-social-media" cols="12" sm="12" md="12" lg="12" xl="4">
 
                 <div>
-                    <h4> {{ $t("footer.service-titles") }}</h4>
+                    <h2> {{ $t("footer.service-titles") }}</h2>
                     <router-link class="links" to="/"> {{ $t("footer.services") }}</router-link><br>
                     <router-link class="links" to="/squad-de-desenvolvimento">{{ $t("footer.development-squads") }}</router-link><br>
                     <router-link class="links" to="/experiencia-digital"> {{ $t("footer.digital-experience") }}</router-link><br>
@@ -29,13 +29,13 @@
 
 
                     <span class="elementor-screen-only">
-                        <a href="https://www.instagram.com/dexi.digital/" target="_blank" @click="clickInstagram">
+                        <a href="https://www.instagram.com/dexi.digital/" target="_blank" @click="clickInstagram" aria-label="Instagram">
                             <i class="fab fa-instagram icon"></i>
                         </a>
                     </span>
 
                     <span class="elementor-screen-only">
-                        <a href="https://www.linkedin.com/company/dexi-digital/" target="_blank" @click="clickLinkedin">
+                        <a href="https://www.linkedin.com/company/dexi-digital/" target="_blank" @click="clickLinkedin" aria-label="Linkedin">
                             <i class="fab fa-linkedin icon"></i>
                         </a>
                     </span>
