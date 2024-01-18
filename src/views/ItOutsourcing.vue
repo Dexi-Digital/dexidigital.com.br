@@ -156,17 +156,12 @@
     </div>
 </template>
 <script>
-import NavBar from '../components/NavBar.vue'
-import FooterComponent from '../components/FooterComponent.vue'
-import FormButton from '@/components/FormButton.vue';
-
 export default {
-
     name: 'DigitalExperience',
     components: {
-        NavBar,
-        FooterComponent,
-        FormButton
+        NavBar: () => import('../components/NavBar.vue'),
+        FooterComponent: () => import('../components/FooterComponent.vue'),
+        FormButton: () => import('@/components/FormButton.vue')
     }
 }
 </script>

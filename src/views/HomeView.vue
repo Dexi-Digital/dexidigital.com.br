@@ -12,16 +12,12 @@
         <p class="description-home-br"> {{ $t("header.description-br") }} </p>
       </div>
       <div class="content-btn-contact">
-
         <router-link class="nav-link active btn-contact" to="/fale-conosco">
           <button>
             {{ $t("header.contact-button") }}
           </button>
         </router-link>
       </div>
-
-
-
       <div>
         <div class="background-image-content">
           <img class="background-image" src="../assets/image-home.png" alt="imagem Home">
@@ -30,75 +26,6 @@
 
     </div>
     <CarouselComponent />
-    <!--   
-     <div class="details-services">
-      <div class="services">
-        <h1 class="custom-title-services">{{ $t("services-section.our-services") }}</h1>
-        <div class="custom-subtitle-services-content">
-          <p class="details-custom-subtitle-services">
-            {{ $t("services-section.dynamic-teams") }}</p>
-        </div>
-      </div>
-      <div class="content-home">
-        <v-card class="mx-auto content-card-home">
-          <div class="container-img">
-            <img class="img-services" src="../assets/img-1.png" alt="Outsourcing de TI">
-          </div>
-          <v-card-text>
-            <div class="information-services">
-              <h4 class="title-services"> {{ $t("services-section.it-outsourcing") }}</h4>
-              <p class="description-services">
-                {{ $t("services-section.it-outsourcing-description") }}
-              </p>
-            </div>
-          </v-card-text>
-        </v-card>
-        <v-card class="mx-auto content-card-home">
-          <div class="container-img">
-            <img class="img-services" src="../assets/img-2.png" alt="Aplicativos Mobile">
-          </div>
-          <v-card-text>
-            <div class="information-services">
-              <h4 class="title-services"> {{ $t("services-section.mobile-applications") }}</h4>
-              <p class="description-services">
-                {{ $t("services-section.mobile-applications-description") }}
-
-              </p>
-            </div>
-          </v-card-text>
-        </v-card>
-        <v-card class="mx-auto content-card-home">
-          <div class="container-img">
-            <img class="img-services" src="../assets/img-3.png" alt="Squads de desenvolvimento">
-          </div>
-          <v-card-text>
-            <div class="information-services">
-              <h4 class="title-services"> {{ $t("services-section.development-squads") }}
-              </h4>
-              <p class="description-services">
-                {{ $t("services-section.development-squads-description") }}
-              </p>
-            </div>
-          </v-card-text>
-        </v-card>
-
-        <v-card class="mx-auto content-card-home">
-          <div class="container-img">
-            <img class="img-services" src="../assets/img-4.png" alt="Experiência digital">
-          </div>
-          <v-card-text>
-            <div class="information-services">
-              <h4 class="title-services"> {{ $t("services-section.digital-experience") }}
-              </h4>
-              <p class="description-services">
-                {{ $t("services-section.digital-experience-description") }}
-
-              </p>
-            </div>
-          </v-card-text>
-        </v-card>
-      </div>
-    </div>  -->
     <div class="process-details">
       <h1 class="process-details-title"  v-html="$t('development-process-section.development-process')"> </h1>
       <div class="process-details-subtitle-content">
@@ -176,19 +103,14 @@
 </template>
 
 <script scoped>
-import NavBar from '../components/NavBar'
-import FooterComponent from '../components/FooterComponent'
-import WhatsappButton from '../components/WhatsappButton.vue';
-import CarouselComponent from '../components/CarouselComponent.vue';
-
 export default {
   name: 'HomeView',
   components: {
-    NavBar,
-    FooterComponent,
-    WhatsappButton,
-    CarouselComponent
-  },
+  NavBar: () => import('../components/NavBar.vue'),
+  FooterComponent: () => import('../components/FooterComponent.vue'),
+  WhatsappButton: () => import('../components/WhatsappButton.vue'),
+  CarouselComponent: () => import('../components/CarouselComponent.vue')
+},
 
   mounted() {
     this.$gtag.pageview('/HomeView');
