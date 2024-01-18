@@ -30,7 +30,7 @@
                                     <v-text-field v-model="dateFormatted" label="Editar Data de publicação"
                                         v-on="on"></v-text-field>
                                 </template>
-                                <v-date-picker v-model="date" no-title
+                                <v-date-picker v-model="date" no-title locale="pt-BR"
                                     @input="menu1 = false"></v-date-picker>
                             </v-menu>
 
@@ -103,6 +103,8 @@ export default {
             menu1: false,
             menu2: false,
             time: null,
+            customDateFormat: 'DD/MM/YYYY' // Adicione o formato desejado aqui
+
         };
 
     },

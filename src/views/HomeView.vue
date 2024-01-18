@@ -23,7 +23,6 @@
           <img class="background-image" src="../assets/image-home.png" alt="imagem Home">
         </div>
       </div>
-
     </div>
     <CarouselComponent />
     <div class="process-details">
@@ -68,7 +67,6 @@
         <p class="title-tecnologias">Mobile App Development</p>
         <div class="moving-logos-inner">
           <div class="image-tecnologias mobile">
-            <img class="server-img" src="../assets/mobile.png" alt="Mobile">
           </div>
         </div>
       </div>
@@ -76,7 +74,6 @@
         <p class="title-tecnologias">Database</p>
         <div class="reverse-inner">
           <div class="image-tecnologias data">
-            <img class="server-img" src="../assets/data.png" alt="Database">
           </div>
         </div>
       </div>
@@ -84,15 +81,13 @@
         <p class="title-tecnologias">Servers</p>
         <div class="moving-logos-inner">
           <div class="image-tecnologias server">
-            <img class="server-img" src="../assets/server.png" alt="Servers">
           </div>
         </div>
       </div>
       <div class="reverse-wrapper">
         <p class="title-tecnologias">DevOps</p>
         <div class="reverse-inner">
-          <div class="image-tecnologias dev">
-            <img class="server-img" src="../assets/dev.png" alt="dev">
+          <div class="image-tecnologias devops">
           </div>
         </div>
       </div>
@@ -101,7 +96,6 @@
     <FooterComponent />
   </div>
 </template>
-
 <script scoped>
 export default {
   name: 'HomeView',
@@ -117,7 +111,6 @@ export default {
   },
   metaInfo() {
     return {
-
       title: 'Desenvolvimento de Aplicações Seguras | Dexi Digital',
       meta: [
         { name: 'description', content: 'Promova a confiança e a lealdade à marca por meio de experiências personalizadas. Conheça nossos serviços de Outsourcing de TI, Aplicativos Mobile, Squads de Desenvolvimento e Experiência Digital.' },
@@ -138,62 +131,59 @@ export default {
 }
 </script> 
 <style scoped>
-/* .tecnologias {
- height: calc(100vh -10px);
-} */
-
 .background-image-content {
   display: flex;
   justify-content: end;
 
 }
-
 .background-image {
   height: 438px;
   position: absolute;
   top: 45px;
   display: flex;
   justify-content: end;
-
 }
-
 .image-tecnologias {
   width: 100%;
   height: 80%;
   background-size: contain;
   background-repeat: no-repeat;
 }
-
 .front {
   background-image: url('../assets/front.png');
 }
-
 .back {
   background-image: url('../assets/back.png');
 }
-
 .project {
   background-image: url('../assets/project.png');
 }
-
 .big {
   background-image: url('../assets/big.png');
 }
-
+.mobile {
+  background-image: url('../assets/mobile.png');
+}
+.data {
+  background-image: url('../assets/data.png');
+}
+.server {
+  background-image: url('../assets/server.png');
+}
+.devops {
+  background-image: url('../assets/dev.png');
+}
 .server-img {
   height: 50px;
 }
-
 @media screen and (min-width: 768px) {
 
   .server-img {
     display: none !important;
   }
-
   .moving-logos-wrapper {
     overflow: hidden;
     margin: auto;
-
   }
 
   .moving-logos-inner {
@@ -201,30 +191,22 @@ export default {
     -webkit-animation: moving-logos 20s linear infinite;
     animation: moving-logos 20s linear infinite;
   }
-
   @keyframes moving-logos {
     0% {
       -webkit-transform: translateZ(0);
       transform: translateZ(0);
     }
-
     50% {
       transform: translateX(-100px);
-      /* Move para a esquerda (ajuste o valor conforme necessário) */
     }
-
     100% {
       transform: translateX(-100);
-      /* Retorna para a posição original */
     }
   }
-
   .reverse-wrapper {
-
     overflow: hidden;
     margin: auto;
   }
-
   .image-tecnologias {
     width: 100%;
     height: 70%;
@@ -232,74 +214,54 @@ export default {
     background-size: contain;
     background-repeat: repeat;
   }
-
   .front {
     background-image: url('../assets/front.png');
   }
-
   .back {
     background-image: url('../assets/back.png');
   }
-
   .project {
     background-image: url('../assets/project.png');
   }
-
   .big {
     background-image: url('../assets/big.png');
   }
-
   .mobile {
     background-image: url('../assets/mobile.png');
-  }
-
+  } 
   .data {
     background-image: url('../assets/data.png');
   }
-
   .server {
     background-image: url('../assets/server.png');
-
   }
-
   .dev {
     background-image: url('../assets/dev.png');
   }
-
   .reverse-inner {
     height: 100px;
     -webkit-animation: reverse 20s linear infinite;
     animation: reverse 20s linear infinite;
   }
-
   @keyframes reverse {
     0% {
       -webkit-transform: translateZ(0);
       transform: translateZ(0);
     }
-
     50% {
       transform: translateX(100px);
-      /* Move para a esquerda (ajuste o valor conforme necessário) */
     }
-
     100% {
       transform: translateX(-100);
-      /* Retorna para a posição original */
     }
   }
 }
-
 .container-home {
   background-color: white;
 }
-
 .navbar-brand:hover {
   color: #1976d2;
 }
-
-
-
 
 .title-home {
   color: #333333;
@@ -310,9 +272,7 @@ export default {
   line-height: 1.3em;
   margin: 0;
   padding: 120px 0 10px 0;
-
 }
-
 .title {
   color: #333333;
   font-size: 44px;
@@ -322,30 +282,24 @@ export default {
   line-height: 1.3em;
   margin: 0;
 }
-
 .title-home-degrade {
-  background: #158BBF;
-  background: -webkit-linear-gradient(to right, #158BBF 0%, #4A00E0 100%);
-  background: -moz-linear-gradient(to right, #158BBF 60%, #4A00E0 100%);
-  background: linear-gradient(to right, #158BBF 50%, #2900e0 100%);
+  background: linear-gradient(to right, #158BBF, #2900e0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
+  font-size: 50px;
 }
-
 .description-home {
   font-weight: 400;
   color: #333333;
   padding: 20px 20px 0 20px;
   margin: 0;
 }
-
 .description-home-br {
   font-weight: 400;
   color: #333333;
   padding: 0 20px 0 20px;
 }
-
 
 .btn-contact {
     padding: 15px !important;
@@ -358,20 +312,13 @@ export default {
     text-align: center;
     transition: background-color 0.5s, box-shadow 0.5s, transform 0.5s;
     background-color: #000000 !important;
-    /* Adiciona uma transição de 2 segundos para as propriedades alteradas no hover */
 }
-
 .btn-contact:hover {
     color: #ffffff !important;
     cursor: pointer;
     box-shadow: none;
     background-color:#1693e7 !important;
-
-
-}
-
-
-.process-details-title {
+}.process-details-title {
   font-weight: bold;
   font-size: 30px;
   text-align: center;
@@ -379,15 +326,10 @@ export default {
   margin: 0;
   color: #333333;
 }
-
 .process-details-subtitle-content {
   display: flex;
   justify-content: center;
-
 }
-
-
-
 .process-details-subtitle {
   text-align: center;
   font-size: 20px;
@@ -395,7 +337,6 @@ export default {
   margin: 0 30px;
   width: 90% !important;
 }
-
 .process-details-img {
   display: flex;
   justify-content: center;
@@ -403,6 +344,7 @@ export default {
 
 .details-img {
   width: 80%;
+  height: 80%;
   padding: 40px 0;
 }
 
@@ -413,7 +355,6 @@ export default {
   margin: 0;
   text-transform: uppercase;
 }
-
 .image-tecnologias {
   display: flex;
   justify-content: center;
@@ -424,23 +365,17 @@ export default {
 }
 
 @media screen and (min-width:320px) and (max-width: 480px) {
-
-
   .content {
     width: 100%;
   }
-
   .content-home {
     padding: 20px !important;
   }
-
   .btn-contact {
     width: 275px;
     font-size: 17px;
   }
-  
 }
-
 @media screen and (max-width:500px) {
   .custom-subtitle-services {
     padding: 0 30px;
@@ -449,7 +384,6 @@ export default {
 
 @media screen and (min-width: 500px) and (max-width: 767px) {
   .content {
-
     padding: 0 91px 0 91px;
     width: 100%;
   }
@@ -457,9 +391,7 @@ export default {
 
 @media screen and (max-width: 481px) {
   .services {
-    margin-top: 50px !important;
-    margin-left: 10px !important;
-    margin-right: 10px !important;
+    margin-left:50px 10px 0 10px!important;
   }
 
   .process-details-subtitle {
@@ -472,8 +404,6 @@ export default {
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
-
-
   .services {
     margin-top: 60px;
   }
@@ -503,15 +433,12 @@ export default {
   .title-home {
     padding: 120px 20px 0px 20px;
   }
-
   .title {
     padding: 0 20px 0px 20px;
   }
-
   .content-btn-contact {
     padding-left: 20px;
   }
-
 }
 
 @media screen and (max-width: 767px) {
@@ -521,37 +448,30 @@ export default {
   .background-image-content {
     display: none;
   }
-
   .title-home {
     text-align: center;
     padding: 120px 5px 10px 5px!important;
     font-size: 43px;
-  
   }
-
   .title {
     font-size: 43px!important;
     font-weight: bold!important;
-        text-align: center;
-
+    text-align: center;
   }
-
   .description-home,
   .description-home-br {
     text-align: center;
     font-size: 14px;
   }
-
   .content-btn-contact {
     display: flex;
     justify-content: center;
   }
- 
 }
-
 @media screen and (max-width: 768px) {
   .details-img {
     width: 100% !important;
+    height: 100% !important;
   }
 }
 
@@ -570,32 +490,24 @@ export default {
     display: flex;
     justify-content: end;
   }
-
   .content {
     width: 55%;
   }
-
   .title-home {
     padding-top: 120px !important;
     font-size: 23px;
   }
-
   .title {
     font-size: 23px !important;
   }
-
   .btn-contact{
     width: 250px;
     font-size: 14px;
   }
-
   .custom-subtitle-services {
     padding: 0 60px;
   }
-
-
 }
-
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
   .background-image {
     height: 335px;
@@ -605,60 +517,38 @@ export default {
     display: flex;
     justify-content: end;
   }
-
   .title-home {
     padding-top: 120px !important;
-    font-size: 36px;
   }
-
   .content {
     width: 55%;
   }
-
-  .title {
+  .title, .title-home {
     font-size: 36px !important;
   }
-
-
   .description-home,
   .description-home-br {
     font-size: 20px;
   }
-
-  /* .custom-subtitle-services {
-    padding: 0 200px 0 200px;
-  } */
 }
-
 @media screen and (min-width: 1201px) {
-
   .title-home {
     padding-top: 120px !important;
-    font-size: 42px;
   }
-
   .content {
     width: 47%;
   }
-
-  .title {
+  .title , .title-home{
     font-size: 42px !important;
   }
-
-
-
   .description-home,
   .description-home-br {
     font-size: 20px;
   }
-
   .custom-subtitle-services {
     padding: 0 200px 0 200px;
   }
-
-
 }
-
 @media screen and (min-width: 1201px) and (max-width: 1440px) {
   .background-image {
     height: 417px;
@@ -668,7 +558,6 @@ export default {
     display: flex;
     justify-content: end;
   }
-  
 
   .process-details-subtitle {
     width: 900px !important;
@@ -685,25 +574,19 @@ export default {
 }
 
 @media screen and (min-width: 1441px) {
-
   .process-details-subtitle {
     width: 1100px !important;
   }
-
   .details-img {
     width: 1300px;
+    height: 400px;  
   }
-
-
-
 }
 
 @media screen and (min-width: 1441px) and (max-width: 1920px) {
   .content-home-image {
     padding: 80px 0px 0 100px;
   }
-  
-
   .background-image {
     height: 580px;
     position: absolute;
@@ -717,13 +600,9 @@ export default {
     padding-top: 210px !important;
     font-size: 50px;
   }
-
-
   .title {
     font-size: 55px !important;
- 
   }
-
   .description-home,
   .description-home-br {
     font-size: 24px;
@@ -737,18 +616,14 @@ export default {
 @media screen and (min-width: 1921px) and (max-width: 2400px) {
   .title-home {
     padding-top: 120px !important;
-    font-size: 50px;
   }
-
-  .title {
+  .title,   .title-home {
     font-size: 50px !important;
   }
-
   .description-home,
   .description-home-br {
     font-size: 27px;
   }
-
   .background-image {
     height: 28%;
     position: absolute;
@@ -757,9 +632,7 @@ export default {
     display: flex;
     justify-content: end;
   }
-
 }
-
 @media screen and (min-width: 2401px) {
 
   .content {
@@ -779,9 +652,6 @@ export default {
   .description-home-br {
     font-size: 27px;
   }
-
-
-
   .background-image {
     height: 28%;
     position: absolute;
