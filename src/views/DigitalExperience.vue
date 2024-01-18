@@ -6,18 +6,13 @@
                 <p class="digital-experience-container-navbar-title">
                     {{ $t("DIGITAL-EXPERIENCE.title") }}
                 </p>
-
             </div>
             <div class="digital-experience-section">
                 <div class="digital-experience-section-description">
                     {{ $t("DIGITAL-EXPERIENCE.first-description-of-digital-experience") }}
-
                 </div>
-
             </div>
-
             <div class="digital-experience-advantages">
-
                 <h2 class="digital-experience-advantages-span">
                     <span class="digital-experience-advantages-span-title">
                         {{ $t("DIGITAL-EXPERIENCE.digital-experience-title-span") }}
@@ -170,12 +165,9 @@
                     {{ $t("DIGITAL-EXPERIENCE.third-example-of-successful-projects") }}
                 </p>
             </div>
-
-
             <div class="digital-experience-container-contact">
                 <p class="digital-experience-container-contact-background">
                     {{ $t("DIGITAL-EXPERIENCE.get-in-touch") }}
-
                 </p>
                 <div class="form-button-container">
                     <FormButton />
@@ -186,17 +178,12 @@
     </div>
 </template>
 <script>
-import NavBar from '../components/NavBar.vue'
-import FooterComponent from '../components/FooterComponent.vue'
-import FormButton from '@/components/FormButton.vue';
-
 export default {
-
     name: 'DigitalExperience',
     components: {
-        NavBar,
-        FooterComponent,
-        FormButton
+        NavBar: () => import('../components/NavBar.vue'),
+        FooterComponent: () => import('../components/FooterComponent.vue'),
+        FormButton: () => import('@/components/FormButton.vue')
     }
 }
 </script>

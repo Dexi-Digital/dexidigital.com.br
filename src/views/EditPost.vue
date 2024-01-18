@@ -3,32 +3,21 @@
     <div v-if="token">
       <NavBarPost />
       <div>
-
         <v-progress-circular v-if="loadingFirebaseValue" class="loading" indeterminate
           color="primary"></v-progress-circular>
-
-
         <div class="content-no-card container-edit-post" v-else-if="arrayComValoresDoFirebase.length === 0">
-
           <p class="text-no-card">Não há nenhum card para exibir.</p>
           <router-link to="/criar-post">
             <v-btn class="add-card-button">Adicionar Card</v-btn></router-link>
-
         </div>
-
-
-
         <div v-else>
           <div class="icon-abs">
             <router-link class="link content-button-plus" to="/criar-post">
               <v-btn class="add-card-button-plus  icon-plus">
                 <i class="fa-solid fa-plus"></i>
               </v-btn>
-
             </router-link>
-
           </div>
-
           <div class="content-blog ">
             <v-card v-for="(item, index) in arrayComValoresDoFirebase" :key="index" class="mx-auto content-card">
               <div class="icons">
@@ -56,16 +45,13 @@
           </div>
         </div>
       </div>
-
       <div class="d-flex icon-language align-items-center" v-if="showLocaleSwitcher">
         <input type="radio" id="en" v-model="$i18n.locale" value="en" style="display: none">
         <label for="en">
-
           <button @click="switchLanguage('en')" class="me-2">
             <img src="../assets/en-icon.svg" alt="USA">
           </button>
         </label>
-
         <input type="radio" id="pt-BR" v-model="$i18n.locale" value="pt-BR" style="display: none">
         <label for="pt-BR">
           <button @click="switchLanguage('pt-BR')" class="me-2">
@@ -80,32 +66,21 @@
         <p class="title-login">{{ $t("LOGIN.return-to") }} <span class="login">{{ $t("LOGIN.sign-in") }}</span></p>
       </router-link>
     </div>
-
   </div>
 </template>
 <script>
 import { firebaseDb } from "../firebaseConfig";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
-import NavBarPost from "@/components/NavBarPost.vue";
 import { doc, deleteDoc } from "firebase/firestore";
-
-// // import { mapGetters } from 'vuex';
 
 export default {
   name: 'EditPost',
   return: {
     languageParam: null,
-
   },
   components: {
-    NavBarPost
-
+    NavBarPost: () => import("@/components/NavBarPost.vue")
   },
-
-  // computed: {
-  //   ...mapGetters(['isLoggedIn']), // Certifique-se de ter o getter 'isLoggedIn' no seu store
-
-  // },
 
   created() {
     // this.getPostsFromFirebase();
@@ -114,7 +89,6 @@ export default {
   },
 
   data() {
-
     return {
       localImages: [],
       arrayComValoresDoFirebase: [],
@@ -122,14 +96,11 @@ export default {
       posts: {},
       token: localStorage.getItem("token"),
       loadingFirebaseValue: false,
-
       showLocaleSwitcher: true,
-
     }
   },
   methods: {
     goBack() {
-
       this.$router.push("/criar-post");
     },
 
@@ -153,41 +124,15 @@ export default {
         return text;
       }
     },
-    // getPostsFromFirebase() {
-    //   this.loadingFirebaseValue = true;
-    //   this.arrayComValoresDoFirebase = []; // Limpa a array antes de adicionar novos posts
-
-    //    firebaseDb.collection(this.$store.state.language === 'en' ? 'posts-en' : 'posts').get()
-    //      .then((querySnapshot) => {
-    //        this.loadingFirebaseValue = false;
-    //        querySnapshot.forEach((doc) => {
-    //          const post = doc.data();
-    //          this.arrayComValoresDoFirebase.push(post);
-    //        });
-    //        return this.getDonwloadUrlAndSetblogImgUrl();
-    //      });
-    //  },
-
     getPostsFromFirebase() {
       this.loadingFirebaseValue = true;
       this.arrayComValoresDoFirebase = [];  // Limpa a array antes de adicionar novos posts
-
       firebaseDb.collection(this.$store.state.language === 'en' ? 'posts-en' : 'posts').get()
         .then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
             const post = doc.data();
             this.arrayComValoresDoFirebase.push(post);
           });
-
-          // //Filtra e ordena as datas
-          //  this.arrayComValoresDoFirebase = this.arrayComValoresDoFirebase
-          //    .filter(item => item.dateHourToPost)
-          //    .sort((a, b) => {
-          //      const dateA = new Date(a.dateHourToPost.seconds * 1000);
-          //      const dateB = new Date(b.dateHourToPost.seconds * 1000);
-          //      return dateA - dateB;
-          //    });
-          //  Classificando o array com base em dateHourToPost, modificando ordem dos posts
           this.arrayComValoresDoFirebase.sort((a, b) => {
             if (a.dateHourToPost && b.dateHourToPost) {
               return b.dateHourToPost.seconds - a.dateHourToPost.seconds;
@@ -203,7 +148,6 @@ export default {
     },
     formatDateHour(date) {
       const hasPosted = this.verifyCanPost(date);
-
       if (this.$store.state.language === 'pt-BR') {
         return hasPosted ? 'Postado em: ' + new Date(date.seconds * 1000).toLocaleDateString('pt-BR') : 'Será postado em: ' + new Date(date.seconds * 1000).toLocaleDateString('pt-BR');
       } else {
@@ -235,7 +179,6 @@ export default {
     deletePost(post) {
       // Excluir o post do Firebase
       deleteDoc(doc(firebaseDb, this.$store.state.language === 'en' ? 'posts-en' : 'posts', post.id))
-
         .then(() => {
           console.log('Post excluído com sucesso');
           const index = this.arrayComValoresDoFirebase.findIndex(item => item.id === post.id);
@@ -255,18 +198,14 @@ export default {
       setTimeout(() => {
         location.reload();
       }, 300);
-
     },
-
   }
 }
 </script>
 <style scoped>
 .description-blog {
   color: #777 !important;
-
 }
-
 .icon-language {
   position: fixed;
   top: auto !important;
@@ -293,7 +232,6 @@ export default {
 .login {
   font-weight: 800;
 }
-
 ::v-deep.v-progress-circular>svg {
   width: auto !important;
   position: relative;
@@ -308,13 +246,11 @@ export default {
   justify-content: center;
   display: flex;
 }
-
 .icon-abs {
   display: flex;
   justify-content: end;
   padding: 20px 20px 0 0;
 }
-
 .fa-plus {
   color: white !important;
 }
@@ -323,9 +259,7 @@ export default {
   height: calc(100vh - 120px);
   text-align: center;
   padding-top: 10%;
-
 }
-
 
 .text-no-card {
 
@@ -333,8 +267,6 @@ export default {
   font-size: 20px;
   color: #7e7e7e;
 }
-
-
 
 .add-card-button {
   background-color: #158BBF !important;
@@ -348,7 +280,6 @@ export default {
 
 div p img {
   height: 100px;
-  /* outras propriedades de estilo, se necessário */
 }
 
 .header {
@@ -367,9 +298,7 @@ div p img {
   color: white;
   font-size: 20px;
   padding: 20px 0 0 30px;
-
 }
-
 .img-blog {
   border-radius: 8px 8px 0 0;
   height: 200px;
@@ -398,7 +327,6 @@ div p img {
   background-color: #ace6ff !important;
   box-shadow: none;
   border-radius: 50%;
-
 }
 
 .v-btn:not(.v-btn--round).v-size--default {
@@ -407,9 +335,7 @@ div p img {
 }
 
 .icon:hover {
-
   background-color: rgba(255, 255, 255, 0.187) !important;
-
 }
 
 button.icon.v-btn.v-btn--is-elevated.v-btn--has-bg.theme--light.v-size--default {
@@ -431,8 +357,6 @@ button.icon.v-btn.v-btn--is-elevated.v-btn--has-bg.theme--light.v-size--default 
   z-index: 2;
 }
 
-
-
 .v-image.v-responsive.theme--light {
   display: inherit !important;
 }
@@ -441,7 +365,6 @@ button.icon.v-btn.v-btn--is-elevated.v-btn--has-bg.theme--light.v-size--default 
   font-size: 19px;
   font-weight: 700;
 }
-
 .title-data {
   color: #a9a9a9;
 }
@@ -450,31 +373,21 @@ button.icon.v-btn.v-btn--is-elevated.v-btn--has-bg.theme--light.v-size--default 
   display: flex;
   justify-content: center;
 }
-
 .content-blog {
-
-
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-
-
 .no-posts {
   text-align: center;
 }
-
 .mx-auto.content-card.v-card.v-card--link.v-sheet.theme--light {
-  /* display: flex; */
   flex-wrap: wrap;
   justify-content: start !important;
-  ;
 }
-
 .link {
   text-decoration: none;
 }
-
 .links {
   cursor: pointer;
   font-size: 12px;
@@ -495,7 +408,6 @@ button.icon.v-btn.v-btn--is-elevated.v-btn--has-bg.theme--light.v-size--default 
 }
 
 .content-arrow {
-
   display: flex;
 }
 
@@ -503,12 +415,10 @@ button.icon.v-btn.v-btn--is-elevated.v-btn--has-bg.theme--light.v-size--default 
   perspective: 1000px;
   transition: transform 0.3s ease;
   border-radius: 8px !important;
-
   box-shadow: 0 0 10px 0 rgba(53, 53, 53, 0.15) !important;
   margin-bottom: 50px;
   cursor: pointer;
   margin: 30px !important;
-
 }
 
 .title-details {
@@ -520,22 +430,12 @@ button.icon.v-btn.v-btn--is-elevated.v-btn--has-bg.theme--light.v-size--default 
 }
 
 @media screen and (min-width:320px) and (max-width: 480px) {
-
-
   .content-card {
     width: 80%;
   }
-
-  /* .content-blog {
-    padding: 20px !important;
-  } */
 }
 
 @media screen and (max-width: 481px) {
-
-  /* .content-blog {
-    padding-top: 50px !important;
-  } */
   .content-card {
     width: 90%;
   }
@@ -549,11 +449,9 @@ button.icon.v-btn.v-btn--is-elevated.v-btn--has-bg.theme--light.v-size--default 
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-
   .content-card {
     width: 30%;
   }
-
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
@@ -561,7 +459,6 @@ button.icon.v-btn.v-btn--is-elevated.v-btn--has-bg.theme--light.v-size--default 
     width: 30%;
   }
 }
-
 @media screen and (min-width: 1201px) {
   .content-card {
     width: 280px;

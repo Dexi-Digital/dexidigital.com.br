@@ -14,16 +14,13 @@
     </div>
 </template>
 <script>
-import QuillEditor from "@/components/QuillEditor.vue";
 import { firebaseDb } from "@/firebaseConfig";
-import NavBarPost from "@/components/NavBarPost.vue";
-
 export default {
     name: "CreatePost",
     components: {
-        QuillEditor,
-        NavBarPost
-    },
+    QuillEditor: () => import('@/components/QuillEditor.vue'),
+    NavBarPost: () => import('@/components/NavBarPost.vue')
+},
     data() {
         return {
             token: localStorage.getItem("token"),

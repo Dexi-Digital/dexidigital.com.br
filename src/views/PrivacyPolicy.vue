@@ -1,9 +1,7 @@
 <template>
     <div class="container-privacy">
         <nav class="navbar navbar-expand-sm bg-body-tertiary">
-
             <div class="container-fluid">
-
                 <div>
                     <v-toolbar-title>
                         <router-link class="navbar-brand" to="/">
@@ -128,12 +126,11 @@
 </template>
 
 <script>
-import { Facebook, Linkedin } from "vue-socialmedia-share";
 export default {
     name: 'PrivacyPolicy',
     components: {
-        Facebook,
-        Linkedin,
+        Facebook: () => import("vue-socialmedia-share").then(m => m.Facebook),
+        Linkedin: () => import("vue-socialmedia-share").then(m => m.Linkedin),
     },
     head: {
         title: "Termo de uso e política de privacidade",

@@ -97,18 +97,15 @@
   </div>
 </template>
 <script scoped>
-import NavBar from '../components/NavBar'
-import FooterComponent from '../components/FooterComponent'
-import WhatsappButton from '../components/WhatsappButton.vue';
-import CarouselComponent from '../components/CarouselComponent.vue';
 export default {
   name: 'HomeView',
   components: {
-    NavBar,
-    FooterComponent,
-    WhatsappButton,
-    CarouselComponent
-  },
+  NavBar: () => import('../components/NavBar.vue'),
+  FooterComponent: () => import('../components/FooterComponent.vue'),
+  WhatsappButton: () => import('../components/WhatsappButton.vue'),
+  CarouselComponent: () => import('../components/CarouselComponent.vue')
+},
+
   mounted() {
     this.$gtag.pageview('/HomeView');
   },

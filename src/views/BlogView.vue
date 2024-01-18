@@ -2,7 +2,6 @@
   <div>
     <NavBar />
     <div class="content-blog" :class="{ 'no-card-height': arrayComValoresDoFirebase.length === 0 }">
-
         <v-progress-circular v-if="loadingFirebaseValue" class="loading" indeterminate
           color="primary"></v-progress-circular>
         <div class="content-no-card" v-else-if="arrayComValoresDoFirebase.length === 0">
@@ -26,29 +25,22 @@
     <div class="pagination-content">
       <v-pagination class="pagination" v-if="pageCount > 1" v-model="currentPage" :length="pageCount"
         @input="changePage"></v-pagination>
-      <!-- <v-pagination :length="5"></v-pagination> -->
     </div>
-
     <WhatsappButton />
-
     <FooterComponent />
   </div>
 </template>
 <script>
-import NavBar from '../components/NavBar'
-import FooterComponent from '../components/FooterComponent'
-import WhatsappButton from '../components/WhatsappButton.vue';
 import { firebaseDb } from "../firebaseConfig";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
 export default {
   name: 'BlogView',
-
   components: {
-    NavBar,
-    FooterComponent,
-    WhatsappButton
-  },
+  NavBar: () => import('../components/NavBar.vue'),
+  FooterComponent: () => import('../components/FooterComponent.vue'),
+  WhatsappButton: () => import('../components/WhatsappButton.vue')
+},
   created() {
     this.getPostsFromFirebase();
   },

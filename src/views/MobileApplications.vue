@@ -9,12 +9,9 @@
             <div class="mobile-applications-section">
                 <p class="mobile-applications-section-description">
                     {{ $t("MOBILE-APPLICATIONS.first-description-of-mobile-applications") }}
-
-
                 </p>
                 <p class="mobile-applications-section-description">
                     {{ $t("MOBILE-APPLICATIONS.second-description-of-mobile-applications") }}
-
                 </p>
             </div>
             <div class="mobile-applications-services">
@@ -103,10 +100,7 @@
                     </li>
                     <li class="mobile-applications-container-color-item">
                         <span class="mobile-applications-container-color-strong">
-                       
-
                             {{ $t("MOBILE-APPLICATIONS.agile-methodology-span") }}
-
                         </span>
                         {{ $t("MOBILE-APPLICATIONS.agile-methodology-span-description") }}
 
@@ -122,7 +116,6 @@
                     <li class="mobile-applications-container-color-item">
                         <span class="mobile-applications-container-color-strong">
                             {{ $t("MOBILE-APPLICATIONS.customized-support-span") }}
-
                         </span>
                         {{ $t("MOBILE-APPLICATIONS.customized-support-span-description") }}
                     </li>
@@ -140,33 +133,25 @@
                 <div class="form-button-container">
                     <FormButton />
                 </div>
-
             </div>
-
         </div>
         <FooterComponent />
     </div>
 </template>
 <script>
-import NavBar from '../components/NavBar.vue'
-import FooterComponent from '../components/FooterComponent.vue'
-
-import FormButton from '@/components/FormButton.vue';
 export default {
     name: 'MobileApplications',
     components: {
-        NavBar,
-        FooterComponent,
-        FormButton
+        NavBar: () => import('../components/NavBar.vue'),
+        FooterComponent: () => import('../components/FooterComponent.vue'),
+        FormButton: () => import('@/components/FormButton.vue')
     }
-
 }
 </script>
 
 <style scoped lang="scss">
 .mobile-applications-container-navbar {
     background-color: #38b6ed;
-
     display: flex;
     justify-content: center;
 
@@ -187,7 +172,6 @@ export default {
         padding-bottom: 20px;
         color: #5c5c5c;
     }
-
 }
 
 .mobile-applications-services {
@@ -225,9 +209,7 @@ export default {
 
     &-item {
         padding-bottom: 10px;
-
         color: white;
-
     }
 
     &-strong {
@@ -239,19 +221,16 @@ export default {
         height: 100px;
         width: 100%;
         background-repeat: round;
-
     }
     &-img-bottom {
         background-image: url('../assets/bottom2.png');
         height: 100px;
         width: 100%;
         background-repeat: round;
-
     }
 }
 
 .mobile-applications-content {
-
     padding-top: 40px;
     justify-content: center;
     display: flex;
@@ -264,7 +243,6 @@ export default {
 
 .mobile-applications-advantages {
     padding: 50px 50px;
-
     &-span {
         font-size: 40px;
         font-weight: 700;
@@ -286,14 +264,12 @@ export default {
         padding-bottom: 20px;
         color: #5c5c5c;
     }
-
 }
 
 .mobile-applications-container-description {
     font-size: 20px;
     color: #5c5c5c;
     padding: 50px;
-
 }
 
 .mobile-applications-container-contact {
@@ -302,7 +278,6 @@ export default {
     &-background {
         font-size: 30px;
         color: #FFFFFF;
-
         font-weight: 300;
         line-height: 43px;
         padding: 50px 50px 20px 50px;
@@ -315,8 +290,6 @@ export default {
     padding-bottom: 60px;
 
 }
-
-.mobile-applications-content-img {}
 
 @media screen and (max-width: 480px) {
     .mobile-applications-section {
