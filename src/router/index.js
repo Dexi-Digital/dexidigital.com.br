@@ -1,10 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import FormView from '../views/FormView.vue'
-import PostsView from '../views/PostsView.vue'
-import CreatePost from '../views/CreatePost.vue'
 import LoginView from '../views/LoginView.vue'
-import EditPost from '../views/EditPost.vue'
 import PostEditPage from '../views/PostEditPage.vue'
 
 Vue.use(VueRouter)
@@ -28,19 +24,19 @@ const routes = [
   {
     path: '/fale-conosco',
     name: 'form',
-    component: FormView
-  },
+    component: () => import('../views/FormView.vue')
+},
   {
-    path: '/posts/:title',
-    name: 'posts',
-    component: PostsView
-  },
+  path: '/posts/:title',
+  name: 'posts',
+  component: () => import('../views/PostsView.vue')
+},
 
   {
-    path: '/criar-post/',
-    name: 'create-Post',
-    component: CreatePost
-  },
+  path: '/criar-post/',
+  name: 'create-Post',
+  component: () => import('../views/CreatePost.vue')
+},
   {
     path: '/entrar/',
     name: 'login-view',
@@ -49,12 +45,12 @@ const routes = [
   {
     path: '/editar-post/:language',
     name: 'edit-post',
-    component: EditPost
+    component: () => import('../views/EditPost.vue')
   },
   {
     path: '/editar-post',
     name: 'edit-post',
-    component: EditPost
+    component: () => import('../views/EditPost.vue')
   },
   {
     path: '/pagina-de-edicao/:postId',
