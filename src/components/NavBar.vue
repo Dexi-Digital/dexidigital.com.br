@@ -55,14 +55,14 @@
             <label for="en">
 
               <button @click="switchLanguage('en')" class="me-2">
-                <img src="../assets/en-icon.svg" alt="English">
+                <img class="icon-en" src="../assets/en-icon.svg" alt="English">
               </button>
             </label>
 
             <input type="radio" id="pt-BR" v-model="$i18n.locale" value="pt-BR" style="display: none">
             <label for="pt-BR">
               <button @click="switchLanguage('pt-BR')" class="me-2">
-                <img src="../assets/br-icon.svg" alt="Português">
+                <img class="icon-pt" src="../assets/br-icon.svg" alt="Português">
               </button>
             </label>
           </div>
@@ -126,6 +126,14 @@ export default {
 </script>
 
 <style scoped>
+.icon-en{
+  width: 20px;
+  height: 16px;
+}
+.icon-pt{
+  width: 20px;
+  height: 16px;
+}
 .v-list-item {
   display: block !important;
 }
@@ -188,6 +196,7 @@ color: #0566f8!important;
 
 .logo {
   height: 50px;
+  width: 100px;
 }
 
 .navbar {

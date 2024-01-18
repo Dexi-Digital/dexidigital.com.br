@@ -151,18 +151,13 @@
 </template> -->
 
 <!-- <script>
-import NavBar from '../components/NavBar'
-import FormButton from '@/components/FormButton.vue';
-import FooterComponent from '@/components/FooterComponent.vue';
-
 export default {
     name: 'ServicesView',
     components: {
-        NavBar,
-        FormButton,
-        FooterComponent
+        NavBar: () => import('../components/NavBar'),
+        FormButton: () => import('@/components/FormButton.vue'),
+        FooterComponent: () => import('@/components/FooterComponent.vue')
     }
-
 }
 </script> -->
 

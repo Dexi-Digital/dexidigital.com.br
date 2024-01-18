@@ -22,22 +22,6 @@
 
         </form>
         <div class="background"></div>
-        <!-- <div class="d-flex align-items-center" v-if="showLocaleSwitcher">
-            <input type="radio" id="en" v-model="$i18n.locale" value="en" style="display: none">
-            <label for="en">
-
-              <button @click="switchLanguage('en')" class="me-2">
-                <img src="../assets/en-icon.svg" alt="USA">
-              </button>
-            </label>
-
-            <input type="radio" id="pt-BR" v-model="$i18n.locale" value="pt-BR" style="display: none">
-            <label for="pt-BR">
-              <button @click="switchLanguage('pt-BR')" class="me-2">
-                <img src="../assets/br-icon.svg" alt="Brazil">
-              </button>
-            </label>
-          </div> -->
     </div>
 </template>
   
@@ -45,8 +29,6 @@
 import { validationMixin } from 'vuelidate'
 import { required, minLength, email } from 'vuelidate/lib/validators'
 import { auth } from "../firebaseConfig"
-// import {signInWithEmailAndPassword} from "firebase/auth"
-
 
 export default {
     name: "LoginView",

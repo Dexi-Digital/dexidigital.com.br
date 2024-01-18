@@ -4,24 +4,19 @@
         <div class="content-form">
             <div class="content-form-title">
                 <p class="custom-title">
-                    <span class="custom-strong">{{ $t("FORM.title") }}</span> 
+                    <span class="custom-strong">{{ $t("FORM.title") }}</span>
                 </p>
             </div>
             <div class="box-form">
                 <v-form class="form" ref="form" v-model="valid" lazy-validation @submit.prevent="submitForm">
                     <v-row>
                         <v-col cols="12" sm="12" md="6  ">
-
                             <v-text-field style="color: black!important;" v-model="name" :counter="10" :rules="nameRules"
                                 :label="$t('FORM.name')" required></v-text-field>
-
                         </v-col>
-
                         <v-col cols="12" sm="12" md="6">
                             <v-text-field v-model="company" :rules="companyRules" :label="$t('FORM.company')"
                                 required></v-text-field>
-
-
                         </v-col>
                         <v-col cols="12" sm="12" md="6">
                             <v-text-field v-model="phone" :rules="phoneRules" :label="$t('FORM.phone')"
@@ -36,38 +31,30 @@
 
                             <v-text-field v-model="linkedin" :rules="linkedinRules" :label="$t('FORM.linkedIn')"
                                 required></v-text-field>
-
                         </v-col>
                         <v-col cols="12" sm="12" md="6">
 
                             <v-select v-model="select" :items="translatedItems"
                                 :rules="[v => !!v || $t('VALIDATION.required')]" :label="$t('FORM.job')"
                                 required></v-select>
-
-
                         </v-col>
                         <v-col cols="12" sm="12" md="12">
-
                             <v-text-field v-model="description" :rules="descriptionRules"
                                 :label="$t('FORM.describe-the-project')" required></v-text-field>
-
                         </v-col>
                     </v-row>
                     <div>
-
                         <v-checkbox v-model="checkbox" :rules="[v => !!v || 'You must agree to continue!']"
                             :label="$t('FORM.policy-input')" required></v-checkbox>
                         <div class="links">
                             <router-link to="/politica-de-privacidade">{{ $t("FORM.privacy-policy") }} </router-link><br>
-
                         </div>
                     </div>
                     <div class="content-btn-form">
                         <v-btn class="btn-form" @click="send">
-                            {{ $t("FORM.send") }} 
+                            {{ $t("FORM.send") }}
                         </v-btn>
                     </div>
-
                     <v-alert v-if="successAlert && !isError" dense text type="success">{{ 'Formulário enviado com sucesso!'
                     }}</v-alert>
                     <v-alert v-if="isError" dense text type="error">{{ errorMessage }}</v-alert>
@@ -80,14 +67,7 @@
 </template>
 
 <script>
-import NavBar from '../components/NavBar'
-import FooterComponent from '../components/FooterComponent'
 import { firebaseDb } from "../firebaseConfig";
-import WhatsappButton from '../components/WhatsappButton.vue';
-
-// import * as admin from "firebase-admin";
-// import * as functions from "firebase-functions";
-
 export default {
     name: "FormView",
     data() {
@@ -145,10 +125,11 @@ export default {
         }
     },
     components: {
-        NavBar,
-        FooterComponent,
-        WhatsappButton
-    }, computed: {
+        NavBar: () => import('../components/NavBar.vue'),
+        FooterComponent: () => import('../components/FooterComponent.vue'),
+        WhatsappButton: () => import('../components/WhatsappButton.vue')
+    },
+    computed: {
         translatedItems() {
             return this.items.map(item => ({
                 value: item,

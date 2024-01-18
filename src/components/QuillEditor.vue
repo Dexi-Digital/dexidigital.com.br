@@ -7,44 +7,35 @@
                         <v-row>
                             <v-col cols="6" sm="6" md="6" lg="6" xl="6">
                                 <v-text-field v-model="blogTitle" label="Titulo do Post"></v-text-field>
-
-
                             </v-col>
                             <v-col cols="6" sm="6" md="6" lg="6" xl="6">
                                 <v-select v-model="blogLanguage" :items="itemsLanguage" label="Linguagem"></v-select>
-
                             </v-col>
-
                         </v-row>
                     </div>
                     <v-row>
                         <v-col cols="6" sm="6" md="6" lg="6" xl="6">
-                            <VMenu ref="menu1" v-model="menu1" :close-on-content-click="false" :nudge-right="40"
+                            <v-menu ref="menu1" v-model="menu1" :close-on-content-click="false" :nudge-right="40"
                                 transition="scale-transition" offset-y max-width="290px" min-width="290px">
                                 <template v-slot:activator="{ on }">
                                     <v-text-field v-model="dateFormatted" label="Data de Publicação"
-                                  
                                         v-on="on"></v-text-field>
                                 </template>
-                                <VDatePicker locale="ptBR" v-model="date" no-title @input="menu1 = false"
-                                    :format="customDateFormat"></VDatePicker>
-                            </VMenu>
-
+                                <v-date-picker locale="pt-BR" v-model="date" no-title @input="menu1 = false"
+                                    :format="customDateFormat"></v-date-picker>
+                            </v-menu>
                         </v-col>
-
                         <v-col cols="6" sm="6" md="6" lg="6" xl="6">
-
-                            <VMenu ref="menu" v-model="menu2" :close-on-content-click="false" :nudge-right="40"
-                                :return-value.sync="time" transition="scale-transition" offset-y
-                                max-width="290px" min-width="290px">
+                            <v-menu ref="menu" v-model="menu2" :close-on-content-click="false" :nudge-right="40"
+                                :return-value.sync="time" transition="scale-transition" offset-y max-width="290px"
+                                min-width="290px">
                                 <template v-slot:activator="{ on }">
                                     <v-text-field v-model="time" label="Hora da Publicação" readonly
                                         v-on="on"></v-text-field>
                                 </template>
                                 <v-time-picker v-if="menu2" v-model="time" format="24hr"
                                     @click:minute="$refs.menu.save(time)"></v-time-picker>
-                            </VMenu>
-
+                            </v-menu>
                         </v-col>
                     </v-row>
                     <v-row>
@@ -54,20 +45,8 @@
                                 :label="blogImgUrl || loadingImage ? null : 'Selecione uma Imagem'" type="file"
                                 accept="image/*" id="files" name="files[]" multiple @change="uploadFile()" class="input"
                                 outlined dense></v-file-input>
-
-                            <!-- <router-link :to="{ path: '/outra-pagina', query: { blogImgUrl: blogImgUrl } }"
-                        >Ir para Outra Página</router-link>        -->
                         </v-col>
                     </v-row>
-
-                    <!-- <v-row>
-                    <v-col cols="6" sm="6" md="6" lg="6" xl="6">
-                        <v-date-picker v-model="scheduledDate" label="Data de Agendamento"></v-date-picker>
-                    </v-col>
-                    <v-col cols="6" sm="6" md="6" lg="6" xl="6">
-                        <v-time-picker v-model="scheduledTime" format="24hr" label="Hora de Agendamento"></v-time-picker>
-                    </v-col>
-                </v-row> -->
                 </div>
                 <v-img v-if="imageControl !== 0" :src="blogImgUrl" :height="200" alt=" Imagem do
             Blog"></v-img>
@@ -120,7 +99,6 @@ export default {
             ],
 
             time: null,
-
             date: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
             dateFormatted: this.formatDate((new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)),
             ptBR: ptBR,
@@ -141,12 +119,6 @@ export default {
         date() {
             this.dateFormatted = this.formatDate(this.date)
         },
-        // $route(to) {
-        //     // Verifica a rota atual e ajusta a linguagem do seletor
-        //     if (to.name === 'edit-post' && to.params.language) {
-        //         this.blogLanguage = to.params.language;
-        //     }
-        // }
     },
     methods: {
         async sendToFirebase() {
@@ -187,8 +159,6 @@ export default {
                             dateHourToPost: this.dateHourToPost
                         });
                 }
- 
-                // this.$router.push("/editar-post");
 
                 const language = this.blogLanguage;
                 const routeName = 'edit-post';
@@ -203,7 +173,6 @@ export default {
                 this.err = error;
             }
         },
-        
         cleanForm() {
             this.content = "";
             this.blogTitle = "";
