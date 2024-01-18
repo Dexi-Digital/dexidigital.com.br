@@ -176,6 +176,7 @@ export default {
 .server-img {
   height: 50px;
 }
+
 @media screen and (min-width: 768px) {
 
   .server-img {
@@ -342,12 +343,6 @@ export default {
   justify-content: center;
 }
 
-.details-img {
-  width: 80%;
-  height: 80%;
-  padding: 40px 0;
-}
-
 .title-tecnologias {
   text-align: center;
   font-weight: 600;
@@ -375,7 +370,10 @@ export default {
     width: 275px;
     font-size: 17px;
   }
-}
+  .image-tecnologias{
+    background-repeat: repeat-x;
+    }
+    }
 @media screen and (max-width:500px) {
   .custom-subtitle-services {
     padding: 0 30px;
@@ -418,7 +416,9 @@ export default {
     font-size: 17px;
     padding: 10px 11px 10px 11px;
   }
-
+  .image-tecnologias{
+    background-repeat: repeat-x;
+    }
 }
 
 @media screen and (min-width: 769px) {
@@ -470,8 +470,9 @@ export default {
 }
 @media screen and (max-width: 768px) {
   .details-img {
-    width: 100% !important;
-    height: 100% !important;
+    width: 80% !important;
+    height: 80% !important;
+    padding: 20px 0 20px 0;
   }
 }
 
@@ -507,6 +508,13 @@ export default {
   .custom-subtitle-services {
     padding: 0 60px;
   }
+  
+  .details-img {
+    width: 80% !important;
+    height: 80% !important;
+    padding: 20px 0 20px 0;
+  }
+
 }
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
   .background-image {
@@ -530,6 +538,11 @@ export default {
   .description-home-br {
     font-size: 20px;
   }
+  .details-img {
+    width: 80% !important;
+    height: 80% !important;
+    padding: 20px 0 20px 0;
+  }
 }
 @media screen and (min-width: 1201px) {
   .title-home {
@@ -548,6 +561,7 @@ export default {
   .custom-subtitle-services {
     padding: 0 200px 0 200px;
   }
+ 
 }
 @media screen and (min-width: 1201px) and (max-width: 1440px) {
   .background-image {
@@ -571,6 +585,11 @@ export default {
   .description-home-br {
     font-size: 20px;
   }
+  .details-img {
+    width: 60% !important;
+    height: 80% !important;
+    padding: 40px 0 40px 0;
+  }
 }
 
 @media screen and (min-width: 1441px) {
@@ -578,8 +597,9 @@ export default {
     width: 1100px !important;
   }
   .details-img {
-    width: 1300px;
-    height: 400px;  
+    width: 60% !important;
+    height: 80% !important;
+    padding: 40px 0 40px 0;
   }
 }
 
