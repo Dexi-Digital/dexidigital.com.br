@@ -1,53 +1,37 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
-<loc>https://www.dexidigital.com.br/</loc>
-<changefreq>daily</changefreq>
-<priority>1.0</priority>
+  <loc>https://www.dexidigital.com.br/</loc>
+  <lastmod>2024-01-19T15:28:16+00:00</lastmod>
 </url>
 <url>
-<loc>https://www.dexidigital.com.br/blog</loc>
-<changefreq>daily</changefreq>
-<priority>1.0</priority>
+  <loc>https://www.dexidigital.com.br/blog</loc>
+  <lastmod>2024-01-19T15:28:16+00:00</lastmod>
+</url>
+<url>
+  <loc>https://www.dexidigital.com.br/outsourcing-de-ti</loc>
+  <lastmod>2024-01-19T15:28:16+00:00</lastmod>
+</url>
+<url>
+  <loc>https://www.dexidigital.com.br/aplicativos-mobile</loc>
+  <lastmod>2024-01-19T15:28:16+00:00</lastmod>
+</url>
+<url>
+  <loc>https://www.dexidigital.com.br/squad-de-desenvolvimento</loc>
+  <lastmod>2024-01-19T15:28:16+00:00</lastmod>
+</url>
+<url>
+  <loc>https://www.dexidigital.com.br//experiencia-digital</loc>
+  <lastmod>2024-01-19T15:28:16+00:00</lastmod>
+</url>
+<url>
+  <loc>https://www.dexidigital.com.br/fale-conosco</loc>
+  <lastmod>2024-01-19T15:28:16+00:00</lastmod>
 </url>
 
-<url>
-<loc>https://www.dexidigital.com.br/servicos</loc>
-<changefreq>daily</changefreq>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://www.dexidigital.com.br/fale-conosco</loc>
-<changefreq>daily</changefreq>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://www.dexidigital.com.br/posts</loc>
-<changefreq>daily</changefreq>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://www.dexidigital.com.br/politica-de-privacidade</loc>
-<changefreq>daily</changefreq>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://www.dexidigital.com.br/outsourcing-de-ti</loc>
-<changefreq>daily</changefreq>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://www.dexidigital.com.br/aplicativos-mobile</loc>
-<changefreq>daily</changefreq>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://www.dexidigital.com.br/squad-de-desenvolvimento</loc>
-<changefreq>daily</changefreq>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://www.dexidigital.com.br/experiencia-digital</loc>
-<changefreq>daily</changefreq>
-<priority>1.0</priority>
-</url>
+
 </urlset>
