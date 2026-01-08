@@ -47,3 +47,6 @@ pnpm-debug.log*
 # Temporary files
 *.tmp
 *.temp
+
+# Image optimization backup
+nextjs-app/public/images-backup/

@@ -21,6 +21,8 @@ export default function CalculadoraROIPage() {
   const [email, setEmail] = useState('');
   const [nome, setNome] = useState('');
   const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -58,9 +60,42 @@ export default function CalculadoraROIPage() {
 
   const handleSubmitEmail = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Integrate with email service
-    console.log('Lead captured:', { email, nome, formData, results: calculateROI() });
-    setEmailSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError('');
+
+    try {
+      const roiResults = calculateROI();
+
+      const response = await fetch('/api/lead-magnet', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          nome,
+          email,
+          type: 'calculator',
+          title: 'Calculadora de ROI em Dados',
+          roiData: {
+            ...roiResults,
+            formData,
+          },
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Erro ao enviar');
+      }
+
+      setEmailSubmitted(true);
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : 'Ocorreu um erro. Por favor, tente novamente.';
+      setSubmitError(errorMessage);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const results = showResults ? calculateROI() : null;
@@ -361,8 +396,15 @@ export default function CalculadoraROIPage() {
                           />
                         </div>
                       </div>
-                      <button type="submit" className="btn btn-primary w-full">
-                        Enviar relatório completo
+                      {submitError && (
+                        <p className="text-red-600 text-sm">{submitError}</p>
+                      )}
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="btn btn-primary w-full"
+                      >
+                        {isSubmitting ? 'Enviando...' : 'Enviar relatório completo'}
                       </button>
                     </form>
                   </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import type { ReactElement } from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getArticleBySlug, getAllArticles } from '@/lib/blog-data';
@@ -49,7 +50,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
   // Simple markdown-like rendering (headers, paragraphs, lists, bold, links)
   const renderContent = (content: string) => {
     const lines = content.split('\n');
-    const elements: JSX.Element[] = [];
+    const elements: ReactElement[] = [];
     let currentList: string[] = [];
     let currentTable: string[][] = [];
     let inTable = false;

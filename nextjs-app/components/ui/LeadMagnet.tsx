@@ -48,14 +48,29 @@ export default function LeadMagnet({
     setError('');
 
     try {
-      // TODO: Integrate with email service (e.g., Mailchimp, ConvertKit, HubSpot)
-      // For now, simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      
-      console.log('Lead captured:', { email, nome, type, title });
+      const response = await fetch('/api/lead-magnet', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          nome,
+          email,
+          type,
+          title,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Erro ao enviar');
+      }
+
       setIsSubmitted(true);
-    } catch {
-      setError('Ocorreu um erro. Por favor, tente novamente.');
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : 'Ocorreu um erro. Por favor, tente novamente.';
+      setError(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
