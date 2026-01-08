@@ -23,12 +23,12 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-12 lg:py-16">
+    <footer className="section-dark">
+      <div className="container py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-block mb-4">
+            <Link href="/" className="inline-block mb-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 rounded-lg">
               <Image
                 src="/images/brand/logo.svg"
                 alt="Dexi Digital"
@@ -37,24 +37,21 @@ export default function Footer() {
                 className="h-8 w-auto brightness-0 invert"
               />
             </Link>
-            <p className="text-gray-400 text-sm mb-4">
+            <p className="text-body-sm text-gray-400 mb-4">
               Inteligência de dados e software sob medida com IA acelerada e supervisão técnica humana.
             </p>
-            <p className="text-gray-400 text-sm">
+            <p className="text-body-sm text-gray-400">
               Para empresas que não podem falhar.
             </p>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-4">Serviços</h3>
+            <h3 className="text-h6 text-white mb-4">Serviços</h3>
             <ul className="space-y-3">
               {navigation.services.map((item) => (
                 <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-gray-400 hover:text-white transition-colors"
-                  >
+                  <Link href={item.href} className="footer-link">
                     {item.name}
                   </Link>
                 </li>
@@ -64,14 +61,11 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-4">Empresa</h3>
+            <h3 className="text-h6 text-white mb-4">Empresa</h3>
             <ul className="space-y-3">
               {navigation.company.map((item) => (
                 <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-gray-400 hover:text-white transition-colors"
-                  >
+                  <Link href={item.href} className="footer-link">
                     {item.name}
                   </Link>
                 </li>
@@ -81,12 +75,12 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-4">Contato</h3>
+            <h3 className="text-h6 text-white mb-4">Contato</h3>
             <ul className="space-y-3">
               <li>
                 <a
                   href="mailto:contato@dexidigital.com.br"
-                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                  className="footer-link"
                 >
                   contato@dexidigital.com.br
                 </a>
@@ -106,16 +100,12 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-400">
+            <p className="text-caption text-gray-400">
               © {currentYear} Dexi Digital. Todos os direitos reservados.
             </p>
             <div className="flex gap-6">
               {navigation.legal.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-sm text-gray-400 hover:text-white transition-colors"
-                >
+                <Link key={item.name} href={item.href} className="footer-link">
                   {item.name}
                 </Link>
               ))}

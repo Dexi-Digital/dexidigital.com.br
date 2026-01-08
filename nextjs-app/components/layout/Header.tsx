@@ -20,7 +20,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex lg:flex-1">
-            <Link href="/" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-lg">
               <span className="sr-only">Dexi Digital</span>
               <Image
                 src="/images/brand/logo.svg"
@@ -37,8 +37,9 @@ export default function Header() {
           <div className="flex lg:hidden">
             <button
               type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+              className="btn-icon btn-ghost text-gray-700"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-expanded={mobileMenuOpen}
             >
               <span className="sr-only">
                 {mobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
@@ -78,12 +79,12 @@ export default function Header() {
           </div>
 
           {/* Desktop navigation */}
-          <div className="hidden lg:flex lg:gap-x-8">
+          <div className="hidden lg:flex lg:gap-x-2">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-semibold leading-6 text-gray-900 hover:text-primary-600 transition-colors"
+                className="nav-link"
               >
                 {item.name}
               </Link>
@@ -92,10 +93,7 @@ export default function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <Link
-              href="/contato"
-              className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors"
-            >
+            <Link href="/contato" className="btn btn-primary">
               Fale conosco
             </Link>
           </div>
@@ -103,25 +101,27 @@ export default function Header() {
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
-            <div className="space-y-2">
+          <div className="lg:hidden mt-4 pb-4 border-t border-gray-200 pt-4 animate-fade-in-down">
+            <div className="space-y-1">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50 rounded-md transition-colors"
+                  className="nav-link-mobile"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <Link
-                href="/contato"
-                className="block px-3 py-2 text-base font-semibold text-white bg-primary-600 hover:bg-primary-700 rounded-md transition-colors text-center mt-4"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Fale conosco
-              </Link>
+              <div className="pt-4">
+                <Link
+                  href="/contato"
+                  className="btn btn-primary w-full justify-center"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Fale conosco
+                </Link>
+              </div>
             </div>
           </div>
         )}

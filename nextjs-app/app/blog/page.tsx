@@ -43,13 +43,13 @@ export default function BlogPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-primary-50 to-white py-20 lg:py-28">
-        <div className="container mx-auto px-4">
+      <section className="section-hero-alt">
+        <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+            <h1 className="text-display mb-6">
               Blog
             </h1>
-            <p className="text-xl text-gray-600">
+            <p className="text-lead">
               Insights sobre IA empresarial, inteligência de dados e
               desenvolvimento de software.
             </p>
@@ -58,54 +58,31 @@ export default function BlogPage() {
       </section>
 
       {/* Articles Grid */}
-      <section className="py-20 lg:py-28">
-        <div className="container mx-auto px-4">
+      <section className="section">
+        <div className="container">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {articles.map((article) => (
-                <article
-                  key={article.slug}
-                  className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
-                >
+                <article key={article.slug} className="card-article">
                   <div className="p-6">
                     <div className="flex items-center gap-2 mb-3">
-                      <span className="px-3 py-1 bg-primary-100 text-primary-700 text-xs font-semibold rounded-full">
-                        {article.category}
-                      </span>
-                      <span className="text-sm text-gray-500">
-                        {article.readTime}
-                      </span>
+                      <span className="badge badge-primary">{article.category}</span>
+                      <span className="text-caption">{article.readTime}</span>
                     </div>
-                    <h2 className="text-xl font-bold text-gray-900 mb-3">
+                    <h2 className="text-h5 mb-3">
                       {article.title}
                     </h2>
-                    <p className="text-gray-600 mb-4">{article.excerpt}</p>
+                    <p className="text-body-sm mb-4">{article.excerpt}</p>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-500">
+                      <span className="text-caption">
                         {new Date(article.date).toLocaleDateString('pt-BR', {
                           day: 'numeric',
                           month: 'long',
                           year: 'numeric',
                         })}
                       </span>
-                      <Link
-                        href={`/blog/${article.slug}`}
-                        className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 transition-colors"
-                      >
+                      <Link href={`/blog/${article.slug}`} className="link-arrow">
                         Ler mais
-                        <svg
-                          className="w-5 h-5 ml-1"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 5l7 7-7 7"
-                          />
-                        </svg>
                       </Link>
                     </div>
                   </div>
@@ -115,7 +92,7 @@ export default function BlogPage() {
 
             {/* Coming Soon Message */}
             <div className="mt-12 text-center">
-              <p className="text-gray-600">
+              <p className="text-body">
                 Mais artigos em breve. Acompanhe nossas publicações sobre IA,
                 dados e software enterprise.
               </p>
@@ -125,13 +102,13 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="bg-gray-50 py-20">
-        <div className="container mx-auto px-4">
+      <section className="section-alt py-20">
+        <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-h2 mb-4">
               Receba insights direto no seu email
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-lead mb-8">
               Assine nossa newsletter para receber artigos sobre IA, dados e
               desenvolvimento de software.
             </p>
@@ -139,9 +116,9 @@ export default function BlogPage() {
               <input
                 type="email"
                 placeholder="seu@email.com"
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600"
+                className="input flex-1"
               />
-              <button className="px-6 py-3 text-base font-semibold text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors">
+              <button className="btn btn-primary">
                 Assinar
               </button>
             </div>

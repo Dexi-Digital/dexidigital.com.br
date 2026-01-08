@@ -44,13 +44,13 @@ export default function CasesPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-primary-50 to-white py-20 lg:py-28">
-        <div className="container mx-auto px-4">
+      <section className="section-hero-alt">
+        <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+            <h1 className="text-display mb-6">
               Cases de Sucesso
             </h1>
-            <p className="text-xl text-gray-600">
+            <p className="text-lead">
               Projetos reais que transformaram operações e geraram resultados
               mensuráveis para nossos clientes.
             </p>
@@ -59,59 +59,33 @@ export default function CasesPage() {
       </section>
 
       {/* Cases Grid */}
-      <section className="py-20 lg:py-28">
-        <div className="container mx-auto px-4">
+      <section className="section">
+        <div className="container">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-1 gap-8">
               {cases.map((caseStudy) => (
-                <article
-                  key={caseStudy.title}
-                  className="bg-white border border-gray-200 rounded-2xl p-8 lg:p-12 hover:shadow-lg transition-shadow"
-                >
+                <article key={caseStudy.title} className="card-service">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="px-3 py-1 bg-primary-100 text-primary-700 text-sm font-semibold rounded-full">
-                      {caseStudy.sector}
-                    </span>
+                    <span className="badge badge-primary">{caseStudy.sector}</span>
                   </div>
-                  <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                  <h2 className="text-h3 mb-4">
                     {caseStudy.title}
                   </h2>
 
                   <div className="space-y-6 mb-6">
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                        Desafio
-                      </h3>
-                      <p className="text-gray-600">{caseStudy.challenge}</p>
+                      <h3 className="text-h5 mb-2">Desafio</h3>
+                      <p className="text-body">{caseStudy.challenge}</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                        Solução
-                      </h3>
-                      <p className="text-gray-600">{caseStudy.solution}</p>
+                      <h3 className="text-h5 mb-2">Solução</h3>
+                      <p className="text-body">{caseStudy.solution}</p>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                        Impacto
-                      </h3>
-                      <ul className="space-y-2">
+                      <h3 className="text-h5 mb-2">Impacto</h3>
+                      <ul className="feature-list">
                         {caseStudy.impact.map((item) => (
-                          <li key={item} className="flex items-start gap-2">
-                            <svg
-                              className="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M5 13l4 4L19 7"
-                              />
-                            </svg>
-                            <span className="text-gray-700">{item}</span>
-                          </li>
+                          <li key={item} className="feature-list-item">{item}</li>
                         ))}
                       </ul>
                     </div>
@@ -119,12 +93,7 @@ export default function CasesPage() {
 
                   <div className="flex flex-wrap gap-2">
                     {caseStudy.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
-                      >
-                        {tag}
-                      </span>
+                      <span key={tag} className="badge badge-secondary">{tag}</span>
                     ))}
                   </div>
                 </article>
@@ -135,19 +104,16 @@ export default function CasesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gray-50 py-20">
-        <div className="container mx-auto px-4">
+      <section className="section-alt py-20">
+        <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-h2 mb-4">
               Pronto para criar seu próprio case de sucesso?
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-lead mb-8">
               Agende um diagnóstico gratuito para discutir seus desafios.
             </p>
-            <Link
-              href="/contato"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors"
-            >
+            <Link href="/contato" className="btn btn-primary btn-xl">
               Fale conosco
             </Link>
           </div>

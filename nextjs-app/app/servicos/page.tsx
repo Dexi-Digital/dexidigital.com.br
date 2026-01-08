@@ -50,13 +50,13 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-primary-50 to-white py-20 lg:py-28">
-        <div className="container mx-auto px-4">
+      <section className="section-hero-alt">
+        <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+            <h1 className="text-display mb-6">
               Nossos Serviços
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-lead mb-8">
               Soluções de software e dados para empresas que não podem falhar.
               IA como acelerador, expertise humana como garantia.
             </p>
@@ -65,69 +65,34 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 lg:py-28">
-        <div className="container mx-auto px-4">
+      <section className="section">
+        <div className="container">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-1 gap-12">
               {services.map((service, index) => (
-                <div
-                  key={service.slug}
-                  className="bg-white border border-gray-200 rounded-2xl p-8 lg:p-12 hover:shadow-lg transition-shadow"
-                >
+                <div key={service.slug} className="card-service">
                   <div className="flex flex-col lg:flex-row gap-8">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-4">
-                        <span className="text-4xl font-bold text-primary-600">
+                        <span className="text-h1 text-primary-600">
                           {String(index + 1).padStart(2, '0')}
                         </span>
-                        <h2 className="text-3xl font-bold text-gray-900">
+                        <h2 className="text-h3">
                           {service.title}
                         </h2>
                       </div>
-                      <p className="text-lg text-gray-600 mb-6">
+                      <p className="text-body-lg mb-6">
                         {service.description}
                       </p>
-                      <ul className="space-y-3 mb-8">
+                      <ul className="feature-list mb-8">
                         {service.benefits.map((benefit) => (
-                          <li
-                            key={benefit}
-                            className="flex items-start gap-3 text-gray-700"
-                          >
-                            <svg
-                              className="w-6 h-6 text-primary-600 flex-shrink-0 mt-0.5"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M5 13l4 4L19 7"
-                              />
-                            </svg>
-                            <span>{benefit}</span>
+                          <li key={benefit} className="feature-list-item">
+                            {benefit}
                           </li>
                         ))}
                       </ul>
-                      <Link
-                        href={`/servicos/${service.slug}`}
-                        className="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700 transition-colors"
-                      >
+                      <Link href={`/servicos/${service.slug}`} className="link-arrow">
                         Saiba mais sobre {service.title}
-                        <svg
-                          className="w-5 h-5 ml-2"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 5l7 7-7 7"
-                          />
-                        </svg>
                       </Link>
                     </div>
                   </div>
@@ -139,19 +104,16 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gray-50 py-20">
-        <div className="container mx-auto px-4">
+      <section className="section-alt py-20">
+        <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-h2 mb-4">
               Pronto para começar?
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-lead mb-8">
               Agende um diagnóstico gratuito para discutir seus desafios.
             </p>
-            <Link
-              href="/contato"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors"
-            >
+            <Link href="/contato" className="btn btn-primary btn-xl">
               Fale conosco
             </Link>
           </div>
