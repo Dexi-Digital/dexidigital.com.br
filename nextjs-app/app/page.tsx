@@ -1,9 +1,21 @@
 import Link from 'next/link';
 import FAQItem from '@/components/ui/FAQItem';
+import { servicesSchema, faqSchema } from '@/lib/structured-data';
 
 export default function HomePage() {
+  // Page-specific schemas (Services + FAQ)
+  const pageSchemas = [...servicesSchema, faqSchema];
+
   return (
     <main className="min-h-screen">
+      {/* Page-specific JSON-LD schemas */}
+      {pageSchemas.map((schema, index) => (
+        <script
+          key={`schema-${index}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       {/* Hero Section */}
       <section className="section-hero">
         <div className="container">
@@ -23,7 +35,7 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contato" className="btn btn-primary btn-xl">
-                Agendar diagnóstico gratuito
+                Obter Diagnóstico em 24h
               </Link>
               <Link href="/cases" className="btn btn-outline btn-xl">
                 Ver cases de sucesso
@@ -437,6 +449,87 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Lead Magnets Section */}
+      <section className="section-alt">
+        <div className="container">
+          <div className="max-w-6xl mx-auto">
+            <div className="section-header">
+              <h2 className="text-h2">
+                Materiais gratuitos
+              </h2>
+              <p className="text-lead">
+                Guias práticos para acelerar sua jornada de dados e IA
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Lead Magnet 1: PDF Guide */}
+              <div className="card p-6 h-full flex flex-col">
+                <div className="icon-box icon-box-primary mb-4">
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-h5 mb-2">Guia: IA Empresarial sem Riscos</h3>
+                <p className="text-body-sm mb-4 flex-1">
+                  10 passos para implementar IA com governança, segurança e ROI mensurável.
+                </p>
+                <ul className="feature-list mb-4 text-sm">
+                  <li className="feature-list-item">Checklist de governança</li>
+                  <li className="feature-list-item">Métricas de sucesso</li>
+                  <li className="feature-list-item">Casos de uso validados</li>
+                </ul>
+                <Link href="/materiais/guia-ia-empresarial" className="btn btn-outline btn-sm">
+                  Baixar guia gratuito
+                </Link>
+              </div>
+
+              {/* Lead Magnet 2: Checklist */}
+              <div className="card p-6 h-full flex flex-col">
+                <div className="icon-box icon-box-primary mb-4">
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                  </svg>
+                </div>
+                <h3 className="text-h5 mb-2">Checklist: Qualidade de Software</h3>
+                <p className="text-body-sm mb-4 flex-1">
+                  50+ itens para avaliar e melhorar a qualidade técnica do seu software.
+                </p>
+                <ul className="feature-list mb-4 text-sm">
+                  <li className="feature-list-item">Arquitetura e código</li>
+                  <li className="feature-list-item">Segurança e performance</li>
+                  <li className="feature-list-item">DevOps e CI/CD</li>
+                </ul>
+                <Link href="/materiais/checklist-qualidade" className="btn btn-outline btn-sm">
+                  Baixar checklist gratuito
+                </Link>
+              </div>
+
+              {/* Lead Magnet 3: ROI Calculator */}
+              <div className="card p-6 h-full flex flex-col">
+                <div className="icon-box icon-box-primary mb-4">
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-h5 mb-2">Calculadora de ROI em Dados</h3>
+                <p className="text-body-sm mb-4 flex-1">
+                  Estime o retorno financeiro de um projeto de inteligência de dados.
+                </p>
+                <ul className="feature-list mb-4 text-sm">
+                  <li className="feature-list-item">Cálculo personalizado</li>
+                  <li className="feature-list-item">Benchmarks do setor</li>
+                  <li className="feature-list-item">Relatório exportável</li>
+                </ul>
+                <Link href="/materiais/calculadora-roi" className="btn btn-outline btn-sm">
+                  Acessar calculadora
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="section-alt">
         <div className="container">
@@ -488,7 +581,7 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Link href="/contato" className="btn btn-white btn-xl">
-                Agendar diagnóstico gratuito
+                Obter Diagnóstico em 24h
               </Link>
               <Link href="/cases" className="btn btn-outline-white btn-xl">
                 Ver cases de sucesso

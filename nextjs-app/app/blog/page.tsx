@@ -1,44 +1,15 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { getAllArticles } from '@/lib/blog-data';
 
 export const metadata: Metadata = {
-  title: 'Blog',
+  title: 'Blog | Insights sobre IA, Dados e Software Empresarial | Dexi Digital',
   description:
-    'Insights sobre IA empresarial, inteligência de dados e desenvolvimento de software. Conteúdo técnico e prático para líderes de tecnologia.',
+    'Artigos técnicos sobre IA empresarial, inteligência de dados e desenvolvimento de software. Guias práticos para CTOs e líderes de tecnologia.',
 };
 
 export default function BlogPage() {
-  const articles = [
-    {
-      title: 'Guia: Como usar IA sem comprometer a qualidade do software',
-      slug: 'guia-ia-qualidade-software',
-      excerpt:
-        'IA pode acelerar desenvolvimento, mas sem governança adequada, cria débito técnico. Aprenda a usar IA como acelerador mantendo qualidade, segurança e manutenibilidade.',
-      category: 'IA Empresarial',
-      readTime: '12 min',
-      date: '2026-01-05',
-    },
-    {
-      title:
-        'Inteligência de dados para grupos automotivos: do showroom ao pós-venda',
-      slug: 'inteligencia-dados-automotivo',
-      excerpt:
-        'Como unificar dados de vendas, oficina e pós-venda para criar visão 360° do cliente e otimizar operações em grupos automotivos.',
-      category: 'Data Intelligence',
-      readTime: '8 min',
-      date: '2026-01-03',
-    },
-    {
-      title:
-        'Por que projetos baseados em hype precisam ser reescritos (e como evitar)',
-      slug: 'evitar-reescrita-projetos-hype',
-      excerpt:
-        'Tecnologias da moda vêm e vão. Aprenda a construir software que dura além dos ciclos de hype, com arquitetura sólida e decisões técnicas fundamentadas.',
-      category: 'Arquitetura de Software',
-      readTime: '10 min',
-      date: '2026-01-01',
-    },
-  ];
+  const articles = getAllArticles();
 
   return (
     <main className="min-h-screen">

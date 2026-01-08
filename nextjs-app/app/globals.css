@@ -974,6 +974,43 @@ h6, .text-h6 {
   color: var(--text-muted);
 }
 
+/* Arrow links */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary-600);
+  text-decoration: none;
+  transition: color var(--duration-150) var(--ease-in-out);
+}
+
+.link-arrow:hover {
+  color: var(--color-primary-700);
+}
+
+.link-arrow::after {
+  content: '→';
+  margin-left: 0.25rem;
+  transition: transform var(--duration-150) var(--ease-in-out);
+}
+
+.link-arrow:hover::after {
+  transform: translateX(4px);
+}
+
+.link-arrow-back {
+  display: inline-flex;
+  align-items: center;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary-600);
+  text-decoration: none;
+  transition: color var(--duration-150) var(--ease-in-out);
+}
+
+.link-arrow-back:hover {
+  color: var(--color-primary-700);
+}
+
 /* ============================================
    BADGES & TAGS
    Labels, status indicators, pills

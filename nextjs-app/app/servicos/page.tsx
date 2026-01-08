@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Serviços',
+  title: 'Serviços | Inteligência de Dados, Software e IA Empresarial',
   description:
-    'Inteligência de dados, software sob medida e IA para empresas. Soluções enterprise com governança, escalabilidade e suporte contínuo.',
+    'Soluções enterprise: data intelligence, software sob medida e IA governada. Dashboards, machine learning, APIs e sistemas escaláveis para grandes empresas.',
 };
 
 export default function ServicesPage() {

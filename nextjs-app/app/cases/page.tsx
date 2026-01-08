@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Cases de Sucesso',
+  title: 'Cases de Sucesso | Resultados Reais com IA e Dados',
   description:
-    'Conheça projetos reais de inteligência de dados e software sob medida que transformaram operações de grupos automotivos e grandes corporações.',
+    'Veja como transformamos operações: 30% redução de estoque, 80% menos tempo em relatórios. Cases de inteligência de dados para grupos automotivos e corporações.',
 };
 
 export default function CasesPage() {

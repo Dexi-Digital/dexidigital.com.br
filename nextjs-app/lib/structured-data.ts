@@ -1,0 +1,308 @@
+// JSON-LD Structured Data for SEO
+
+export const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': 'https://dexidigital.com.br/#organization',
+  name: 'Dexi Digital',
+  alternateName: 'Dexi',
+  url: 'https://dexidigital.com.br',
+  logo: {
+    '@type': 'ImageObject',
+    url: 'https://dexidigital.com.br/logo.png',
+    width: 512,
+    height: 512,
+  },
+  image: 'https://dexidigital.com.br/og-image-home.jpg',
+  description:
+    'Desenvolvimento de software sob medida e inteligência de dados com IA acelerada e supervisão técnica humana. Soluções para grupos automotivos e grandes corporações.',
+  foundingDate: '2014',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'São Paulo',
+    addressRegion: 'SP',
+    addressCountry: 'BR',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'contato@dexidigital.com.br',
+    contactType: 'customer service',
+    availableLanguage: ['Portuguese', 'English'],
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'Brazil',
+  },
+  knowsAbout: [
+    'Inteligência de Dados',
+    'Data Intelligence',
+    'Machine Learning',
+    'Software Development',
+    'Enterprise AI',
+    'Data Warehouse',
+    'Business Intelligence',
+  ],
+  slogan: 'IA como acelerador, nunca sozinha.',
+  sameAs: [
+    'https://linkedin.com/company/dexi-digital',
+    'https://github.com/dexi-digital',
+  ],
+};
+
+export const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': 'https://dexidigital.com.br/#website',
+  url: 'https://dexidigital.com.br',
+  name: 'Dexi Digital',
+  description: 'Inteligência de Dados e Software com IA Acelerada',
+  publisher: {
+    '@id': 'https://dexidigital.com.br/#organization',
+  },
+  inLanguage: 'pt-BR',
+};
+
+export const servicesSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': 'https://dexidigital.com.br/servicos/inteligencia-de-dados',
+    name: 'Inteligência de Dados',
+    description:
+      'Analytics avançado, machine learning e data warehousing. Transforme dados em decisões estratégicas com governança e escalabilidade enterprise.',
+    provider: {
+      '@id': 'https://dexidigital.com.br/#organization',
+    },
+    serviceType: 'Data Intelligence',
+    areaServed: {
+      '@type': 'Country',
+      name: 'Brazil',
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Serviços de Inteligência de Dados',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Dashboards executivos em tempo real',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Modelos preditivos para demanda e churn',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Data warehouse moderno (Snowflake, BigQuery)',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Governança e compliance (LGPD, SOC2)',
+          },
+        },
+      ],
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': 'https://dexidigital.com.br/servicos/software-sob-medida',
+    name: 'Software Sob Medida',
+    description:
+      'Aplicações web e mobile enterprise. Arquitetura escalável, código limpo e documentação completa. Construído para durar.',
+    provider: {
+      '@id': 'https://dexidigital.com.br/#organization',
+    },
+    serviceType: 'Custom Software Development',
+    areaServed: {
+      '@type': 'Country',
+      name: 'Brazil',
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Serviços de Desenvolvimento de Software',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Arquitetura moderna (microserviços, serverless)',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Testes automatizados e CI/CD',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Documentação técnica completa',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Suporte e evolução contínua',
+          },
+        },
+      ],
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': 'https://dexidigital.com.br/servicos/ia-para-empresas',
+    name: 'IA para Empresas',
+    description:
+      'IA acelerada com supervisão técnica humana. Governança, explicabilidade e controle total. IA como ferramenta, não como fim.',
+    provider: {
+      '@id': 'https://dexidigital.com.br/#organization',
+    },
+    serviceType: 'Enterprise AI Solutions',
+    areaServed: {
+      '@type': 'Country',
+      name: 'Brazil',
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Serviços de IA Empresarial',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'IA governada e auditável',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Integração com sistemas existentes',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Treinamento de equipes internas',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Roadmap de adoção gradual',
+          },
+        },
+      ],
+    },
+  },
+];
+
+export const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': 'https://dexidigital.com.br/#faq',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'A Dexi substitui desenvolvedores por IA?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Não. IA acelera tarefas repetitivas e prototipagem, mas toda solução passa por revisão técnica humana especializada. Arquitetura, segurança, escalabilidade e manutenibilidade são validadas por engenheiros experientes. IA é ferramenta, não substituta.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Como a Dexi garante segurança em soluções com IA?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Implementamos governança desde o início: rastreabilidade de decisões, explicabilidade de modelos, controle de acesso, auditoria completa e compliance com LGPD/GDPR. IA empresarial exige controle total, não caixas-pretas.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Quanto tempo leva um projeto típico?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Depende da complexidade. MVPs de inteligência de dados: 4-8 semanas. Sistemas enterprise completos: 3-6 meses. Sempre com entregas incrementais e validação contínua. Agilidade sem comprometer qualidade.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'A Dexi trabalha com empresas de que porte?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Focamos em médias e grandes empresas (50+ funcionários) com desafios complexos de dados e software. Grupos automotivos, corporações multi-unidade, empresas em crescimento acelerado. Clientes que não podem falhar.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Como funciona o suporte pós-entrega?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Todo projeto inclui documentação técnica completa, testes automatizados e período de garantia. Oferecemos contratos de suporte contínuo com SLA definido, evolução de features e monitoramento proativo.',
+      },
+    },
+  ],
+};
+
+export function getHomePageSchemas() {
+  return [
+    organizationSchema,
+    websiteSchema,
+    ...servicesSchema,
+    faqSchema,
+  ];
+}
+
+export function getArticleSchema(article: {
+  slug: string;
+  title: string;
+  excerpt: string;
+  metaDescription: string;
+  date: string;
+  author: string;
+  category: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    '@id': `https://dexidigital.com.br/blog/${article.slug}`,
+    headline: article.title,
+    description: article.metaDescription,
+    datePublished: article.date,
+    dateModified: article.date,
+    author: {
+      '@type': 'Organization',
+      '@id': 'https://dexidigital.com.br/#organization',
+      name: article.author,
+    },
+    publisher: {
+      '@id': 'https://dexidigital.com.br/#organization',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://dexidigital.com.br/blog/${article.slug}`,
+    },
+    articleSection: article.category,
+    inLanguage: 'pt-BR',
+  };
+}
+

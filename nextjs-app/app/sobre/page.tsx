@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Sobre',
+  title: 'Sobre Nós | Especialistas em IA e Data Intelligence',
   description:
-    'Conheça a Dexi Digital: 10+ anos de experiência em inteligência de dados e software sob medida. IA como acelerador, expertise humana como garantia.',
+    'Conheça a Dexi Digital: 10+ anos transformando empresas com inteligência de dados e software sob medida. IA como acelerador, expertise humana como garantia.',
 };
 
 export default function AboutPage() {
@@ -144,7 +144,7 @@ export default function AboutPage() {
               agressivas.
             </p>
             <Link href="/contato" className="btn btn-white btn-xl">
-              Agendar diagnóstico gratuito
+              Obter Diagnóstico em 24h
             </Link>
           </div>
         </div>

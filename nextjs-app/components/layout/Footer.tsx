@@ -90,7 +90,7 @@ export default function Footer() {
                   href="/contato"
                   className="inline-flex items-center text-sm font-semibold text-primary-400 hover:text-primary-300 transition-colors"
                 >
-                  Agendar diagnóstico gratuito →
+                  Obter Diagnóstico em 24h →
                 </Link>
               </li>
             </ul>

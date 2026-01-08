@@ -141,7 +141,7 @@ export default function DataIntelligencePage() {
               href="/contato"
               className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-primary-600 bg-white rounded-lg hover:bg-gray-50 transition-colors"
             >
-              Agendar diagnóstico gratuito
+              Obter Diagnóstico em 24h
             </Link>
           </div>
         </div>

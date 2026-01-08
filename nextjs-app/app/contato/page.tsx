@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import ContactForm from '@/components/ContactForm';
 
 export const metadata: Metadata = {
-  title: 'Contato',
+  title: 'Contato | Diagnóstico Gratuito de IA e Dados',
   description:
-    'Entre em contato com a Dexi Digital. Agende um diagnóstico gratuito para discutir seus desafios de dados e software.',
+    'Agende um diagnóstico gratuito em 24h. Consultoria especializada em inteligência de dados, IA empresarial e software sob medida. Fale com nossos especialistas.',
 };
 
 export default function ContactPage() {

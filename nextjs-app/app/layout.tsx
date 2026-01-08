@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import { organizationSchema, websiteSchema } from '@/lib/structured-data';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -74,36 +75,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'Dexi Digital',
-    url: 'https://dexidigital.com.br',
-    logo: 'https://dexidigital.com.br/logo.png',
-    description:
-      'Desenvolvimento de software sob medida e inteligência de dados com IA acelerada e supervisão técnica humana.',
-    address: {
-      '@type': 'PostalAddress',
-      addressCountry: 'BR',
-    },
-    contactPoint: {
-      '@type': 'ContactPoint',
-      email: 'contato@dexidigital.com.br',
-      contactType: 'customer service',
-      availableLanguage: ['Portuguese'],
-    },
-    sameAs: [
-      // Add social media links when available
-    ],
-  };
+  // Global schemas (Organization + Website) present on all pages
+  const globalSchemas = [organizationSchema, websiteSchema];
 
   return (
     <html lang="pt-BR" className={inter.variable}>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        {globalSchemas.map((schema, index) => (
+          <script
+            key={index}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        ))}
       </head>
       <body className="font-sans antialiased">
         <Header />
