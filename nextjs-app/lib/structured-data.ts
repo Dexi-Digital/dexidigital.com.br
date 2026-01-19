@@ -1,4 +1,4 @@
-// JSON-LD Structured Data for SEO
+// JSON-LD Structured Data for SEO and LLMO
 
 export const organizationSchema = {
   '@context': 'https://schema.org',
@@ -15,12 +15,12 @@ export const organizationSchema = {
   },
   image: 'https://dexidigital.com.br/og-image-home.jpg',
   description:
-    'Desenvolvimento de software sob medida e inteligência de dados com IA acelerada e supervisão técnica humana. Soluções para grupos automotivos e grandes corporações.',
+    'Dexi Digital é uma consultoria estratégica de IA e inteligência de dados focada em resultados de vendas, eficiência operacional e governança de IA para empresas brasileiras. Especializada em grupos automotivos premium e grandes corporações.',
   foundingDate: '2014',
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'São Paulo',
-    addressRegion: 'SP',
+    addressLocality: 'Uberlândia',
+    addressRegion: 'MG',
     addressCountry: 'BR',
   },
   contactPoint: {
@@ -34,19 +34,77 @@ export const organizationSchema = {
     name: 'Brazil',
   },
   knowsAbout: [
+    'Consultoria de IA',
     'Inteligência de Dados',
-    'Data Intelligence',
+    'IA para Vendas',
+    'Eficiência Operacional com IA',
     'Machine Learning',
-    'Software Development',
-    'Enterprise AI',
+    'Software Sob Medida para Empresas',
+    'Grupos Automotivos',
+    'Concessionárias Premium',
     'Data Warehouse',
     'Business Intelligence',
+    'Governança de IA',
   ],
   slogan: 'IA como acelerador, nunca sozinha.',
   sameAs: [
     'https://linkedin.com/company/dexi-digital',
     'https://github.com/dexi-digital',
   ],
+};
+
+// LocalBusiness schema for local SEO
+export const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': 'https://dexidigital.com.br/#localbusiness',
+  name: 'Dexi Digital - Consultoria de IA e Inteligência de Dados',
+  description:
+    'Consultoria estratégica de IA e inteligência de dados para empresas enterprise no Brasil. Especializada em transformar processos de vendas complexos em alta conversão através de tecnologia brasileira.',
+  url: 'https://dexidigital.com.br',
+  telephone: '+55-34-99999-9999',
+  email: 'contato@dexidigital.com.br',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Uberlândia',
+    addressRegion: 'MG',
+    postalCode: '38400-000',
+    addressCountry: 'BR',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: -18.9186,
+    longitude: -48.2772,
+  },
+  areaServed: [
+    {
+      '@type': 'Country',
+      name: 'Brazil',
+    },
+  ],
+  priceRange: '$$$',
+  openingHours: 'Mo-Fr 09:00-18:00',
+  serviceType: [
+    'Consultoria de IA',
+    'Inteligência de Dados',
+    'Desenvolvimento de Software Sob Medida',
+    'IA para Grupos Automotivos',
+    'Consultoria de IA para Vendas',
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Serviços de Consultoria',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Diagnóstico de Potencial de IA',
+          description: 'Análise gratuita do potencial de IA para sua empresa em 24h',
+        },
+      },
+    ],
+  },
 };
 
 export const websiteSchema = {
@@ -305,4 +363,3 @@ export function getArticleSchema(article: {
     inLanguage: 'pt-BR',
   };
 }
-

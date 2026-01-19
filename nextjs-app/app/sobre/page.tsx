@@ -2,10 +2,28 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Sobre Nós | Especialistas em IA e Data Intelligence',
+  title: 'A Dexi Digital | Consultoria de IA e Inteligência de Dados',
   description:
-    'Conheça a Dexi Digital: 10+ anos transformando empresas com inteligência de dados e software sob medida. IA como acelerador, expertise humana como garantia.',
+    'Conheça a Dexi Digital: consultoria estratégica de IA e inteligência de dados com 10+ anos de experiência. Fundada por especialistas com histórico em grandes corporações brasileiras.',
+  keywords: ['Dexi Digital', 'consultoria IA Brasil', 'inteligência de dados', 'quem somos'],
 };
+
+const founders = [
+  {
+    name: 'Lorrayne Paraiso',
+    role: 'Co-fundadora & CEO',
+    bio: 'Engenheira de Software com mais de 10 anos de experiência em desenvolvimento de sistemas enterprise. Especialista em arquitetura de soluções e inteligência de dados. Liderou projetos de transformação digital em grupos automotivos premium e grandes corporações brasileiras.',
+    expertise: ['Arquitetura de Software', 'Inteligência de Dados', 'Gestão de Projetos', 'Transformação Digital'],
+    linkedin: 'https://linkedin.com/in/lorrayneparaiso',
+  },
+  {
+    name: 'Sócio Fundador',
+    role: 'Co-fundador & CTO',
+    bio: 'Especialista em Machine Learning e Data Engineering com experiência em empresas de tecnologia de ponta. Responsável pela arquitetura técnica e governança de IA em todos os projetos da Dexi.',
+    expertise: ['Machine Learning', 'Data Engineering', 'Cloud Architecture', 'Governança de IA'],
+    linkedin: 'https://linkedin.com/company/dexi-digital',
+  },
+];
 
 export default function AboutPage() {
   return (
@@ -14,36 +32,82 @@ export default function AboutPage() {
       <section className="section-hero-alt">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
+            <p className="text-overline text-primary-600 mb-4">A Dexi Digital</p>
             <h1 className="text-display mb-6">
-              Sobre a Dexi Digital
+              Consultoria estratégica de IA e dados
             </h1>
             <p className="text-lead">
-              Tecnologia não é o objetivo final. É o meio para transformar
-              negócios.
+              Fundada por especialistas com histórico em grandes corporações,
+              focada em resultados reais para empresas que não podem falhar.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Mission Section */}
+      {/* DNA Section */}
       <section className="section">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-h3 mb-6">
-              Nossa missão
+              Nosso DNA
             </h2>
             <p className="text-body-lg mb-6">
-              Ajudamos empresas a transformar dados e software em vantagem
-              competitiva real. Não vendemos tecnologia pela tecnologia.
-              Entregamos soluções que resolvem problemas de negócio, com
-              governança, escalabilidade e suporte contínuo.
+              A Dexi Digital nasceu da frustração com consultorias que vendem
+              tecnologia pela tecnologia. Fundada em 2014, construímos nossa
+              reputação entregando resultados mensuráveis para grupos automotivos
+              premium e grandes corporações brasileiras.
+            </p>
+            <p className="text-body-lg mb-6">
+              <strong>IA como acelerador, nunca sozinha.</strong> Usamos inteligência
+              artificial para acelerar entregas, mas toda solução passa por revisão
+              técnica humana especializada. Arquitetura, segurança, escalabilidade
+              e manutenibilidade validadas por engenheiros experientes.
             </p>
             <p className="text-body-lg">
-              Usamos IA como acelerador, mas nunca sozinha. Toda solução passa
-              por revisão técnica humana especializada. Arquitetura, segurança,
-              escalabilidade e manutenibilidade validadas por engenheiros
-              experientes.
+              Não somos uma fábrica de software. Somos consultores estratégicos
+              que entendem de negócio e usam tecnologia como ferramenta para
+              resolver problemas reais.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Founders Section */}
+      <section className="section-alt">
+        <div className="container">
+          <div className="max-w-5xl mx-auto">
+            <div className="section-header">
+              <h2 className="text-h2">Quem está por trás</h2>
+              <p className="text-lead">Especialistas com histórico comprovado em grandes corporações</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {founders.map((founder, index) => (
+                <div key={index} className="card p-8">
+                  <div className="mb-4">
+                    <h3 className="text-h4">{founder.name}</h3>
+                    <p className="text-primary-600 font-medium">{founder.role}</p>
+                  </div>
+                  <p className="text-body mb-4">{founder.bio}</p>
+                  <div className="mb-4">
+                    <p className="text-body-sm font-semibold text-gray-700 mb-2">Especialidades:</p>
+                    <div className="flex flex-wrap gap-2">
+                      {founder.expertise.map((skill) => (
+                        <span key={skill} className="badge badge-neutral">{skill}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <a
+                    href={founder.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary-600 hover:text-primary-700 text-sm font-medium"
+                  >
+                    Ver LinkedIn →
+                  </a>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -137,15 +201,19 @@ export default function AboutPage() {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-h2 text-white mb-4">
-              Vamos conversar sobre seus desafios?
+              Pronto para transformar seus dados em resultados?
             </h2>
             <p className="text-lead text-primary-100 mb-8">
-              Agende um diagnóstico gratuito. Sem compromisso, sem vendas
-              agressivas.
+              Agende um diagnóstico gratuito e converse diretamente com nossos especialistas.
             </p>
-            <Link href="/contato" className="btn btn-white btn-xl">
-              Obter Diagnóstico em 24h
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contato" className="btn btn-white btn-xl">
+                Agendar Diagnóstico em 24h
+              </Link>
+              <Link href="/metodologia" className="btn btn-outline-white btn-xl">
+                Conhecer metodologia
+              </Link>
+            </div>
           </div>
         </div>
       </section>

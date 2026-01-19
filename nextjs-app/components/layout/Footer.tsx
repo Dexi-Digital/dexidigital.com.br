@@ -97,9 +97,19 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
+        {/* Positioning Microcopy */}
         <div className="mt-12 pt-8 border-t border-gray-800">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-center mb-8">
+            <p className="text-lg md:text-xl font-semibold text-white tracking-tight">
+              Consultoria de IA e dados para empresas que não podem falhar.
+            </p>
+            <p className="text-sm text-gray-500 mt-2">
+              Eficiência operacional com IA • Consultoria de IA para vendas • Inteligência de dados para grupos automotivos
+            </p>
+          </div>
+
+          {/* Bottom bar */}
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-6 border-t border-gray-700">
             <p className="text-caption text-gray-400">
               © {currentYear} Dexi Digital. Todos os direitos reservados.
             </p>

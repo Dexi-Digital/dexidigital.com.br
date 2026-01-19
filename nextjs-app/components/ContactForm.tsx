@@ -8,7 +8,10 @@ export default function ContactForm() {
     email: '',
     company: '',
     phone: '',
-    service: '',
+    companySize: '',
+    sector: '',
+    challenge: '',
+    urgency: '',
     message: '',
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -47,7 +50,10 @@ export default function ContactForm() {
         email: '',
         company: '',
         phone: '',
-        service: '',
+        companySize: '',
+        sector: '',
+        challenge: '',
+        urgency: '',
         message: '',
       });
     } catch (error) {
@@ -154,39 +160,108 @@ export default function ContactForm() {
         />
       </div>
 
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label htmlFor="companySize" className="form-label required">
+            Tamanho da empresa
+          </label>
+          <select
+            id="companySize"
+            name="companySize"
+            required
+            value={formData.companySize}
+            onChange={handleChange}
+            className="form-select"
+          >
+            <option value="">Selecione</option>
+            <option value="1-10">1-10 funcionários</option>
+            <option value="11-50">11-50 funcionários</option>
+            <option value="51-200">51-200 funcionários</option>
+            <option value="201-500">201-500 funcionários</option>
+            <option value="500+">500+ funcionários</option>
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor="sector" className="form-label required">
+            Setor
+          </label>
+          <select
+            id="sector"
+            name="sector"
+            required
+            value={formData.sector}
+            onChange={handleChange}
+            className="form-select"
+          >
+            <option value="">Selecione</option>
+            <option value="automotivo">Automotivo / Concessionárias</option>
+            <option value="varejo">Varejo / E-commerce</option>
+            <option value="financeiro">Financeiro / Seguros</option>
+            <option value="saude">Saúde</option>
+            <option value="logistica">Logística / Transporte</option>
+            <option value="manufatura">Manufatura / Indústria</option>
+            <option value="tecnologia">Tecnologia / SaaS</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+      </div>
+
       <div>
-        <label htmlFor="service" className="form-label">
-          Serviço de interesse
+        <label htmlFor="challenge" className="form-label required">
+          Principal desafio
         </label>
         <select
-          id="service"
-          name="service"
-          value={formData.service}
+          id="challenge"
+          name="challenge"
+          required
+          value={formData.challenge}
           onChange={handleChange}
           className="form-select"
         >
-          <option value="">Selecione um serviço</option>
-          <option value="inteligencia-dados">Inteligência de Dados</option>
-          <option value="software-sob-medida">Software Sob Medida</option>
-          <option value="ia-empresas">IA para Empresas</option>
-          <option value="consultoria">Consultoria Técnica</option>
-          <option value="outro">Outro</option>
+          <option value="">Selecione o desafio principal</option>
+          <option value="conversao-leads">Baixa conversão de leads em vendas</option>
+          <option value="dados-fragmentados">Dados fragmentados / sem visão unificada</option>
+          <option value="processos-manuais">Processos manuais que precisam de automação</option>
+          <option value="decisoes-dados">Dificuldade em tomar decisões baseadas em dados</option>
+          <option value="sistema-legado">Sistema legado que precisa ser modernizado</option>
+          <option value="ia-implementar">Quero implementar IA mas não sei por onde começar</option>
+          <option value="outro">Outro desafio</option>
         </select>
       </div>
 
       <div>
-        <label htmlFor="message" className="form-label required">
-          Mensagem
+        <label htmlFor="urgency" className="form-label required">
+          Urgência
+        </label>
+        <select
+          id="urgency"
+          name="urgency"
+          required
+          value={formData.urgency}
+          onChange={handleChange}
+          className="form-select"
+        >
+          <option value="">Qual a urgência?</option>
+          <option value="imediato">Imediato - preciso resolver agora</option>
+          <option value="1-3-meses">1-3 meses - planejando para breve</option>
+          <option value="3-6-meses">3-6 meses - explorando opções</option>
+          <option value="pesquisa">Apenas pesquisando</option>
+        </select>
+      </div>
+
+      <div>
+        <label htmlFor="message" className="form-label">
+          Detalhes adicionais (opcional)
         </label>
         <textarea
           id="message"
           name="message"
-          required
           value={formData.message}
           onChange={handleChange}
-          rows={5}
+          rows={4}
           className="form-textarea"
-          placeholder="Conte-nos sobre seus desafios e objetivos..."
+          placeholder="Conte mais sobre seu contexto, sistemas atuais, expectativas..."
         />
       </div>
 
@@ -210,7 +285,7 @@ export default function ContactForm() {
             Enviando...
           </>
         ) : (
-          'Enviar mensagem'
+          'Solicitar Diagnóstico Gratuito'
         )}
       </button>
     </form>
