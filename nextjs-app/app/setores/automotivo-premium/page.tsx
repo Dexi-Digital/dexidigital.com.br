@@ -49,21 +49,21 @@ export default function AutomotivoPremiumPage() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section className="section-hero">
+      <section className="section-hero-premium py-24 md:py-32 border-b border-[var(--border-subtle)]">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-overline text-primary-600 mb-4">Setor Automotivo Premium</p>
-            <h1 className="text-display mb-6">
+            <p className="text-overline mb-4 animate-fade-in-up-subtle">Setor Automotivo Premium</p>
+            <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
               IA para conversão de leads em{' '}
-              <span className="text-primary-600">concessionárias premium</span>
+              <span className="text-display-gradient">concessionárias premium</span>
             </h1>
-            <p className="text-lead mb-8">
-              Inteligência de dados e IA estratégica para grupos automotivos que 
-              vendem experiência, não apenas veículos. Tecnologia brasileira com 
+            <p className="text-lead max-w-2xl mx-auto mb-10 animate-fade-in-up delay-100">
+              Inteligência de dados e IA estratégica para grupos automotivos que
+              vendem experiência, não apenas veículos. Tecnologia brasileira com
               expertise comprovada no setor.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contato" className="btn btn-primary btn-xl">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-150">
+              <Link href="/contato" className="btn btn-primary">
                 Agendar Diagnóstico Automotivo
               </Link>
             </div>
@@ -72,7 +72,7 @@ export default function AutomotivoPremiumPage() {
       </section>
 
       {/* Challenges & Solutions */}
-      <section className="section">
+      <section className="section-lg bg-[var(--bg-surface)]">
         <div className="container">
           <div className="max-w-6xl mx-auto">
             <div className="section-header">
@@ -80,19 +80,19 @@ export default function AutomotivoPremiumPage() {
               <p className="text-lead">Problemas reais de grupos automotivos, soluções comprovadas</p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6">
               {challenges.map((item, index) => (
-                <div key={index} className="card p-6">
+                <div key={index} className="card card-interactive p-6">
                   <div className="mb-4">
-                    <span className="badge badge-neutral mb-3">Desafio</span>
-                    <p className="text-body font-medium text-gray-800">{item.problem}</p>
+                    <span className="px-3 py-1 text-xs font-medium bg-[var(--bg-secondary)] text-[var(--text-secondary)] rounded-full mb-3 inline-block">Desafio</span>
+                    <p className="text-body-sm font-medium text-[var(--text-primary)]">{item.problem}</p>
                   </div>
                   <div className="mb-4">
-                    <span className="badge badge-primary mb-3">Solução Dexi</span>
-                    <p className="text-body-sm text-gray-600">{item.solution}</p>
+                    <span className="px-3 py-1 text-xs font-semibold bg-[var(--color-primary-100)] dark:bg-[var(--color-primary-900)]/30 text-[var(--color-primary-700)] dark:text-[var(--color-primary-300)] rounded-full mb-3 inline-block">Solução Dexi</span>
+                    <p className="text-body-sm text-[var(--text-secondary)]">{item.solution}</p>
                   </div>
-                  <div className="pt-4 border-t border-gray-100">
-                    <span className="text-h5 text-green-600">{item.result}</span>
+                  <div className="pt-4 border-t border-[var(--border-subtle)]">
+                    <span className="text-h5 text-[var(--color-success-600)]">{item.result}</span>
                   </div>
                 </div>
               ))}
@@ -102,7 +102,7 @@ export default function AutomotivoPremiumPage() {
       </section>
 
       {/* Cases Section */}
-      <section className="section-alt">
+      <section className="section-lg section-gradient">
         <div className="container">
           <div className="max-w-6xl mx-auto">
             <div className="section-header">
@@ -110,28 +110,28 @@ export default function AutomotivoPremiumPage() {
               <p className="text-lead">Resultados reais com clientes do setor (sob NDA)</p>
             </div>
 
-            <div className="space-y-8">
+            <div className="space-y-6">
               {cases.map((caseItem, index) => (
-                <div key={index} className="card p-8">
+                <div key={index} className="card card-interactive p-8">
                   <div className="grid md:grid-cols-3 gap-6">
                     <div>
-                      <p className="text-overline text-primary-600 mb-2">Setor</p>
+                      <p className="text-overline mb-2">Setor</p>
                       <p className="text-h5">{caseItem.sector}</p>
                     </div>
                     <div className="md:col-span-2">
                       <div className="mb-4">
-                        <p className="text-body-sm font-semibold text-gray-700">Problema:</p>
-                        <p className="text-body">{caseItem.problem}</p>
+                        <p className="text-xs font-semibold text-[var(--text-primary)] mb-1 uppercase tracking-wide">Problema:</p>
+                        <p className="text-body-sm text-[var(--text-secondary)]">{caseItem.problem}</p>
                       </div>
                       <div className="mb-4">
-                        <p className="text-body-sm font-semibold text-gray-700">Abordagem Dexi:</p>
-                        <p className="text-body">{caseItem.approach}</p>
+                        <p className="text-xs font-semibold text-[var(--text-primary)] mb-1 uppercase tracking-wide">Abordagem Dexi:</p>
+                        <p className="text-body-sm text-[var(--text-secondary)]">{caseItem.approach}</p>
                       </div>
                       <div>
-                        <p className="text-body-sm font-semibold text-gray-700 mb-2">Resultados:</p>
-                        <ul className="flex flex-wrap gap-3">
+                        <p className="text-xs font-semibold text-[var(--text-primary)] mb-2 uppercase tracking-wide">Resultados:</p>
+                        <ul className="flex flex-wrap gap-2">
                           {caseItem.results.map((result, idx) => (
-                            <li key={idx} className="badge badge-success">{result}</li>
+                            <li key={idx} className="px-3 py-1 text-xs font-semibold bg-[var(--color-success-100)] dark:bg-[var(--color-success-900)]/30 text-[var(--color-success-700)] dark:text-[var(--color-success-300)] rounded-full">{result}</li>
                           ))}
                         </ul>
                       </div>
@@ -145,29 +145,29 @@ export default function AutomotivoPremiumPage() {
       </section>
 
       {/* Why Dexi for Automotive */}
-      <section className="section">
+      <section className="section bg-[var(--bg-surface)]">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="section-header">
               <h2 className="text-h2">Por que a Dexi para automotivo?</h2>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="card p-6">
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="card card-feature p-6 group">
                 <h3 className="text-h5 mb-3">Experiência comprovada</h3>
-                <p className="text-body">10+ anos trabalhando com grupos automotivos. Conhecemos os sistemas (DMS, CRM), as integrações e os desafios reais do setor.</p>
+                <p className="text-body-sm text-[var(--text-secondary)]">10+ anos trabalhando com grupos automotivos. Conhecemos os sistemas (DMS, CRM), as integrações e os desafios reais do setor.</p>
               </div>
-              <div className="card p-6">
+              <div className="card card-feature p-6 group">
                 <h3 className="text-h5 mb-3">Foco em resultados de vendas</h3>
-                <p className="text-body">Não entregamos relatórios bonitos. Entregamos mais conversão, mais retenção e menos estoque parado.</p>
+                <p className="text-body-sm text-[var(--text-secondary)]">Não entregamos relatórios bonitos. Entregamos mais conversão, mais retenção e menos estoque parado.</p>
               </div>
-              <div className="card p-6">
+              <div className="card card-feature p-6 group">
                 <h3 className="text-h5 mb-3">Tecnologia brasileira</h3>
-                <p className="text-body">Equipe local, suporte em português, conhecimento do mercado brasileiro e compliance com LGPD.</p>
+                <p className="text-body-sm text-[var(--text-secondary)]">Equipe local, suporte em português, conhecimento do mercado brasileiro e compliance com LGPD.</p>
               </div>
-              <div className="card p-6">
+              <div className="card card-feature p-6 group">
                 <h3 className="text-h5 mb-3">IA com governança</h3>
-                <p className="text-body">IA explicável e auditável. Você entende cada recomendação e mantém controle total sobre os dados.</p>
+                <p className="text-body-sm text-[var(--text-secondary)]">IA explicável e auditável. Você entende cada recomendação e mantém controle total sobre os dados.</p>
               </div>
             </div>
           </div>
@@ -175,21 +175,21 @@ export default function AutomotivoPremiumPage() {
       </section>
 
       {/* CTA */}
-      <section className="section-cta">
+      <section className="section-cta-premium text-white">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-h1 text-white mb-6">
+            <h2 className="text-display-lg text-white mb-5">
               Pronto para transformar seus dados em vendas?
             </h2>
-            <p className="text-lead text-primary-100 mb-10">
+            <p className="text-lg text-white/70 mb-10">
               Agende um diagnóstico gratuito e descubra como IA pode aumentar
               sua conversão de leads em até 50%.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contato" className="btn btn-white btn-xl">
+              <Link href="/contato" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
                 Agendar Diagnóstico em 24h
               </Link>
-              <Link href="/metodologia" className="btn btn-outline-white btn-xl">
+              <Link href="/metodologia" className="btn border-2 border-white/30 text-white hover:border-white/60 hover:bg-white/10">
                 Conhecer metodologia
               </Link>
             </div>

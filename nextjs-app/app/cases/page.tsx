@@ -79,14 +79,14 @@ export default function CasesPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="section-hero-alt">
+      <section className="section-hero-premium py-24 md:py-32 border-b border-[var(--border-subtle)]">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-overline text-primary-600 mb-4">Resultados Comprovados</p>
-            <h1 className="text-display mb-6">
-              Cases de Sucesso
+            <p className="text-overline mb-4 animate-fade-in-up-subtle">Resultados Comprovados</p>
+            <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
+              Cases de <span className="text-display-gradient">Sucesso</span>
             </h1>
-            <p className="text-lead">
+            <p className="text-lead max-w-2xl mx-auto animate-fade-in-up delay-100">
               Projetos reais com resultados mensuráveis. Todos os cases são de clientes
               reais sob NDA - detalhes específicos omitidos por confidencialidade.
             </p>
@@ -95,41 +95,41 @@ export default function CasesPage() {
       </section>
 
       {/* Cases Grid */}
-      <section className="section">
+      <section className="section-lg bg-[var(--bg-surface)]">
         <div className="container">
-          <div className="max-w-6xl mx-auto space-y-12">
-            {cases.map((caseStudy, index) => (
-              <article key={caseStudy.title} className="card p-8">
+          <div className="max-w-6xl mx-auto space-y-10">
+            {cases.map((caseStudy) => (
+              <article key={caseStudy.title} className="card card-interactive p-8">
                 {/* Header */}
                 <div className="flex flex-wrap items-center gap-3 mb-6">
-                  <span className="badge badge-primary">{caseStudy.sector}</span>
-                  <span className="badge badge-neutral">{caseStudy.timeline}</span>
+                  <span className="px-3 py-1 text-xs font-semibold bg-[var(--color-primary-100)] dark:bg-[var(--color-primary-900)]/30 text-[var(--color-primary-700)] dark:text-[var(--color-primary-300)] rounded-full">{caseStudy.sector}</span>
+                  <span className="px-3 py-1 text-xs font-medium bg-[var(--bg-secondary)] text-[var(--text-secondary)] rounded-full">{caseStudy.timeline}</span>
                 </div>
 
                 <h2 className="text-h3 mb-2">{caseStudy.title}</h2>
-                <p className="text-body-sm text-gray-500 mb-6">{caseStudy.client}</p>
+                <p className="text-body-sm text-[var(--text-muted)] mb-6">{caseStudy.client}</p>
 
                 <div className="grid md:grid-cols-2 gap-8 mb-8">
                   {/* Left: Challenge & Approach */}
                   <div className="space-y-6">
                     <div>
-                      <h3 className="text-h5 text-gray-700 mb-2">Desafio</h3>
-                      <p className="text-body">{caseStudy.challenge}</p>
+                      <h3 className="text-xs font-semibold text-[var(--text-primary)] mb-2 uppercase tracking-wide">Desafio</h3>
+                      <p className="text-body-sm text-[var(--text-secondary)]">{caseStudy.challenge}</p>
                     </div>
                     <div>
-                      <h3 className="text-h5 text-gray-700 mb-2">Abordagem Dexi</h3>
-                      <p className="text-body">{caseStudy.approach}</p>
+                      <h3 className="text-xs font-semibold text-[var(--text-primary)] mb-2 uppercase tracking-wide">Abordagem Dexi</h3>
+                      <p className="text-body-sm text-[var(--text-secondary)]">{caseStudy.approach}</p>
                     </div>
                   </div>
 
                   {/* Right: Results */}
                   <div>
-                    <h3 className="text-h5 text-gray-700 mb-4">Resultados</h3>
-                    <div className="space-y-4">
+                    <h3 className="text-xs font-semibold text-[var(--text-primary)] mb-4 uppercase tracking-wide">Resultados</h3>
+                    <div className="space-y-3">
                       {caseStudy.results.map((result, idx) => (
-                        <div key={idx} className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                          <span className="text-h3 text-primary-600 font-bold">{result.metric}</span>
-                          <span className="text-body pt-1">{result.description}</span>
+                        <div key={idx} className="flex items-start gap-4 p-4 bg-[var(--bg-secondary)] rounded-xl border border-[var(--border-subtle)]">
+                          <span className="text-number-lg text-display-gradient">{result.metric}</span>
+                          <span className="text-body-sm text-[var(--text-secondary)] pt-1">{result.description}</span>
                         </div>
                       ))}
                     </div>
@@ -137,9 +137,9 @@ export default function CasesPage() {
                 </div>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2 pt-6 border-t border-gray-100">
+                <div className="flex flex-wrap gap-2 pt-6 border-t border-[var(--border-subtle)]">
                   {caseStudy.tags.map((tag) => (
-                    <span key={tag} className="badge badge-secondary">{tag}</span>
+                    <span key={tag} className="px-3 py-1 text-xs font-medium bg-[var(--bg-secondary)] text-[var(--text-secondary)] rounded-full">{tag}</span>
                   ))}
                 </div>
               </article>
@@ -149,20 +149,20 @@ export default function CasesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-cta">
+      <section className="section-cta-premium text-white">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-h1 text-white mb-6">
+            <h2 className="text-display-lg text-white mb-5">
               Pronto para criar seu próprio case de sucesso?
             </h2>
-            <p className="text-lead text-primary-100 mb-10">
+            <p className="text-lg text-white/70 mb-10">
               Agende um diagnóstico gratuito e descubra o potencial de IA e dados para sua empresa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contato" className="btn btn-white btn-xl">
+              <Link href="/contato" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
                 Agendar Diagnóstico em 24h
               </Link>
-              <Link href="/metodologia" className="btn btn-outline-white btn-xl">
+              <Link href="/metodologia" className="btn border-2 border-white/30 text-white hover:border-white/60 hover:bg-white/10">
                 Conhecer metodologia
               </Link>
             </div>

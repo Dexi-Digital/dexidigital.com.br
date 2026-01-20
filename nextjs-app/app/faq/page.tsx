@@ -107,12 +107,15 @@ export default function FAQPage() {
       />
 
       {/* Hero */}
-      <section className="section-hero">
+      <section className="section-hero-premium py-24 md:py-32 border-b border-[var(--border-subtle)]">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-display mb-6">Perguntas Frequentes</h1>
-            <p className="text-lead">
-              Respostas diretas sobre como trabalhamos, nossa metodologia e o que esperar 
+            <p className="text-overline mb-4 animate-fade-in-up-subtle">Tire suas dúvidas</p>
+            <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
+              Perguntas <span className="text-display-gradient">Frequentes</span>
+            </h1>
+            <p className="text-lead max-w-2xl mx-auto animate-fade-in-up delay-100">
+              Respostas diretas sobre como trabalhamos, nossa metodologia e o que esperar
               de uma parceria com a Dexi Digital.
             </p>
           </div>
@@ -120,12 +123,12 @@ export default function FAQPage() {
       </section>
 
       {/* FAQ Categories */}
-      <section className="section">
+      <section className="section-lg bg-[var(--bg-surface)]">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             {faqCategories.map((category, catIndex) => (
-              <div key={catIndex} className="mb-12">
-                <h2 className="text-h3 mb-6 pb-3 border-b border-gray-200">{category.category}</h2>
+              <div key={catIndex} className="mb-12 animate-fade-in-up" style={{ animationDelay: `${catIndex * 100}ms` }}>
+                <h2 className="text-h3 mb-6 pb-3 border-b border-[var(--border-subtle)]">{category.category}</h2>
                 <div className="card p-6">
                   {category.questions.map((faq, faqIndex) => (
                     <FAQItem
@@ -142,20 +145,20 @@ export default function FAQPage() {
       </section>
 
       {/* CTA */}
-      <section className="section-cta">
+      <section className="section-cta-premium text-white">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-h1 text-white mb-6">
+            <h2 className="text-display-lg text-white mb-6">
               Ainda tem dúvidas?
             </h2>
-            <p className="text-lead text-primary-100 mb-10">
+            <p className="text-lg text-white/70 mb-10">
               Agende um diagnóstico gratuito e converse diretamente com nossos especialistas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contato" className="btn btn-white btn-xl">
+              <Link href="/contato" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
                 Agendar Diagnóstico em 24h
               </Link>
-              <Link href="/metodologia" className="btn btn-outline-white btn-xl">
+              <Link href="/metodologia" className="btn border-2 border-white/30 text-white hover:bg-white/10">
                 Conhecer metodologia
               </Link>
             </div>

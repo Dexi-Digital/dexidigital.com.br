@@ -4,6 +4,8 @@ import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { organizationSchema, websiteSchema } from '@/lib/structured-data';
+import { ThemeProvider } from '@/components/ThemeProvider';
+import FingerprintTracker from '@/components/analytics/FingerprintTracker';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -90,9 +92,12 @@ export default function RootLayout({
         ))}
       </head>
       <body className="font-sans antialiased">
-        <Header />
-        {children}
-        <Footer />
+        <ThemeProvider defaultTheme="system" storageKey="dexi-ui-theme">
+          <FingerprintTracker />
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

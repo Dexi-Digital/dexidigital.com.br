@@ -50,13 +50,14 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="section-hero-alt">
+      <section className="section-hero-premium py-24 md:py-32 border-b border-[var(--border-subtle)]">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-display mb-6">
-              Nossos Serviços
+            <p className="text-overline mb-4 animate-fade-in-up-subtle">Soluções Enterprise</p>
+            <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
+              Nossos <span className="text-display-gradient">Serviços</span>
             </h1>
-            <p className="text-lead mb-8">
+            <p className="text-lead max-w-2xl mx-auto animate-fade-in-up delay-100">
               Soluções de software e dados para empresas que não podem falhar.
               IA como acelerador, expertise humana como garantia.
             </p>
@@ -65,34 +66,37 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="section">
+      <section className="section-lg bg-[var(--bg-surface)]">
         <div className="container">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-1 gap-12">
+          <div className="max-w-5xl mx-auto">
+            <div className="space-y-8">
               {services.map((service, index) => (
-                <div key={service.slug} className="card-service">
+                <div key={service.slug} className="card card-interactive p-8 md:p-10">
                   <div className="flex flex-col lg:flex-row gap-8">
                     <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-4">
-                        <span className="text-h1 text-primary-600">
+                      <div className="flex items-center gap-4 mb-5">
+                        <span className="text-number-lg text-display-gradient">
                           {String(index + 1).padStart(2, '0')}
                         </span>
                         <h2 className="text-h3">
                           {service.title}
                         </h2>
                       </div>
-                      <p className="text-body-lg mb-6">
+                      <p className="text-lg text-[var(--text-secondary)] mb-6 leading-relaxed">
                         {service.description}
                       </p>
-                      <ul className="feature-list mb-8">
+                      <ul className="space-y-3 mb-8">
                         {service.benefits.map((benefit) => (
-                          <li key={benefit} className="feature-list-item">
+                          <li key={benefit} className="flex items-start gap-3 text-body-sm text-[var(--text-secondary)]">
+                            <svg className="w-5 h-5 text-[var(--color-primary-500)] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
                             {benefit}
                           </li>
                         ))}
                       </ul>
-                      <Link href={`/servicos/${service.slug}`} className="link-arrow">
-                        Saiba mais sobre {service.title}
+                      <Link href={`/servicos/${service.slug}`} className="text-sm font-semibold text-[var(--color-primary-600)] hover:text-[var(--color-primary-700)] transition-base">
+                        Saiba mais sobre {service.title} →
                       </Link>
                     </div>
                   </div>
@@ -104,17 +108,17 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-alt py-20">
+      <section className="section-cta-premium text-white">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-h2 mb-4">
+            <h2 className="text-display-lg text-white mb-5">
               Pronto para começar?
             </h2>
-            <p className="text-lead mb-8">
+            <p className="text-lg text-white/70 mb-10">
               Agende um diagnóstico gratuito para discutir seus desafios.
             </p>
-            <Link href="/contato" className="btn btn-primary btn-xl">
-              Fale conosco
+            <Link href="/contato" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
+              Fale conosco →
             </Link>
           </div>
         </div>

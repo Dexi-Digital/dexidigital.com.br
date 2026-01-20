@@ -79,13 +79,13 @@ export default function LeadMagnet({
   if (isSubmitted) {
     return (
       <div className="card p-8 text-center">
-        <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+        <div className="w-16 h-16 bg-[var(--color-success-100)] dark:bg-[var(--color-success-900)]/30 text-[var(--color-success-600)] rounded-2xl flex items-center justify-center mx-auto mb-4">
           <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
         <h3 className="text-h4 mb-2">Material enviado!</h3>
-        <p className="text-body">
+        <p className="text-body-sm text-[var(--text-secondary)]">
           Verifique seu email {email} para acessar o conteúdo.
         </p>
       </div>
@@ -95,24 +95,29 @@ export default function LeadMagnet({
   return (
     <div className="card p-8">
       <div className="flex items-start gap-4 mb-6">
-        <div className="icon-box icon-box-primary">
+        <div className="w-14 h-14 rounded-xl bg-[var(--color-primary-100)] dark:bg-[var(--color-primary-900)]/30 flex items-center justify-center text-[var(--color-primary-600)]">
           {typeIcons[type]}
         </div>
         <div>
           <h3 className="text-h4 mb-2">{title}</h3>
-          <p className="text-body">{description}</p>
+          <p className="text-body-sm text-[var(--text-secondary)]">{description}</p>
         </div>
       </div>
 
-      <ul className="feature-list mb-6">
+      <ul className="space-y-2 mb-6">
         {benefits.map((benefit, index) => (
-          <li key={index} className="feature-list-item">{benefit}</li>
+          <li key={index} className="flex items-start gap-2 text-body-sm text-[var(--text-secondary)]">
+            <svg className="w-4 h-4 text-[var(--color-success-500)] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            {benefit}
+          </li>
         ))}
       </ul>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label htmlFor={`nome-${type}`} className="form-label">Nome</label>
+          <label htmlFor={`nome-${type}`} className="block text-sm font-medium text-[var(--text-primary)] mb-1.5">Nome</label>
           <input
             id={`nome-${type}`}
             type="text"
@@ -120,11 +125,11 @@ export default function LeadMagnet({
             onChange={(e) => setNome(e.target.value)}
             placeholder="Seu nome"
             required
-            className="form-input"
+            className="w-full px-4 py-3 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-primary)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)] focus:border-transparent transition-base"
           />
         </div>
         <div>
-          <label htmlFor={`email-${type}`} className="form-label">Email corporativo</label>
+          <label htmlFor={`email-${type}`} className="block text-sm font-medium text-[var(--text-primary)] mb-1.5">Email corporativo</label>
           <input
             id={`email-${type}`}
             type="email"
@@ -132,10 +137,10 @@ export default function LeadMagnet({
             onChange={(e) => setEmail(e.target.value)}
             placeholder="seu@empresa.com.br"
             required
-            className="form-input"
+            className="w-full px-4 py-3 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-primary)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)] focus:border-transparent transition-base"
           />
         </div>
-        {error && <p className="text-red-600 text-sm">{error}</p>}
+        {error && <p className="text-[var(--color-error-600)] text-sm">{error}</p>}
         <button
           type="submit"
           disabled={isSubmitting}
@@ -143,7 +148,7 @@ export default function LeadMagnet({
         >
           {isSubmitting ? 'Enviando...' : ctaText}
         </button>
-        <p className="text-caption text-center">
+        <p className="text-xs text-[var(--text-muted)] text-center">
           Ao enviar, você concorda com nossa política de privacidade.
         </p>
       </form>

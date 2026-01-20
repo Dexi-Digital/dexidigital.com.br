@@ -23,12 +23,15 @@ export default function Footer() {
   };
 
   return (
-    <footer className="section-dark">
-      <div className="container py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+    <footer className="bg-[#050608] text-white relative overflow-hidden">
+      {/* Subtle gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[rgba(33,150,243,0.03)] pointer-events-none" />
+
+      <div className="container py-14 lg:py-20 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-block mb-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 rounded-lg">
+            <Link href="/" className="inline-block mb-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary-400)] rounded-lg transition-base">
               <Image
                 src="/images/brand/logo.svg"
                 alt="Dexi Digital"
@@ -37,21 +40,21 @@ export default function Footer() {
                 className="h-8 w-auto brightness-0 invert"
               />
             </Link>
-            <p className="text-body-sm text-gray-400 mb-4">
+            <p className="text-sm text-white/60 leading-relaxed mb-4">
               Inteligência de dados e software sob medida com IA acelerada e supervisão técnica humana.
             </p>
-            <p className="text-body-sm text-gray-400">
+            <p className="text-sm text-white/40">
               Para empresas que não podem falhar.
             </p>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="text-h6 text-white mb-4">Serviços</h3>
+            <h3 className="text-sm font-semibold text-white mb-5 tracking-wide uppercase">Serviços</h3>
             <ul className="space-y-3">
               {navigation.services.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="footer-link">
+                  <Link href={item.href} className="text-sm text-white/60 hover:text-white transition-base">
                     {item.name}
                   </Link>
                 </li>
@@ -61,11 +64,11 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="text-h6 text-white mb-4">Empresa</h3>
+            <h3 className="text-sm font-semibold text-white mb-5 tracking-wide uppercase">Empresa</h3>
             <ul className="space-y-3">
               {navigation.company.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="footer-link">
+                  <Link href={item.href} className="text-sm text-white/60 hover:text-white transition-base">
                     {item.name}
                   </Link>
                 </li>
@@ -75,12 +78,12 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-h6 text-white mb-4">Contato</h3>
+            <h3 className="text-sm font-semibold text-white mb-5 tracking-wide uppercase">Contato</h3>
             <ul className="space-y-3">
               <li>
                 <a
                   href="mailto:contato@dexidigital.com.br"
-                  className="footer-link"
+                  className="text-sm text-white/60 hover:text-white transition-base"
                 >
                   contato@dexidigital.com.br
                 </a>
@@ -88,9 +91,10 @@ export default function Footer() {
               <li>
                 <Link
                   href="/contato"
-                  className="inline-flex items-center text-sm font-semibold text-primary-400 hover:text-primary-300 transition-colors"
+                  className="inline-flex items-center text-sm font-semibold text-[var(--color-primary-400)] hover:text-[var(--color-primary-300)] transition-base group"
                 >
-                  Obter Diagnóstico em 24h →
+                  Obter Diagnóstico em 24h
+                  <span className="ml-1 group-hover:translate-x-0.5 transition-transform">→</span>
                 </Link>
               </li>
             </ul>
@@ -98,24 +102,24 @@ export default function Footer() {
         </div>
 
         {/* Positioning Microcopy */}
-        <div className="mt-12 pt-8 border-t border-gray-800">
-          <div className="text-center mb-8">
-            <p className="text-lg md:text-xl font-semibold text-white tracking-tight">
+        <div className="mt-14 pt-10 border-t border-white/10">
+          <div className="text-center mb-10">
+            <p className="text-lg md:text-xl font-semibold text-white tracking-tight mb-2">
               Consultoria de IA e dados para empresas que não podem falhar.
             </p>
-            <p className="text-sm text-gray-500 mt-2">
+            <p className="text-sm text-white/40">
               Eficiência operacional com IA • Consultoria de IA para vendas • Inteligência de dados para grupos automotivos
             </p>
           </div>
 
           {/* Bottom bar */}
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-6 border-t border-gray-700">
-            <p className="text-caption text-gray-400">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-6 border-t border-white/5">
+            <p className="text-xs text-white/40">
               © {currentYear} Dexi Digital. Todos os direitos reservados.
             </p>
             <div className="flex gap-6">
               {navigation.legal.map((item) => (
-                <Link key={item.name} href={item.href} className="footer-link">
+                <Link key={item.name} href={item.href} className="text-xs text-white/40 hover:text-white/70 transition-base">
                   {item.name}
                 </Link>
               ))}

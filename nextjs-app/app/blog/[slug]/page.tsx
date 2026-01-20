@@ -58,7 +58,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
     const flushList = () => {
       if (currentList.length > 0) {
         elements.push(
-          <ul key={`list-${elements.length}`} className="list-disc list-inside space-y-2 mb-6 text-gray-700">
+          <ul key={`list-${elements.length}`} className="list-disc list-inside space-y-2 mb-6 text-[var(--text-secondary)]">
             {currentList.map((item, i) => (
               <li key={i}>{parseInline(item)}</li>
             ))}
@@ -72,11 +72,11 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
       if (currentTable.length > 1) {
         elements.push(
           <div key={`table-${elements.length}`} className="overflow-x-auto mb-6">
-            <table className="min-w-full border border-gray-200 rounded-lg">
-              <thead className="bg-gray-50">
+            <table className="min-w-full border border-[var(--border-subtle)] rounded-xl overflow-hidden">
+              <thead className="bg-[var(--bg-secondary)]">
                 <tr>
                   {currentTable[0].map((cell, i) => (
-                    <th key={i} className="px-4 py-3 text-left text-sm font-semibold text-gray-900 border-b">
+                    <th key={i} className="px-4 py-3 text-left text-sm font-semibold text-[var(--text-primary)] border-b border-[var(--border-subtle)]">
                       {cell}
                     </th>
                   ))}
@@ -84,9 +84,9 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
               </thead>
               <tbody>
                 {currentTable.slice(2).map((row, i) => (
-                  <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  <tr key={i} className={i % 2 === 0 ? 'bg-[var(--bg-primary)]' : 'bg-[var(--bg-secondary)]'}>
                     {row.map((cell, j) => (
-                      <td key={j} className="px-4 py-3 text-sm text-gray-700 border-b">
+                      <td key={j} className="px-4 py-3 text-sm text-[var(--text-secondary)] border-b border-[var(--border-subtle)]">
                         {cell}
                       </td>
                     ))}
@@ -106,16 +106,16 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
       const parts = text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\)|`[^`]+`)/g);
       return parts.map((part, i) => {
         if (part.startsWith('**') && part.endsWith('**')) {
-          return <strong key={i} className="font-semibold text-gray-900">{part.slice(2, -2)}</strong>;
+          return <strong key={i} className="font-semibold text-[var(--text-primary)]">{part.slice(2, -2)}</strong>;
         }
         if (part.startsWith('[') && part.includes('](')) {
           const match = part.match(/\[([^\]]+)\]\(([^)]+)\)/);
           if (match) {
-            return <Link key={i} href={match[2]} className="text-primary-600 hover:text-primary-700 underline">{match[1]}</Link>;
+            return <Link key={i} href={match[2]} className="text-[var(--color-primary-600)] hover:text-[var(--color-primary-700)] underline transition-base">{match[1]}</Link>;
           }
         }
         if (part.startsWith('`') && part.endsWith('`')) {
-          return <code key={i} className="bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono">{part.slice(1, -1)}</code>;
+          return <code key={i} className="bg-[var(--bg-secondary)] px-1.5 py-0.5 rounded text-sm font-mono text-[var(--text-primary)]">{part.slice(1, -1)}</code>;
         }
         return part;
       });
@@ -163,8 +163,8 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
         const text = line.slice(6);
         elements.push(
           <div key={i} className="flex items-start gap-3 mb-2">
-            <input type="checkbox" checked={checked} readOnly className="mt-1" />
-            <span className="text-gray-700">{parseInline(text)}</span>
+            <input type="checkbox" checked={checked} readOnly className="mt-1 accent-[var(--color-primary-600)]" />
+            <span className="text-[var(--text-secondary)]">{parseInline(text)}</span>
           </div>
         );
       }
@@ -180,12 +180,12 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
       // Horizontal rule
       else if (line === '---') {
         flushList();
-        elements.push(<hr key={i} className="my-8 border-gray-200" />);
+        elements.push(<hr key={i} className="my-8 border-[var(--border-subtle)]" />);
       }
       // Regular paragraph
       else {
         flushList();
-        elements.push(<p key={i} className="text-body mb-4">{parseInline(line)}</p>);
+        elements.push(<p key={i} className="text-body-sm text-[var(--text-secondary)] mb-4">{parseInline(line)}</p>);
       }
     }
 
@@ -207,15 +207,15 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
       />
 
       {/* Hero Section */}
-      <section className="section-hero-alt">
+      <section className="section-hero-premium py-20 md:py-28 border-b border-[var(--border-subtle)]">
         <div className="container">
           <div className="max-w-3xl mx-auto">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="badge badge-primary">{article.category}</span>
-              <span className="text-caption">{article.readTime} de leitura</span>
+            <div className="flex items-center gap-3 mb-4 animate-fade-in-up-subtle">
+              <span className="px-3 py-1 text-xs font-semibold bg-[var(--color-primary-100)] dark:bg-[var(--color-primary-900)]/30 text-[var(--color-primary-700)] dark:text-[var(--color-primary-300)] rounded-full">{article.category}</span>
+              <span className="text-xs text-[var(--text-muted)]">{article.readTime} de leitura</span>
             </div>
-            <h1 className="text-h1 mb-4">{article.title}</h1>
-            <div className="flex items-center gap-4 text-body-sm">
+            <h1 className="text-display-lg md:text-display-xl text-[var(--text-primary)] mb-4 animate-fade-in-up delay-75">{article.title}</h1>
+            <div className="flex items-center gap-4 text-body-sm text-[var(--text-secondary)] animate-fade-in-up delay-100">
               <span>{article.author}</span>
               <span>•</span>
               <time dateTime={article.date}>
@@ -231,30 +231,33 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
       </section>
 
       {/* Article Content */}
-      <section className="section">
+      <section className="section bg-[var(--bg-surface)]">
         <div className="container">
-          <article className="max-w-3xl mx-auto prose-custom">
+          <article className="max-w-3xl mx-auto">
             {renderContent(article.content)}
           </article>
 
           {/* Back to Blog */}
-          <div className="max-w-3xl mx-auto mt-12 pt-8 border-t border-gray-200">
-            <Link href="/blog" className="link-arrow-back">
-              ← Voltar para o Blog
+          <div className="max-w-3xl mx-auto mt-12 pt-8 border-t border-[var(--border-subtle)]">
+            <Link href="/blog" className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-primary-600)] hover:text-[var(--color-primary-700)] transition-base">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Voltar para o Blog
             </Link>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="section-alt">
+      <section className="section-lg section-gradient">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-h3 mb-4">Pronto para implementar essas práticas?</h2>
             <p className="text-lead mb-8">
               Agende um diagnóstico gratuito para discutir seus desafios técnicos.
             </p>
-            <Link href="/contato" className="btn btn-primary btn-xl">
+            <Link href="/contato" className="btn btn-primary">
               Obter Diagnóstico em 24h
             </Link>
           </div>

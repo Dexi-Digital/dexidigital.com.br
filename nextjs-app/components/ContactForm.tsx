@@ -65,41 +65,30 @@ export default function ContactForm() {
   if (status === 'success') {
     return (
       <div className="text-center py-8 animate-fade-in-up">
-        <div className="w-16 h-16 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg
-            className="w-8 h-8 text-success-600"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M5 13l4 4L19 7"
-            />
+        <div className="w-16 h-16 bg-[var(--color-success-100)] dark:bg-[var(--color-success-900)]/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <svg className="w-8 h-8 text-[var(--color-success-600)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
         <h3 className="text-h3 mb-2">Mensagem enviada!</h3>
-        <p className="text-body mb-6">
+        <p className="text-body-sm text-[var(--text-secondary)] mb-6">
           Obrigado pelo contato. Responderemos em até 24 horas.
         </p>
-        <button
-          onClick={() => setStatus('idle')}
-          className="btn btn-ghost"
-        >
+        <button onClick={() => setStatus('idle')} className="btn btn-ghost">
           Enviar outra mensagem
         </button>
       </div>
     );
   }
 
+  const inputClasses = "w-full px-4 py-3 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-primary)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)] focus:border-transparent transition-base";
+  const labelClasses = "block text-sm font-medium text-[var(--text-primary)] mb-1.5";
+
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-5">
       <div>
-        <label htmlFor="name" className="form-label required">
-          Nome completo
+        <label htmlFor="name" className={labelClasses}>
+          Nome completo <span className="text-[var(--color-error-500)]">*</span>
         </label>
         <input
           type="text"
@@ -108,14 +97,14 @@ export default function ContactForm() {
           required
           value={formData.name}
           onChange={handleChange}
-          className="form-input"
+          className={inputClasses}
           placeholder="João Silva"
         />
       </div>
 
       <div>
-        <label htmlFor="email" className="form-label required">
-          Email corporativo
+        <label htmlFor="email" className={labelClasses}>
+          Email corporativo <span className="text-[var(--color-error-500)]">*</span>
         </label>
         <input
           type="email"
@@ -124,14 +113,14 @@ export default function ContactForm() {
           required
           value={formData.email}
           onChange={handleChange}
-          className="form-input"
+          className={inputClasses}
           placeholder="joao@empresa.com.br"
         />
       </div>
 
       <div>
-        <label htmlFor="company" className="form-label required">
-          Empresa
+        <label htmlFor="company" className={labelClasses}>
+          Empresa <span className="text-[var(--color-error-500)]">*</span>
         </label>
         <input
           type="text"
@@ -140,13 +129,13 @@ export default function ContactForm() {
           required
           value={formData.company}
           onChange={handleChange}
-          className="form-input"
+          className={inputClasses}
           placeholder="Nome da empresa"
         />
       </div>
 
       <div>
-        <label htmlFor="phone" className="form-label">
+        <label htmlFor="phone" className={labelClasses}>
           Telefone
         </label>
         <input
@@ -155,15 +144,15 @@ export default function ContactForm() {
           name="phone"
           value={formData.phone}
           onChange={handleChange}
-          className="form-input"
+          className={inputClasses}
           placeholder="(00) 00000-0000"
         />
       </div>
 
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="companySize" className="form-label required">
-            Tamanho da empresa
+          <label htmlFor="companySize" className={labelClasses}>
+            Tamanho da empresa <span className="text-[var(--color-error-500)]">*</span>
           </label>
           <select
             id="companySize"
@@ -171,7 +160,7 @@ export default function ContactForm() {
             required
             value={formData.companySize}
             onChange={handleChange}
-            className="form-select"
+            className={inputClasses}
           >
             <option value="">Selecione</option>
             <option value="1-10">1-10 funcionários</option>
@@ -183,8 +172,8 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="sector" className="form-label required">
-            Setor
+          <label htmlFor="sector" className={labelClasses}>
+            Setor <span className="text-[var(--color-error-500)]">*</span>
           </label>
           <select
             id="sector"
@@ -192,7 +181,7 @@ export default function ContactForm() {
             required
             value={formData.sector}
             onChange={handleChange}
-            className="form-select"
+            className={inputClasses}
           >
             <option value="">Selecione</option>
             <option value="automotivo">Automotivo / Concessionárias</option>
@@ -208,8 +197,8 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="challenge" className="form-label required">
-          Principal desafio
+        <label htmlFor="challenge" className={labelClasses}>
+          Principal desafio <span className="text-[var(--color-error-500)]">*</span>
         </label>
         <select
           id="challenge"
@@ -217,7 +206,7 @@ export default function ContactForm() {
           required
           value={formData.challenge}
           onChange={handleChange}
-          className="form-select"
+          className={inputClasses}
         >
           <option value="">Selecione o desafio principal</option>
           <option value="conversao-leads">Baixa conversão de leads em vendas</option>
@@ -231,8 +220,8 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="urgency" className="form-label required">
-          Urgência
+        <label htmlFor="urgency" className={labelClasses}>
+          Urgência <span className="text-[var(--color-error-500)]">*</span>
         </label>
         <select
           id="urgency"
@@ -240,7 +229,7 @@ export default function ContactForm() {
           required
           value={formData.urgency}
           onChange={handleChange}
-          className="form-select"
+          className={inputClasses}
         >
           <option value="">Qual a urgência?</option>
           <option value="imediato">Imediato - preciso resolver agora</option>
@@ -251,7 +240,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="form-label">
+        <label htmlFor="message" className={labelClasses}>
           Detalhes adicionais (opcional)
         </label>
         <textarea
@@ -260,21 +249,21 @@ export default function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           rows={4}
-          className="form-textarea"
+          className={inputClasses}
           placeholder="Conte mais sobre seu contexto, sistemas atuais, expectativas..."
         />
       </div>
 
       {status === 'error' && (
-        <div className="p-4 bg-error-50 border border-error-200 rounded-lg animate-fade-in">
-          <p className="text-sm text-error-600">{errorMessage}</p>
+        <div className="p-4 bg-[var(--color-error-50)] dark:bg-[var(--color-error-900)]/20 border border-[var(--color-error-200)] dark:border-[var(--color-error-800)] rounded-xl animate-fade-in">
+          <p className="text-sm text-[var(--color-error-600)]">{errorMessage}</p>
         </div>
       )}
 
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="btn btn-primary btn-xl w-full justify-center"
+        className="btn btn-primary w-full justify-center py-4"
       >
         {status === 'loading' ? (
           <>
