@@ -1,14 +1,44 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { sendLeadMagnetEmail, sendInternalNotification, LeadData } from '@/lib/email';
+import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limit';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
+// Input sanitization helper
+function sanitizeString(input: unknown, maxLength: number = 500): string {
+  if (typeof input !== 'string') return '';
+  return input.trim().slice(0, maxLength);
+}
+
 export async function POST(request: NextRequest) {
   try {
+    // Rate limiting
+    const clientIP = getClientIP(request);
+    const rateLimitResult = checkRateLimit(clientIP, RATE_LIMITS.leadMagnet);
+
+    if (!rateLimitResult.success) {
+      return NextResponse.json(
+        { error: 'Muitas requisições. Por favor, aguarde alguns minutos.' },
+        {
+          status: 429,
+          headers: {
+            'Retry-After': String(rateLimitResult.resetIn),
+            'X-RateLimit-Remaining': '0',
+          }
+        }
+      );
+    }
+
     const body = await request.json();
-    const { nome, email, type, title, roiData } = body;
+
+    // Sanitize inputs
+    const nome = sanitizeString(body.nome, 100);
+    const email = sanitizeString(body.email, 254);
+    const type = sanitizeString(body.type, 20);
+    const title = sanitizeString(body.title, 200);
+    const roiData = body.roiData; // Validated later if needed
 
     // Validate required fields
     if (!nome || !email || !type) {
@@ -28,8 +58,10 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate type
-    const validTypes = ['pdf', 'checklist', 'calculator'];
-    if (!validTypes.includes(type)) {
+    const validTypes = ['pdf', 'checklist', 'calculator'] as const;
+    type ValidType = typeof validTypes[number];
+
+    if (!validTypes.includes(type as ValidType)) {
       return NextResponse.json(
         { error: 'Tipo de material inválido' },
         { status: 400 }
@@ -39,7 +71,7 @@ export async function POST(request: NextRequest) {
     const leadData: LeadData = {
       nome,
       email,
-      type,
+      type: type as ValidType,
       title: title || getDefaultTitle(type),
       roiData,
     };

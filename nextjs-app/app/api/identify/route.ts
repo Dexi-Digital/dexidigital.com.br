@@ -1,9 +1,44 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { IdentificationPayload, IdentificationResponse } from '@/lib/analytics';
+import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limit';
+
+// Input sanitization helper
+function sanitizeString(input: unknown, maxLength: number = 500): string {
+    if (typeof input !== 'string') return '';
+    return input.trim().slice(0, maxLength);
+}
 
 export async function POST(request: NextRequest) {
     try {
-        const payload: IdentificationPayload = await request.json();
+        // Rate limiting
+        const clientIP = getClientIP(request);
+        const rateLimitResult = checkRateLimit(clientIP, RATE_LIMITS.identify);
+
+        if (!rateLimitResult.success) {
+            return NextResponse.json(
+                { success: false, error: 'Rate limit exceeded' },
+                { status: 429 }
+            );
+        }
+
+        const body = await request.json();
+
+        // Validate and sanitize payload
+        const payload: IdentificationPayload = {
+            visitorId: sanitizeString(body.visitorId, 100),
+            url: sanitizeString(body.url, 2000),
+            userAgent: sanitizeString(body.userAgent, 500),
+            timestamp: sanitizeString(body.timestamp, 50),
+            email: body.email ? sanitizeString(body.email, 254) : undefined,
+        };
+
+        // Validate required fields
+        if (!payload.visitorId || !payload.url) {
+            return NextResponse.json(
+                { success: false, error: 'Invalid payload' },
+                { status: 400 }
+            );
+        }
 
         // 1. IP Resolution (Extract IP)
         // In production, use X-Forwarded-For or similar headers from your hosting provider (Vercel, AWS, etc.)
