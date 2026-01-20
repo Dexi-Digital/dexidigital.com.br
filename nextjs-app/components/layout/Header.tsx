@@ -36,11 +36,13 @@ export default function Header() {
               <span className="sr-only">Dexi Digital - Consultoria de IA e Dados</span>
               <div className="relative h-10 w-auto">
                 <Image
-                  src="/images/brand/logo.svg"
+                  src={resolvedTheme === 'dark'
+                    ? '/images/brand/Dexi White logo Transparent bg.svg'
+                    : '/images/brand/logo.svg'}
                   alt="Dexi Digital - Consultoria de IA para Empresas"
                   width={180}
                   height={48}
-                  className="h-full w-auto object-contain dark:brightness-0 dark:invert"
+                  className="h-full w-auto object-contain"
                   priority
                   style={{ maxHeight: '40px' }}
                 />
