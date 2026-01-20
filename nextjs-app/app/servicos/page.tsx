@@ -10,6 +10,31 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   const services = [
     {
+      title: 'Concierge Digital de Vendas',
+      slug: 'ia-para-empresas',
+      description:
+        'IA conversacional treinada em Neurolinguística e Venda Consultiva. Não é um chatbot — é um assistente que entende perfis de compra em tempo real e adapta argumentos a cada turno da conversa.',
+      benefits: [
+        'Perfilamento neurolinguístico em tempo real',
+        'Distinção automática de valores (performance vs. segurança)',
+        'Handoff inteligente com briefing para vendedores',
+        'IA governada, auditável e integrada ao CRM',
+      ],
+      featured: true,
+    },
+    {
+      title: 'Software Sob Medida',
+      slug: 'software-sob-medida',
+      description:
+        'Aplicações web e mobile enterprise com IA integrada. Portais de vendas, sistemas B2B e apps com Concierge Digital nativo.',
+      benefits: [
+        'Arquitetura moderna com IA conversacional nativa',
+        'Testes automatizados e CI/CD',
+        'Integração com CRM, ERP e sistemas legados',
+        'Suporte e evolução contínua',
+      ],
+    },
+    {
       title: 'Inteligência de Dados',
       slug: 'inteligencia-de-dados',
       description:
@@ -19,30 +44,6 @@ export default function ServicesPage() {
         'Modelos preditivos para demanda e churn',
         'Data warehouse moderno (Snowflake, BigQuery)',
         'Governança e compliance (LGPD, SOC2)',
-      ],
-    },
-    {
-      title: 'Software Sob Medida',
-      slug: 'software-sob-medida',
-      description:
-        'Aplicações web e mobile enterprise. Arquitetura escalável, código limpo e documentação completa. Construído para durar.',
-      benefits: [
-        'Arquitetura moderna (microserviços, serverless)',
-        'Testes automatizados e CI/CD',
-        'Documentação técnica completa',
-        'Suporte e evolução contínua',
-      ],
-    },
-    {
-      title: 'IA para Empresas',
-      slug: 'ia-para-empresas',
-      description:
-        'IA acelerada com supervisão técnica humana. Governança, explicabilidade e controle total. IA como ferramenta, não como fim.',
-      benefits: [
-        'IA governada e auditável',
-        'Integração com sistemas existentes',
-        'Treinamento de equipes internas',
-        'Roadmap de adoção gradual',
       ],
     },
   ];
@@ -55,11 +56,11 @@ export default function ServicesPage() {
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-overline mb-4 animate-fade-in-up-subtle">Soluções Enterprise</p>
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
-              Nossos <span className="text-display-gradient">Serviços</span>
+              IA que <span className="text-display-gradient">entende pessoas</span>
             </h1>
             <p className="text-lead max-w-2xl mx-auto animate-fade-in-up delay-100">
-              Soluções de software e dados para empresas que não podem falhar.
-              IA como acelerador, expertise humana como garantia.
+              Concierge Digital de Vendas, software com IA integrada e inteligência de dados.
+              Soluções que convertem porque entendem o perfil do seu cliente em tempo real.
             </p>
           </div>
         </div>

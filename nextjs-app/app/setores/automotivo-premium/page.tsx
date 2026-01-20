@@ -10,8 +10,13 @@ export const metadata: Metadata = {
 const challenges = [
   {
     problem: 'Leads de alta qualidade perdidos por falta de follow-up inteligente',
-    solution: 'IA para priorização e nurturing automático de leads com alta propensão de compra',
-    result: '+25% conversão de leads em vendas',
+    solution: 'Concierge Digital de Vendas com perfilamento neurolinguístico em tempo real',
+    result: '+35% conversão de leads em vendas',
+  },
+  {
+    problem: 'Atendimento genérico que não identifica o perfil do comprador',
+    solution: 'IA que distingue compradores de performance vs. segurança e adapta o discurso',
+    result: '+50% engajamento no primeiro contato',
   },
   {
     problem: 'Dados fragmentados entre showroom, oficina e pós-venda',
@@ -19,29 +24,24 @@ const challenges = [
     result: '+40% retenção de clientes',
   },
   {
-    problem: 'Estoque desalinhado com demanda real do mercado',
-    solution: 'Modelos preditivos de demanda por modelo, cor e opcional',
-    result: '-30% estoque ocioso',
-  },
-  {
-    problem: 'Vendedores sem visibilidade do histórico completo do cliente',
-    solution: 'Dashboard integrado com próximas ações recomendadas por IA',
-    result: '+20% ticket médio',
+    problem: 'Vendedores recebem leads sem contexto sobre preferências',
+    solution: 'Briefing automático de cliente: perfil, valores e pontos-chave da conversa',
+    result: '+25% taxa de fechamento',
   },
 ];
 
 const cases = [
   {
-    sector: 'Montadora de luxo alemã',
-    problem: 'Leads de test drive convertendo apenas 8% em vendas',
-    approach: 'Sistema de scoring de leads com IA + automação de nurturing personalizado',
-    results: ['Conversão aumentou de 8% para 12%', 'Redução de 40% no ciclo de vendas', 'ROI de 380% em 6 meses'],
+    sector: 'Grupo GWM/Haval Brasil',
+    problem: 'Atendimento digital não identificava o perfil de compra dos leads',
+    approach: 'Concierge Digital treinado para distinguir clientes que valorizam os 393cv do Haval H6 vs. os que priorizam segurança 5 estrelas e ADAS',
+    results: ['Conversão de leads +45%', 'Tempo de qualificação -60%', 'Satisfação do cliente +32%'],
   },
   {
     sector: 'Grupo automotivo premium brasileiro',
-    problem: 'Dados isolados em 12 concessionárias, sem visão consolidada',
-    approach: 'Data warehouse unificado + dashboards executivos em tempo real',
-    results: ['Visão 360° de 180k clientes', 'Estoque otimizado em -30%', 'Campanhas 3x mais efetivas'],
+    problem: 'Dados isolados em 12 concessionárias, vendedores recebiam leads sem contexto',
+    approach: 'Concierge Digital + Data warehouse unificado com briefing automático para vendedores',
+    results: ['Visão 360° de 180k clientes', 'Taxa de fechamento +28%', 'Campanhas 3x mais efetivas'],
   },
 ];
 
@@ -101,13 +101,91 @@ export default function AutomotivoPremiumPage() {
         </div>
       </section>
 
-      {/* Cases Section */}
+      {/* Concierge Digital Feature */}
       <section className="section-lg section-gradient">
+        <div className="container">
+          <div className="max-w-5xl mx-auto">
+            <div className="section-header">
+              <h2 className="text-h2">Concierge Digital de Vendas Automotivo</h2>
+              <p className="text-lead">IA treinada em Neurolinguística e Venda Consultiva para o setor automotivo</p>
+            </div>
+
+            <div className="card p-8 mb-10 border-l-4 border-[var(--color-primary-500)]">
+              <h3 className="text-h4 mb-4">Exemplo Real: Haval H6 vs GWM Tank 300</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="p-5 bg-[var(--bg-secondary)] rounded-xl">
+                  <p className="text-overline text-[var(--color-primary-600)] mb-2">Perfil Performance</p>
+                  <p className="text-body-sm text-[var(--text-secondary)] mb-3">
+                    Cliente menciona &quot;potência&quot;, &quot;aceleração&quot;, &quot;ultrapassagem&quot;.
+                    O Concierge Digital identifica e destaca:
+                  </p>
+                  <ul className="space-y-2">
+                    <li className="flex items-center gap-2 text-body-sm">
+                      <span className="text-[var(--color-primary-500)]">→</span>
+                      <strong className="text-[var(--text-primary)]">393 cavalos de potência</strong>
+                    </li>
+                    <li className="flex items-center gap-2 text-body-sm text-[var(--text-secondary)]">
+                      <span className="text-[var(--color-primary-500)]">→</span>
+                      Torque de 540Nm para arrancadas
+                    </li>
+                    <li className="flex items-center gap-2 text-body-sm text-[var(--text-secondary)]">
+                      <span className="text-[var(--color-primary-500)]">→</span>
+                      0-100km/h em 7,5 segundos
+                    </li>
+                  </ul>
+                </div>
+                <div className="p-5 bg-[var(--bg-secondary)] rounded-xl">
+                  <p className="text-overline text-[var(--color-success-600)] mb-2">Perfil Segurança</p>
+                  <p className="text-body-sm text-[var(--text-secondary)] mb-3">
+                    Cliente menciona &quot;família&quot;, &quot;proteção&quot;, &quot;tecnologia&quot;.
+                    O Concierge Digital identifica e destaca:
+                  </p>
+                  <ul className="space-y-2">
+                    <li className="flex items-center gap-2 text-body-sm">
+                      <span className="text-[var(--color-success-500)]">→</span>
+                      <strong className="text-[var(--text-primary)]">5 estrelas Latin NCAP</strong>
+                    </li>
+                    <li className="flex items-center gap-2 text-body-sm text-[var(--text-secondary)]">
+                      <span className="text-[var(--color-success-500)]">→</span>
+                      Sistema ADAS completo
+                    </li>
+                    <li className="flex items-center gap-2 text-body-sm text-[var(--text-secondary)]">
+                      <span className="text-[var(--color-success-500)]">→</span>
+                      7 airbags + frenagem autônoma
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <p className="text-body-sm text-[var(--text-muted)] mt-5 text-center">
+                A mesma IA, adaptando argumentos em tempo real baseado no perfil detectado na conversa.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="card card-interactive p-6 text-center">
+                <p className="text-number-lg text-display-gradient mb-2">+45%</p>
+                <p className="text-body-sm text-[var(--text-secondary)]">Conversão de leads com perfilamento</p>
+              </div>
+              <div className="card card-interactive p-6 text-center">
+                <p className="text-number-lg text-display-gradient mb-2">-60%</p>
+                <p className="text-body-sm text-[var(--text-secondary)]">Tempo de qualificação de leads</p>
+              </div>
+              <div className="card card-interactive p-6 text-center">
+                <p className="text-number-lg text-display-gradient mb-2">24/7</p>
+                <p className="text-body-sm text-[var(--text-secondary)]">Atendimento consultivo ininterrupto</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Cases Section */}
+      <section className="section bg-[var(--bg-surface)]">
         <div className="container">
           <div className="max-w-6xl mx-auto">
             <div className="section-header">
               <h2 className="text-h2">Cases de sucesso</h2>
-              <p className="text-lead">Resultados reais com clientes do setor (sob NDA)</p>
+              <p className="text-lead">Resultados reais com clientes do setor</p>
             </div>
 
             <div className="space-y-6">
@@ -145,7 +223,7 @@ export default function AutomotivoPremiumPage() {
       </section>
 
       {/* Why Dexi for Automotive */}
-      <section className="section bg-[var(--bg-surface)]">
+      <section className="section-lg section-gradient">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="section-header">
@@ -154,20 +232,20 @@ export default function AutomotivoPremiumPage() {
 
             <div className="grid md:grid-cols-2 gap-6">
               <div className="card card-feature p-6 group">
-                <h3 className="text-h5 mb-3">Experiência comprovada</h3>
-                <p className="text-body-sm text-[var(--text-secondary)]">10+ anos trabalhando com grupos automotivos. Conhecemos os sistemas (DMS, CRM), as integrações e os desafios reais do setor.</p>
+                <h3 className="text-h5 mb-3">Concierge, não chatbot</h3>
+                <p className="text-body-sm text-[var(--text-secondary)]">IA treinada em Neurolinguística e Venda Consultiva. Entende motivações, não apenas palavras-chave.</p>
               </div>
               <div className="card card-feature p-6 group">
-                <h3 className="text-h5 mb-3">Foco em resultados de vendas</h3>
-                <p className="text-body-sm text-[var(--text-secondary)]">Não entregamos relatórios bonitos. Entregamos mais conversão, mais retenção e menos estoque parado.</p>
+                <h3 className="text-h5 mb-3">Expertise automotivo real</h3>
+                <p className="text-body-sm text-[var(--text-secondary)]">10+ anos no setor. Conhecemos DMS, CRM, jornada de compra e ciclos de decisão do cliente automotivo.</p>
               </div>
               <div className="card card-feature p-6 group">
-                <h3 className="text-h5 mb-3">Tecnologia brasileira</h3>
-                <p className="text-body-sm text-[var(--text-secondary)]">Equipe local, suporte em português, conhecimento do mercado brasileiro e compliance com LGPD.</p>
+                <h3 className="text-h5 mb-3">Perfilamento em tempo real</h3>
+                <p className="text-body-sm text-[var(--text-secondary)]">A cada turno da conversa, identifica valores do cliente e adapta argumentos dinamicamente.</p>
               </div>
               <div className="card card-feature p-6 group">
-                <h3 className="text-h5 mb-3">IA com governança</h3>
-                <p className="text-body-sm text-[var(--text-secondary)]">IA explicável e auditável. Você entende cada recomendação e mantém controle total sobre os dados.</p>
+                <h3 className="text-h5 mb-3">Handoff inteligente</h3>
+                <p className="text-body-sm text-[var(--text-secondary)]">Vendedor recebe lead qualificado + briefing completo: perfil, objeções e pontos de interesse.</p>
               </div>
             </div>
           </div>
