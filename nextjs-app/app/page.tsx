@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import FAQItem from '@/components/ui/FAQItem';
 import { getHomePageSchemas, localBusinessSchema } from '@/lib/structured-data';
+import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -46,9 +47,9 @@ export default function HomePage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up delay-200">
-              <Link href="/contato" className="btn btn-primary">
+              <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                 Agendar Diagnóstico
-              </Link>
+              </a>
               <Link href="/metodologia" className="btn btn-secondary">
                 Nossa metodologia
               </Link>
@@ -661,9 +662,9 @@ export default function HomePage() {
               Diagnóstico gratuito. Sem compromisso. Conversa técnica sobre seus desafios.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Link href="/contato" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
+              <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
                 Obter Diagnóstico em 24h
-              </Link>
+              </a>
               <Link href="/cases" className="btn border-2 border-white/30 text-white hover:border-white/60 hover:bg-white/10">
                 Ver cases
               </Link>

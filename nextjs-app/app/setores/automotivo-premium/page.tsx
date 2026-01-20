@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { WHATSAPP_AUTOMOTIVO_URL, WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -63,9 +64,9 @@ export default function AutomotivoPremiumPage() {
               expertise comprovada no setor.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-150">
-              <Link href="/contato" className="btn btn-primary">
+              <a href={WHATSAPP_AUTOMOTIVO_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                 Agendar Diagnóstico Automotivo
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -264,9 +265,9 @@ export default function AutomotivoPremiumPage() {
               sua conversão de leads em até 50%.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contato" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
+              <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
                 Agendar Diagnóstico em 24h
-              </Link>
+              </a>
               <Link href="/metodologia" className="btn border-2 border-white/30 text-white hover:border-white/60 hover:bg-white/10">
                 Conhecer metodologia
               </Link>

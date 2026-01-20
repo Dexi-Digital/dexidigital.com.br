@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { WHATSAPP_PHONE, WHATSAPP_MESSAGES } from '@/lib/whatsapp';
 
 interface WhatsAppButtonProps {
   /**
@@ -25,11 +26,8 @@ interface WhatsAppButtonProps {
   text?: string;
 }
 
-const WHATSAPP_PHONE = '5511991847629';
-const DEFAULT_MESSAGE = 'Olá! Gostaria de saber mais sobre os serviços da Dexi Digital.';
-
 export default function WhatsAppButton({
-  message = DEFAULT_MESSAGE,
+  message = WHATSAPP_MESSAGES.default,
   phone = WHATSAPP_PHONE,
   floating = true,
   className = '',
@@ -117,6 +115,6 @@ export default function WhatsAppButton({
   );
 }
 
-// Export constants for use in other components
-export { WHATSAPP_PHONE, DEFAULT_MESSAGE };
+// Re-export from lib/whatsapp for convenience
+export { WHATSAPP_PHONE, WHATSAPP_MESSAGES } from '@/lib/whatsapp';
 

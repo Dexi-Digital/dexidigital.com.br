@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -89,13 +90,15 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <Link
-                  href="/contato"
+                <a
+                  href={WHATSAPP_DIAGNOSTIC_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center text-sm font-semibold text-[var(--color-primary-400)] hover:text-[var(--color-primary-300)] transition-base group"
                 >
                   Obter Diagnóstico em 24h
                   <span className="ml-1 group-hover:translate-x-0.5 transition-transform">→</span>
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

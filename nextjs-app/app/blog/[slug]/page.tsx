@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getArticleBySlug, getAllArticles } from '@/lib/blog-data';
 import { getArticleSchema } from '@/lib/structured-data';
+import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
 
 interface BlogArticlePageProps {
   params: Promise<{ slug: string }>;
@@ -257,9 +258,9 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
             <p className="text-lead mb-8">
               Agende um diagnóstico gratuito para discutir seus desafios técnicos.
             </p>
-            <Link href="/contato" className="btn btn-primary">
+            <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
               Obter Diagnóstico em 24h
-            </Link>
+            </a>
           </div>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -159,9 +160,9 @@ export default function MetodologiaPage() {
               Agende um diagnóstico gratuito e descubra o potencial de IA e dados para sua empresa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contato" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
+              <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
                 Agendar Diagnóstico em 24h
-              </Link>
+              </a>
               <Link href="/cases" className="btn border-2 border-white/30 text-white hover:border-white/60 hover:bg-white/10">
                 Ver cases de sucesso
               </Link>

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import FAQItem from '@/components/ui/FAQItem';
+import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -155,9 +156,9 @@ export default function FAQPage() {
               Agende um diagnóstico gratuito e converse diretamente com nossos especialistas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contato" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
+              <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
                 Agendar Diagnóstico em 24h
-              </Link>
+              </a>
               <Link href="/metodologia" className="btn border-2 border-white/30 text-white hover:bg-white/10">
                 Conhecer metodologia
               </Link>

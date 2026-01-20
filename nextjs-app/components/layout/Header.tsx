@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useTheme } from '@/components/ThemeProvider';
+import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -157,9 +158,9 @@ export default function Header() {
                 </svg>
               )}
             </button>
-            <Link href="/contato" className="btn btn-primary text-sm">
+            <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary text-sm">
               Agendar Diagnóstico
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -219,13 +220,15 @@ export default function Header() {
                     </>
                   )}
                 </button>
-                <Link
-                  href="/contato"
+                <a
+                  href={WHATSAPP_DIAGNOSTIC_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn btn-primary w-full text-center text-sm"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Agendar Diagnóstico
-                </Link>
+                </a>
               </div>
             </div>
           </div>

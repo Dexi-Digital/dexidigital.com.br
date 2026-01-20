@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
 
 export const metadata: Metadata = {
   title: 'Inteligência de Dados',
@@ -109,9 +110,9 @@ export default function DataIntelligencePage() {
             <p className="text-lg text-white/70 mb-10">
               Agende um diagnóstico gratuito para discutir seus desafios de dados.
             </p>
-            <Link href="/contato" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
+            <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
               Obter Diagnóstico em 24h
-            </Link>
+            </a>
           </div>
         </div>
       </section>
