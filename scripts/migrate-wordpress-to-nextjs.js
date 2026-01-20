@@ -11,12 +11,8 @@ const path = require('path');
 const postsPath = path.join(__dirname, '../_archive_vue_legacy/parsed-posts.json');
 const posts = JSON.parse(fs.readFileSync(postsPath, 'utf-8'));
 
-// Filter posts with good SEO score (>= 80)
-const qualityPosts = posts.filter(p => parseInt(p.seoScore) >= 80);
-console.log(`Found ${qualityPosts.length} posts with SEO score >= 80`);
-
-// Take top 50 for initial migration
-const topPosts = qualityPosts.slice(0, 50);
+// Migrate ALL posts (sorted by SEO score, then by views)
+console.log(`Migrating ALL ${posts.length} posts...`);
 
 // Helper to convert HTML to Markdown-like content
 function htmlToMarkdown(html) {
@@ -92,8 +88,8 @@ function formatDate(dateStr) {
   return d.toISOString().split('T')[0];
 }
 
-// Generate blog articles array
-const blogArticles = topPosts.map(post => {
+// Generate blog articles array from ALL posts
+const blogArticles = posts.map(post => {
   const content = htmlToMarkdown(post.content);
   const excerpt = post.excerpt || content.substring(0, 200).replace(/\n/g, ' ').trim() + '...';
   
@@ -108,7 +104,7 @@ const blogArticles = topPosts.map(post => {
     metaDescription: excerpt.substring(0, 160),
     focusKeyword: post.focusKeyword || '',
     seoScore: parseInt(post.seoScore) || 0,
-    content: content.substring(0, 5000), // Limit content size for now
+    content: content, // Full content
   };
 });
 
