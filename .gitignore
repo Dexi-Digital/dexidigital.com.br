@@ -1,52 +1,38 @@
-# Dexi Digital - Root .gitignore
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Archive directory (old Vue.js code - optional to commit)
-# Uncomment the line below if you don't want to commit the archive
-# _archive_vue_legacy/
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
 
-# OS files
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+*.pem
 
-# Dependencies
-node_modules/
-/dist
-
-# Environment variables
-.env
-.env.local
-.env*.local
-
-# Log files
+# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
 
-# Editor directories and files
-.idea
-.vscode
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-*.swp
-*.swo
-*~
+# local env files
+.env*.local
+.env
 
-# Vercel
+# vercel
 .vercel
-.cache
 
-# Temporary files
-*.tmp
-*.temp
+# typescript
+*.tsbuildinfo
+next-env.d.ts
 
-# Image optimization backup
-nextjs-app/public/images-backup/
