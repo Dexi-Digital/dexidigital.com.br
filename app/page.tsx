@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import FAQItem from '@/components/ui/FAQItem';
 import { getHomePageSchemas, localBusinessSchema } from '@/lib/structured-data';
 import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
