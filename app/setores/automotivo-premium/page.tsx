@@ -10,24 +10,24 @@ export const metadata: Metadata = {
 
 const challenges = [
   {
-    problem: 'Leads de alta qualidade perdidos por falta de follow-up inteligente',
-    solution: 'Concierge Digital de Vendas com perfilamento neurolinguístico em tempo real',
-    result: '+35% conversão de leads em vendas',
+    problem: 'Erosão de Leads: Alta qualidade perdida por falta de follow-up imediato e inteligente.',
+    solution: 'Execução Agêntica 24/7: O Synapse assume a última milha do lead instantaneamente, eliminando o tempo de espera e garantindo persistência estratégica sem fadiga humana.',
+    result: '+35% de conversão final validada em operações como a Attra Veículos.',
   },
   {
-    problem: 'Atendimento genérico que não identifica o perfil do comprador',
-    solution: 'IA que distingue compradores de performance vs. segurança e adapta o discurso',
-    result: '+50% engajamento no primeiro contato',
+    problem: 'Atendimento Genérico: Falta de identificação do perfil psicológico e motivação do comprador.',
+    solution: 'Persuasão Adaptativa MAS: IA que mapeia o perfil (Performance vs. Segurança) e ajusta o tom de voz e os argumentos de venda em tempo real para maximizar o desejo.',
+    result: '+50% de engajamento qualificado no primeiro contato.',
   },
   {
-    problem: 'Dados fragmentados entre showroom, oficina e pós-venda',
-    solution: 'Visão 360° do cliente com inteligência de dados unificada',
-    result: '+40% retenção de clientes',
+    problem: 'Silos de Dados: Informações fragmentadas entre showroom, oficina e o pós-venda.',
+    solution: 'Arquitetura Shadow CRM: Unificação total da jornada do cliente, transformando dados mortos em gatilhos de recompra e predição de fluxo de caixa para a concessionária.',
+    result: '+40% no LTV (Lifetime Value) e retenção de carteira premium.',
   },
   {
-    problem: 'Vendedores recebem leads sem contexto sobre preferências',
-    solution: 'Briefing automático de cliente: perfil, valores e pontos-chave da conversa',
-    result: '+25% taxa de fechamento',
+    problem: 'Assimetria de Informação: Vendedores recebem leads sem contexto ou profundidade.',
+    solution: 'Venda Aumentada (Sales Enablement): Briefing estratégico entregue ao vendedor com perfil psicológico, objeções antecipadas e "next best action" para o fechamento imediato.',
+    result: '+25% na taxa de fechamento em showrooms de alto ticket.',
   },
 ];
 
@@ -55,17 +55,18 @@ export default function AutomotivoPremiumPage() {
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-overline mb-4 animate-fade-in-up-subtle">Setor Automotivo Premium</p>
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
-              IA para conversão de leads em{' '}
-              <span className="text-display-gradient">concessionárias premium</span>
+              Liderança em Execução Agêntica{' '}
+              <span className="text-display-gradient">Automotiva</span>
             </h1>
+            <p className="text-h3 mb-4 text-[var(--text-primary)] animate-fade-in-up delay-75">
+              Maximização de Conversão e Liquidez com Synapse
+            </p>
             <p className="text-lead max-w-2xl mx-auto mb-10 animate-fade-in-up delay-100">
-              Inteligência de dados e IA estratégica para grupos automotivos que
-              vendem experiência, não apenas veículos. Tecnologia brasileira com
-              expertise comprovada no setor.
+              Orquestramos a última milha da venda com o Synapse. Com expertise validada na Attra Veículos, transformamos o showroom em uma máquina de execução autônoma, garantindo que nenhum lead esfrie e que cada interação resulte em lucro líquido e soberania digital para o grupo.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-150">
               <a href={WHATSAPP_AUTOMOTIVO_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                Agendar Diagnóstico Automotivo
+                Explorar Impacto no EBITDA Automotivo →
               </a>
             </div>
           </div>
@@ -107,18 +108,17 @@ export default function AutomotivoPremiumPage() {
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <div className="section-header">
-              <h2 className="text-h2">Concierge Digital de Vendas Automotivo</h2>
-              <p className="text-lead">IA treinada em Neurolinguística e Venda Consultiva para o setor automotivo</p>
+              <h2 className="text-h2">Motor de Persuasão Adaptativa: Execução de Vendas de Alto Ticket</h2>
+              <p className="text-lead">Arquitetura Synapse MAS treinada em Neurolinguística Aplicada e Engenharia de Vendas de Luxo.</p>
             </div>
 
             <div className="card p-8 mb-10 border-l-4 border-[var(--color-primary-500)]">
               <h3 className="text-h4 mb-4">Exemplo Real: Haval H6 vs GWM Tank 300</h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="p-5 bg-[var(--bg-secondary)] rounded-xl">
-                  <p className="text-overline text-[var(--color-primary-600)] mb-2">Perfil Performance</p>
+                  <p className="text-overline text-[var(--color-primary-600)] mb-2">Perfil Performance (Poder & Dinâmica)</p>
                   <p className="text-body-sm text-[var(--text-secondary)] mb-3">
-                    Cliente menciona &quot;potência&quot;, &quot;aceleração&quot;, &quot;ultrapassagem&quot;.
-                    O Concierge Digital identifica e destaca:
+                    O agente identifica gatilhos de potência e torque. → Destaque: 393cv, 540Nm e 0-100km/h em 7,5s.
                   </p>
                   <ul className="space-y-2">
                     <li className="flex items-center gap-2 text-body-sm">
@@ -136,10 +136,9 @@ export default function AutomotivoPremiumPage() {
                   </ul>
                 </div>
                 <div className="p-5 bg-[var(--bg-secondary)] rounded-xl">
-                  <p className="text-overline text-[var(--color-success-600)] mb-2">Perfil Segurança</p>
+                  <p className="text-overline text-[var(--color-success-600)] mb-2">Perfil Segurança (Proteção & Tecnologia)</p>
                   <p className="text-body-sm text-[var(--text-secondary)] mb-3">
-                    Cliente menciona &quot;família&quot;, &quot;proteção&quot;, &quot;tecnologia&quot;.
-                    O Concierge Digital identifica e destaca:
+                    O agente prioriza salvaguardas e assistência. → Destaque: 5 estrelas NCAP, Sistema ADAS e 7 Airbags.
                   </p>
                   <ul className="space-y-2">
                     <li className="flex items-center gap-2 text-body-sm">
@@ -158,7 +157,7 @@ export default function AutomotivoPremiumPage() {
                 </div>
               </div>
               <p className="text-body-sm text-[var(--text-muted)] mt-5 text-center">
-                A mesma IA, adaptando argumentos em tempo real baseado no perfil detectado na conversa.
+                Soberania do Discurso: O Synapse OS altera a rota argumentativa em milissegundos, garantindo que o valor percebido seja moldado pela necessidade psicológica do comprador.
               </p>
             </div>
 

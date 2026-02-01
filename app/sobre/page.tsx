@@ -5,24 +5,24 @@ import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
 export const metadata: Metadata = {
   title: 'A Dexi Digital | Consultoria de IA e Inteligência de Dados',
   description:
-    'Conheça a Dexi Digital: consultoria estratégica de IA e inteligência de dados com 10+ anos de experiência. Fundada por especialistas com histórico em grandes corporações brasileiras.',
+    'Nascida da necessidade de transformar dados estáticos em lucro real, a Dexi Digital combina uma década de engenharia de software crítico com o pioneirismo no desenvolvimento de Sistemas Multi-Agentes (MAS). Criadores do Synapse, somos a ponte entre a inteligência artificial generativa e a execução financeira autônoma para corporações que buscam escala sem precedentes e governança inegociável.',
   keywords: ['Dexi Digital', 'consultoria IA Brasil', 'inteligência de dados', 'quem somos'],
 };
 
 const founders = [
   {
-    name: 'Lorrayne Paraiso',
-    role: 'Co-fundadora & CEO',
-    bio: 'Engenheira de Software com mais de 10 anos de experiência em desenvolvimento de sistemas enterprise. Especialista em arquitetura de soluções e inteligência de dados. Liderou projetos de transformação digital em grupos automotivos premium e grandes corporações brasileiras.',
-    expertise: ['Arquitetura de Software', 'Inteligência de Dados', 'Gestão de Projetos', 'Transformação Digital'],
-    linkedin: 'https://linkedin.com/in/lorrayneparaiso',
-  },
-  {
     name: 'Sócio Fundador',
-    role: 'Co-fundador & CTO',
+    role: 'Co-fundador & CEO',
     bio: 'Especialista em Machine Learning e Data Engineering com experiência em empresas de tecnologia de ponta. Responsável pela arquitetura técnica e governança de IA em todos os projetos da Dexi.',
     expertise: ['Machine Learning', 'Data Engineering', 'Cloud Architecture', 'Governança de IA'],
     linkedin: 'https://linkedin.com/company/dexi-digital',
+  },
+  {
+    name: 'Lorrayne Paraiso',
+    role: 'Co-fundadora & CTO',
+    bio: 'Engenheira de Software com mais de uma década de experiência na vanguarda de sistemas críticos e arquiteturas de alta complexidade. Como líder tecnológica da Dexi Digital, é a arquiteta principal do Synapse OS, orquestrando a transição de grandes corporações para a era da execução agêntica com foco em escala, segurança e conformidade enterprise.',
+    expertise: ['Arquitetura de Software', 'Inteligência de Dados', 'Gestão de Projetos', 'Transformação Digital'],
+    linkedin: 'https://linkedin.com/in/lorrayneparaiso',
   },
 ];
 
@@ -35,12 +35,10 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-overline mb-4 animate-fade-in-up-subtle">A Dexi Digital</p>
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
-              Consultoria estratégica de{' '}
-              <span className="text-display-gradient">IA e dados</span>
+              Liderança em Engenharia de Software e Infraestrutura Agêntica
             </h1>
             <p className="text-lead max-w-2xl mx-auto animate-fade-in-up delay-100">
-              Fundada por especialistas com histórico em grandes corporações,
-              focada em resultados reais para empresas que não podem falhar.
+              Nascida da necessidade de transformar dados estáticos em lucro real, a Dexi Digital combina uma década de engenharia de software crítico com o pioneirismo no desenvolvimento de Sistemas Multi-Agentes (MAS). Criadores do Synapse OS, somos a ponte entre a inteligência artificial generativa e a execução financeira autônoma para corporações que buscam escala sem precedentes e governança inegociável.
             </p>
           </div>
         </div>
@@ -54,21 +52,13 @@ export default function AboutPage() {
               Nosso DNA
             </h2>
             <p className="text-lg text-[var(--text-secondary)] mb-6 leading-relaxed">
-              A Dexi Digital nasceu da frustração com consultorias que vendem
-              tecnologia pela tecnologia. Fundada em 2014, construímos nossa
-              reputação entregando resultados mensuráveis para grupos automotivos
-              premium e grandes corporações brasileiras.
+              A obsessão pelo resultado líquido: A Dexi Digital nasceu em 2014 com um propósito claro: converter tecnologia complexa em vantagem competitiva real. Construímos nossa reputação no setor automotivo premium e em grandes corporações brasileiras, onde a falha não é uma opção e o ROI é a única métrica que importa.
             </p>
             <p className="text-lg text-[var(--text-secondary)] mb-6 leading-relaxed">
-              <strong className="text-[var(--text-primary)]">IA como acelerador, nunca sozinha.</strong> Usamos inteligência
-              artificial para acelerar entregas, mas toda solução passa por revisão
-              técnica humana especializada. Arquitetura, segurança, escalabilidade
-              e manutenibilidade validadas por engenheiros experientes.
+              <strong className="text-[var(--text-primary)]">Inteligência Agêntica com Governança Humana.</strong> Para nós, a IA não é um acessório, é um motor de execução. O Synapse OS é o ápice de uma década de engenharia crítica. Acreditamos na autonomia dos agentes, mas nunca abrimos mão da soberania humana. Cada solução é validada por arquitetos experientes, garantindo segurança e conformidade enterprise.
             </p>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              Não somos uma fábrica de software. Somos consultores estratégicos
-              que entendem de negócio e usam tecnologia como ferramenta para
-              resolver problemas reais.
+              <strong>Engenharia de Ativos, não de Horas.</strong> Não somos uma fábrica de software; somos uma Product-Led Engineering House. Nosso foco é construir ativos tecnológicos que destravam o EBITDA escondido nas operações. Entendemos de negócio tanto quanto de algoritmos, resolvendo problemas que o software tradicional não consegue tocar.
             </p>
           </div>
         </div>
@@ -79,8 +69,9 @@ export default function AboutPage() {
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <div className="section-header">
-              <h2 className="text-h2">Quem está por trás</h2>
-              <p className="text-lead">Especialistas com histórico comprovado em grandes corporações</p>
+              <h2 className="text-h2">A Engenharia de Elite por trás da Synapse</h2>
+              <p className="text-lead">Liderança sênior com DNA de execução em ecossistemas de alta complexidade.</p>
+              <p className="text-body-sm text-[var(--text-secondary)] mt-2">Unimos décadas de experiência em arquitetura de software crítico com o pioneirismo em sistemas agênticos. Nosso time é composto por especialistas que desenharam e sustentaram infraestruturas para os maiores grupos empresariais do país — agora focados em liderar a próxima fronteira da automação autônoma.</p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
@@ -124,39 +115,34 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="card card-interactive p-6">
                 <h3 className="text-h5 mb-3">
-                  Qualidade acima de tudo
+                  Engenharia de Precisão
                 </h3>
                 <p className="text-body-sm text-[var(--text-secondary)]">
-                  Não cortamos caminho. Arquitetura sólida, testes
-                  automatizados, documentação completa. Software construído para
-                  durar.
+                  Rejeitamos o "débito técnico". Construímos infraestruturas agênticas soberanas, com arquitetura sólida e auditável, desenhadas para suportar a escala de operações críticas.
                 </p>
               </div>
               <div className="card card-interactive p-6">
                 <h3 className="text-h5 mb-3">
-                  Transparência total
+                  Governança &amp; Previsibilidade
                 </h3>
                 <p className="text-body-sm text-[var(--text-secondary)]">
-                  Sem vendas agressivas, sem promessas vazias. Escopo claro,
-                  prazos realistas, comunicação honesta.
+                  Operamos com integridade estratégica. Entregamos visibilidade total sobre a execução da IA, garantindo que cada decisão agêntica seja transparente, ética e segura.
                 </p>
               </div>
               <div className="card card-interactive p-6">
                 <h3 className="text-h5 mb-3">
-                  Foco em resultados
+                  Obsessão pelo Impacto no EBITDA
                 </h3>
                 <p className="text-body-sm text-[var(--text-secondary)]">
-                  Tecnologia é meio, não fim. Medimos sucesso por ROI,
-                  eficiência operacional e redução de riscos.
+                  Tecnologia é custo; execução é lucro. Medimos nosso sucesso pelo ROI direto, ganho de liquidez operacional e blindagem de riscos do seu negócio.
                 </p>
               </div>
               <div className="card card-interactive p-6">
                 <h3 className="text-h5 mb-3">
-                  Parceria de longo prazo
+                  Evolução &amp; Co-criação
                 </h3>
                 <p className="text-body-sm text-[var(--text-secondary)]">
-                  Não entregamos e sumimos. Suporte contínuo, evolução de
-                  features, monitoramento proativo.
+                  Não entregamos apenas código, construímos ativos. Evoluímos o raciocínio dos nossos agentes continuamente para que sua empresa lidere a vanguarda do mercado, ano após ano.
                 </p>
               </div>
             </div>
@@ -174,23 +160,23 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-3 gap-6">
               <div className="card p-8 text-center">
                 <div className="text-number-lg text-display-gradient mb-2">10+</div>
-                <div className="text-sm font-semibold text-[var(--text-primary)] mb-2">Anos de experiência</div>
+                <div className="text-sm font-semibold text-[var(--text-primary)] mb-2">Anos em software crítico e arquiteturas complexas.</div>
                 <p className="text-body-sm text-[var(--text-secondary)]">
-                  Desenvolvimento de software e inteligência de dados
+                  Especialistas em infraestrutura escalável e engenharia de sistemas de missão crítica.
                 </p>
               </div>
               <div className="card p-8 text-center">
                 <div className="text-number-lg text-display-gradient mb-2">50+</div>
-                <div className="text-sm font-semibold text-[var(--text-primary)] mb-2">Projetos entregues</div>
+                <div className="text-sm font-semibold text-[var(--text-primary)] mb-2">Ecossistemas entregues para líderes de mercado.</div>
                 <p className="text-body-sm text-[var(--text-secondary)]">
-                  Desde MVPs até sistemas enterprise complexos
+                  Arquiteturas robustas desenhadas para suportar alta complexidade e governança enterprise.
                 </p>
               </div>
               <div className="card p-8 text-center">
-                <div className="text-number-lg text-display-gradient mb-2">6</div>
-                <div className="text-sm font-semibold text-[var(--text-primary)] mb-2">Setores atendidos</div>
+                <div className="text-number-lg text-display-gradient mb-2">R$ 7M+</div>
+                <div className="text-sm font-semibold text-[var(--text-primary)] mb-2">Recuperados através de execução agêntica autônoma</div>
                 <p className="text-body-sm text-[var(--text-secondary)]">
-                  Automotivo, Varejo, Logística, Financeiro, Saúde, Manufatura
+                  Impacto direto em setores de alto ticket: Automotivo, Construtora e Imobiliário.
                 </p>
               </div>
             </div>
@@ -203,17 +189,17 @@ export default function AboutPage() {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-display-lg text-white mb-5">
-              Pronto para transformar seus dados em resultados?
+              Pronto para liderar a Era da Execução Agêntica?
             </h2>
             <p className="text-lg text-white/70 mb-10">
-              Agende um diagnóstico gratuito e converse diretamente com nossos especialistas.
+              Valide o potencial de impacto do Synapse OS no seu EBITDA. Realizamos um diagnóstico de viabilidade técnica e financeira focado em liquidez e ROI imediato.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
-                Agendar Diagnóstico em 24h
+                Iniciar Validação de ROI
               </a>
               <Link href="/metodologia" className="btn border-2 border-white/30 text-white hover:border-white/60 hover:bg-white/10">
-                Conhecer metodologia
+                Conhecer o Synapse
               </Link>
             </div>
           </div>
