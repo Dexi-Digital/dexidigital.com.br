@@ -85,9 +85,9 @@ export const localBusinessSchema = {
   priceRange: '$$$',
   openingHours: 'Mo-Fr 09:00-18:00',
   serviceType: [
-    'Consultoria de IA',
-    'Inteligência de Dados',
-    'Desenvolvimento de Software Sob Medida',
+    'Arquitetura de Execução Agêntica (Synapse OS)',
+    'Engenharia de Dados & Ativos de Inteligência',
+    'Desenvolvimento de Sistemas de Missão Crítica',
     'IA para Grupos Automotivos',
     'Consultoria de IA para Vendas',
   ],
@@ -125,9 +125,9 @@ export const servicesSchema = [
     '@context': 'https://schema.org',
     '@type': 'Service',
     '@id': 'https://dexidigital.com.br/servicos/inteligencia-de-dados',
-    name: 'Inteligência de Dados',
+    name: 'Engenharia de Dados & Ativos de Inteligência',
     description:
-      'Analytics avançado, machine learning e data warehousing. Transforme dados em decisões estratégicas com governança e escalabilidade enterprise.',
+      'Transformamos dados brutos em combustível para a tomada de decisão autônoma. Estruturamos a base necessária para que o Synapse OS opere com precisão, garantindo que a informação flua sem gargalos, como implementado na gestão de 180k leads da Attra Veículos.',
     provider: {
       '@id': 'https://dexidigital.com.br/#organization',
     },
@@ -175,9 +175,9 @@ export const servicesSchema = [
     '@context': 'https://schema.org',
     '@type': 'Service',
     '@id': 'https://dexidigital.com.br/servicos/software-sob-medida',
-    name: 'Software Sob Medida',
+    name: 'Desenvolvimento de Sistemas de Missão Crítica',
     description:
-      'Aplicações web e mobile enterprise. Arquitetura escalável, código limpo e documentação completa. Construído para durar.',
+      'Nossa expertise de 10 anos em engenharia para criar soluções proprietárias que resolvem o que o mercado não resolve. Construímos a "última milha" da integração tecnológica, garantindo que a inovação se conecte perfeitamente aos sistemas legados e processos core da sua empresa.',
     provider: {
       '@id': 'https://dexidigital.com.br/#organization',
     },
@@ -225,9 +225,9 @@ export const servicesSchema = [
     '@context': 'https://schema.org',
     '@type': 'Service',
     '@id': 'https://dexidigital.com.br/servicos/ia-para-empresas',
-    name: 'IA para Empresas',
+    name: 'Arquitetura de Execução Agêntica (Synapse OS)',
     description:
-      'IA acelerada com supervisão técnica humana. Governança, explicabilidade e controle total. IA como ferramenta, não como fim.',
+      'Implementação de agentes autônomos que não apenas respondem, mas executam. Focamos em ganho de escala e redução de latência operacional, transformando a IA em um motor de EBITDA real, com resultados validados no setor imobiliário de alto padrão da TGV Empreendimentos.',
     provider: {
       '@id': 'https://dexidigital.com.br/#organization',
     },

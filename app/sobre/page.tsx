@@ -55,7 +55,7 @@ export default function AboutPage() {
               A obsessão pelo resultado líquido: A Dexi Digital nasceu em 2014 com um propósito claro: converter tecnologia complexa em vantagem competitiva real. Construímos nossa reputação no setor automotivo premium e em grandes corporações brasileiras, onde a falha não é uma opção e o ROI é a única métrica que importa.
             </p>
             <p className="text-lg text-[var(--text-secondary)] mb-6 leading-relaxed">
-              <strong className="text-[var(--text-primary)]">Inteligência Agêntica com Governança Humana.</strong> Para nós, a IA não é um acessório, é um motor de execução. O Synapse OS é o ápice de uma década de engenharia crítica. Acreditamos na autonomia dos agentes, mas nunca abrimos mão da soberania humana. Cada solução é validada por arquitetos experientes, garantindo segurança e conformidade enterprise.
+              <strong className="text-[var(--text-primary)]">Inteligência Agêntica com Governança Humana.</strong> Para nós, a IA não é um acessório, é um motor de execução. O Synapse  é o ápice de uma década de engenharia crítica. Acreditamos na autonomia dos agentes, mas nunca abrimos mão da soberania humana. Cada solução é validada por arquitetos experientes, garantindo segurança e conformidade enterprise.
             </p>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
               <strong>Engenharia de Ativos, não de Horas.</strong> Não somos uma fábrica de software; somos uma Product-Led Engineering House. Nosso foco é construir ativos tecnológicos que destravam o EBITDA escondido nas operações. Entendemos de negócio tanto quanto de algoritmos, resolvendo problemas que o software tradicional não consegue tocar.

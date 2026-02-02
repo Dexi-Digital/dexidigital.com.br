@@ -17,13 +17,12 @@ export default function BlogPage() {
       <section className="section-hero-premium py-24 md:py-32 border-b border-[var(--border-subtle)]">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-overline mb-4 animate-fade-in-up-subtle">Insights</p>
+            <p className="text-overline mb-4 animate-fade-in-up-subtle">Intelligence Hub</p>
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
-              <span className="text-display-gradient">Blog</span>
+              <span className="text-display-gradient">Liderança Agêntica &amp; Valor Enterprise</span>
             </h1>
             <p className="text-lead max-w-2xl mx-auto animate-fade-in-up delay-100">
-              Insights sobre IA empresarial, inteligência de dados e
-              desenvolvimento de software.
+              Perspectivas estratégicas sobre a transição para sistemas autônomos, soberania de dados e o impacto da inteligência agêntica no EBITDA de grandes corporações.
             </p>
           </div>
         </div>
@@ -78,10 +77,9 @@ export default function BlogPage() {
       <section className="section-lg section-gradient">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-h2 mb-4">Receba insights direto no seu email</h2>
+            <h2 className="text-h2 mb-4">Inteligência Estratégica na sua caixa de entrada</h2>
             <p className="text-lead mb-8">
-              Assine nossa newsletter para receber artigos sobre IA, dados e
-              desenvolvimento de software.
+              Acompanhe a vanguarda da Execução Agêntica. Receba teses exclusivas sobre impacto no EBITDA, soberania de dados e lições de mercado extraídas de operações reais.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <input
@@ -89,7 +87,7 @@ export default function BlogPage() {
                 placeholder="seu@email.com"
                 className="flex-1 px-4 py-3 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-primary)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)] focus:border-transparent transition-base"
               />
-              <button className="btn btn-primary">Assinar</button>
+              <button className="btn btn-primary">Acessar Intelligence Hub</button>
             </div>
           </div>
         </div>

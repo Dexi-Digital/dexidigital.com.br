@@ -33,16 +33,16 @@ const challenges = [
 
 const cases = [
   {
-    sector: 'Grupo GWM/Haval Brasil',
-    problem: 'Atendimento digital não identificava o perfil de compra dos leads',
-    approach: 'Concierge Digital treinado para distinguir clientes que valorizam os 393cv do Haval H6 vs. os que priorizam segurança 5 estrelas e ADAS',
-    results: ['Conversão de leads +45%', 'Tempo de qualificação -60%', 'Satisfação do cliente +32%'],
+    sector: 'Automotivo Premium: Attra Veículos',
+    problem: 'Incapacidade de Diferenciação Psicológica: Leads de alto ticket eram tratados de forma genérica, resultando em perda de conversão na última milha.',
+    approach: 'Implementação Synapse (Persuasão Adaptativa): Execução agêntica treinada em neurolinguística para distinguir gatilhos de Performance vs. Segurança em tempo real.',
+    results: ['Tempo -60%'],
   },
   {
-    sector: 'Grupo automotivo premium brasileiro',
-    problem: 'Dados isolados em 12 concessionárias, vendedores recebiam leads sem contexto',
-    approach: 'Concierge Digital + Data warehouse unificado com briefing automático para vendedores',
-    results: ['Visão 360° de 180k clientes', 'Taxa de fechamento +28%', 'Campanhas 3x mais efetivas'],
+    sector: 'Gestão de Ecossistemas: Attra Veículos',
+    problem: 'Fragmentação de Inteligência (Silos): Dados isolados em todas as unidades impediam uma visão única do cliente e geravam assimetria de informação no time comercial.',
+    approach: 'Arquitetura Shadow CRM & Unificação de Dados: Centralização de perfis com entrega de briefing estratégico autônomo para o vendedor (Sales Enablement).',
+    results: ['Fechamento +28%'],
   },
 ];
 
@@ -157,22 +157,22 @@ export default function AutomotivoPremiumPage() {
                 </div>
               </div>
               <p className="text-body-sm text-[var(--text-muted)] mt-5 text-center">
-                Soberania do Discurso: O Synapse OS altera a rota argumentativa em milissegundos, garantindo que o valor percebido seja moldado pela necessidade psicológica do comprador.
+                Soberania do Discurso: O Synapse altera a rota argumentativa em milissegundos, garantindo que o valor percebido seja moldado pela necessidade psicológica do comprador.
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
               <div className="card card-interactive p-6 text-center">
                 <p className="text-number-lg text-display-gradient mb-2">+45%</p>
-                <p className="text-body-sm text-[var(--text-secondary)]">Conversão de leads com perfilamento</p>
+                <p className="text-body-sm text-[var(--text-secondary)]">de Liquidez no Funil de Vendas</p>
               </div>
               <div className="card card-interactive p-6 text-center">
                 <p className="text-number-lg text-display-gradient mb-2">-60%</p>
-                <p className="text-body-sm text-[var(--text-secondary)]">Tempo de qualificação de leads</p>
+                <p className="text-body-sm text-[var(--text-secondary)]">no Ciclo de Qualificação Agêntica</p>
               </div>
               <div className="card card-interactive p-6 text-center">
                 <p className="text-number-lg text-display-gradient mb-2">24/7</p>
-                <p className="text-body-sm text-[var(--text-secondary)]">Atendimento consultivo ininterrupto</p>
+                <p className="text-body-sm text-[var(--text-secondary)]">Operação Autônoma (Zero Latência)</p>
               </div>
             </div>
           </div>
@@ -227,25 +227,25 @@ export default function AutomotivoPremiumPage() {
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="section-header">
-              <h2 className="text-h2">Por que a Dexi para automotivo?</h2>
+              <h2 className="text-h2">Por que a Dexi é líder em Execução Agêntica Automotiva?</h2>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
               <div className="card card-feature p-6 group">
-                <h3 className="text-h5 mb-3">Concierge, não chatbot</h3>
-                <p className="text-body-sm text-[var(--text-secondary)]">IA treinada em Neurolinguística e Venda Consultiva. Entende motivações, não apenas palavras-chave.</p>
+                <h3 className="text-h5 mb-3">Execução Agêntica, não Chatbots</h3>
+                <p className="text-body-sm text-[var(--text-secondary)]">Utilizamos o motor do Synapse OS treinado em Neurolinguística Aplicada. Nossos agentes não apenas respondem; eles executam a venda consultiva, identificando motivações latentes e gatilhos de fechamento.</p>
               </div>
               <div className="card card-feature p-6 group">
-                <h3 className="text-h5 mb-3">Expertise automotivo real</h3>
-                <p className="text-body-sm text-[var(--text-secondary)]">10+ anos no setor. Conhecemos DMS, CRM, jornada de compra e ciclos de decisão do cliente automotivo.</p>
+                <h3 className="text-h5 mb-3">Domínio do Ecossistema Automotivo</h3>
+                <p className="text-body-sm text-[var(--text-secondary)]">Uma década de engenharia dedicada ao setor. Integramos nativamente com DMS e CRMs de mercado, com expertise validada na Attra Veículos para orquestrar jornadas de compra complexas e ciclos de decisão premium.</p>
               </div>
               <div className="card card-feature p-6 group">
-                <h3 className="text-h5 mb-3">Perfilamento em tempo real</h3>
-                <p className="text-body-sm text-[var(--text-secondary)]">A cada turno da conversa, identifica valores do cliente e adapta argumentos dinamicamente.</p>
+                <h3 className="text-h5 mb-3">Inteligência Adaptativa MAS</h3>
+                <p className="text-body-sm text-[var(--text-secondary)]">A cada interação, a arquitetura Synapse mapeia o perfil psicológico do comprador. O discurso é moldado em milissegundos para alinhar o produto aos valores de Performance, Segurança ou Status detectados.</p>
               </div>
               <div className="card card-feature p-6 group">
-                <h3 className="text-h5 mb-3">Handoff inteligente</h3>
-                <p className="text-body-sm text-[var(--text-secondary)]">Vendedor recebe lead qualificado + briefing completo: perfil, objeções e pontos de interesse.</p>
+                <h3 className="text-h5 mb-3">Sales Enablement de Alta Precisão</h3>
+                <p className="text-body-sm text-[var(--text-secondary)]">O consultor humano recebe o lead com um briefing estratégico autônomo: perfil comportamental, objeções antecipadas e a &quot;Next Best Action&quot;. Reduzimos o atrito e maximizamos a taxa de fechamento no showroom.</p>
               </div>
             </div>
           </div>
@@ -257,18 +257,17 @@ export default function AutomotivoPremiumPage() {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-display-lg text-white mb-5">
-              Pronto para transformar seus dados em vendas?
+              Pronto para liderar a Execução Agêntica Automotiva?
             </h2>
             <p className="text-lg text-white/70 mb-10">
-              Agende um diagnóstico gratuito e descubra como IA pode aumentar
-              sua conversão de leads em até 50%.
+              Inicie a transição para sistemas de execução autônomos. Valide o impacto do Synapse OS no seu EBITDA e recupere a liquidez do showroom com a tecnologia validada pela Attra Veículos.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
-                Agendar Diagnóstico em 24h
+                Solicitar Validação de ROI
               </a>
               <Link href="/metodologia" className="btn border-2 border-white/30 text-white hover:border-white/60 hover:bg-white/10">
-                Conhecer metodologia
+                Conhecer o Synapse →
               </Link>
             </div>
           </div>

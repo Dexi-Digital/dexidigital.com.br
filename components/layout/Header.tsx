@@ -17,9 +17,9 @@ export default function Header() {
       name: 'Soluções',
       href: '/servicos',
       submenu: [
-        { name: 'Consultoria de IA', href: '/servicos/ia-para-empresas' },
-        { name: 'Inteligência de Dados', href: '/servicos/inteligencia-de-dados' },
-        { name: 'Software Sob Medida', href: '/servicos/software-sob-medida' },
+        { name: 'Arquitetura de Execução Agêntica (Synapse OS)', href: '/servicos/ia-para-empresas' },
+        { name: 'Engenharia de Dados & Ativos de Inteligência', href: '/servicos/inteligencia-de-dados' },
+        { name: 'Desenvolvimento de Sistemas de Missão Crítica', href: '/servicos/software-sob-medida' },
       ]
     },
     { name: 'Setores', href: '/setores/automotivo-premium' },

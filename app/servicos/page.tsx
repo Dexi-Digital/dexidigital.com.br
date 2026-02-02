@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   const services = [
     {
-      title: 'Concierge Digital de Vendas',
+      title: 'Arquitetura de Execução Agêntica (Synapse OS)',
       slug: 'ia-para-empresas',
       description:
-        'IA conversacional treinada em Neurolinguística e Venda Consultiva. Não é um chatbot — é um assistente que entende perfis de compra em tempo real e adapta argumentos a cada turno da conversa.',
+        'Implementação de agentes autônomos que não apenas respondem, mas executam. Focamos em ganho de escala e redução de latência operacional, transformando a IA em um motor de EBITDA real, com resultados validados no setor imobiliário de alto padrão da TGV Empreendimentos.',
       benefits: [
         'Perfilamento neurolinguístico em tempo real',
         'Distinção automática de valores (performance vs. segurança)',
@@ -23,10 +23,10 @@ export default function ServicesPage() {
       featured: true,
     },
     {
-      title: 'Software Sob Medida',
+      title: 'Desenvolvimento de Sistemas de Missão Crítica',
       slug: 'software-sob-medida',
       description:
-        'Aplicações web e mobile enterprise com IA integrada. Portais de vendas, sistemas B2B e apps com Concierge Digital nativo.',
+        'Nossa expertise de 10 anos em engenharia para criar soluções proprietárias que resolvem o que o mercado não resolve. Construímos a "última milha" da integração tecnológica, garantindo que a inovação se conecte perfeitamente aos sistemas legados e processos core da sua empresa.',
       benefits: [
         'Arquitetura moderna com IA conversacional nativa',
         'Testes automatizados e CI/CD',
@@ -35,10 +35,10 @@ export default function ServicesPage() {
       ],
     },
     {
-      title: 'Inteligência de Dados',
+      title: 'Engenharia de Dados & Ativos de Inteligência',
       slug: 'inteligencia-de-dados',
       description:
-        'Analytics avançado, machine learning e data warehousing. Transforme dados em decisões estratégicas com governança e escalabilidade.',
+        'Transformamos dados brutos em combustível para a tomada de decisão autônoma. Estruturamos a base necessária para que o Synapse OS opere com precisão, garantindo que a informação flua sem gargalos, como implementado na gestão de 180k leads da Attra Veículos.',
       benefits: [
         'Dashboards executivos em tempo real',
         'Modelos preditivos para demanda e churn',

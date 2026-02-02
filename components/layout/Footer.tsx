@@ -7,9 +7,9 @@ export default function Footer() {
 
   const navigation = {
     services: [
-      { name: 'Inteligência de Dados', href: '/servicos/inteligencia-de-dados' },
-      { name: 'Software Sob Medida', href: '/servicos/software-sob-medida' },
-      { name: 'IA para Empresas', href: '/servicos/ia-para-empresas' },
+      { name: 'Engenharia de Dados & Ativos de Inteligência', href: '/servicos/inteligencia-de-dados' },
+      { name: 'Desenvolvimento de Sistemas de Missão Crítica', href: '/servicos/software-sob-medida' },
+      { name: 'Arquitetura de Execução Agêntica (Synapse OS)', href: '/servicos/ia-para-empresas' },
     ],
     company: [
       { name: 'Sobre', href: '/sobre' },
@@ -42,10 +42,10 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm text-white/60 leading-relaxed mb-4">
-              Inteligência de dados e software sob medida com IA acelerada e supervisão técnica humana.
+              Arquitetura de Execução Agêntica e Engenharia de Missão Crítica. Orquestramos o Synapse OS para garantir soberania digital e impacto direto no EBITDA através de inteligência autônoma e supervisão técnica de elite.
             </p>
             <p className="text-sm text-white/40">
-              Para empresas que não podem falhar.
+              Para operações onde a precisão é inegociável.
             </p>
           </div>
 
@@ -96,7 +96,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-sm font-semibold text-[var(--color-primary-400)] hover:text-[var(--color-primary-300)] transition-base group"
                 >
-                  Obter Diagnóstico em 24h
+                  Validar Impacto no EBITDA
                   <span className="ml-1 group-hover:translate-x-0.5 transition-transform">→</span>
                 </a>
               </li>
@@ -108,17 +108,17 @@ export default function Footer() {
         <div className="mt-14 pt-10 border-t border-white/10">
           <div className="text-center mb-10">
             <p className="text-lg md:text-xl font-semibold text-white tracking-tight mb-2">
-              Consultoria de IA e dados para empresas que não podem falhar.
+              Engenharia de Execução Agêntica para Operações de Missão Crítica.
             </p>
             <p className="text-sm text-white/40">
-              Eficiência operacional com IA • Consultoria de IA para vendas • Inteligência de dados para grupos automotivos
+            Orquestramos o Synapse para converter dados complexos em soberania digital e EBITDA. Tecnologia brasileira com execução validada em líderes.
             </p>
           </div>
 
           {/* Bottom bar */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-6 border-t border-white/5">
             <p className="text-xs text-white/40">
-              © {currentYear} Dexi Digital. Todos os direitos reservados.
+              © {currentYear} Dexi Digital. Engenharia de Elite para a Era Agêntica. Tecnologia validada em operações.
             </p>
             <div className="flex gap-6">
               {navigation.legal.map((item) => (
