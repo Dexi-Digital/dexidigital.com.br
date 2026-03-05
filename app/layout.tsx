@@ -6,7 +6,9 @@ import Footer from '@/components/layout/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { organizationSchema, websiteSchema } from '@/lib/structured-data';
 import { ThemeProvider } from '@/components/ThemeProvider';
-import FingerprintTracker from '@/components/analytics/FingerprintTracker';
+import dynamic from 'next/dynamic';
+
+import AnalyticsWrapper from '@/components/analytics/AnalyticsWrapper';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -94,7 +96,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         <ThemeProvider defaultTheme="system" storageKey="dexi-ui-theme">
-          <FingerprintTracker />
+          <AnalyticsWrapper />
           <Header />
           {children}
           <Footer />

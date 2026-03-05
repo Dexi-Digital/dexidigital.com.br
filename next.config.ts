@@ -27,6 +27,23 @@ const nextConfig: NextConfig = {
     optimizeCss: true, // CSS optimization (if critters is available)
   },
 
+  // 301 Redirects (www to non-www)
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.dexidigital.com.br',
+          },
+        ],
+        destination: 'https://dexidigital.com.br/:path*',
+        permanent: true,
+      },
+    ];
+  },
+
   // Headers for caching and security
   async headers() {
     return [
