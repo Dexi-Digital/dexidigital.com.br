@@ -51,7 +51,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-5 tracking-wide uppercase">Serviços</h3>
+            <h3 className="text-sm font-bold text-white/90 mb-5 tracking-wider uppercase">Serviços</h3>
             <ul className="space-y-3">
               {navigation.services.map((item) => (
                 <li key={item.name}>
@@ -65,7 +65,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-5 tracking-wide uppercase">Empresa</h3>
+            <h3 className="text-sm font-bold text-white/90 mb-5 tracking-wider uppercase">Empresa</h3>
             <ul className="space-y-3">
               {navigation.company.map((item) => (
                 <li key={item.name}>
@@ -79,7 +79,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-5 tracking-wide uppercase">Contato</h3>
+            <h3 className="text-sm font-bold text-white/90 mb-5 tracking-wider uppercase">Contato</h3>
             <ul className="space-y-3">
               <li>
                 <a

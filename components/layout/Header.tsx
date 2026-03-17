@@ -4,27 +4,18 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useTheme } from '@/components/ThemeProvider';
-import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
+import TrackedCTA from '@/components/ui/TrackedCTA';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [solucoesOpen, setSolucoesOpen] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 
+  // Navegação simplificada focada em Jobs to be Done de C-level
   const navigation = [
-    { name: 'A Dexi', href: '/sobre' },
-    {
-      name: 'Soluções',
-      href: '/servicos',
-      submenu: [
-        { name: 'Arquitetura de Execução Agêntica (Synapse OS)', href: '/servicos/ia-para-empresas' },
-        { name: 'Engenharia de Dados & Ativos de Inteligência', href: '/servicos/inteligencia-de-dados' },
-        { name: 'Desenvolvimento de Sistemas de Missão Crítica', href: '/servicos/software-sob-medida' },
-      ]
-    },
-    { name: 'Setores', href: '/setores/automotivo-premium' },
-    { name: 'Metodologia', href: '/metodologia' },
-    { name: 'Insights', href: '/blog' },
+    { name: 'Synapse OS', href: '/metodologia' }, // Job: "Como funciona?"
+    { name: 'WebOS', href: '/produtos/webos' }, // Produto: Presença digital web
+    { name: 'Resultados', href: '/cases' }, // Job: "Ver se funciona"
+    { name: 'Automotivo', href: '/setores/automotivo-premium' }, // Vertical principal
   ];
 
   return (
@@ -96,48 +87,16 @@ export default function Header() {
             </button>
           </div>
 
-          {/* Desktop navigation */}
+          {/* Desktop navigation - simplificada */}
           <div className="hidden lg:flex lg:items-center lg:gap-1">
             {navigation.map((item) => (
-              'submenu' in item && item.submenu ? (
-                <div key={item.name} className="relative group">
-                  <button
-                    className="px-3 py-2 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-base inline-flex items-center gap-1 rounded-lg hover:bg-[var(--overlay-subtle)]"
-                    onMouseEnter={() => setSolucoesOpen(true)}
-                    onMouseLeave={() => setSolucoesOpen(false)}
-                  >
-                    {item.name}
-                    <svg className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                  <div
-                    className={`absolute left-0 top-full pt-2 w-56 ${solucoesOpen ? 'block' : 'hidden'} group-hover:block`}
-                    onMouseEnter={() => setSolucoesOpen(true)}
-                    onMouseLeave={() => setSolucoesOpen(false)}
-                  >
-                    <div className="bg-[var(--bg-surface)] dark:bg-[var(--bg-elevated)] rounded-xl shadow-[var(--shadow-elevation-3)] border border-[var(--border-subtle)] py-2 animate-fade-in-down">
-                      {item.submenu.map((subitem) => (
-                        <Link
-                          key={subitem.name}
-                          href={subitem.href}
-                          className="block px-4 py-2.5 text-sm text-[var(--text-secondary)] hover:bg-[var(--color-primary-50)] dark:hover:bg-[var(--color-primary-950)] hover:text-[var(--color-primary-600)] transition-base"
-                        >
-                          {subitem.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="px-3 py-2 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-base rounded-lg hover:bg-[var(--overlay-subtle)]"
-                >
-                  {item.name}
-                </Link>
-              )
+              <Link
+                key={item.name}
+                href={item.href}
+                className="px-3 py-2 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-base rounded-lg hover:bg-[var(--overlay-subtle)]"
+              >
+                {item.name}
+              </Link>
             ))}
           </div>
 
@@ -158,45 +117,23 @@ export default function Header() {
                 </svg>
               )}
             </button>
-            <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary text-sm">
-              Agendar Diagnóstico
-            </a>
+            <TrackedCTA type="validation" location="header" variant="primary" className="text-sm" />
           </div>
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile menu - simplificado */}
         {mobileMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 border-t border-[var(--border-subtle)] pt-4 animate-fade-in-down">
             <div className="space-y-1">
               {navigation.map((item) => (
-                'submenu' in item && item.submenu ? (
-                  <div key={item.name}>
-                    <div className="px-3 py-2 text-sm font-semibold text-[var(--text-primary)]">
-                      {item.name}
-                    </div>
-                    <div className="pl-4 space-y-0.5">
-                      {item.submenu.map((subitem) => (
-                        <Link
-                          key={subitem.name}
-                          href={subitem.href}
-                          className="block px-3 py-2 text-sm text-[var(--text-secondary)] hover:text-[var(--color-primary-600)] hover:bg-[var(--overlay-subtle)] rounded-lg transition-base"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          {subitem.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                ) : (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="block px-3 py-2 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--color-primary-600)] hover:bg-[var(--overlay-subtle)] rounded-lg transition-base"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                )
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="block px-3 py-2 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--color-primary-600)] hover:bg-[var(--overlay-subtle)] rounded-lg transition-base"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
               ))}
               <div className="pt-4 px-2 space-y-3">
                 <button
@@ -220,15 +157,9 @@ export default function Header() {
                     </>
                   )}
                 </button>
-                <a
-                  href={WHATSAPP_DIAGNOSTIC_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary w-full text-center text-sm"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Agendar Diagnóstico
-                </a>
+                <div onClick={() => setMobileMenuOpen(false)}>
+                  <TrackedCTA type="validation" location="header-mobile" variant="primary" className="w-full text-center text-sm" />
+                </div>
               </div>
             </div>
           </div>

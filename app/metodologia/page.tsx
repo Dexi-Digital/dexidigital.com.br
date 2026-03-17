@@ -116,14 +116,14 @@ export default function MetodologiaPage() {
                 <div key={step.number} className="card card-interactive p-8">
                   <div className="flex flex-col md:flex-row gap-6">
                     <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-[var(--gradient-primary)] text-white rounded-2xl flex items-center justify-center text-xl font-bold shadow-[var(--shadow-primary)]">
+                      <div className="w-16 h-16 bg-[var(--color-primary-600)] text-white rounded-2xl flex items-center justify-center text-xl font-bold shadow-lg">
                         {step.number}
                       </div>
                     </div>
                     <div className="flex-1">
                       <div className="flex flex-wrap items-center gap-3 mb-3">
                         <h3 className="text-h4">{step.title}</h3>
-                        <span className="px-3 py-1 text-xs font-semibold bg-[var(--color-primary-100)] dark:bg-[var(--color-primary-900)]/30 text-[var(--color-primary-700)] dark:text-[var(--color-primary-300)] rounded-full">{step.duration}</span>
+                        <span className="px-3 py-1 text-xs font-semibold bg-[var(--color-primary-600)] text-white rounded-full">{step.duration}</span>
                       </div>
                       <p className="text-body-sm text-[var(--text-secondary)] mb-4">{step.description}</p>
                       <div>

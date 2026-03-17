@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import FAQItem from '@/components/ui/FAQItem';
+import TrackedCTA from '@/components/ui/TrackedCTA';
 import { getHomePageSchemas, localBusinessSchema } from '@/lib/structured-data';
 import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
 import type { Metadata } from 'next';
@@ -31,10 +32,10 @@ export default function HomePage() {
       ))}
 
       {/* Hero Section */}
-      <section className="section-hero-premium py-20 md:py-32 border-b border-[var(--border-subtle)]">
+      <section id="hero" className="section-hero-premium py-20 md:py-32 border-b border-[var(--border-subtle)]">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-overline mb-4 animate-fade-in-up-subtle">ENGENHARIA DE SOFTWARE & IA AGÊNTICA</p>
+            <p className="text-overline mb-4 animate-fade-in-up-subtle">ARQUITETURA DE EXECUÇÃO AGÊNTICA</p>
 
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
               Da gestão de dados à <span className="text-display-gradient">execução autônoma de resultados</span>
@@ -45,23 +46,19 @@ export default function HomePage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up delay-200">
-              <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary shadow-lg shadow-[var(--color-primary-500)]/20">
-                Iniciar Validação em 24h
-              </a>
-              <Link href="/metodologia" className="btn btn-secondary">
-                Conheça o Synapse
-              </Link>
+              <TrackedCTA type="validation" location="hero" variant="primary" />
+              <TrackedCTA type="synapse" location="hero" variant="secondary" />
             </div>
 
             <p className="text-sm text-[var(--text-tertiary)] mb-4 animate-fade-in delay-300">
-              Segurança Enterprise corporativa para os setores automotivo, varejo e financeiro.
+              +50 ecossistemas entregues • R$ 7M+ em receita recuperada • 10+ anos de engenharia
             </p>
           </div>
         </div>
       </section>
 
       {/* Resultados em números */}
-      <section className="section py-12 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)]">
+      <section id="resultados" className="section py-12 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)]">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-h3 mb-8">Resultados em números</h2>
@@ -86,76 +83,91 @@ export default function HomePage() {
       </section>
 
       {/* Viabilidade Agêntica em 24h (Moved UP) */}
-      <section className="section bg-[var(--bg-primary)]">
+      <section id="validacao-24h" className="section bg-[var(--bg-primary)]">
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <div className="section-header text-center">
-              <h2 className="text-h2">Validação Agêntica em 24h</h2>
-              <p className="text-lead">3 passos para projetar o impacto financeiro na sua operação.</p>
+              <p className="text-overline mb-2">DIAGNÓSTICO GRATUITO</p>
+              <h2 className="text-h2">Descubra o impacto em 24 horas</h2>
+              <p className="text-lead">Validamos a viabilidade técnica e projetamos o ROI do seu caso — sem custo e sem compromisso.</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
               <div className="card p-6 text-center md:text-left">
                 <span className="text-number text-[var(--color-primary-500)]">01</span>
-                <h3 className="text-h5 mt-3 mb-2">Mapeamento</h3>
-                <p className="text-body-sm text-[var(--text-secondary)]">Análise executiva dos seus gargalos de conversão e retenção.</p>
+                <h3 className="text-h5 mt-3 mb-2">Conversa de 15 minutos</h3>
+                <p className="text-body-sm text-[var(--text-secondary)]">Entendemos seu cenário, sistemas atuais e metas de negócio.</p>
               </div>
 
               <div className="card p-6 text-center md:text-left">
                 <span className="text-number text-[var(--color-primary-500)]">02</span>
-                <h3 className="text-h5 mt-3 mb-2">Oportunidade</h3>
-                <p className="text-body-sm text-[var(--text-secondary)]">Identificação de fluxos para gerar liquidez imediata.</p>
+                <h3 className="text-h5 mt-3 mb-2">Análise de viabilidade</h3>
+                <p className="text-body-sm text-[var(--text-secondary)]">Avaliamos integrações, volume de dados e complexidade técnica.</p>
               </div>
 
               <div className="card p-6 text-center md:text-left">
                 <span className="text-number text-[var(--color-primary-500)]">03</span>
-                <h3 className="text-h5 mt-3 mb-2">Roadmap & ROI</h3>
-                <p className="text-body-sm text-[var(--text-secondary)]">Projeção do impacto financeiro do Synapse em seu caixa.</p>
+                <h3 className="text-h5 mt-3 mb-2">Roadmap + Projeção de ROI</h3>
+                <p className="text-body-sm text-[var(--text-secondary)]">Você recebe um diagnóstico completo, mesmo que não avance.</p>
               </div>
             </div>
 
             <div className="mt-10 text-center">
-              <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                Iniciar Validação em 24h
-              </a>
+              <TrackedCTA type="validation" location="validacao-24h" variant="primary" text="Iniciar Diagnóstico Gratuito" />
+              <p className="text-sm text-[var(--text-tertiary)] mt-4">Respondemos em até 4 horas úteis.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Problemas que resolvemos - Cards com dor, solucao, numero */}
-      <section className="section-lg section-gradient">
+      <section id="problemas" className="section-lg section-gradient">
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <div className="section-header text-center">
-              <h2 className="text-h2">Problemas que resolvemos</h2>
-              <p className="text-lead">Desafios críticos que convertemos em resultado</p>
+              <h2 className="text-h2">Problemas que convertemos em resultado</h2>
+              <p className="text-lead">Desafios críticos que já resolvemos para líderes de mercado</p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
               <div className="card p-6 md:p-8">
-                <h3 className="text-h4 mb-4">Automotivo & Varejo</h3>
+                <h3 className="text-h4 mb-4">Leads no Limbo</h3>
                 <ul className="space-y-4 mb-6">
                   <li className="flex gap-2 text-sm text-[var(--text-secondary)] text-left">
-                    <span className="text-red-500 font-bold">✕</span> <span><strong>Dor:</strong> Leads perdidos no vácuo entre CRM e WhatsApp.</span>
+                    <span className="text-red-500 font-bold">✕</span> <span>CRM cheio de leads que nunca foram trabalhados. Vendedores priorizam quem responde, não quem converte.</span>
                   </li>
                   <li className="flex gap-2 text-sm text-[var(--text-secondary)] text-left">
-                    <span className="text-green-500 font-bold">✓</span> <span><strong>Solução:</strong> Agentes que assumem o follow-up da última milha em segundos.</span>
+                    <span className="text-green-500 font-bold">✓</span> <span>Agentes assumem o follow-up em segundos, 24/7, com contexto completo e persistência calibrada.</span>
                   </li>
                 </ul>
                 <div className="bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded p-3 text-center">
-                  <span className="font-semibold text-[var(--text-primary)]">+45% na conversão de leads</span>
+                  <span className="font-semibold text-[var(--text-primary)]">+45% na conversão de leads qualificados</span>
                 </div>
               </div>
 
               <div className="card p-6 md:p-8">
-                <h3 className="text-h4 mb-4">Grandes Corporações</h3>
+                <h3 className="text-h4 mb-4">Inadimplência Corroendo Margem</h3>
                 <ul className="space-y-4 mb-6">
                   <li className="flex gap-2 text-sm text-[var(--text-secondary)] text-left">
-                    <span className="text-red-500 font-bold">✕</span> <span><strong>Dor:</strong> IAs travadas em pilotos (PoC) por falta de governança.</span>
+                    <span className="text-red-500 font-bold">✕</span> <span>Réguas de cobrança genéricas e caras. Equipe de cobrança não escala.</span>
                   </li>
                   <li className="flex gap-2 text-sm text-[var(--text-secondary)] text-left">
-                    <span className="text-green-500 font-bold">✓</span> <span><strong>Solução:</strong> Arquitetura Shadow CRM de execução rápida sobre sistemas legados.</span>
+                    <span className="text-green-500 font-bold">✓</span> <span>Negociação persistente, humanizada e 100% autônoma. Proposta individualizada por perfil.</span>
+                  </li>
+                </ul>
+                <div className="bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded p-3 text-center">
+                  <span className="font-semibold text-[var(--text-primary)]">Até 35% de recuperação de carteira vencida</span>
+                </div>
+              </div>
+
+              <div className="card p-6 md:p-8">
+                <h3 className="text-h4 mb-4">IA Travada em PoC</h3>
+                <ul className="space-y-4 mb-6">
+                  <li className="flex gap-2 text-sm text-[var(--text-secondary)] text-left">
+                    <span className="text-red-500 font-bold">✕</span> <span>Pilotos que nunca viram produção por falta de compliance, integração complexa ou resistência interna.</span>
+                  </li>
+                  <li className="flex gap-2 text-sm text-[var(--text-secondary)] text-left">
+                    <span className="text-green-500 font-bold">✓</span> <span>Arquitetura Shadow CRM que executa sobre sistemas legados sem reescrever código.</span>
                   </li>
                 </ul>
                 <div className="bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded p-3 text-center">
@@ -164,62 +176,45 @@ export default function HomePage() {
               </div>
 
               <div className="card p-6 md:p-8">
-                <h3 className="text-h4 mb-4">Recuperação de Crédito</h3>
+                <h3 className="text-h4 mb-4">Pressão do Board para &ldquo;Usar IA&rdquo;</h3>
                 <ul className="space-y-4 mb-6">
                   <li className="flex gap-2 text-sm text-[var(--text-secondary)] text-left">
-                    <span className="text-red-500 font-bold">✕</span> <span><strong>Dor:</strong> Inadimplência alta e réguas de cobrança ineficientes.</span>
+                    <span className="text-red-500 font-bold">✕</span> <span>Cobrança por inovação sem roadmap claro. TI não sabe por onde começar.</span>
                   </li>
                   <li className="flex gap-2 text-sm text-[var(--text-secondary)] text-left">
-                    <span className="text-green-500 font-bold">✓</span> <span><strong>Solução:</strong> Negociação persistente, humanizada e 100% autônoma.</span>
+                    <span className="text-green-500 font-bold">✓</span> <span>Consultoria orientada a ROI com métricas que o CFO entende.</span>
                   </li>
                 </ul>
                 <div className="bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded p-3 text-center">
-                  <span className="font-semibold text-[var(--text-primary)]">Recuperação de até 35% da carteira</span>
-                </div>
-              </div>
-
-              <div className="card p-6 md:p-8">
-                <h3 className="text-h4 mb-4">Líderes de TI</h3>
-                <ul className="space-y-4 mb-6">
-                  <li className="flex gap-2 text-sm text-[var(--text-secondary)] text-left">
-                    <span className="text-red-500 font-bold">✕</span> <span><strong>Dor:</strong> Pressão para usar IA sem roadmap ou compliance.</span>
-                  </li>
-                  <li className="flex gap-2 text-sm text-[var(--text-secondary)] text-left">
-                    <span className="text-green-500 font-bold">✓</span> <span><strong>Solução:</strong> Consultoria em sistemas multi-agentes orientada a ROI.</span>
-                  </li>
-                </ul>
-                <div className="bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded p-3 text-center">
-                  <span className="font-semibold text-[var(--text-primary)]">Aprovação técnica em 1 semana</span>
+                  <span className="font-semibold text-[var(--text-primary)]">Aprovação técnica e executiva em 1 semana</span>
                 </div>
               </div>
             </div>
 
             <div className="mt-10 text-center">
-              <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-                Iniciar Validação em 24h
-              </a>
+              <TrackedCTA type="validation" location="problemas" variant="secondary" text="Validar Meu Cenário" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Riscos - Lean */}
-      <section className="section bg-[var(--bg-surface)]">
+      {/* Riscos - O custo de esperar */}
+      <section id="riscos" className="section bg-[var(--bg-surface)]">
         <div className="container">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-h3 mb-6 text-center md:text-left">Riscos de sistemas passivos</h2>
+            <h2 className="text-h3 mb-6 text-center md:text-left">O custo de esperar</h2>
             <ul className="space-y-4 mb-12">
               <li className="card p-4 flex gap-3 items-center">
                 <div className="w-2 h-2 rounded-full bg-red-500 shrink-0"></div>
-                <p className="text-body-sm text-[var(--text-secondary)] text-left w-full"><strong>Desperdício de 60% do pipeline:</strong> manter CRMs que apenas "guardam dados".</p>
+                <p className="text-body-sm text-[var(--text-secondary)] text-left w-full"><strong>60% do pipeline desperdiçado:</strong> manter CRMs que apenas &ldquo;guardam dados&rdquo;.</p>
               </li>
               <li className="card p-4 flex gap-3 items-center">
                 <div className="w-2 h-2 rounded-full bg-red-500 shrink-0"></div>
-                <p className="text-body-sm text-[var(--text-secondary)] text-left w-full"><strong>Erosão de Margem:</strong> concorrência já usa agentes para fechar negócios rápidos.</p>
+                <p className="text-body-sm text-[var(--text-secondary)] text-left w-full"><strong>Erosão de margem:</strong> concorrência já usa agentes para fechar negócios mais rápido.</p>
               </li>
               <li className="card p-4 flex gap-3 items-center">
                 <div className="w-2 h-2 rounded-full bg-red-500 shrink-0"></div>
-                <p className="text-body-sm text-[var(--text-secondary)] text-left w-full"><strong>Vulnerabilidade:</strong> processos manuais sem auditoria e rastreabilidade.</p>
+                <p className="text-body-sm text-[var(--text-secondary)] text-left w-full"><strong>Vulnerabilidade operacional:</strong> processos manuais sem auditoria e rastreabilidade.</p>
               </li>
             </ul>
 
@@ -235,51 +230,58 @@ export default function HomePage() {
             </div>
 
             <div className="mt-8 text-center">
-              <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-[var(--color-primary-600)] hover:underline">
-                Iniciar Validação em 24h →
-              </a>
+              <TrackedCTA type="validation" location="riscos" variant="link" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Engenharia e Curadoria */}
-      <section className="section bg-[var(--bg-primary)] border-y border-[var(--border-subtle)]">
+      {/* Engenharia Enterprise - Synapse OS */}
+      <section id="engenharia" className="section bg-[var(--bg-primary)] border-y border-[var(--border-subtle)]">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="section-header text-center">
-              <h2 className="text-h2">Engenharia de Elite</h2>
-              <p className="text-lead">Tecnologia de ponta com governança humana</p>
+              <h2 className="text-h2">Engenharia Enterprise</h2>
+              <p className="text-lead">Arquitetura multi-agente com governança corporativa</p>
             </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="card p-6 text-center md:text-left">
-                <h3 className="text-h5 mb-2">Engenharia Agêntica</h3>
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <div className="card p-6 text-left">
+                <h3 className="text-h5 mb-2">✓ Integração Não Invasiva</h3>
                 <p className="text-body-sm text-[var(--text-secondary)]">
-                  Entregamos aplicações completas em dias usando o Synapse OS.
+                  Conecta via API, webhook ou RPA em ERPs, CRMs e sistemas legados. Sem reescrever código ou migrar dados.
                 </p>
               </div>
-              <div className="card p-6 text-center md:text-left">
-                <h3 className="text-h5 mb-2">Governança Humana</h3>
+              <div className="card p-6 text-left">
+                <h3 className="text-h5 mb-2">✓ Governança & Compliance</h3>
                 <p className="text-body-sm text-[var(--text-secondary)]">
-                  Nenhuma IA entra em produção sem curadoria de especialistas seniores.
+                  Logs de auditoria completos para LGPD, SOX e políticas internas. Dashboards de monitoramento em tempo real.
                 </p>
               </div>
-              <div className="card p-6 text-center md:text-left">
-                <h3 className="text-h5 mb-2">Infraestrutura</h3>
+              <div className="card p-6 text-left">
+                <h3 className="text-h5 mb-2">✓ Escalabilidade Horizontal</h3>
                 <p className="text-body-sm text-[var(--text-secondary)]">
-                  Projetamos redes preparadas para processar milhões de interações.
+                  Arquitetura cloud-native que cresce com a demanda. Sem gargalos de infraestrutura.
                 </p>
               </div>
+              <div className="card p-6 text-left">
+                <h3 className="text-h5 mb-2">✓ Human-in-the-Loop</h3>
+                <p className="text-body-sm text-[var(--text-secondary)]">
+                  Pontos de aprovação humana quando necessário. Controle total sobre decisões críticas.
+                </p>
+              </div>
+            </div>
+            <div className="text-center">
+              <TrackedCTA type="synapse" location="engenharia" variant="secondary" text="Conhecer a Arquitetura Synapse" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Setor Automotivo CTA */}
-      <section className="section-cta-premium text-white">
+      <section id="automotivo-cta" className="section-cta-premium text-white">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center md:text-left">
-            <p className="text-white font-semibold tracking-wider mb-4">Vertical Especializada</p>
+            <p className="text-xs font-bold tracking-[0.15em] uppercase text-white mb-4">VERTICAL ESPECIALIZADA</p>
             <h2 className="text-display-lg text-white mb-4">Execução Agêntica no Automotivo</h2>
             <p className="text-lg text-white/90 mb-10 max-w-2xl mx-auto md:mx-0">
               Showroom, oficina e pós-venda integrados por agentes que reduzem o atrito e geram caixa.
@@ -288,7 +290,7 @@ export default function HomePage() {
             <div className="flex flex-wrap gap-8 justify-center md:justify-start mb-10">
               <div>
                 <div className="text-number-lg text-white">+50%</div>
-                <div className="text-sm font-medium text-white/80 mt-1 uppercase tracking-wide">Conversão</div>
+                <div className="text-sm font-medium text-white/80 mt-1 uppercase tracking-wide">Conversão de Leads</div>
               </div>
               <div>
                 <div className="text-number-lg text-white">-30%</div>
@@ -296,53 +298,49 @@ export default function HomePage() {
               </div>
               <div>
                 <div className="text-number-lg text-white">+40%</div>
-                <div className="text-sm font-medium text-white/80 mt-1 uppercase tracking-wide">Retenção</div>
+                <div className="text-sm font-medium text-white/80 mt-1 uppercase tracking-wide">Retenção de Clientes</div>
               </div>
             </div>
 
-            <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90 shadow-lg font-bold">
-              Iniciar Validação em 24h
-            </a>
+            <TrackedCTA type="validation" location="automotivo-cta" variant="white" text="Validar para Meu Grupo" sector="automotivo" />
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="section bg-[var(--bg-secondary)] pb-32 md:pb-24 pt-20">
+      <section id="faq" className="section bg-[var(--bg-secondary)] pb-32 md:pb-24 pt-20">
         <div className="container">
           <div className="max-w-3xl mx-auto">
             <div className="section-header text-center">
               <h2 className="text-h2">Perguntas frequentes</h2>
-              <p className="text-lead">Entenda a visão agêntica</p>
+              <p className="text-lead">Dúvidas comuns sobre IA agêntica</p>
             </div>
 
-            <div className="card divide-y divide-[var(--border-subtle)] mb-12 text-left">
+            <div className="card divide-y divide-[var(--border-subtle)] mb-12 text-left px-6 md:px-8">
               <FAQItem
-                question="Os agentes substituem a equipe atual?"
-                answer="Eles potencializam a equipe, removendo gargalos repetitivos e deixando o trabalho estratégico e de aprovação para os humanos."
+                question="Quanto tempo leva para ver resultado?"
+                answer="O Synapse OS gera valor imediato. Implementações típicas apresentam receita recuperada nos primeiros 15 a 30 dias após o go-live."
               />
               <FAQItem
-                question="A implementação requer mudança de CRM?"
-                answer="Não. Utilizamos uma arquitetura read-only que se conecta sobre seu sistema atual em poucos dias."
+                question="Como integra com meu sistema atual?"
+                answer="Utilizamos arquitetura read-only que conecta via API, webhook ou RPA sobre seu CRM/ERP atual. Sem migração de dados ou reescrita de código."
               />
               <FAQItem
-                question="Qual a garantia de segurança?"
-                answer="Operamos com conformidade enterprise, logging total das decisões agênticas e governança LGPD estrita."
+                question="Qual é o investimento mínimo?"
+                answer="Depende da complexidade. No diagnóstico gratuito, projetamos o ROI e apresentamos opções de implementação adequadas ao seu contexto."
               />
               <FAQItem
-                question="Qual é o tempo estimado para o retorno (ROI)?"
-                answer="O Synapse OS é desenhado para geração de valor imediato. Implementações agênticas em setores críticos costumam apresentar resultados e receita recuperada nos primeiros 15 a 30 dias."
+                question="E se não funcionar?"
+                answer="Nosso modelo é orientado a resultado. Só avançamos se a viabilidade técnica e financeira estiver clara. Você recebe o diagnóstico completo mesmo que não contrate."
               />
             </div>
 
             <div className="card p-8 text-center bg-[var(--bg-primary)] border border-[var(--color-primary-500)]/30">
               <h3 className="text-h4 mb-3">Lidere a transição para a Empresa Agêntica</h3>
               <p className="text-body-sm text-[var(--text-secondary)] mb-6">
-                Descubra qual é o potencial financeiro da execução autônoma para a sua empresa. Diagnóstico 100% focado em viabilidade.
+                Descubra o potencial financeiro da execução autônoma para sua empresa. Diagnóstico gratuito e sem compromisso.
               </p>
-              <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary w-full sm:w-auto">
-                Iniciar Validação em 24h
-              </a>
+              <TrackedCTA type="validation" location="faq-cta" variant="primary" className="w-full sm:w-auto" />
             </div>
           </div>
         </div>
@@ -350,9 +348,7 @@ export default function HomePage() {
 
       {/* Fixed Sticky CTA for Mobile Only */}
       <div className="fixed bottom-0 left-0 right-0 p-4 bg-[var(--bg-primary)]/90 backdrop-blur-md border-t border-[var(--border-subtle)] md:hidden z-50 flex justify-center shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
-        <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary w-full shadow-lg text-center flex justify-center items-center py-3 text-sm">
-          Validar impacto no EBITDA
-        </a>
+        <TrackedCTA type="validation" location="mobile-sticky" variant="primary" className="w-full shadow-lg text-center flex justify-center items-center py-3 text-sm" />
       </div>
     </main>
   );
