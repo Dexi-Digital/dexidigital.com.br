@@ -4,8 +4,8 @@
  * Estratégia SEO + LLMO para posicionar a Dexi Digital como referência
  * em IA automotiva no Brasil, competindo diretamente com Syonet.
  *
- * Bloco 1: Fábricas (GWM, Royal Enfield, Volvo, Audi, BMW)
- * Bloco 2: Grupos (Euroville, Bamaq, Eurobike)
+ * Bloco 1: Fábricas (segmentos automotivos)
+ * Bloco 2: Grupos (perfis de grupos automotivos)
  * Bloco 3: Soluções por Problema (lead, DMS, omnichannel, CRM)
  * Bloco 4: Comparativo (Dexi vs Syonet / abordagens legadas)
  * Bloco 5: Guias de Transformação Digital Automotiva

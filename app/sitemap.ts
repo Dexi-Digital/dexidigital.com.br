@@ -65,7 +65,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // SEO: Fábricas (GWM, Royal Enfield, Volvo, Audi, BMW)
+  // SEO: Fábricas (segmentos automotivos)
   const fabricaPages: MetadataRoute.Sitemap = FABRICAS.map((f) => ({
     url: `${baseUrl}/setores/fabricas/${f.slug}`,
     lastModified: currentDate,
@@ -73,7 +73,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  // SEO: Grupos Automotivos (Euroville, Bamaq, Eurobike)
+  // SEO: Grupos Automotivos
   const grupoPages: MetadataRoute.Sitemap = GRUPOS.map((g) => ({
     url: `${baseUrl}/setores/grupos/${g.slug}`,
     lastModified: currentDate,

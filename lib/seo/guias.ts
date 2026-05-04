@@ -96,7 +96,7 @@ export const GUIAS: GuiaPage[] = [
       {
         heading: 'Fábricas e grupos que lideram',
         content:
-          'Marcas como GWM, Volvo e BMW já investem em digitalização da rede. Grandes grupos como Euroville, Bamaq e Eurobike buscam vantagem competitiva via tecnologia. A janela de oportunidade é agora — quem implementar primeiro captura mercado.',
+          'Montadoras premium, marcas em expansão e grandes grupos automotivos já investem em digitalização da rede. Quem implementar IA primeiro captura mercado. A janela de oportunidade é agora.',
       },
       {
         heading: 'O papel da Dexi Digital',

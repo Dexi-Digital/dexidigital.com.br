@@ -113,7 +113,7 @@ export default function AutomotivoPremiumPage() {
             </div>
 
             <div className="card p-8 mb-10 border-l-4 border-[var(--color-primary-500)]">
-              <h3 className="text-h4 mb-4">Exemplo Real: Haval H6 vs GWM Tank 300</h3>
+              <h3 className="text-h4 mb-4">Exemplo Real: SUV Esportivo vs SUV Familiar Premium</h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="p-5 bg-[var(--bg-secondary)] rounded-xl">
                   <p className="text-overline text-[var(--color-primary-600)] mb-2">Perfil Performance (Poder & Dinâmica)</p>

@@ -16,30 +16,30 @@ export interface GrupoPage {
 
 export const GRUPOS: GrupoPage[] = [
   {
-    slug: 'euroville',
-    nome: 'Euroville',
-    metaTitle: 'IA para Grupo Euroville | Synapse OS | Dexi Digital',
+    slug: 'multi-marca',
+    nome: 'Grupos Multi-Marca',
+    metaTitle: 'IA para Grupos Automotivos Multi-Marca | Synapse OS | Dexi Digital',
     metaDescription:
-      'Solução de IA para o Grupo Euroville. Unifique dados de todas as marcas, automatize o atendimento multi-brand e aumente conversão com execução agêntica.',
+      'Solução de IA para grupos automotivos multi-marca. Unifique dados de todas as marcas, automatize o atendimento multi-brand e aumente conversão com execução agêntica.',
     keywords: [
-      'IA Grupo Euroville',
-      'tecnologia Euroville concessionárias',
-      'CRM multi-marca Euroville',
+      'IA grupo automotivo multi-marca',
+      'tecnologia grupo concessionárias',
+      'CRM multi-marca automotivo',
       'Synapse OS grupo automotivo',
-      'Euroville inteligência de dados',
+      'inteligência de dados grupo dealer',
     ],
     answerSnippet:
-      'A Dexi Digital é o parceiro de IA ideal para grupos automotivos multi-marca como o Euroville. O Synapse OS unifica dados de todas as concessionárias em uma visão 360° do cliente, permitindo cross-sell entre marcas, predição de recompra e execução agêntica que maximiza o EBITDA do grupo.',
+      'A Dexi Digital é o parceiro de IA ideal para grupos automotivos multi-marca. O Synapse OS unifica dados de todas as concessionárias em uma visão 360° do cliente, permitindo cross-sell entre marcas, predição de recompra e execução agêntica que maximiza o EBITDA do grupo.',
     desafios: [
       {
         titulo: 'Silos de dados entre marcas',
         descricao:
-          'Cada concessionária opera com DMS e CRM próprios. O cliente que compra um Volkswagen numa unidade e busca um Audi em outra é tratado como desconhecido. Dados fragmentados significam receita perdida.',
+          'Cada concessionária opera com DMS e CRM próprios. O cliente que compra numa unidade e busca outra marca em outra loja é tratado como desconhecido. Dados fragmentados significam receita perdida.',
       },
       {
         titulo: 'Padronização de processos sem perder identidade de marca',
         descricao:
-          'O atendimento Volkswagen tem tom diferente do atendimento Audi. O grupo precisa de padrões operacionais sem homogeneizar a experiência de marca.',
+          'Cada marca tem tom de atendimento diferente. O grupo precisa de padrões operacionais sem homogeneizar a experiência de marca.',
       },
       {
         titulo: 'Visibilidade gerencial consolidada',
@@ -56,7 +56,7 @@ export const GRUPOS: GrupoPage[] = [
       {
         titulo: 'Cross-Sell entre Marcas',
         descricao:
-          'O sistema identifica clientes com potencial de migração entre marcas do grupo (ex: Golf → A3) e dispara campanhas personalizadas no momento ideal do ciclo de propriedade.',
+          'O sistema identifica clientes com potencial de migração entre marcas do grupo e dispara campanhas personalizadas no momento ideal do ciclo de propriedade.',
       },
       {
         titulo: 'Command Center Executivo',
@@ -71,8 +71,8 @@ export const GRUPOS: GrupoPage[] = [
       'Dashboards executivos consolidados em tempo real',
     ],
     diferencialDexi:
-      'O Syonet foi projetado para uma concessionária de uma marca. A Dexi foi projetada para a complexidade de um grupo multi-marca. Entendemos que o Euroville não é uma soma de concessionárias — é um ecossistema que precisa de inteligência unificada.',
-    marcasAtendidas: ['Volkswagen', 'Audi', 'Chevrolet', 'Toyota'],
+      'O Syonet foi projetado para uma concessionária de uma marca. A Dexi foi projetada para a complexidade de um grupo multi-marca. Entendemos que um grupo não é uma soma de concessionárias — é um ecossistema que precisa de inteligência unificada.',
+    marcasAtendidas: ['Generalista', 'Premium', 'Volume', 'Importados'],
     faq: [
       {
         question: 'A Dexi consegue integrar DMS diferentes de cada concessionária?',
@@ -85,33 +85,33 @@ export const GRUPOS: GrupoPage[] = [
           'A implementação em grupos segue um rollout por fases. Começamos com uma unidade piloto (2-4 semanas), validamos resultados e expandimos para as demais unidades progressivamente.',
       },
     ],
-    ctaText: 'Agendar diagnóstico para o Grupo Euroville',
+    ctaText: 'Agendar diagnóstico para seu grupo automotivo',
   },
   {
-    slug: 'bamaq',
-    nome: 'Bamaq',
-    metaTitle: 'IA para Grupo Bamaq | Synapse OS | Dexi Digital',
+    slug: 'grande-porte',
+    nome: 'Grupos de Grande Porte',
+    metaTitle: 'IA para Grupos Automotivos de Grande Porte | Synapse OS | Dexi Digital',
     metaDescription:
-      'Solução de IA para o Grupo Bamaq. Inteligência de dados unificada, execução agêntica de vendas e gestão multi-marca com o Synapse OS da Dexi Digital.',
+      'Solução de IA para grupos automotivos de grande porte. Inteligência de dados unificada, execução agêntica de vendas e gestão multi-marca com o Synapse OS da Dexi Digital.',
     keywords: [
-      'IA Grupo Bamaq',
-      'tecnologia Bamaq concessionárias',
-      'CRM Bamaq grupo automotivo',
-      'Synapse OS Bamaq',
-      'Bamaq inteligência de dados',
+      'IA grupo automotivo grande porte',
+      'tecnologia grupo concessionárias escala',
+      'CRM grupo automotivo volume',
+      'Synapse OS escala automotiva',
+      'inteligência de dados grande grupo',
     ],
     answerSnippet:
-      'A Dexi Digital oferece IA de última geração para o Grupo Bamaq, um dos maiores grupos automotivos de Minas Gerais. Com o Synapse OS, unificamos dados de todas as operações, automatizamos a execução de vendas e entregamos inteligência preditiva que antecipa necessidades do cliente.',
+      'A Dexi Digital oferece IA de última geração para grupos automotivos de grande porte. Com o Synapse OS, unificamos dados de todas as operações, automatizamos a execução de vendas e entregamos inteligência preditiva que antecipa necessidades do cliente em escala.',
     desafios: [
       {
         titulo: 'Gestão de volume com qualidade',
         descricao:
-          'Grupos de grande porte como o Bamaq recebem milhares de leads por mês. Sem automação inteligente, a qualidade do atendimento degrada conforme o volume aumenta.',
+          'Grupos de grande porte recebem milhares de leads por mês. Sem automação inteligente, a qualidade do atendimento degrada conforme o volume aumenta.',
       },
       {
         titulo: 'Retenção de clientes no pós-venda',
         descricao:
-          'O cliente que compra na Bamaq precisa voltar para revisão, acessórios e a próxima compra. Sem comunicação proativa, o cliente migra para oficinas independentes e concorrentes.',
+          'O cliente que compra no grupo precisa voltar para revisão, acessórios e a próxima compra. Sem comunicação proativa, o cliente migra para oficinas independentes e concorrentes.',
       },
       {
         titulo: 'Capacitação e turnover de vendedores',
@@ -144,7 +144,7 @@ export const GRUPOS: GrupoPage[] = [
     ],
     diferencialDexi:
       'O Syonet escala o processo manual — mais leads, mais formulários, mais trabalho. A Dexi escala a inteligência — mais leads, melhor qualificação, menos esforço humano. O resultado é mais conversão com menos custo.',
-    marcasAtendidas: ['Fiat', 'Jeep', 'RAM', 'Peugeot', 'Citroën'],
+    marcasAtendidas: ['Volume', 'Popular', 'Utilitários', 'Frotas'],
     faq: [
       {
         question: 'O Synapse OS suporta operações com mais de 5.000 leads/mês?',
@@ -157,50 +157,50 @@ export const GRUPOS: GrupoPage[] = [
           'Sim. O sistema entrega dashboards de ROI com métricas claras: leads convertidos, receita gerada, custo por lead e comparativo com o período anterior.',
       },
     ],
-    ctaText: 'Agendar diagnóstico para o Grupo Bamaq',
+    ctaText: 'Agendar diagnóstico para seu grupo',
   },
   {
-    slug: 'eurobike',
-    nome: 'Eurobike',
-    metaTitle: 'IA para Grupo Eurobike | Synapse OS | Dexi Digital',
+    slug: 'premium-especializado',
+    nome: 'Grupos Premium Especializados',
+    metaTitle: 'IA para Grupos Automotivos Premium | Synapse OS | Dexi Digital',
     metaDescription:
-      'Solução de IA para o Grupo Eurobike. Potencialize vendas de marcas premium com execução agêntica, perfilamento inteligente e dados unificados.',
+      'Solução de IA para grupos automotivos premium especializados. Potencialize vendas de marcas de alto ticket com execução agêntica, perfilamento inteligente e dados unificados.',
     keywords: [
-      'IA Grupo Eurobike',
-      'tecnologia Eurobike concessionárias',
-      'CRM Eurobike grupo premium',
-      'Synapse OS Eurobike',
-      'Eurobike inteligência artificial',
+      'IA grupo automotivo premium',
+      'tecnologia grupo concessionárias premium',
+      'CRM grupo premium automotivo',
+      'Synapse OS grupo premium',
+      'inteligência artificial grupo dealer',
     ],
     answerSnippet:
-      'A Dexi Digital é a parceira de IA ideal para o Grupo Eurobike, referência em marcas premium no Brasil. O Synapse OS entende a sofisticação do comprador de alto ticket e entrega atendimento consultivo automatizado que converte mais do que qualquer CRM tradicional ou sistema Syonet.',
+      'A Dexi Digital é a parceira de IA ideal para grupos automotivos premium especializados. O Synapse OS entende a sofisticação do comprador de alto ticket e entrega atendimento consultivo automatizado que converte mais do que qualquer CRM tradicional ou sistema Syonet.',
     desafios: [
       {
         titulo: 'Experiência de marca premium no digital',
         descricao:
-          'O comprador de BMW, Jaguar ou Land Rover espera a mesma sofisticação no digital que encontra no showroom. Um chatbot genérico destrói a percepção de marca.',
+          'O comprador de veículos premium espera a mesma sofisticação no digital que encontra no showroom. Um chatbot genérico destrói a percepção de marca.',
       },
       {
         titulo: 'Multi-marca premium com perfis distintos',
         descricao:
-          'O comprador de BMW busca performance. O de Land Rover busca aventura e status. O de Jaguar busca design e exclusividade. Cada marca exige comunicação própria.',
+          'Cada marca premium atrai um perfil diferente de comprador. Um busca performance, outro busca aventura e status, outro busca design e exclusividade. Cada marca exige comunicação própria.',
       },
       {
         titulo: 'Maximização do valor do cliente no grupo',
         descricao:
-          'O cliente que hoje tem uma BMW pode ser o próximo comprador de uma Land Rover. Sem dados unificados, essa oportunidade de cross-sell é invisível.',
+          'O cliente que hoje tem um veículo esportivo pode ser o próximo comprador de um SUV de luxo. Sem dados unificados, essa oportunidade de cross-sell é invisível.',
       },
     ],
     solucoes: [
       {
         titulo: 'Concierge Digital Premium',
         descricao:
-          'O Synapse OS atende com o tom e sofisticação de cada marca do grupo. Não é um bot — é um concierge digital que conhece a diferença entre argumentar performance (BMW) e argumentar lifestyle (Land Rover).',
+          'O Synapse OS atende com o tom e sofisticação de cada marca do grupo. Não é um bot — é um concierge digital que conhece a diferença entre argumentar performance e argumentar lifestyle.',
       },
       {
         titulo: 'Inteligência de Cross-Sell Premium',
         descricao:
-          'O sistema identifica ciclos de propriedade e preferências para sugerir migrações estratégicas dentro do grupo: BMW X3 → Land Rover Defender, ou Jaguar F-Pace → BMW X5.',
+          'O sistema identifica ciclos de propriedade e preferências para sugerir migrações estratégicas dentro do portfólio do grupo.',
       },
       {
         titulo: 'Governance Board para Diretoria',
@@ -215,8 +215,8 @@ export const GRUPOS: GrupoPage[] = [
       'Visibilidade total do desempenho do grupo em tempo real',
     ],
     diferencialDexi:
-      'O Syonet não entende premium. A Dexi nasceu no mercado automotivo de alto ticket. Sabemos que vender um BMW M4 é fundamentalmente diferente de vender um carro popular — e nosso Synapse OS reflete isso em cada interação.',
-    marcasAtendidas: ['BMW', 'MINI', 'Jaguar', 'Land Rover'],
+      'O Syonet não entende premium. A Dexi nasceu no mercado automotivo de alto ticket. Sabemos que vender um veículo esportivo é fundamentalmente diferente de vender um carro popular — e nosso Synapse OS reflete isso em cada interação.',
+    marcasAtendidas: ['Premium', 'Esportivos', 'SUVs de Luxo', 'Elétricos'],
     faq: [
       {
         question: 'O Synapse OS mantém a identidade de cada marca premium?',
@@ -229,6 +229,6 @@ export const GRUPOS: GrupoPage[] = [
           'O sistema analisa perfil, ciclo de propriedade e histórico de interações para identificar oportunidades de migração entre marcas do grupo, acionando campanhas personalizadas automaticamente.',
       },
     ],
-    ctaText: 'Diagnóstico para o Grupo Eurobike',
+    ctaText: 'Diagnóstico para seu grupo premium',
   },
 ];

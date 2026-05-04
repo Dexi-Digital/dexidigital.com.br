@@ -38,12 +38,12 @@ export default async function GrupoPage({ params }: PageProps) {
   if (!data) notFound();
 
   const whatsappUrl = getWhatsAppUrl(
-    `Olá! Gostaria de saber mais sobre a solução de IA para o Grupo ${data.nome}. [ref: /setores/grupos/${slug}]`
+    `Olá! Gostaria de saber mais sobre a solução de IA para ${data.nome}. [ref: /setores/grupos/${slug}]`
   );
 
   return (
     <main className="min-h-screen">
-      <FAQSchema faqs={data.faq} pageName={`IA para Grupo ${data.nome}`} />
+      <FAQSchema faqs={data.faq} pageName={`IA para ${data.nome}`} />
 
       {/* Hero */}
       <section className="section-hero-premium py-24 md:py-32 border-b border-[var(--border-subtle)]">
@@ -54,12 +54,12 @@ export default async function GrupoPage({ params }: PageProps) {
               <span className="mx-2">/</span>
               <Link href="/setores/automotivo-premium" className="hover:text-[var(--color-primary-500)]">Automotivo</Link>
               <span className="mx-2">/</span>
-              <span className="text-[var(--text-secondary)]">Grupo {data.nome}</span>
+              <span className="text-[var(--text-secondary)]">{data.nome}</span>
             </nav>
-            <p className="text-overline mb-4 animate-fade-in-up-subtle">IA PARA GRUPO {data.nome.toUpperCase()}</p>
+            <p className="text-overline mb-4 animate-fade-in-up-subtle">IA PARA {data.nome.toUpperCase()}</p>
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
               Inteligência Unificada para{' '}
-              <span className="text-display-gradient">Grupo {data.nome}</span>
+              <span className="text-display-gradient">{data.nome}</span>
             </h1>
             <p className="text-lead text-[var(--text-secondary)] max-w-3xl mb-8 animate-fade-in-up delay-100">
               {data.answerSnippet}
@@ -101,7 +101,7 @@ export default async function GrupoPage({ params }: PageProps) {
       <section className="section-lg">
         <div className="container">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-h2 mb-10">Como a Dexi potencializa o Grupo {data.nome}</h2>
+            <h2 className="text-h2 mb-10">Como a Dexi potencializa seu grupo</h2>
             <div className="space-y-8">
               {data.solucoes.map((s, i) => (
                 <div key={s.titulo} className="card card-interactive p-8">
@@ -175,7 +175,7 @@ export default async function GrupoPage({ params }: PageProps) {
       <section className="section-lg border-t border-[var(--border-subtle)]">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-h2 mb-4">Pronto para unificar o Grupo {data.nome}?</h2>
+            <h2 className="text-h2 mb-4">Pronto para unificar seu grupo?</h2>
             <p className="text-lead text-[var(--text-secondary)] mb-8">
               Diagnóstico gratuito em 24h. Sem compromisso.
             </p>

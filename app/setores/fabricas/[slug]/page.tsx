@@ -38,7 +38,7 @@ export default async function FabricaPage({ params }: PageProps) {
   if (!data) notFound();
 
   const whatsappUrl = getWhatsAppUrl(
-    `Olá! Gostaria de saber mais sobre a solução de IA para concessionárias ${data.brand}. [ref: /setores/fabricas/${slug}]`
+    `Olá! Gostaria de saber mais sobre a solução de IA para ${data.brand}. [ref: /setores/fabricas/${slug}]`
   );
 
   return (
@@ -56,7 +56,7 @@ export default async function FabricaPage({ params }: PageProps) {
               <span className="mx-2">/</span>
               <span className="text-[var(--text-secondary)]">{data.brand}</span>
             </nav>
-            <p className="text-overline mb-4 animate-fade-in-up-subtle">IA PARA CONCESSIONÁRIAS {data.brand.toUpperCase()}</p>
+            <p className="text-overline mb-4 animate-fade-in-up-subtle">IA AUTOMOTIVA — {data.brand.toUpperCase()}</p>
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
               Execução Agêntica para{' '}
               <span className="text-display-gradient">{data.brand}</span>
@@ -82,7 +82,7 @@ export default async function FabricaPage({ params }: PageProps) {
       <section className="section-lg bg-[var(--bg-surface)]">
         <div className="container">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-h2 mb-10">Desafios da rede {data.brand}</h2>
+            <h2 className="text-h2 mb-10">Desafios do segmento</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {data.desafios.map((d) => (
                 <div key={d.titulo} className="card p-6">
