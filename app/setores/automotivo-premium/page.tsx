@@ -10,39 +10,39 @@ export const metadata: Metadata = {
 
 const challenges = [
   {
-    problem: 'Erosão de Leads: Alta qualidade perdida por falta de follow-up imediato e inteligente.',
-    solution: 'Execução Agêntica 24/7: O Synapse assume a última milha do lead instantaneamente, eliminando o tempo de espera e garantindo persistência estratégica sem fadiga humana.',
-    result: '+35% de conversão final validada em operações como a Attra Veículos.',
+    problem: 'Erosão de Leads: o interesse premium esfria antes do consultor humano assumir a conversa.',
+    solution: 'Execução Agêntica 24/7: o Synapse qualifica na primeira mensagem, mantém follow-up ativo e entrega o lead ao vendedor apenas no ponto ideal de transbordo.',
+    result: '1.230 leads processados e 640 oportunidades quentes entregues em operação auditada.',
   },
   {
-    problem: 'Atendimento Genérico: Falta de identificação do perfil psicológico e motivação do comprador.',
-    solution: 'Persuasão Adaptativa MAS: IA que mapeia o perfil (Performance vs. Segurança) e ajusta o tom de voz e os argumentos de venda em tempo real para maximizar o desejo.',
-    result: '+50% de engajamento qualificado no primeiro contato.',
+    problem: 'Atendimento Genérico: o discurso comercial não se adapta ao perfil psicológico do comprador.',
+    solution: 'Persuasão Adaptativa MAS: a IA equilibra diretividade e empatia, lê intenção de compra e ajusta tom, repertório e argumentos em tempo real.',
+    result: '73% de aceitação em follow-ups premium e 132 leads frios reengajados.',
   },
   {
-    problem: 'Silos de Dados: Informações fragmentadas entre showroom, oficina e o pós-venda.',
-    solution: 'Arquitetura Shadow CRM: Unificação total da jornada do cliente, transformando dados mortos em gatilhos de recompra e predição de fluxo de caixa para a concessionária.',
-    result: '+40% no LTV (Lifetime Value) e retenção de carteira premium.',
+    problem: 'Silos de Dados: showroom, CRM, WhatsApp e pós-venda não compartilham inteligência acionável.',
+    solution: 'Arquitetura Shadow CRM: unificação da jornada em uma camada proprietária com leitura de intenção, portfólio e oportunidades de recompra.',
+    result: 'Visibilidade completa do funil e inteligência de mercado em tempo real.',
   },
   {
-    problem: 'Assimetria de Informação: Vendedores recebem leads sem contexto ou profundidade.',
-    solution: 'Venda Aumentada (Sales Enablement): Briefing estratégico entregue ao vendedor com perfil psicológico, objeções antecipadas e "next best action" para o fechamento imediato.',
-    result: '+25% na taxa de fechamento em showrooms de alto ticket.',
+    problem: 'Escala sem perda de qualidade: mais volume costuma significar mais fila, mais ruído e menos conversão.',
+    solution: 'Sales Enablement Data-Driven: o sistema absorve picos de demanda, reduz atrito operacional e entrega briefings objetivos para o time comercial.',
+    result: 'Apenas 4 mensagens por sessão para qualificar um lead com padrão premium.',
   },
 ];
 
 const cases = [
   {
-    sector: 'Automotivo Premium: Attra Veículos',
-    problem: 'Incapacidade de Diferenciação Psicológica: Leads de alto ticket eram tratados de forma genérica, resultando em perda de conversão na última milha.',
-    approach: 'Implementação Synapse (Persuasão Adaptativa): Execução agêntica treinada em neurolinguística para distinguir gatilhos de Performance vs. Segurança em tempo real.',
-    results: ['Tempo -60%'],
+    sector: 'Operação Premium Especializada',
+    problem: 'Leads de alto ticket recebiam abordagem fria, fila de resposta e follow-up inconsistente.',
+    approach: 'Implementação Synapse com persuasão adaptativa, histórico conversacional e handoff inteligente para o consultor no momento de fechamento.',
+    results: ['73% de aceitação premium', '132 leads reengajados', '4 msgs/sessão'],
   },
   {
-    sector: 'Gestão de Ecossistemas: Attra Veículos',
-    problem: 'Fragmentação de Inteligência (Silos): Dados isolados em todas as unidades impediam uma visão única do cliente e geravam assimetria de informação no time comercial.',
-    approach: 'Arquitetura Shadow CRM & Unificação de Dados: Centralização de perfis com entrega de briefing estratégico autônomo para o vendedor (Sales Enablement).',
-    results: ['Fechamento +28%'],
+    sector: 'Rede Regional em Expansão',
+    problem: 'Picos de demanda, múltiplas unidades e falta de padrão global na jornada comercial geravam vazamento de funil.',
+    approach: 'Integração nativa com CRM e ERP, operação single-tenant, qualificação imediata e dashboards executivos com visão consolidada da rede.',
+    results: ['1.230 leads processados', '640 leads quentes', 'Go-live em 7 dias'],
   },
 ];
 
@@ -62,7 +62,7 @@ export default function AutomotivoPremiumPage() {
               Maximização de Conversão e Liquidez com Synapse
             </p>
             <p className="text-lead max-w-2xl mx-auto mb-10 animate-fade-in-up delay-100">
-              Orquestramos a última milha da venda com o Synapse. Com expertise validada na Attra Veículos, transformamos o showroom em uma máquina de execução autônoma, garantindo que nenhum lead esfrie e que cada interação resulte em lucro líquido e soberania digital para o grupo.
+              Orquestramos a última milha da venda com o Synapse. Com expertise validada em operações premium, multiunidade e de alto ticket, transformamos o showroom em uma máquina de execução autônoma, garantindo que nenhum lead esfrie e que cada interação resulte em lucro líquido e soberania digital para o grupo.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-150">
               <a href={WHATSAPP_AUTOMOTIVO_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
@@ -113,7 +113,7 @@ export default function AutomotivoPremiumPage() {
             </div>
 
             <div className="card p-8 mb-10 border-l-4 border-[var(--color-primary-500)]">
-              <h3 className="text-h4 mb-4">Exemplo Real: Haval H6 vs GWM Tank 300</h3>
+              <h3 className="text-h4 mb-4">Exemplo Real: SUV Esportivo vs SUV Familiar Premium</h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="p-5 bg-[var(--bg-secondary)] rounded-xl">
                   <p className="text-overline text-[var(--color-primary-600)] mb-2">Perfil Performance (Poder & Dinâmica)</p>
@@ -237,7 +237,7 @@ export default function AutomotivoPremiumPage() {
               </div>
               <div className="card card-feature p-6 group">
                 <h3 className="text-h5 mb-3">Domínio do Ecossistema Automotivo</h3>
-                <p className="text-body-sm text-[var(--text-secondary)]">Uma década de engenharia dedicada ao setor. Integramos nativamente com DMS e CRMs de mercado, com expertise validada na Attra Veículos para orquestrar jornadas de compra complexas e ciclos de decisão premium.</p>
+                <p className="text-body-sm text-[var(--text-secondary)]">Uma década de engenharia dedicada ao setor. Integramos nativamente com DMS e CRMs de mercado para orquestrar jornadas de compra complexas, redes regionais e ciclos de decisão premium com padrão consistente.</p>
               </div>
               <div className="card card-feature p-6 group">
                 <h3 className="text-h5 mb-3">Inteligência Adaptativa MAS</h3>
@@ -260,7 +260,7 @@ export default function AutomotivoPremiumPage() {
               Pronto para liderar a Execução Agêntica Automotiva?
             </h2>
             <p className="text-lg text-white/70 mb-10">
-              Inicie a transição para sistemas de execução autônomos. Valide o impacto do Synapse OS no seu EBITDA e recupere a liquidez do showroom com a tecnologia validada pela Attra Veículos.
+              Inicie a transição para sistemas de execução autônomos. Valide o impacto do Synapse OS no seu EBITDA e recupere a liquidez do showroom com tecnologia validada em operações premium auditadas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">

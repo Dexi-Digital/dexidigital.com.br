@@ -94,8 +94,8 @@ export default function EnterpriseAIPage() {
               <h3 className="text-h5 mb-4">Exemplo Real: Setor Automotivo</h3>
               <p className="text-body text-[var(--text-secondary)] mb-4">
                 Nosso Concierge Digital consegue distinguir, em tempo real, entre um cliente
-                que valoriza os <strong className="text-[var(--text-primary)]">393 cavalos de potência de um Haval H6</strong> versus
-                um que prioriza a <strong className="text-[var(--text-primary)]">classificação 5 estrelas em segurança e o sistema ADAS de um GWM</strong>.
+                que valoriza os <strong className="text-[var(--text-primary)]">393 cavalos de potência de um SUV esportivo</strong> versus
+                um que prioriza a <strong className="text-[var(--text-primary)]">classificação 5 estrelas em segurança e o sistema ADAS de um SUV premium</strong>.
               </p>
               <p className="text-body-sm text-[var(--text-muted)]">
                 Com base nessa leitura, adapta automaticamente os argumentos de venda,

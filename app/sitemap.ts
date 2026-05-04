@@ -1,4 +1,11 @@
 import { MetadataRoute } from 'next';
+import { FABRICAS } from '@/lib/seo/fabricas';
+import { GRUPOS } from '@/lib/seo/grupos';
+import { SOLUCOES } from '@/lib/seo/solucoes';
+import { COMPARATIVOS } from '@/lib/seo/comparativo';
+import { GUIAS } from '@/lib/seo/guias';
+import { GLOSSARIO_TERMS } from '@/lib/seo/glossario';
+import { INTEGRACOES } from '@/lib/seo/integracoes';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://dexidigital.com.br';
@@ -57,6 +64,70 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
   ];
+
+  // SEO: Fábricas (segmentos automotivos)
+  const fabricaPages: MetadataRoute.Sitemap = FABRICAS.map((f) => ({
+    url: `${baseUrl}/setores/fabricas/${f.slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  }));
+
+  // SEO: Grupos Automotivos
+  const grupoPages: MetadataRoute.Sitemap = GRUPOS.map((g) => ({
+    url: `${baseUrl}/setores/grupos/${g.slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  }));
+
+  // SEO: Soluções por Problema
+  const solucaoPages: MetadataRoute.Sitemap = SOLUCOES.map((s) => ({
+    url: `${baseUrl}/solucoes/${s.slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
+  // SEO: Comparativos (Dexi vs Syonet)
+  const comparativoPages: MetadataRoute.Sitemap = COMPARATIVOS.map((c) => ({
+    url: `${baseUrl}/comparativo/${c.slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  }));
+
+  // SEO: Guias de Transformação Digital
+  const guiaPages: MetadataRoute.Sitemap = GUIAS.map((g) => ({
+    url: `${baseUrl}/guias/${g.slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.75,
+  }));
+
+  // SEO: Glossário IA Automotiva
+  const glossarioPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/glossario-ia-automotiva`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    ...GLOSSARIO_TERMS.map((t) => ({
+      url: `${baseUrl}/glossario-ia-automotiva/${t.slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.65,
+    })),
+  ];
+
+  // SEO: Integrações
+  const integracaoPages: MetadataRoute.Sitemap = INTEGRACOES.map((i) => ({
+    url: `${baseUrl}/integracoes/${i.slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.75,
+  }));
 
   // Páginas de produtos
   const productPages: MetadataRoute.Sitemap = [
@@ -132,10 +203,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...mainPages,
     ...servicePages,
     ...sectorPages,
+    ...fabricaPages,
+    ...grupoPages,
+    ...solucaoPages,
+    ...comparativoPages,
+    ...guiaPages,
+    ...glossarioPages,
+    ...integracaoPages,
     ...productPages,
     ...materialPages,
     ...companyPages,
     ...blogPages,
   ];
 }
-

@@ -127,7 +127,7 @@ export const servicesSchema = [
     '@id': 'https://dexidigital.com.br/servicos/inteligencia-de-dados',
     name: 'Engenharia de Dados & Ativos de Inteligência',
     description:
-      'Transformamos dados brutos em combustível para a tomada de decisão autônoma. Estruturamos a base necessária para que o Synapse OS opere com precisão, garantindo que a informação flua sem gargalos, como implementado na gestão de 180k leads da Attra Veículos.',
+      'Transformamos dados brutos em combustível para a tomada de decisão autônoma. Estruturamos a base necessária para que o Synapse OS opere com precisão, conectando CRM, ERP, WhatsApp e voz em ativos proprietários auditáveis.',
     provider: {
       '@id': 'https://dexidigital.com.br/#organization',
     },
@@ -227,7 +227,7 @@ export const servicesSchema = [
     '@id': 'https://dexidigital.com.br/servicos/ia-para-empresas',
     name: 'Arquitetura de Execução Agêntica (Synapse OS)',
     description:
-      'Implementação de agentes autônomos que não apenas respondem, mas executam. Focamos em ganho de escala e redução de latência operacional, transformando a IA em um motor de EBITDA real, com resultados validados no setor imobiliário de alto padrão da TGV Empreendimentos.',
+      'Implementação de agentes autônomos que não apenas respondem, mas executam. Focamos em ganho de escala, qualificação imediata e redução de latência operacional, transformando a IA em um motor de EBITDA real para jornadas consultivas e operações multiunidade.',
     provider: {
       '@id': 'https://dexidigital.com.br/#organization',
     },
