@@ -104,36 +104,36 @@ export const GRUPOS: GrupoPage[] = [
       'A Dexi Digital oferece IA de última geração para grupos automotivos de grande porte. Com o Synapse OS, unificamos dados de todas as operações, automatizamos a execução de vendas e entregamos inteligência preditiva que antecipa necessidades do cliente em escala.',
     desafios: [
       {
-        titulo: 'Gestão de volume com qualidade',
+        titulo: 'Gestão de volume sem perda de qualidade',
         descricao:
-          'Grupos de grande porte recebem milhares de leads por mês. Sem automação inteligente, a qualidade do atendimento degrada conforme o volume aumenta.',
+          'Grupos de grande porte recebem milhares de leads por mês. O “silêncio financeiro” — a distância entre a previsão teórica do ERP e a realidade operacional — corrói a liquidez do funil quando a automação é insuficiente.',
       },
       {
-        titulo: 'Retenção de clientes no pós-venda',
+        titulo: 'Retenção de clientes e fluxo de caixa preditivo',
         descricao:
-          'O cliente que compra no grupo precisa voltar para revisão, acessórios e a próxima compra. Sem comunicação proativa, o cliente migra para oficinas independentes e concorrentes.',
+          'O cliente que compra no grupo precisa voltar para revisão, acessórios e a próxima compra. Sem inteligência comportamental, o grupo não antecipa recompra e perde receita recorrente para oficinas independentes.',
       },
       {
         titulo: 'Capacitação e turnover de vendedores',
         descricao:
-          'O turnover em equipes de vendas automotivas é alto. Cada vendedor novo leva meses para atingir performance. Tecnologia precisa acelerar essa curva.',
+          'O turnover em equipes de vendas automotivas é alto. Cada saída leva meses de conhecimento tácito. A Dexi resolve com workforce híbrida: o Synapse assume a qualificação e o vendedor novo já recebe briefing estratégico desde o primeiro lead.',
       },
     ],
     solucoes: [
       {
-        titulo: 'Automação de Atendimento em Escala',
+        titulo: 'Automação de Atendimento em Escala com Inteligência Conversacional',
         descricao:
-          'O Synapse OS absorve o volume de leads, qualifica automaticamente e distribui para vendedores com briefing completo. O vendedor foca em fechar, não em qualificar.',
+          'O Synapse OS absorve o volume de leads, qualifica com análise de tom e intenção em tempo real e distribui para vendedores com briefing completo. Operação single-tenant com governança RAG.',
       },
       {
-        titulo: 'Motor de Retenção Preditiva',
+        titulo: 'Infraestrutura de Liquidez e Retenção Preditiva',
         descricao:
-          'Modelos de machine learning identificam clientes com risco de churn e clientes prontos para recompra. O sistema aciona campanhas automatizadas no momento certo.',
+          'Modelos de machine learning geram score de probabilidade de recebimento e recompra, acionando campanhas automatizadas no momento certo e transformando passivos em ativos líquidos.',
       },
       {
-        titulo: 'Sales Enablement para Vendedores',
+        titulo: 'Sales Enablement e Workforce Híbrida',
         descricao:
-          'Cada vendedor recebe briefing estratégico antes de atender: perfil do cliente, objeções prováveis, next-best-action e histórico completo. O vendedor novo performa como veterano.',
+          'Cada vendedor recebe briefing estratégico antes de atender: perfil do cliente, objeções prováveis, next-best-action e histórico completo. O vendedor novo performa como veterano desde o dia 1.',
       },
     ],
     resultadosEsperados: [

@@ -33,34 +33,34 @@ export const FABRICAS: FabricaPage[] = [
       {
         titulo: 'Expansão acelerada com rede imatura',
         descricao:
-          'Montadoras em rápida expansão no Brasil enfrentam um desafio: concessionários novos precisam escalar processos de venda sem o know-how de redes consolidadas. Sem tecnologia adequada, leads esfriam e o custo de aquisição dispara.',
+          'Montadoras em rápida expansão no Brasil enfrentam um desafio: concessionários novos precisam escalar processos de venda sem o know-how de redes consolidadas. A média de resposta ao lead no setor é de 4 horas — e o comprador decide em 15 minutos.',
       },
       {
-        titulo: 'Competição por leads digitais',
+        titulo: 'Competição por leads digitais e retenção de talento',
         descricao:
-          'O consumidor pesquisa online antes de visitar o showroom. Sem um sistema de resposta imediata e inteligente, o lead vai para o concorrente que responde primeiro — e com mais contexto.',
+          'Além do consumidor que pesquisa online antes de visitar o showroom, há o desafio do time: alta rotatividade de vendedores, onboarding lento e perda de conhecimento tácito a cada saída. A tecnologia precisa compensar a curva de aprendizado.',
       },
       {
         titulo: 'Integração com DMS e CRM fragmentados',
         descricao:
-          'Muitas concessionárias de marcas novas operam com sistemas desconectados: DMS de um lado, CRM de outro, WhatsApp no celular do vendedor. A Dexi unifica tudo em uma camada inteligente.',
+          'Muitas concessionárias de marcas novas operam com sistemas desconectados: DMS de um lado, CRM de outro, WhatsApp no celular do vendedor. A Dexi unifica tudo em uma camada inteligente com arquitetura single-tenant e governança RAG.',
       },
     ],
     solucoes: [
       {
-        titulo: 'Synapse OS: Concierge Digital de Vendas',
+        titulo: 'Synapse OS: Resposta Imediata com Inteligência Conversacional',
         descricao:
-          'IA que atende leads em segundos via WhatsApp, qualifica intenção de compra, identifica o modelo de interesse e faz handoff estratégico para o vendedor com briefing completo.',
+          'IA que responde em menos de 30 segundos via WhatsApp, qualifica intenção de compra com análise de tom e contexto, e faz handoff estratégico para o vendedor com briefing completo e perfil psicológico do lead.',
       },
       {
-        titulo: 'Unificação de Dados 360°',
+        titulo: 'Infraestrutura de Dados em 3 Camadas',
         descricao:
-          'Integramos showroom, oficina, F&I e pós-venda em uma visão única do cliente. O vendedor sabe o histórico completo antes do cliente chegar no showroom.',
+          'Camada 1: Ingestão de sinais (ERP, WhatsApp, voz). Camada 2: Inteligência comportamental com score de probabilidade. Camada 3: Governança enterprise RAG que elimina alucinações e garante soberania dos dados.',
       },
       {
-        titulo: 'Dashboards de Performance em Tempo Real',
+        titulo: 'Dashboards de Performance e Fluxo de Caixa Preditivo',
         descricao:
-          'Acompanhe conversão por vendedor, tempo de resposta, ticket médio e satisfação do cliente em dashboards executivos. Dados que transformam gerentes em estrategistas.',
+          'Acompanhe conversão por vendedor, tempo de resposta, ticket médio e predição de fluxo de caixa em dashboards executivos. Elimine o “silêncio financeiro” entre a previsão teórica e a realidade operacional.',
       },
     ],
     resultadosEsperados: [
@@ -320,36 +320,36 @@ export const FABRICAS: FabricaPage[] = [
       'A Dexi Digital potencializa concessionárias de marcas de performance com IA de execução. O Synapse OS entende que o comprador deste segmento decide por performance e status, e personaliza cada interação para converter leads de alto ticket com velocidade e precisão superiores a qualquer CRM tradicional.',
     desafios: [
       {
-        titulo: 'Lead premium exige velocidade',
+        titulo: 'Lead premium exige velocidade e inteligência',
         descricao:
-          'O comprador de veículos de performance tem alto custo de oportunidade. Esperar 4 horas por uma resposta é inaceitável. O primeiro dealer que responde com qualidade leva a venda.',
+          'O comprador de veículos de performance tem alto custo de oportunidade. A média do setor é 4 horas para responder; o Synapse entrega resposta qualificada em menos de 30 segundos com micro-segmentação em tempo real.',
       },
       {
         titulo: 'Linha esportiva e linha regular: mundos diferentes',
         descricao:
-          'Vender um sedã executivo requer argumentos de custo-benefício. Vender um esportivo de alta performance requer argumentos de exclusividade e emoção. O vendedor precisa alternar entre os dois mundos.',
+          'Vender um sedã executivo requer argumentos de custo-benefício. Vender um esportivo exige exclusividade e emoção. A IA alterna entre perfis automaticamente, equilibrando diretividade e empatia conforme a intenção detectada.',
       },
       {
-        titulo: 'Eletrificação e novos perfis de comprador',
+        titulo: 'Retenção de talento e onboarding digital',
         descricao:
-          'Veículos elétricos de performance trazem um perfil de comprador que a rede ainda não domina: tech-savvy, focado em inovação e acostumado a comprar online.',
+          'O turnover de vendedores é alto e cada saída perde meses de conhecimento tácito. O Synapse funciona como um Digital Talent Enabler: o vendedor novo recebe briefing estratégico imediato e performa como veterano desde o primeiro atendimento.',
       },
     ],
     solucoes: [
       {
-        titulo: 'Resposta Instantânea com Contexto',
+        titulo: 'Resposta Instantânea com Inteligência Conversacional',
         descricao:
-          'O Synapse OS responde leads em segundos com informação técnica precisa sobre o modelo, versão, disponibilidade e condições. O vendedor recebe um briefing completo quando o lead é qualificado.',
+          'Qualificação em tempo real via WhatsApp com análise de tom, intenção e portfólio. O vendedor recebe o lead com perfil psicológico, objeções antecipadas e next-best-action — tudo em segundos.',
       },
       {
-        titulo: 'Perfilamento Esportivo vs. Regular vs. Elétrico',
+        titulo: 'Ciência de Follow-up e Reengajamento',
         descricao:
-          'O sistema identifica automaticamente o perfil do comprador e ajusta argumentos: performance para o entusiasta, eficiência para o elétrico, custo-benefício para o executivo.',
+          'Follow-ups persistentes com cadência inteligente que reengajam leads frios, recuperam oportunidades estagnadas e maximizam a liquidez do funil com média de apenas 4 mensagens por sessão qualificada.',
       },
       {
-        titulo: 'Pipeline de Vendas Inteligente',
+        titulo: 'Pipeline Preditivo e Eficiência Operacional',
         descricao:
-          'Gestão visual do funil de vendas com scoring automático de leads, alertas de follow-up e previsão de fechamento baseada em dados históricos da rede.',
+          'Gestão visual do funil com scoring automático, alertas de follow-up, predição de fechamento e métricas de eficiência operacional — reduzindo o tempo de qualificação e aumentando a taxa de conversão em alto ticket.',
       },
     ],
     resultadosEsperados: [

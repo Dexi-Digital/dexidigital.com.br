@@ -111,14 +111,14 @@ export const COMPARATIVOS: ComparativoPage[] = [
           'Vendedores de concessionárias são competentes. O problema é o processo: lead entra → vendedor acessa CRM → lê informações → busca veículo → responde. Esse processo de 5 etapas manuais leva horas. Com o Synapse OS, o lead recebe resposta em segundos e o vendedor recebe briefing pronto.',
       },
       {
-        heading: 'Dados estáticos vs. inteligência dinâmica',
+        heading: 'Dados estáticos vs. infraestrutura de liquidez',
         content:
-          'O CRM armazena dados. O Synapse OS transforma dados em ação: prediz recompra, identifica churn, sugere cross-sell e executa follow-up. A diferença entre um arquivo morto e um motor de receita.',
+          'O CRM armazena dados. O Synapse OS opera sobre uma infraestrutura de três camadas: ingestão de sinais (ERP, WhatsApp, voz), inteligência comportamental (score de probabilidade e intenção) e governança enterprise RAG. O resultado: fluxo de caixa preditivo, predição de recompra e follow-ups que reengajam leads frios.',
       },
       {
         heading: 'O custo real do CRM manual',
         content:
-          'Uma concessionária média perde 40% dos leads por falta de follow-up adequado. Com ticket médio de R$ 150 mil e 200 leads/mês, isso representa R$ 12M/ano em oportunidades perdidas. O investimento em IA se paga no primeiro mês.',
+          'Uma concessionária média perde 40% dos leads por falta de follow-up adequado. Com ticket médio de R$ 150 mil e 200 leads/mês, isso representa R$ 12M/ano em oportunidades perdidas. Com o Synapse, a média de qualificação é de 4 mensagens por sessão e o go-live acontece em 7 dias.',
       },
     ],
     tabelaComparativa: [

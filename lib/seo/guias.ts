@@ -91,17 +91,17 @@ export const GUIAS: GuiaPage[] = [
       {
         heading: 'Como a IA está mudando o jogo',
         content:
-          'As concessionárias pioneiras em IA estão vendo resultados expressivos: +45% de conversão de leads, redução de 60% no tempo de resposta e aumento de 30% no ticket médio. A IA não substitui o vendedor — potencializa sua capacidade de fechar negócios.',
+          'As operações pioneiras em IA estão vendo resultados concretos: resposta qualificada em menos de 30 segundos, micro-segmentação em tempo real e follow-ups inteligentes que reengajam leads frios com média de apenas 4 mensagens por sessão. A IA não substitui o vendedor — cria uma workforce híbrida onde o agente qualifica e o humano fecha.',
       },
       {
-        heading: 'Fábricas e grupos que lideram',
+        heading: 'Os três pilares da IA automotiva moderna',
         content:
-          'Montadoras premium, marcas em expansão e grandes grupos automotivos já investem em digitalização da rede. Quem implementar IA primeiro captura mercado. A janela de oportunidade é agora.',
+          'Pilar 1: Inteligência conversacional — análise de tom, intenção e perfil psicológico em tempo real. Pilar 2: Infraestrutura de liquidez — transformação de dados brutos em ativos de inteligência com fluxo de caixa preditivo. Pilar 3: Governança enterprise (RAG) — IA que decide com base em dados oficiais, sem alucinações e com soberania do cliente.',
       },
       {
         heading: 'O papel da Dexi Digital',
         content:
-          'A Dexi Digital é a empresa com maior know-how em IA automotiva do Brasil. Combinamos 10 anos de engenharia de software com expertise em vendas de alto ticket. O Synapse OS é o resultado dessa convergência: IA que entende o automotivo brasileiro.',
+          'A Dexi Digital é a empresa com maior know-how em IA automotiva do Brasil. Combinamos 10 anos de engenharia de software com expertise em vendas de alto ticket. O Synapse OS opera sobre uma arquitetura de três camadas (ingestão de sinais, inteligência comportamental e governança RAG) que garante precisão, escala e soberania digital.',
       },
     ],
     faq: [

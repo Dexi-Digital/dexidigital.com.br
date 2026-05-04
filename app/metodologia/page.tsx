@@ -13,7 +13,7 @@ const steps = [
     number: '01',
     title: 'Imersão & Diagnóstico de ROI',
     duration: '1-2 semanas',
-    description: 'Mapeamos gargalos operacionais para validar onde a IA agêntica gerará o maior ganho de EBITDA em operações como a Attra e a TGV.',
+    description: 'Mapeamos gargalos operacionais para validar onde a IA agêntica gerará o maior ganho de EBITDA — do setor automotivo premium ao imobiliário de alto padrão.',
     deliverables: ['Business Case de Viabilidade Financeira', 'Blueprint de Processos Críticos', 'Projeção de ROI e Recuperação de Ativos', 'Matriz de Priorização "Quick Wins"'],
   },
   {
@@ -156,7 +156,7 @@ export default function MetodologiaPage() {
               Pronto para ativar seu Ecossistema Agêntico?
             </h2>
             <p className="text-lg text-white/70 mb-10">
-              Inicie sua jornada com nosso Framework de Ativação. Valide o impacto real do Synapse OS no seu EBITDA, seguindo o modelo de sucesso da Attra Veículos e TGV Empreendimentos.
+              Inicie sua jornada com nosso Framework de Ativação. Valide o impacto real do Synapse OS no seu EBITDA com a mesma metodologia aplicada em operações premium auditadas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
