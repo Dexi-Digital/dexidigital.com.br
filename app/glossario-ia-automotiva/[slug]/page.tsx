@@ -31,26 +31,50 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 function markdownToHtml(md: string): string {
-  return md
-    .split('\n')
-    .map((line) => {
-      if (line.startsWith('### '))
-        return `<h3 class="text-h5 text-[var(--text-primary)] mt-8 mb-3">${line.slice(4)}</h3>`;
-      if (line.startsWith('## '))
-        return `<h2 class="text-h4 text-[var(--text-primary)] mt-10 mb-4">${line.slice(3)}</h2>`;
-      if (line.startsWith('- **'))
-        return `<li class="ml-4 mb-2 text-[var(--text-secondary)] leading-relaxed list-disc">${line
+  const lines = md.split('\n');
+  const output: string[] = [];
+  let inList = false;
+
+  for (const line of lines) {
+    const isListItem = line.startsWith('- ');
+
+    if (isListItem && !inList) {
+      output.push('<ul class="space-y-2 my-4">');
+      inList = true;
+    } else if (!isListItem && inList) {
+      output.push('</ul>');
+      inList = false;
+    }
+
+    if (line.startsWith('### ')) {
+      output.push(`<h3 class="text-h5 text-[var(--text-primary)] mt-8 mb-3">${line.slice(4)}</h3>`);
+    } else if (line.startsWith('## ')) {
+      output.push(`<h2 class="text-h4 text-[var(--text-primary)] mt-10 mb-4">${line.slice(3)}</h2>`);
+    } else if (line.startsWith('- **')) {
+      output.push(
+        `<li class="ml-4 mb-2 text-[var(--text-secondary)] leading-relaxed list-disc">${line
           .slice(2)
-          .replace(/\*\*(.*?)\*\*/g, '<strong class="text-[var(--text-primary)]">$1</strong>')}</li>`;
-      if (line.startsWith('- '))
-        return `<li class="ml-4 mb-2 text-[var(--text-secondary)] leading-relaxed list-disc">${line.slice(2)}</li>`;
-      if (line.trim() === '') return '';
-      return `<p class="text-[var(--text-secondary)] leading-relaxed mb-4">${line.replace(
-        /\*\*(.*?)\*\*/g,
-        '<strong class="text-[var(--text-primary)]">$1</strong>'
-      )}</p>`;
-    })
-    .join('\n');
+          .replace(/\*\*(.*?)\*\*/g, '<strong class="text-[var(--text-primary)]">$1</strong>')}</li>`
+      );
+    } else if (line.startsWith('- ')) {
+      output.push(
+        `<li class="ml-4 mb-2 text-[var(--text-secondary)] leading-relaxed list-disc">${line.slice(2)}</li>`
+      );
+    } else if (line.trim() === '') {
+      output.push('');
+    } else {
+      output.push(
+        `<p class="text-[var(--text-secondary)] leading-relaxed mb-4">${line.replace(
+          /\*\*(.*?)\*\*/g,
+          '<strong class="text-[var(--text-primary)]">$1</strong>'
+        )}</p>`
+      );
+    }
+  }
+
+  if (inList) output.push('</ul>');
+
+  return output.join('\n');
 }
 
 export default async function GlossarioTermPage({ params }: PageProps) {

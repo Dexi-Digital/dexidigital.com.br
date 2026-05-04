@@ -34,7 +34,7 @@ export const GLOSSARIO_CATEGORIES: Record<
 
 export const GLOSSARIO_TERMS: GlossarioTerm[] = [
   {
-    slug: 'execucao-agêntica',
+    slug: 'execucao-agentica',
     title: 'Execução Agêntica',
     category: 'tecnologia',
     metaTitle: 'O que é Execução Agêntica | Glossário IA Automotiva | Dexi Digital',
@@ -106,7 +106,7 @@ Em operações brasileiras, o Synapse OS entrega: +45% de conversão de leads, r
           'Sim. O sistema é configurável para qualquer marca e segmento automotivo, desde veículos populares até supercarros.',
       },
     ],
-    relatedTerms: ['execucao-agêntica', 'perfilamento-inteligente', 'crm-unificado-grupo-automotivo'],
+    relatedTerms: ['execucao-agentica', 'perfilamento-inteligente', 'crm-unificado-grupo-automotivo'],
   },
   {
     slug: 'perfilamento-inteligente',
@@ -138,7 +138,7 @@ O vendedor que recebe um lead com perfil completo converte 40% a mais do que o v
           'A IA analisa a linguagem usada nas mensagens (palavras, tom, perguntas), o comportamento de navegação no site (quais modelos visualizou, quanto tempo ficou) e o histórico de interações anteriores.',
       },
     ],
-    relatedTerms: ['execucao-agêntica', 'lead-scoring-automotivo', 'synapse-os'],
+    relatedTerms: ['execucao-agentica', 'lead-scoring-automotivo', 'synapse-os'],
   },
   {
     slug: 'lead-scoring-automotivo',
@@ -170,7 +170,7 @@ O scoring estático do CRM tradicional atribui pontos fixos (preencheu formulár
           'O vendedor sabe quem atender primeiro: leads com score alto têm maior chance de conversão e devem receber prioridade. Isso elimina o achismo e otimiza o tempo da equipe.',
       },
     ],
-    relatedTerms: ['perfilamento-inteligente', 'execucao-agêntica', 'synapse-os'],
+    relatedTerms: ['perfilamento-inteligente', 'execucao-agentica', 'synapse-os'],
   },
   {
     slug: 'dms-automotivo',
@@ -199,7 +199,7 @@ A integração do DMS com plataformas de IA como o Synapse OS cria uma camada in
           'Não. O Synapse OS complementa o DMS, adicionando inteligência e automação sobre os dados que o DMS já gerencia.',
       },
     ],
-    relatedTerms: ['synapse-os', 'crm-unificado-grupo-automotivo', 'execucao-agêntica'],
+    relatedTerms: ['synapse-os', 'crm-unificado-grupo-automotivo', 'execucao-agentica'],
   },
   {
     slug: 'shadow-crm',
@@ -234,7 +234,7 @@ O Shadow CRM resolve o maior problema de grupos automotivos: dados fragmentados 
           'O Shadow CRM cria uma visão unificada referenciando dados dos sistemas originais. Os dados permanecem nos sistemas fonte e são espelhados de forma sincronizada.',
       },
     ],
-    relatedTerms: ['dms-automotivo', 'synapse-os', 'execucao-agêntica'],
+    relatedTerms: ['dms-automotivo', 'synapse-os', 'execucao-agentica'],
   },
 ];
 
