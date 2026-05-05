@@ -8,11 +8,11 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Dexi Digital | Consultoria de IA e Inteligência de Dados para Empresas',
-  description: 'Conectamos seus dados aos seus sistemas de venda e cobrança para criar agentes que executam, 24/7, com governança enterprise e foco em resultado financeiro. Mais de 10 anos em software crítico e criadores do Synapse OS, plataforma agêntica validada em grupos automotivos, varejo e operações financeiras.',
+  description: 'Engenharia de IA agêntica para gerar EBITDA. Agentes que vendem e cobram 24/7, com governança enterprise e foco em resultado financeiro.',
   keywords: ['consultoria de IA', 'inteligência de dados', 'IA para empresas', 'consultoria de IA para vendas', 'eficiência operacional com IA', 'grupos automotivos', 'software sob medida'],
   openGraph: {
     title: 'Dexi Digital | Liderança em Engenharia de Software e Infraestrutura Agêntica',
-    description: 'Conectamos seus dados aos seus sistemas de venda e cobrança para criar agentes que executam, 24/7, com governança enterprise e foco em resultado financeiro.',
+    description: 'Agentes que vendem e cobram 24/7, com governança enterprise e foco em resultado financeiro.',
     type: 'website',
     locale: 'pt_BR',
   },
@@ -41,12 +41,8 @@ export default function HomePage() {
               Engenharia de IA agêntica para gerar <span className="text-display-gradient">EBITDA</span>
             </h1>
 
-            <p className="text-lead text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto animate-fade-in-up delay-150">
-              Conectamos seus dados aos seus sistemas de venda e cobrança para criar agentes que executam, 24/7, com governança enterprise e foco em resultado financeiro.
-            </p>
-
-            <p className="text-sm text-[var(--text-tertiary)] mb-10 max-w-2xl mx-auto animate-fade-in-up delay-175">
-              Mais de 10 anos em software crítico e criadores do Synapse OS, plataforma agêntica validada em grupos automotivos, varejo e operações financeiras.
+            <p className="text-lead text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto animate-fade-in-up delay-150">
+              Agentes que vendem e cobram 24/7, com governança enterprise e foco em resultado financeiro.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up delay-200">
