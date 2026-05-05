@@ -8,11 +8,11 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Dexi Digital | Consultoria de IA e Inteligência de Dados para Empresas',
-  description: 'Nascida da necessidade de transformar dados estáticos em lucro real, a Dexi Digital combina uma década de engenharia de software crítico com o pioneirismo no desenvolvimento de Sistemas Multi-Agentes (MAS). Criadores do Synapse OS, somos a ponte entre a inteligência artificial generativa e a execução financeira autônoma para corporações que buscam escala sem precedentes e governança inegociável.',
+  description: 'Engenharia de IA agêntica para gerar EBITDA. Agentes que vendem e cobram 24/7, com governança enterprise e foco em resultado financeiro.',
   keywords: ['consultoria de IA', 'inteligência de dados', 'IA para empresas', 'consultoria de IA para vendas', 'eficiência operacional com IA', 'grupos automotivos', 'software sob medida'],
   openGraph: {
     title: 'Dexi Digital | Liderança em Engenharia de Software e Infraestrutura Agêntica',
-    description: 'Nascida da necessidade de transformar dados estáticos em lucro real, a Dexi Digital combina uma década de engenharia de software crítico com o pioneirismo no desenvolvimento de Sistemas Multi-Agentes (MAS).',
+    description: 'Agentes que vendem e cobram 24/7, com governança enterprise e foco em resultado financeiro.',
     type: 'website',
     locale: 'pt_BR',
   },
@@ -35,24 +35,20 @@ export default function HomePage() {
       <section id="hero" className="section-hero-premium py-20 md:py-32 border-b border-[var(--border-subtle)]">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-overline mb-4 animate-fade-in-up-subtle">ARQUITETURA DE EXECUÇÃO AGÊNTICA</p>
+            <p className="text-overline mb-4 animate-fade-in-up-subtle">ENGENHARIA DE SOFTWARE & IA AGÊNTICA</p>
 
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
-              Da gestão de dados à <span className="text-display-gradient">execução autônoma de resultados</span>
+              Engenharia de IA agêntica para gerar <span className="text-display-gradient">EBITDA</span>
             </h1>
 
             <p className="text-lead text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto animate-fade-in-up delay-150">
-              Aumente o EBITDA com execução agêntica. Já geramos +45% de conversão e R$ 7M recuperados para líderes de mercado.
+              Agentes que vendem e cobram 24/7, com governança enterprise e foco em resultado financeiro.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up delay-200">
-              <TrackedCTA type="validation" location="hero" variant="primary" />
-              <TrackedCTA type="synapse" location="hero" variant="secondary" />
+              <TrackedCTA type="validation" location="hero" variant="primary" text="Agendar diagnóstico" />
+              <TrackedCTA type="synapse" location="hero" variant="secondary" text="Conhecer o Synapse" />
             </div>
-
-            <p className="text-sm text-[var(--text-tertiary)] mb-4 animate-fade-in delay-300">
-              +50 ecossistemas entregues • R$ 7M+ em receita recuperada • 10+ anos de engenharia
-            </p>
           </div>
         </div>
       </section>
