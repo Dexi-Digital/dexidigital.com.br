@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import FAQItem from '@/components/ui/FAQItem';
 import TrackedCTA from '@/components/ui/TrackedCTA';
+import HeroWave from '@/components/HeroWave';
+import CountUp from '@/components/ui/CountUp';
 import { getHomePageSchemas, localBusinessSchema } from '@/lib/structured-data';
 import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
 import type { Metadata } from 'next';
@@ -31,14 +33,18 @@ export default function HomePage() {
         />
       ))}
 
-      {/* Hero Section */}
-      <section id="hero" className="section-hero-premium py-20 md:py-32 border-b border-[var(--border-subtle)]">
-        <div className="container">
+      {/* Hero Section — faixa escura autocontida com fundo de luz fluindo */}
+      <section
+        id="hero"
+        className="dark relative overflow-hidden bg-[var(--bg-primary)] py-24 md:py-36 border-b border-[var(--border-subtle)]"
+      >
+        <HeroWave />
+        <div className="container relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-overline mb-4 animate-fade-in-up-subtle">ENGENHARIA DE SOFTWARE & IA AGÊNTICA</p>
 
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
-              Engenharia de IA agêntica para gerar <span className="text-display-gradient">EBITDA</span>
+              Engenharia de IA agêntica para gerar <span className="text-result">EBITDA</span>
             </h1>
 
             <p className="text-lead text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto animate-fade-in-up delay-150">
@@ -46,30 +52,36 @@ export default function HomePage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up delay-200">
-              <TrackedCTA type="validation" location="hero" variant="primary" text="Agendar diagnóstico" />
+              <TrackedCTA type="validation" location="hero" variant="money" text="Agendar diagnóstico" />
               <TrackedCTA type="synapse" location="hero" variant="secondary" text="Conhecer o Synapse" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Resultados em números */}
-      <section id="resultados" className="section py-12 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)]">
+      {/* Resultados em números — números como protagonistas, em Pumpkin, com count-up */}
+      <section id="resultados" className="dark section py-12 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)]">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-h3 mb-8">Resultados em números</h2>
             <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="block group">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="card p-6 group-hover:border-[var(--color-primary-500)] transition-colors">
-                  <div className="text-display-md text-display-gradient mb-2">+45%</div>
+                <div className="card card-result p-6 transition-colors">
+                  <div className="text-number-hero text-result mb-2">
+                    <CountUp to={45} prefix="+" suffix="%" />
+                  </div>
                   <div className="text-body-sm font-medium text-[var(--text-primary)]">Conversão de Leads</div>
                 </div>
-                <div className="card p-6 group-hover:border-[var(--color-primary-500)] transition-colors">
-                  <div className="text-display-md text-display-gradient mb-2">Até 35%</div>
+                <div className="card card-result p-6 transition-colors">
+                  <div className="text-number-hero text-result mb-2">
+                    <CountUp to={35} prefix="Até " suffix="%" />
+                  </div>
                   <div className="text-body-sm font-medium text-[var(--text-primary)]">Recuperação de Crédito</div>
                 </div>
-                <div className="card p-6 group-hover:border-[var(--color-primary-500)] transition-colors">
-                  <div className="text-display-md text-display-gradient mb-2">R$ 7M+</div>
+                <div className="card card-result p-6 transition-colors">
+                  <div className="text-number-hero text-result mb-2">
+                    <CountUp to={7} prefix="R$ " suffix="M+" />
+                  </div>
                   <div className="text-body-sm font-medium text-[var(--text-primary)]">Receita Recuperada</div>
                 </div>
               </div>

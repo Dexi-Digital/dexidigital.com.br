@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { trackCTAClick, trackWhatsAppClick } from '@/lib/tracking';
 import { WHATSAPP_DIAGNOSTIC_URL, WHATSAPP_AUTOMOTIVO_URL } from '@/lib/whatsapp';
 
-type CTAVariant = 'primary' | 'secondary' | 'white' | 'link';
+type CTAVariant = 'primary' | 'secondary' | 'white' | 'link' | 'money';
 type CTAType = 'validation' | 'whatsapp' | 'synapse' | 'contact' | 'material' | 'custom';
 
 interface TrackedCTAProps {
@@ -55,6 +55,7 @@ const CTA_CONFIG: Record<CTAType, { text: string; href?: string; isExternal?: bo
 
 const VARIANT_CLASSES: Record<CTAVariant, string> = {
   primary: 'btn btn-primary shadow-lg shadow-[var(--color-primary-500)]/20',
+  money: 'btn btn-lg btn-money',
   secondary: 'btn btn-secondary',
   white: 'btn bg-white text-[var(--color-primary-700)] hover:bg-white/90 shadow-lg font-bold',
   link: 'text-sm font-medium text-[var(--color-primary-600)] hover:underline',
