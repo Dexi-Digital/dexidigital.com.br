@@ -74,20 +74,15 @@ const nextConfig: NextConfig = {
         destination: '/servicos/software-sob-medida',
         permanent: true,
       },
-      // Legacy sector URLs
+      // Legacy sector URLs — /automotivo agora é página própria (vertical carro-chefe)
       {
         source: '/setores',
-        destination: '/setores/automotivo-premium',
-        permanent: false, // temporary until more sectors added
-      },
-      {
-        source: '/automotivo',
-        destination: '/setores/automotivo-premium',
-        permanent: true,
+        destination: '/automotivo',
+        permanent: false,
       },
       {
         source: '/concessionarias',
-        destination: '/setores/automotivo-premium',
+        destination: '/automotivo',
         permanent: true,
       },
       // Legacy misc URLs

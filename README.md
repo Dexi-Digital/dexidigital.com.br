@@ -115,16 +115,16 @@ See `supabase-schema.sql` for the complete schema.
 
 ## 🚢 Deployment
 
-O site roda em uma **VPS dedicada**. O deploy é feito via SSH:
+O site roda em uma **VPS dedicada** (`dexi-vps` no `~/.ssh/config` → 194.146.12.158), servido por PM2 (`dexidigital`, porta 3000) atrás do Nginx. O app vive em `/root/dexidigital.com.br`.
 
 1. Faça merge das alterações no branch `master` (via PR)
-2. Na VPS, atualize o código e rebuilde:
+2. Deploy via SSH (autenticado por chave `~/.ssh/dexi_vps`):
 
 ```bash
-ssh <vps-host> 'cd /var/www/dexidigital && git pull --ff-only origin master && npm ci && npm run build && pm2 restart dexidigital'
+ssh dexi-vps 'cd /root/dexidigital.com.br && git checkout -- . && git pull --ff-only origin master && npm ci --no-audit --no-fund && npm run build && pm2 restart dexidigital --update-env'
 ```
 
-Variáveis de ambiente (Supabase etc.) ficam no `.env.local` da VPS.
+O `git checkout -- .` descarta artefatos locais do `optimize-images` (prebuild) que bloqueariam o pull. Variáveis de ambiente (Supabase etc.) ficam no `.env.local` da VPS.
 
 ## 📚 Documentation
 
