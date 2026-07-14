@@ -38,7 +38,7 @@ const MOMENTOS = [
     overline: 'DEPOIS DA VENDA',
     titulo: 'Cobrança amigável das parcelas',
     corpo:
-      'Venda com recursos próprios é carteira longa. O Fykos acompanha cada parcela e cobra preservando o relacionamento: lembra antes do vencimento, negocia com quem atrasou e mantém o cliente por perto — a receita entra sem desgastar a relação.',
+      'Venda com recursos próprios é carteira longa. O Fykos acompanha cada parcela e cobra preservando o relacionamento: lembra antes do vencimento e, quando alguém atrasa, escala para o seu time negociar — a receita entra sem desgastar a relação.',
   },
 ];
 
@@ -185,9 +185,10 @@ export default function ConstrutorasPage() {
             <div className="card p-8 md:p-10">
               <h2 className="text-h3 mb-4">TGV Empreendimentos</h2>
               <p className="text-body text-[var(--text-secondary)]">
-                Nosso parceiro em construtoras e incorporadoras. É com a TGV que provamos o Fykos no
-                setor: nutrindo o lead de lançamento e acompanhando a carteira de parcelas sobre o
-                sistema que a operação já usa.
+                Nosso parceiro em construtoras e incorporadoras. É com a TGV que provamos a cobrança
+                amigável do Fykos: a carteira de parcelas acompanhada sobre o sistema que a operação
+                já usa — com tanto êxito que hoje há cliente procurando a TGV proativamente, antes
+                mesmo de ser cobrado.
               </p>
             </div>
           </div>
