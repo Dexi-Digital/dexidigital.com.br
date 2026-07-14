@@ -9,7 +9,7 @@ export default function Footer() {
     services: [
       { name: 'Engenharia de Dados & Ativos de Inteligência', href: '/servicos/inteligencia-de-dados' },
       { name: 'Desenvolvimento de Sistemas de Missão Crítica', href: '/servicos/software-sob-medida' },
-      { name: 'Arquitetura de Execução Agêntica (Synapse OS)', href: '/servicos/ia-para-empresas' },
+      { name: 'Sistema Operacional de Receita (Fykos)', href: '/servicos/ia-para-empresas' },
     ],
     company: [
       { name: 'Sobre', href: '/sobre' },
@@ -42,7 +42,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm text-white/60 leading-relaxed mb-4">
-              Arquitetura de Execução Agêntica e Engenharia de Missão Crítica. Orquestramos o Synapse OS para garantir soberania digital e impacto direto no EBITDA através de inteligência autônoma e supervisão técnica de elite.
+              A Dexi é uma empresa de software. Criamos o Fykos — um Sistema Operacional de Receita que reinventa o CRM e usa dados e IA para colocar dinheiro no bolso do dono, sobre os sistemas que sua operação já usa.
             </p>
             <p className="text-sm text-white/40">
               Para operações onde a precisão é inegociável.
@@ -108,17 +108,17 @@ export default function Footer() {
         <div className="mt-14 pt-10 border-t border-white/10">
           <div className="text-center mb-10">
             <p className="text-lg md:text-xl font-semibold text-white tracking-tight mb-2">
-              Engenharia de Execução Agêntica para Operações de Missão Crítica.
+              Inteligência nos comandos, trilhos na execução.
             </p>
             <p className="text-sm text-white/40">
-            Orquestramos o Synapse para converter dados complexos em soberania digital e EBITDA. Tecnologia brasileira com execução validada em líderes.
+            O Fykos converte dados complexos em receita, sobre o sistema que você já usa. Tecnologia brasileira com execução validada em líderes.
             </p>
           </div>
 
           {/* Bottom bar */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-6 border-t border-white/5">
             <p className="text-xs text-white/40">
-              © {currentYear} Dexi Digital. Engenharia de Elite para a Era Agêntica. Tecnologia validada em operações.
+              © {currentYear} Dexi Digital. Engenharia de receita. Tecnologia validada em operações.
             </p>
             <div className="flex gap-6">
               {navigation.legal.map((item) => (

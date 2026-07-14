@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
         }
 
         // 1. IP Resolution (Extract IP)
-        // In production, use X-Forwarded-For or similar headers from your hosting provider (Vercel, AWS, etc.)
+        // In production, use X-Forwarded-For or similar headers set by the reverse proxy (Nginx etc.)
         const ip = request.headers.get('x-forwarded-for') || '127.0.0.1';
 
         // Mock Enrichment Logic (Placeholder for Clearbit/Cortex)

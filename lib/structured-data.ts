@@ -85,7 +85,7 @@ export const localBusinessSchema = {
   priceRange: '$$$',
   openingHours: 'Mo-Fr 09:00-18:00',
   serviceType: [
-    'Arquitetura de Execução Agêntica (Synapse OS)',
+    'Sistema Operacional de Receita (Fykos)',
     'Engenharia de Dados & Ativos de Inteligência',
     'Desenvolvimento de Sistemas de Missão Crítica',
     'IA para Grupos Automotivos',
@@ -127,7 +127,7 @@ export const servicesSchema = [
     '@id': 'https://dexidigital.com.br/servicos/inteligencia-de-dados',
     name: 'Engenharia de Dados & Ativos de Inteligência',
     description:
-      'Transformamos dados brutos em combustível para a tomada de decisão autônoma. Estruturamos a base necessária para que o Synapse OS opere com precisão, conectando CRM, ERP, WhatsApp e voz em ativos proprietários auditáveis.',
+      'Transformamos dados brutos em combustível para a tomada de decisão. Estruturamos a base necessária para que o Fykos opere com precisão, conectando CRM, ERP, WhatsApp e voz em ativos proprietários auditáveis.',
     provider: {
       '@id': 'https://dexidigital.com.br/#organization',
     },
@@ -225,9 +225,9 @@ export const servicesSchema = [
     '@context': 'https://schema.org',
     '@type': 'Service',
     '@id': 'https://dexidigital.com.br/servicos/ia-para-empresas',
-    name: 'Arquitetura de Execução Agêntica (Synapse OS)',
+    name: 'Sistema Operacional de Receita (Fykos)',
     description:
-      'Implementação de agentes autônomos que não apenas respondem, mas executam. Focamos em ganho de escala, qualificação imediata e redução de latência operacional, transformando a IA em um motor de EBITDA real para jornadas consultivas e operações multiunidade.',
+      'O Fykos reinventa o CRM: um ecossistema proprietário de dados e IA que não apenas responde, mas executa — sobre os sistemas que a operação já usa. Ganho de escala, qualificação imediata e redução de latência operacional, transformando dados em um motor de receita real para jornadas consultivas e operações multiunidade.',
     provider: {
       '@id': 'https://dexidigital.com.br/#organization',
     },

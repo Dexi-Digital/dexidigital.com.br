@@ -8,7 +8,7 @@ Modern, AI-accelerated website for Dexi Digital built with Next.js 14+, TypeScri
 - **Language**: TypeScript 5.4+
 - **Styling**: Tailwind CSS 4+
 - **Database**: Supabase (PostgreSQL)
-- **Deployment**: Vercel (recommended)
+- **Deployment**: VPS dedicada (Node.js + Nginx)
 
 ## 📋 Prerequisites
 
@@ -115,15 +115,16 @@ See `supabase-schema.sql` for the complete schema.
 
 ## 🚢 Deployment
 
-### Deploy to Vercel
+O site roda em uma **VPS dedicada**. O deploy é feito via SSH:
 
-1. Push your code to GitHub
-2. Go to [Vercel](https://vercel.com)
-3. Import your repository
-4. Add environment variables (Supabase URL and keys)
-5. Deploy!
+1. Faça merge das alterações no branch `master` (via PR)
+2. Na VPS, atualize o código e rebuilde:
 
-Vercel will automatically detect Next.js and configure everything.
+```bash
+ssh <vps-host> 'cd /var/www/dexidigital && git pull --ff-only origin master && npm ci && npm run build && pm2 restart dexidigital'
+```
+
+Variáveis de ambiente (Supabase etc.) ficam no `.env.local` da VPS.
 
 ## 📚 Documentation
 
