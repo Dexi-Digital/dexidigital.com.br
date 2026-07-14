@@ -37,8 +37,9 @@ const CTA_CONFIG: Record<CTAType, { text: string; href?: string; isExternal?: bo
     isExternal: true,
   },
   synapse: {
-    text: 'Conhecer o Synapse OS',
-    href: '/metodologia',
+    text: 'Conhecer o Fykos',
+    href: 'https://fykos.com.br',
+    isExternal: true,
   },
   contact: {
     text: 'Iniciar Conversa',
