@@ -5,9 +5,12 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Fykos para Clínicas | Dexi Digital',
   description:
-    'O Fykos reaquece paciente parado, remarca retorno e reduz o no-show — sobre o seu sistema de gestão e agenda clínica, sem trocar de ferramenta. Seja um caso-fundador com diagnóstico de 24h.',
+    'O Fykos cria relacionamento contínuo com cada paciente: acompanha procedimentos recorrentes, antecipa retorno e renovação de receita e reduz o no-show — sobre o seu sistema de gestão e prontuário. Seja um caso-fundador com diagnóstico de 24h.',
   keywords: [
     'IA para clínicas',
+    'relacionamento com pacientes',
+    'procedimentos recorrentes',
+    'renovação de receita médica',
     'reduzir no-show',
     'remarcação de retorno',
     'gestão de clínica',
@@ -18,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Fykos para Clínicas | A Dexi não deixa o paciente sumir',
     description:
-      'Reaquece paciente parado, remarca retorno e reduz o no-show sobre o seu sistema de gestão. Estamos selecionando as primeiras clínicas como casos-fundadores.',
+      'Relacionamento contínuo com o paciente: procedimentos recorrentes em dia, retorno e renovação de receita antecipados, menos no-show — sobre o seu sistema de gestão. Estamos selecionando as primeiras clínicas como casos-fundadores.',
     type: 'website',
     locale: 'pt_BR',
   },
@@ -33,7 +36,7 @@ const DIFERENCIAIS = [
   {
     titulo: 'Nenhum paciente some',
     corpo:
-      'Reaquece o paciente parado, remarca o retorno na hora certa e reduz o no-show. Cada buraco na agenda vira uma oportunidade de receita que volta — não uma cadeira vazia.',
+      'Relacionamento contínuo, não resgate de última hora. O Fykos acompanha quem faz procedimento recorrente — a soroterapia que exige aplicação semanal, a receita que precisa ser renovada e não pode esperar três meses por uma consulta — e remarca o retorno na hora certa, antes de a agenda abrir buraco.',
   },
   {
     titulo: 'Comandos com inteligência, execução em trilhos',
@@ -61,8 +64,10 @@ export default function ClinicasPage() {
             </h1>
 
             <p className="text-lead text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto animate-fade-in-up delay-150">
-              O Fykos reaquece paciente parado, remarca retorno e reduz o no-show — sobre o seu
-              sistema de gestão e prontuário, sem trocar de ferramenta.
+              O Fykos cria relacionamento com cada paciente para que ele naturalmente não fique
+              parado: acompanha procedimentos recorrentes, antecipa retorno e renovação de receita
+              e reduz o no-show — sobre o seu sistema de gestão e prontuário, sem trocar de
+              ferramenta.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4 animate-fade-in-up delay-200">
@@ -83,7 +88,10 @@ export default function ClinicasPage() {
           <div className="max-w-5xl mx-auto">
             <div className="section-header text-center">
               <h2 className="text-h2">Cada cadeira vazia é receita que dá para recuperar</h2>
-              <p className="text-lead">A mesma espinha do Fykos, na linguagem da clínica.</p>
+              <p className="text-lead">
+                Os três pilares que sustentam o Fykos em qualquer setor — aqui, na linguagem da
+                clínica.
+              </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">

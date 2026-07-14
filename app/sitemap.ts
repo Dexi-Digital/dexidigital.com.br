@@ -58,6 +58,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Páginas de setores
   const sectorPages: MetadataRoute.Sitemap = [
     {
+      url: `${baseUrl}/automotivo`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/construtoras`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/clinicas`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/setores/automotivo-premium`,
       lastModified: currentDate,
       changeFrequency: 'monthly',

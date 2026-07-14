@@ -190,7 +190,7 @@ export default function HomePage() {
             <p className="text-overline mb-2">ONDE JÁ PROVAMOS</p>
             <h2 className="text-h2 mb-4">Grupos automotivos já rodam o Fykos na operação.</h2>
             <p className="text-lead text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto md:mx-0">
-              Do premium ao popular e duas rodas — nenhum lead morre, integrado ao DMS e ao Syonet. É a nossa cabeça de ponte.
+              Do super esportivo ao premium e duas rodas — nenhum lead morre, integrado ao DMS e ao Syonet. É a nossa cabeça de ponte.
             </p>
 
             <div className="flex flex-wrap gap-3 justify-center md:justify-start mb-10">

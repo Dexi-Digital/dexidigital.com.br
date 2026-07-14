@@ -9,10 +9,16 @@ export const metadata: Metadata = {
     'Sistema de receita sobre o seu DMS e Syonet: qualifica, reaquece e ressuscita cada lead. +45% de conversão e R$ 7M+ recuperados em grupos automotivos, sem migrar de sistema.',
   keywords: [
     'IA para concessionárias',
+    'atendimento com inteligência artificial',
+    'inteligência artificial para concessionárias',
+    'qualificação de leads automotivos',
+    'lead scoring automotivo',
+    'automação de atendimento para concessionárias',
     'CRM automotivo',
     'integração DMS',
     'Syonet',
     'recuperação de leads automotivo',
+    'nutrição de leads',
     'grupos automotivos',
     'Fykos',
   ],
@@ -34,7 +40,7 @@ const DIFERENCIAIS = [
   {
     titulo: 'Nenhum lead morre',
     corpo:
-      'Qualifica o lead no primeiro minuto, reaquece quem esfriou e ressuscita a oportunidade parada na carteira. O vendedor foca em quem fecha; o Fykos não deixa ninguém no limbo do CRM.',
+      'Qualifica o lead no primeiro minuto, reaquece quem esfriou e ressuscita a oportunidade parada na carteira. E quem ainda não está na hora de comprar fica no pipeline, nutrido até o momento certo. O vendedor foca em quem fecha agora; o Fykos não deixa ninguém no limbo do CRM.',
   },
   {
     titulo: 'Comandos com inteligência, execução em trilhos',
@@ -73,7 +79,8 @@ export default function AutomotivoPage() {
 
             <p className="text-lead text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto animate-fade-in-up delay-150">
               Sistema de receita sobre o seu DMS e Syonet: qualifica, reaquece e ressuscita cada
-              oportunidade. Vende sem esquecer, recupera sem migrar.
+              oportunidade — e mantém quem ainda não está pronto nutrido até o momento de compra.
+              A receita não vai embora: fica na base e vira previsibilidade de venda.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4 animate-fade-in-up delay-200">
@@ -123,6 +130,14 @@ export default function AutomotivoPage() {
                 </div>
               </div>
             </div>
+
+            <div className="card card-result mt-6 p-6 md:p-8 transition-colors">
+              <p className="text-overline mb-2">DESTAQUE</p>
+              <p className="text-body md:text-lg text-[var(--text-primary)]">
+                Um Audi RS Q8 de <span className="text-result font-bold">R$ 1 milhão</span> vendido
+                com apenas 15 dias de operação do Fykos.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -160,7 +175,7 @@ export default function AutomotivoPage() {
                 <ul className="space-y-3">
                   <li className="flex gap-2 text-sm text-[var(--text-secondary)]">
                     <span className="text-green-500 font-bold">✓</span>
-                    <span>Executa o ciclo de receita inteiro: qualifica, reaquece e fecha.</span>
+                    <span>Executa o ciclo de receita inteiro: qualifica, nutre, reaquece e fecha.</span>
                   </li>
                   <li className="flex gap-2 text-sm text-[var(--text-secondary)]">
                     <span className="text-green-500 font-bold">✓</span>
@@ -183,7 +198,10 @@ export default function AutomotivoPage() {
           <div className="max-w-5xl mx-auto">
             <div className="section-header text-center">
               <h2 className="text-h2">Três diferenciais que colocam dinheiro no bolso do dono</h2>
-              <p className="text-lead">A mesma espinha do Fykos, na linguagem da concessionária.</p>
+              <p className="text-lead">
+                Os três pilares que sustentam o Fykos em qualquer setor — aqui, na linguagem da
+                concessionária.
+              </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
@@ -235,7 +253,8 @@ export default function AutomotivoPage() {
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-overline mb-2">ONDE JÁ PROVAMOS</p>
             <h2 className="text-h3 mb-8">
-              Grupos automotivos já rodam o Fykos na operação — do premium ao popular e duas rodas.
+              Grupos automotivos já rodam o Fykos na operação — do super esportivo ao premium e duas
+              rodas.
             </h2>
             <div className="flex flex-wrap gap-x-8 gap-y-4 justify-center">
               {CLIENTES.map((nome) => (
