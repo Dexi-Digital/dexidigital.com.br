@@ -210,7 +210,7 @@ export default function Header() {
                 </svg>
               )}
             </button>
-            <TrackedCTA type="validation" location="header" variant="primary" text="Agendar diagnóstico" className="text-sm" />
+            <TrackedCTA type="validation" location="header" variant="money" text="Agendar diagnóstico" className="text-sm" />
           </div>
         </div>
 
@@ -290,7 +290,7 @@ export default function Header() {
                   )}
                 </button>
                 <div onClick={() => setMobileMenuOpen(false)}>
-                  <TrackedCTA type="validation" location="header-mobile" variant="primary" text="Agendar diagnóstico" className="w-full text-center text-sm" />
+                  <TrackedCTA type="validation" location="header-mobile" variant="money" text="Agendar diagnóstico" className="w-full text-center text-sm" />
                 </div>
               </div>
             </div>

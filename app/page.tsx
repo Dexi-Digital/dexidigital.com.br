@@ -3,6 +3,7 @@ import FAQItem from '@/components/ui/FAQItem';
 import TrackedCTA from '@/components/ui/TrackedCTA';
 import HeroWave from '@/components/HeroWave';
 import CountUp from '@/components/ui/CountUp';
+import ClientLogos from '@/components/ui/ClientLogos';
 import { getHomePageSchemas, localBusinessSchema } from '@/lib/structured-data';
 import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
 import type { Metadata } from 'next';
@@ -193,19 +194,7 @@ export default function HomePage() {
               Do super esportivo ao premium e duas rodas — nenhum lead morre, integrado ao DMS e ao Syonet. É a nossa cabeça de ponte.
             </p>
 
-            <div className="flex flex-wrap gap-3 justify-center md:justify-start mb-10">
-              {[
-                'Audi Center Uberlândia',
-                'Euroville GWM',
-                'Euroville Royal Enfield',
-                'Attra Veículos',
-                'Vamaq Motors',
-              ].map((cliente) => (
-                <span key={cliente} className="card px-5 py-2 text-sm font-medium text-[var(--text-primary)]">
-                  {cliente}
-                </span>
-              ))}
-            </div>
+            <ClientLogos align="start" className="mb-10" />
 
             <TrackedCTA type="custom" location="caso-automotivo" variant="secondary" text="Ver a solução para concessionárias →" href="/automotivo" />
           </div>
@@ -222,25 +211,25 @@ export default function HomePage() {
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
-              <Link href="/automotivo" className="card p-6 md:p-8 text-left transition-base hover:border-[var(--color-primary-500)] group">
+              <Link href="/automotivo" className="card p-6 md:p-8 text-left transition-base hover:border-[var(--color-result-500)] group">
                 <span className="text-xs font-semibold uppercase tracking-wide text-[var(--color-primary-600)]">Ativo · carro-chefe</span>
                 <h3 className="text-h5 mt-2 mb-2">Automotivo</h3>
                 <p className="text-body-sm text-[var(--text-secondary)]">Concessionárias e grupos automotivos, sobre o DMS e o Syonet.</p>
-                <span className="inline-block mt-4 text-sm font-medium text-[var(--color-primary-600)] group-hover:underline">Ver a solução →</span>
+                <span className="inline-block mt-4 text-sm font-medium text-[var(--text-result)] group-hover:underline">Ver a solução →</span>
               </Link>
 
-              <Link href="/clinicas" className="card p-6 md:p-8 text-left transition-base hover:border-[var(--color-primary-500)] group">
+              <Link href="/clinicas" className="card p-6 md:p-8 text-left transition-base hover:border-[var(--color-result-500)] group">
                 <span className="text-xs font-semibold uppercase tracking-wide text-[var(--text-tertiary)]">Aplicação do Fykos</span>
                 <h3 className="text-h5 mt-2 mb-2">Clínicas</h3>
                 <p className="text-body-sm text-[var(--text-secondary)]">Reaquece paciente parado, remarca retorno e reduz no-show, sobre o seu sistema de gestão.</p>
-                <span className="inline-block mt-4 text-sm font-medium text-[var(--color-primary-600)] group-hover:underline">Ver a aplicação →</span>
+                <span className="inline-block mt-4 text-sm font-medium text-[var(--text-result)] group-hover:underline">Ver a aplicação →</span>
               </Link>
 
-              <Link href="/construtoras" className="card p-6 md:p-8 text-left transition-base hover:border-[var(--color-primary-500)] group">
+              <Link href="/construtoras" className="card p-6 md:p-8 text-left transition-base hover:border-[var(--color-result-500)] group">
                 <span className="text-xs font-semibold uppercase tracking-wide text-[var(--text-tertiary)]">Prova: TGV Empreendimentos</span>
                 <h3 className="text-h5 mt-2 mb-2">Construtoras e Incorporadoras</h3>
                 <p className="text-body-sm text-[var(--text-secondary)]">Reaquece o lead de lançamento e acompanha a carteira, sobre o CRM de vendas que você já usa.</p>
-                <span className="inline-block mt-4 text-sm font-medium text-[var(--color-primary-600)] group-hover:underline">Ver a solução →</span>
+                <span className="inline-block mt-4 text-sm font-medium text-[var(--text-result)] group-hover:underline">Ver a solução →</span>
               </Link>
             </div>
           </div>

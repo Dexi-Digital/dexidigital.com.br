@@ -43,23 +43,23 @@ export const metadata: Metadata = {
     locale: 'pt_BR',
     url: 'https://dexidigital.com.br',
     siteName: 'Dexi Digital',
-    title: 'Dexi Digital - IA Acelerada + Inteligência de Dados para Empresas',
+    title: 'Dexi Digital | Fykos — Sistema Operacional de Receita',
     description:
-      'Soluções de software e dados para empresas que não podem falhar. IA como acelerador, nunca sozinha.',
+      'O Fykos reinventa o CRM e transforma seus dados em receita, sobre os sistemas que sua operação já usa. Não é IA genérica. É engenharia de receita.',
     images: [
       {
         url: '/og-image-home.jpg',
         width: 1200,
         height: 630,
-        alt: 'Dexi Digital - IA Acelerada + Inteligência de Dados',
+        alt: 'Dexi Digital — Fykos, Sistema Operacional de Receita',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dexi Digital - IA Acelerada + Inteligência de Dados para Empresas',
+    title: 'Dexi Digital | Fykos — Sistema Operacional de Receita',
     description:
-      'Soluções de software e dados para empresas que não podem falhar. IA como acelerador, nunca sozinha.',
+      'O Fykos reinventa o CRM e transforma seus dados em receita, sobre os sistemas que sua operação já usa. Não é IA genérica. É engenharia de receita.',
     images: ['/og-image-home.jpg'],
   },
   robots: {

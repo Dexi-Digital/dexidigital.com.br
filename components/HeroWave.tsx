@@ -17,8 +17,8 @@ export default function HeroWave({ className = '' }: { className?: string }) {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Parâmetros travados
-    const AMP = 0.45; // intensidade
+    // Parâmetros travados (suavizados para não competir com o texto)
+    const AMP = 0.32; // intensidade
     const SPD = 0.007; // velocidade
 
     let W = 0,
@@ -63,16 +63,33 @@ export default function HeroWave({ className = '' }: { className?: string }) {
           const cx =
             W * cu.x0 + Math.sin(y * cu.freq + t * SPD * 9 + cu.ph) * W * cu.amp * (0.6 + AMP);
           const depth = 0.4 + (y / H) * 0.8;
-          blob(cx, y, W * cu.w * AMP * 1.2, cu.col, 0.045 * depth);
+          blob(cx, y, W * cu.w * AMP * 1.2, cu.col, 0.026 * depth);
         }
       }
       ctx.globalCompositeOperation = 'source-over';
+      // Véu escuro no centro para garantir contraste do texto do herói
+      const veil = ctx.createRadialGradient(W / 2, H * 0.42, 0, W / 2, H * 0.42, Math.max(W, H) * 0.62);
+      veil.addColorStop(0, 'rgba(6,8,15,0.55)');
+      veil.addColorStop(1, 'rgba(6,8,15,0)');
+      ctx.fillStyle = veil;
+      ctx.fillRect(0, 0, W, H);
     };
 
+    let running = false;
     const loop = () => {
+      if (!running) return;
       t += 0.016;
       draw();
       raf = requestAnimationFrame(loop);
+    };
+    const startLoop = () => {
+      if (running) return;
+      running = true;
+      raf = requestAnimationFrame(loop);
+    };
+    const stopLoop = () => {
+      running = false;
+      cancelAnimationFrame(raf);
     };
 
     resize();
@@ -83,15 +100,23 @@ export default function HeroWave({ className = '' }: { className?: string }) {
       window.matchMedia &&
       window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    let io: IntersectionObserver | null = null;
     if (reduce) {
       draw();
     } else {
-      loop();
+      io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => (e.isIntersecting ? startLoop() : stopLoop()));
+        },
+        { threshold: 0.01 }
+      );
+      io.observe(canvas);
     }
 
     return () => {
-      cancelAnimationFrame(raf);
+      stopLoop();
       window.removeEventListener('resize', resize);
+      if (io) io.disconnect();
     };
   }, []);
 
