@@ -72,8 +72,8 @@
   - Auth: Supabase Auth (for admin/blog management)
   - Storage: Supabase Storage (images, assets)
   - Real-time: Optional for admin dashboard
-- **Deployment**: Vercel (Edge Functions, ISR, Image Optimization)
-- **Analytics**: Vercel Analytics + Google Analytics 4
+- **Deployment**: VPS dedicada (Node.js + Nginx, build via `next build`)
+- **Analytics**: Google Analytics 4
 - **Forms**: React Hook Form + Zod validation
 - **Email**: Resend or SendGrid (contact form notifications)
 

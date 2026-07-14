@@ -84,10 +84,10 @@ export function checkRateLimit(
 
 /**
  * Get client IP from Next.js request
- * Handles various proxy headers used by Vercel, Cloudflare, etc.
+ * Handles various proxy headers used by Nginx, Cloudflare, etc.
  */
 export function getClientIP(request: Request): string {
-  // Vercel
+  // Reverse proxy (Nginx etc.)
   const xForwardedFor = request.headers.get('x-forwarded-for');
   if (xForwardedFor) {
     return xForwardedFor.split(',')[0].trim();

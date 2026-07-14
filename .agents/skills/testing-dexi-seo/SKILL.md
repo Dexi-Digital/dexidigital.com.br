@@ -91,8 +91,8 @@ These operational metrics should appear on `/setores/automotivo-premium`:
 
 ## Common Pitfalls
 
-### Vercel Preview Auth
-The Vercel preview deployment may be auth-protected (returns 401). Use `localhost:3000` for testing instead.
+### Ambiente de teste
+O site roda em VPS dedicada (sem preview deployments). Use `localhost:3000` para testar antes do deploy.
 
 ### Lint Command
 `npx next lint` may produce unexpected output. Use `npx next build` to verify code quality instead.

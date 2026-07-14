@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import FAQItem from '@/components/ui/FAQItem';
 import TrackedCTA from '@/components/ui/TrackedCTA';
 import HeroWave from '@/components/HeroWave';
