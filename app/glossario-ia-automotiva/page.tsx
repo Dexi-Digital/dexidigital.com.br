@@ -5,7 +5,7 @@ import { GLOSSARIO_TERMS, GLOSSARIO_CATEGORIES } from '@/lib/seo/glossario';
 export const metadata: Metadata = {
   title: 'Glossário IA Automotiva | Termos e Conceitos | Dexi Digital',
   description:
-    'Glossário completo de IA automotiva: execução agêntica, lead scoring, DMS, Shadow CRM e mais. Entenda os termos que estão transformando concessionárias no Brasil.',
+    'Glossário completo de IA automotiva: IA que executa, lead scoring, DMS, Shadow CRM e mais. Entenda os termos que estão transformando concessionárias no Brasil.',
   keywords: [
     'glossário IA automotiva',
     'termos IA concessionária',

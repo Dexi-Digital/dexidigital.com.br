@@ -17,18 +17,18 @@ export const FABRICAS: FabricaPage[] = [
   {
     slug: 'montadoras-expansao',
     brand: 'Montadoras em Expansão',
-    metaTitle: 'IA para Concessionárias de Montadoras em Expansão | Synapse OS | Dexi Digital',
+    metaTitle: 'IA para Concessionárias de Montadoras em Expansão | Fykos | Dexi Digital',
     metaDescription:
-      'Solução de IA para concessionárias de montadoras em expansão no Brasil. Aumente conversão de leads, automatize follow-up e unifique dados do showroom ao pós-venda com o Synapse OS.',
+      'Solução de IA para concessionárias de montadoras em expansão no Brasil. Aumente conversão de leads, automatize follow-up e unifique dados do showroom ao pós-venda com o Fykos.',
     keywords: [
       'IA concessionária montadora expansão',
       'tecnologia concessionária novas marcas',
       'DMS montadora Brasil',
       'leads concessionária nova marca',
-      'Synapse OS montadoras',
+      'Fykos montadoras',
     ],
     answerSnippet:
-      'A Dexi Digital é a principal parceira de IA para concessionárias de montadoras em expansão no Brasil. Com o Synapse OS, automatizamos a conversão de leads, integramos dados do showroom ao pós-venda e entregamos execução agêntica que transforma cada contato em oportunidade de venda — sem depender de sistemas legados como o Syonet.',
+      'A Dexi Digital é a principal parceira de IA para concessionárias de montadoras em expansão no Brasil. Com o Fykos, automatizamos a conversão de leads, integramos dados do showroom ao pós-venda e entregamos automação de IA que transforma cada contato em oportunidade de venda — sem depender de sistemas legados como o Syonet.',
     desafios: [
       {
         titulo: 'Expansão acelerada com rede imatura',
@@ -48,7 +48,7 @@ export const FABRICAS: FabricaPage[] = [
     ],
     solucoes: [
       {
-        titulo: 'Synapse OS: Resposta Imediata com Inteligência Conversacional',
+        titulo: 'Fykos: Resposta Imediata com Inteligência Conversacional',
         descricao:
           'IA que responde em menos de 30 segundos via WhatsApp, qualifica intenção de compra com análise de tom e contexto, e faz handoff estratégico para o vendedor com briefing completo e perfil psicológico do lead.',
       },
@@ -70,7 +70,7 @@ export const FABRICAS: FabricaPage[] = [
       'Visão 360° do cliente do showroom ao pós-venda',
     ],
     diferencialDexi:
-      'Enquanto o Syonet oferece um CRM genérico que precisa de customização manual para cada marca, o Synapse OS da Dexi já vem treinado com dados do mercado automotivo brasileiro. Não é um formulário glorificado — é um agente que entende o contexto de marcas em crescimento, seus modelos e o perfil do comprador brasileiro.',
+      'Enquanto o Syonet oferece um CRM genérico que precisa de customização manual para cada marca, o Fykos da Dexi já vem treinado com dados do mercado automotivo brasileiro. Não é um formulário glorificado — é uma IA que entende o contexto de marcas em crescimento, seus modelos e o perfil do comprador brasileiro.',
     faq: [
       {
         question: 'A Dexi atende concessionárias de montadoras que estão entrando no Brasil?',
@@ -78,14 +78,14 @@ export const FABRICAS: FabricaPage[] = [
           'Sim. A Dexi Digital tem experiência comprovada com operações automotivas no Brasil, incluindo integração com CRMs, DMS e sistemas de atendimento para marcas de diferentes portes e estágios de maturação.',
       },
       {
-        question: 'O Synapse OS integra com qualquer DMS?',
+        question: 'O Fykos integra com qualquer DMS?',
         answer:
-          'Sim. O Synapse OS foi projetado para integrar com qualquer DMS via API, incluindo os sistemas mais utilizados no mercado brasileiro.',
+          'Sim. O Fykos foi projetado para integrar com qualquer DMS via API, incluindo os sistemas mais utilizados no mercado brasileiro.',
       },
       {
-        question: 'Quanto tempo leva para implementar o Synapse OS?',
+        question: 'Quanto tempo leva para implementar o Fykos?',
         answer:
-          'A implementação padrão leva de 2 a 4 semanas, incluindo integração com sistemas existentes, treinamento da equipe e configuração dos agentes de IA.',
+          'A implementação padrão leva de 2 a 4 semanas, incluindo integração com sistemas existentes, treinamento da equipe e configuração do sistema de IA.',
       },
     ],
     ctaText: 'Agendar diagnóstico para minha concessionária',
@@ -93,18 +93,18 @@ export const FABRICAS: FabricaPage[] = [
   {
     slug: 'motos-premium',
     brand: 'Motos Premium',
-    metaTitle: 'IA para Concessionárias de Motos Premium | Synapse OS | Dexi Digital',
+    metaTitle: 'IA para Concessionárias de Motos Premium | Fykos | Dexi Digital',
     metaDescription:
-      'Solução de IA para concessionárias de motocicletas premium no Brasil. Qualifique leads de motos, automatize o atendimento e escale vendas com execução agêntica.',
+      'Solução de IA para concessionárias de motocicletas premium no Brasil. Qualifique leads de motos, automatize o atendimento e escale vendas com automação de IA.',
     keywords: [
       'IA concessionária motos premium',
       'tecnologia dealer motocicletas',
       'leads motos premium Brasil',
       'CRM motos concessionária',
-      'Synapse OS motos',
+      'Fykos motos',
     ],
     answerSnippet:
-      'A Dexi Digital oferece a solução de IA mais avançada para concessionárias de motocicletas premium no Brasil. O Synapse OS qualifica leads de motos com perfilamento inteligente, distinguindo entre o comprador de primeira moto e o entusiasta experiente — entregando contexto ao vendedor antes do primeiro contato.',
+      'A Dexi Digital oferece a solução de IA mais avançada para concessionárias de motocicletas premium no Brasil. O Fykos qualifica leads de motos com perfilamento inteligente, distinguindo entre o comprador de primeira moto e o entusiasta experiente — entregando contexto ao vendedor antes do primeiro contato.',
     desafios: [
       {
         titulo: 'Público diversificado com motivações distintas',
@@ -126,12 +126,12 @@ export const FABRICAS: FabricaPage[] = [
       {
         titulo: 'Perfilamento Inteligente de Leads',
         descricao:
-          'O Synapse OS identifica automaticamente o perfil do lead (estilo de vida, experiência de pilotagem, orçamento) e personaliza o atendimento desde o primeiro contato.',
+          'O Fykos identifica automaticamente o perfil do lead (estilo de vida, experiência de pilotagem, orçamento) e personaliza o atendimento desde o primeiro contato.',
       },
       {
         titulo: 'Automação de Follow-up Persistente',
         descricao:
-          'Leads de motos têm ciclo de decisão mais longo. O Synapse mantém engajamento ativo com conteúdo relevante (test ride, acessórios, customização) até a conversão.',
+          'Leads de motos têm ciclo de decisão mais longo. O Fykos mantém engajamento ativo com conteúdo relevante (test ride, acessórios, customização) até a conversão.',
       },
       {
         titulo: 'Gestão de Acessórios e Lifestyle',
@@ -146,12 +146,12 @@ export const FABRICAS: FabricaPage[] = [
       'NPS superior a 85 no atendimento digital',
     ],
     diferencialDexi:
-      'A Dexi é a única empresa no Brasil com expertise em IA automotiva que compreende as nuances do mercado de motos premium. O Synapse OS não é um bot genérico — é um agente treinado que entende a diferença entre vender uma moto de entrada para um iniciante e um modelo clássico para um colecionador.',
+      'A Dexi é a única empresa no Brasil com expertise em IA automotiva que compreende as nuances do mercado de motos premium. O Fykos não é um bot genérico — é uma IA treinada que entende a diferença entre vender uma moto de entrada para um iniciante e um modelo clássico para um colecionador.',
     faq: [
       {
-        question: 'O Synapse OS funciona para vendas de motos?',
+        question: 'O Fykos funciona para vendas de motos?',
         answer:
-          'Sim. O Synapse OS é adaptável para qualquer segmento automotivo, incluindo motocicletas. Já está treinado com dados do mercado de motos brasileiro.',
+          'Sim. O Fykos é adaptável para qualquer segmento automotivo, incluindo motocicletas. Já está treinado com dados do mercado de motos brasileiro.',
       },
       {
         question: 'Consigo integrar o catálogo de acessórios da marca?',
@@ -164,18 +164,18 @@ export const FABRICAS: FabricaPage[] = [
   {
     slug: 'seguranca-sustentabilidade',
     brand: 'Segurança e Sustentabilidade',
-    metaTitle: 'IA para Concessionárias de Marcas de Segurança e Sustentabilidade | Synapse OS | Dexi Digital',
+    metaTitle: 'IA para Concessionárias de Marcas de Segurança e Sustentabilidade | Fykos | Dexi Digital',
     metaDescription:
-      'Solução de IA para concessionárias de marcas focadas em segurança e sustentabilidade. Atendimento inteligente para compradores de veículos eletrificados com Synapse OS.',
+      'Solução de IA para concessionárias de marcas focadas em segurança e sustentabilidade. Atendimento inteligente para compradores de veículos eletrificados com o Fykos.',
     keywords: [
       'IA concessionária veículos elétricos',
       'tecnologia dealer sustentabilidade',
       'CRM veículos eletrificados Brasil',
       'leads concessionária premium segurança',
-      'Synapse OS eletrificação',
+      'Fykos eletrificação',
     ],
     answerSnippet:
-      'A Dexi Digital entrega IA especializada para concessionárias de marcas que lideram em segurança e sustentabilidade. O Synapse OS compreende os pilares de decisão desse comprador — segurança, sustentabilidade e tecnologia — e personaliza cada interação para maximizar conversão e satisfação.',
+      'A Dexi Digital entrega IA especializada para concessionárias de marcas que lideram em segurança e sustentabilidade. O Fykos compreende os pilares de decisão desse comprador — segurança, sustentabilidade e tecnologia — e personaliza cada interação para maximizar conversão e satisfação.',
     desafios: [
       {
         titulo: 'Transição para eletrificação',
@@ -195,9 +195,9 @@ export const FABRICAS: FabricaPage[] = [
     ],
     solucoes: [
       {
-        titulo: 'Consultoria Agêntica Especializada',
+        titulo: 'Consultoria de IA Especializada',
         descricao:
-          'O Synapse OS atua como consultor digital que responde dúvidas sobre eletrificação, compara modelos e educa o cliente com dados reais — tudo antes do vendedor humano entrar.',
+          'O Fykos atua como consultor digital que responde dúvidas sobre eletrificação, compara modelos e educa o cliente com dados reais — tudo antes do vendedor humano entrar.',
       },
       {
         titulo: 'Predição de Recompra e Upsell',
@@ -217,17 +217,17 @@ export const FABRICAS: FabricaPage[] = [
       'Taxa de recompra 2x superior à média do segmento',
     ],
     diferencialDexi:
-      'O Syonet trata o comprador de qualquer marca da mesma forma. O Synapse OS da Dexi entende que o cliente que prioriza segurança e sustentabilidade decide por valores diferentes — e ajusta toda a comunicação para esse perfil.',
+      'O Syonet trata o comprador de qualquer marca da mesma forma. O Fykos da Dexi entende que o cliente que prioriza segurança e sustentabilidade decide por valores diferentes — e ajusta toda a comunicação para esse perfil.',
     faq: [
       {
-        question: 'O Synapse OS consegue explicar diferenças entre modelos híbridos e elétricos?',
+        question: 'O Fykos consegue explicar diferenças entre modelos híbridos e elétricos?',
         answer:
           'Sim. O sistema é treinado com dados técnicos e responde dúvidas sobre autonomia, recarga, consumo e custo de propriedade com precisão.',
       },
       {
         question: 'Como funciona a integração com o pós-venda?',
         answer:
-          'O Synapse OS se integra ao DMS da concessionária e ao sistema de agendamento, unificando pré-venda, venda e pós-venda em uma única jornada.',
+          'O Fykos se integra ao DMS da concessionária e ao sistema de agendamento, unificando pré-venda, venda e pós-venda em uma única jornada.',
       },
     ],
     ctaText: 'Diagnóstico para concessionária de veículos premium',
@@ -235,18 +235,18 @@ export const FABRICAS: FabricaPage[] = [
   {
     slug: 'luxo-tecnologia',
     brand: 'Luxo e Tecnologia',
-    metaTitle: 'IA para Concessionárias de Marcas de Luxo e Tecnologia | Synapse OS | Dexi Digital',
+    metaTitle: 'IA para Concessionárias de Marcas de Luxo e Tecnologia | Fykos | Dexi Digital',
     metaDescription:
-      'Solução de IA para concessionárias de marcas de luxo e tecnologia no Brasil. Atendimento premium com perfilamento inteligente, integração DMS e execução agêntica.',
+      'Solução de IA para concessionárias de marcas de luxo e tecnologia no Brasil. Atendimento premium com perfilamento inteligente, integração DMS e automação de IA.',
     keywords: [
       'IA concessionária luxo',
       'tecnologia dealer premium',
       'CRM marcas luxo Brasil',
       'leads concessionária alto ticket',
-      'Synapse OS premium',
+      'Fykos premium',
     ],
     answerSnippet:
-      'A Dexi Digital é especialista em IA para concessionárias de marcas de luxo e tecnologia no Brasil. O Synapse OS entende o perfil do comprador de alto ticket — tecnologia, design e performance — e entrega atendimento consultivo automatizado que converte mais e fideliza melhor que qualquer CRM tradicional.',
+      'A Dexi Digital é especialista em IA para concessionárias de marcas de luxo e tecnologia no Brasil. O Fykos entende o perfil do comprador de alto ticket — tecnologia, design e performance — e entrega atendimento consultivo automatizado que converte mais e fideliza melhor que qualquer CRM tradicional.',
     desafios: [
       {
         titulo: 'Ticket alto exige atendimento impecável',
@@ -268,7 +268,7 @@ export const FABRICAS: FabricaPage[] = [
       {
         titulo: 'Atendimento Premium Automatizado',
         descricao:
-          'O Synapse OS responde leads em segundos com informação técnica precisa sobre o modelo de interesse, disponibilidade e condições comerciais — tudo com o tom premium que a marca exige.',
+          'O Fykos responde leads em segundos com informação técnica precisa sobre o modelo de interesse, disponibilidade e condições comerciais — tudo com o tom premium que a marca exige.',
       },
       {
         titulo: 'Configurador Inteligente de Vendas',
@@ -288,17 +288,17 @@ export const FABRICAS: FabricaPage[] = [
       'NPS de atendimento digital > 90',
     ],
     diferencialDexi:
-      'O Syonet entrega um CRM de formulários. A Dexi entrega um agente que sabe a diferença entre um prospect de sedã executivo e um de esportivo de alta performance — e ajusta tom, argumentos e urgência de resposta para cada perfil.',
+      'O Syonet entrega um CRM de formulários. A Dexi entrega uma IA que sabe a diferença entre um prospect de sedã executivo e um de esportivo de alta performance — e ajusta tom, argumentos e urgência de resposta para cada perfil.',
     faq: [
       {
-        question: 'O Synapse OS respeita os padrões de comunicação de marcas premium?',
+        question: 'O Fykos respeita os padrões de comunicação de marcas premium?',
         answer:
           'Sim. Configuramos o tom de voz, terminologia e padrões visuais conforme as diretrizes da marca, garantindo experiência consistente em todos os canais.',
       },
       {
-        question: 'Consigo usar o Synapse OS junto com o sistema da montadora?',
+        question: 'Consigo usar o Fykos junto com o sistema da montadora?',
         answer:
-          'Sim. O Synapse OS funciona como camada inteligente sobre os sistemas existentes, sem substituí-los. Integramos via API com DMS, CRM e portais da montadora.',
+          'Sim. O Fykos funciona como camada inteligente sobre os sistemas existentes, sem substituí-los. Integramos via API com DMS, CRM e portais da montadora.',
       },
     ],
     ctaText: 'Diagnóstico para concessionária premium',
@@ -306,23 +306,23 @@ export const FABRICAS: FabricaPage[] = [
   {
     slug: 'performance-premium',
     brand: 'Performance Premium',
-    metaTitle: 'IA para Concessionárias de Marcas de Performance | Synapse OS | Dexi Digital',
+    metaTitle: 'IA para Concessionárias de Marcas de Performance | Fykos | Dexi Digital',
     metaDescription:
-      'Solução de IA para concessionárias de marcas de performance no Brasil. Velocidade de vendas com execução agêntica, perfilamento inteligente e integração completa com DMS.',
+      'Solução de IA para concessionárias de marcas de performance no Brasil. Velocidade de vendas com automação de IA, perfilamento inteligente e integração completa com DMS.',
     keywords: [
       'IA concessionária performance',
       'tecnologia dealer esportivo',
       'CRM marcas performance Brasil',
       'leads concessionária alto ticket',
-      'Synapse OS performance',
+      'Fykos performance',
     ],
     answerSnippet:
-      'A Dexi Digital potencializa concessionárias de marcas de performance com IA de execução. O Synapse OS entende que o comprador deste segmento decide por performance e status, e personaliza cada interação para converter leads de alto ticket com velocidade e precisão superiores a qualquer CRM tradicional.',
+      'A Dexi Digital potencializa concessionárias de marcas de performance com IA de execução. O Fykos entende que o comprador deste segmento decide por performance e status, e personaliza cada interação para converter leads de alto ticket com velocidade e precisão superiores a qualquer CRM tradicional.',
     desafios: [
       {
         titulo: 'Lead premium exige velocidade e inteligência',
         descricao:
-          'O comprador de veículos de performance tem alto custo de oportunidade. A média do setor é 4 horas para responder; o Synapse entrega resposta qualificada em menos de 30 segundos com micro-segmentação em tempo real.',
+          'O comprador de veículos de performance tem alto custo de oportunidade. A média do setor é 4 horas para responder; o Fykos entrega resposta qualificada em menos de 30 segundos com micro-segmentação em tempo real.',
       },
       {
         titulo: 'Linha esportiva e linha regular: mundos diferentes',
@@ -332,7 +332,7 @@ export const FABRICAS: FabricaPage[] = [
       {
         titulo: 'Retenção de talento e onboarding digital',
         descricao:
-          'O turnover de vendedores é alto e cada saída perde meses de conhecimento tácito. O Synapse funciona como um Digital Talent Enabler: o vendedor novo recebe briefing estratégico imediato e performa como veterano desde o primeiro atendimento.',
+          'O turnover de vendedores é alto e cada saída perde meses de conhecimento tácito. O Fykos funciona como um Digital Talent Enabler: o vendedor novo recebe briefing estratégico imediato e performa como veterano desde o primeiro atendimento.',
       },
     ],
     solucoes: [
@@ -359,15 +359,15 @@ export const FABRICAS: FabricaPage[] = [
       'Visibilidade completa do funil de vendas em tempo real',
     ],
     diferencialDexi:
-      'O Syonet é um CRM que registra interações. O Synapse OS da Dexi é um agente que executa a venda: qualifica, perfila, responde e entrega o lead pronto para fechar. A diferença entre anotar e agir.',
+      'O Syonet é um CRM que registra interações. O Fykos da Dexi é uma IA que executa a venda: qualifica, perfila, responde e entrega o lead pronto para fechar. A diferença entre anotar e agir.',
     faq: [
       {
-        question: 'O Synapse OS integra com sistemas da montadora?',
+        question: 'O Fykos integra com sistemas da montadora?',
         answer:
-          'O Synapse OS integra com os sistemas de gestão da concessionária via API. A integração com plataformas da montadora depende da disponibilidade de APIs pelo fabricante.',
+          'O Fykos integra com os sistemas de gestão da concessionária via API. A integração com plataformas da montadora depende da disponibilidade de APIs pelo fabricante.',
       },
       {
-        question: 'Quanto custa implementar o Synapse OS?',
+        question: 'Quanto custa implementar o Fykos?',
         answer:
           'O investimento varia conforme o porte da operação. Oferecemos diagnóstico gratuito que mapeia o potencial de ROI antes de qualquer compromisso.',
       },

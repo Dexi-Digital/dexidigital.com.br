@@ -148,8 +148,8 @@ const faqs = [
     answer: 'Sim. O WebOS pode ser o ponto de partida para uma evolução contínua da sua operação digital com a Dexi.',
   },
   {
-    question: 'Como o WebOS se relaciona com o SynapseOS?',
-    answer: 'O WebOS ocupa a camada de presença digital web (site, blog, páginas), enquanto o SynapseOS ocupa a camada de inteligência, automação e operação. Os dois se complementam sem competir entre si.',
+    question: 'Como o WebOS se relaciona com o Fykos?',
+    answer: 'O WebOS ocupa a camada de presença digital web (site, blog, páginas), enquanto o Fykos ocupa a camada de inteligência, automação e operação. Os dois se complementam sem competir entre si.',
   },
 ];
 

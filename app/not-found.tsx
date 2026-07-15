@@ -27,7 +27,7 @@ export default function NotFound() {
               <li>
                 <Link href="/servicos/ia-para-empresas" className="text-[var(--color-primary-600)] hover:underline flex items-center gap-2">
                   <span>→</span>
-                  <span><strong>Arquitetura de Execução Agêntica (Synapse OS)</strong> — IA que executa e gera resultado</span>
+                  <span><strong>Arquitetura de IA que Executa (Fykos)</strong> — IA que executa e gera resultado</span>
                 </Link>
               </li>
               <li>

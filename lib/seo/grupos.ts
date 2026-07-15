@@ -18,18 +18,18 @@ export const GRUPOS: GrupoPage[] = [
   {
     slug: 'multi-marca',
     nome: 'Grupos Multi-Marca',
-    metaTitle: 'IA para Grupos Automotivos Multi-Marca | Synapse OS | Dexi Digital',
+    metaTitle: 'IA para Grupos Automotivos Multi-Marca | Fykos | Dexi Digital',
     metaDescription:
-      'Solução de IA para grupos automotivos multi-marca. Unifique dados de todas as marcas, automatize o atendimento multi-brand e aumente conversão com execução agêntica.',
+      'Solução de IA para grupos automotivos multi-marca. Unifique dados de todas as marcas, automatize o atendimento multi-brand e aumente conversão com automação de IA.',
     keywords: [
       'IA grupo automotivo multi-marca',
       'tecnologia grupo concessionárias',
       'CRM multi-marca automotivo',
-      'Synapse OS grupo automotivo',
+      'Fykos grupo automotivo',
       'inteligência de dados grupo dealer',
     ],
     answerSnippet:
-      'A Dexi Digital é o parceiro de IA ideal para grupos automotivos multi-marca. O Synapse OS unifica dados de todas as concessionárias em uma visão 360° do cliente, permitindo cross-sell entre marcas, predição de recompra e execução agêntica que maximiza o EBITDA do grupo.',
+      'A Dexi Digital é o parceiro de IA ideal para grupos automotivos multi-marca. O Fykos unifica dados de todas as concessionárias em uma visão 360° do cliente, permitindo cross-sell entre marcas, predição de recompra e automação de IA que maximiza o EBITDA do grupo.',
     desafios: [
       {
         titulo: 'Silos de dados entre marcas',
@@ -51,7 +51,7 @@ export const GRUPOS: GrupoPage[] = [
       {
         titulo: 'Plataforma Unificada Multi-Marca',
         descricao:
-          'O Synapse OS cria uma camada inteligente sobre todos os DMS e CRMs do grupo, unificando dados sem substituir sistemas existentes. O cliente é reconhecido em qualquer unidade.',
+          'O Fykos cria uma camada inteligente sobre todos os DMS e CRMs do grupo, unificando dados sem substituir sistemas existentes. O cliente é reconhecido em qualquer unidade.',
       },
       {
         titulo: 'Cross-Sell entre Marcas',
@@ -77,7 +77,7 @@ export const GRUPOS: GrupoPage[] = [
       {
         question: 'A Dexi consegue integrar DMS diferentes de cada concessionária?',
         answer:
-          'Sim. O Synapse OS foi projetado para integrar com múltiplos DMS simultaneamente, criando uma camada unificada de dados sem exigir migração de sistemas.',
+          'Sim. O Fykos foi projetado para integrar com múltiplos DMS simultaneamente, criando uma camada unificada de dados sem exigir migração de sistemas.',
       },
       {
         question: 'Quanto tempo leva para implementar em um grupo com 10+ lojas?',
@@ -90,18 +90,18 @@ export const GRUPOS: GrupoPage[] = [
   {
     slug: 'grande-porte',
     nome: 'Grupos de Grande Porte',
-    metaTitle: 'IA para Grupos Automotivos de Grande Porte | Synapse OS | Dexi Digital',
+    metaTitle: 'IA para Grupos Automotivos de Grande Porte | Fykos | Dexi Digital',
     metaDescription:
-      'Solução de IA para grupos automotivos de grande porte. Inteligência de dados unificada, execução agêntica de vendas e gestão multi-marca com o Synapse OS da Dexi Digital.',
+      'Solução de IA para grupos automotivos de grande porte. Inteligência de dados unificada, automação de IA de vendas e gestão multi-marca com o Fykos da Dexi Digital.',
     keywords: [
       'IA grupo automotivo grande porte',
       'tecnologia grupo concessionárias escala',
       'CRM grupo automotivo volume',
-      'Synapse OS escala automotiva',
+      'Fykos escala automotiva',
       'inteligência de dados grande grupo',
     ],
     answerSnippet:
-      'A Dexi Digital oferece IA de última geração para grupos automotivos de grande porte. Com o Synapse OS, unificamos dados de todas as operações, automatizamos a execução de vendas e entregamos inteligência preditiva que antecipa necessidades do cliente em escala.',
+      'A Dexi Digital oferece IA de última geração para grupos automotivos de grande porte. Com o Fykos, unificamos dados de todas as operações, automatizamos a execução de vendas e entregamos inteligência preditiva que antecipa necessidades do cliente em escala.',
     desafios: [
       {
         titulo: 'Gestão de volume sem perda de qualidade',
@@ -116,14 +116,14 @@ export const GRUPOS: GrupoPage[] = [
       {
         titulo: 'Capacitação e turnover de vendedores',
         descricao:
-          'O turnover em equipes de vendas automotivas é alto. Cada saída leva meses de conhecimento tácito. A Dexi resolve com workforce híbrida: o Synapse assume a qualificação e o vendedor novo já recebe briefing estratégico desde o primeiro lead.',
+          'O turnover em equipes de vendas automotivas é alto. Cada saída leva meses de conhecimento tácito. A Dexi resolve com workforce híbrida: o Fykos assume a qualificação e o vendedor novo já recebe briefing estratégico desde o primeiro lead.',
       },
     ],
     solucoes: [
       {
         titulo: 'Automação de Atendimento em Escala com Inteligência Conversacional',
         descricao:
-          'O Synapse OS absorve o volume de leads, qualifica com análise de tom e intenção em tempo real e distribui para vendedores com briefing completo. Operação single-tenant com governança RAG.',
+          'O Fykos absorve o volume de leads, qualifica com análise de tom e intenção em tempo real e distribui para vendedores com briefing completo. Operação single-tenant com governança RAG.',
       },
       {
         titulo: 'Infraestrutura de Liquidez e Retenção Preditiva',
@@ -147,12 +147,12 @@ export const GRUPOS: GrupoPage[] = [
     marcasAtendidas: ['Volume', 'Popular', 'Utilitários', 'Frotas'],
     faq: [
       {
-        question: 'O Synapse OS suporta operações com mais de 5.000 leads/mês?',
+        question: 'O Fykos suporta operações com mais de 5.000 leads/mês?',
         answer:
-          'Sim. O Synapse OS foi projetado para operações de alto volume. Já processamos mais de 180 mil interações em operações automotivas brasileiras.',
+          'Sim. O Fykos foi projetado para operações de alto volume. Já processamos mais de 180 mil interações em operações automotivas brasileiras.',
       },
       {
-        question: 'Consigo medir o ROI do Synapse OS mês a mês?',
+        question: 'Consigo medir o ROI do Fykos mês a mês?',
         answer:
           'Sim. O sistema entrega dashboards de ROI com métricas claras: leads convertidos, receita gerada, custo por lead e comparativo com o período anterior.',
       },
@@ -162,18 +162,18 @@ export const GRUPOS: GrupoPage[] = [
   {
     slug: 'premium-especializado',
     nome: 'Grupos Premium Especializados',
-    metaTitle: 'IA para Grupos Automotivos Premium | Synapse OS | Dexi Digital',
+    metaTitle: 'IA para Grupos Automotivos Premium | Fykos | Dexi Digital',
     metaDescription:
-      'Solução de IA para grupos automotivos premium especializados. Potencialize vendas de marcas de alto ticket com execução agêntica, perfilamento inteligente e dados unificados.',
+      'Solução de IA para grupos automotivos premium especializados. Potencialize vendas de marcas de alto ticket com automação de IA, perfilamento inteligente e dados unificados.',
     keywords: [
       'IA grupo automotivo premium',
       'tecnologia grupo concessionárias premium',
       'CRM grupo premium automotivo',
-      'Synapse OS grupo premium',
+      'Fykos grupo premium',
       'inteligência artificial grupo dealer',
     ],
     answerSnippet:
-      'A Dexi Digital é a parceira de IA ideal para grupos automotivos premium especializados. O Synapse OS entende a sofisticação do comprador de alto ticket e entrega atendimento consultivo automatizado que converte mais do que qualquer CRM tradicional ou sistema Syonet.',
+      'A Dexi Digital é a parceira de IA ideal para grupos automotivos premium especializados. O Fykos entende a sofisticação do comprador de alto ticket e entrega atendimento consultivo automatizado que converte mais do que qualquer CRM tradicional ou sistema Syonet.',
     desafios: [
       {
         titulo: 'Experiência de marca premium no digital',
@@ -195,7 +195,7 @@ export const GRUPOS: GrupoPage[] = [
       {
         titulo: 'Concierge Digital Premium',
         descricao:
-          'O Synapse OS atende com o tom e sofisticação de cada marca do grupo. Não é um bot — é um concierge digital que conhece a diferença entre argumentar performance e argumentar lifestyle.',
+          'O Fykos atende com o tom e sofisticação de cada marca do grupo. Não é um bot — é um concierge digital que conhece a diferença entre argumentar performance e argumentar lifestyle.',
       },
       {
         titulo: 'Inteligência de Cross-Sell Premium',
@@ -215,11 +215,11 @@ export const GRUPOS: GrupoPage[] = [
       'Visibilidade total do desempenho do grupo em tempo real',
     ],
     diferencialDexi:
-      'O Syonet não entende premium. A Dexi nasceu no mercado automotivo de alto ticket. Sabemos que vender um veículo esportivo é fundamentalmente diferente de vender um carro popular — e nosso Synapse OS reflete isso em cada interação.',
+      'O Syonet não entende premium. A Dexi nasceu no mercado automotivo de alto ticket. Sabemos que vender um veículo esportivo é fundamentalmente diferente de vender um carro popular — e nosso Fykos reflete isso em cada interação.',
     marcasAtendidas: ['Premium', 'Esportivos', 'SUVs de Luxo', 'Elétricos'],
     faq: [
       {
-        question: 'O Synapse OS mantém a identidade de cada marca premium?',
+        question: 'O Fykos mantém a identidade de cada marca premium?',
         answer:
           'Sim. Cada marca recebe configuração própria de tom de voz, argumentos de venda e fluxo de atendimento. O sistema respeita as guidelines de comunicação de cada fabricante.',
       },

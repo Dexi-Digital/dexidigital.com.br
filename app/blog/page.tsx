@@ -19,10 +19,10 @@ export default function BlogPage() {
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-overline mb-4 animate-fade-in-up-subtle">Intelligence Hub</p>
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
-              <span className="text-display-gradient">Liderança Agêntica &amp; Valor Enterprise</span>
+              <span className="text-display-gradient">Liderança em IA &amp; Valor Enterprise</span>
             </h1>
             <p className="text-lead max-w-2xl mx-auto animate-fade-in-up delay-100">
-              Perspectivas estratégicas sobre a transição para sistemas autônomos, soberania de dados e o impacto da inteligência agêntica no EBITDA de grandes corporações.
+              Perspectivas estratégicas sobre a transição para sistemas autônomos, soberania de dados e o impacto da IA no EBITDA de grandes corporações.
             </p>
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function BlogPage() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-h2 mb-4">Inteligência Estratégica na sua caixa de entrada</h2>
             <p className="text-lead mb-8">
-              Acompanhe a vanguarda da Execução Agêntica. Receba teses exclusivas sobre impacto no EBITDA, soberania de dados e lições de mercado extraídas de operações reais.
+              Acompanhe a vanguarda da IA que Executa. Receba teses exclusivas sobre impacto no EBITDA, soberania de dados e lições de mercado extraídas de operações reais.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <input

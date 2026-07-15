@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   const services = [
     {
-      title: 'Arquitetura de Execução Agêntica (Synapse OS)',
+      title: 'Arquitetura de IA que Executa (Fykos)',
       slug: 'ia-para-empresas',
       description:
-        'Implementação de agentes autônomos que não apenas respondem, mas executam. Focamos em ganho de escala, qualificação imediata e redução de latência operacional, transformando a IA em um motor de EBITDA real para jornadas consultivas e operações multiunidade.',
+        'Implementação de IA autônoma que não apenas responde, mas executa. Focamos em ganho de escala, qualificação imediata e redução de latência operacional, transformando a IA em um motor de EBITDA real para jornadas consultivas e operações multiunidade.',
       benefits: [
         'Perfilamento neurolinguístico em tempo real',
         'Distinção automática de valores (performance vs. segurança)',
@@ -38,7 +38,7 @@ export default function ServicesPage() {
       title: 'Engenharia de Dados & Ativos de Inteligência',
       slug: 'inteligencia-de-dados',
       description:
-        'Transformamos dados brutos em combustível para a tomada de decisão autônoma. Estruturamos a base necessária para que o Synapse OS opere com precisão, conectando CRM, ERP, WhatsApp e voz em ativos proprietários auditáveis.',
+        'Transformamos dados brutos em combustível para a tomada de decisão autônoma. Estruturamos a base necessária para que o Fykos opere com precisão, conectando CRM, ERP, WhatsApp e voz em ativos proprietários auditáveis.',
       benefits: [
         'Dashboards executivos em tempo real',
         'Modelos preditivos para demanda e churn',

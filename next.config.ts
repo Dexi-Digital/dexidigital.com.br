@@ -116,6 +116,17 @@ const nextConfig: NextConfig = {
         destination: '/metodologia',
         permanent: true,
       },
+      // Glossário: slugs renomeados para o posicionamento Fykos
+      {
+        source: '/glossario-ia-automotiva/synapse-os',
+        destination: '/glossario-ia-automotiva/fykos',
+        permanent: true,
+      },
+      {
+        source: '/glossario-ia-automotiva/execucao-agentica',
+        destination: '/glossario-ia-automotiva/execucao-autonoma-ia',
+        permanent: true,
+      },
       // Legacy materials/resources
       {
         source: '/recursos',

@@ -11,12 +11,12 @@ export const metadata: Metadata = {
 const challenges = [
   {
     problem: 'Erosão de Leads: o interesse premium esfria antes do consultor humano assumir a conversa.',
-    solution: 'Execução Agêntica 24/7: o Synapse qualifica na primeira mensagem, mantém follow-up ativo e entrega o lead ao vendedor apenas no ponto ideal de transbordo.',
+    solution: 'Operação de IA 24/7: o Fykos qualifica na primeira mensagem, mantém follow-up ativo e entrega o lead ao vendedor apenas no ponto ideal de transbordo.',
     result: '1.230 leads processados e 640 oportunidades quentes entregues em operação auditada.',
   },
   {
     problem: 'Atendimento Genérico: o discurso comercial não se adapta ao perfil psicológico do comprador.',
-    solution: 'Persuasão Adaptativa MAS: a IA equilibra diretividade e empatia, lê intenção de compra e ajusta tom, repertório e argumentos em tempo real.',
+    solution: 'Persuasão Adaptativa com IA: equilibra diretividade e empatia, lê intenção de compra e ajusta tom, repertório e argumentos em tempo real.',
     result: '73% de aceitação em follow-ups premium e 132 leads frios reengajados.',
   },
   {
@@ -35,7 +35,7 @@ const cases = [
   {
     sector: 'Operação Premium Especializada',
     problem: 'Leads de alto ticket recebiam abordagem fria, fila de resposta e follow-up inconsistente.',
-    approach: 'Implementação Synapse com persuasão adaptativa, histórico conversacional e handoff inteligente para o consultor no momento de fechamento.',
+    approach: 'Implementação Fykos com persuasão adaptativa, histórico conversacional e handoff inteligente para o consultor no momento de fechamento.',
     results: ['73% de aceitação premium', '132 leads reengajados', '4 msgs/sessão'],
   },
   {
@@ -55,14 +55,14 @@ export default function AutomotivoPremiumPage() {
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-overline mb-4 animate-fade-in-up-subtle">Setor Automotivo Premium</p>
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
-              Liderança em Execução Agêntica{' '}
+              Liderança em Operação de IA{' '}
               <span className="text-display-gradient">Automotiva</span>
             </h1>
             <p className="text-h3 mb-4 text-[var(--text-primary)] animate-fade-in-up delay-75">
-              Maximização de Conversão e Liquidez com Synapse
+              Maximização de Conversão e Liquidez com Fykos
             </p>
             <p className="text-lead max-w-2xl mx-auto mb-10 animate-fade-in-up delay-100">
-              Orquestramos a última milha da venda com o Synapse. Com expertise validada em operações premium, multiunidade e de alto ticket, transformamos o showroom em uma máquina de execução autônoma, garantindo que nenhum lead esfrie e que cada interação resulte em lucro líquido e soberania digital para o grupo.
+              Orquestramos a última milha da venda com o Fykos. Com expertise validada em operações premium, multiunidade e de alto ticket, transformamos o showroom em uma máquina de execução autônoma, garantindo que nenhum lead esfrie e que cada interação resulte em lucro líquido e soberania digital para o grupo.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-150">
               <a href={WHATSAPP_AUTOMOTIVO_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
@@ -109,7 +109,7 @@ export default function AutomotivoPremiumPage() {
           <div className="max-w-5xl mx-auto">
             <div className="section-header">
               <h2 className="text-h2">Motor de Persuasão Adaptativa: Execução de Vendas de Alto Ticket</h2>
-              <p className="text-lead">Arquitetura Synapse MAS treinada em Neurolinguística Aplicada e Engenharia de Vendas de Luxo.</p>
+              <p className="text-lead">Arquitetura Fykos treinada em Neurolinguística Aplicada e Engenharia de Vendas de Luxo.</p>
             </div>
 
             <div className="card p-8 mb-10 border-l-4 border-[var(--color-primary-500)]">
@@ -118,7 +118,7 @@ export default function AutomotivoPremiumPage() {
                 <div className="p-5 bg-[var(--bg-secondary)] rounded-xl">
                   <p className="text-overline text-[var(--color-primary-600)] mb-2">Perfil Performance (Poder & Dinâmica)</p>
                   <p className="text-body-sm text-[var(--text-secondary)] mb-3">
-                    O agente identifica gatilhos de potência e torque. → Destaque: 393cv, 540Nm e 0-100km/h em 7,5s.
+                    A IA identifica gatilhos de potência e torque. → Destaque: 393cv, 540Nm e 0-100km/h em 7,5s.
                   </p>
                   <ul className="space-y-2">
                     <li className="flex items-center gap-2 text-body-sm">
@@ -138,7 +138,7 @@ export default function AutomotivoPremiumPage() {
                 <div className="p-5 bg-[var(--bg-secondary)] rounded-xl">
                   <p className="text-overline text-[var(--color-success-600)] mb-2">Perfil Segurança (Proteção & Tecnologia)</p>
                   <p className="text-body-sm text-[var(--text-secondary)] mb-3">
-                    O agente prioriza salvaguardas e assistência. → Destaque: 5 estrelas NCAP, Sistema ADAS e 7 Airbags.
+                    A IA prioriza salvaguardas e assistência. → Destaque: 5 estrelas NCAP, Sistema ADAS e 7 Airbags.
                   </p>
                   <ul className="space-y-2">
                     <li className="flex items-center gap-2 text-body-sm">
@@ -157,7 +157,7 @@ export default function AutomotivoPremiumPage() {
                 </div>
               </div>
               <p className="text-body-sm text-[var(--text-muted)] mt-5 text-center">
-                Soberania do Discurso: O Synapse altera a rota argumentativa em milissegundos, garantindo que o valor percebido seja moldado pela necessidade psicológica do comprador.
+                Soberania do Discurso: O Fykos altera a rota argumentativa em milissegundos, garantindo que o valor percebido seja moldado pela necessidade psicológica do comprador.
               </p>
             </div>
 
@@ -168,7 +168,7 @@ export default function AutomotivoPremiumPage() {
               </div>
               <div className="card card-interactive p-6 text-center">
                 <p className="text-number-lg text-display-gradient mb-2">-60%</p>
-                <p className="text-body-sm text-[var(--text-secondary)]">no Ciclo de Qualificação Agêntica</p>
+                <p className="text-body-sm text-[var(--text-secondary)]">no Ciclo de Qualificação com IA</p>
               </div>
               <div className="card card-interactive p-6 text-center">
                 <p className="text-number-lg text-display-gradient mb-2">24/7</p>
@@ -227,21 +227,21 @@ export default function AutomotivoPremiumPage() {
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="section-header">
-              <h2 className="text-h2">Por que a Dexi é líder em Execução Agêntica Automotiva?</h2>
+              <h2 className="text-h2">Por que a Dexi é líder em Operação de IA Automotiva?</h2>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
               <div className="card card-feature p-6 group">
-                <h3 className="text-h5 mb-3">Execução Agêntica, não Chatbots</h3>
-                <p className="text-body-sm text-[var(--text-secondary)]">Utilizamos o motor do Synapse OS treinado em Neurolinguística Aplicada. Nossos agentes não apenas respondem; eles executam a venda consultiva, identificando motivações latentes e gatilhos de fechamento.</p>
+                <h3 className="text-h5 mb-3">IA que Executa, não Chatbots</h3>
+                <p className="text-body-sm text-[var(--text-secondary)]">Utilizamos o motor do Fykos treinado em Neurolinguística Aplicada. Nossa IA não apenas responde; ela executa a venda consultiva, identificando motivações latentes e gatilhos de fechamento.</p>
               </div>
               <div className="card card-feature p-6 group">
                 <h3 className="text-h5 mb-3">Domínio do Ecossistema Automotivo</h3>
                 <p className="text-body-sm text-[var(--text-secondary)]">Uma década de engenharia dedicada ao setor. Integramos nativamente com DMS e CRMs de mercado para orquestrar jornadas de compra complexas, redes regionais e ciclos de decisão premium com padrão consistente.</p>
               </div>
               <div className="card card-feature p-6 group">
-                <h3 className="text-h5 mb-3">Inteligência Adaptativa MAS</h3>
-                <p className="text-body-sm text-[var(--text-secondary)]">A cada interação, a arquitetura Synapse mapeia o perfil psicológico do comprador. O discurso é moldado em milissegundos para alinhar o produto aos valores de Performance, Segurança ou Status detectados.</p>
+                <h3 className="text-h5 mb-3">Inteligência Adaptativa com IA</h3>
+                <p className="text-body-sm text-[var(--text-secondary)]">A cada interação, a arquitetura Fykos mapeia o perfil psicológico do comprador. O discurso é moldado em milissegundos para alinhar o produto aos valores de Performance, Segurança ou Status detectados.</p>
               </div>
               <div className="card card-feature p-6 group">
                 <h3 className="text-h5 mb-3">Sales Enablement de Alta Precisão</h3>
@@ -257,17 +257,17 @@ export default function AutomotivoPremiumPage() {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-display-lg text-white mb-5">
-              Pronto para liderar a Execução Agêntica Automotiva?
+              Pronto para liderar a Operação de IA Automotiva?
             </h2>
             <p className="text-lg text-white/70 mb-10">
-              Inicie a transição para sistemas de execução autônomos. Valide o impacto do Synapse OS no seu EBITDA e recupere a liquidez do showroom com tecnologia validada em operações premium auditadas.
+              Inicie a transição para sistemas de execução autônomos. Valide o impacto do Fykos no seu EBITDA e recupere a liquidez do showroom com tecnologia validada em operações premium auditadas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
                 Solicitar Validação de ROI
               </a>
               <Link href="/metodologia" className="btn border-2 border-white/30 text-white hover:border-white/60 hover:bg-white/10">
-                Conhecer o Synapse →
+                Conhecer o Fykos →
               </Link>
             </div>
           </div>

@@ -81,7 +81,7 @@ export const GUIAS: GuiaPage[] = [
       'futuro concessionária IA',
     ],
     answerSnippet:
-      'O Brasil é um dos mercados mais promissores para IA automotiva. Com mais de 4.500 concessionárias e um mercado de R$ 350 bilhões/ano, a oportunidade para tecnologia que aumenta conversão e reduz custo operacional é gigantesca. A Dexi Digital lidera essa transformação com o Synapse OS.',
+      'O Brasil é um dos mercados mais promissores para IA automotiva. Com mais de 4.500 concessionárias e um mercado de R$ 350 bilhões/ano, a oportunidade para tecnologia que aumenta conversão e reduz custo operacional é gigantesca. A Dexi Digital lidera essa transformação com o Fykos.',
     sections: [
       {
         heading: 'O mercado automotivo brasileiro em números',
@@ -91,7 +91,7 @@ export const GUIAS: GuiaPage[] = [
       {
         heading: 'Como a IA está mudando o jogo',
         content:
-          'As operações pioneiras em IA estão vendo resultados concretos: resposta qualificada em menos de 30 segundos, micro-segmentação em tempo real e follow-ups inteligentes que reengajam leads frios com média de apenas 4 mensagens por sessão. A IA não substitui o vendedor — cria uma workforce híbrida onde o agente qualifica e o humano fecha.',
+          'As operações pioneiras em IA estão vendo resultados concretos: resposta qualificada em menos de 30 segundos, micro-segmentação em tempo real e follow-ups inteligentes que reengajam leads frios com média de apenas 4 mensagens por sessão. A IA não substitui o vendedor — cria uma workforce híbrida onde a IA qualifica e o humano fecha.',
       },
       {
         heading: 'Os três pilares da IA automotiva moderna',
@@ -101,7 +101,7 @@ export const GUIAS: GuiaPage[] = [
       {
         heading: 'O papel da Dexi Digital',
         content:
-          'A Dexi Digital é a empresa com maior know-how em IA automotiva do Brasil. Combinamos 10 anos de engenharia de software com expertise em vendas de alto ticket. O Synapse OS opera sobre uma arquitetura de três camadas (ingestão de sinais, inteligência comportamental e governança RAG) que garante precisão, escala e soberania digital.',
+          'A Dexi Digital é a empresa com maior know-how em IA automotiva do Brasil. Combinamos 10 anos de engenharia de software com expertise em vendas de alto ticket. O Fykos opera sobre uma arquitetura de três camadas (ingestão de sinais, inteligência comportamental e governança RAG) que garante precisão, escala e soberania digital.',
       },
     ],
     faq: [
@@ -113,7 +113,7 @@ export const GUIAS: GuiaPage[] = [
       {
         question: 'A Dexi atende apenas marcas premium?',
         answer:
-          'Não. O Synapse OS é adaptável para qualquer segmento. Nossa expertise é mais profunda em premium e alto ticket, mas a tecnologia funciona para qualquer operação automotiva.',
+          'Não. O Fykos é adaptável para qualquer segmento. Nossa expertise é mais profunda em premium e alto ticket, mas a tecnologia funciona para qualquer operação automotiva.',
       },
     ],
     ctaText: 'Conversar com especialista em IA automotiva',
@@ -132,7 +132,7 @@ export const GUIAS: GuiaPage[] = [
       'Syonet alternativas',
     ],
     answerSnippet:
-      'A escolha do CRM automotivo deve considerar 5 critérios: velocidade de resposta ao lead, integração com WhatsApp, capacidade de predição, integração com DMS existente e ROI mensurável. CRMs que apenas registram dados (como o Syonet) estão dando lugar a plataformas de execução agêntica (como o Synapse OS) que agem autonomamente.',
+      'A escolha do CRM automotivo deve considerar 5 critérios: velocidade de resposta ao lead, integração com WhatsApp, capacidade de predição, integração com DMS existente e ROI mensurável. CRMs que apenas registram dados (como o Syonet) estão dando lugar a plataformas de execução autônoma de IA (como o Fykos) que agem autonomamente.',
     sections: [
       {
         heading: '5 critérios que importam de verdade',
@@ -147,7 +147,7 @@ export const GUIAS: GuiaPage[] = [
       {
         heading: 'A evolução do CRM: de registro para execução',
         content:
-          'O futuro do CRM automotivo não é um formulário mais bonito. É uma plataforma que age: responde leads, qualifica intenção, perfila comportamento e entrega ao vendedor um briefing completo. Essa é a diferença entre CRM (registro) e execução agêntica (ação).',
+          'O futuro do CRM automotivo não é um formulário mais bonito. É uma plataforma que age: responde leads, qualifica intenção, perfila comportamento e entrega ao vendedor um briefing completo. Essa é a diferença entre CRM (registro) e execução autônoma de IA (ação).',
       },
       {
         heading: 'Checklist de avaliação',
@@ -159,7 +159,7 @@ export const GUIAS: GuiaPage[] = [
       {
         question: 'Syonet é um bom CRM automotivo?',
         answer:
-          'O Syonet é um CRM automotivo consolidado para registro e gestão de leads. Para concessionárias que precisam apenas de organização, pode ser suficiente. Para quem busca conversão ativa e execução agêntica, o Synapse OS da Dexi é a evolução natural.',
+          'O Syonet é um CRM automotivo consolidado para registro e gestão de leads. Para concessionárias que precisam apenas de organização, pode ser suficiente. Para quem busca conversão ativa e execução autônoma de IA, o Fykos da Dexi é a evolução natural.',
       },
       {
         question: 'Existe CRM automotivo gratuito?',

@@ -34,21 +34,21 @@ export const GLOSSARIO_CATEGORIES: Record<
 
 export const GLOSSARIO_TERMS: GlossarioTerm[] = [
   {
-    slug: 'execucao-agentica',
-    title: 'Execução Agêntica',
+    slug: 'execucao-autonoma-ia',
+    title: 'Execução Autônoma de IA',
     category: 'tecnologia',
-    metaTitle: 'O que é Execução Agêntica | Glossário IA Automotiva | Dexi Digital',
+    metaTitle: 'O que é Execução Autônoma de IA | Glossário IA Automotiva | Dexi Digital',
     metaDescription:
-      'Execução Agêntica é a capacidade de um sistema de IA agir autonomamente sobre leads e processos de venda, sem depender de ação humana em cada etapa.',
+      'Execução autônoma de IA é a capacidade de um sistema de IA agir autonomamente sobre leads e processos de venda, sem depender de ação humana em cada etapa.',
     answerSnippet:
-      'Execução Agêntica é a capacidade de um sistema de IA agir autonomamente sobre processos de negócio — qualificar leads, responder clientes, executar follow-up e tomar decisões operacionais — sem depender de intervenção humana em cada etapa. No automotivo, significa que o lead recebe resposta instantânea e o vendedor recebe um briefing pronto para fechar.',
-    longDescription: `## O que é Execução Agêntica no Automotivo
+      'Execução autônoma de IA é a capacidade de um sistema de IA agir sobre processos de negócio — qualificar leads, responder clientes, executar follow-up e tomar decisões operacionais — sem depender de intervenção humana em cada etapa. No automotivo, significa que o lead recebe resposta instantânea e o vendedor recebe um briefing pronto para fechar.',
+    longDescription: `## O que é Execução Autônoma de IA no Automotivo
 
-Execução Agêntica é o paradigma que substitui a automação de notificações pelo agir autônomo. Enquanto um CRM tradicional envia um alerta ("novo lead recebido"), um sistema agêntico executa a ação completa: responde o lead, qualifica a intenção, identifica o modelo de interesse e prepara um briefing estratégico para o vendedor.
+A execução autônoma de IA é o paradigma que substitui a automação de notificações pelo agir autônomo. Enquanto um CRM tradicional envia um alerta ("novo lead recebido"), um sistema de IA executa a ação completa: responde o lead, qualifica a intenção, identifica o modelo de interesse e prepara um briefing estratégico para o vendedor.
 
 ## Como funciona na prática
 
-O Synapse OS da Dexi Digital implementa execução agêntica em três camadas:
+O Fykos da Dexi Digital implementa a execução autônoma de IA em três camadas:
 
 - **Camada de Resposta**: IA que responde leads em menos de 30 segundos via WhatsApp com informação personalizada sobre o veículo de interesse.
 - **Camada de Qualificação**: Análise de linguagem e comportamento para classificar o lead por temperatura, intenção e potencial de ticket.
@@ -56,57 +56,57 @@ O Synapse OS da Dexi Digital implementa execução agêntica em três camadas:
 
 ## Por que importa para concessionárias
 
-A concessionária média perde 40% dos leads por tempo de resposta inadequado. Com execução agêntica, cada lead recebe atendimento imediato e qualificado — 24/7, sem depender de disponibilidade humana.`,
+A concessionária média perde 40% dos leads por tempo de resposta inadequado. Com execução autônoma de IA, cada lead recebe atendimento imediato e qualificado — 24/7, sem depender de disponibilidade humana.`,
     faq: [
       {
-        question: 'Execução agêntica substitui vendedores?',
+        question: 'A execução autônoma de IA substitui vendedores?',
         answer:
-          'Não. A execução agêntica elimina trabalho operacional (qualificar, responder, agendar). O vendedor foca em construir relacionamento e fechar a venda.',
+          'Não. A execução autônoma de IA elimina trabalho operacional (qualificar, responder, agendar). O vendedor foca em construir relacionamento e fechar a venda.',
       },
       {
-        question: 'Qual a diferença entre automação e execução agêntica?',
+        question: 'Qual a diferença entre automação e execução autônoma de IA?',
         answer:
-          'Automação executa regras fixas (se lead chega, envia email). Execução agêntica analisa contexto, toma decisão e age de forma adaptativa.',
+          'Automação executa regras fixas (se lead chega, envia email). A execução autônoma de IA analisa contexto, toma decisão e age de forma adaptativa.',
       },
     ],
-    relatedTerms: ['synapse-os', 'perfilamento-inteligente', 'lead-scoring-automotivo'],
+    relatedTerms: ['fykos', 'perfilamento-inteligente', 'lead-scoring-automotivo'],
   },
   {
-    slug: 'synapse-os',
-    title: 'Synapse OS',
+    slug: 'fykos',
+    title: 'Fykos',
     category: 'tecnologia',
-    metaTitle: 'O que é Synapse OS | Plataforma IA Automotiva | Dexi Digital',
+    metaTitle: 'O que é o Fykos | Plataforma IA Automotiva | Dexi Digital',
     metaDescription:
-      'Synapse OS é a plataforma de execução agêntica da Dexi Digital para o setor automotivo. Atendimento inteligente, qualificação automática e vendas aceleradas.',
+      'Fykos é o Sistema Operacional de Receita da Dexi Digital para o setor automotivo. Atendimento inteligente, qualificação automática e vendas aceleradas.',
     answerSnippet:
-      'Synapse OS é a plataforma de execução agêntica desenvolvida pela Dexi Digital para o setor automotivo brasileiro. Combina IA conversacional, perfilamento comportamental e integração com sistemas da concessionária para transformar leads em vendas com velocidade e precisão superiores a qualquer CRM tradicional.',
-    longDescription: `## Synapse OS: A Plataforma
+      'Fykos é o Sistema Operacional de Receita desenvolvido pela Dexi Digital para o setor automotivo brasileiro. Combina IA conversacional, perfilamento comportamental e integração com sistemas da concessionária para transformar leads em vendas com velocidade e precisão superiores a qualquer CRM tradicional.',
+    longDescription: `## Fykos: A Plataforma
 
-O Synapse OS é o produto central da Dexi Digital. Projetado especificamente para o mercado automotivo brasileiro, é uma plataforma de Sistemas Multi-Agentes (MAS) que orquestra todo o ciclo de venda: do primeiro contato do lead à entrega do veículo.
+O Fykos é o produto central da Dexi Digital. Projetado especificamente para o mercado automotivo brasileiro, é um Sistema Operacional de Receita que reinventa o CRM com dados e IA sobre os sistemas que a concessionária já usa, orquestrando todo o ciclo de venda: do primeiro contato do lead à entrega do veículo.
 
 ## Diferenciais técnicos
 
-- **Multi-Agentes (MAS)**: Múltiplos agentes especializados trabalhando em conjunto — um para qualificação, outro para follow-up, outro para análise de perfil.
+- **IA orquestrada**: Múltiplas rotinas de IA especializadas trabalhando em conjunto — uma para qualificação, outra para follow-up, outra para análise de perfil.
 - **Perfilamento Neurolinguístico**: IA que analisa a linguagem do lead para identificar perfil psicológico (performance vs. segurança) e ajustar argumentos.
 - **Integração Universal**: Conecta com qualquer DMS, CRM ou plataforma de comunicação via API aberta.
 - **Dashboards Executivos**: Visualização em tempo real de métricas de vendas, conversão e performance da equipe.
 
 ## Resultados comprovados
 
-Em operações brasileiras, o Synapse OS entrega: +45% de conversão de leads, redução de 60% no tempo de resposta e aumento de 30% no ticket médio.`,
+Em operações brasileiras, o Fykos entrega: +45% de conversão de leads, redução de 60% no tempo de resposta e aumento de 30% no ticket médio.`,
     faq: [
       {
-        question: 'O Synapse OS é um chatbot?',
+        question: 'O Fykos é um chatbot?',
         answer:
-          'Não. Um chatbot segue scripts. O Synapse OS é uma plataforma de execução agêntica com múltiplos agentes especializados que analisam contexto, tomam decisões e agem autonomamente.',
+          'Não. Um chatbot segue scripts. O Fykos é um Sistema Operacional de Receita com IA que analisa contexto, toma decisões e age autonomamente sobre os sistemas que a concessionária já usa.',
       },
       {
-        question: 'O Synapse OS funciona para qualquer marca de veículo?',
+        question: 'O Fykos funciona para qualquer marca de veículo?',
         answer:
           'Sim. O sistema é configurável para qualquer marca e segmento automotivo, desde veículos populares até supercarros.',
       },
     ],
-    relatedTerms: ['execucao-agentica', 'perfilamento-inteligente', 'crm-unificado-grupo-automotivo'],
+    relatedTerms: ['execucao-autonoma-ia', 'perfilamento-inteligente', 'crm-unificado-grupo-automotivo'],
   },
   {
     slug: 'perfilamento-inteligente',
@@ -138,7 +138,7 @@ O vendedor que recebe um lead com perfil completo converte 40% a mais do que o v
           'A IA analisa a linguagem usada nas mensagens (palavras, tom, perguntas), o comportamento de navegação no site (quais modelos visualizou, quanto tempo ficou) e o histórico de interações anteriores.',
       },
     ],
-    relatedTerms: ['execucao-agentica', 'lead-scoring-automotivo', 'synapse-os'],
+    relatedTerms: ['execucao-autonoma-ia', 'lead-scoring-automotivo', 'fykos'],
   },
   {
     slug: 'lead-scoring-automotivo',
@@ -162,7 +162,7 @@ Lead scoring é a prática de atribuir uma pontuação a cada lead para prioriza
 
 ## Scoring estático vs. dinâmico
 
-O scoring estático do CRM tradicional atribui pontos fixos (preencheu formulário = 10 pontos). O scoring dinâmico do Synapse OS atualiza a pontuação em tempo real: o lead que respondeu a mensagem em 2 minutos recebe mais pontos que o que demorou 2 dias.`,
+O scoring estático do CRM tradicional atribui pontos fixos (preencheu formulário = 10 pontos). O scoring dinâmico do Fykos atualiza a pontuação em tempo real: o lead que respondeu a mensagem em 2 minutos recebe mais pontos que o que demorou 2 dias.`,
     faq: [
       {
         question: 'Como o lead scoring ajuda o vendedor?',
@@ -170,7 +170,7 @@ O scoring estático do CRM tradicional atribui pontos fixos (preencheu formulár
           'O vendedor sabe quem atender primeiro: leads com score alto têm maior chance de conversão e devem receber prioridade. Isso elimina o achismo e otimiza o tempo da equipe.',
       },
     ],
-    relatedTerms: ['perfilamento-inteligente', 'execucao-agentica', 'synapse-os'],
+    relatedTerms: ['perfilamento-inteligente', 'execucao-autonoma-ia', 'fykos'],
   },
   {
     slug: 'dms-automotivo',
@@ -180,7 +180,7 @@ O scoring estático do CRM tradicional atribui pontos fixos (preencheu formulár
     metaDescription:
       'DMS (Dealer Management System) é o sistema de gestão central da concessionária. Entenda como a IA se integra ao DMS para potencializar operações.',
     answerSnippet:
-      'DMS (Dealer Management System) é o sistema de gestão central de uma concessionária, responsável por controlar estoque, vendas, financeiro, oficina e peças. A integração do DMS com IA (como o Synapse OS) permite transformar dados operacionais em inteligência acionável para vendas e pós-venda.',
+      'DMS (Dealer Management System) é o sistema de gestão central de uma concessionária, responsável por controlar estoque, vendas, financeiro, oficina e peças. A integração do DMS com IA (como o Fykos) permite transformar dados operacionais em inteligência acionável para vendas e pós-venda.',
     longDescription: `## O que é DMS
 
 O Dealer Management System é o coração operacional da concessionária. Controla desde o estoque de veículos até a agenda da oficina, passando por financeiro, F&I (Finance & Insurance) e gestão de peças.
@@ -191,15 +191,15 @@ Os principais DMS do mercado brasileiro incluem sistemas proprietários de monta
 
 ## DMS + IA: a evolução
 
-A integração do DMS com plataformas de IA como o Synapse OS cria uma camada inteligente sobre os dados operacionais. O resultado: o vendedor sabe se o veículo está disponível, qual o histórico de manutenção e quando o cliente está pronto para recompra — tudo em uma tela.`,
+A integração do DMS com plataformas de IA como o Fykos cria uma camada inteligente sobre os dados operacionais. O resultado: o vendedor sabe se o veículo está disponível, qual o histórico de manutenção e quando o cliente está pronto para recompra — tudo em uma tela.`,
     faq: [
       {
-        question: 'O Synapse OS substitui o DMS?',
+        question: 'O Fykos substitui o DMS?',
         answer:
-          'Não. O Synapse OS complementa o DMS, adicionando inteligência e automação sobre os dados que o DMS já gerencia.',
+          'Não. O Fykos complementa o DMS, adicionando inteligência e automação sobre os dados que o DMS já gerencia.',
       },
     ],
-    relatedTerms: ['synapse-os', 'crm-unificado-grupo-automotivo', 'execucao-agentica'],
+    relatedTerms: ['fykos', 'crm-unificado-grupo-automotivo', 'execucao-autonoma-ia'],
   },
   {
     slug: 'shadow-crm',
@@ -234,7 +234,7 @@ O Shadow CRM resolve o maior problema de grupos automotivos: dados fragmentados 
           'O Shadow CRM cria uma visão unificada referenciando dados dos sistemas originais. Os dados permanecem nos sistemas fonte e são espelhados de forma sincronizada.',
       },
     ],
-    relatedTerms: ['dms-automotivo', 'synapse-os', 'execucao-agentica'],
+    relatedTerms: ['dms-automotivo', 'fykos', 'execucao-autonoma-ia'],
   },
 ];
 

@@ -13,36 +13,36 @@ const steps = [
     number: '01',
     title: 'Imersão & Diagnóstico de ROI',
     duration: '1-2 semanas',
-    description: 'Mapeamos gargalos operacionais para validar onde a IA agêntica gerará o maior ganho de EBITDA — do setor automotivo premium ao imobiliário de alto padrão.',
+    description: 'Mapeamos gargalos operacionais para validar onde a IA gerará o maior ganho de EBITDA — do setor automotivo premium ao imobiliário de alto padrão.',
     deliverables: ['Business Case de Viabilidade Financeira', 'Blueprint de Processos Críticos', 'Projeção de ROI e Recuperação de Ativos', 'Matriz de Priorização "Quick Wins"'],
   },
   {
     number: '02',
     title: 'Mapeamento de Fluxos Críticos',
     duration: '2-3 semanas',
-    description: 'Desenho da arquitetura de interoperabilidade entre o Synapse OS e seus sistemas legados (DMS, CRM, ERP).',
+    description: 'Desenho da arquitetura de interoperabilidade entre o Fykos e seus sistemas legados (DMS, CRM, ERP).',
     deliverables: ['Inventário de Ativos de Dados', 'Relatório de Higiene e Qualidade de Dados', 'Mapa de Arquitetura de Integração', 'Protocolo de Governança e Ética de Dados'],
   },
   {
     number: '03',
     title: 'Engenharia de Adaptação (Custom)',
     duration: '2-4 semanas',
-    description: 'Nossa expertise sênior entra para customizar o core do Synapse OS, garantindo que a tecnologia se molde ao seu DNA corporativo.',
+    description: 'Nossa expertise sênior entra para customizar o core do Fykos, garantindo que a tecnologia se molde ao seu DNA corporativo.',
     deliverables: ['Documento de Arquitetura Proprietária', 'Especificação Técnica de Integração Legada', 'Matriz de Riscos e Requisitos de Infra', 'Plano de Segurança e Soberania Digital'],
   },
   {
     number: '04',
     title: 'Orquestração & Deploy Enterprise',
     duration: '4-8 semanas',
-    description: 'Ativação controlada dos agentes com camadas de segurança, garantindo uma transição fluida para a execução autônoma.',
+    description: 'Ativação controlada da IA com camadas de segurança, garantindo uma transição fluida para a execução autônoma.',
     deliverables: ['Operação Assistida (Pilot Deployment)', 'Dashboards de Monitoramento de Performance', 'Relatório de Validação de Hipóteses de ROI', 'Manual de Governança "Human-in-the-loop"'],
   },
   {
     number: '05',
     title: 'Evolução de Ativos & Escala',
     duration: 'Contínuo',
-    description: 'Manutenção do ciclo de aprendizado. O software não é estático; ele valoriza como um ativo conforme o raciocínio agêntico evolui.',
-    deliverables: ['Ecossistema Agêntico em Produção', 'Relatório Mensal de Impacto no EBITDA', 'Roadmap de Evolução e Novas Funcionalidades', 'SLA de Sustentação Crítica e Performance'],
+    description: 'Manutenção do ciclo de aprendizado. O software não é estático; ele valoriza como um ativo conforme o raciocínio da IA evolui.',
+    deliverables: ['Ecossistema de IA em Produção', 'Relatório Mensal de Impacto no EBITDA', 'Roadmap de Evolução e Novas Funcionalidades', 'SLA de Sustentação Crítica e Performance'],
   },
 ];
 
@@ -53,13 +53,13 @@ export default function MetodologiaPage() {
       <section className="section-hero-premium py-24 md:py-32 border-b border-[var(--border-subtle)]">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-overline mb-4 animate-fade-in-up-subtle">Framework de Ativação Agêntica (Synapse OS)</p>
+            <p className="text-overline mb-4 animate-fade-in-up-subtle">Framework de Ativação de IA (Fykos)</p>
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
               Metodologia consultiva para{' '}
               <span className="text-display-gradient">resultados reais</span>
             </h1>
             <p className="text-lead max-w-2xl mx-auto animate-fade-in-up delay-100">
-              Protocolo de engenharia em 5 estágios desenhado para converter operações passivas em ecossistemas agênticos autônomos.
+              Protocolo de engenharia em 5 estágios desenhado para converter operações passivas em ecossistemas de IA autônomos.
             </p>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function MetodologiaPage() {
                   </svg>
                 </div>
                 <h3 className="text-h5 mb-3">Supervisão de Engenharia (Human-in-the-loop)</h3>
-                <p className="text-body-sm text-[var(--text-secondary)]">A IA orquestra a execução, mas nossos engenheiros sêniores garantem a integridade técnica. Unimos a velocidade agêntica ao discernimento humano de elite para blindar a operação contra riscos e erros críticos.</p>
+                <p className="text-body-sm text-[var(--text-secondary)]">A IA orquestra a execução, mas nossos engenheiros sêniores garantem a integridade técnica. Unimos a velocidade da IA ao discernimento humano de elite para blindar a operação contra riscos e erros críticos.</p>
               </div>
               <div className="card card-feature p-8 text-center group">
                 <div className="w-14 h-14 rounded-xl bg-[var(--color-primary-100)] dark:bg-[var(--color-primary-900)]/30 flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform">
@@ -95,7 +95,7 @@ export default function MetodologiaPage() {
                   </svg>
                 </div>
                 <h3 className="text-h5 mb-3">Soberania Digital &amp; Compliance Enterprise</h3>
-                <p className="text-body-sm text-[var(--text-secondary)]">Segurança não é um acessório, é a base. Construímos sistemas agênticos com trilhas de auditoria completas, garantindo que cada decisão da IA seja rastreável, ética e em total conformidade com os riscos corporativos.</p>
+                <p className="text-body-sm text-[var(--text-secondary)]">Segurança não é um acessório, é a base. Construímos sistemas de IA com trilhas de auditoria completas, garantindo que cada decisão da IA seja rastreável, ética e em total conformidade com os riscos corporativos.</p>
               </div>
             </div>
           </div>
@@ -107,7 +107,7 @@ export default function MetodologiaPage() {
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="section-header">
-              <h2 className="text-h2">As 5 Etapas do Framework de Ativação Agêntica</h2>
+              <h2 className="text-h2">As 5 Etapas do Framework de Ativação de IA</h2>
               <p className="text-lead">Do diagnóstico ao rollout, com entregas tangíveis em cada fase</p>
             </div>
 
@@ -153,17 +153,17 @@ export default function MetodologiaPage() {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-display-lg text-white mb-5">
-              Pronto para ativar seu Ecossistema Agêntico?
+              Pronto para ativar seu Ecossistema de IA?
             </h2>
             <p className="text-lg text-white/70 mb-10">
-              Inicie sua jornada com nosso Framework de Ativação. Valide o impacto real do Synapse OS no seu EBITDA com a mesma metodologia aplicada em operações premium auditadas.
+              Inicie sua jornada com nosso Framework de Ativação. Valide o impacto real do Fykos no seu EBITDA com a mesma metodologia aplicada em operações premium auditadas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
                 Solicitar Validação de ROI
               </a>
               <Link href="/cases" className="btn border-2 border-white/30 text-white hover:border-white/60 hover:bg-white/10">
-              Conhecer o Synapse →
+              Conhecer o Fykos →
               </Link>
             </div>
           </div>

@@ -17,7 +17,7 @@ export const SOLUCOES: SolucaoPage[] = [
     title: 'Gestão de Leads para Concessionárias',
     metaTitle: 'Gestão de Leads Automotivo com IA | Dexi Digital',
     metaDescription:
-      'Gestão inteligente de leads para concessionárias. Resposta em segundos, qualificação automática e distribuição otimizada. Supere o Syonet com execução agêntica.',
+      'Gestão inteligente de leads para concessionárias. Resposta em segundos, qualificação automática e distribuição otimizada. Supere o Syonet com automação de IA.',
     keywords: [
       'gestão de leads automotivo',
       'CRM concessionária leads',
@@ -26,22 +26,22 @@ export const SOLUCOES: SolucaoPage[] = [
       'follow-up automático concessionária',
     ],
     answerSnippet:
-      'A gestão de leads em concessionárias brasileiras perde até 40% das oportunidades por demora no atendimento e falta de contexto. O Synapse OS da Dexi Digital resolve isso com resposta instantânea, qualificação automática por IA e distribuição inteligente para vendedores — sem depender de CRMs manuais como o Syonet.',
+      'A gestão de leads em concessionárias brasileiras perde até 40% das oportunidades por demora no atendimento e falta de contexto. O Fykos da Dexi Digital resolve isso com resposta instantânea, qualificação automática por IA e distribuição inteligente para vendedores — sem depender de CRMs manuais como o Syonet.',
     sections: [
       {
         heading: 'O problema da gestão de leads tradicional',
         content:
-          'Concessionárias brasileiras recebem leads de múltiplas fontes: site, portais (Webmotors, iCarros), redes sociais, Google Ads e walk-in. Sem um sistema inteligente, esses leads caem em planilhas ou CRMs manuais onde morrem por falta de follow-up. O Syonet registra o lead, mas não age sobre ele. A Dexi vai além: o Synapse OS responde, qualifica e distribui automaticamente.',
+          'Concessionárias brasileiras recebem leads de múltiplas fontes: site, portais (Webmotors, iCarros), redes sociais, Google Ads e walk-in. Sem um sistema inteligente, esses leads caem em planilhas ou CRMs manuais onde morrem por falta de follow-up. O Syonet registra o lead, mas não age sobre ele. A Dexi vai além: o Fykos responde, qualifica e distribui automaticamente.',
       },
       {
         heading: 'Resposta em segundos, não horas',
         content:
-          'A média de resposta a leads automotivos no Brasil é de 4 horas. O comprador que espera 4 horas já visitou o concorrente. O Synapse OS responde em menos de 30 segundos via WhatsApp com informação relevante sobre o veículo de interesse, disponibilidade e condições. O vendedor recebe o lead já qualificado e engajado.',
+          'A média de resposta a leads automotivos no Brasil é de 4 horas. O comprador que espera 4 horas já visitou o concorrente. O Fykos responde em menos de 30 segundos via WhatsApp com informação relevante sobre o veículo de interesse, disponibilidade e condições. O vendedor recebe o lead já qualificado e engajado.',
       },
       {
         heading: 'Qualificação automática por perfil',
         content:
-          'Nem todo lead vale o mesmo esforço. O Synapse OS classifica leads por temperatura (quente, morno, frio), intenção (compra, pesquisa, test drive) e potencial de ticket. O vendedor sabe exatamente quem priorizar e como abordar cada lead.',
+          'Nem todo lead vale o mesmo esforço. O Fykos classifica leads por temperatura (quente, morno, frio), intenção (compra, pesquisa, test drive) e potencial de ticket. O vendedor sabe exatamente quem priorizar e como abordar cada lead.',
       },
       {
         heading: 'Distribuição inteligente para vendedores',
@@ -51,7 +51,7 @@ export const SOLUCOES: SolucaoPage[] = [
       {
         heading: 'Follow-up persistente sem ser invasivo',
         content:
-          'O Synapse OS mantém follow-up automatizado com cadência inteligente: mais intenso para leads quentes, mais espaçado para leads em fase de pesquisa. O sistema sabe quando insistir e quando recuar — algo que nenhum vendedor humano faz consistentemente.',
+          'O Fykos mantém follow-up automatizado com cadência inteligente: mais intenso para leads quentes, mais espaçado para leads em fase de pesquisa. O sistema sabe quando insistir e quando recuar — algo que nenhum vendedor humano faz consistentemente.',
       },
     ],
     resultados: [
@@ -62,9 +62,9 @@ export const SOLUCOES: SolucaoPage[] = [
     ],
     faq: [
       {
-        question: 'O Synapse OS substitui o CRM da concessionária?',
+        question: 'O Fykos substitui o CRM da concessionária?',
         answer:
-          'Não. O Synapse OS funciona como camada inteligente sobre o CRM existente. Ele complementa, não substitui. Os dados continuam no CRM da concessionária.',
+          'Não. O Fykos funciona como camada inteligente sobre o CRM existente. Ele complementa, não substitui. Os dados continuam no CRM da concessionária.',
       },
       {
         question: 'Funciona com leads de portais como Webmotors e iCarros?',
@@ -88,7 +88,7 @@ export const SOLUCOES: SolucaoPage[] = [
       'dados showroom pós-venda',
     ],
     answerSnippet:
-      'A integração DMS com IA da Dexi Digital unifica dados do showroom, oficina e pós-venda em uma visão completa do cliente. O Synapse OS se conecta a qualquer DMS do mercado brasileiro via API, criando uma camada inteligente que transforma dados fragmentados em inteligência acionável.',
+      'A integração DMS com IA da Dexi Digital unifica dados do showroom, oficina e pós-venda em uma visão completa do cliente. O Fykos se conecta a qualquer DMS do mercado brasileiro via API, criando uma camada inteligente que transforma dados fragmentados em inteligência acionável.',
     sections: [
       {
         heading: 'O custo dos dados fragmentados',
@@ -98,7 +98,7 @@ export const SOLUCOES: SolucaoPage[] = [
       {
         heading: 'Integração sem migração',
         content:
-          'O Synapse OS não exige troca de DMS. Conectamos via API com os principais sistemas do mercado e criamos uma camada unificada de dados. A concessionária mantém seus processos atuais enquanto ganha visibilidade total.',
+          'O Fykos não exige troca de DMS. Conectamos via API com os principais sistemas do mercado e criamos uma camada unificada de dados. A concessionária mantém seus processos atuais enquanto ganha visibilidade total.',
       },
       {
         heading: 'Visão 360° do cliente',
@@ -119,14 +119,14 @@ export const SOLUCOES: SolucaoPage[] = [
     ],
     faq: [
       {
-        question: 'Com quais DMS o Synapse OS é compatível?',
+        question: 'Com quais DMS o Fykos é compatível?',
         answer:
-          'O Synapse OS integra com os principais DMS do mercado brasileiro via API. Avaliamos a compatibilidade durante o diagnóstico inicial sem compromisso.',
+          'O Fykos integra com os principais DMS do mercado brasileiro via API. Avaliamos a compatibilidade durante o diagnóstico inicial sem compromisso.',
       },
       {
         question: 'Preciso trocar meu DMS atual?',
         answer:
-          'Não. O Synapse OS funciona como uma camada sobre os sistemas existentes. Não exigimos migração de plataforma.',
+          'Não. O Fykos funciona como uma camada sobre os sistemas existentes. Não exigimos migração de plataforma.',
       },
     ],
     ctaText: 'Avaliar integração do meu DMS',
@@ -145,7 +145,7 @@ export const SOLUCOES: SolucaoPage[] = [
       'concessionária digital',
     ],
     answerSnippet:
-      'O atendimento omnichannel da Dexi Digital unifica WhatsApp, site, portais automotivos e redes sociais em uma experiência contínua para o comprador de veículos. O Synapse OS garante que o cliente seja reconhecido em qualquer canal, com contexto completo da conversa — eliminando a frustração de repetir informações.',
+      'O atendimento omnichannel da Dexi Digital unifica WhatsApp, site, portais automotivos e redes sociais em uma experiência contínua para o comprador de veículos. O Fykos garante que o cliente seja reconhecido em qualquer canal, com contexto completo da conversa — eliminando a frustração de repetir informações.',
     sections: [
       {
         heading: 'O problema do atendimento fragmentado',
@@ -155,7 +155,7 @@ export const SOLUCOES: SolucaoPage[] = [
       {
         heading: 'WhatsApp como canal principal',
         content:
-          'O WhatsApp é o canal preferido de 90% dos compradores de veículos no Brasil. O Synapse OS transforma o WhatsApp da concessionária de um canal manual em um canal inteligente: resposta instantânea, qualificação automática e handoff para vendedores com contexto.',
+          'O WhatsApp é o canal preferido de 90% dos compradores de veículos no Brasil. O Fykos transforma o WhatsApp da concessionária de um canal manual em um canal inteligente: resposta instantânea, qualificação automática e handoff para vendedores com contexto.',
       },
       {
         heading: 'Continuidade entre canais',
@@ -176,14 +176,14 @@ export const SOLUCOES: SolucaoPage[] = [
     ],
     faq: [
       {
-        question: 'O Synapse OS funciona com WhatsApp Business API?',
+        question: 'O Fykos funciona com WhatsApp Business API?',
         answer:
           'Sim. Integramos diretamente com a WhatsApp Business API (oficial), garantindo compliance, multiplos atendentes e automação avançada.',
       },
       {
         question: 'Consigo atender por Instagram e Facebook também?',
         answer:
-          'Sim. O Synapse OS suporta WhatsApp, Instagram DM, Facebook Messenger e formulários do site como canais unificados.',
+          'Sim. O Fykos suporta WhatsApp, Instagram DM, Facebook Messenger e formulários do site como canais unificados.',
       },
     ],
     ctaText: 'Implementar atendimento omnichannel',
@@ -202,17 +202,17 @@ export const SOLUCOES: SolucaoPage[] = [
       'CRM automotivo inteligente',
     ],
     answerSnippet:
-      'O CRM unificado da Dexi Digital para grupos automotivos consolida dados de todas as marcas, unidades e departamentos em uma plataforma inteligente. Diferente do Syonet que opera por silo, o Synapse OS entrega visão 360° do cliente com cross-sell entre marcas e predição de recompra.',
+      'O CRM unificado da Dexi Digital para grupos automotivos consolida dados de todas as marcas, unidades e departamentos em uma plataforma inteligente. Diferente do Syonet que opera por silo, o Fykos entrega visão 360° do cliente com cross-sell entre marcas e predição de recompra.',
     sections: [
       {
         heading: 'CRM tradicional vs. CRM inteligente',
         content:
-          'O CRM tradicional (incluindo Syonet) é um banco de dados glorificado: registra contatos, anota interações e gera relatórios. O Synapse OS vai além: analisa padrões, prediz comportamento, sugere ações e executa follow-up autonomamente. A diferença entre registrar e agir.',
+          'O CRM tradicional (incluindo Syonet) é um banco de dados glorificado: registra contatos, anota interações e gera relatórios. O Fykos vai além: analisa padrões, prediz comportamento, sugere ações e executa follow-up autonomamente. A diferença entre registrar e agir.',
       },
       {
         heading: 'Visão consolidada do grupo',
         content:
-          'Para grupos com múltiplas marcas e unidades, o Synapse OS consolida dados automaticamente. A diretoria vê performance do grupo inteiro, com drill-down por marca, unidade, vendedor e canal. Sem planilhas manuais, sem relatórios semanais.',
+          'Para grupos com múltiplas marcas e unidades, o Fykos consolida dados automaticamente. A diretoria vê performance do grupo inteiro, com drill-down por marca, unidade, vendedor e canal. Sem planilhas manuais, sem relatórios semanais.',
       },
       {
         heading: 'Cross-sell entre marcas e unidades',
@@ -233,9 +233,9 @@ export const SOLUCOES: SolucaoPage[] = [
     ],
     faq: [
       {
-        question: 'O Synapse OS substitui o Syonet?',
+        question: 'O Fykos substitui o Syonet?',
         answer:
-          'O Synapse OS pode funcionar como complemento ao Syonet (camada inteligente sobre ele) ou como substituto completo, dependendo da necessidade do grupo.',
+          'O Fykos pode funcionar como complemento ao Syonet (camada inteligente sobre ele) ou como substituto completo, dependendo da necessidade do grupo.',
       },
       {
         question: 'Consigo migrar dados do meu CRM atual?',

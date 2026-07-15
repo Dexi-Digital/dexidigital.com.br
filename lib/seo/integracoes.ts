@@ -25,7 +25,7 @@ export const INTEGRACOES: IntegracaoPage[] = [
       'WhatsApp Business IA',
     ],
     answerSnippet:
-      'A integração do WhatsApp Business API com o Synapse OS da Dexi Digital transforma o WhatsApp da concessionária de um canal manual em um canal inteligente: resposta instantânea a leads, qualificação automática, distribuição para vendedores com briefing e follow-up persistente — tudo via API oficial.',
+      'A integração do WhatsApp Business API com o Fykos da Dexi Digital transforma o WhatsApp da concessionária de um canal manual em um canal inteligente: resposta instantânea a leads, qualificação automática, distribuição para vendedores com briefing e follow-up persistente — tudo via API oficial.',
     sections: [
       {
         heading: 'Por que WhatsApp é o canal #1',
@@ -35,7 +35,7 @@ export const INTEGRACOES: IntegracaoPage[] = [
       {
         heading: 'WhatsApp artesanal vs. WhatsApp inteligente',
         content:
-          'A maioria das concessionárias usa WhatsApp no celular do vendedor. Isso significa: leads perdidos quando o vendedor sai, sem métricas, sem histórico centralizado e sem automação. Com o Synapse OS + WhatsApp Business API, tudo é centralizado, automatizado e mensurável.',
+          'A maioria das concessionárias usa WhatsApp no celular do vendedor. Isso significa: leads perdidos quando o vendedor sai, sem métricas, sem histórico centralizado e sem automação. Com o Fykos + WhatsApp Business API, tudo é centralizado, automatizado e mensurável.',
       },
       {
         heading: 'O que muda com a integração',
@@ -76,7 +76,7 @@ export const INTEGRACOES: IntegracaoPage[] = [
       'gestão leads portais',
     ],
     answerSnippet:
-      'O Synapse OS da Dexi Digital integra todos os principais portais automotivos brasileiros (Webmotors, iCarros, OLX, Mercado Livre) em uma gestão unificada de leads com IA. Cada lead de portal recebe resposta instantânea, qualificação automática e é distribuído para o vendedor mais adequado.',
+      'O Fykos da Dexi Digital integra todos os principais portais automotivos brasileiros (Webmotors, iCarros, OLX, Mercado Livre) em uma gestão unificada de leads com IA. Cada lead de portal recebe resposta instantânea, qualificação automática e é distribuído para o vendedor mais adequado.',
     sections: [
       {
         heading: 'O problema dos leads de portal',
@@ -86,7 +86,7 @@ export const INTEGRACOES: IntegracaoPage[] = [
       {
         heading: 'Integração em tempo real',
         content:
-          'O Synapse OS conecta via API com os principais portais e recebe leads em tempo real. Em menos de 30 segundos, o lead recebe resposta via WhatsApp com informação sobre o veículo que visualizou no portal.',
+          'O Fykos conecta via API com os principais portais e recebe leads em tempo real. Em menos de 30 segundos, o lead recebe resposta via WhatsApp com informação sobre o veículo que visualizou no portal.',
       },
       {
         heading: 'Deduplicação inteligente',
@@ -127,7 +127,7 @@ export const INTEGRACOES: IntegracaoPage[] = [
       'Facebook Ads concessionária',
     ],
     answerSnippet:
-      'A integração do Synapse OS com Google Ads e Meta Ads garante que cada lead de mídia paga seja respondido em segundos e qualificado automaticamente. O resultado: o investimento em mídia converte mais porque nenhum lead é desperdiçado por demora ou falta de follow-up.',
+      'A integração do Fykos com Google Ads e Meta Ads garante que cada lead de mídia paga seja respondido em segundos e qualificado automaticamente. O resultado: o investimento em mídia converte mais porque nenhum lead é desperdiçado por demora ou falta de follow-up.',
     sections: [
       {
         heading: 'O desperdício invisível',
@@ -137,7 +137,7 @@ export const INTEGRACOES: IntegracaoPage[] = [
       {
         heading: 'Do clique à resposta em segundos',
         content:
-          'Com o Synapse OS, o lead que preenche um formulário de Google Ads recebe resposta via WhatsApp em menos de 30 segundos. O lead de Meta Ads que clica em um anúncio é abordado imediatamente com informação relevante sobre o veículo anunciado.',
+          'Com o Fykos, o lead que preenche um formulário de Google Ads recebe resposta via WhatsApp em menos de 30 segundos. O lead de Meta Ads que clica em um anúncio é abordado imediatamente com informação relevante sobre o veículo anunciado.',
       },
       {
         heading: 'Feedback loop para otimização',
@@ -147,14 +147,14 @@ export const INTEGRACOES: IntegracaoPage[] = [
       {
         heading: 'Atribuição completa',
         content:
-          'Do primeiro clique no anúncio até a assinatura do contrato: o Synapse OS rastreia toda a jornada. A concessionária sabe exatamente qual campanha, qual criativo e qual público gerou cada venda.',
+          'Do primeiro clique no anúncio até a assinatura do contrato: o Fykos rastreia toda a jornada. A concessionária sabe exatamente qual campanha, qual criativo e qual público gerou cada venda.',
       },
     ],
     faq: [
       {
-        question: 'O Synapse OS gerencia as campanhas de mídia?',
+        question: 'O Fykos gerencia as campanhas de mídia?',
         answer:
-          'Não. O Synapse OS se integra com as plataformas de mídia para otimizar a conversão dos leads gerados. A gestão de campanhas continua com a agência ou equipe interna.',
+          'Não. O Fykos se integra com as plataformas de mídia para otimizar a conversão dos leads gerados. A gestão de campanhas continua com a agência ou equipe interna.',
       },
       {
         question: 'Consigo ver o custo por venda (não só custo por lead)?',

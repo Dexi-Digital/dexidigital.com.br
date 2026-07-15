@@ -17,37 +17,37 @@ export const COMPARATIVOS: ComparativoPage[] = [
     title: 'Dexi Digital vs Syonet',
     metaTitle: 'Dexi Digital vs Syonet | Comparativo Completo | IA Automotiva',
     metaDescription:
-      'Comparativo detalhado entre Dexi Digital (Synapse OS) e Syonet. Entenda por que a execução agêntica supera o CRM tradicional em conversão, velocidade e inteligência.',
+      'Comparativo detalhado entre Dexi Digital (Fykos) e Syonet. Entenda por que a execução autônoma de IA supera o CRM tradicional em conversão, velocidade e inteligência.',
     keywords: [
       'Dexi vs Syonet',
       'alternativa Syonet',
       'Syonet concorrente',
       'CRM automotivo comparativo',
       'melhor CRM concessionária',
-      'Synapse OS vs Syonet',
+      'Fykos vs Syonet',
     ],
     answerSnippet:
-      'A principal diferença entre Dexi Digital e Syonet é a abordagem: o Syonet é um CRM que registra dados e exige ação manual da equipe. O Synapse OS da Dexi é uma plataforma de execução agêntica que age autonomamente — qualifica leads, responde clientes e entrega briefings estratégicos ao vendedor. O resultado: +45% de conversão com 60% menos esforço operacional.',
+      'A principal diferença entre Dexi Digital e Syonet é a abordagem: o Syonet é um CRM que registra dados e exige ação manual da equipe. O Fykos da Dexi é um Sistema Operacional de Receita que age autonomamente — qualifica leads, responde clientes e entrega briefings estratégicos ao vendedor. O resultado: +45% de conversão com 60% menos esforço operacional.',
     sections: [
       {
-        heading: 'CRM passivo vs. Execução agêntica',
+        heading: 'CRM passivo vs. Execução autônoma de IA',
         content:
-          'O Syonet é uma plataforma de CRM automotivo consolidada no mercado brasileiro. Registra leads, organiza funis e gera relatórios. Mas precisa de ação humana em cada etapa: alguém precisa ler o lead, responder, anotar e acompanhar. O Synapse OS da Dexi inverte essa lógica: o sistema age primeiro — responde, qualifica, perfila — e entrega ao vendedor um lead pronto para fechar.',
+          'O Syonet é uma plataforma de CRM automotivo consolidada no mercado brasileiro. Registra leads, organiza funis e gera relatórios. Mas precisa de ação humana em cada etapa: alguém precisa ler o lead, responder, anotar e acompanhar. O Fykos da Dexi inverte essa lógica: o sistema age primeiro — responde, qualifica, perfila — e entrega ao vendedor um lead pronto para fechar.',
       },
       {
         heading: 'Velocidade de resposta',
         content:
-          'No Syonet, o lead entra e espera o vendedor acessar o sistema. Tempo médio: 1 a 4 horas. Com o Synapse OS, o lead recebe resposta em menos de 30 segundos via WhatsApp, com informação personalizada sobre o veículo de interesse. No mercado premium, quem responde primeiro vende.',
+          'No Syonet, o lead entra e espera o vendedor acessar o sistema. Tempo médio: 1 a 4 horas. Com o Fykos, o lead recebe resposta em menos de 30 segundos via WhatsApp, com informação personalizada sobre o veículo de interesse. No mercado premium, quem responde primeiro vende.',
       },
       {
         heading: 'Inteligência de perfilamento',
         content:
-          'O Syonet classifica leads por dados declarados: nome, telefone, veículo de interesse. O Synapse OS vai além: analisa linguagem, comportamento de navegação e padrões de interação para criar um perfil psicológico do comprador — performance vs. segurança, urgência vs. pesquisa, ticket alto vs. entry-level.',
+          'O Syonet classifica leads por dados declarados: nome, telefone, veículo de interesse. O Fykos vai além: analisa linguagem, comportamento de navegação e padrões de interação para criar um perfil psicológico do comprador — performance vs. segurança, urgência vs. pesquisa, ticket alto vs. entry-level.',
       },
       {
         heading: 'Integração e flexibilidade',
         content:
-          'O Syonet funciona como sistema fechado. O Synapse OS é uma camada inteligente que se integra com qualquer DMS, CRM (incluindo o próprio Syonet) e plataforma de comunicação. Não exige migração — complementa o que a concessionária já tem.',
+          'O Syonet funciona como sistema fechado. O Fykos é uma camada inteligente que se integra com qualquer DMS, CRM (incluindo o próprio Syonet) e plataforma de comunicação. Não exige migração — complementa o que a concessionária já tem.',
       },
       {
         heading: 'Suporte e evolução',
@@ -69,27 +69,27 @@ export const COMPARATIVOS: ComparativoPage[] = [
       {
         question: 'A Dexi substitui completamente o Syonet?',
         answer:
-          'Pode funcionar como substituto ou complemento. Muitos clientes começam usando o Synapse OS junto com o Syonet e migram gradualmente conforme validam resultados.',
+          'Pode funcionar como substituto ou complemento. Muitos clientes começam usando o Fykos junto com o Syonet e migram gradualmente conforme validam resultados.',
       },
       {
         question: 'O Syonet não oferece IA também?',
         answer:
-          'O Syonet tem funcionalidades de automação, mas não execução agêntica. A diferença é que o Synapse OS age autonomamente (responde, qualifica, perfila) enquanto o Syonet automatiza notificações que ainda exigem ação humana.',
+          'O Syonet tem funcionalidades de automação, mas não execução autônoma de IA. A diferença é que o Fykos age autonomamente (responde, qualifica, perfila) enquanto o Syonet automatiza notificações que ainda exigem ação humana.',
       },
       {
         question: 'Quanto custa trocar do Syonet para a Dexi?',
         answer:
-          'O investimento varia conforme o porte da operação. Oferecemos diagnóstico gratuito que compara o custo atual do Syonet com o ROI projetado do Synapse OS.',
+          'O investimento varia conforme o porte da operação. Oferecemos diagnóstico gratuito que compara o custo atual do Syonet com o ROI projetado do Fykos.',
       },
     ],
-    ctaText: 'Comparar ROI: Syonet vs. Synapse OS',
+    ctaText: 'Comparar ROI: Syonet vs. Fykos',
   },
   {
     slug: 'dexi-vs-crm-tradicional',
     title: 'Dexi Digital vs CRM Tradicional',
     metaTitle: 'IA Automotiva vs CRM Tradicional | Por que Mudar | Dexi Digital',
     metaDescription:
-      'Entenda por que CRMs tradicionais não acompanham o mercado automotivo moderno. Execução agêntica com IA vs. formulários manuais. Dexi Digital.',
+      'Entenda por que CRMs tradicionais não acompanham o mercado automotivo moderno. Execução autônoma de IA vs. formulários manuais. Dexi Digital.',
     keywords: [
       'CRM automotivo tradicional',
       'CRM vs IA automotivo',
@@ -98,7 +98,7 @@ export const COMPARATIVOS: ComparativoPage[] = [
       'evolução CRM automotivo',
     ],
     answerSnippet:
-      'CRMs tradicionais foram projetados para uma era em que o vendedor controlava a informação. Hoje, o comprador chega ao showroom com mais informação que o vendedor. O Synapse OS da Dexi Digital é a evolução: IA que executa a venda, não apenas registra dados.',
+      'CRMs tradicionais foram projetados para uma era em que o vendedor controlava a informação. Hoje, o comprador chega ao showroom com mais informação que o vendedor. O Fykos da Dexi Digital é a evolução: IA que executa a venda, não apenas registra dados.',
     sections: [
       {
         heading: 'A era do CRM acabou',
@@ -108,17 +108,17 @@ export const COMPARATIVOS: ComparativoPage[] = [
       {
         heading: 'O vendedor não é o gargalo — o processo é',
         content:
-          'Vendedores de concessionárias são competentes. O problema é o processo: lead entra → vendedor acessa CRM → lê informações → busca veículo → responde. Esse processo de 5 etapas manuais leva horas. Com o Synapse OS, o lead recebe resposta em segundos e o vendedor recebe briefing pronto.',
+          'Vendedores de concessionárias são competentes. O problema é o processo: lead entra → vendedor acessa CRM → lê informações → busca veículo → responde. Esse processo de 5 etapas manuais leva horas. Com o Fykos, o lead recebe resposta em segundos e o vendedor recebe briefing pronto.',
       },
       {
         heading: 'Dados estáticos vs. infraestrutura de liquidez',
         content:
-          'O CRM armazena dados. O Synapse OS opera sobre uma infraestrutura de três camadas: ingestão de sinais (ERP, WhatsApp, voz), inteligência comportamental (score de probabilidade e intenção) e governança enterprise RAG. O resultado: fluxo de caixa preditivo, predição de recompra e follow-ups que reengajam leads frios.',
+          'O CRM armazena dados. O Fykos opera sobre uma infraestrutura de três camadas: ingestão de sinais (ERP, WhatsApp, voz), inteligência comportamental (score de probabilidade e intenção) e governança enterprise RAG. O resultado: fluxo de caixa preditivo, predição de recompra e follow-ups que reengajam leads frios.',
       },
       {
         heading: 'O custo real do CRM manual',
         content:
-          'Uma concessionária média perde 40% dos leads por falta de follow-up adequado. Com ticket médio de R$ 150 mil e 200 leads/mês, isso representa R$ 12M/ano em oportunidades perdidas. Com o Synapse, a média de qualificação é de 4 mensagens por sessão e o go-live acontece em 7 dias.',
+          'Uma concessionária média perde 40% dos leads por falta de follow-up adequado. Com ticket médio de R$ 150 mil e 200 leads/mês, isso representa R$ 12M/ano em oportunidades perdidas. Com o Fykos, a média de qualificação é de 4 mensagens por sessão e o go-live acontece em 7 dias.',
       },
     ],
     tabelaComparativa: [
@@ -133,7 +133,7 @@ export const COMPARATIVOS: ComparativoPage[] = [
       {
         question: 'Preciso abandonar meu CRM atual?',
         answer:
-          'Não. O Synapse OS funciona como camada inteligente sobre qualquer CRM. Você pode manter o sistema atual e adicionar execução agêntica por cima.',
+          'Não. O Fykos funciona como camada inteligente sobre qualquer CRM. Você pode manter o sistema atual e adicionar execução autônoma de IA por cima.',
       },
       {
         question: 'A IA não vai eliminar vendedores?',
