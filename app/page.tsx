@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import FAQItem from '@/components/ui/FAQItem';
 import TrackedCTA from '@/components/ui/TrackedCTA';
-import HeroWave from '@/components/HeroWave';
 import CountUp from '@/components/ui/CountUp';
 import ClientLogos from '@/components/ui/ClientLogos';
 import { getHomePageSchemas, localBusinessSchema } from '@/lib/structured-data';
@@ -33,12 +32,14 @@ export default function HomePage() {
         />
       ))}
 
-      {/* Hero Section — categoria Fykos, faixa escura com fundo de luz fluindo */}
+      {/* Hero Section — categoria Fykos, fundo por imagem (dark/light por tema) */}
       <section
         id="hero"
-        className="dark relative overflow-hidden bg-[var(--bg-primary)] py-24 md:py-36 border-b border-[var(--border-subtle)]"
+        className="relative overflow-hidden bg-[var(--bg-primary)] py-24 md:py-36 border-b border-[var(--border-subtle)]"
       >
-        <HeroWave />
+        <div className="hero-home-bg hero-home-bg--light" aria-hidden="true" />
+        <div className="hero-home-bg hero-home-bg--dark" aria-hidden="true" />
+        <div className="hero-home-scrim" aria-hidden="true" />
         <div className="container relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-overline mb-4 animate-fade-in-up-subtle">SISTEMA OPERACIONAL DE RECEITA · POR DEXI</p>
