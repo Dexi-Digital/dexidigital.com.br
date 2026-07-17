@@ -16,7 +16,7 @@ const areas = [
 // Navegação horizontal (categoria Fykos)
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'O Fykos', href: 'https://fykos.com.br', external: true },
+  { name: 'O Fykos', href: '/o-fykos' },
   { name: 'Casos', href: '/cases' },
   { name: 'Contato', href: '/contato' },
 ];
@@ -124,14 +124,12 @@ export default function Header() {
               Home
             </Link>
 
-            <a
-              href="https://fykos.com.br"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/o-fykos"
               className="px-3 py-2 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-base rounded-lg hover:bg-[var(--overlay-subtle)]"
             >
               O Fykos
-            </a>
+            </Link>
 
             {/* Áreas atendidas — dropdown (abre por hover no desktop e por clique/teclado) */}
             <div
@@ -227,16 +225,14 @@ export default function Header() {
                 Home
               </Link>
 
-              {/* O Fykos (externo) */}
-              <a
-                href="https://fykos.com.br"
-                target="_blank"
-                rel="noopener noreferrer"
+              {/* O Fykos */}
+              <Link
+                href="/o-fykos"
                 className="block px-3 py-2 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--color-primary-600)] hover:bg-[var(--overlay-subtle)] rounded-lg transition-base"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 O Fykos
-              </a>
+              </Link>
 
               {/* Áreas atendidas */}
               <div className="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-[var(--text-tertiary)]">

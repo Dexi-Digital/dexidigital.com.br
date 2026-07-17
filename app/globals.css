@@ -2208,7 +2208,7 @@ iframe {
 }
 
 /* ===== Hero da home — fundo por imagem, troca por tema ===== */
-.hero-home-bg {
+.hero-img-bg {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -2217,25 +2217,25 @@ iframe {
   background-size: cover;
   background-position: center right;
 }
-.hero-home-bg--light {
+.hero-img-bg--light {
   background-image: url('/images/hero/home-hero-light.webp');
 }
-.hero-home-bg--dark {
+.hero-img-bg--dark {
   background-image: url('/images/hero/home-hero-dark.webp');
   display: none;
 }
 /* .dark é aplicada em <html> pelo ThemeProvider */
-.dark .hero-home-bg--dark {
+.dark .hero-img-bg--dark {
   display: block;
 }
-.dark .hero-home-bg--light {
+.dark .hero-img-bg--light {
   display: none;
 }
 
 /* Scrim: mantém o texto (centralizado à esquerda/centro) legível
    e deixa o plexus emergir do lado direito. Usa --bg-primary, então
    funde com a seção e é theme-aware automaticamente. */
-.hero-home-scrim {
+.hero-img-scrim {
   position: absolute;
   inset: 0;
   z-index: 1;
@@ -2253,11 +2253,11 @@ iframe {
 /* Mobile: texto ocupa a largura toda — atenua a imagem e reforça o scrim
    para garantir contraste em qualquer variação da arte. */
 @media (max-width: 768px) {
-  .hero-home-bg {
+  .hero-img-bg {
     opacity: 0.45;
     background-position: right center;
   }
-  .hero-home-scrim {
+  .hero-img-scrim {
     background: linear-gradient(
       180deg,
       color-mix(in srgb, var(--bg-primary) 45%, transparent) 0%,

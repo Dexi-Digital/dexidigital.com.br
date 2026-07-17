@@ -1,5 +1,4 @@
 import TrackedCTA from '@/components/ui/TrackedCTA';
-import HeroWave from '@/components/HeroWave';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -51,9 +50,11 @@ export default function ClinicasPage() {
       {/* Hero — faixa dark autocontida */}
       <section
         id="hero"
-        className="dark relative overflow-hidden bg-[var(--bg-primary)] py-24 md:py-36 border-b border-[var(--border-subtle)]"
+        className="relative overflow-hidden bg-[var(--bg-primary)] py-24 md:py-36 border-b border-[var(--border-subtle)]"
       >
-        <HeroWave />
+        <div className="hero-img-bg hero-img-bg--light" aria-hidden="true" />
+        <div className="hero-img-bg hero-img-bg--dark" aria-hidden="true" />
+        <div className="hero-img-scrim" aria-hidden="true" />
         <div className="container relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-overline mb-4 animate-fade-in-up-subtle">FYKOS PARA CLÍNICAS</p>

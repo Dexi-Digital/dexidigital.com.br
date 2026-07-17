@@ -1,176 +1,236 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
+import TrackedCTA from '@/components/ui/TrackedCTA';
+import CountUp from '@/components/ui/CountUp';
 
 export const metadata: Metadata = {
-  title: 'Cases de Sucesso | Resultados Comprovados com IA e Dados | Dexi Digital',
+  title: 'Resultados Reais | Prova em Operação | Dexi Digital',
   description:
-    'Cases reais de consultoria de IA e inteligência de dados: +25% conversão de leads, -30% estoque ocioso, +40% retenção. Grupos automotivos e grandes corporações.',
-  keywords: ['cases consultoria IA', 'resultados inteligência de dados', 'cases grupos automotivos', 'ROI IA empresarial'],
+    'Prova do Fykos em operação real: venda de alto ticket de R$ 1 milhão conduzida por IA em 15 dias, 1.230 leads processados e R$ 1,79 milhão em pipeline mapeado. Números auditáveis, nomes de clientes preservados.',
+  keywords: [
+    'resultados Fykos',
+    'case IA automotivo',
+    'venda de alto ticket com IA',
+    'pipeline mapeado com IA',
+    'recuperação de leads',
+    'ROI IA concessionária',
+  ],
 };
 
-export default function CasesPage() {
-  const cases = [
-    {
-      title: 'Sistema de Scoring de Leads com IA',
-      sector: 'Automotivo Premium',
-      client: 'Grupo automotivo com 12 concessionárias de marcas premium',
-      challenge:
-        'Leads de test drive convertendo apenas 8% em vendas. Vendedores sem visibilidade de quais leads priorizar, resultando em follow-up ineficiente e perda de oportunidades de alto valor.',
-      approach:
-        'Implementamos sistema de scoring de leads com IA que analisa comportamento digital, histórico de interações e dados demográficos. Integração com CRM existente e automação de nurturing personalizado por perfil.',
-      results: [
-        { metric: '+50%', description: 'Conversão de leads (de 8% para 12%)' },
-        { metric: '-40%', description: 'Redução no ciclo de vendas' },
-        { metric: '380%', description: 'ROI em 6 meses' },
-      ],
-      timeline: '8 semanas até produção',
-      tags: ['IA para Vendas', 'Machine Learning', 'Automação'],
-    },
-    {
-      title: 'Data Warehouse Unificado Multi-Concessionária',
-      sector: 'Automotivo Premium',
-      client: 'Grupo automotivo brasileiro com operações em 5 estados',
-      challenge:
-        'Dados isolados em 12 concessionárias, cada uma com sistemas diferentes. Impossível ter visão consolidada de clientes, estoque e performance. Relatórios manuais consumiam 3 dias por mês.',
-      approach:
-        'Arquitetura de data warehouse moderna com ingestão automatizada de múltiplas fontes (DMS, CRM, ERP). Dashboards executivos em tempo real com drill-down por unidade, vendedor e período.',
-      results: [
-        { metric: '180k', description: 'Clientes com visão 360° unificada' },
-        { metric: '-30%', description: 'Estoque ocioso otimizado' },
-        { metric: '3x', description: 'Campanhas mais efetivas' },
-      ],
-      timeline: '12 semanas até produção',
-      tags: ['Data Warehouse', 'Business Intelligence', 'Dashboards'],
-    },
-    {
-      title: 'Plataforma de IA com Governança para Compliance',
-      sector: 'Serviços Financeiros',
-      client: 'Instituição financeira regulada pelo Banco Central',
-      challenge:
-        'Necessidade de adotar IA para análise de crédito mantendo compliance com regulações financeiras. Exigência de explicabilidade total das decisões e auditoria completa.',
-      approach:
-        'Plataforma de IA com governança desde o design: modelos explicáveis, rastreabilidade de decisões, controle de acesso granular e logs de auditoria. Integração com sistemas legados via APIs seguras.',
-      results: [
-        { metric: '100%', description: 'Compliance mantido em auditorias' },
-        { metric: '-40%', description: 'Tempo de análise de crédito' },
-        { metric: 'Zero', description: 'Incidentes de segurança' },
-      ],
-      timeline: '16 semanas até produção',
-      tags: ['IA Governada', 'Compliance', 'Segurança'],
-    },
-    {
-      title: 'Modernização de Sistema Legado com Zero Downtime',
-      sector: 'Varejo',
-      client: 'Rede de varejo com 50+ lojas físicas e e-commerce',
-      challenge:
-        'Sistema legado monolítico de 15 anos não escalava com crescimento. Deploys arriscados, downtime frequente e impossibilidade de inovar rapidamente.',
-      approach:
-        'Migração gradual para arquitetura de microserviços usando padrão Strangler Fig. Cada módulo migrado individualmente com rollback automático. Zero downtime durante toda a migração.',
-      results: [
-        { metric: '-80%', description: 'Tempo de deploy (de 4h para 45min)' },
-        { metric: '99.9%', description: 'Uptime garantido' },
-        { metric: '10x', description: 'Velocidade de novas features' },
-      ],
-      timeline: '6 meses de migração gradual',
-      tags: ['Modernização', 'Microserviços', 'Cloud'],
-    },
-  ];
+const HERO_STATS = [
+  { to: 1, prefix: 'R$ ', suffix: 'M', label: 'Venda de alto ticket conduzida por IA' },
+  { to: 1230, label: 'Leads processados em uma operação' },
+  { to: 5, prefix: '1 : ', label: 'Vendas por leads qualificados' },
+];
 
+export default function CasesPage() {
   return (
-    <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="section-hero-premium py-24 md:py-32 border-b border-[var(--border-subtle)]">
-        <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-overline mb-4 animate-fade-in-up-subtle">Resultados Comprovados</p>
+    <main className="min-h-screen bg-[var(--bg-primary)]">
+      {/* Hero — fundo por imagem (dark/light por tema) */}
+      <section
+        id="hero"
+        className="relative overflow-hidden bg-[var(--bg-primary)] py-24 md:py-32 border-b border-[var(--border-subtle)]"
+      >
+        <div className="hero-img-bg hero-img-bg--light" aria-hidden="true" />
+        <div className="hero-img-bg hero-img-bg--dark" aria-hidden="true" />
+        <div className="hero-img-scrim" aria-hidden="true" />
+        <div className="container relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-overline mb-4 animate-fade-in-up-subtle">RESULTADOS REAIS · PROVA EM OPERAÇÃO</p>
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
-              Cases de <span className="text-display-gradient">Sucesso</span>
+              Números que a operação <span className="text-result">gerou de verdade</span>.
             </h1>
-            <p className="text-lead max-w-2xl mx-auto animate-fade-in-up delay-100">
-              Projetos reais com resultados mensuráveis. Todos os cases são de clientes
-              reais sob NDA - detalhes específicos omitidos por confidencialidade.
+            <p className="text-lead text-[var(--text-secondary)] max-w-2xl mx-auto animate-fade-in-up delay-150">
+              Prova do Fykos rodando em operação real. Preservamos o nome dos clientes por
+              confidencialidade — os números são auditáveis e foram gerados sobre o sistema que a
+              operação já usava.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Cases Grid */}
-      <section className="section-lg bg-[var(--bg-surface)]">
+      {/* Faixa de números-resumo */}
+      <section
+        id="numeros"
+        className="dark section py-12 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)]"
+      >
         <div className="container">
-          <div className="max-w-6xl mx-auto space-y-10">
-            {cases.map((caseStudy) => (
-              <article key={caseStudy.title} className="card card-interactive p-8">
-                {/* Header */}
-                <div className="flex flex-wrap items-center gap-3 mb-6">
-                  <span className="px-3 py-1 text-xs font-semibold bg-[var(--color-primary-100)] dark:bg-[var(--color-primary-900)]/30 text-[var(--color-primary-700)] dark:text-[var(--color-primary-300)] rounded-full">{caseStudy.sector}</span>
-                  <span className="px-3 py-1 text-xs font-medium bg-[var(--bg-secondary)] text-[var(--text-secondary)] rounded-full">{caseStudy.timeline}</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {HERO_STATS.map((s) => (
+              <div key={s.label} className="card card-result p-6 text-center transition-colors">
+                <div className="text-number-hero text-result mb-2">
+                  <CountUp to={s.to} prefix={s.prefix ?? ''} suffix={s.suffix ?? ''} />
                 </div>
-
-                <h2 className="text-h3 mb-2">{caseStudy.title}</h2>
-                <p className="text-body-sm text-[var(--text-muted)] mb-6">{caseStudy.client}</p>
-
-                <div className="grid md:grid-cols-2 gap-8 mb-8">
-                  {/* Left: Challenge & Approach */}
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-xs font-semibold text-[var(--text-primary)] mb-2 uppercase tracking-wide">Desafio</h3>
-                      <p className="text-body-sm text-[var(--text-secondary)]">{caseStudy.challenge}</p>
-                    </div>
-                    <div>
-                      <h3 className="text-xs font-semibold text-[var(--text-primary)] mb-2 uppercase tracking-wide">Abordagem Dexi</h3>
-                      <p className="text-body-sm text-[var(--text-secondary)]">{caseStudy.approach}</p>
-                    </div>
-                  </div>
-
-                  {/* Right: Results */}
-                  <div>
-                    <h3 className="text-xs font-semibold text-[var(--text-primary)] mb-4 uppercase tracking-wide">Resultados</h3>
-                    <div className="space-y-3">
-                      {caseStudy.results.map((result, idx) => (
-                        <div key={idx} className="flex items-start gap-4 p-4 bg-[var(--bg-secondary)] rounded-xl border border-[var(--border-subtle)]">
-                          <span className="text-number-lg text-display-gradient">{result.metric}</span>
-                          <span className="text-body-sm text-[var(--text-secondary)] pt-1">{result.description}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 pt-6 border-t border-[var(--border-subtle)]">
-                  {caseStudy.tags.map((tag) => (
-                    <span key={tag} className="px-3 py-1 text-xs font-medium bg-[var(--bg-secondary)] text-[var(--text-secondary)] rounded-full">{tag}</span>
-                  ))}
-                </div>
-              </article>
+                <div className="text-body-sm font-medium text-[var(--text-primary)]">{s.label}</div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-cta-premium text-white">
+      {/* Case 1 — Alto ticket */}
+      <section id="alto-ticket" className="section-lg bg-[var(--bg-primary)]">
+        <div className="container">
+          <div className="max-w-5xl mx-auto">
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <span className="px-3 py-1 text-xs font-semibold bg-[var(--color-primary-100)] dark:bg-[var(--color-primary-900)]/30 text-[var(--color-primary-700)] dark:text-[var(--color-primary-300)] rounded-full">
+                Automotivo · Alto ticket
+              </span>
+              <span className="px-3 py-1 text-xs font-medium bg-[var(--bg-secondary)] text-[var(--text-secondary)] rounded-full">
+                Jornada de compra complexa
+              </span>
+            </div>
+
+            <h2 className="text-h2 mb-4">
+              Um <span className="text-result">Audi RS Q8 de R$ 1 milhão</span> vendido em 15 dias,
+              conduzido por IA do primeiro contato ao fechamento.
+            </h2>
+
+            <div className="grid md:grid-cols-2 gap-8 mt-8">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xs font-semibold text-[var(--text-primary)] mb-2 uppercase tracking-wide">
+                    O desafio
+                  </h3>
+                  <p className="text-body-sm text-[var(--text-secondary)]">
+                    Vender um veículo de altíssimo ticket não é responder rápido — é conduzir uma
+                    jornada longa, com muitas idas e vindas, sem deixar o lead esfriar entre uma etapa
+                    e outra. É exatamente onde a IA de prateleira para: responde e devolve para o
+                    humano.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xs font-semibold text-[var(--text-primary)] mb-2 uppercase tracking-wide">
+                    O que o Fykos fez
+                  </h3>
+                  <p className="text-body-sm text-[var(--text-secondary)]">
+                    Conduziu a jornada inteira: qualificou, manteve o relacionamento aquecido ao longo
+                    de toda a negociação e levou o cliente do primeiro contato ao fechamento — com a
+                    consistência que uma venda de sete dígitos exige e escalando para o time humano no
+                    momento certo.
+                  </p>
+                </div>
+              </div>
+
+              <div className="card card-result p-8 flex flex-col justify-center text-center">
+                <div className="text-number-hero text-result mb-2">
+                  <CountUp to={1} prefix="R$ " suffix=" milhão" />
+                </div>
+                <p className="text-body-sm text-[var(--text-secondary)] mb-6">
+                  em ticket, uma única venda
+                </p>
+                <div className="text-number-lg text-[var(--text-primary)] mb-2">
+                  <CountUp to={15} suffix=" dias" />
+                </div>
+                <p className="text-body-sm text-[var(--text-secondary)]">
+                  do primeiro contato ao fechamento, via IA
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Case 2 — Volume dentro do grupo */}
+      <section id="grupo" className="section-lg section-gradient border-y border-[var(--border-subtle)]">
+        <div className="container">
+          <div className="max-w-5xl mx-auto">
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <span className="px-3 py-1 text-xs font-semibold bg-[var(--color-primary-100)] dark:bg-[var(--color-primary-900)]/30 text-[var(--color-primary-700)] dark:text-[var(--color-primary-300)] rounded-full">
+                Automotivo · Duas rodas premium
+              </span>
+              <span className="px-3 py-1 text-xs font-medium bg-[var(--bg-secondary)] text-[var(--text-secondary)] rounded-full">
+                Performance em volume
+              </span>
+            </div>
+
+            <h2 className="text-h2 mb-4">
+              Dentro do próprio grupo: <span className="text-result">1.230 leads</span> processados
+              pela inteligência ativa — e uma venda a cada cinco leads qualificados.
+            </h2>
+
+            <div className="grid md:grid-cols-2 gap-8 mt-8">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xs font-semibold text-[var(--text-primary)] mb-2 uppercase tracking-wide">
+                    O desafio
+                  </h3>
+                  <p className="text-body-sm text-[var(--text-secondary)]">
+                    Volume alto de leads e a mesma velha história: sem estrutura para priorizar e dar
+                    continuidade em escala, boa parte da base vira oportunidade perdida. Timing,
+                    inconsistência no atendimento e conversão abaixo do potencial.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xs font-semibold text-[var(--text-primary)] mb-2 uppercase tracking-wide">
+                    O que o Fykos fez
+                  </h3>
+                  <p className="text-body-sm text-[var(--text-secondary)]">
+                    Processou e qualificou a base inteira com inteligência ativa, priorizou quem tinha
+                    real intenção e manteve o funil organizado e vivo — transformando volume disperso
+                    em pipeline mensurável e previsível.
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid gap-4">
+                <div className="card card-result p-6 text-center">
+                  <div className="text-number-hero text-result mb-1">
+                    <CountUp to={1230} />
+                  </div>
+                  <p className="text-body-sm text-[var(--text-secondary)]">leads processados</p>
+                </div>
+                <div className="card card-result p-6 text-center">
+                  <div className="text-number-lg text-result mb-1">R$ 1.792.818,22</div>
+                  <p className="text-body-sm text-[var(--text-secondary)]">em pipeline mapeado</p>
+                </div>
+                <div className="card card-result p-6 text-center">
+                  <div className="text-number-lg text-[var(--text-primary)] mb-1">1 : 5</div>
+                  <p className="text-body-sm text-[var(--text-secondary)]">
+                    uma venda para cada cinco leads qualificados
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Nota de credibilidade */}
+      <section className="section bg-[var(--bg-primary)]">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-body-sm text-[var(--text-tertiary)]">
+              Todos os resultados são de operações reais de clientes da Dexi Digital. Os nomes são
+              preservados por confidencialidade; os números podem ser demonstrados em uma conversa de
+              diagnóstico.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA final */}
+      <section id="cta" className="section-cta-premium text-white">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-display-lg text-white mb-5">
-              Pronto para criar seu próprio case de sucesso?
-            </h2>
-            <p className="text-lg text-white/70 mb-10">
-              Agende um diagnóstico gratuito e descubra o potencial de IA e dados para sua empresa.
+            <p className="text-xs font-bold tracking-[0.15em] uppercase text-white mb-4">
+              DIAGNÓSTICO DE 24H · SEM CUSTO
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
-                Agendar Diagnóstico em 24h
-              </a>
-              <Link href="/metodologia" className="btn border-2 border-white/30 text-white hover:border-white/60 hover:bg-white/10">
-                Conhecer metodologia
-              </Link>
-            </div>
+            <h2 className="text-display-lg text-white mb-4">
+              Pronto para gerar o seu próximo número?
+            </h2>
+            <p className="text-lg text-white/90 mb-10 max-w-2xl mx-auto">
+              Mapeamos seu funil e projetamos o ROI em 24 horas. Se não fechar a conta, o diagnóstico
+              é seu.
+            </p>
+            <TrackedCTA
+              type="validation"
+              location="cta-final"
+              variant="money"
+              text="Agendar diagnóstico de 24h"
+            />
           </div>
         </div>
       </section>
     </main>
   );
 }
-
