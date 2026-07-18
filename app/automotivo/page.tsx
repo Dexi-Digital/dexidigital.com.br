@@ -236,6 +236,9 @@ export default function AutomotivoPage() {
               <span className="card px-6 py-3 text-body-sm font-semibold text-[var(--text-primary)]">
                 Syonet
               </span>
+              <span className="card px-6 py-3 text-body-sm font-semibold text-[var(--text-primary)]">
+                AutoConf
+              </span>
               <span className="card px-6 py-3 text-body-sm font-medium text-[var(--text-tertiary)]">
                 NBS · em breve
               </span>

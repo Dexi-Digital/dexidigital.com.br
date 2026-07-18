@@ -40,13 +40,13 @@ const CAMADAS = [
     n: '03',
     titulo: 'Camada de inteligência — comandos com inteligência',
     corpo:
-      'A IA lê o contexto, entende a intenção e decide a próxima melhor ação da jornada de receita. Conduz conversas complexas, qualifica, nutre quem ainda não está pronto e ressuscita a oportunidade parada — do primeiro contato ao fechamento.',
+      'A IA orquestra os melhores modelos de linguagem do mercado para ler o contexto, entender a intenção e decidir a próxima melhor ação da jornada. Conduz conversas complexas, qualifica, nutre quem ainda não está pronto e ressuscita a oportunidade parada — do primeiro contato ao fechamento. O valor não está no modelo: está na engenharia ao redor dele.',
   },
   {
     n: '04',
     titulo: 'Execução em trilhos — determinística e auditável',
     corpo:
-      'Cada ação segue uma régua aprovada, com log de cada contato. Determinístico, sem alucinação, em conformidade com a LGPD. Quando o caso exige, o Fykos escala para o humano. O ROI é validado antes de escalar — inteligência para decidir, trilhos para executar.',
+      'Nossa aposta de engenharia: a jornada é modelada sobre teoria dos grafos e conceitos de teoria da computação, então cada decisão é um caminho rastreável — determinístico, sem alucinação, com log de cada contato e sob a LGPD. Quando o caso exige, o Fykos escala para o humano; e o ROI é validado antes de escalar.',
   },
 ];
 
@@ -125,6 +125,32 @@ export default function OFykosPage() {
         </div>
       </section>
 
+      {/* Números técnicos */}
+      <section className="dark section py-12 border-b border-[var(--border-subtle)] bg-[var(--bg-primary)]">
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="card card-result p-6 text-center">
+              <div className="text-number-hero text-result mb-2">7–21</div>
+              <div className="text-body-sm font-medium text-[var(--text-primary)]">
+                dias de onboarding — 7 nos casos simples, até 21 nos complexos
+              </div>
+            </div>
+            <div className="card card-result p-6 text-center">
+              <div className="text-number-hero text-result mb-2">99,8%</div>
+              <div className="text-body-sm font-medium text-[var(--text-primary)]">
+                de uptime na operação
+              </div>
+            </div>
+            <div className="card card-result p-6 text-center">
+              <div className="text-number-hero text-result mb-2">Single-tenant</div>
+              <div className="text-body-sm font-medium text-[var(--text-primary)]">
+                infraestrutura isolada por cliente, com criptografia
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Arquitetura — as camadas */}
       <section id="arquitetura" className="section-lg section-gradient">
         <div className="container">
@@ -185,26 +211,50 @@ export default function OFykosPage() {
       >
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-overline mb-2">RODA SOBRE O QUE VOCÊ JÁ USA</p>
-            <h2 className="text-h2 mb-8">O mesmo motor, sobre o núcleo de cada setor</h2>
+            <p className="text-overline mb-2">INTEGRAÇÕES</p>
+            <h2 className="text-h2 mb-8">Conecta ao seu núcleo — via API e webhook, com autenticação</h2>
             <div className="flex flex-wrap gap-4 justify-center mb-6">
-              {['DMS das montadoras', 'Syonet', 'CRM de vendas', 'ERP', 'Gestão / prontuário'].map(
-                (sis) => (
-                  <span
-                    key={sis}
-                    className="card px-6 py-3 text-body-sm font-semibold text-[var(--text-primary)]"
-                  >
-                    {sis}
-                  </span>
-                )
-              )}
+              {['Syonet', 'AutoConf'].map((sis) => (
+                <span
+                  key={sis}
+                  className="card px-6 py-3 text-body-sm font-semibold text-[var(--text-primary)]"
+                >
+                  {sis}
+                </span>
+              ))}
               <span className="card px-6 py-3 text-body-sm font-medium text-[var(--text-tertiary)]">
-                NBS · em breve
+                novas integrações sob demanda
               </span>
             </div>
             <p className="text-body-sm text-[var(--text-secondary)] max-w-2xl mx-auto">
-              Não troca de sistema — ganha uma camada de inteligência sobre ele.
+              Integrações em produção hoje, conectadas por API e webhook — cada uma com sua camada de
+              autenticação. Como é cloud-agnostic, o Fykos roda na nuvem homologada pela sua operação.
+              O mesmo motor conecta ao sistema-núcleo de qualquer setor: não troca de sistema, ganha
+              uma camada de inteligência sobre ele.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Engenharia por trás */}
+      <section id="engenharia" className="section bg-[var(--bg-primary)]">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-overline mb-2">A ENGENHARIA POR TRÁS</p>
+            <h2 className="text-h2 mb-4">Feito por quem constrói software crítico</h2>
+            <p className="text-body text-[var(--text-secondary)] mb-6">
+              O Fykos é construído pela engenharia da Dexi Digital, com mais de uma década em sistemas
+              críticos e alta complexidade. À frente da tecnologia está Lorrayne Paraíso, arquiteta
+              principal do Fykos.
+            </p>
+            <a
+              href="https://www.linkedin.com/in/lorrayne-paraiso"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-semibold text-[var(--color-primary-600)] hover:underline"
+            >
+              Lorrayne Paraíso no LinkedIn →
+            </a>
           </div>
         </div>
       </section>
