@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/* Dark mode por CLASSE (.dark no <html>, aplicada pelo ThemeProvider),
+   não por prefers-color-scheme. Sem isto, as utilities dark:* do Tailwind v4
+   disparam pelo tema do SISTEMA operacional e brigam com o tema do site —
+   ex.: badge com texto dark:primary-300 sobre fundo primary-100 (light). */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ============================================
    DEXI DIGITAL DESIGN SYSTEM
    AI-accelerated software and data intelligence
