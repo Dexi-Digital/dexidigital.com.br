@@ -45,11 +45,11 @@ export default function HomePage() {
             <p className="text-overline mb-4 animate-fade-in-up-subtle">SISTEMA OPERACIONAL DE RECEITA · POR DEXI</p>
 
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
-              Reinventamos o CRM. Seus dados <span className="text-result">viram receita</span>.
+              Seus dados <span className="text-result">viram receita</span>.
             </h1>
 
             <p className="text-lead text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto animate-fade-in-up delay-150">
-              A Dexi é uma empresa de software. Criamos o Fykos — um ecossistema proprietário que usa dados e IA para colocar dinheiro no bolso do dono, sobre os sistemas que sua operação já usa. Não é IA genérica. É engenharia de receita.
+              Usamos dados e inteligência artificial em um sistema próprio feito para aumentar o seu lucro. Não é IA genérica. É engenharia de receita.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up delay-200">
@@ -124,7 +124,7 @@ export default function HomePage() {
                     <span className="text-green-500 font-bold">✓</span> <span>Executa o ciclo de receita inteiro.</span>
                   </li>
                   <li className="flex gap-2 text-sm text-[var(--text-primary)]">
-                    <span className="text-green-500 font-bold">✓</span> <span>Roda sobre o sistema que você já usa — zero migração.</span>
+                    <span className="text-green-500 font-bold">✓</span> <span>Roda sobre o sistema que você já usa: zero migração.</span>
                   </li>
                   <li className="flex gap-2 text-sm text-[var(--text-primary)]">
                     <span className="text-green-500 font-bold">✓</span> <span>Ressuscita lead com log auditável.</span>
@@ -152,11 +152,11 @@ export default function HomePage() {
               </div>
               <div className="card p-6 md:p-8 text-left">
                 <h3 className="text-h5 mb-2">Nenhum lead morre</h3>
-                <p className="text-body-sm text-[var(--text-secondary)]">Qualifica, reaquece e ressuscita cada oportunidade — sem esquecer, sem depender de quem responde primeiro.</p>
+                <p className="text-body-sm text-[var(--text-secondary)]">Qualifica, reaquece e ressuscita cada oportunidade, sem esquecer, sem depender de quem responde primeiro.</p>
               </div>
               <div className="card p-6 md:p-8 text-left">
                 <h3 className="text-h5 mb-2">Comandos com inteligência, execução em trilhos</h3>
-                <p className="text-body-sm text-[var(--text-secondary)]">Determinístico, sem alucinação, dentro da LGPD. ROI aprovado antes de escalar.</p>
+                <p className="text-body-sm text-[var(--text-secondary)]">Determinístico, dentro da LGPD. ROI aprovado antes de escalar.</p>
               </div>
             </div>
           </div>
@@ -174,12 +174,12 @@ export default function HomePage() {
 
             <div className="flex flex-wrap gap-3 justify-center mb-8">
               <span className="card px-5 py-2 text-sm font-medium text-[var(--text-primary)]">DMS das montadoras</span>
-              <span className="card px-5 py-2 text-sm font-medium text-[var(--text-primary)]">Syonet</span>
+              <span className="card px-5 py-2 text-sm font-medium text-[var(--text-primary)]">Syonet e CRMs</span>
               <span className="card px-5 py-2 text-sm font-medium text-[var(--text-secondary)]">NBS · em breve</span>
             </div>
 
             <p className="text-lead text-[var(--text-secondary)] max-w-2xl mx-auto">
-              O mesmo motor conecta ao sistema-núcleo de qualquer setor — não troca de sistema, ganha uma camada de inteligência sobre ele.
+              O mesmo motor conecta ao sistema-núcleo de qualquer setor: não troca de sistema, ganha uma camada de inteligência sobre ele.
             </p>
           </div>
         </div>
@@ -192,7 +192,7 @@ export default function HomePage() {
             <p className="text-overline mb-2">ONDE JÁ PROVAMOS</p>
             <h2 className="text-h2 mb-4">Grupos automotivos já rodam o Fykos na operação.</h2>
             <p className="text-lead text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto md:mx-0">
-              Do super esportivo ao premium e duas rodas — nenhum lead morre, integrado ao DMS e ao Syonet. É a nossa cabeça de ponte.
+              Do super esportivo ao premium e duas rodas: nenhum lead morre, integrado ao DMS e ao Syonet. É a nossa cabeça de ponte.
             </p>
 
             <ClientLogos align="start" className="mb-10" />
@@ -215,7 +215,7 @@ export default function HomePage() {
               <Link href="/automotivo" className="card p-6 md:p-8 text-left transition-base hover:border-[var(--color-result-500)] group">
                 <span className="text-xs font-semibold uppercase tracking-wide text-[var(--color-primary-600)]">Ativo · carro-chefe</span>
                 <h3 className="text-h5 mt-2 mb-2">Automotivo</h3>
-                <p className="text-body-sm text-[var(--text-secondary)]">Concessionárias e grupos automotivos, sobre o DMS e o Syonet.</p>
+                <p className="text-body-sm text-[var(--text-secondary)]">Concessionárias e grupos automotivos, sobre o DMS, Syonet e sistema de estoque.</p>
                 <span className="inline-block mt-4 text-sm font-medium text-[var(--text-result)] group-hover:underline">Ver a solução →</span>
               </Link>
 
@@ -229,7 +229,7 @@ export default function HomePage() {
               <Link href="/construtoras" className="card p-6 md:p-8 text-left transition-base hover:border-[var(--color-result-500)] group">
                 <span className="text-xs font-semibold uppercase tracking-wide text-[var(--text-tertiary)]">Prova: TGV Empreendimentos</span>
                 <h3 className="text-h5 mt-2 mb-2">Construtoras e Incorporadoras</h3>
-                <p className="text-body-sm text-[var(--text-secondary)]">Reaquece o lead de lançamento e acompanha a carteira, sobre o CRM de vendas que você já usa.</p>
+                <p className="text-body-sm text-[var(--text-secondary)]">Acompanha a carteira, reduzindo o índice de inadimplência. Converte dívidas em pagamentos pró-ativo.</p>
                 <span className="inline-block mt-4 text-sm font-medium text-[var(--text-result)] group-hover:underline">Ver a solução →</span>
               </Link>
             </div>
@@ -250,7 +250,7 @@ export default function HomePage() {
             <div className="grid md:grid-cols-3 gap-6">
               <div className="card p-6 text-center md:text-left">
                 <span className="text-number text-[var(--color-primary-500)]">01</span>
-                <h3 className="text-h5 mt-3 mb-2">Conversa de 15 minutos</h3>
+                <h3 className="text-h5 mt-3 mb-2">Conversa de 30 minutos</h3>
                 <p className="text-body-sm text-[var(--text-secondary)]">Entendemos seu cenário, sistemas atuais e metas de negócio.</p>
               </div>
 
@@ -269,7 +269,7 @@ export default function HomePage() {
 
             <div className="mt-10 text-center">
               <TrackedCTA type="validation" location="validacao-24h" variant="primary" text="Agendar diagnóstico de 24h" />
-              <p className="text-sm text-[var(--text-tertiary)] mt-4">Respondemos em até 4 horas úteis.</p>
+              <p className="text-sm text-[var(--text-tertiary)] mt-4">Respondemos com atenção individualizada para o seu caso.</p>
             </div>
           </div>
         </div>
@@ -322,7 +322,7 @@ export default function HomePage() {
                     <span className="text-red-500 font-bold">✕</span> <span>Pilotos que nunca viram produção por falta de compliance, integração complexa ou resistência interna.</span>
                   </li>
                   <li className="flex gap-2 text-sm text-[var(--text-secondary)] text-left">
-                    <span className="text-green-500 font-bold">✓</span> <span>Arquitetura Shadow CRM que executa sobre sistemas legados sem reescrever código.</span>
+                    <span className="text-green-500 font-bold">✓</span> <span>Arquitetura Shadow que executa sobre sistemas legados sem reescrever código.</span>
                   </li>
                 </ul>
                 <div className="bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded p-3 text-center">
@@ -365,7 +365,7 @@ export default function HomePage() {
               </li>
               <li className="card p-4 flex gap-3 items-center">
                 <div className="w-2 h-2 rounded-full bg-red-500 shrink-0"></div>
-                <p className="text-body-sm text-[var(--text-secondary)] text-left w-full"><strong>Erosão de margem:</strong> a concorrência já usa sistemas de receita para fechar negócios mais rápido.</p>
+                <p className="text-body-sm text-[var(--text-secondary)] text-left w-full"><strong>Erosão de margem:</strong> a concorrência já usa sistemas para fechar negócios mais rápido.</p>
               </li>
               <li className="card p-4 flex gap-3 items-center">
                 <div className="w-2 h-2 rounded-full bg-red-500 shrink-0"></div>
@@ -380,7 +380,7 @@ export default function HomePage() {
               </div>
               <div className="card p-5 border-l-4 border-l-[var(--color-primary-500)] text-left">
                 <h3 className="text-h6 mb-2">Escala Imediata</h3>
-                <p className="text-xs text-[var(--text-secondary)]">Suporte a múltiplos canais e volume extremo sem novas contratações.</p>
+                <p className="text-xs text-[var(--text-secondary)]">Suporte a múltiplos canais e volume extremo sem novas estruturas.</p>
               </div>
             </div>
 
