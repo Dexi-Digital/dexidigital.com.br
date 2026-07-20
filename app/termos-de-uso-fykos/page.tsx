@@ -22,8 +22,11 @@ const SECOES = [
         <p>
           Estes Termos de Uso regem o acesso e o uso do Fykos, plataforma de dados e inteligência
           artificial desenvolvida e operada pela{' '}
-          <strong>Dexi Digital [RAZÃO SOCIAL COMPLETA], CNPJ [INSERIR CNPJ]</strong>, com sede em
-          [INSERIR ENDEREÇO COMPLETO] ("Dexi", "nós" ou "nosso").
+          <strong>
+            Dexi Digital, marca de Paraiso Solucoes em Tecnologia LTDA, CNPJ 49.036.970/0001-36
+          </strong>
+          , com sede na Avenida Professor Jose Inacio de Souza, 1186, Sala 9, Bairro Brasil, CEP
+          38400-732, Uberlândia, Minas Gerais ("Dexi", "nós" ou "nosso").
         </p>
         <p>
           Ao contratar, acessar ou usar o painel do Fykos, a empresa cliente e cada pessoa que ela
@@ -241,9 +244,9 @@ const SECOES = [
       <>
         <p>
           Estes Termos são regidos pelas leis da República Federativa do Brasil. Fica eleito o foro
-          da comarca de [INSERIR CIDADE/COMARCA], com renúncia a qualquer outro, por mais privilegiado
-          que seja, para dirimir eventuais controvérsias decorrentes deste instrumento, ressalvada a
-          competência de foros especiais previstos em lei.
+          da comarca de Uberlândia, Minas Gerais, com renúncia a qualquer outro, por mais
+          privilegiado que seja, para dirimir eventuais controvérsias decorrentes deste instrumento,
+          ressalvada a competência de foros especiais previstos em lei.
         </p>
       </>
     ),
@@ -283,7 +286,10 @@ const SECOES = [
             contato@dexidigital.com.br
           </a>
         </p>
-        <p>Endereço: [INSERIR ENDEREÇO COMPLETO DA DEXI DIGITAL]</p>
+        <p>
+          Endereço: Avenida Professor Jose Inacio de Souza, 1186, Sala 9, Bairro Brasil, CEP
+          38400-732, Uberlândia, Minas Gerais.
+        </p>
       </>
     ),
   },

@@ -21,8 +21,11 @@ const SECOES = [
       <>
         <p>
           O Fykos é a plataforma de dados e inteligência artificial desenvolvida e operada pela{' '}
-          <strong>Dexi Digital [RAZÃO SOCIAL COMPLETA], CNPJ [INSERIR CNPJ]</strong>, com sede em{' '}
-          [INSERIR ENDEREÇO COMPLETO] ("Dexi", "nós" ou "nosso").
+          <strong>
+            Dexi Digital, marca de Paraiso Solucoes em Tecnologia LTDA, CNPJ 49.036.970/0001-36
+          </strong>
+          , com sede na Avenida Professor Jose Inacio de Souza, 1186, Sala 9, Bairro Brasil, CEP
+          38400-732, Uberlândia, Minas Gerais ("Dexi", "nós" ou "nosso").
         </p>
         <p>
           O Fykos conecta empresas clientes (concessionárias, grupos automotivos, clínicas,
@@ -289,16 +292,17 @@ const SECOES = [
     titulo: '13. Contato e encarregado (DPO)',
     corpo: (
       <>
-        <p>
-          Encarregado de Proteção de Dados (DPO): [NOME DO ENCARREGADO OU EQUIPE RESPONSÁVEL].
-        </p>
+        <p>Encarregado de Proteção de Dados (DPO): Equipe de Privacidade da Dexi Digital.</p>
         <p>
           E-mail para assuntos de privacidade:{' '}
           <a href="mailto:contato@dexidigital.com.br" className="underline">
             contato@dexidigital.com.br
           </a>
         </p>
-        <p>Endereço: [INSERIR ENDEREÇO COMPLETO DA DEXI DIGITAL]</p>
+        <p>
+          Endereço: Avenida Professor Jose Inacio de Souza, 1186, Sala 9, Bairro Brasil, CEP
+          38400-732, Uberlândia, Minas Gerais.
+        </p>
         <p>
           Você também pode registrar uma reclamação junto à Autoridade Nacional de Proteção de Dados
           (ANPD), em gov.br/anpd.
