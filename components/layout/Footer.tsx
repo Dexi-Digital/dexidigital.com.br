@@ -42,7 +42,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm text-white/60 leading-relaxed mb-4">
-              A Dexi é uma empresa de software. Criamos o Fykos — um Sistema Operacional de Receita que reinventa o CRM e usa dados e IA para colocar dinheiro no bolso do dono, sobre os sistemas que sua operação já usa.
+              A Dexi é uma empresa de software. Criamos o Fykos, um Sistema Operacional de Receita que reinventa o CRM e usa dados e IA para colocar dinheiro no bolso do dono, sobre os sistemas que sua operação já usa.
             </p>
             <p className="text-sm text-white/40">
               Para operações onde a precisão é inegociável.

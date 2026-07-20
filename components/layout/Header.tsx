@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useTheme } from '@/components/ThemeProvider';
 import TrackedCTA from '@/components/ui/TrackedCTA';
 
-// Áreas atendidas (verticais) — prova por setor
+// Áreas atendidas (verticais): prova por setor
 const areas = [
   { name: 'Automotivo', href: '/automotivo' },
   { name: 'Clínicas', href: '/clinicas' },
@@ -131,7 +131,7 @@ export default function Header() {
               O Fykos
             </Link>
 
-            {/* Áreas atendidas — dropdown (abre por hover no desktop e por clique/teclado) */}
+            {/* Áreas atendidas: dropdown (abre por hover no desktop e por clique/teclado) */}
             <div
               className="relative"
               ref={areasRef}

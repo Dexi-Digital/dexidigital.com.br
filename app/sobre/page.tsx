@@ -71,7 +71,7 @@ export default function AboutPage() {
             <div className="section-header">
               <h2 className="text-h2">A Engenharia de Elite por trás do Fykos</h2>
               <p className="text-lead">Liderança sênior com DNA de execução em ecossistemas de alta complexidade.</p>
-              <p className="text-body-sm text-[var(--text-secondary)] mt-2">Unimos décadas de experiência em arquitetura de software crítico com o pioneirismo em sistemas de IA. Nosso time é composto por especialistas que desenharam e sustentaram infraestruturas para os maiores grupos empresariais do país — agora focados em liderar a próxima fronteira da automação autônoma.</p>
+              <p className="text-body-sm text-[var(--text-secondary)] mt-2">Unimos décadas de experiência em arquitetura de software crítico com o pioneirismo em sistemas de IA. Nosso time é composto por especialistas que desenharam e sustentaram infraestruturas para os maiores grupos empresariais do país, agora focados em liderar a próxima fronteira da automação autônoma.</p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">

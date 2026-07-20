@@ -13,7 +13,7 @@ const steps = [
     number: '01',
     title: 'Imersão & Diagnóstico de ROI',
     duration: '1-2 semanas',
-    description: 'Mapeamos gargalos operacionais para validar onde a IA gerará o maior ganho de EBITDA — do setor automotivo premium ao imobiliário de alto padrão.',
+    description: 'Mapeamos gargalos operacionais para validar onde a IA gerará o maior ganho de EBITDA, do setor automotivo premium ao imobiliário de alto padrão.',
     deliverables: ['Business Case de Viabilidade Financeira', 'Blueprint de Processos Críticos', 'Projeção de ROI e Recuperação de Ativos', 'Matriz de Priorização "Quick Wins"'],
   },
   {

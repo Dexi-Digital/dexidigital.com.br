@@ -55,7 +55,7 @@ export default function CustomSoftwarePage() {
                   <h3 className="text-h4 mb-2">Software com IA Integrada</h3>
                   <p className="text-body text-[var(--text-secondary)]">
                     Desenvolvemos aplicações que incorporam nosso Concierge Digital de Vendas e
-                    outras soluções de IA diretamente no core do sistema — não como add-ons,
+                    outras soluções de IA diretamente no core do sistema, não como add-ons,
                     mas como parte fundamental da arquitetura.
                   </p>
                 </div>

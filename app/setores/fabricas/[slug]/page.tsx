@@ -56,7 +56,7 @@ export default async function FabricaPage({ params }: PageProps) {
               <span className="mx-2">/</span>
               <span className="text-[var(--text-secondary)]">{data.brand}</span>
             </nav>
-            <p className="text-overline mb-4 animate-fade-in-up-subtle">IA AUTOMOTIVA — {data.brand.toUpperCase()}</p>
+            <p className="text-overline mb-4 animate-fade-in-up-subtle">IA AUTOMOTIVA: {data.brand.toUpperCase()}</p>
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
               Execução Agêntica para{' '}
               <span className="text-display-gradient">{data.brand}</span>

@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Fykos para Clínicas | Dexi Digital',
   description:
-    'O Fykos cria relacionamento contínuo com cada paciente: acompanha procedimentos recorrentes, antecipa retorno e renovação de receita e reduz o no-show — sobre o seu sistema de gestão e prontuário. Seja um caso-fundador com diagnóstico de 24h.',
+    'O Fykos cria relacionamento contínuo com cada paciente: acompanha procedimentos recorrentes, antecipa retorno e renovação de receita e reduz o no-show, sobre o seu sistema de gestão e prontuário. Seja um caso-fundador com diagnóstico de 24h.',
   keywords: [
     'IA para clínicas',
     'relacionamento com pacientes',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Fykos para Clínicas | A Dexi não deixa o paciente sumir',
     description:
-      'Relacionamento contínuo com o paciente: procedimentos recorrentes em dia, retorno e renovação de receita antecipados, menos no-show — sobre o seu sistema de gestão. Estamos selecionando as primeiras clínicas como casos-fundadores.',
+      'Relacionamento contínuo com o paciente: procedimentos recorrentes em dia, retorno e renovação de receita antecipados, menos no-show, sobre o seu sistema de gestão. Estamos selecionando as primeiras clínicas como casos-fundadores.',
     type: 'website',
     locale: 'pt_BR',
   },
@@ -35,7 +35,7 @@ const DIFERENCIAIS = [
   {
     titulo: 'Nenhum paciente some',
     corpo:
-      'Relacionamento contínuo, não resgate de última hora. O Fykos acompanha quem faz procedimento recorrente — a soroterapia que exige aplicação semanal, a receita que precisa ser renovada e não pode esperar três meses por uma consulta — e remarca o retorno na hora certa, antes de a agenda abrir buraco.',
+      'Relacionamento contínuo, não resgate de última hora. O Fykos acompanha quem faz procedimento recorrente: a soroterapia que exige aplicação semanal, a receita que precisa ser renovada e não pode esperar três meses por uma consulta, e remarca o retorno na hora certa, antes de a agenda abrir buraco.',
   },
   {
     titulo: 'Comandos com inteligência, execução em trilhos',
@@ -47,7 +47,7 @@ const DIFERENCIAIS = [
 export default function ClinicasPage() {
   return (
     <main className="min-h-screen bg-[var(--bg-primary)] pb-24 md:pb-0 relative">
-      {/* Hero — faixa dark autocontida */}
+      {/* Hero: faixa dark autocontida */}
       <section
         id="hero"
         className="relative overflow-hidden bg-[var(--bg-primary)] py-24 md:py-36 border-b border-[var(--border-subtle)]"
@@ -67,7 +67,7 @@ export default function ClinicasPage() {
             <p className="text-lead text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto animate-fade-in-up delay-150">
               O Fykos cria relacionamento com cada paciente para que ele naturalmente não fique
               parado: acompanha procedimentos recorrentes, antecipa retorno e renovação de receita
-              e reduz o no-show — sobre o seu sistema de gestão e prontuário, sem trocar de
+              e reduz o no-show, sobre o seu sistema de gestão e prontuário, sem trocar de
               ferramenta.
             </p>
 
@@ -90,7 +90,7 @@ export default function ClinicasPage() {
             <div className="section-header text-center">
               <h2 className="text-h2">Cada cadeira vazia é receita que dá para recuperar</h2>
               <p className="text-lead">
-                Os três pilares que sustentam o Fykos em qualquer setor — aqui, na linguagem da
+                Os três pilares que sustentam o Fykos em qualquer setor, aqui na linguagem da
                 clínica.
               </p>
             </div>
@@ -128,14 +128,14 @@ export default function ClinicasPage() {
               </span>
             </div>
             <p className="text-body-sm text-[var(--text-secondary)] max-w-2xl mx-auto">
-              O mesmo motor conecta ao sistema-núcleo da sua clínica — não troca de sistema, ganha
+              O mesmo motor conecta ao sistema-núcleo da sua clínica: não troca de sistema, ganha
               uma camada de inteligência sobre ele.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Cliente-fundador — no lugar de prova (SEM logo/cliente falso) */}
+      {/* Cliente-fundador: no lugar de prova (SEM logo/cliente falso) */}
       <section id="cliente-fundador" className="section bg-[var(--bg-primary)]">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">

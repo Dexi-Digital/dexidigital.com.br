@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 
 /**
- * HeroWave — fundo de "luz fluindo" para o herói (estilo vídeo hero, bem suave).
+ * HeroWave: fundo de "luz fluindo" para o herói (estilo vídeo hero, bem suave).
  * Canvas puro, sem dependências. Parâmetros travados: intensidade ~45, velocidade ~7.
  * Respeita prefers-reduced-motion (renderiza 1 frame estático).
  * Cor-assinatura: Pumpkin #FF7518 (uma das cortinas) + azul/ciano da marca.

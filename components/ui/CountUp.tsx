@@ -17,7 +17,7 @@ interface CountUpProps {
 }
 
 /**
- * CountUp — anima a contagem 0 → valor quando entra na viewport (IntersectionObserver).
+ * CountUp: anima a contagem 0 → valor quando entra na viewport (IntersectionObserver).
  * SSR/no-JS/reduced-motion: renderiza o valor final direto (sem zero "preso").
  */
 export default function CountUp({

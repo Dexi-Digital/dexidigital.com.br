@@ -17,7 +17,7 @@ export const CONSTRUCTION_CLIENTS: ClientLogo[] = [
 ];
 
 /**
- * ClientLogos — barra de logos de clientes.
+ * ClientLogos: barra de logos de clientes.
  * Cada logo fica num chip claro para garantir contraste (várias logos são escuras),
  * em escala de cinza suave que colore no hover. Sem next/image (formatos mistos: png/webp/svg).
  */

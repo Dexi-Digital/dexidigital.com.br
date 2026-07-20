@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Fykos para Construtoras e Incorporadoras | Dexi Digital',
   description:
-    'O Fykos nutre o lead do pré-lançamento à proposta e faz a cobrança amigável das parcelas na venda com recursos próprios — sobre o CRM de vendas que você já usa.',
+    'O Fykos nutre o lead do pré-lançamento à proposta e faz a cobrança amigável das parcelas na venda com recursos próprios, sobre o CRM de vendas que você já usa.',
   keywords: [
     'IA para construtoras',
     'incorporadoras',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Fykos para Construtoras e Incorporadoras | Do pré-lançamento à última parcela',
     description:
-      'Nutre o lead antes do lançamento e faz a cobrança amigável das parcelas depois da venda — sobre o CRM de vendas e o ERP que você já usa. Zero migração.',
+      'Nutre o lead antes do lançamento e faz a cobrança amigável das parcelas depois da venda, sobre o CRM de vendas e o ERP que você já usa. Zero migração.',
     type: 'website',
     locale: 'pt_BR',
   },
@@ -37,7 +37,7 @@ const MOMENTOS = [
     overline: 'DEPOIS DA VENDA',
     titulo: 'Cobrança amigável das parcelas',
     corpo:
-      'Venda com recursos próprios é carteira longa. O Fykos acompanha cada parcela e cobra preservando o relacionamento: lembra antes do vencimento e, quando alguém atrasa, escala para o seu time negociar — a receita entra sem desgastar a relação.',
+      'Venda com recursos próprios é carteira longa. O Fykos acompanha cada parcela e cobra preservando o relacionamento: lembra antes do vencimento e, quando alguém atrasa, escala para o seu time negociar. A receita entra sem desgastar a relação.',
   },
 ];
 
@@ -50,7 +50,7 @@ const DIFERENCIAIS = [
   {
     titulo: 'Nenhum lead morre',
     corpo:
-      'Do pré-lançamento ao plantão, nutre quem demonstrou interesse e reaquece quem visitou e não fechou. O lead que não compra hoje continua na base, vivo até a hora certa de comprar — nada esfria no meio do caminho.',
+      'Do pré-lançamento ao plantão, nutre quem demonstrou interesse e reaquece quem visitou e não fechou. O lead que não compra hoje continua na base, vivo até a hora certa de comprar. Nada esfria no meio do caminho.',
   },
   {
     titulo: 'Comandos com inteligência, execução em trilhos',
@@ -62,7 +62,7 @@ const DIFERENCIAIS = [
 export default function ConstrutorasPage() {
   return (
     <main className="min-h-screen bg-[var(--bg-primary)] pb-24 md:pb-0 relative">
-      {/* Hero — faixa dark autocontida */}
+      {/* Hero: faixa dark autocontida */}
       <section
         id="hero"
         className="relative overflow-hidden bg-[var(--bg-primary)] py-24 md:py-36 border-b border-[var(--border-subtle)]"
@@ -78,13 +78,13 @@ export default function ConstrutorasPage() {
 
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
               Lançou, gerou lead, e depois? A Dexi não deixa a{' '}
-              <span className="text-result">receita esfriar</span> — do pré-lançamento à última
+              <span className="text-result">receita esfriar</span>, do pré-lançamento à última
               parcela.
             </h1>
 
             <p className="text-lead text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto animate-fade-in-up delay-150">
               O Fykos nutre o lead antes do lançamento, mantém o interessado aquecido até a proposta
-              e, na venda com recursos próprios, faz a cobrança amigável das parcelas — sobre o CRM
+              e, na venda com recursos próprios, faz a cobrança amigável das parcelas, sobre o CRM
               de vendas e o ERP que você já usa.
             </p>
 
@@ -100,7 +100,7 @@ export default function ConstrutorasPage() {
         </div>
       </section>
 
-      {/* Dois momentos — nutrição pré-lançamento e cobrança amigável */}
+      {/* Dois momentos: nutrição pré-lançamento e cobrança amigável */}
       <section id="momentos" className="section bg-[var(--bg-primary)]">
         <div className="container">
           <div className="max-w-5xl mx-auto">
@@ -108,7 +108,7 @@ export default function ConstrutorasPage() {
               <h2 className="text-h2">
                 A receita da incorporadora e da loteadora vive em dois momentos
               </h2>
-              <p className="text-lead">O Fykos cuida dos dois — antes do lançamento e depois da venda.</p>
+              <p className="text-lead">O Fykos cuida dos dois: antes do lançamento e depois da venda.</p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -133,7 +133,7 @@ export default function ConstrutorasPage() {
                 Do pré-lançamento à última parcela, nenhuma receita fica no meio do caminho
               </h2>
               <p className="text-lead">
-                Os três pilares que sustentam o Fykos em qualquer setor — aqui, na linguagem da
+                Os três pilares que sustentam o Fykos em qualquer setor, aqui na linguagem da
                 incorporadora e da loteadora.
               </p>
             </div>
@@ -171,14 +171,14 @@ export default function ConstrutorasPage() {
               </span>
             </div>
             <p className="text-body-sm text-[var(--text-secondary)] max-w-2xl mx-auto">
-              O mesmo motor conecta ao sistema-núcleo da sua operação — não troca de sistema,
+              O mesmo motor conecta ao sistema-núcleo da sua operação: não troca de sistema,
               ganha uma camada de inteligência sobre ele.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Prova — TGV Empreendimentos */}
+      {/* Prova: TGV Empreendimentos */}
       <section id="prova" className="section bg-[var(--bg-primary)]">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
@@ -188,7 +188,7 @@ export default function ConstrutorasPage() {
               <p className="text-body text-[var(--text-secondary)]">
                 Nosso parceiro em construtoras e incorporadoras. É com a TGV que provamos a cobrança
                 amigável do Fykos: a carteira de parcelas acompanhada sobre o sistema que a operação
-                já usa — com tanto êxito que hoje há cliente procurando a TGV proativamente, antes
+                já usa, com tanto êxito que hoje há cliente procurando a TGV proativamente, antes
                 mesmo de ser cobrado.
               </p>
             </div>

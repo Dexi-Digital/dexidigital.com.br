@@ -26,27 +26,27 @@ export const metadata: Metadata = {
 const CAMADAS = [
   {
     n: '01',
-    titulo: 'Conectores — integra, não substitui',
+    titulo: 'Conectores: integra, não substitui',
     corpo:
-      'O Fykos se conecta ao sistema-núcleo que a operação já usa — DMS das montadoras, Syonet, CRM de vendas, ERP, sistema de gestão/prontuário — via integração de dados. Não troca de ferramenta, não migra base, não interrompe a operação. Ganha-se uma camada sobre o que já está no ar.',
+      'O Fykos se conecta, via integração de dados, ao sistema-núcleo que a operação já usa: DMS das montadoras, Syonet, CRM de vendas, ERP, sistema de gestão/prontuário. Não troca de ferramenta, não migra base, não interrompe a operação. Ganha-se uma camada sobre o que já está no ar.',
   },
   {
     n: '02',
-    titulo: 'Motor de dados — a operação vira contexto',
+    titulo: 'Motor de dados: a operação vira contexto',
     corpo:
-      'Leads, histórico, funil e carteira são unificados e normalizados em tempo quase real. É essa base de dados consolidada que dá à inteligência o contexto para decidir com precisão — qualificar, priorizar e reaquecer com base no que realmente aconteceu na operação.',
+      'Leads, histórico, funil e carteira são unificados e normalizados em tempo quase real. É essa base de dados consolidada que dá à inteligência o contexto para decidir com precisão: qualificar, priorizar e reaquecer com base no que realmente aconteceu na operação.',
   },
   {
     n: '03',
-    titulo: 'Camada de inteligência — comandos com inteligência',
+    titulo: 'Camada de inteligência: comandos com inteligência',
     corpo:
-      'A IA orquestra os melhores modelos de linguagem do mercado para ler o contexto, entender a intenção e decidir a próxima melhor ação da jornada. Conduz conversas complexas, qualifica, nutre quem ainda não está pronto e ressuscita a oportunidade parada — do primeiro contato ao fechamento. O valor não está no modelo: está na engenharia ao redor dele.',
+      'A IA orquestra os melhores modelos de linguagem do mercado para ler o contexto, entender a intenção e decidir a próxima melhor ação da jornada. Conduz conversas complexas, qualifica, nutre quem ainda não está pronto e ressuscita a oportunidade parada, do primeiro contato ao fechamento. O valor não está no modelo: está na engenharia ao redor dele.',
   },
   {
     n: '04',
-    titulo: 'Execução em trilhos — determinística e auditável',
+    titulo: 'Execução em trilhos: determinística e auditável',
     corpo:
-      'Nossa aposta de engenharia: a jornada é modelada sobre teoria dos grafos e conceitos de teoria da computação, então cada decisão é um caminho rastreável — determinístico, sem alucinação, com log de cada contato e sob a LGPD. Quando o caso exige, o Fykos escala para o humano; e o ROI é validado antes de escalar.',
+      'Nossa aposta de engenharia: a jornada é modelada sobre teoria dos grafos e conceitos de teoria da computação, então cada decisão é um caminho rastreável: determinístico, sem alucinação, com log de cada contato e sob a LGPD. Quando o caso exige, o Fykos escala para o humano; e o ROI é validado antes de escalar.',
   },
 ];
 
@@ -71,7 +71,7 @@ const PILARES = [
 export default function OFykosPage() {
   return (
     <main className="min-h-screen bg-[var(--bg-primary)] pb-24 md:pb-0 relative">
-      {/* Hero — fundo por imagem (dark/light por tema) */}
+      {/* Hero: fundo por imagem (dark/light por tema) */}
       <section
         id="hero"
         className="relative overflow-hidden bg-[var(--bg-primary)] py-24 md:py-36 border-b border-[var(--border-subtle)]"
@@ -92,7 +92,7 @@ export default function OFykosPage() {
 
             <p className="text-lead text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto animate-fade-in-up delay-150">
               O Fykos é o ecossistema proprietário da Dexi Digital. Uma camada de dados e IA que roda
-              sobre o sistema-núcleo que sua operação já usa e executa o ciclo de receita inteiro —
+              sobre o sistema-núcleo que sua operação já usa e executa o ciclo de receita inteiro,
               de forma determinística, auditável e sob a LGPD. Não é IA genérica. É engenharia de
               receita.
             </p>
@@ -132,7 +132,7 @@ export default function OFykosPage() {
             <div className="card card-result p-6 text-center">
               <div className="text-number-hero text-result mb-2">7–21</div>
               <div className="text-body-sm font-medium text-[var(--text-primary)]">
-                dias de onboarding — 7 nos casos simples, até 21 nos complexos
+                dias de onboarding: 7 nos casos simples, até 21 nos complexos
               </div>
             </div>
             <div className="card card-result p-6 text-center">
@@ -151,7 +151,7 @@ export default function OFykosPage() {
         </div>
       </section>
 
-      {/* Arquitetura — as camadas */}
+      {/* Arquitetura: as camadas */}
       <section id="arquitetura" className="section-lg section-gradient">
         <div className="container">
           <div className="max-w-5xl mx-auto">
@@ -212,7 +212,7 @@ export default function OFykosPage() {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-overline mb-2">INTEGRAÇÕES</p>
-            <h2 className="text-h2 mb-8">Conecta ao seu núcleo — via API e webhook, com autenticação</h2>
+            <h2 className="text-h2 mb-8">Conecta ao seu núcleo: via API e webhook, com autenticação</h2>
             <div className="flex flex-wrap gap-4 justify-center mb-6">
               {['Syonet', 'AutoConf'].map((sis) => (
                 <span
@@ -227,7 +227,7 @@ export default function OFykosPage() {
               </span>
             </div>
             <p className="text-body-sm text-[var(--text-secondary)] max-w-2xl mx-auto">
-              Integrações em produção hoje, conectadas por API e webhook — cada uma com sua camada de
+              Integrações em produção hoje, conectadas por API e webhook, cada uma com sua camada de
               autenticação. Como é cloud-agnostic, o Fykos roda na nuvem homologada pela sua operação.
               O mesmo motor conecta ao sistema-núcleo de qualquer setor: não troca de sistema, ganha
               uma camada de inteligência sobre ele.

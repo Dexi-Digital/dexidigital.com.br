@@ -25,7 +25,7 @@ const HERO_STATS = [
 export default function CasesPage() {
   return (
     <main className="min-h-screen bg-[var(--bg-primary)]">
-      {/* Hero — fundo por imagem (dark/light por tema) */}
+      {/* Hero: fundo por imagem (dark/light por tema) */}
       <section
         id="hero"
         className="relative overflow-hidden bg-[var(--bg-primary)] py-24 md:py-32 border-b border-[var(--border-subtle)]"
@@ -41,7 +41,7 @@ export default function CasesPage() {
             </h1>
             <p className="text-lead text-[var(--text-secondary)] max-w-2xl mx-auto animate-fade-in-up delay-150">
               Prova do Fykos rodando em operação real. Preservamos o nome dos clientes por
-              confidencialidade — os números são auditáveis e foram gerados sobre o sistema que a
+              confidencialidade, mas os números são auditáveis e foram gerados sobre o sistema que a
               operação já usava.
             </p>
           </div>
@@ -67,7 +67,7 @@ export default function CasesPage() {
         </div>
       </section>
 
-      {/* Case 1 — Alto ticket */}
+      {/* Case 1: Alto ticket */}
       <section id="alto-ticket" className="section-lg bg-[var(--bg-primary)]">
         <div className="container">
           <div className="max-w-5xl mx-auto">
@@ -92,7 +92,7 @@ export default function CasesPage() {
                     O desafio
                   </h3>
                   <p className="text-body-sm text-[var(--text-secondary)]">
-                    Vender um veículo de altíssimo ticket não é responder rápido — é conduzir uma
+                    Vender um veículo de altíssimo ticket não é responder rápido: é conduzir uma
                     jornada longa, com muitas idas e vindas, sem deixar o lead esfriar entre uma etapa
                     e outra. É exatamente onde a IA de prateleira para: responde e devolve para o
                     humano.
@@ -104,7 +104,7 @@ export default function CasesPage() {
                   </h3>
                   <p className="text-body-sm text-[var(--text-secondary)]">
                     Conduziu a jornada inteira: qualificou, manteve o relacionamento aquecido ao longo
-                    de toda a negociação e levou o cliente do primeiro contato ao fechamento — com a
+                    de toda a negociação e levou o cliente do primeiro contato ao fechamento, com a
                     consistência que uma venda de sete dígitos exige e escalando para o time humano no
                     momento certo.
                   </p>
@@ -130,7 +130,7 @@ export default function CasesPage() {
         </div>
       </section>
 
-      {/* Case 2 — Volume dentro do grupo */}
+      {/* Case 2: Volume dentro do grupo */}
       <section id="grupo" className="section-lg section-gradient border-y border-[var(--border-subtle)]">
         <div className="container">
           <div className="max-w-5xl mx-auto">
@@ -145,7 +145,7 @@ export default function CasesPage() {
 
             <h2 className="text-h2 mb-4">
               Dentro do próprio grupo: <span className="text-result">1.230 leads</span> processados
-              pela inteligência ativa — e uma venda a cada cinco leads qualificados.
+              pela inteligência ativa, e uma venda a cada cinco leads qualificados.
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8 mt-8">
@@ -166,7 +166,7 @@ export default function CasesPage() {
                   </h3>
                   <p className="text-body-sm text-[var(--text-secondary)]">
                     Processou e qualificou a base inteira com inteligência ativa, priorizou quem tinha
-                    real intenção e manteve o funil organizado e vivo — transformando volume disperso
+                    real intenção e manteve o funil organizado e vivo, transformando volume disperso
                     em pipeline mensurável e previsível.
                   </p>
                 </div>

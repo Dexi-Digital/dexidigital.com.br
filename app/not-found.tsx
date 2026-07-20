@@ -17,7 +17,7 @@ export default function NotFound() {
           {/* Description */}
           <p className="text-lead text-[var(--text-secondary)] mb-8">
             O conteúdo que você procura pode ter sido movido ou não existe mais.
-            Mas não se preocupe — temos muito mais para oferecer.
+            Mas não se preocupe: temos muito mais para oferecer.
           </p>
 
           {/* Quick Links */}
@@ -27,25 +27,25 @@ export default function NotFound() {
               <li>
                 <Link href="/servicos/ia-para-empresas" className="text-[var(--color-primary-600)] hover:underline flex items-center gap-2">
                   <span>→</span>
-                  <span><strong>Arquitetura de IA que Executa (Fykos)</strong> — IA que executa e gera resultado</span>
+                  <span><strong>Arquitetura de IA que Executa (Fykos)</strong>: IA que executa e gera resultado</span>
                 </Link>
               </li>
               <li>
                 <Link href="/servicos/inteligencia-de-dados" className="text-[var(--color-primary-600)] hover:underline flex items-center gap-2">
                   <span>→</span>
-                  <span><strong>Engenharia de Dados & Ativos de Inteligência</strong> — Transforme dados em decisão</span>
+                  <span><strong>Engenharia de Dados & Ativos de Inteligência</strong>: Transforme dados em decisão</span>
                 </Link>
               </li>
               <li>
                 <Link href="/servicos/software-sob-medida" className="text-[var(--color-primary-600)] hover:underline flex items-center gap-2">
                   <span>→</span>
-                  <span><strong>Desenvolvimento de Sistemas de Missão Crítica</strong> — Software que escala</span>
+                  <span><strong>Desenvolvimento de Sistemas de Missão Crítica</strong>: Software que escala</span>
                 </Link>
               </li>
               <li>
                 <Link href="/setores/automotivo-premium" className="text-[var(--color-primary-600)] hover:underline flex items-center gap-2">
                   <span>→</span>
-                  <span><strong>IA para Grupos Automotivos</strong> — Caso de uso validado com +45% conversão</span>
+                  <span><strong>IA para Grupos Automotivos</strong>: Caso de uso validado com +45% conversão</span>
                 </Link>
               </li>
             </ul>

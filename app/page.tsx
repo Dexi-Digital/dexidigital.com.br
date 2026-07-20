@@ -8,11 +8,11 @@ import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Dexi Digital | Fykos — Sistema Operacional de Receita',
+  title: 'Dexi Digital | Fykos: Sistema Operacional de Receita',
   description: 'A Dexi é uma empresa de software. Criamos o Fykos, um sistema operacional de receita que reinventa o CRM e usa dados e IA para transformar seus dados em receita, sobre os sistemas que sua operação já usa.',
   keywords: ['sistema operacional de receita', 'Fykos', 'reinventar o CRM', 'engenharia de receita', 'dados e IA para vendas', 'recuperação de carteira', 'software sob medida', 'grupos automotivos'],
   openGraph: {
-    title: 'Dexi Digital | Fykos — Sistema Operacional de Receita',
+    title: 'Dexi Digital | Fykos: Sistema Operacional de Receita',
     description: 'O Fykos transforma seus dados em receita, sobre os sistemas que sua operação já usa. Não é IA genérica. É engenharia de receita.',
     type: 'website',
     locale: 'pt_BR',
@@ -32,7 +32,7 @@ export default function HomePage() {
         />
       ))}
 
-      {/* Hero Section — categoria Fykos, fundo por imagem (dark/light por tema) */}
+      {/* Hero Section: categoria Fykos, fundo por imagem (dark/light por tema) */}
       <section
         id="hero"
         className="relative overflow-hidden bg-[var(--bg-primary)] py-24 md:py-36 border-b border-[var(--border-subtle)]"
@@ -60,7 +60,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Prova rápida — números agnósticos como protagonistas, em Pumpkin, com count-up */}
+      {/* Prova rápida: números agnósticos como protagonistas, em Pumpkin, com count-up */}
       <section id="resultados" className="dark section py-12 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)]">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
@@ -91,7 +91,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Contraste — IA de prateleira × Dexi */}
+      {/* Contraste: IA de prateleira × Dexi */}
       <section id="contraste" className="section bg-[var(--bg-primary)]">
         <div className="container">
           <div className="max-w-5xl mx-auto">
@@ -136,7 +136,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3 diferenciais — a espinha agnóstica */}
+      {/* 3 diferenciais: a espinha agnóstica */}
       <section id="diferenciais" className="section bg-[var(--bg-surface)] border-y border-[var(--border-subtle)]">
         <div className="container">
           <div className="max-w-5xl mx-auto">
@@ -163,7 +163,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Integrações — roda sobre o núcleo de qualquer setor */}
+      {/* Integrações: roda sobre o núcleo de qualquer setor */}
       <section id="integracoes" className="section bg-[var(--bg-primary)]">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
@@ -185,7 +185,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Caso automotivo — onde já provamos (leva para /automotivo) */}
+      {/* Caso automotivo: onde já provamos (leva para /automotivo) */}
       <section id="caso-automotivo" className="section-lg section-gradient">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center md:text-left">
@@ -202,7 +202,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Áreas atendidas — 3 cards → páginas verticais */}
+      {/* Áreas atendidas: 3 cards → páginas verticais */}
       <section id="areas-atendidas" className="section bg-[var(--bg-primary)] border-y border-[var(--border-subtle)]">
         <div className="container">
           <div className="max-w-5xl mx-auto">

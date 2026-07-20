@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     locale: 'pt_BR',
     url: 'https://dexidigital.com.br',
     siteName: 'Dexi Digital',
-    title: 'Dexi Digital | Fykos — Sistema Operacional de Receita',
+    title: 'Dexi Digital | Fykos: Sistema Operacional de Receita',
     description:
       'O Fykos reinventa o CRM e transforma seus dados em receita, sobre os sistemas que sua operação já usa. Não é IA genérica. É engenharia de receita.',
     images: [
@@ -51,13 +51,13 @@ export const metadata: Metadata = {
         url: '/og-image-home.jpg',
         width: 1200,
         height: 630,
-        alt: 'Dexi Digital — Fykos, Sistema Operacional de Receita',
+        alt: 'Dexi Digital: Fykos, Sistema Operacional de Receita',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dexi Digital | Fykos — Sistema Operacional de Receita',
+    title: 'Dexi Digital | Fykos: Sistema Operacional de Receita',
     description:
       'O Fykos reinventa o CRM e transforma seus dados em receita, sobre os sistemas que sua operação já usa. Não é IA genérica. É engenharia de receita.',
     images: ['/og-image-home.jpg'],

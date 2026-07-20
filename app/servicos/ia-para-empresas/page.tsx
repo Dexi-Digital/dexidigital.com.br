@@ -55,8 +55,8 @@ export default function EnterpriseAIPage() {
                 <h3 className="text-h5 mb-3">Treinado em Neurolinguística</h3>
                 <p className="text-body-sm text-[var(--text-secondary)]">
                   Reconhece padrões linguísticos que revelam valores, motivações e
-                  estilo de tomada de decisão do cliente. Vai além das palavras —
-                  entende o que está por trás delas.
+                  estilo de tomada de decisão do cliente. Vai além das palavras.
+                  Entende o que está por trás delas.
                 </p>
               </div>
 
@@ -84,7 +84,7 @@ export default function EnterpriseAIPage() {
                 <p className="text-body-sm text-[var(--text-secondary)]">
                   A cada turno da conversa, analisa e adapta a abordagem.
                   Identifica se o cliente valoriza performance, segurança,
-                  status ou economia — e ajusta o discurso dinamicamente.
+                  status ou economia, e ajusta o discurso dinamicamente.
                 </p>
               </div>
             </div>
