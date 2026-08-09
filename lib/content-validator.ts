@@ -16,7 +16,7 @@ function countWords(text: string): number {
 }
 
 function checkQuickAnswer(content: string): boolean {
-  const match = content.match(/\*\*Resposta rápida:\*\*\s*(.+?)(?:\n\n|\n#|$)/s);
+  const match = content.match(/\*\*Resposta rápida:\*\*\s*([\s\S]+?)(?:\n\n|\n#|$)/);
   if (!match) return false;
   const wordCount = countWords(match[1]);
   return wordCount >= 30 && wordCount <= 70;
