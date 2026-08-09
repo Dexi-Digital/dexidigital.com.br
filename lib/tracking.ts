@@ -24,11 +24,12 @@ export interface TrackingEvent {
   custom_data?: Record<string, string | number | boolean>;
 }
 
-// Declaração global do gtag
+// Declaração global do gtag e do oaiq (OpenAI Ads Pixel)
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
     dataLayer?: unknown[];
+    oaiq?: (...args: unknown[]) => void;
   }
 }
 
@@ -37,7 +38,7 @@ declare global {
  */
 export function trackEvent(event: TrackingEvent): void {
   if (typeof window === 'undefined') return;
-  
+
   // Google Analytics 4
   if (window.gtag) {
     window.gtag('event', event.action, {
@@ -51,6 +52,29 @@ export function trackEvent(event: TrackingEvent): void {
   // Console log para debug em desenvolvimento
   if (process.env.NODE_ENV === 'development') {
     console.log('[Dexi Tracking]', event);
+  }
+}
+
+/**
+ * Envia evento de conversão para o OpenAI Ads Pixel (tráfego de anúncios no ChatGPT)
+ */
+export function trackOpenAIConversion(
+  eventName: string,
+  data?: Record<string, string | number>
+): void {
+  if (typeof window === 'undefined') return;
+
+  if (window.oaiq) {
+    window.oaiq('measure', eventName, {
+      type: 'customer_action',
+      amount: 0,
+      currency: 'USD',
+      ...data,
+    });
+  }
+
+  if (process.env.NODE_ENV === 'development') {
+    console.log('[Dexi Tracking][OpenAI Ads]', eventName, data);
   }
 }
 
@@ -99,6 +123,10 @@ export function trackFormSubmit(formName: string, success: boolean): void {
     action: success ? 'form_success' : 'form_error',
     label: formName,
   });
+
+  if (success) {
+    trackOpenAIConversion('registration_completed', { form_name: formName });
+  }
 }
 
 // ============================================
@@ -113,6 +141,11 @@ export function trackMaterialDownload(materialName: string, materialType: string
     custom_data: {
       material_type: materialType,
     },
+  });
+
+  trackOpenAIConversion('registration_completed', {
+    material_name: materialName,
+    material_type: materialType,
   });
 }
 

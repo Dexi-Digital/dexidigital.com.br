@@ -9,6 +9,8 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import dynamic from 'next/dynamic';
 
 import AnalyticsWrapper from '@/components/analytics/AnalyticsWrapper';
+import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
+import OpenAIPixel from '@/components/analytics/OpenAIPixel';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -95,6 +97,8 @@ export default function RootLayout({
         ))}
       </head>
       <body className="font-sans antialiased">
+        <GoogleAnalytics />
+        <OpenAIPixel />
         <ThemeProvider defaultTheme="system" storageKey="dexi-ui-theme">
           <AnalyticsWrapper />
           <Header />

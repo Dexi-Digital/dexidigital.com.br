@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { trackMaterialDownload } from '@/lib/tracking';
 
 interface LeadMagnetProps {
   type: 'pdf' | 'checklist' | 'calculator';
@@ -68,6 +69,7 @@ export default function LeadMagnet({
       }
 
       setIsSubmitted(true);
+      trackMaterialDownload(title, type);
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Ocorreu um erro. Por favor, tente novamente.';
       setError(errorMessage);

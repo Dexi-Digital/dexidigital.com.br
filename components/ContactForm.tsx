@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { trackFormSubmit } from '@/lib/tracking';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -45,6 +46,7 @@ export default function ContactForm() {
       }
 
       setStatus('success');
+      trackFormSubmit('contact_form', true);
       setFormData({
         name: '',
         email: '',
@@ -59,6 +61,7 @@ export default function ContactForm() {
     } catch (error) {
       setStatus('error');
       setErrorMessage('Erro ao enviar mensagem. Tente novamente ou envie um email para contato@dexidigital.com.br');
+      trackFormSubmit('contact_form', false);
     }
   };
 
