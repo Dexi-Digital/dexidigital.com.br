@@ -33,3 +33,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# news database (gerado pelo script de ingestão, não versionado)
+/data
+
