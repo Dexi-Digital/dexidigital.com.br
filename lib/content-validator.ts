@@ -51,7 +51,11 @@ function checkClinicalSafety(content: string, vertical: string): boolean {
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '')
     .toLowerCase();
-  return !CLINICAL_CLAIM_TERMS.some((term) => normalized.includes(term));
+  // Fronteira de palavra (\b): evita falso positivo tipo "cura" dentro de "procura".
+  return !CLINICAL_CLAIM_TERMS.some((term) => {
+    const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return new RegExp(`\\b${escaped}\\b`).test(normalized);
+  });
 }
 
 export function validatePost(content: string, vertical: string, pillarLink: string): ValidatorReport {
