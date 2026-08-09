@@ -117,6 +117,18 @@ export function getPublishedDbPosts(): DbBlogPost[] {
   }
 }
 
+export function getPostsByPillarLink(pillarLink: string): DbBlogPost[] {
+  const db = getDb();
+  try {
+    const rows = db
+      .prepare(`SELECT * FROM blog_posts WHERE status='published' AND pillar_link = ? ORDER BY published_at DESC`)
+      .all(pillarLink) as unknown as BlogPostRow[];
+    return rows.map(rowToPost);
+  } finally {
+    db.close();
+  }
+}
+
 export function getDbPostBySlug(slug: string): DbBlogPost | null {
   const db = getDb();
   try {

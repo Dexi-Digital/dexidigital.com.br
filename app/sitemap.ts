@@ -8,6 +8,7 @@ import { GLOSSARIO_TERMS } from '@/lib/seo/glossario';
 import { INTEGRACOES } from '@/lib/seo/integracoes';
 import { getAllArticles } from '@/lib/blog-data';
 import { getPublishedDbPosts } from '@/lib/blog-db';
+import { PILLARS } from '@/lib/pillars';
 
 export const dynamic = 'force-dynamic';
 
@@ -252,6 +253,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  // Pilares (hubs de cluster do calendário editorial)
+  const pillarPages: MetadataRoute.Sitemap = PILLARS.map((pillar) => ({
+    url: `${baseUrl}/${pillar.slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'weekly' as const,
+    priority: 0.75,
+  }));
+
   return [
     ...mainPages,
     ...servicePages,
@@ -266,6 +275,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...productPages,
     ...materialPages,
     ...companyPages,
+    ...pillarPages,
     ...blogPages,
     ...newsPages,
   ];
