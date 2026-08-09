@@ -6,6 +6,10 @@ import { COMPARATIVOS } from '@/lib/seo/comparativo';
 import { GUIAS } from '@/lib/seo/guias';
 import { GLOSSARIO_TERMS } from '@/lib/seo/glossario';
 import { INTEGRACOES } from '@/lib/seo/integracoes';
+import { getAllArticles } from '@/lib/blog-data';
+import { getPublishedDbPosts } from '@/lib/blog-db';
+
+export const dynamic = 'force-dynamic';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://dexidigital.com.br';
@@ -214,6 +218,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // Blog
+  const blogPostPages: MetadataRoute.Sitemap = [
+    ...getAllArticles().map((article) => ({
+      url: `${baseUrl}/blog/${article.slug}`,
+      lastModified: new Date(article.date),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+    ...getPublishedDbPosts().map((post) => ({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: post.publishedAt ? new Date(post.publishedAt) : currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
+  ];
   const blogPages: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/blog`,
@@ -221,6 +239,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
+    ...blogPostPages,
   ];
 
   // Notícias
