@@ -1,0 +1,34 @@
+# Dexi Digital
+
+> Consultoria de IA e inteligência de dados focada em resultados de vendas. Criadora do Fykos, um Sistema Operacional de Receita que reinventa o CRM usando dados e IA sobre os sistemas que a operação já usa.
+
+A Dexi Digital combina engenharia de software crítico com IA aplicada para transformar dados operacionais em receita. Atua principalmente com grupos automotivos (concessionárias), clínicas de procedimentos e construtoras/incorporadoras no Brasil. O produto principal, Fykos, atua sobre o CRM existente do cliente — não exige migração de sistema.
+
+## Produto
+
+- [O Fykos](https://dexidigital.com.br/o-fykos): o que é o Fykos e como reinventa o CRM com dados e IA
+- [Metodologia](https://dexidigital.com.br/metodologia): como a Dexi implementa e opera o Fykos
+- [WebOS](https://dexidigital.com.br/produtos/webos): produto de infraestrutura web da Dexi
+
+## Serviços
+
+- [Inteligência de Dados](https://dexidigital.com.br/servicos/inteligencia-de-dados)
+- [Software Sob Medida](https://dexidigital.com.br/servicos/software-sob-medida)
+- [IA para Empresas](https://dexidigital.com.br/servicos/ia-para-empresas)
+
+## Setores atendidos
+
+- [Automotivo](https://dexidigital.com.br/automotivo): concessionárias e grupos automotivos
+- [Clínicas](https://dexidigital.com.br/clinicas): clínicas de procedimentos (soroterapia, injetáveis, estética avançada)
+- [Construtoras e Incorporadoras](https://dexidigital.com.br/construtoras)
+
+## Prova e conteúdo
+
+- [Cases](https://dexidigital.com.br/cases): resultados documentados de clientes
+- [Blog](https://dexidigital.com.br/blog): artigos sobre IA empresarial, inteligência de dados e software enterprise
+- [Notícias](https://dexidigital.com.br/noticias): curadoria diária de notícias de tecnologia e IA
+
+## Institucional
+
+- [Sobre](https://dexidigital.com.br/sobre): fundadores e histórico da empresa
+- [Contato](https://dexidigital.com.br/contato)
