@@ -11,6 +11,16 @@ const NEGATIVE_KEYWORDS = [
   'hackead', 'golpe', 'phishing', 'malware', 'ransomware', 'censura', 'boicote',
   'greve', 'protesto', 'denuncia', 'investigacao', 'apagao', 'falha',
   'bug', 'inseguranca', 'plagio', 'discrimina', 'desemprego',
+  // Tom crítico/controverso que passou batido em testes reais (ver spec):
+  'escond', 'tirar do ar', 'fora da lei', 'nao resolve',
+];
+
+// Listas de compras/ofertas (ex: "selecionamos as melhores TVs em promoção
+// na Amazon") não são notícia, são conteúdo comercial/afiliado — mesmo
+// citando marcas de tech, não devem entrar no feed.
+const PROMOTIONAL_KEYWORDS = [
+  'promocao', 'selecionamos', 'oferta', 'ofertas', 'cupom', 'desconto',
+  'menor preco', 'melhor preco', 'compre agora', 'black friday',
 ];
 
 // Termos de uma letra/palavra curta precisam de fronteira de palavra (\b)
@@ -40,6 +50,11 @@ function normalize(text: string): string {
 export function isNegativeNews(title: string, summary: string): boolean {
   const haystack = normalize(`${title} ${summary}`);
   return NEGATIVE_KEYWORDS.some((keyword) => haystack.includes(keyword));
+}
+
+export function isPromotionalContent(title: string): boolean {
+  const haystack = normalize(title);
+  return PROMOTIONAL_KEYWORDS.some((keyword) => haystack.includes(keyword));
 }
 
 function escapeRegExp(str: string): string {

@@ -8,7 +8,7 @@
  */
 
 import { createHash } from 'node:crypto';
-import { isNegativeNews, isTechOrAiNews } from '../lib/news-filters.ts';
+import { isNegativeNews, isTechOrAiNews, isPromotionalContent } from '../lib/news-filters.ts';
 import { upsertNews, pruneOldNews } from '../lib/news-db.ts';
 
 const SEARCH_TERMS = ['inteligência artificial', 'tecnologia'];
@@ -125,8 +125,11 @@ async function main() {
   const onTopic = deduped.filter((item) => isTechOrAiNews(item.title, ''));
   console.log(`Sobre tech/IA (no título): ${onTopic.length} itens (${deduped.length - onTopic.length} fora de tema)`);
 
-  const filtered = onTopic.filter((item) => !isNegativeNews(item.title, item.summary));
-  console.log(`Após filtro negativo: ${filtered.length} itens (${onTopic.length - filtered.length} descartados)`);
+  const notPromotional = onTopic.filter((item) => !isPromotionalContent(item.title));
+  console.log(`Não é lista de compras/promoção: ${notPromotional.length} itens (${onTopic.length - notPromotional.length} descartados)`);
+
+  const filtered = notPromotional.filter((item) => !isNegativeNews(item.title, item.summary));
+  console.log(`Após filtro negativo: ${filtered.length} itens (${notPromotional.length - filtered.length} descartados)`);
 
   const cutoffMs = Date.now() - MAX_AGE_DAYS * 24 * 60 * 60 * 1000;
   const withinWindow = filtered.filter((item) => {
