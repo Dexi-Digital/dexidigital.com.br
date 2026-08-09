@@ -37,6 +37,7 @@ REGRAS OBRIGATÓRIAS — siga à risca, formato exato:
 6. NÃO faça nenhuma alegação de resultado clínico ou médico (ex: "cura", "elimina", "garante resultado") — mesmo que a vertical seja Clínicas.
 7. Tom direto, consultivo, em português do Brasil, sem jargão de marketing vazio. 800 a 1200 palavras no corpo.
 8. Assine como "Equipe Dexi Digital".
+9. REGRA CRÍTICA DE NEGÓCIO — NÃO ENTREGUE O "COMO" COMPLETO: este texto é conteúdo de topo/meio de funil, não um manual de implementação. Explique o problema, por que ele é caro, e os PRINCÍPIOS por trás da solução (o "o quê" e o "por quê") — mas NÃO forneça um checklist ou passo a passo replicável o suficiente para o leitor (ou um concorrente) implementar sozinho sem a Dexi. Nunca liste nomes exatos de configuração, sequência completa de mensagens/cadência com detalhes acionáveis, ou "receita de bolo" pronta para copiar. Sempre que o texto chegar perto de revelar o método completo, pare, e diga que essa execução (segmentação, automação, integração de dados) é exatamente o que a Dexi/Fykos entrega operacionalmente — e direcione para falar com a Dexi. O post deve gerar desejo de contratar, não permitir fazer sozinho.
 
 Responda em JSON válido, SEM formatação markdown de code fence ao redor, exatamente neste formato:
 {"title": "título do post", "excerpt": "resumo de até 160 caracteres para meta description", "content": "corpo completo em markdown, incluindo a linha de Resposta rápida e os subtítulos"}`;
