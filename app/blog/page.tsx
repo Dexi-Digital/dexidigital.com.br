@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllArticles } from '@/lib/blog-data';
+import { getPublishedDbPosts } from '@/lib/blog-db';
 
 export const metadata: Metadata = {
   title: 'Blog | Insights sobre IA, Dados e Software Empresarial | Dexi Digital',
@@ -8,8 +9,25 @@ export const metadata: Metadata = {
     'Artigos técnicos sobre IA empresarial, inteligência de dados e desenvolvimento de software. Guias práticos para CTOs e líderes de tecnologia.',
 };
 
+export const dynamic = 'force-dynamic';
+
 export default function BlogPage() {
-  const articles = getAllArticles();
+  const legacyArticles = getAllArticles();
+  const dbPosts = getPublishedDbPosts().map((p) => ({
+    slug: p.slug,
+    title: p.title,
+    excerpt: p.excerpt,
+    category: p.category,
+    readTime: p.readTime,
+    date: p.publishedAt ?? new Date().toISOString(),
+    author: p.author,
+    metaDescription: p.metaDescription,
+    focusKeyword: p.focusKeyword,
+    content: p.content,
+  }));
+  const articles = [...legacyArticles, ...dbPosts].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
 
   return (
     <main className="min-h-screen">

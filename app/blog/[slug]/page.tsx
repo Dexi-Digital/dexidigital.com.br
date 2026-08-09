@@ -3,11 +3,31 @@ import type { ReactElement } from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getArticleBySlug, getAllArticles } from '@/lib/blog-data';
+import { getDbPostBySlug } from '@/lib/blog-db';
 import { getArticleSchema } from '@/lib/structured-data';
 import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
 
 interface BlogArticlePageProps {
   params: Promise<{ slug: string }>;
+}
+
+function findArticle(slug: string) {
+  const legacy = getArticleBySlug(slug);
+  if (legacy) return legacy;
+  const dbPost = getDbPostBySlug(slug);
+  if (!dbPost || dbPost.status !== 'published') return undefined;
+  return {
+    slug: dbPost.slug,
+    title: dbPost.title,
+    excerpt: dbPost.excerpt,
+    category: dbPost.category,
+    readTime: dbPost.readTime,
+    date: dbPost.publishedAt ?? new Date().toISOString(),
+    author: dbPost.author,
+    metaDescription: dbPost.metaDescription,
+    focusKeyword: dbPost.focusKeyword,
+    content: dbPost.content,
+  };
 }
 
 export async function generateStaticParams() {
@@ -19,7 +39,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: BlogArticlePageProps): Promise<Metadata> {
   const { slug } = await params;
-  const article = getArticleBySlug(slug);
+  const article = findArticle(slug);
 
   if (!article) {
     return {
@@ -42,7 +62,7 @@ export async function generateMetadata({ params }: BlogArticlePageProps): Promis
 
 export default async function BlogArticlePage({ params }: BlogArticlePageProps) {
   const { slug } = await params;
-  const article = getArticleBySlug(slug);
+  const article = findArticle(slug);
 
   if (!article) {
     notFound();
