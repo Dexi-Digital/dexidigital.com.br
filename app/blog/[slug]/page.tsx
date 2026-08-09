@@ -11,6 +11,11 @@ interface BlogArticlePageProps {
   params: Promise<{ slug: string }>;
 }
 
+// Sem isso, o Next.js cacheia a página do post depois da primeira
+// renderização e nunca mais reflete mudanças no banco (post editado,
+// republicado ou removido continua servindo a versão antiga em cache).
+export const dynamic = 'force-dynamic';
+
 function findArticle(slug: string) {
   const legacy = getArticleBySlug(slug);
   if (legacy) return legacy;
