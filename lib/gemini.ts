@@ -38,17 +38,13 @@ REGRAS OBRIGATÓRIAS — siga à risca, formato exato:
 7. Tom direto, consultivo, em português do Brasil, sem jargão de marketing vazio. 800 a 1200 palavras no corpo.
 8. Assine como "Equipe Dexi Digital".
 9. REGRA CRÍTICA DE NEGÓCIO — NÃO ENTREGUE O "COMO" COMPLETO: este texto é conteúdo de topo/meio de funil, não um manual de implementação. Explique o problema, por que ele é caro, e os PRINCÍPIOS por trás da solução (o "o quê" e o "por quê") — mas NÃO forneça um checklist ou passo a passo replicável o suficiente para o leitor (ou um concorrente) implementar sozinho sem a Dexi. Nunca liste nomes exatos de configuração, sequência completa de mensagens/cadência com detalhes acionáveis, ou "receita de bolo" pronta para copiar. Sempre que o texto chegar perto de revelar o método completo, pare, e diga que essa execução (segmentação, automação, integração de dados) é exatamente o que a Dexi/Fykos entrega operacionalmente — e direcione para falar com a Dexi. O post deve gerar desejo de contratar, não permitir fazer sozinho.
+10. NÃO cite nenhum número operacional implementável (ex: "espace as mensagens em 72 horas", "envie 3 mensagens por dia", "use janela de 24h") — mesmo enquadrado como "dado" ou "resultado observado". Números são permitidos SOMENTE quando descrevem o tamanho do problema ou o resultado de mercado (ex: taxa de conversão média do setor, CAC médio, % de leads perdidos) — nunca quando funcionam como instrução de configuração que o leitor poderia copiar direto.
 
 Responda em JSON válido, SEM formatação markdown de code fence ao redor, exatamente neste formato:
 {"title": "título do post", "excerpt": "resumo de até 160 caracteres para meta description", "content": "corpo completo em markdown, incluindo a linha de Resposta rápida e os subtítulos"}`;
 }
 
-export async function generatePost(topic: TopicInput): Promise<GeneratedPost> {
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) {
-    throw new Error('GEMINI_API_KEY não configurada');
-  }
-
+async function callGemini(topic: TopicInput, apiKey: string): Promise<GeneratedPost> {
   const response = await fetch(GEMINI_URL, {
     method: 'POST',
     headers: {
@@ -85,4 +81,22 @@ export async function generatePost(topic: TopicInput): Promise<GeneratedPost> {
   }
 
   return parsed;
+}
+
+// A API do Gemini falha de forma intermitente (JSON malformado, 503 de
+// sobrecarga) — 1 retry evita que o cron diário fique refém de uma falha
+// transitória isolada.
+export async function generatePost(topic: TopicInput): Promise<GeneratedPost> {
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) {
+    throw new Error('GEMINI_API_KEY não configurada');
+  }
+
+  try {
+    return await callGemini(topic, apiKey);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    console.error('[Gemini] Primeira tentativa falhou, tentando novamente:', message);
+    return await callGemini(topic, apiKey);
+  }
 }
