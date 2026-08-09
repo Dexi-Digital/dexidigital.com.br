@@ -223,6 +223,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  // Notícias
+  const newsPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/noticias`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 0.6,
+    },
+  ];
+
   return [
     ...mainPages,
     ...servicePages,
@@ -238,5 +248,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...materialPages,
     ...companyPages,
     ...blogPages,
+    ...newsPages,
   ];
 }
