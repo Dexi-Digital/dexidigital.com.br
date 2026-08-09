@@ -32,13 +32,15 @@ export default function ContactForm() {
     setStatus('loading');
     setErrorMessage('');
 
+    const eventId = crypto.randomUUID();
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, eventId }),
       });
 
       if (!response.ok) {
@@ -46,7 +48,7 @@ export default function ContactForm() {
       }
 
       setStatus('success');
-      trackFormSubmit('contact_form', true);
+      trackFormSubmit('contact_form', true, eventId);
       setFormData({
         name: '',
         email: '',

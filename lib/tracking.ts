@@ -60,21 +60,28 @@ export function trackEvent(event: TrackingEvent): void {
  */
 export function trackOpenAIConversion(
   eventName: string,
-  data?: Record<string, string | number>
+  data?: Record<string, string | number>,
+  eventId?: string
 ): void {
   if (typeof window === 'undefined') return;
 
   if (window.oaiq) {
-    window.oaiq('measure', eventName, {
+    const payload = {
       type: 'customer_action',
       amount: 0,
       currency: 'USD',
       ...data,
-    });
+    };
+    // eventId permite deduplicar com o mesmo evento enviado pelo servidor (Conversions API)
+    if (eventId) {
+      window.oaiq('measure', eventName, payload, { event_id: eventId });
+    } else {
+      window.oaiq('measure', eventName, payload);
+    }
   }
 
   if (process.env.NODE_ENV === 'development') {
-    console.log('[Dexi Tracking][OpenAI Ads]', eventName, data);
+    console.log('[Dexi Tracking][OpenAI Ads]', eventName, data, eventId);
   }
 }
 
@@ -117,7 +124,7 @@ export function trackFormStart(formName: string): void {
   });
 }
 
-export function trackFormSubmit(formName: string, success: boolean): void {
+export function trackFormSubmit(formName: string, success: boolean, eventId?: string): void {
   trackEvent({
     category: 'form_submit',
     action: success ? 'form_success' : 'form_error',
@@ -125,7 +132,7 @@ export function trackFormSubmit(formName: string, success: boolean): void {
   });
 
   if (success) {
-    trackOpenAIConversion('registration_completed', { form_name: formName });
+    trackOpenAIConversion('lead_created', { form_name: formName }, eventId);
   }
 }
 
@@ -133,7 +140,11 @@ export function trackFormSubmit(formName: string, success: boolean): void {
 // EVENTOS DE MATERIAIS
 // ============================================
 
-export function trackMaterialDownload(materialName: string, materialType: string): void {
+export function trackMaterialDownload(
+  materialName: string,
+  materialType: string,
+  eventId?: string
+): void {
   trackEvent({
     category: 'material_download',
     action: 'download',
@@ -143,10 +154,11 @@ export function trackMaterialDownload(materialName: string, materialType: string
     },
   });
 
-  trackOpenAIConversion('registration_completed', {
-    material_name: materialName,
-    material_type: materialType,
-  });
+  trackOpenAIConversion(
+    'lead_created',
+    { material_name: materialName, material_type: materialType },
+    eventId
+  );
 }
 
 export function trackCalculatorUse(step: string, values?: Record<string, number>): void {

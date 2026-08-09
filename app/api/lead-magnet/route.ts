@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { sendLeadMagnetEmail, sendInternalNotification, LeadData } from '@/lib/email';
 import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limit';
+import { sendOpenAIAdsConversion } from '@/lib/openai-ads';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
@@ -39,6 +40,7 @@ export async function POST(request: NextRequest) {
     const type = sanitizeString(body.type, 20);
     const title = sanitizeString(body.title, 200);
     const roiData = body.roiData; // Validated later if needed
+    const eventId = sanitizeString(body.eventId, 100);
 
     // Validate required fields
     if (!nome || !email || !type) {
@@ -114,6 +116,14 @@ export async function POST(request: NextRequest) {
 
     // 3. Send internal notification (non-blocking)
     sendInternalNotification(leadData).catch(console.error);
+
+    // 4. Server-side conversion tracking (non-blocking)
+    if (eventId) {
+      sendOpenAIAdsConversion({
+        eventId,
+        sourceUrl: request.headers.get('referer') || `${process.env.NEXT_PUBLIC_SITE_URL}/materiais`,
+      }).catch(console.error);
+    }
 
     return NextResponse.json({
       success: true,

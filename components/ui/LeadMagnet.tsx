@@ -48,6 +48,8 @@ export default function LeadMagnet({
     setIsSubmitting(true);
     setError('');
 
+    const eventId = crypto.randomUUID();
+
     try {
       const response = await fetch('/api/lead-magnet', {
         method: 'POST',
@@ -59,6 +61,7 @@ export default function LeadMagnet({
           email,
           type,
           title,
+          eventId,
         }),
       });
 
@@ -69,7 +72,7 @@ export default function LeadMagnet({
       }
 
       setIsSubmitted(true);
-      trackMaterialDownload(title, type);
+      trackMaterialDownload(title, type, eventId);
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Ocorreu um erro. Por favor, tente novamente.';
       setError(errorMessage);

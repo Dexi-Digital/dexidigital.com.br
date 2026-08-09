@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { Resend } from 'resend';
 import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limit';
+import { sendOpenAIAdsConversion } from '@/lib/openai-ads';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
@@ -72,6 +73,7 @@ export async function POST(request: NextRequest) {
     const challenge = sanitizeString(body.challenge || '', 200);
     const urgency = sanitizeString(body.urgency || '', 50);
     const message = sanitizeString(body.message || '', 2000);
+    const eventId = sanitizeString(body.eventId || '', 100);
 
     // Validate required fields
     if (!name || !email || !company) {
@@ -130,6 +132,14 @@ export async function POST(request: NextRequest) {
     sendContactNotification({
       name, email, company, phone, companySize, sector, challenge, urgency, message
     }).catch(console.error);
+
+    // Server-side conversion tracking (non-blocking)
+    if (eventId) {
+      sendOpenAIAdsConversion({
+        eventId,
+        sourceUrl: request.headers.get('referer') || `${process.env.NEXT_PUBLIC_SITE_URL}/contato`,
+      }).catch(console.error);
+    }
 
     return NextResponse.json(
       { success: true, data },
