@@ -67,34 +67,73 @@ termo, chama as duas APIs — total de 4 requisições por execução, 1x/dia.
 **Pipeline, nessa ordem:**
 1. Fetch das 4 combinações (termo × API). Se uma chamada falhar (erro de
    rede, timeout, resposta não-2xx), loga o erro e segue com as demais — uma
-   API fora do ar não derruba a ingestão inteira.
+   API fora do ar não derruba a ingestão inteira. Confirmado em produção:
+   um 429 (rate limit) do GNews não interrompeu a ingestão das outras 3
+   combinações.
 2. Normaliza cada resultado para `{ source, sourceName, title, summary, url, imageUrl, publishedAt }`.
 3. Deduplica por `url` exata e por título normalizado (minúsculo, sem
    acento/pontuação) — evita mostrar a mesma notícia vinda das duas fontes.
-4. Filtro negativo: descarta qualquer item cujo `title` ou `summary`
+4. **Filtro de relevância (positivo)**: descarta qualquer item cujo
+   **título** não contenha um termo de tech/IA da lista em
+   `lib/news-filters.ts` (`isTechOrAiNews`). Adicionado depois do design
+   original ao testar com dados reais — as APIs fazem busca textual ampla
+   (inclusive no corpo do artigo) e sem esse filtro o feed trazia bastante
+   notícia fora do tema (eleições, carnaval, obituário) só porque a palavra
+   aparecia de passagem no resumo. Checar só o título (não o resumo) foi o
+   que efetivamente resolveu — o resumo é trecho de corpo de texto e cita
+   termos tech de forma tangencial com frequência maior do que o esperado.
+5. Filtro negativo: descarta qualquer item cujo `title` ou `summary`
    contenha (case/acento-insensitive) alguma palavra da lista em
-   `lib/news-filters.ts` (ver abaixo).
-5. Filtro de data: descarta itens com `publishedAt` mais antigo que 15 dias.
-6. Grava no SQLite com `INSERT OR IGNORE` (idempotente — rodar 2x seguidas
-   não duplica, por causa do `UNIQUE(url)`).
-7. Limpeza: `DELETE FROM news WHERE published_at < (agora - 15 dias)`.
+   `lib/news-filters.ts` (`isNegativeNews`, ver abaixo).
+6. Filtro de data: descarta itens com `publishedAt` mais antigo que 15 dias.
+7. Grava no SQLite com `INSERT OR IGNORE` (idempotente — confirmado rodando
+   o script 2x seguidas em produção: a segunda rodada gravou 0 itens novos).
+8. Limpeza: `DELETE FROM news WHERE published_at < (agora - 15 dias)`.
 
-**Lista de palavras negativas (`lib/news-filters.ts`)** — array de strings,
-match por substring case/acento-insensitive contra `title + ' ' + summary`:
+**Lista de palavras negativas (`lib/news-filters.ts`, `isNegativeNews`)** —
+array de strings, match por substring case/acento-insensitive contra
+`title + ' ' + summary`. Regra de composição: quando a primeira palavra de
+uma frase de duas palavras pode flexionar no plural (ex: "ação" → "ações"),
+a frase quebra como substring — por isso frases assim viraram stems de uma
+palavra só (`hacker`, `judicial`, `queda`, `falha`, `bug`) em vez de frases
+fixas (bug real encontrado e corrigido durante a implementação: "ataque
+hacker" não batia com "ataques hackers"):
 
 ```
 demiss, demite, demitiu, corte de vaga, corte de emprego, corte de custo,
-desliga funcion, reducao de pessoal, layoff, vazamento de dados,
-ataque hacker, ciberataque, invasao, processo judicial, acao judicial,
+desliga funcion, reducao de pessoal, reducoes de pessoal, layoff,
+vazamento de dados, hacker, ciberataque, invasao, judicial,
 multa, multad, prejuizo, preju, crise, fraude, falencia, recall,
-escandal, polemic, acusad, banid, proibid, colapso, queda livre,
+escandal, polemic, acusad, banid, proibid, colapso, queda,
 hackead, golpe, phishing, malware, ransomware, censura, boicote,
-greve, protesto, denuncia, investigacao, apagao, falha grave,
-bug critico, inseguranca, plagio, discrimina, desemprego
+greve, protesto, denuncia, investigacao, apagao, falha,
+bug, inseguranca, plagio, discrimina, desemprego
 ```
 
-(Lista comparada após normalizar acentos — "não" e "nao" tratados iguais.
-Fácil de estender depois; vive num arquivo próprio, não hardcoded no script.)
+**Lista de relevância positiva (`lib/news-filters.ts`, `isTechOrAiNews`)** —
+adicionada depois do design original (ver seção de Ingestão acima). Termos
+curtos (`ia`, `ai`, `ti`, `ml`, `ar`, `vr`, `5g`, `tech`, `app`) usam
+fronteira de palavra (`\b`) via regex para não colidir com substrings de
+outras palavras (ex: "ia" dentro de "história"); termos mais longos usam
+substring simples:
+
+```
+tecnologia, tecnologico, inteligencia artificial, ia generativa, chatgpt,
+openai, gemini, copilot, claude, anthropic, llm, machine learning,
+aprendizado de maquina, algoritmo, software, aplicativo, digital, robo,
+robotica, automacao, startup, smartphone, celular, computador, internet,
+nuvem, cloud, big data, ciberseguranca, blockchain, criptomoeda, bitcoin,
+realidade virtual, realidade aumentada, drone, wearable, semicondutor,
+processador, google, microsoft, apple, samsung, nvidia, tesla, gadget
+```
+
+("inovacao" e "streaming" foram removidos da lista depois de causarem falsos
+positivos com dados reais: uma notícia de carnaval e uma lista "o que ver na
+TV", respectivamente.)
+
+(Ambas as listas comparadas após normalizar acentos — "não" e "nao" tratados
+iguais. Fáceis de estender depois; vivem num arquivo próprio, não
+hardcoded no script.)
 
 ## Segredos
 
