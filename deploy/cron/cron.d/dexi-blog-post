@@ -1,3 +1,7 @@
+# A VPS roda em Europe/Berlin. Sem CRON_TZ, "9" seria 09:00 de Berlim = 04:00 em
+# Brasília, e o post sairia de madrugada. Mesmo recurso que o /etc/cron.d/li-publisher
+# já usa nesta máquina.
+CRON_TZ=America/Sao_Paulo
 SHELL=/bin/bash
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 

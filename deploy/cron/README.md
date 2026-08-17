@@ -12,7 +12,7 @@ deploy/cron/
   wrappers/
     dexi-blog-post.sh    # node --env-file=.env.local scripts/generate-blog-post.mjs
   cron.d/
-    dexi-blog-post       # 09:00 todo dia
+    dexi-blog-post       # 09:00 todo dia, horário de Brasília
   install-crons.sh       # copia, valida e recarrega o cron
 ```
 
@@ -44,6 +44,10 @@ script não quebra — sai sem publicar.
 | `SLACK_WEBHOOK_URL` no `.env.local` | sem ela o post publica e ninguém fica sabendo; `lib/slack.ts` só registra um aviso no log |
 | Node >= 22.18 | o script importa `.ts` direto (`lib/slack.ts`, `lib/gemini.ts`), o que exige type stripping nativo. O wrapper checa e falha com mensagem clara em vez de `ERR_UNKNOWN_FILE_EXTENSION` às 9h |
 | `data/` populado | os bancos SQLite são gitignored e vivem só na VPS |
+
+> **Fuso:** a VPS roda em `Europe/Berlin`. O crontab declara
+> `CRON_TZ=America/Sao_Paulo`, então o `9` é 09:00 de Brasília — sem isso o post
+> sairia às 4h da manhã. Ao editar o horário, lembre que ele é lido nesse fuso.
 
 ## Log
 
