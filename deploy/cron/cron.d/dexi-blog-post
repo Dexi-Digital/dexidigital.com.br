@@ -1,0 +1,4 @@
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+0 9 * * * root /usr/local/bin/dexi-blog-post.sh >> /var/log/dexi-blog.log 2>&1
