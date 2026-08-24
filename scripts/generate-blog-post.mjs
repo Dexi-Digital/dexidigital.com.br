@@ -13,6 +13,7 @@ import { generatePost } from '../lib/gemini.ts';
 import { validatePost } from '../lib/content-validator.ts';
 import { insertPost } from '../lib/blog-db.ts';
 import { getAllArticles } from '../lib/blog-data.ts';
+import { notifyPostPublished, notifyGenerationFailed } from '../lib/slack.ts';
 
 function slugify(title) {
   return title
@@ -30,12 +31,17 @@ function estimateReadTime(content) {
   return `${Math.max(3, Math.round(words / 200))} min`;
 }
 
+// Guardado fora de main() para que o handler de erro lá embaixo saiba qual
+// pauta quebrou, mesmo que a falha aconteça depois da seleção.
+let currentTopic = null;
+
 async function main() {
   const topic = getNextBacklogTopic();
   if (!topic) {
     console.log('Nenhuma pauta no backlog (topic bank vazio ou tudo já processado).');
     return;
   }
+  currentTopic = topic;
   console.log(`Pauta selecionada: "${topic.title}" (${topic.vertical})`);
 
   const existingTitles = [...getAllArticles().map((a) => a.title), ...getPublishedTitlesForVertical(topic.vertical)];
@@ -81,12 +87,19 @@ async function main() {
 
   if (status === 'published') {
     console.log(`Publicado: /blog/${slug}`);
+    await notifyPostPublished({
+      title: generated.title,
+      slug,
+      vertical: topic.vertical,
+      readTime: estimateReadTime(generated.content),
+    });
   } else {
     console.log(`Reprovado no Validator — salvo como rascunho (não aparece no /blog): ${slug}`);
   }
 }
 
-main().catch((error) => {
+main().catch(async (error) => {
   console.error('Erro fatal na geração:', error);
+  await notifyGenerationFailed({ topicTitle: currentTopic?.title ?? null, error });
   process.exit(1);
 });

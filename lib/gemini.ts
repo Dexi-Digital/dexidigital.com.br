@@ -44,6 +44,55 @@ Responda em JSON válido, SEM formatação markdown de code fence ao redor, exat
 {"title": "título do post", "excerpt": "resumo de até 160 caracteres para meta description", "content": "corpo completo em markdown, incluindo a linha de Resposta rápida e os subtítulos"}`;
 }
 
+/**
+ * Extrai o primeiro objeto JSON completo do texto do modelo.
+ *
+ * Mesmo com responseMimeType: 'application/json', o Gemini às vezes anexa lixo
+ * depois do objeto (o caso observado: um "}" solto numa linha nova). JSON.parse
+ * direto quebra com "Unexpected non-whitespace character after JSON", e um
+ * regex guloso /\{[\s\S]*\}/ não resolve — ele vai até a ÚLTIMA "}", ou seja,
+ * devolve exatamente a mesma string quebrada.
+ *
+ * Aqui varremos a partir da primeira "{" contando profundidade de chaves,
+ * ignorando chaves dentro de strings e escapes, e paramos na chave que fecha o
+ * objeto. Lixo depois disso é descartado; truncamento de verdade ainda falha.
+ */
+export function extractJsonObject(raw: string): GeneratedPost {
+  const text = raw.replace(/```(?:json)?/gi, '');
+  const start = text.indexOf('{');
+  if (start === -1) throw new Error('Não foi possível extrair JSON da resposta do Gemini');
+
+  let depth = 0;
+  let inString = false;
+  let escaped = false;
+
+  for (let i = start; i < text.length; i++) {
+    const char = text[i];
+
+    if (escaped) {
+      escaped = false;
+      continue;
+    }
+    if (char === '\\') {
+      escaped = true;
+      continue;
+    }
+    if (char === '"') {
+      inString = !inString;
+      continue;
+    }
+    if (inString) continue;
+
+    if (char === '{') depth++;
+    else if (char === '}') {
+      depth--;
+      if (depth === 0) return JSON.parse(text.slice(start, i + 1));
+    }
+  }
+
+  throw new Error('JSON da resposta do Gemini está truncado (objeto nunca fecha)');
+}
+
 async function callGemini(topic: TopicInput, apiKey: string): Promise<GeneratedPost> {
   const response = await fetch(GEMINI_URL, {
     method: 'POST',
@@ -67,14 +116,7 @@ async function callGemini(topic: TopicInput, apiKey: string): Promise<GeneratedP
     throw new Error('Resposta do Gemini sem conteúdo de texto');
   }
 
-  let parsed: GeneratedPost;
-  try {
-    parsed = JSON.parse(text);
-  } catch {
-    const match = text.match(/\{[\s\S]*\}/);
-    if (!match) throw new Error('Não foi possível extrair JSON da resposta do Gemini');
-    parsed = JSON.parse(match[0]);
-  }
+  const parsed = extractJsonObject(text);
 
   if (!parsed.title || !parsed.excerpt || !parsed.content) {
     throw new Error('Resposta do Gemini incompleta (faltando title/excerpt/content)');
@@ -83,20 +125,37 @@ async function callGemini(topic: TopicInput, apiKey: string): Promise<GeneratedP
   return parsed;
 }
 
-// A API do Gemini falha de forma intermitente (JSON malformado, 503 de
-// sobrecarga) — 1 retry evita que o cron diário fique refém de uma falha
-// transitória isolada.
+const MAX_ATTEMPTS = 4;
+const BACKOFF_MS = [5_000, 20_000, 60_000];
+
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+// O 503 ("high demand") do Gemini vem em rajada: medindo 9 chamadas seguidas,
+// 3 falharam e as falhas saíram consecutivas. Retry imediato cai dentro da
+// mesma rajada, então o backoff exponencial é o que faz a diferença aqui —
+// como isso roda num cron diário, esperar minutos não custa nada.
 export async function generatePost(topic: TopicInput): Promise<GeneratedPost> {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     throw new Error('GEMINI_API_KEY não configurada');
   }
 
-  try {
-    return await callGemini(topic, apiKey);
-  } catch (error) {
-    const message = error instanceof Error ? error.message : String(error);
-    console.error('[Gemini] Primeira tentativa falhou, tentando novamente:', message);
-    return await callGemini(topic, apiKey);
+  let lastError: unknown;
+
+  for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
+    try {
+      return await callGemini(topic, apiKey);
+    } catch (error) {
+      lastError = error;
+      const message = error instanceof Error ? error.message : String(error);
+      const wait = BACKOFF_MS[attempt];
+      if (wait === undefined) break;
+      console.error(
+        `[Gemini] Tentativa ${attempt + 1}/${MAX_ATTEMPTS} falhou (${message}). Nova tentativa em ${wait / 1000}s.`
+      );
+      await sleep(wait);
+    }
   }
+
+  throw lastError;
 }
