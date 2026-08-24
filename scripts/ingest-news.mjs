@@ -9,6 +9,7 @@
 
 import { createHash } from 'node:crypto';
 import { isNegativeNews, isTechOrAiNews, isPromotionalContent } from '../lib/news-filters.ts';
+import { sanitizeText, hasMarkupResidue } from '../lib/news-sanitize.ts';
 import { upsertNews, pruneOldNews } from '../lib/news-db.ts';
 
 const SEARCH_TERMS = ['inteligência artificial', 'tecnologia'];
@@ -54,8 +55,8 @@ async function fetchGNews(term) {
     return (data.articles || []).map((article) => ({
       source: 'gnews',
       sourceName: article.source?.name || 'GNews',
-      title: article.title,
-      summary: truncate(article.description, 200),
+      title: sanitizeText(article.title),
+      summary: truncate(sanitizeText(article.description), 200),
       url: article.url,
       imageUrl: article.image || null,
       publishedAt: article.publishedAt,
@@ -81,8 +82,8 @@ async function fetchWorldNews(term) {
     return (data.news || []).map((item) => ({
       source: 'worldnews',
       sourceName: extractSourceName(item.url),
-      title: item.title,
-      summary: truncate(item.summary || item.text, 200),
+      title: sanitizeText(item.title),
+      summary: truncate(sanitizeText(item.summary || item.text), 200),
       url: item.url,
       imageUrl: item.image || null,
       publishedAt: item.publish_date,
@@ -138,7 +139,23 @@ async function main() {
   });
   console.log(`Dentro da janela de ${MAX_AGE_DAYS} dias: ${withinWindow.length} itens`);
 
-  const items = withinWindow.map((item) => ({ id: hashUrl(item.url), ...item }));
+  // Guard final: o sanitizador roda na entrada de cada fonte, mas se alguma
+  // sintaxe nova escapar (entidade que nao conhecemos, markup exotico), e
+  // melhor descartar o item e gritar do que publicar "&#8220;" no site.
+  const clean = [];
+  for (const item of withinWindow) {
+    const residuo = [item.title, item.summary].filter((t) => hasMarkupResidue(t));
+    if (residuo.length > 0) {
+      console.warn(`[sanitize] descartado por residuo de markup: ${JSON.stringify(item.title.slice(0, 120))}`);
+      continue;
+    }
+    clean.push(item);
+  }
+  if (clean.length !== withinWindow.length) {
+    console.warn(`[sanitize] ${withinWindow.length - clean.length} item(ns) descartado(s) - vale adicionar a entidade em lib/news-sanitize.ts`);
+  }
+
+  const items = clean.map((item) => ({ id: hashUrl(item.url), ...item }));
 
   const fetchedAt = new Date().toISOString();
   const inserted = upsertNews(items, fetchedAt);
