@@ -1,0 +1,103 @@
+/* ============================================================
+   DEXI — PATCH DE TOKENS v2: cor-assinatura CORAL + onda de partículas
+   Cole no app/globals.css.
+   Estratégia: AZUL = identidade/confiança (logo, links, nav, onda de fundo).
+               CORAL = dinheiro/resultado (números, palavra-chave, CTA de conversão).
+   Regra de ouro: coral SÓ em métrica/keyword/CTA principal. Nunca vira cor de UI.
+   ============================================================ */
+
+
+/* 1) ADICIONE dentro do bloco @theme { ... } (junto das outras --color-*) */
+
+  /* Result / "Money" Scale — coral quente (#FF6B4A base) */
+  --color-result-50:  #fff0ec;
+  --color-result-100: #ffd6cb;
+  --color-result-200: #ffb7a4;
+  --color-result-300: #ff9777;
+  --color-result-400: #ff8566;  /* DARK MODE: números e keyword brilham aqui */
+  --color-result-500: #ff6b4a;  /* Base da cor-assinatura */
+  --color-result-600: #e5502f;  /* LIGHT MODE / hover */
+  --color-result-700: #c23f22;
+  --color-result-800: #97301a;
+  --color-result-900: #5e1d10;
+
+  /* Ciano de apoio — usado SÓ na onda de partículas (cristas) */
+  --color-wave-cyan: #22d3ee;
+
+  --gradient-result: linear-gradient(135deg, #ff8566 0%, #ff6b4a 60%, #e5502f 100%);
+  --shadow-result: 0 8px 32px -6px rgba(255, 107, 74, 0.50);
+  --shadow-result-lg: 0 16px 44px -6px rgba(255, 107, 74, 0.65);
+
+
+/* 2) ADICIONE no :root (light mode) */
+
+:root {
+  --text-result: var(--color-result-600);
+  --text-result-gradient: linear-gradient(135deg, #e5502f 0%, #c23f22 100%);
+  --bg-result-subtle: rgba(255, 107, 74, 0.08);
+  --border-result: rgba(255, 107, 74, 0.30);
+}
+
+/* 3) ADICIONE no .dark (aqui o coral brilha de verdade) */
+
+.dark {
+  --text-result: var(--color-result-400);
+  --text-result-gradient: linear-gradient(135deg, #ff9777 0%, #ff6b4a 100%);
+  --bg-result-subtle: rgba(255, 107, 74, 0.12);
+  --border-result: rgba(255, 107, 74, 0.28);
+}
+
+
+/* 4) NOVA classe — número/métrica com a cor-assinatura.
+   Substitui o `text-display-gradient` (azul) APENAS nos números. */
+
+.text-result {
+  background: var(--text-result-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-number-hero {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-6xl);
+  font-weight: var(--font-weight-extrabold);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--text-result);
+}
+
+
+/* 5) NOVO botão — CTA de "dinheiro" (Agendar diagnóstico). Use SÓ no CTA principal. */
+
+.btn-money {
+  color: #2a0d05;
+  background-color: var(--color-result-500);
+  border: 1px solid var(--color-result-500);
+  font-weight: var(--font-weight-bold);
+  box-shadow: var(--shadow-result);
+}
+.btn-money:hover {
+  background-color: var(--color-result-400);
+  box-shadow: var(--shadow-result-lg);
+  transform: translateY(-1px);
+}
+.btn-money:active { transform: translateY(0); box-shadow: var(--shadow-elevation-1); }
+
+
+/* 6) Card de métrica com borda coral no hover (troca o group-hover azul) */
+
+.card-result:hover {
+  border-color: var(--color-result-600);
+  box-shadow: var(--shadow-result);
+}
+
+
+/* 7) DARK COMO PADRÃO — controle pelo ThemeProvider (recomendado),
+   ou force via classe .dark no <html>. */
+
+.count-up { font-variant-numeric: tabular-nums; }
+
+@media (prefers-reduced-motion: reduce) {
+  /* a onda renderiza 1 frame estático; o count-up mostra o valor final */
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dexi — Proposta final (luz fluindo + Pumpkin)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue-logo:#0069C0;--blue-accent:#137FD9;--blue-bright:#42a5f5;
+    --orange-400:#ff8f3c;--orange-500:#FF7518;--orange-600:#e5650d;
+    --bg:#06080f;--bg-surface:#0e1018;--border:#1b1e29;--border-strong:#2a2e3c;
+    --text:#f4f5f7;--text-2:#9aa0ad;--text-3:#6b7280;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;position:relative;z-index:5}
+  .logo{display:flex;align-items:baseline;gap:1px;font-weight:800;font-size:26px;letter-spacing:-.02em}
+  .logo .d{color:var(--blue-logo)}.logo .rest{color:#d2d6de;font-weight:600}
+  .logo .tld{color:var(--blue-accent);font-weight:500;font-size:13px;margin-left:5px;letter-spacing:.05em}
+  .navlinks{display:flex;gap:30px;align-items:center}
+  .navlinks a{color:var(--text-2);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+  .navlinks a:hover{color:var(--text)}
+  .nav-cta{border:1px solid var(--border-strong);color:var(--text);padding:11px 20px;border-radius:10px;font-size:14px;font-weight:600}
+  .hero{position:relative;min-height:640px;padding-top:50px;overflow:hidden}
+  #flw{position:absolute;inset:0;width:100%;height:100%;z-index:0;display:block}
+  .hero-fade{position:absolute;left:0;right:0;bottom:0;height:200px;z-index:1;pointer-events:none;background:linear-gradient(0deg,var(--bg),transparent)}
+  .hero-inner{position:relative;z-index:2;max-width:820px;margin:0 auto;text-align:center;padding-top:46px}
+  .overline{color:var(--blue-bright);font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;margin-bottom:22px}
+  h1.hero-title{font-size:60px;font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:22px}
+  h1 .hot{color:var(--orange-500)}
+  .sub{font-size:20px;color:var(--text-2);max-width:600px;margin:0 auto 34px;line-height:1.55}
+  .sub b{color:var(--text);font-weight:600}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn-money{background:var(--orange-500);color:#2a1200;font-weight:700;padding:16px 30px;border-radius:12px;font-size:16px;border:none;cursor:pointer;box-shadow:0 8px 30px -6px rgba(255,117,24,.45);transition:transform .2s,box-shadow .2s}
+  .btn-money:hover{transform:translateY(-2px);box-shadow:0 16px 44px -6px rgba(255,117,24,.6);background:var(--orange-400)}
+  .btn-ghost{background:rgba(255,255,255,.03);color:var(--text);font-weight:600;padding:16px 28px;border-radius:12px;font-size:16px;border:1px solid var(--border-strong);cursor:pointer;transition:border-color .2s}
+  .btn-ghost:hover{border-color:var(--blue-bright)}
+  .stats{position:relative;z-index:3;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:880px;margin:-40px auto 0}
+  .stat{background:rgba(14,16,24,.78);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:16px;padding:28px 22px;text-align:center;transition:border-color .25s,transform .25s}
+  .stat:hover{border-color:var(--orange-600);transform:translateY(-3px)}
+  .stat .num{font-size:50px;font-weight:800;letter-spacing:-.03em;color:var(--orange-500);line-height:1}
+  .stat .lbl{margin-top:9px;font-size:14px;color:var(--text-2);font-weight:500}
+  .foot{text-align:center;padding:46px 0 40px;color:var(--text-3);font-size:13px;border-top:1px solid var(--border);margin-top:70px}
+  @media(max-width:820px){h1.hero-title{font-size:38px}.stats{grid-template-columns:1fr}.navlinks{display:none}.wrap{padding:0 20px}.hero{min-height:560px}}
+</style>
+</head>
+<body>
+  <header class="wrap"><nav>
+    <div class="logo"><span class="d">D</span><span class="rest">exi</span><span class="tld">DIGITAL</span></div>
+    <div class="navlinks"><a href="#">Soluções</a><a href="#">Synapse OS</a><a href="#">Casos</a><a href="#">Metodologia</a><a class="nav-cta" href="#">Agendar diagnóstico</a></div>
+  </nav></header>
+
+  <section class="hero">
+    <canvas id="flw"></canvas>
+    <div class="hero-fade"></div>
+    <div class="wrap"><div class="hero-inner">
+      <p class="overline">IA sob medida para grupos automotivos e concessionárias</p>
+      <h1 class="hero-title">O mercado responde o WhatsApp.<br>A Dexi <span class="hot">não deixa um lead morrer</span>.</h1>
+      <p class="sub">Um <b>sistema de receita sob medida</b> que qualifica, reaquece e ressuscita cada oportunidade — sobre o DMS e o CRM que sua concessionária já usa. Inteligência nos comandos, trilhos na execução.</p>
+      <div class="cta-row">
+        <button class="btn-money">Agendar diagnóstico de 24h →</button>
+        <button class="btn-ghost">Ver como funciona</button>
+      </div>
+    </div></div>
+  </section>
+
+  <div class="wrap"><div class="stats">
+    <div class="stat"><div class="num" data-to="45" data-pre="+" data-suf="%">+0%</div><div class="lbl">Conversão de leads</div></div>
+    <div class="stat"><div class="num" data-to="7" data-pre="R$ " data-suf="M+">R$ 0</div><div class="lbl">Receita recuperada</div></div>
+    <div class="stat"><div class="num" data-to="35" data-pre="Até " data-suf="%">Até 0%</div><div class="lbl">Recuperação de carteira</div></div>
+  </div></div>
+
+  <!-- ================= CONTRASTE: prateleira vs Dexi ================= -->
+  <section class="wrap" style="padding:96px 0 0">
+    <div style="text-align:center;max-width:660px;margin:0 auto 44px">
+      <div style="color:var(--blue-bright);font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;margin-bottom:12px">Por que a Dexi</div>
+      <h2 style="font-size:34px;font-weight:800;letter-spacing:-.02em;line-height:1.15;margin:0">Enquanto o mercado vende chatbot,<br>a Dexi entrega <span style="color:var(--orange-500)">sistema de receita</span>.</h2>
+      <p style="color:var(--text-2);font-size:17px;line-height:1.6;margin:16px auto 0;max-width:560px">IA generativa responde. Receita se executa. A diferença entre as duas é a sua margem.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:820px;margin:0 auto">
+      <div style="background:rgba(14,16,24,.6);border:1px solid var(--border);border-radius:16px;padding:24px 26px">
+        <div style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);margin-bottom:16px">IA de prateleira</div>
+        <div style="color:var(--text-2);font-size:15px;line-height:2.1">
+          ✕&nbsp; Responde e qualifica o lead<br>
+          ✕&nbsp; Vive dentro do CRM deles<br>
+          ✕&nbsp; Você migra de sistema<br>
+          ✕&nbsp; Para no agendamento
+        </div>
+      </div>
+      <div style="background:rgba(255,117,24,.06);border:1px solid var(--orange-600);border-radius:16px;padding:24px 26px">
+        <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-500);margin-bottom:16px">Dexi</div>
+        <div style="color:var(--text);font-size:15px;line-height:2.1">
+          ● &nbsp;Executa o ciclo de receita inteiro<br>
+          ● &nbsp;Roda sobre o seu DMS / Syonet<br>
+          ● &nbsp;Zero migração<br>
+          ● &nbsp;Ressuscita lead parado, com log auditável
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3 DIFERENCIAIS ================= -->
+  <section class="wrap" style="padding:80px 0 0">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
+      <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:16px;padding:28px 26px">
+        <div style="font-size:15px;font-weight:800;color:var(--orange-500);margin-bottom:10px">01</div>
+        <h3 style="font-size:19px;font-weight:700;margin:0 0 10px">Integra, não substitui</h3>
+        <p style="color:var(--text-2);font-size:15px;line-height:1.6;margin:0">Roda por cima do que você já usa: DMS das montadoras, Syonet e, em breve, NBS. Zero migração, zero risco de parar a operação.</p>
+      </div>
+      <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:16px;padding:28px 26px">
+        <div style="font-size:15px;font-weight:800;color:var(--orange-500);margin-bottom:10px">02</div>
+        <h3 style="font-size:19px;font-weight:700;margin:0 0 10px">Nenhum lead morre</h3>
+        <p style="color:var(--text-2);font-size:15px;line-height:1.6;margin:0">O sistema qualifica, reaquece e ressuscita cada oportunidade parada — no instante em que a condição que travava a venda muda. Nada esfria por esquecimento.</p>
+      </div>
+      <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:16px;padding:28px 26px">
+        <div style="font-size:15px;font-weight:800;color:var(--orange-500);margin-bottom:10px">03</div>
+        <h3 style="font-size:19px;font-weight:700;margin:0 0 10px">Comandos com inteligência, execução em trilhos</h3>
+        <p style="color:var(--text-2);font-size:15px;line-height:1.6;margin:0">Execução determinística, sem alucinação de IA. Log auditável, LGPD e ROI que você aprova antes de escalar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INTEGRAÇÕES ================= -->
+  <section class="wrap" style="padding:70px 0 0">
+    <div style="background:linear-gradient(165deg,#0e1018,#0a0c12);border:1px solid var(--border-strong);border-radius:20px;padding:40px 32px;text-align:center">
+      <div style="color:var(--blue-bright);font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;margin-bottom:14px">Integrações</div>
+      <h2 style="font-size:26px;font-weight:800;letter-spacing:-.02em;margin:0 0 20px">Roda sobre o que sua operação já usa</h2>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:18px">
+        <span style="border:1px solid var(--border-strong);border-radius:999px;padding:9px 18px;font-size:14px;font-weight:600;color:var(--text)">DMS das montadoras</span>
+        <span style="border:1px solid var(--border-strong);border-radius:999px;padding:9px 18px;font-size:14px;font-weight:600;color:var(--text)">Syonet</span>
+        <span style="border:1px solid rgba(255,117,24,.35);background:rgba(255,117,24,.08);border-radius:999px;padding:9px 18px;font-size:14px;font-weight:600;color:var(--orange-500)">NBS · em breve</span>
+      </div>
+      <p style="color:var(--text-2);font-size:16px;line-height:1.6;margin:0 auto;max-width:520px">Sua concessionária não troca de sistema — ganha uma camada de inteligência sobre ele.</p>
+    </div>
+  </section>
+
+  <div class="foot">Proposta final — Dexi Digital · sistema de receita que não deixa lead morrer · luz fluindo (45 · 7) + Pumpkin #FF7518 sobre o azul da marca</div>
+
+<script>
+/* LUZ FLUINDO — params travados: intensidade 0.45, velocidade 0.007 */
+(function(){
+  var c=document.getElementById('flw'),x=c.getContext('2d'),W,H,DPR,t=0;
+  var AMP=0.45, SPD=0.007;
+  var curtains=[
+    {x0:0.28,amp:0.10,freq:0.012,ph:0.0,w:0.30,col:[19,127,217]},
+    {x0:0.62,amp:0.13,freq:0.010,ph:2.1,w:0.28,col:[34,211,238]},
+    {x0:0.48,amp:0.09,freq:0.014,ph:4.0,w:0.26,col:[255,117,24]}
+  ];
+  function rs(){DPR=Math.min(window.devicePixelRatio||1,2);W=c.clientWidth;H=c.clientHeight;c.width=W*DPR;c.height=H*DPR;x.setTransform(DPR,0,0,DPR,0,0);}
+  window.addEventListener('resize',rs);
+  function blob(px,py,rad,rgb,a){var g=x.createRadialGradient(px,py,0,px,py,rad);g.addColorStop(0,'rgba('+rgb[0]+','+rgb[1]+','+rgb[2]+','+a+')');g.addColorStop(1,'rgba('+rgb[0]+','+rgb[1]+','+rgb[2]+',0)');x.fillStyle=g;x.beginPath();x.arc(px,py,rad,0,6.2832);x.fill();}
+  function draw(){x.clearRect(0,0,W,H);x.fillStyle='#06080f';x.fillRect(0,0,W,H);x.globalCompositeOperation='lighter';
+    for(var ci=0;ci<curtains.length;ci++){var cu=curtains[ci];
+      for(var y=-20;y<H+20;y+=10){var cx=W*cu.x0+Math.sin(y*cu.freq+t*SPD*9+cu.ph)*W*cu.amp*(0.6+AMP);var depth=0.4+(y/H)*0.8;blob(cx,y,W*cu.w*AMP*1.2,cu.col,0.045*depth);}}
+    x.globalCompositeOperation='source-over';}
+  function loop(){t+=0.016;draw();requestAnimationFrame(loop);}
+  rs();var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(reduce){draw();}else{loop();}
+  function an(el){var to=+el.dataset.to,pre=el.dataset.pre||'',suf=el.dataset.suf||'',s=null;function st(ts){if(!s)s=ts;var p=Math.min((ts-s)/1300,1),e=1-Math.pow(1-p,3),v=to*e;el.textContent=pre+Math.round(v)+suf;if(p<1)requestAnimationFrame(st);}requestAnimationFrame(st);}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){an(e.target);io.unobserve(e.target);}});},{threshold:.6});
+  document.querySelectorAll('.num').forEach(function(n){io.observe(n);});
+})();
+</script>
+</body>
+</html>
