@@ -230,12 +230,13 @@ export default function RevenueCalculator() {
                 <p className="mt-4 text-body-sm">Sem R$ 1 adicional de investimento em mídia.</p>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-3">
+              <div className="grid gap-4 grid-cols-2">
                 <MetricCard
+                  className="col-span-2"
                   icon={<TrendingIcon className="h-4 w-4" />}
                   label="Pipeline reaberto"
-                  value={formatCompactBRL(pipeline)}
-                  suffix={formatBRL(pipeline)}
+                  value={formatBRL(pipeline)}
+                  suffix={pipeline >= 1_000 ? `≈ ${formatCompactBRL(pipeline)}` : undefined}
                 />
                 <MetricCard
                   icon={<UsersIcon className="h-4 w-4" />}
@@ -451,14 +452,16 @@ function MetricCard({
   label,
   value,
   suffix,
+  className = '',
 }: {
   icon: ReactNode;
   label: string;
   value: string;
   suffix?: string;
+  className?: string;
 }) {
   return (
-    <div className="card p-4 sm:p-5">
+    <div className={`card p-4 sm:p-5 ${className}`}>
       <div className="flex items-center gap-2 text-[var(--text-tertiary)]">
         {icon}
         <span className="text-[11px] font-medium uppercase tracking-wider">{label}</span>
