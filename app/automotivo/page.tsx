@@ -1,6 +1,7 @@
 import TrackedCTA from '@/components/ui/TrackedCTA';
 import CountUp from '@/components/ui/CountUp';
 import type { Metadata } from 'next';
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Fykos para Grupos Automotivos e Concessionárias | Dexi Digital',
@@ -118,6 +119,11 @@ const CLIENTES = [
 export default function AutomotivoPage() {
   return (
     <main className="min-h-screen bg-[var(--bg-primary)] pb-24 md:pb-0 relative">
+      <BreadcrumbSchema
+        trilha={[
+          { nome: 'Automotivo', url: '/automotivo' },
+        ]}
+      />
       {/* Hero: faixa dark autocontida com fundo de luz fluindo */}
       <section
         id="hero"

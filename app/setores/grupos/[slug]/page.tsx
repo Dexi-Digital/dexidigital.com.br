@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { GRUPOS, findGrupo } from '@/lib/seo';
 import { FAQSchema } from '@/components/seo/FAQSchema';
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 import { getWhatsAppUrl } from '@/lib/whatsapp';
 
 interface PageProps {
@@ -44,6 +45,13 @@ export default async function GrupoPage({ params }: PageProps) {
   return (
     <main className="min-h-screen">
       <FAQSchema faqs={data.faq} pageName={`IA para ${data.nome}`} />
+      <BreadcrumbSchema
+        trilha={[
+          { nome: 'Setores', url: '/automotivo' },
+          { nome: 'Grupos', url: '/automotivo' },
+          { nome: data.nome, url: `/setores/grupos/${data.slug}` },
+        ]}
+      />
 
       {/* Hero */}
       <section className="section-hero-premium py-24 md:py-32 border-b border-[var(--border-subtle)]">

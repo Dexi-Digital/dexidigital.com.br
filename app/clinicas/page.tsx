@@ -1,5 +1,6 @@
 import TrackedCTA from '@/components/ui/TrackedCTA';
 import type { Metadata } from 'next';
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Fykos para Clínicas | Dexi Digital',
@@ -47,6 +48,11 @@ const DIFERENCIAIS = [
 export default function ClinicasPage() {
   return (
     <main className="min-h-screen bg-[var(--bg-primary)] pb-24 md:pb-0 relative">
+      <BreadcrumbSchema
+        trilha={[
+          { nome: 'Clínicas', url: '/clinicas' },
+        ]}
+      />
       {/* Hero: faixa dark autocontida */}
       <section
         id="hero"

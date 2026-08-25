@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
 import type { Metadata } from 'next';
 
@@ -49,6 +50,11 @@ const steps = [
 export default function MetodologiaPage() {
   return (
     <main className="min-h-screen">
+      <BreadcrumbSchema
+        trilha={[
+          { nome: 'Metodologia', url: '/metodologia' },
+        ]}
+      />
       {/* Hero */}
       <section className="section-hero-premium py-24 md:py-32 border-b border-[var(--border-subtle)]">
         <div className="container">

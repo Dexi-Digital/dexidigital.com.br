@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 import { WHATSAPP_AUTOMOTIVO_URL, WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
 import type { Metadata } from 'next';
 
@@ -49,6 +50,12 @@ const cases = [
 export default function AutomotivoPremiumPage() {
   return (
     <main className="min-h-screen">
+      <BreadcrumbSchema
+        trilha={[
+          { nome: 'Automotivo', url: '/automotivo' },
+          { nome: 'Automotivo Premium', url: '/setores/automotivo-premium' },
+        ]}
+      />
       {/* Hero */}
       <section className="section-hero-premium py-24 md:py-32 border-b border-[var(--border-subtle)]">
         <div className="container">
