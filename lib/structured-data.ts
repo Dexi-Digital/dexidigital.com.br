@@ -363,3 +363,49 @@ export function getArticleSchema(article: {
     inLanguage: 'pt-BR',
   };
 }
+
+/**
+ * BreadcrumbList — o site tem hierarquia profunda (/setores/grupos/[slug],
+ * /servicos/[x], /blog/[slug]) e nao declarava nenhuma. Sem isso o buscador
+ * adivinha a posicao da pagina no conjunto, e o motor generativo cita a URL
+ * sem saber de que secao ela veio.
+ */
+export function getBreadcrumbSchema(trilha: { nome: string; url: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: trilha.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.nome,
+      item: item.url.startsWith('http') ? item.url : `https://dexidigital.com.br${item.url}`,
+    })),
+  };
+}
+
+/**
+ * HowTo — para metodologia e guias, que descrevem processo em etapas. E o
+ * schema que alimenta resposta passo a passo em motor de busca e de resposta.
+ */
+export function getHowToSchema(input: {
+  nome: string;
+  descricao: string;
+  url: string;
+  etapas: { nome: string; texto: string }[];
+  tempoTotal?: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: input.nome,
+    description: input.descricao,
+    ...(input.tempoTotal ? { totalTime: input.tempoTotal } : {}),
+    step: input.etapas.map((etapa, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: etapa.nome,
+      text: etapa.texto,
+      url: `${input.url}#etapa-${i + 1}`,
+    })),
+  };
+}

@@ -23,6 +23,22 @@ const PROMOTIONAL_KEYWORDS = [
   'menor preco', 'melhor preco', 'compre agora', 'black friday',
 ];
 
+// Verbos de queda financeira. Precisam de fronteira de palavra: "cai" cru
+// casaria com "caixa" ("IA na caixa de entrada" nao e noticia negativa) e
+// "despencar" cru pegaria conjugacoes que nao existem. Com \b, "cai" pega
+// "cai" mas nao "caixa"; "caiu"/"caem" entram como termos proprios.
+// Exatos: fecham dos dois lados. Sao os que teriam colisao se virassem radical
+// ("cai" -> "caixa", "desaba" -> "desabafo", "tomba" -> "tombamento").
+const NEGATIVE_EXACT_TERMS = [
+  'cai', 'caiu', 'caem', 'cairam', 'desaba', 'desabou', 'desabam',
+  'recua', 'recuou', 'recuam', 'tomba', 'tombou',
+];
+
+// Radicais: fecham so no inicio e aceitam qualquer conjugacao depois. So entram
+// aqui os que nenhuma outra palavra do portugues comeca igual — senao viram
+// falso positivo silencioso.
+const NEGATIVE_STEMS = ['despenc', 'encolh', 'derret', 'afund', 'naufrag'];
+
 // Termos de uma letra/palavra curta precisam de fronteira de palavra (\b)
 // para não colidir com substrings de outras palavras (ex: "ia" dentro de
 // "história", "app" dentro de outra palavra qualquer).
@@ -40,6 +56,10 @@ const POSITIVE_PHRASES = [
   'samsung', 'nvidia', 'tesla', 'gadget',
 ];
 
+function escapeRegExp(str: string): string {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 function normalize(text: string): string {
   return text
     .normalize('NFD')
@@ -47,18 +67,23 @@ function normalize(text: string): string {
     .toLowerCase();
 }
 
+const NEGATIVE_SHORT_REGEX = new RegExp(
+  [
+    ...NEGATIVE_EXACT_TERMS.map((term) => `\\b${escapeRegExp(term)}\\b`),
+    ...NEGATIVE_STEMS.map((stem) => `\\b${escapeRegExp(stem)}\\w*`),
+  ].join('|'),
+  'i'
+);
+
 export function isNegativeNews(title: string, summary: string): boolean {
   const haystack = normalize(`${title} ${summary}`);
-  return NEGATIVE_KEYWORDS.some((keyword) => haystack.includes(keyword));
+  if (NEGATIVE_KEYWORDS.some((keyword) => haystack.includes(keyword))) return true;
+  return NEGATIVE_SHORT_REGEX.test(haystack);
 }
 
 export function isPromotionalContent(title: string): boolean {
   const haystack = normalize(title);
   return PROMOTIONAL_KEYWORDS.some((keyword) => haystack.includes(keyword));
-}
-
-function escapeRegExp(str: string): string {
-  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 const POSITIVE_REGEX = new RegExp(

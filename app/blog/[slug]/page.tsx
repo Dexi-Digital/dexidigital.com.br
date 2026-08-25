@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getArticleBySlug, getAllArticles } from '@/lib/blog-data';
 import { getDbPostBySlug } from '@/lib/blog-db';
-import { getArticleSchema } from '@/lib/structured-data';
+import { getArticleSchema, getBreadcrumbSchema } from '@/lib/structured-data';
 import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
 
 interface BlogArticlePageProps {
@@ -223,6 +223,11 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
 
   // Article structured data
   const articleSchema = getArticleSchema(article);
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { nome: 'Início', url: '/' },
+    { nome: 'Blog', url: '/blog' },
+    { nome: article.title, url: `/blog/${article.slug}` },
+  ]);
 
   return (
     <main className="min-h-screen">
@@ -230,6 +235,10 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero Section */}
