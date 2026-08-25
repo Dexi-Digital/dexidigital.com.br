@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next';
+import { BLOG_REDIRECTS } from './lib/blog-redirects';
 
 const nextConfig: NextConfig = {
   // Core settings
@@ -143,6 +144,12 @@ const nextConfig: NextConfig = {
         destination: '/materiais/calculadora-roi',
         permanent: true,
       },
+      // Consolidação de posts canibais — ver lib/blog-redirects.ts
+      ...BLOG_REDIRECTS.map(([origem, destino]) => ({
+        source: `/blog/${origem}`,
+        destination: `/blog/${destino}`,
+        permanent: true,
+      })),
     ];
   },
 
