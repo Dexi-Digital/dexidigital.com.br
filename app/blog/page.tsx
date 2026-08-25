@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllArticles } from '@/lib/blog-data';
 import { getPublishedDbPosts } from '@/lib/blog-db';
+import { BlogGrid, type BlogCard } from '@/components/blog/BlogGrid';
 
 export const metadata: Metadata = {
   title: 'Blog | Insights sobre IA, Dados e Software Empresarial | Dexi Digital',
@@ -25,9 +26,18 @@ export default function BlogPage() {
     focusKeyword: p.focusKeyword,
     content: p.content,
   }));
-  const articles = [...legacyArticles, ...dbPosts].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
+  // Enxuga para os campos do card antes de cruzar para o client component: o
+  // `content` dos 600 posts nao pode ir no payload da pagina.
+  const articles: BlogCard[] = [...legacyArticles, ...dbPosts]
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .map(({ slug, title, excerpt, category, readTime, date }) => ({
+      slug,
+      title,
+      excerpt,
+      category,
+      readTime,
+      date,
+    }));
 
   return (
     <main className="min-h-screen">
@@ -35,12 +45,12 @@ export default function BlogPage() {
       <section className="section-hero-premium py-24 md:py-32 border-b border-[var(--border-subtle)]">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-overline mb-4 animate-fade-in-up-subtle">Intelligence Hub</p>
+            <p className="text-overline mb-4 animate-fade-in-up-subtle">Blog</p>
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
-              <span className="text-display-gradient">Liderança em IA &amp; Valor Enterprise</span>
+              <span className="text-display-gradient">Onde a receita vaza, e como fechar</span>
             </h1>
             <p className="text-lead max-w-2xl mx-auto animate-fade-in-up delay-100">
-              Perspectivas estratégicas sobre a transição para sistemas autônomos, soberania de dados e o impacto da IA no EBITDA de grandes corporações.
+              Escrevemos para quem vende alto ticket com ciclo longo — grupos automotivos, clínicas de procedimento e incorporadoras. Sem teoria de transformação digital: o que acontece entre o lead entrar e o negócio fechar.
             </p>
           </div>
         </div>
@@ -50,43 +60,7 @@ export default function BlogPage() {
       <section className="section bg-[var(--bg-surface)]">
         <div className="container">
           <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {articles.map((article) => (
-                <article key={article.slug} className="card card-interactive overflow-hidden">
-                  <div className="p-6">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="px-3 py-1 text-xs font-semibold bg-[var(--color-primary-100)] dark:bg-[var(--color-primary-900)]/30 text-[var(--color-primary-700)] dark:text-[var(--color-primary-300)] rounded-full">{article.category}</span>
-                      <span className="text-xs text-[var(--text-muted)]">{article.readTime}</span>
-                    </div>
-                    <h2 className="text-h5 mb-3">{article.title}</h2>
-                    <p className="text-body-sm text-[var(--text-secondary)] mb-4">{article.excerpt}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-[var(--text-muted)]">
-                        {new Date(article.date).toLocaleDateString('pt-BR', {
-                          day: 'numeric',
-                          month: 'long',
-                          year: 'numeric',
-                        })}
-                      </span>
-                      <Link href={`/blog/${article.slug}`} className="text-sm font-semibold text-[var(--color-primary-600)] hover:text-[var(--color-primary-700)] transition-base inline-flex items-center gap-1">
-                        Ler mais
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </Link>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-
-            {/* Coming Soon Message */}
-            <div className="mt-12 text-center">
-              <p className="text-body-sm text-[var(--text-secondary)]">
-                Mais artigos em breve. Acompanhe nossas publicações sobre IA,
-                dados e software enterprise.
-              </p>
-            </div>
+            <BlogGrid articles={articles} />
           </div>
         </div>
       </section>
