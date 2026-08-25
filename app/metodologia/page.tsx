@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
+import { getHowToSchema } from '@/lib/structured-data';
 import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
 import type { Metadata } from 'next';
 
@@ -48,8 +49,26 @@ const steps = [
 ];
 
 export default function MetodologiaPage() {
+  // Deriva do mesmo `steps` que a pagina renderiza: schema que descreve etapa
+  // que nao esta visivel na pagina e violacao de diretriz, e schema mantido a
+  // mao sai de sincronia na primeira vez que alguem edita o array.
+  const howToSchema = getHowToSchema({
+    nome: 'Processo Dexi: framework de ativação de IA em 5 etapas',
+    descricao:
+      'Metodologia consultiva da Dexi Digital para implementar IA e inteligência de dados sobre os sistemas que a operação já usa, com governança e revisão técnica humana.',
+    url: 'https://dexidigital.com.br/metodologia',
+    etapas: steps.map((step) => ({
+      nome: step.title,
+      texto: `${step.description} Duração: ${step.duration}. Entregáveis: ${step.deliverables.join('; ')}.`,
+    })),
+  });
+
   return (
     <main className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
       <BreadcrumbSchema
         trilha={[
           { nome: 'Metodologia', url: '/metodologia' },
@@ -118,8 +137,15 @@ export default function MetodologiaPage() {
             </div>
 
             <div className="space-y-6">
-              {steps.map((step) => (
-                <div key={step.number} className="card card-interactive p-8">
+              {steps.map((step, index) => (
+                // O id casa com o `url` de cada HowToStep no schema (#etapa-N).
+                // Sem ele o schema apontaria para ancora inexistente — e de
+                // quebra cada etapa fica linkavel.
+                <div
+                  key={step.number}
+                  id={`etapa-${index + 1}`}
+                  className="card card-interactive p-8 scroll-mt-24"
+                >
                   <div className="flex flex-col md:flex-row gap-6">
                     <div className="flex-shrink-0">
                       <div className="w-16 h-16 bg-[var(--color-primary-600)] text-white rounded-2xl flex items-center justify-center text-xl font-bold shadow-lg">
