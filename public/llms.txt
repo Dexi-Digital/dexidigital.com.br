@@ -28,6 +28,18 @@ A Dexi Digital combina engenharia de software crítico com IA aplicada para tran
 - [Blog](https://dexidigital.com.br/blog): artigos sobre IA empresarial, inteligência de dados e software enterprise
 - [Notícias](https://dexidigital.com.br/noticias): curadoria diária de notícias de tecnologia e IA
 
+## Glossário
+
+Definições curtas, uma página por termo — o formato mais direto para responder "o que é X" no contexto de operação comercial com IA.
+
+- [Glossário de IA aplicada ao automotivo](https://dexidigital.com.br/glossario-ia-automotiva)
+- [O que é o Fykos](https://dexidigital.com.br/glossario-ia-automotiva/fykos): o Sistema Operacional de Receita da Dexi
+- [O que é execução autônoma de IA](https://dexidigital.com.br/glossario-ia-automotiva/execucao-autonoma-ia)
+- [O que é Shadow CRM](https://dexidigital.com.br/glossario-ia-automotiva/shadow-crm): quando a operação real acontece fora do CRM oficial
+- [O que é DMS](https://dexidigital.com.br/glossario-ia-automotiva/dms-automotivo): Dealer Management System, o sistema de gestão da concessionária
+- [O que é lead scoring automotivo](https://dexidigital.com.br/glossario-ia-automotiva/lead-scoring-automotivo)
+- [O que é perfilamento inteligente de leads](https://dexidigital.com.br/glossario-ia-automotiva/perfilamento-inteligente)
+
 ## Institucional
 
 - [Sobre](https://dexidigital.com.br/sobre): fundadores e histórico da empresa

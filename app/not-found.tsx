@@ -16,13 +16,36 @@ export default function NotFound() {
           
           {/* Description */}
           <p className="text-lead text-[var(--text-secondary)] mb-8">
-            O conteúdo que você procura pode ter sido movido ou não existe mais.
-            Mas não se preocupe: temos muito mais para oferecer.
+            Este endereço não existe mais. Boa parte do conteúdo antigo mudou de
+            lugar quando reformulamos o site — pode ser que o que você procura
+            esteja abaixo.
           </p>
 
           {/* Quick Links */}
           <div className="card p-6 mb-8 text-left">
-            <h2 className="text-h5 mb-4 text-[var(--text-primary)]">Talvez você esteja procurando:</h2>
+            <h2 className="text-h5 mb-4 text-[var(--text-primary)]">Conteúdo</h2>
+            <ul className="space-y-3 mb-6">
+              <li>
+                <Link href="/blog" className="text-[var(--color-primary-600)] hover:underline flex items-center gap-2">
+                  <span>→</span>
+                  <span><strong>Blog</strong>: artigos sobre onde a receita vaza entre o lead entrar e o negócio fechar</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/glossario-ia-automotiva" className="text-[var(--color-primary-600)] hover:underline flex items-center gap-2">
+                  <span>→</span>
+                  <span><strong>Glossário</strong>: definições de termos de IA, dados e operação comercial</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/noticias" className="text-[var(--color-primary-600)] hover:underline flex items-center gap-2">
+                  <span>→</span>
+                  <span><strong>Notícias</strong>: curadoria diária de tecnologia e IA</span>
+                </Link>
+              </li>
+            </ul>
+
+            <h2 className="text-h5 mb-4 text-[var(--text-primary)]">Serviços</h2>
             <ul className="space-y-3">
               <li>
                 <Link href="/servicos/ia-para-empresas" className="text-[var(--color-primary-600)] hover:underline flex items-center gap-2">
