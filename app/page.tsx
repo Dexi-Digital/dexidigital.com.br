@@ -11,11 +11,24 @@ export const metadata: Metadata = {
   title: 'Dexi Digital | Fykos: Sistema Operacional de Receita',
   description: 'A Dexi é uma empresa de software. Criamos o Fykos, um sistema operacional de receita que reinventa o CRM e usa dados e IA para transformar seus dados em receita, sobre os sistemas que sua operação já usa.',
   keywords: ['sistema operacional de receita', 'Fykos', 'reinventar o CRM', 'engenharia de receita', 'dados e IA para vendas', 'recuperação de carteira', 'software sob medida', 'grupos automotivos'],
+  // ATENCAO: declarar `openGraph` aqui SUBSTITUI o do layout inteiro — o Next
+  // nao faz merge profundo. Sem repetir url/siteName/images, a home ficava sem
+  // og:image e sem og:url, e todo compartilhamento saia sem imagem.
   openGraph: {
     title: 'Dexi Digital | Fykos: Sistema Operacional de Receita',
     description: 'O Fykos transforma seus dados em receita, sobre os sistemas que sua operação já usa. Não é IA genérica. É engenharia de receita.',
     type: 'website',
     locale: 'pt_BR',
+    url: 'https://dexidigital.com.br',
+    siteName: 'Dexi Digital',
+    images: [
+      {
+        url: '/og-image-home.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Dexi Digital: Fykos, Sistema Operacional de Receita',
+      },
+    ],
   },
 };
 

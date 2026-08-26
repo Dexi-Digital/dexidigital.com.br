@@ -15,7 +15,7 @@ export const organizationSchema = {
   },
   image: 'https://dexidigital.com.br/og-image-home.jpg',
   description:
-    'Dexi Digital é uma consultoria estratégica de IA e inteligência de dados focada em resultados de vendas, eficiência operacional e governança de IA para empresas brasileiras. Especializada em grupos automotivos premium e grandes corporações.',
+    'A Dexi Digital é uma empresa de software. Criou o Fykos, um Sistema Operacional de Receita que usa dados e IA sobre o CRM e os sistemas que a operação já usa, sem exigir migração. Atende operações de ticket alto e ciclo longo: grupos automotivos e concessionárias, clínicas de procedimento e construtoras e incorporadoras.',
   foundingDate: '2014',
   address: {
     '@type': 'PostalAddress',
@@ -34,16 +34,20 @@ export const organizationSchema = {
     name: 'Brazil',
   },
   knowsAbout: [
-    'Consultoria de IA',
+    'Sistema Operacional de Receita',
+    'Fykos',
+    'IA sobre CRM existente',
+    'Vazamento de receita no funil comercial',
+    'Reativação de base morta de leads',
+    'Tempo de resposta ao lead',
     'Inteligência de Dados',
     'IA para Vendas',
-    'Eficiência Operacional com IA',
-    'Machine Learning',
     'Software Sob Medida para Empresas',
     'Grupos Automotivos',
-    'Concessionárias Premium',
-    'Data Warehouse',
-    'Business Intelligence',
+    'Concessionárias',
+    'Clínicas de procedimento',
+    'Construtoras e Incorporadoras',
+    'Integração com DMS e CRM',
     'Governança de IA',
   ],
   slogan: 'IA como acelerador, nunca sozinha.',
@@ -322,9 +326,10 @@ export const faqSchema = {
 };
 
 export function getHomePageSchemas() {
+  // organizationSchema e websiteSchema NAO entram aqui: o layout raiz ja os
+  // emite em toda pagina. Repetir gerava dois Organization com o mesmo @id
+  // no HTML da home.
   return [
-    organizationSchema,
-    websiteSchema,
     ...servicesSchema,
     faqSchema,
   ];
