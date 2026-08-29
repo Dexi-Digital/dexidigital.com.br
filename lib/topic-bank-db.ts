@@ -81,20 +81,26 @@ function rowToTopic(row: TopicRow): Topic {
   };
 }
 
-export function seedTopics(topics: SeedTopicInput[]): number {
+/**
+ * Semeia pautas. O status e parametro porque pauta vinda de radar de
+ * concorrencia NAO deve entrar direto na fila de publicacao: ela representa
+ * um sinal de mercado, nao uma decisao editorial. Entra como
+ * 'pending_review' e so vira 'backlog' quando alguem aprova.
+ */
+export function seedTopics(topics: SeedTopicInput[], status: string = 'backlog'): number {
   const db = getDb();
   try {
     const insert = db.prepare(`
       INSERT OR IGNORE INTO topics
         (id, title, vertical, cluster, keyword, required_data, data_source, pillar_link, status, week, created_at)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'backlog', ?, ?)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `);
     const now = new Date().toISOString();
     let inserted = 0;
     for (const t of topics) {
       const id = hashTitle(t.title);
       const result = insert.run(
-        id, t.title, t.vertical, t.cluster, t.keyword, t.requiredData, t.dataSource, t.pillarLink, t.week, now
+        id, t.title, t.vertical, t.cluster, t.keyword, t.requiredData, t.dataSource, t.pillarLink, status, t.week, now
       );
       inserted += Number(result.changes);
     }
@@ -136,6 +142,41 @@ export function getPublishedTitlesForVertical(vertical: string): string[] {
       .prepare(`SELECT title FROM topics WHERE vertical = ? AND status = 'generated'`)
       .all(vertical) as unknown as { title: string }[];
     return rows.map((r) => r.title);
+  } finally {
+    db.close();
+  }
+}
+
+/** Titulos ja no banco de pautas, em qualquer status — usado para deduplicar. */
+export function getAllTopicTitles(): string[] {
+  const db = getDb();
+  try {
+    const rows = db.prepare('SELECT title FROM topics').all() as unknown as { title: string }[];
+    return rows.map((r) => r.title);
+  } finally {
+    db.close();
+  }
+}
+
+/** Pautas aguardando curadoria humana, do radar de concorrencia. */
+export function getPendingReviewTopics(): Topic[] {
+  const db = getDb();
+  try {
+    const rows = db
+      .prepare("SELECT * FROM topics WHERE status='pending_review' ORDER BY created_at DESC")
+      .all() as unknown as TopicRow[];
+    return rows.map(rowToTopic);
+  } finally {
+    db.close();
+  }
+}
+
+/** Promove uma pauta revisada para a fila de publicacao. */
+export function approveTopic(id: string): boolean {
+  const db = getDb();
+  try {
+    const r = db.prepare("UPDATE topics SET status='backlog' WHERE id=? AND status='pending_review'").run(id);
+    return Number(r.changes) > 0;
   } finally {
     db.close();
   }
