@@ -181,3 +181,17 @@ export function approveTopic(id: string): boolean {
     db.close();
   }
 }
+
+/** Edita titulo e, opcionalmente, o pilar de uma pauta durante a curadoria. */
+export function atualizarTituloPauta(id: string, titulo: string, pillarLink?: string): void {
+  const db = getDb();
+  try {
+    if (pillarLink === undefined) {
+      db.prepare('UPDATE topics SET title=? WHERE id=?').run(titulo, id);
+    } else {
+      db.prepare('UPDATE topics SET title=?, pillar_link=? WHERE id=?').run(titulo, pillarLink, id);
+    }
+  } finally {
+    db.close();
+  }
+}

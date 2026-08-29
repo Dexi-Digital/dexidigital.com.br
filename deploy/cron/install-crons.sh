@@ -8,7 +8,7 @@
 set -euo pipefail
 
 SRC="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-JOBS=(dexi-blog-post)
+JOBS=(dexi-blog-post dexi-radar)
 
 if [[ "${EUID:-$(id -u)}" -ne 0 ]]; then
   echo "ERRO: rode como root — escreve em /usr/local/bin e /etc/cron.d." >&2

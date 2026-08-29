@@ -11,10 +11,31 @@ próxima pessoa não sabe o que está no ar.
 deploy/cron/
   wrappers/
     dexi-blog-post.sh    # node --env-file=.env.local scripts/generate-blog-post.mjs
+    dexi-radar.sh        # node --env-file=.env.local scripts/radar-concorrencia.mjs --semear
   cron.d/
     dexi-blog-post       # 09:00 todo dia, horário de Brasília
+    dexi-radar           # 08:00 de segunda, horário de Brasília
   install-crons.sh       # copia, valida e recarrega o cron
 ```
+
+## Os dois jobs
+
+**dexi-blog-post (diário, 09:00)** — pega a próxima pauta com status `backlog`,
+gera via Gemini, valida e publica.
+
+**dexi-radar (semanal, segunda 08:00)** — lê os títulos publicados por Syonet,
+Followize e Motorleads e grava as lacunas como `pending_review`.
+
+O radar **não** alimenta a fila do blog. `pending_review` é invisível para o
+`getNextBacklogTopic`, então nenhuma pauta de concorrente vira post sem passar
+por curadoria humana:
+
+```
+node --env-file=.env.local scripts/curar-pautas.mjs
+```
+
+A ordem dos horários é proposital: o radar roda uma hora antes do gerador, para
+que pauta aprovada na semana anterior já esteja na fila quando ele rodar.
 
 ## Instalar
 
