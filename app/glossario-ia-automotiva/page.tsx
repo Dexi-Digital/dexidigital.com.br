@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { GLOSSARIO_TERMS, GLOSSARIO_CATEGORIES } from '@/lib/seo/glossario';
 
 export const metadata: Metadata = {
-  title: 'Glossário IA Automotiva | Termos e Conceitos | Dexi Digital',
+  title: 'Glossário IA Automotiva | Termos e Conceitos',
   description:
     'Glossário completo de IA automotiva: IA que executa, lead scoring, DMS, Shadow CRM e mais. Entenda os termos que estão transformando concessionárias no Brasil.',
   keywords: [

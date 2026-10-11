@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import FAQItem from '@/components/ui/FAQItem';
-import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
+import TrackedCTA from '@/components/ui/TrackedCTA';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'FAQ | Perguntas Frequentes sobre Consultoria de IA | Dexi Digital',
-  description: 'Respostas às perguntas mais comuns sobre consultoria de IA, inteligência de dados e desenvolvimento de software sob medida. Entenda como a Dexi Digital trabalha.',
+  title: 'FAQ | Perguntas Frequentes sobre a Dexi Digital e o Fykos',
+  description: 'Respostas às perguntas mais comuns sobre a Dexi Digital, o Fykos, inteligência de dados e software sob medida. Entenda como trabalhamos e como funciona a conversa de aderência.',
   keywords: ['FAQ consultoria IA', 'perguntas frequentes IA', 'consultoria de dados FAQ', 'Dexi Digital perguntas'],
 };
 
@@ -15,15 +15,15 @@ const faqCategories = [
     questions: [
       {
         question: 'O que é a Dexi Digital?',
-        answer: 'A Dexi Digital é uma consultoria estratégica de IA e inteligência de dados focada em resultados de vendas, eficiência operacional e governança de IA para empresas brasileiras. Combinamos mais de 10 anos de experiência com tecnologia de ponta para transformar processos complexos em alta conversão.',
+        answer: 'A Dexi Digital é uma empresa de tecnologia para decisões comerciais de alto valor. Transformamos dados da operação em prioridades e ações comerciais, para que as oportunidades que já estão na base virem receita e previsibilidade de venda. A Dexi é a empresa; o Fykos é o produto de inteligência e execução comercial desenvolvido por ela.',
       },
       {
         question: 'Qual é o diferencial da Dexi em relação a outras consultorias?',
-        answer: 'Nosso diferencial é a combinação de IA como acelerador com revisão técnica humana especializada. Não substituímos especialistas por IA - usamos IA para acelerar entregas enquanto engenheiros sêniors garantem qualidade, segurança e governança. Além disso, temos experiência comprovada em setores específicos como automotivo premium.',
+        answer: 'Nosso diferencial é a combinação de IA como acelerador com revisão técnica humana especializada. Não substituímos especialistas por IA: usamos IA para acelerar entregas enquanto engenheiros sêniors garantem qualidade, segurança e governança. Além disso, atuamos com foco em operações em que cada oportunidade tem valor alto, como grupos automotivos.',
       },
       {
         question: 'A Dexi trabalha com empresas de que porte?',
-        answer: 'Focamos em médias e grandes empresas (50+ funcionários) com desafios complexos de dados e software. Grupos automotivos, corporações multi-unidade, empresas em crescimento acelerado. Atendemos clientes que não podem falhar e precisam de soluções enterprise-grade.',
+        answer: 'Focamos em médias e grandes empresas com desafios complexos de dados e software, em que cada oportunidade comercial tem valor alto: grupos automotivos, corporações multi-unidade e empresas em crescimento acelerado. A aplicação depende de volume, dados disponíveis e viabilidade de implementação, e é isso que avaliamos na conversa de aderência.',
       },
     ],
   },
@@ -49,11 +49,11 @@ const faqCategories = [
     questions: [
       {
         question: 'Quanto tempo leva um projeto típico?',
-        answer: 'Depende da complexidade. Diagnóstico estratégico: 1-2 semanas. MVPs de inteligência de dados: 4-8 semanas. Sistemas enterprise completos: 3-6 meses. Sempre com entregas incrementais e validação contínua. Agilidade sem comprometer qualidade.',
+        answer: 'Depende do escopo, do volume e dos dados disponíveis, por isso o prazo é definido depois da conversa de aderência e de uma análise mais detalhada. Sempre com entregas incrementais e validação contínua. Agilidade sem comprometer qualidade.',
       },
       {
-        question: 'Como funciona o diagnóstico inicial gratuito?',
-        answer: 'O diagnóstico é uma conversa técnica de 30-60 minutos onde mapeamos seus desafios, dados existentes e oportunidades de IA. Entregamos um relatório com recomendações, estimativa de ROI e próximos passos. Sem compromisso, sem vendas agressivas.',
+        question: 'Como funciona a conversa de aderência?',
+        answer: 'É uma conversa para entender sua operação, os dados disponíveis e se existe uma oportunidade concreta. Entendemos o contexto (segmento, tamanho da operação, sistemas em uso e o desafio mais relevante), avaliamos a aderência (volume, dados disponíveis e viabilidade de implementação) e indicamos o próximo passo: se houver aderência, propomos uma análise mais detalhada; se não houver, dizemos isso com clareza. Sem compromisso e sem pedir dados confidenciais de carteira nesta etapa.',
       },
       {
         question: 'Vocês trabalham com metodologia ágil?',
@@ -66,11 +66,11 @@ const faqCategories = [
     questions: [
       {
         question: 'Quanto custa um projeto de consultoria de IA?',
-        answer: 'Cada projeto é orçado individualmente baseado em escopo, complexidade e prazo. Trabalhamos com modelos de preço fixo por fase ou time & materials. O diagnóstico inicial é gratuito e inclui estimativa de investimento.',
+        answer: 'Cada projeto é orçado individualmente baseado em escopo, complexidade e prazo. Trabalhamos com modelos de preço fixo por fase ou time & materials. A conversa de aderência é sem compromisso; se houver aderência, o investimento é estimado na análise mais detalhada que propomos em seguida.',
       },
       {
         question: 'Qual o ROI típico de projetos de inteligência de dados?',
-        answer: 'Varia por setor e caso. Em grupos automotivos, vemos tipicamente +25% em conversão de leads, -30% em estoque ocioso e +40% em retenção de clientes. Definimos métricas de sucesso no diagnóstico e acompanhamos ao longo do projeto.',
+        answer: 'Varia por setor, volume e dados disponíveis, por isso não publicamos um número médio. O valor está em receita gerada a partir da base, previsibilidade de venda e leads que custaram caro deixando de ficar parados. As métricas de sucesso são definidas com a operação, com período e critério de atribuição, e acompanhadas ao longo do projeto.',
       },
       {
         question: 'Como funciona o suporte pós-entrega?',
@@ -149,16 +149,24 @@ export default function FAQPage() {
       <section className="section-cta-premium text-white">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
+            <p className="text-xs font-bold tracking-[0.15em] uppercase text-white mb-4">
+              CONVERSA DE ADERÊNCIA
+            </p>
             <h2 className="text-display-lg text-white mb-6">
               Ainda tem dúvidas?
             </h2>
             <p className="text-lg text-white/70 mb-10">
-              Agende um diagnóstico gratuito e converse diretamente com nossos especialistas.
+              Uma conversa para entender sua operação, os dados disponíveis e se existe uma
+              oportunidade concreta. Sem compromisso e sem pedir dados confidenciais de carteira
+              nesta etapa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
-                Agendar Diagnóstico em 24h
-              </a>
+              <TrackedCTA
+                type="aderencia"
+                location="faq-cta"
+                variant="white"
+                text="Solicitar conversa de aderência"
+              />
               <Link href="/metodologia" className="btn border-2 border-white/30 text-white hover:bg-white/10">
                 Conhecer metodologia
               </Link>

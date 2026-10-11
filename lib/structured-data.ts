@@ -69,7 +69,7 @@ export const localBusinessSchema = {
   description:
     'Tecnologia para decisões comerciais de alto valor: integração de dados da operação, priorização de oportunidades e execução comercial com rastreabilidade.',
   url: 'https://dexidigital.com.br',
-  telephone: '+55-34-99999-9999',
+  telephone: '+55-11-99184-7629',
   email: 'contato@dexidigital.com.br',
   address: {
     '@type': 'PostalAddress',

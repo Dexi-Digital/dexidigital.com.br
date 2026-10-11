@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { SOLUCOES, findSolucao } from '@/lib/seo';
 import { FAQSchema } from '@/components/seo/FAQSchema';
-import { getWhatsAppUrl } from '@/lib/whatsapp';
+import TrackedCTA from '@/components/ui/TrackedCTA';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -18,13 +18,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const data = findSolucao(slug);
   if (!data) return {};
 
+  // O layout já acrescenta "| Dexi Digital": tira o sufixo do dado para não duplicar.
+  const titulo = data.metaTitle.replace(/\s*\|\s*Dexi Digital\s*$/i, '');
+
   return {
-    title: data.metaTitle,
+    title: titulo,
     description: data.metaDescription,
     keywords: data.keywords,
     alternates: { canonical: `/solucoes/${slug}` },
     openGraph: {
-      title: data.metaTitle,
+      title: `${titulo} | Dexi Digital`,
       description: data.metaDescription,
       url: `https://dexidigital.com.br/solucoes/${slug}`,
       type: 'article',
@@ -36,10 +39,6 @@ export default async function SolucaoPage({ params }: PageProps) {
   const { slug } = await params;
   const data = findSolucao(slug);
   if (!data) notFound();
-
-  const whatsappUrl = getWhatsAppUrl(
-    `Olá! Li sobre ${data.title.toLowerCase()} e gostaria de saber mais. [ref: /solucoes/${slug}]`
-  );
 
   return (
     <main className="min-h-screen">
@@ -63,9 +62,13 @@ export default async function SolucaoPage({ params }: PageProps) {
             <p className="text-lead text-[var(--text-secondary)] max-w-3xl mb-10 animate-fade-in-up delay-100">
               {data.answerSnippet}
             </p>
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary animate-fade-in-up delay-150">
-              {data.ctaText} →
-            </a>
+            <TrackedCTA
+              type="aderencia"
+              location={`solucoes-${slug}-hero`}
+              variant="primary"
+              text="Avaliar aderência da minha operação"
+              className="animate-fade-in-up delay-150"
+            />
           </div>
         </div>
       </section>
@@ -88,7 +91,7 @@ export default async function SolucaoPage({ params }: PageProps) {
       <section className="section-lg bg-[var(--bg-surface)] border-y border-[var(--border-subtle)]">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-h2 mb-10">Resultados comprovados</h2>
+            <h2 className="text-h2 mb-10">O que muda na operação</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {data.resultados.map((r) => (
                 <div key={r} className="card p-6">
@@ -126,14 +129,20 @@ export default async function SolucaoPage({ params }: PageProps) {
       <section className="section-lg bg-[var(--bg-surface)] border-t border-[var(--border-subtle)]">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-h2 mb-4">Pronto para implementar?</h2>
+            <p className="text-overline mb-2">CONVERSA DE ADERÊNCIA</p>
+            <h2 className="text-h2 mb-4">Faz sentido para a sua operação?</h2>
             <p className="text-lead text-[var(--text-secondary)] mb-8">
-              Diagnóstico gratuito em 24h. Sem compromisso.
+              Uma conversa para entender sua operação, os dados disponíveis e se existe uma
+              oportunidade concreta. Sem compromisso e sem pedir dados confidenciais de carteira nesta
+              etapa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                {data.ctaText} →
-              </a>
+              <TrackedCTA
+                type="aderencia"
+                location={`solucoes-${slug}-cta-final`}
+                variant="primary"
+                text="Solicitar conversa de aderência"
+              />
               <Link href="/comparativo/dexi-vs-syonet" className="btn btn-secondary">
                 Comparar com Syonet
               </Link>

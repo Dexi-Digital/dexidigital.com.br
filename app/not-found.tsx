@@ -17,7 +17,7 @@ export default function NotFound() {
           {/* Description */}
           <p className="text-lead text-[var(--text-secondary)] mb-8">
             Este endereço não existe mais. Boa parte do conteúdo antigo mudou de
-            lugar quando reformulamos o site — pode ser que o que você procura
+            lugar quando reformulamos o site. Pode ser que o que você procura
             esteja abaixo.
           </p>
 
@@ -50,7 +50,7 @@ export default function NotFound() {
               <li>
                 <Link href="/servicos/ia-para-empresas" className="text-[var(--color-primary-600)] hover:underline flex items-center gap-2">
                   <span>→</span>
-                  <span><strong>Arquitetura de IA que Executa (Fykos)</strong>: IA que executa e gera resultado</span>
+                  <span><strong>Arquitetura de IA que Executa (Fykos)</strong>: inteligência e execução comercial</span>
                 </Link>
               </li>
               <li>
@@ -68,7 +68,7 @@ export default function NotFound() {
               <li>
                 <Link href="/setores/automotivo-premium" className="text-[var(--color-primary-600)] hover:underline flex items-center gap-2">
                   <span>→</span>
-                  <span><strong>IA para Grupos Automotivos</strong>: Caso de uso validado com +45% conversão</span>
+                  <span><strong>IA para Grupos Automotivos</strong>: cada lead custou caro e precisa virar venda</span>
                 </Link>
               </li>
             </ul>
@@ -91,7 +91,7 @@ export default function NotFound() {
 
           {/* Trust Signal */}
           <p className="text-sm text-[var(--text-tertiary)] mt-8">
-            +50 ecossistemas entregues • R$ 7M+ recuperados • 10+ anos de engenharia
+            10+ anos de engenharia • Criadora do Fykos
           </p>
         </div>
       </div>

@@ -6,7 +6,7 @@ import { getArticleBySlug, getAllArticles } from '@/lib/blog-data';
 import { getDbPostBySlug } from '@/lib/blog-db';
 import { getArticleSchema } from '@/lib/structured-data';
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
-import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
+import TrackedCTA from '@/components/ui/TrackedCTA';
 
 interface BlogArticlePageProps {
   params: Promise<{ slug: string }>;
@@ -286,13 +286,19 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
       <section className="section-lg section-gradient">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-h3 mb-4">Pronto para implementar essas práticas?</h2>
+            <p className="text-overline mb-2">CONVERSA DE ADERÊNCIA</p>
+            <h2 className="text-h3 mb-4">Quer saber se isso se aplica à sua operação?</h2>
             <p className="text-lead mb-8">
-              Agende um diagnóstico gratuito para discutir seus desafios técnicos.
+              Uma conversa para entender sua operação, os dados disponíveis e se existe uma
+              oportunidade concreta. Sem compromisso e sem pedir dados confidenciais de carteira nesta
+              etapa.
             </p>
-            <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-              Obter Diagnóstico em 24h
-            </a>
+            <TrackedCTA
+              type="aderencia"
+              location={`blog-${article.slug}-cta-final`}
+              variant="primary"
+              text="Solicitar conversa de aderência"
+            />
           </div>
         </div>
       </section>

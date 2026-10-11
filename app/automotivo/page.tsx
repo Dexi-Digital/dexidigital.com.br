@@ -1,5 +1,5 @@
 import TrackedCTA from '@/components/ui/TrackedCTA';
-import CountUp from '@/components/ui/CountUp';
+import ClientLogos from '@/components/ui/ClientLogos';
 import type { Metadata } from 'next';
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 
@@ -33,28 +33,28 @@ export const metadata: Metadata = {
 
 const DIFERENCIAIS = [
   {
-    titulo: 'Integra, não substitui',
+    titulo: 'A receita que já custou caro fica na base',
     corpo:
-      'O Fykos roda sobre o DMS da montadora e o Syonet que sua loja já usa. Sem trocar de ferramenta, sem migrar dados, sem reescrever processo. Ganha uma camada de inteligência sobre o que já está no ar.',
-  },
-  {
-    titulo: 'Nenhum lead morre',
-    corpo:
-      'Qualifica o lead no primeiro minuto, reaquece quem esfriou e ressuscita a oportunidade parada na carteira. E quem ainda não está na hora de comprar fica no pipeline, nutrido até o momento certo. O vendedor foca em quem fecha agora; o Fykos não deixa ninguém no limbo do CRM.',
+      'Cada lead chegou ao grupo com investimento. O Fykos qualifica o contato, reaquece quem esfriou e retoma a oportunidade parada na carteira. Quem ainda não está na hora de comprar segue acompanhado até o momento de compra, e o vendedor foca em quem fecha agora.',
   },
   {
     titulo: 'Comandos com inteligência, execução em trilhos',
     corpo:
-      'Determinístico e auditável: cada contato tem log, o ROI é aprovado antes de escalar e a operação respeita a LGPD. Inteligência para decidir, trilhos para executar sem alucinação.',
+      'Regras definidas e cada etapa relevante registrada: a execução segue as regras de negócio do grupo, cada contato fica auditável e a operação respeita a LGPD. Inteligência para decidir, trilhos para executar com controle.',
+  },
+  {
+    titulo: 'Integra, não substitui',
+    corpo:
+      'O Fykos roda sobre o CRM e o DMS que o grupo já usa, como o Syonet. Sem trocar de ferramenta e sem reescrever processo: uma camada de inteligência sobre o que já está no ar.',
   },
 ];
 
 const PUBLICOS = [
   {
     tag: 'Grupos automotivos',
-    titulo: 'Ciclo de atendimento 24/7: a loja nunca fecha para o lead',
+    titulo: 'O lead que custou caro não espera o horário comercial',
     corpo:
-      'A pesquisa do consumidor não respeita horário comercial. O Fykos mantém o ciclo de atendimento rodando o dia inteiro: qualifica, agenda e reaquece, e entrega ao vendedor um lead pronto para fechar, com a jornada online preservada quando ele pisa na loja.',
+      'A pesquisa do consumidor acontece a qualquer hora. O Fykos mantém o atendimento em andamento: qualifica, agenda e reaquece, e entrega ao vendedor um lead pronto para negociar, com a jornada online preservada quando ele chega à loja.',
     icon: (
       <path
         strokeLinecap="round"
@@ -108,14 +108,6 @@ const PUBLICOS = [
   },
 ];
 
-const CLIENTES = [
-  'Audi Center Uberlândia',
-  'Euroville GWM',
-  'Euroville Royal Enfield',
-  'Attra Veículos',
-  'Vamaq Motors',
-];
-
 export default function AutomotivoPage() {
   return (
     <main className="min-h-screen bg-[var(--bg-primary)] pb-24 md:pb-0 relative">
@@ -151,111 +143,11 @@ export default function AutomotivoPage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4 animate-fade-in-up delay-200">
               <TrackedCTA
-                type="validation"
-                location="hero"
+                type="aderencia"
+                location="automotivo-hero"
                 variant="money"
-                text="Agendar diagnóstico de 24h"
-                sector="automotivo"
+                text="Avaliar aderência da minha operação"
               />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Prova rápida: números com count-up */}
-      <section
-        id="prova-rapida"
-        className="dark section py-12 border-b border-[var(--border-subtle)] bg-[var(--bg-surface)]"
-      >
-        <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-h3 mb-8">A prova está nos números</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="card card-result p-6 transition-colors">
-                <div className="text-number-hero text-result mb-2">
-                  <CountUp to={45} prefix="+" suffix="%" />
-                </div>
-                <div className="text-body-sm font-medium text-[var(--text-primary)]">
-                  Conversão de leads
-                </div>
-              </div>
-              <div className="card card-result p-6 transition-colors">
-                <div className="text-number-hero text-result mb-2">
-                  <CountUp to={7} prefix="R$ " suffix="M+" />
-                </div>
-                <div className="text-body-sm font-medium text-[var(--text-primary)]">
-                  Receita recuperada
-                </div>
-              </div>
-              <div className="card card-result p-6 transition-colors">
-                <div className="text-number-hero text-result mb-2">
-                  <CountUp to={35} prefix="Até " suffix="%" />
-                </div>
-                <div className="text-body-sm font-medium text-[var(--text-primary)]">
-                  Recuperação de carteira
-                </div>
-              </div>
-            </div>
-
-            <div className="card card-result mt-6 p-6 md:p-8 transition-colors">
-              <p className="text-overline mb-2">DESTAQUE</p>
-              <p className="text-body md:text-lg text-[var(--text-primary)]">
-                Um Audi RS Q8 de <span className="text-result font-bold">R$ 1 milhão</span> vendido
-                com apenas 15 dias de operação do Fykos.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contraste: IA de prateleira × Dexi */}
-      <section id="contraste" className="section bg-[var(--bg-primary)]">
-        <div className="container">
-          <div className="max-w-5xl mx-auto">
-            <div className="section-header text-center">
-              <p className="text-overline mb-2">POR QUE NÃO É MAIS UM BOT</p>
-              <h2 className="text-h2">Prateleira responde. Dexi executa o ciclo de receita.</h2>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="card p-6 md:p-8 border-l-4 border-l-red-500 text-left">
-                <h3 className="text-h5 mb-4">IA de prateleira</h3>
-                <ul className="space-y-3">
-                  <li className="flex gap-2 text-sm text-[var(--text-secondary)]">
-                    <span className="text-red-500 font-bold">✕</span>
-                    <span>Responde e para no agendamento. Deixa a venda pela metade.</span>
-                  </li>
-                  <li className="flex gap-2 text-sm text-[var(--text-secondary)]">
-                    <span className="text-red-500 font-bold">✕</span>
-                    <span>Exige que você migre para o CRM dela e abandone o DMS/Syonet.</span>
-                  </li>
-                  <li className="flex gap-2 text-sm text-[var(--text-secondary)]">
-                    <span className="text-red-500 font-bold">✕</span>
-                    <span>Lead frio esfria de vez. Nada ressuscita a carteira parada.</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="card p-6 md:p-8 border-l-4 border-l-[var(--color-primary-500)] text-left">
-                <h3 className="text-h5 mb-4">Dexi · Fykos</h3>
-                <ul className="space-y-3">
-                  <li className="flex gap-2 text-sm text-[var(--text-secondary)]">
-                    <span className="text-green-500 font-bold">✓</span>
-                    <span>
-                      Executa o ciclo de receita inteiro: qualifica, nutre, reaquece, fecha e
-                      acompanha no pós-venda.
-                    </span>
-                  </li>
-                  <li className="flex gap-2 text-sm text-[var(--text-secondary)]">
-                    <span className="text-green-500 font-bold">✓</span>
-                    <span>Roda sobre o DMS da montadora e o Syonet. Zero migração.</span>
-                  </li>
-                  <li className="flex gap-2 text-sm text-[var(--text-secondary)]">
-                    <span className="text-green-500 font-bold">✓</span>
-                    <span>Ressuscita o lead esquecido com log auditável de cada contato.</span>
-                  </li>
-                </ul>
-              </div>
             </div>
           </div>
         </div>
@@ -302,8 +194,7 @@ export default function AutomotivoPage() {
               </h2>
               <p className="text-lead">
                 Do primeiro clique na pesquisa até a revisão pós-venda, o Fykos entrega um benefício
-                diferente para cada elo da cadeia automotiva, sobre o mesmo DMS e Syonet que você já
-                usa.
+                diferente para cada elo da cadeia automotiva, sobre os sistemas que o grupo já usa.
               </p>
             </div>
 
@@ -361,25 +252,16 @@ export default function AutomotivoPage() {
         </div>
       </section>
 
-      {/* Prova: barra de clientes (texto, sem logo) */}
+      {/* Prova: logos como amostra dos grupos atendidos, sem descrever quem é quem */}
       <section id="clientes" className="section bg-[var(--bg-primary)]">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-overline mb-2">ONDE JÁ PROVAMOS</p>
-            <h2 className="text-h3 mb-8">
-              Grupos automotivos já rodam o Fykos na operação, do super esportivo ao premium e duas
-              rodas.
-            </h2>
-            <div className="flex flex-wrap gap-x-8 gap-y-4 justify-center">
-              {CLIENTES.map((nome) => (
-                <span
-                  key={nome}
-                  className="text-body-sm md:text-base font-semibold text-[var(--text-secondary)]"
-                >
-                  {nome}
-                </span>
-              ))}
-            </div>
+            <p className="text-overline mb-2">PROVAS</p>
+            <h2 className="text-h3 mb-4">Grupos automotivos já rodam o Fykos na operação</h2>
+            <p className="text-body-sm text-[var(--text-tertiary)] mb-8">
+              Alguns dos grupos atendidos
+            </p>
+            <ClientLogos />
           </div>
         </div>
       </section>
@@ -389,20 +271,21 @@ export default function AutomotivoPage() {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-xs font-bold tracking-[0.15em] uppercase text-white mb-4">
-              DIAGNÓSTICO DE 24H · SEM CUSTO
+              CONVERSA DE ADERÊNCIA
             </p>
             <h2 className="text-display-lg text-white mb-4">
-              Mapeamos seu funil e projetamos o ROI em 24 horas.
+              Seu grupo já pagou por cada lead da base.
             </h2>
             <p className="text-lg text-white/90 mb-10 max-w-2xl mx-auto">
-              Se não fechar a conta, o diagnóstico é seu. Sem compromisso, sem migração.
+              Uma conversa para entender sua operação, os dados disponíveis e se existe uma
+              oportunidade concreta. Sem compromisso e sem pedir dados confidenciais de carteira
+              nesta etapa.
             </p>
             <TrackedCTA
-              type="validation"
-              location="cta-final"
+              type="aderencia"
+              location="automotivo-cta-final"
               variant="money"
-              text="Agendar diagnóstico de 24h"
-              sector="automotivo"
+              text="Solicitar conversa de aderência"
             />
           </div>
         </div>
@@ -411,11 +294,10 @@ export default function AutomotivoPage() {
       {/* Sticky CTA mobile */}
       <div className="fixed bottom-0 left-0 right-0 p-4 bg-[var(--bg-primary)]/90 backdrop-blur-md border-t border-[var(--border-subtle)] md:hidden z-50 flex justify-center shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
         <TrackedCTA
-          type="validation"
-          location="mobile-sticky"
+          type="aderencia"
+          location="automotivo-mobile-sticky"
           variant="money"
-          text="Agendar diagnóstico de 24h"
-          sector="automotivo"
+          text="Avaliar aderência"
           className="w-full shadow-lg text-center flex justify-center items-center py-3 text-sm"
         />
       </div>

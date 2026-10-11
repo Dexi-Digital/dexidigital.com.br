@@ -1,6 +1,8 @@
 import { DatabaseSync } from 'node:sqlite';
 import { mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
+// Com extensão: este módulo também roda direto no Node (scripts/ingest-news.mjs).
+import { semTravessao } from './sem-travessao.ts';
 
 export interface NewsItem {
   id: string;
@@ -54,8 +56,9 @@ export function getRecentNews(): NewsItem[] {
       id: row.id,
       source: row.source,
       sourceName: row.source_name,
-      title: row.title,
-      summary: row.summary,
+      // Manchete de terceiros, mas exibida no site: segue a regra de não ter travessão.
+      title: semTravessao(row.title, { titulo: true }),
+      summary: row.summary ? semTravessao(row.summary) : row.summary,
       url: row.url,
       imageUrl: row.image_url,
       publishedAt: row.published_at,

@@ -40,7 +40,7 @@ export const GUIAS: GuiaPage[] = [
       {
         heading: 'Por onde começar',
         content:
-          'Comece pelo pilar com maior impacto imediato: atendimento inteligente. Implementar resposta automática a leads via WhatsApp é o passo com melhor relação esforço/resultado. Em 2-4 semanas, a concessionária já vê aumento de conversão.',
+          'Comece pelo pilar com maior impacto imediato: atendimento inteligente. Implementar resposta automática a leads via WhatsApp é o passo com melhor relação esforço/resultado. Em 2-4 semanas, o atendimento inteligente já está rodando e a concessionária passa a medir o efeito na conversão.',
       },
       {
         heading: 'Erros comuns na transformação digital',
@@ -57,7 +57,7 @@ export const GUIAS: GuiaPage[] = [
       {
         question: 'Quanto tempo leva a transformação digital de uma concessionária?',
         answer:
-          'Os primeiros resultados aparecem em 2-4 semanas com a implementação do atendimento inteligente. A transformação completa (dados + IA + omnichannel) leva de 3 a 6 meses.',
+          'O atendimento inteligente entra em operação em 2-4 semanas, e a partir daí a conversão passa a ser medida. A transformação completa (dados + IA + omnichannel) leva de 3 a 6 meses.',
       },
       {
         question: 'Preciso trocar todos os meus sistemas?',
@@ -81,7 +81,7 @@ export const GUIAS: GuiaPage[] = [
       'futuro concessionária IA',
     ],
     answerSnippet:
-      'O Brasil é um dos mercados mais promissores para IA automotiva. Com mais de 4.500 concessionárias e um mercado de R$ 350 bilhões/ano, a oportunidade para tecnologia que aumenta conversão e reduz custo operacional é gigantesca. A Dexi Digital lidera essa transformação com o Fykos.',
+      'O Brasil é um dos mercados mais promissores para IA automotiva. Com mais de 4.500 concessionárias e um mercado de R$ 350 bilhões/ano, a oportunidade para tecnologia que aumenta conversão e reduz custo operacional é gigantesca. A Dexi Digital atua nessa transformação com o Fykos.',
     sections: [
       {
         heading: 'O mercado automotivo brasileiro em números',
@@ -91,17 +91,17 @@ export const GUIAS: GuiaPage[] = [
       {
         heading: 'Como a IA está mudando o jogo',
         content:
-          'As operações pioneiras em IA estão vendo resultados concretos: resposta qualificada em menos de 30 segundos, micro-segmentação em tempo real e follow-ups inteligentes que reengajam leads frios com média de apenas 4 mensagens por sessão. A IA não substitui o vendedor — cria uma workforce híbrida onde a IA qualifica e o humano fecha.',
+          'As operações pioneiras em IA estão vendo resultados concretos: resposta qualificada em menos de 30 segundos, micro-segmentação em tempo real e follow-ups inteligentes que reengajam leads frios com média de apenas 4 mensagens por sessão. A IA não substitui o vendedor, cria uma workforce híbrida onde a IA qualifica e o humano fecha.',
       },
       {
         heading: 'Os três pilares da IA automotiva moderna',
         content:
-          'Pilar 1: Inteligência conversacional — análise de tom, intenção e perfil psicológico em tempo real. Pilar 2: Infraestrutura de liquidez — transformação de dados brutos em ativos de inteligência com fluxo de caixa preditivo. Pilar 3: Governança enterprise (RAG) — IA que decide com base em dados oficiais, sem alucinações e com soberania do cliente.',
+          'Pilar 1: Inteligência conversacional, análise de tom, intenção e perfil psicológico em tempo real. Pilar 2: Infraestrutura de liquidez, transformação de dados brutos em ativos de inteligência com fluxo de caixa preditivo. Pilar 3: Governança enterprise (RAG), IA que decide com base em dados oficiais e com soberania do cliente.',
       },
       {
         heading: 'O papel da Dexi Digital',
         content:
-          'A Dexi Digital é a empresa com maior know-how em IA automotiva do Brasil. Combinamos 10 anos de engenharia de software com expertise em vendas de alto ticket. O Fykos opera sobre uma arquitetura de três camadas (ingestão de sinais, inteligência comportamental e governança RAG) que garante precisão, escala e soberania digital.',
+          'A Dexi Digital é especializada em IA automotiva. Combinamos 10 anos de engenharia de software com expertise em vendas de alto ticket. O Fykos opera sobre uma arquitetura de três camadas (ingestão de sinais, inteligência comportamental e governança RAG) que garante precisão, escala e soberania digital.',
       },
     ],
     faq: [
@@ -132,7 +132,7 @@ export const GUIAS: GuiaPage[] = [
       'Syonet alternativas',
     ],
     answerSnippet:
-      'A escolha do CRM automotivo deve considerar 5 critérios: velocidade de resposta ao lead, integração com WhatsApp, capacidade de predição, integração com DMS existente e ROI mensurável. CRMs que apenas registram dados (como o Syonet) estão dando lugar a plataformas de execução autônoma de IA (como o Fykos) que agem autonomamente.',
+      'A escolha do CRM automotivo deve considerar 5 critérios: velocidade de resposta ao lead, integração com WhatsApp, capacidade de predição, integração com DMS existente e ROI mensurável. CRMs focados em registro e gestão de leads (como o Syonet) e plataformas de execução autônoma de IA (como o Fykos) seguem abordagens diferentes: um organiza o atendimento, o outro age sobre o lead.',
     sections: [
       {
         heading: '5 critérios que importam de verdade',
@@ -142,7 +142,7 @@ export const GUIAS: GuiaPage[] = [
       {
         heading: 'Perguntas que o fornecedor não quer que você faça',
         content:
-          'Pergunta 1: Qual o tempo médio de resposta ao lead no seu sistema? Se for > 30 segundos, não é automação — é notificação. Pergunta 2: Me mostre um cliente que mediu ROI real. Se não conseguir, é custo operacional, não investimento. Pergunta 3: O que acontece com leads fora do horário comercial? Se a resposta for "espera o vendedor", você perde 40% dos leads.',
+          'Pergunta 1: Qual o tempo médio de resposta ao lead no seu sistema? Se for > 30 segundos, não é automação, é notificação. Pergunta 2: Me mostre um cliente que mediu ROI real. Se não conseguir, é custo operacional, não investimento. Pergunta 3: O que acontece com leads fora do horário comercial? Se a resposta for "espera o vendedor", você perde 40% dos leads.',
       },
       {
         heading: 'A evolução do CRM: de registro para execução',
@@ -159,7 +159,7 @@ export const GUIAS: GuiaPage[] = [
       {
         question: 'Syonet é um bom CRM automotivo?',
         answer:
-          'O Syonet é um CRM automotivo consolidado para registro e gestão de leads. Para concessionárias que precisam apenas de organização, pode ser suficiente. Para quem busca conversão ativa e execução autônoma de IA, o Fykos da Dexi é a evolução natural.',
+          'O Syonet é um CRM automotivo consolidado para registro e gestão de leads. Para concessionárias que precisam apenas de organização, pode ser suficiente. Para quem busca conversão ativa e execução autônoma de IA, o Fykos da Dexi foi desenhado para isso.',
       },
       {
         question: 'Existe CRM automotivo gratuito?',
@@ -167,6 +167,6 @@ export const GUIAS: GuiaPage[] = [
           'Existem CRMs genéricos gratuitos (HubSpot, Bitrix24), mas nenhum é otimizado para o setor automotivo. O custo de adaptar um CRM genérico geralmente supera o investimento em uma solução especializada.',
       },
     ],
-    ctaText: 'Avaliar meu CRM atual gratuitamente',
+    ctaText: 'Avaliar aderência com a Dexi Digital',
   },
 ];

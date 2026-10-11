@@ -5,9 +5,9 @@ import { getPublishedDbPosts } from '@/lib/blog-db';
 import { BlogGrid, type BlogCard } from '@/components/blog/BlogGrid';
 
 export const metadata: Metadata = {
-  title: 'Blog | Insights sobre IA, Dados e Software Empresarial | Dexi Digital',
+  title: 'Blog | Onde a receita vaza, e como fechar',
   description:
-    'Artigos técnicos sobre IA empresarial, inteligência de dados e desenvolvimento de software. Guias práticos para CTOs e líderes de tecnologia.',
+    'Artigos para quem vende alto ticket com ciclo longo (grupos automotivos, clínicas e incorporadoras): o que acontece entre o lead entrar e o negócio fechar, e onde a receita se perde nesse caminho.',
 };
 
 export const dynamic = 'force-dynamic';
@@ -50,7 +50,7 @@ export default function BlogPage() {
               <span className="text-display-gradient">Onde a receita vaza, e como fechar</span>
             </h1>
             <p className="text-lead max-w-2xl mx-auto animate-fade-in-up delay-100">
-              Escrevemos para quem vende alto ticket com ciclo longo — grupos automotivos, clínicas de procedimento e incorporadoras. Sem teoria de transformação digital: o que acontece entre o lead entrar e o negócio fechar.
+              Escrevemos para quem vende alto ticket com ciclo longo: grupos automotivos, clínicas de procedimento e incorporadoras. Sem teoria de transformação digital: o que acontece entre o lead entrar e o negócio fechar.
             </p>
           </div>
         </div>
@@ -69,9 +69,9 @@ export default function BlogPage() {
       <section className="section-lg section-gradient">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-h2 mb-4">Inteligência Estratégica na sua caixa de entrada</h2>
+            <h2 className="text-h2 mb-4">Inteligência comercial na sua caixa de entrada</h2>
             <p className="text-lead mb-8">
-              Acompanhe a vanguarda da IA que Executa. Receba teses exclusivas sobre impacto no EBITDA, soberania de dados e lições de mercado extraídas de operações reais.
+              Análises sobre receita, previsibilidade de venda e execução comercial em operações em que cada oportunidade vale muito.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <input

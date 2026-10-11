@@ -14,6 +14,7 @@ const DESCRICAO =
 export const metadata: Metadata = {
   title: TITULO,
   description: DESCRICAO,
+  alternates: { canonical: '/' },
   keywords: [
     'inteligência comercial',
     'execução comercial',

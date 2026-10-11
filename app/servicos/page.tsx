@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import TrackedCTA from '@/components/ui/TrackedCTA';
 
 export const metadata: Metadata = {
   title: 'Serviços | Inteligência de Dados, Software e IA Empresarial',
@@ -13,7 +14,7 @@ export default function ServicesPage() {
       title: 'Arquitetura de IA que Executa (Fykos)',
       slug: 'ia-para-empresas',
       description:
-        'Implementação de IA autônoma que não apenas responde, mas executa. Focamos em ganho de escala, qualificação imediata e redução de latência operacional, transformando a IA em um motor de EBITDA real para jornadas consultivas e operações multiunidade.',
+        'Inteligência e execução comercial para que as oportunidades da sua base virem receita e previsibilidade de venda. O Fykos identifica o que merece atenção, prioriza a próxima ação e executa com regras definidas, em jornadas consultivas e operações multiunidade.',
       benefits: [
         'Perfilamento neurolinguístico em tempo real',
         'Distinção automática de valores (performance vs. segurança)',
@@ -26,7 +27,7 @@ export default function ServicesPage() {
       title: 'Desenvolvimento de Sistemas de Missão Crítica',
       slug: 'software-sob-medida',
       description:
-        'Nossa expertise de 10 anos em engenharia para criar soluções proprietárias que resolvem o que o mercado não resolve. Construímos a "última milha" da integração tecnológica, garantindo que a inovação se conecte perfeitamente aos sistemas legados e processos core da sua empresa.',
+        'Nossa expertise de 10 anos em engenharia para criar soluções proprietárias sob medida. Construímos a "última milha" da integração tecnológica, garantindo que a inovação se conecte aos sistemas legados e processos core da sua empresa.',
       benefits: [
         'Arquitetura moderna com IA conversacional nativa',
         'Testes automatizados e CI/CD',
@@ -59,8 +60,8 @@ export default function ServicesPage() {
               IA que <span className="text-display-gradient">entende pessoas</span>
             </h1>
             <p className="text-lead max-w-2xl mx-auto animate-fade-in-up delay-100">
-              Concierge Digital de Vendas, software com IA integrada e inteligência de dados.
-              Soluções que convertem porque entendem o perfil do seu cliente em tempo real.
+              Inteligência e execução comercial, software com IA integrada e inteligência de dados
+              para que as oportunidades da sua base virem receita e previsibilidade de venda.
             </p>
           </div>
         </div>
@@ -112,15 +113,23 @@ export default function ServicesPage() {
       <section className="section-cta-premium text-white">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
+            <p className="text-xs font-bold tracking-[0.15em] uppercase text-white mb-4">
+              CONVERSA DE ADERÊNCIA
+            </p>
             <h2 className="text-display-lg text-white mb-5">
               Pronto para começar?
             </h2>
             <p className="text-lg text-white/70 mb-10">
-              Agende um diagnóstico gratuito para discutir seus desafios.
+              Uma conversa para entender sua operação, os dados disponíveis e se existe uma
+              oportunidade concreta. Sem compromisso e sem pedir dados confidenciais de carteira
+              nesta etapa.
             </p>
-            <Link href="/contato" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
-              Fale conosco →
-            </Link>
+            <TrackedCTA
+              type="aderencia"
+              location="servicos-cta-final"
+              variant="white"
+              text="Solicitar conversa de aderência"
+            />
           </div>
         </div>
       </section>

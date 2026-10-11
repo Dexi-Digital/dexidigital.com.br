@@ -26,10 +26,11 @@ interface TrackedCTAProps {
 
 // CTAs padronizados conforme diretrizes de conversão
 const CTA_CONFIG: Record<CTAType, { text: string; href?: string; isExternal?: boolean }> = {
+  // Legado: era o WhatsApp do "diagnóstico em 24h". Desde o reposicionamento
+  // (out/2026) é sinônimo de `aderencia`, para nenhum uso antigo prometer 24h.
   validation: {
-    text: 'Validar Impacto em 24h',
-    href: WHATSAPP_DIAGNOSTIC_URL,
-    isExternal: true,
+    text: 'Avaliar aderência da minha operação',
+    href: '/contato',
   },
   whatsapp: {
     text: 'Falar com Especialista',
@@ -80,11 +81,11 @@ export default function TrackedCTA({
   
   // Determine final href
   let finalHref = href || config.href || '/';
-  if (type === 'whatsapp' || type === 'validation') {
+  if (type === 'whatsapp') {
     finalHref = sector === 'automotivo' ? WHATSAPP_AUTOMOTIVO_URL : WHATSAPP_DIAGNOSTIC_URL;
   }
   // Conversa de aderência: o formulário registra de qual CTA a pessoa veio.
-  if (type === 'aderencia' && !href) {
+  if ((type === 'aderencia' || type === 'validation') && !href) {
     finalHref = `/contato?cta=${encodeURIComponent(location)}`;
   }
 
@@ -92,7 +93,7 @@ export default function TrackedCTA({
   const variantClasses = VARIANT_CLASSES[variant];
 
   const handleClick = () => {
-    if (type === 'whatsapp' || type === 'validation') {
+    if (type === 'whatsapp') {
       trackWhatsAppClick(location, type);
     } else {
       trackCTAClick(type, location, variant);

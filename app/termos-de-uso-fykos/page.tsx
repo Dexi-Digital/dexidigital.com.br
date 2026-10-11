@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Termos de Uso do Fykos | Dexi Digital',
+  title: 'Termos de Uso do Fykos',
   description:
     'Termos de Uso do Fykos, plataforma de atendimento e qualificação de leads via WhatsApp Business Platform operada pela Dexi Digital.',
   robots: {

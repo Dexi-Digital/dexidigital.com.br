@@ -9,7 +9,7 @@ export interface Pillar {
 // Um pilar por cluster do calendário editorial (18 no total, 6 por
 // vertical). Cada post satélite gerado pela automação (Faixa B) linka
 // pra cá. A âncora completa de cada cluster (Faixa A, dado proprietário)
-// ainda é escrita humana — essas páginas funcionam como hub, agregando os
+// ainda é escrita humana, essas páginas funcionam como hub, agregando os
 // satélites já publicados, até a âncora de verdade existir.
 export const PILLARS: Pillar[] = [
   // Automotivo
@@ -50,7 +50,7 @@ export const PILLARS: Pillar[] = [
   },
   {
     slug: 'indice-vazamento-receita',
-    title: 'Índice Dexi de Vazamento de Receita — Automotivo',
+    title: 'Índice Dexi de Vazamento de Receita, Automotivo',
     description: 'Previsibilidade de receita e pós-venda no setor automotivo.',
     vertical: 'Automotivo',
     cluster: '6. Previsibilidade e pós-venda',
@@ -59,7 +59,7 @@ export const PILLARS: Pillar[] = [
   {
     slug: 'lead-de-clinica',
     title: 'O lead que some entre orçamento e agendamento',
-    description: 'Por que o paciente pergunta o valor e desaparece — e o que fazer a respeito.',
+    description: 'Por que o paciente pergunta o valor e desaparece, e o que fazer a respeito.',
     vertical: 'Clínicas de procedimentos',
     cluster: '1. Lead que some entre orçamento e agendamento',
   },
@@ -123,20 +123,20 @@ export const PILLARS: Pillar[] = [
   {
     slug: 'carteira-incorporadora',
     title: 'Repasse, distrato e carteira: o cliente que já comprou',
-    description: 'Por que o cliente que já comprou é o lead mais barato do próximo lançamento.',
+    description: 'Gestão da carteira de quem financia com recursos próprios: boletos, cobrança e o cliente que já comprou.',
     vertical: 'Construção e incorporação',
     cluster: '4. Repasse, distrato e carteira',
   },
   {
     slug: 'crm-imobiliario',
     title: 'CRM imobiliário e integração de dados',
-    description: 'O que os principais CRMs imobiliários entregam via integração — e o que não.',
+    description: 'O que os principais CRMs imobiliários entregam via integração, e o que não.',
     vertical: 'Construção e incorporação',
     cluster: '5. CRM imobiliário e integração',
   },
   {
     slug: 'indice-vgv',
-    title: 'Índice Dexi — Previsibilidade de VGV',
+    title: 'Índice Dexi, Previsibilidade de VGV',
     description: 'Previsibilidade de VGV e o Índice Dexi na incorporação.',
     vertical: 'Construção e incorporação',
     cluster: '6. Previsibilidade de VGV',

@@ -17,12 +17,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const term = findGlossarioTerm(slug);
   if (!term) return {};
 
+  // O layout já acrescenta "| Dexi Digital": tira o sufixo do dado para não duplicar.
+  const titulo = term.metaTitle.replace(/\s*\|\s*Dexi Digital\s*$/i, '');
+
   return {
-    title: term.metaTitle,
+    title: titulo,
     description: term.metaDescription,
     alternates: { canonical: `/glossario-ia-automotiva/${slug}` },
     openGraph: {
-      title: term.metaTitle,
+      title: `${titulo} | Dexi Digital`,
       description: term.metaDescription,
       url: `https://dexidigital.com.br/glossario-ia-automotiva/${slug}`,
       type: 'article',

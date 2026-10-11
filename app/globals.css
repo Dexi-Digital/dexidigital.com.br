@@ -1542,6 +1542,12 @@ h6, .text-h6 {
   pointer-events: none;
 }
 
+/* A faixa é azul nos dois temas. Os títulos globais (h1-h4, .text-display-*)
+   usam var(--text-primary), que no tema claro é escuro e vencia o text-white. */
+.section-cta-premium :is(h1, h2, h3, h4, .text-display-lg, .text-display-xl, .text-display-2xl) {
+  color: #fff;
+}
+
 /* Container */
 .container {
   width: 100%;

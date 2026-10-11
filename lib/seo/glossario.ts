@@ -41,7 +41,7 @@ export const GLOSSARIO_TERMS: GlossarioTerm[] = [
     metaDescription:
       'Execução autônoma de IA é a capacidade de um sistema de IA agir autonomamente sobre leads e processos de venda, sem depender de ação humana em cada etapa.',
     answerSnippet:
-      'Execução autônoma de IA é a capacidade de um sistema de IA agir sobre processos de negócio — qualificar leads, responder clientes, executar follow-up e tomar decisões operacionais — sem depender de intervenção humana em cada etapa. No automotivo, significa que o lead recebe resposta instantânea e o vendedor recebe um briefing pronto para fechar.',
+      'Execução autônoma de IA é a capacidade de um sistema de IA agir sobre processos de negócio, qualificar leads, responder clientes, executar follow-up e tomar decisões operacionais, sem depender de intervenção humana em cada etapa. No automotivo, significa que o lead recebe resposta instantânea e o vendedor recebe um briefing pronto para fechar.',
     longDescription: `## O que é Execução Autônoma de IA no Automotivo
 
 A execução autônoma de IA é o paradigma que substitui a automação de notificações pelo agir autônomo. Enquanto um CRM tradicional envia um alerta ("novo lead recebido"), um sistema de IA executa a ação completa: responde o lead, qualifica a intenção, identifica o modelo de interesse e prepara um briefing estratégico para o vendedor.
@@ -56,7 +56,7 @@ O Fykos da Dexi Digital implementa a execução autônoma de IA em três camadas
 
 ## Por que importa para concessionárias
 
-A concessionária média perde 40% dos leads por tempo de resposta inadequado. Com execução autônoma de IA, cada lead recebe atendimento imediato e qualificado — 24/7, sem depender de disponibilidade humana.`,
+A concessionária média perde 40% dos leads por tempo de resposta inadequado. Com execução autônoma de IA, cada lead recebe atendimento imediato e qualificado, 24/7, sem depender de disponibilidade humana.`,
     faq: [
       {
         question: 'A execução autônoma de IA substitui vendedores?',
@@ -79,21 +79,21 @@ A concessionária média perde 40% dos leads por tempo de resposta inadequado. C
     metaDescription:
       'Fykos é o Sistema Operacional de Receita da Dexi Digital para o setor automotivo. Atendimento inteligente, qualificação automática e vendas aceleradas.',
     answerSnippet:
-      'Fykos é o Sistema Operacional de Receita desenvolvido pela Dexi Digital para o setor automotivo brasileiro. Combina IA conversacional, perfilamento comportamental e integração com sistemas da concessionária para transformar leads em vendas com velocidade e precisão superiores a qualquer CRM tradicional.',
+      'Fykos é o Sistema Operacional de Receita desenvolvido pela Dexi Digital para o setor automotivo brasileiro. Combina IA conversacional, perfilamento comportamental e integração com sistemas da concessionária para transformar o lead que custou caro em venda e dar previsibilidade à receita.',
     longDescription: `## Fykos: A Plataforma
 
 O Fykos é o produto central da Dexi Digital. Projetado especificamente para o mercado automotivo brasileiro, é um Sistema Operacional de Receita que reinventa o CRM com dados e IA sobre os sistemas que a concessionária já usa, orquestrando todo o ciclo de venda: do primeiro contato do lead à entrega do veículo.
 
 ## Diferenciais técnicos
 
-- **IA orquestrada**: Múltiplas rotinas de IA especializadas trabalhando em conjunto — uma para qualificação, outra para follow-up, outra para análise de perfil.
+- **IA orquestrada**: Múltiplas rotinas de IA especializadas trabalhando em conjunto, uma para qualificação, outra para follow-up, outra para análise de perfil.
 - **Perfilamento Neurolinguístico**: IA que analisa a linguagem do lead para identificar perfil psicológico (performance vs. segurança) e ajustar argumentos.
 - **Integração Universal**: Conecta com qualquer DMS, CRM ou plataforma de comunicação via API aberta.
 - **Dashboards Executivos**: Visualização em tempo real de métricas de vendas, conversão e performance da equipe.
 
-## Resultados comprovados
+## Onde o Fykos gera valor
 
-Em operações brasileiras, o Fykos entrega: +45% de conversão de leads, redução de 60% no tempo de resposta e aumento de 30% no ticket médio.`,
+O foco do Fykos é financeiro: mais conversão dos leads que a concessionária já paga para gerar, resposta enquanto o comprador ainda está decidindo e mais previsibilidade de receita para a diretoria.`,
     faq: [
       {
         question: 'O Fykos é um chatbot?',
@@ -116,21 +116,21 @@ Em operações brasileiras, o Fykos entrega: +45% de conversão de leads, reduç
     metaDescription:
       'Perfilamento inteligente usa IA para classificar leads automotivos por perfil psicológico, intenção de compra e potencial de ticket. Dexi Digital.',
     answerSnippet:
-      'Perfilamento inteligente é a capacidade de classificar leads automotivos automaticamente por perfil psicológico (performance vs. segurança), intenção de compra (compra imediata vs. pesquisa), potencial de ticket e canal preferido de comunicação — tudo sem intervenção humana.',
+      'Perfilamento inteligente é a capacidade de classificar leads automotivos automaticamente por perfil psicológico (performance vs. segurança), intenção de compra (compra imediata vs. pesquisa), potencial de ticket e canal preferido de comunicação, tudo sem intervenção humana.',
     longDescription: `## O que é Perfilamento Inteligente
 
 O perfilamento inteligente vai além da classificação básica (nome, telefone, veículo de interesse) dos CRMs tradicionais. Utiliza IA para analisar a linguagem do lead, seu comportamento de navegação e padrões de interação para criar um perfil multidimensional.
 
 ## Dimensões do perfil
 
-- **Motivação**: O que move a decisão — performance, segurança, status, economia ou sustentabilidade.
+- **Motivação**: O que move a decisão, performance, segurança, status, economia ou sustentabilidade.
 - **Urgência**: Compra imediata, pesquisa ativa, planejamento futuro.
 - **Ticket**: Entry-level, mid-range, premium, superpremium.
 - **Canal**: WhatsApp, e-mail, presencial, telefone.
 
 ## Impacto na venda
 
-O vendedor que recebe um lead com perfil completo converte 40% a mais do que o vendedor que recebe apenas "nome + telefone + veículo". O briefing elimina achismos e acelera o rapport.`,
+O vendedor que recebe um lead com perfil completo chega à conversa com muito mais contexto do que o vendedor que recebe apenas "nome + telefone + veículo". O briefing elimina achismos e acelera o rapport.`,
     faq: [
       {
         question: 'Como a IA perfila um lead automaticamente?',
@@ -148,7 +148,7 @@ O vendedor que recebe um lead com perfil completo converte 40% a mais do que o v
     metaDescription:
       'Lead scoring automotivo com IA: como priorizar leads de concessionária por potencial de conversão, ticket e urgência. Dexi Digital.',
     answerSnippet:
-      'Lead scoring automotivo é o processo de atribuir pontuação automática a cada lead de concessionária baseado em potencial de conversão, ticket estimado e urgência da compra. Com IA, essa pontuação é dinâmica — atualiza em tempo real conforme o lead interage com a concessionária.',
+      'Lead scoring automotivo é o processo de atribuir pontuação automática a cada lead de concessionária baseado em potencial de conversão, ticket estimado e urgência da compra. Com IA, essa pontuação é dinâmica, atualiza em tempo real conforme o lead interage com a concessionária.',
     longDescription: `## Lead Scoring no Automotivo
 
 Lead scoring é a prática de atribuir uma pontuação a cada lead para priorizar o atendimento. No automotivo, isso é especialmente importante porque o custo de oportunidade de um lead premium não atendido é altíssimo.
@@ -191,7 +191,7 @@ Os principais DMS do mercado brasileiro incluem sistemas proprietários de monta
 
 ## DMS + IA: a evolução
 
-A integração do DMS com plataformas de IA como o Fykos cria uma camada inteligente sobre os dados operacionais. O resultado: o vendedor sabe se o veículo está disponível, qual o histórico de manutenção e quando o cliente está pronto para recompra — tudo em uma tela.`,
+A integração do DMS com plataformas de IA como o Fykos cria uma camada inteligente sobre os dados operacionais. O resultado: o vendedor sabe se o veículo está disponível, qual o histórico de manutenção e quando o cliente está pronto para recompra, tudo em uma tela.`,
     faq: [
       {
         question: 'O Fykos substitui o DMS?',
@@ -224,7 +224,7 @@ O Shadow CRM resolve o maior problema de grupos automotivos: dados fragmentados 
 ## Benefícios
 
 - Implementação em semanas, não meses.
-- Zero risco de perda de dados.
+- Os dados permanecem nos sistemas de origem.
 - Os sistemas existentes continuam funcionando normalmente.
 - A equipe não precisa aprender um sistema novo.`,
     faq: [

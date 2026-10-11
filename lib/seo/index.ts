@@ -1,5 +1,5 @@
 /**
- * SEO Content — Arquitetura Completa
+ * SEO Content, Arquitetura Completa
  *
  * Estratégia SEO + LLMO para posicionar a Dexi Digital como referência
  * em IA automotiva no Brasil, competindo diretamente com Syonet.

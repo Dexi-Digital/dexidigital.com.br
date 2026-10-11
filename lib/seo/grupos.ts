@@ -66,12 +66,12 @@ export const GRUPOS: GrupoPage[] = [
     ],
     resultadosEsperados: [
       'Visão 360° do cliente em todas as marcas e unidades',
-      '+30% de conversão com cross-sell inteligente entre marcas',
-      'Redução de 40% no custo de gestão de dados',
+      'Mais conversão com cross-sell inteligente entre marcas',
+      'Menos esforço manual para consolidar os dados do grupo',
       'Dashboards executivos consolidados em tempo real',
     ],
     diferencialDexi:
-      'O Syonet foi projetado para uma concessionária de uma marca. A Dexi foi projetada para a complexidade de um grupo multi-marca. Entendemos que um grupo não é uma soma de concessionárias — é um ecossistema que precisa de inteligência unificada.',
+      'A Dexi foi projetada para a complexidade de um grupo multi-marca. Entendemos que um grupo não é uma soma de concessionárias, é um ecossistema que precisa de inteligência unificada.',
     marcasAtendidas: ['Generalista', 'Premium', 'Volume', 'Importados'],
     faq: [
       {
@@ -85,7 +85,7 @@ export const GRUPOS: GrupoPage[] = [
           'A implementação em grupos segue um rollout por fases. Começamos com uma unidade piloto (2-4 semanas), validamos resultados e expandimos para as demais unidades progressivamente.',
       },
     ],
-    ctaText: 'Agendar diagnóstico para seu grupo automotivo',
+    ctaText: 'Avaliar aderência para seu grupo automotivo',
   },
   {
     slug: 'grande-porte',
@@ -106,7 +106,7 @@ export const GRUPOS: GrupoPage[] = [
       {
         titulo: 'Gestão de volume sem perda de qualidade',
         descricao:
-          'Grupos de grande porte recebem milhares de leads por mês. O “silêncio financeiro” — a distância entre a previsão teórica do ERP e a realidade operacional — corrói a liquidez do funil quando a automação é insuficiente.',
+          'Grupos de grande porte recebem milhares de leads por mês. O “silêncio financeiro”, a distância entre a previsão teórica do ERP e a realidade operacional, corrói a liquidez do funil quando a automação é insuficiente.',
       },
       {
         titulo: 'Retenção de clientes e fluxo de caixa preditivo',
@@ -137,13 +137,13 @@ export const GRUPOS: GrupoPage[] = [
       },
     ],
     resultadosEsperados: [
-      '+35% de conversão em operações de alto volume',
-      'Redução de 50% na curva de aprendizado de novos vendedores',
-      'Aumento de 40% na retenção de clientes no pós-venda',
-      'ROI mensurável a partir do segundo mês de operação',
+      'Mais conversão em operações de alto volume',
+      'Curva de aprendizado menor para novos vendedores',
+      'Mais clientes retidos no pós-venda do grupo',
+      'ROI acompanhado mês a mês em dashboard',
     ],
     diferencialDexi:
-      'O Syonet escala o processo manual — mais leads, mais formulários, mais trabalho. A Dexi escala a inteligência — mais leads, melhor qualificação, menos esforço humano. O resultado é mais conversão com menos custo.',
+      'No modelo de CRM tradicional, mais leads significam mais trabalho de registro e acompanhamento para a equipe. A Dexi escala a inteligência, mais leads, melhor qualificação, menos esforço humano. O resultado é mais conversão com menos custo.',
     marcasAtendidas: ['Volume', 'Popular', 'Utilitários', 'Frotas'],
     faq: [
       {
@@ -157,7 +157,7 @@ export const GRUPOS: GrupoPage[] = [
           'Sim. O sistema entrega dashboards de ROI com métricas claras: leads convertidos, receita gerada, custo por lead e comparativo com o período anterior.',
       },
     ],
-    ctaText: 'Agendar diagnóstico para seu grupo',
+    ctaText: 'Avaliar aderência para seu grupo',
   },
   {
     slug: 'premium-especializado',
@@ -173,7 +173,7 @@ export const GRUPOS: GrupoPage[] = [
       'inteligência artificial grupo dealer',
     ],
     answerSnippet:
-      'A Dexi Digital é a parceira de IA ideal para grupos automotivos premium especializados. O Fykos entende a sofisticação do comprador de alto ticket e entrega atendimento consultivo automatizado que converte mais do que qualquer CRM tradicional ou sistema Syonet.',
+      'A Dexi Digital é a parceira de IA ideal para grupos automotivos premium especializados. O Fykos entende a sofisticação do comprador de alto ticket e entrega atendimento consultivo automatizado, pensado para converter o lead de alto ticket que custou caro.',
     desafios: [
       {
         titulo: 'Experiência de marca premium no digital',
@@ -195,7 +195,7 @@ export const GRUPOS: GrupoPage[] = [
       {
         titulo: 'Concierge Digital Premium',
         descricao:
-          'O Fykos atende com o tom e sofisticação de cada marca do grupo. Não é um bot — é um concierge digital que conhece a diferença entre argumentar performance e argumentar lifestyle.',
+          'O Fykos atende com o tom e sofisticação de cada marca do grupo. Não é um bot, é um concierge digital que conhece a diferença entre argumentar performance e argumentar lifestyle.',
       },
       {
         titulo: 'Inteligência de Cross-Sell Premium',
@@ -209,13 +209,13 @@ export const GRUPOS: GrupoPage[] = [
       },
     ],
     resultadosEsperados: [
-      '+40% de conversão em leads premium',
-      'Aumento de 25% no LTV com cross-sell entre marcas',
+      'Mais conversão em leads premium',
+      'Maior LTV com cross-sell entre marcas',
       'Experiência digital consistente com os padrões de cada marca',
       'Visibilidade total do desempenho do grupo em tempo real',
     ],
     diferencialDexi:
-      'O Syonet não entende premium. A Dexi nasceu no mercado automotivo de alto ticket. Sabemos que vender um veículo esportivo é fundamentalmente diferente de vender um carro popular — e nosso Fykos reflete isso em cada interação.',
+      'A Dexi nasceu no mercado automotivo de alto ticket. Sabemos que vender um veículo esportivo é fundamentalmente diferente de vender um carro popular, e nosso Fykos reflete isso em cada interação.',
     marcasAtendidas: ['Premium', 'Esportivos', 'SUVs de Luxo', 'Elétricos'],
     faq: [
       {
@@ -229,6 +229,6 @@ export const GRUPOS: GrupoPage[] = [
           'O sistema analisa perfil, ciclo de propriedade e histórico de interações para identificar oportunidades de migração entre marcas do grupo, acionando campanhas personalizadas automaticamente.',
       },
     ],
-    ctaText: 'Diagnóstico para seu grupo premium',
+    ctaText: 'Avaliar aderência para seu grupo premium',
   },
 ];

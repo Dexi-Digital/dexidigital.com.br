@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 import { getHowToSchema } from '@/lib/structured-data';
-import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
+import TrackedCTA from '@/components/ui/TrackedCTA';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 const steps = [
   {
     number: '01',
-    title: 'Imersão & Diagnóstico de ROI',
+    title: 'Imersão & Análise Detalhada',
     duration: '1-2 semanas',
-    description: 'Mapeamos gargalos operacionais para validar onde a IA gerará o maior ganho de EBITDA, do setor automotivo premium ao imobiliário de alto padrão.',
-    deliverables: ['Business Case de Viabilidade Financeira', 'Blueprint de Processos Críticos', 'Projeção de ROI e Recuperação de Ativos', 'Matriz de Priorização "Quick Wins"'],
+    description: 'Mapeamos gargalos operacionais e onde estão as oportunidades com maior potencial de receita e previsibilidade de venda.',
+    deliverables: ['Blueprint de Processos Críticos', 'Matriz de Priorização "Quick Wins"'],
   },
   {
     number: '02',
@@ -36,15 +36,15 @@ const steps = [
     number: '04',
     title: 'Orquestração & Deploy Enterprise',
     duration: '4-8 semanas',
-    description: 'Ativação controlada da IA com camadas de segurança, garantindo uma transição fluida para a execução autônoma.',
-    deliverables: ['Operação Assistida (Pilot Deployment)', 'Dashboards de Monitoramento de Performance', 'Relatório de Validação de Hipóteses de ROI', 'Manual de Governança "Human-in-the-loop"'],
+    description: 'Ativação controlada da IA com camadas de segurança, garantindo uma transição fluida para a execução com regras definidas e supervisão humana.',
+    deliverables: ['Operação Assistida (Pilot Deployment)', 'Dashboards de Monitoramento de Performance', 'Manual de Governança "Human-in-the-loop"'],
   },
   {
     number: '05',
     title: 'Evolução de Ativos & Escala',
     duration: 'Contínuo',
     description: 'Manutenção do ciclo de aprendizado. O software não é estático; ele valoriza como um ativo conforme o raciocínio da IA evolui.',
-    deliverables: ['Ecossistema de IA em Produção', 'Relatório Mensal de Impacto no EBITDA', 'Roadmap de Evolução e Novas Funcionalidades', 'SLA de Sustentação Crítica e Performance'],
+    deliverables: ['Ecossistema de IA em Produção', 'Roadmap de Evolução e Novas Funcionalidades', 'SLA de Sustentação Crítica e Performance'],
   },
 ];
 
@@ -84,7 +84,7 @@ export default function MetodologiaPage() {
               <span className="text-display-gradient">resultados reais</span>
             </h1>
             <p className="text-lead max-w-2xl mx-auto animate-fade-in-up delay-100">
-              Protocolo de engenharia em 5 estágios desenhado para converter operações passivas em ecossistemas de IA autônomos.
+              Protocolo de engenharia em 5 estágios para transformar dados da operação em prioridades e ações comerciais, com governança e revisão técnica humana.
             </p>
           </div>
         </div>
@@ -111,7 +111,7 @@ export default function MetodologiaPage() {
                   </svg>
                 </div>
                 <h3 className="text-h5 mb-3">Engenharia de Valor &amp; Impacto no EBITDA</h3>
-                <p className="text-body-sm text-[var(--text-secondary)]">Não iniciamos implementações sem um modelo de retorno claro. Mapeamos a economia de custos e o ganho de liquidez operacional, transformando a tecnologia de uma despesa em um ativo financeiro mensurável.</p>
+                <p className="text-body-sm text-[var(--text-secondary)]">Partimos do valor financeiro. Mapeamos onde existe receita a ser gerada, economia de custos e ganho de liquidez operacional, transformando a tecnologia de uma despesa em um ativo financeiro mensurável.</p>
               </div>
               <div className="card card-feature p-8 text-center group">
                 <div className="w-14 h-14 rounded-xl bg-[var(--color-primary-100)] dark:bg-[var(--color-primary-900)]/30 flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform">
@@ -133,7 +133,7 @@ export default function MetodologiaPage() {
           <div className="max-w-4xl mx-auto">
             <div className="section-header">
               <h2 className="text-h2">As 5 Etapas do Framework de Ativação de IA</h2>
-              <p className="text-lead">Do diagnóstico ao rollout, com entregas tangíveis em cada fase</p>
+              <p className="text-lead">Da imersão ao rollout, com entregas tangíveis em cada fase</p>
             </div>
 
             <div className="space-y-6">
@@ -184,18 +184,24 @@ export default function MetodologiaPage() {
       <section className="section-cta-premium text-white">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
+            <p className="text-xs font-bold tracking-[0.15em] uppercase text-white mb-4">
+              CONVERSA DE ADERÊNCIA
+            </p>
             <h2 className="text-display-lg text-white mb-5">
               Pronto para ativar seu Ecossistema de IA?
             </h2>
             <p className="text-lg text-white/70 mb-10">
-              Inicie sua jornada com nosso Framework de Ativação. Valide o impacto real do Fykos no seu EBITDA com a mesma metodologia aplicada em operações premium auditadas.
+              Uma conversa para entender sua operação, os dados disponíveis e se existe uma oportunidade concreta. Sem compromisso e sem pedir dados confidenciais de carteira nesta etapa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
-                Solicitar Validação de ROI
-              </a>
+              <TrackedCTA
+                type="aderencia"
+                location="metodologia-cta-final"
+                variant="white"
+                text="Solicitar conversa de aderência"
+              />
               <Link href="/cases" className="btn border-2 border-white/30 text-white hover:border-white/60 hover:bg-white/10">
-              Conhecer o Fykos →
+              Ver resultados →
               </Link>
             </div>
           </div>

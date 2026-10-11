@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Política de Privacidade do Fykos | Dexi Digital',
+  title: 'Política de Privacidade do Fykos',
   description:
     'Política de Privacidade do Fykos, plataforma de atendimento e qualificação de leads via WhatsApp Business Platform operada pela Dexi Digital.',
   robots: {

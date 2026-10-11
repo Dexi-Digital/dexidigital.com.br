@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
+import TrackedCTA from '@/components/ui/TrackedCTA';
 
 export const metadata: Metadata = {
-  title: 'A Dexi Digital | Consultoria de IA e Inteligência de Dados',
+  title: 'Quem somos | Tecnologia para decisões comerciais de alto valor',
   description:
-    'Nascida da necessidade de transformar dados estáticos em lucro real, a Dexi Digital combina uma década de engenharia de software crítico com o pioneirismo no desenvolvimento de sistemas de IA aplicada. Criadores do Fykos, o Sistema Operacional de Receita, somos a ponte entre a inteligência artificial generativa e a execução financeira autônoma para corporações que buscam escala sem precedentes e governança inegociável.',
-  keywords: ['Dexi Digital', 'consultoria IA Brasil', 'inteligência de dados', 'quem somos'],
+    'A Dexi Digital é uma empresa de tecnologia para decisões comerciais de alto valor: transforma dados da operação em prioridades e ações comerciais, para que as oportunidades da base virem receita e previsibilidade de venda. Uma década de engenharia de software crítico por trás do Fykos, produto de inteligência e execução comercial.',
+  keywords: ['Dexi Digital', 'inteligência comercial', 'execução comercial', 'Fykos', 'inteligência de dados', 'quem somos'],
 };
 
 const founders = [
@@ -35,10 +35,10 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-overline mb-4 animate-fade-in-up-subtle">A Dexi Digital</p>
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
-              Liderança em Engenharia de Software e Infraestrutura de IA
+              Tecnologia para decisões comerciais de alto valor
             </h1>
             <p className="text-lead max-w-2xl mx-auto animate-fade-in-up delay-100">
-              Nascida da necessidade de transformar dados estáticos em lucro real, a Dexi Digital combina uma década de engenharia de software crítico com o pioneirismo no desenvolvimento de sistemas de IA aplicada. Criadores do Fykos, o Sistema Operacional de Receita, somos a ponte entre a inteligência artificial generativa e a execução financeira autônoma para corporações que buscam escala sem precedentes e governança inegociável.
+              A Dexi Digital transforma dados da operação em prioridades e ações comerciais, para que as oportunidades que já estão na sua base virem receita e previsibilidade de venda. Uma década de engenharia de software crítico deu origem ao Fykos, nosso produto de inteligência e execução comercial.
             </p>
           </div>
         </div>
@@ -58,7 +58,7 @@ export default function AboutPage() {
               <strong className="text-[var(--text-primary)]">Inteligência com Governança Humana.</strong> Para nós, a IA não é um acessório, é um motor de execução. O Fykos é o ápice de uma década de engenharia crítica. Acreditamos na autonomia da operação de IA, mas nunca abrimos mão da soberania humana. Cada solução é validada por arquitetos experientes, garantindo segurança e conformidade enterprise.
             </p>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              <strong>Engenharia de Ativos, não de Horas.</strong> Não somos uma fábrica de software; somos uma Product-Led Engineering House. Nosso foco é construir ativos tecnológicos que destravam o EBITDA escondido nas operações. Entendemos de negócio tanto quanto de algoritmos, resolvendo problemas que o software tradicional não consegue tocar.
+              <strong>Engenharia de Ativos, não de Horas.</strong> Não somos uma fábrica de software; somos uma Product-Led Engineering House. Nosso foco é construir ativos tecnológicos que destravam o EBITDA escondido nas operações. Entendemos de negócio tanto quanto de algoritmos.
             </p>
           </div>
         </div>
@@ -71,7 +71,7 @@ export default function AboutPage() {
             <div className="section-header">
               <h2 className="text-h2">A Engenharia de Elite por trás do Fykos</h2>
               <p className="text-lead">Liderança sênior com DNA de execução em ecossistemas de alta complexidade.</p>
-              <p className="text-body-sm text-[var(--text-secondary)] mt-2">Unimos décadas de experiência em arquitetura de software crítico com o pioneirismo em sistemas de IA. Nosso time é composto por especialistas que desenharam e sustentaram infraestruturas para os maiores grupos empresariais do país, agora focados em liderar a próxima fronteira da automação autônoma.</p>
+              <p className="text-body-sm text-[var(--text-secondary)] mt-2">Unimos décadas de experiência em arquitetura de software crítico com o pioneirismo em sistemas de IA. Nosso time é composto por especialistas que desenharam e sustentaram infraestruturas para grandes grupos empresariais, agora focados em transformar dados da operação em decisões comerciais de alto valor.</p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
@@ -157,7 +157,7 @@ export default function AboutPage() {
             <div className="section-header">
               <h2 className="text-h2">Experiência comprovada</h2>
             </div>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 gap-6">
               <div className="card p-8 text-center">
                 <div className="text-number-lg text-display-gradient mb-2">10+</div>
                 <div className="text-sm font-semibold text-[var(--text-primary)] mb-2">Anos em software crítico e arquiteturas complexas.</div>
@@ -166,17 +166,10 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="card p-8 text-center">
-                <div className="text-number-lg text-display-gradient mb-2">50+</div>
-                <div className="text-sm font-semibold text-[var(--text-primary)] mb-2">Ecossistemas entregues para líderes de mercado.</div>
+                <div className="text-number-lg text-display-gradient mb-2">Fykos</div>
+                <div className="text-sm font-semibold text-[var(--text-primary)] mb-2">Em operação em grupos automotivos.</div>
                 <p className="text-body-sm text-[var(--text-secondary)]">
-                  Arquiteturas robustas desenhadas para suportar alta complexidade e governança enterprise.
-                </p>
-              </div>
-              <div className="card p-8 text-center">
-                <div className="text-number-lg text-display-gradient mb-2">R$ 7M+</div>
-                <div className="text-sm font-semibold text-[var(--text-primary)] mb-2">Recuperados através de operação de IA autônoma</div>
-                <p className="text-body-sm text-[var(--text-secondary)]">
-                  Impacto direto em setores de alto ticket: Automotivo, Construtora e Imobiliário.
+                  Inteligência e execução comercial sobre as fontes que a operação já usa, com cada etapa relevante registrada.
                 </p>
               </div>
             </div>
@@ -188,16 +181,22 @@ export default function AboutPage() {
       <section className="section-cta-premium text-white">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
+            <p className="text-xs font-bold tracking-[0.15em] uppercase text-white mb-4">
+              CONVERSA DE ADERÊNCIA
+            </p>
             <h2 className="text-display-lg text-white mb-5">
               Pronto para liderar a Era da IA que Executa?
             </h2>
             <p className="text-lg text-white/70 mb-10">
-              Valide o potencial de impacto do Fykos no seu EBITDA. Realizamos um diagnóstico de viabilidade técnica e financeira focado em liquidez e ROI imediato.
+              Uma conversa para entender sua operação, os dados disponíveis e se existe uma oportunidade concreta. Sem compromisso e sem pedir dados confidenciais de carteira nesta etapa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
-                Iniciar Validação de ROI
-              </a>
+              <TrackedCTA
+                type="aderencia"
+                location="sobre-cta-final"
+                variant="white"
+                text="Solicitar conversa de aderência"
+              />
               <Link href="/metodologia" className="btn border-2 border-white/30 text-white hover:border-white/60 hover:bg-white/10">
                 Conhecer o Fykos
               </Link>

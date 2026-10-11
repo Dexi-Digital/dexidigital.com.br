@@ -37,9 +37,8 @@ export const metadata: Metadata = {
   creator: 'Dexi Digital',
   publisher: 'Dexi Digital',
   metadataBase: new URL('https://dexidigital.com.br'),
-  alternates: {
-    canonical: '/',
-  },
+  // Sem `alternates.canonical` aqui: herdado por toda página sem canonical
+  // próprio, fazia /sobre, /contato etc. se declararem duplicatas da home.
   openGraph: {
     type: 'website',
     locale: 'pt_BR',

@@ -60,7 +60,7 @@ export default function RevenueCalculator() {
       `Olá! Usei a calculadora de receita recuperável da Dexi: ` +
       `${formatInt(base)} cotações paradas com ticket médio de ${formatBRL(ticket)} ` +
       `→ estimativa de ${formatBRL(receita)} em receita recuperável. ` +
-      `Quero agendar o diagnóstico de 24h.`;
+      `Quero conversar sobre a aderência da minha operação.`;
     return getWhatsAppUrl(msg);
   }, [base, ticket, receita]);
 
@@ -124,7 +124,7 @@ export default function RevenueCalculator() {
                 <Field
                   id="ticket"
                   label="Ticket médio do produto ou serviço"
-                  hint="De R$ 100 a R$ 10 milhões. Digite o valor exato ou arraste — a escala é logarítmica."
+                  hint="De R$ 100 a R$ 10 milhões. Digite o valor exato ou arraste (a escala é logarítmica)."
                   value={ticket}
                   display={formatBRL(ticket)}
                   sliderValue={sliderFromTicket(ticket)}
@@ -291,7 +291,8 @@ export default function RevenueCalculator() {
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-h2 mb-3">Uma conversa de 30 minutos.</h2>
             <p className="text-lead mb-8">
-              Você traz um número, <span className="text-highlight">sai com outro</span>.
+              Você traz o número da sua operação.{' '}
+              <span className="text-highlight">Avaliamos juntos se existe uma oportunidade concreta</span>.
             </p>
             <a
               href={whatsappUrl}
@@ -300,9 +301,9 @@ export default function RevenueCalculator() {
               onClick={() => trackWhatsAppClick('calculator_cta', 'calculator')}
               className="btn btn-lg btn-money w-full sm:w-auto"
             >
-              Agendar diagnóstico de 24h
+              Solicitar conversa de aderência
             </a>
-            <p className="mt-4 text-caption">Sem custo. Sem compromisso. Direto no WhatsApp.</p>
+            <p className="mt-4 text-caption">Sem compromisso. Direto no WhatsApp.</p>
           </div>
         </div>
       </section>

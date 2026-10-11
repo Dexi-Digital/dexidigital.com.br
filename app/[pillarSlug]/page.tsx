@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: PillarPageProps): Promise<Met
   }
 
   return {
-    title: `${pillar.title} | Dexi Digital`,
+    title: pillar.title,
     description: pillar.description,
   };
 }
@@ -54,10 +54,10 @@ export default async function PillarPage({ params }: PillarPageProps) {
           <div className="max-w-6xl mx-auto">
             <div className="mb-10 text-center">
               <TrackedCTA
-                type="validation"
-                location={`pillar-${pillar.slug}`}
+                type="aderencia"
+                location={`pillar-${pillar.slug}-topo`}
                 variant="money"
-                text="Agendar diagnóstico gratuito"
+                text="Avaliar aderência da minha operação"
               />
             </div>
 

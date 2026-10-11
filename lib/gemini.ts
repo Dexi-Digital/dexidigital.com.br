@@ -28,17 +28,19 @@ DADO EXIGIDO NO TEXTO: ${topic.requiredData}
 FONTE DO DADO: ${topic.dataSource}
 LINK DO PILAR (usar pelo menos 2 vezes como link interno): ${topic.pillarLink}
 
-REGRAS OBRIGATÓRIAS — siga à risca, formato exato:
-1. Comece o corpo com a linha literal "**Resposta rápida:** " seguida de uma resposta autocontida de 40 a 60 palavras que resuma a pauta inteira — é o trecho que ferramentas como ChatGPT, Perplexity e o AI Overview do Google extraem direto.
+REGRAS OBRIGATÓRIAS (siga à risca, formato exato):
+1. Comece o corpo com a linha literal "**Resposta rápida:** " seguida de uma resposta autocontida de 40 a 60 palavras que resuma a pauta inteira, é o trecho que ferramentas como ChatGPT, Perplexity e o AI Overview do Google extraem direto.
 2. Pelo menos um subtítulo (##) deve ser uma pergunta, terminando literalmente em "?".
 3. Toda afirmação numérica precisa vir com fonte nomeada e período, no formato "Segundo [fonte], em [período], [dado]".
-4. Se usar tabela, use tabela Markdown nativa (| coluna | coluna |) — nunca descreva como se fosse imagem.
+4. Se usar tabela, use tabela Markdown nativa (| coluna | coluna |), nunca descreva como se fosse imagem.
 5. Inclua pelo menos 2 links internos em Markdown apontando exatamente para ${topic.pillarLink}.
-6. NÃO faça nenhuma alegação de resultado clínico ou médico (ex: "cura", "elimina", "garante resultado") — mesmo que a vertical seja Clínicas.
+6. NÃO faça nenhuma alegação de resultado clínico ou médico (ex: "cura", "elimina", "garante resultado"), mesmo que a vertical seja Clínicas.
 7. Tom direto, consultivo, em português do Brasil, sem jargão de marketing vazio. 800 a 1200 palavras no corpo.
 8. Assine como "Equipe Dexi Digital".
-9. REGRA CRÍTICA DE NEGÓCIO — NÃO ENTREGUE O "COMO" COMPLETO: este texto é conteúdo de topo/meio de funil, não um manual de implementação. Explique o problema, por que ele é caro, e os PRINCÍPIOS por trás da solução (o "o quê" e o "por quê") — mas NÃO forneça um checklist ou passo a passo replicável o suficiente para o leitor (ou um concorrente) implementar sozinho sem a Dexi. Nunca liste nomes exatos de configuração, sequência completa de mensagens/cadência com detalhes acionáveis, ou "receita de bolo" pronta para copiar. Sempre que o texto chegar perto de revelar o método completo, pare, e diga que essa execução (segmentação, automação, integração de dados) é exatamente o que a Dexi/Fykos entrega operacionalmente — e direcione para falar com a Dexi. O post deve gerar desejo de contratar, não permitir fazer sozinho.
-10. NÃO cite nenhum número operacional implementável (ex: "espace as mensagens em 72 horas", "envie 3 mensagens por dia", "use janela de 24h") — mesmo enquadrado como "dado" ou "resultado observado". Números são permitidos SOMENTE quando descrevem o tamanho do problema ou o resultado de mercado (ex: taxa de conversão média do setor, CAC médio, % de leads perdidos) — nunca quando funcionam como instrução de configuração que o leitor poderia copiar direto.
+9. REGRA CRÍTICA DE NEGÓCIO: NÃO ENTREGUE O "COMO" COMPLETO: este texto é conteúdo de topo/meio de funil, não um manual de implementação. Explique o problema, por que ele é caro, e os PRINCÍPIOS por trás da solução (o "o quê" e o "por quê"), mas NÃO forneça um checklist ou passo a passo replicável o suficiente para o leitor (ou um concorrente) implementar sozinho sem a Dexi. Nunca liste nomes exatos de configuração, sequência completa de mensagens/cadência com detalhes acionáveis, ou "receita de bolo" pronta para copiar. Sempre que o texto chegar perto de revelar o método completo, pare, e diga que essa execução (segmentação, automação, integração de dados) é exatamente o que a Dexi/Fykos entrega operacionalmente, e direcione para falar com a Dexi. O post deve gerar desejo de contratar, não permitir fazer sozinho.
+10. NÃO cite nenhum número operacional implementável (ex: "espace as mensagens em 72 horas", "envie 3 mensagens por dia", "use janela de 24h"), mesmo enquadrado como "dado" ou "resultado observado". Números são permitidos SOMENTE quando descrevem o tamanho do problema ou o resultado de mercado (ex: taxa de conversão média do setor, CAC médio, % de leads perdidos), nunca quando funcionam como instrução de configuração que o leitor poderia copiar direto.
+11. NUNCA use travessão (—) nem meia-risca (–) como pontuação, em nenhum campo (título, resumo, corpo). Use dois-pontos, vírgula, parênteses ou ponto final.
+12. Ao direcionar para a Dexi, convide para uma conversa de aderência (link https://dexidigital.com.br/contato?cta=blog) e destaque o valor financeiro (receita, previsibilidade de venda), não a integração com sistemas. Nunca prometa diagnóstico em 24h, ROI garantido ou números da Dexi/Fykos sem fonte.
 
 Responda em JSON válido, SEM formatação markdown de code fence ao redor, exatamente neste formato:
 {"title": "título do post", "excerpt": "resumo de até 160 caracteres para meta description", "content": "corpo completo em markdown, incluindo a linha de Resposta rápida e os subtítulos"}`;
@@ -50,7 +52,7 @@ Responda em JSON válido, SEM formatação markdown de code fence ao redor, exat
  * Mesmo com responseMimeType: 'application/json', o Gemini às vezes anexa lixo
  * depois do objeto (o caso observado: um "}" solto numa linha nova). JSON.parse
  * direto quebra com "Unexpected non-whitespace character after JSON", e um
- * regex guloso /\{[\s\S]*\}/ não resolve — ele vai até a ÚLTIMA "}", ou seja,
+ * regex guloso /\{[\s\S]*\}/ não resolve, ele vai até a ÚLTIMA "}", ou seja,
  * devolve exatamente a mesma string quebrada.
  *
  * Aqui varremos a partir da primeira "{" contando profundidade de chaves,
@@ -132,7 +134,7 @@ const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // O 503 ("high demand") do Gemini vem em rajada: medindo 9 chamadas seguidas,
 // 3 falharam e as falhas saíram consecutivas. Retry imediato cai dentro da
-// mesma rajada, então o backoff exponencial é o que faz a diferença aqui —
+// mesma rajada, então o backoff exponencial é o que faz a diferença aqui
 // como isso roda num cron diário, esperar minutos não custa nada.
 export async function generatePost(topic: TopicInput): Promise<GeneratedPost> {
   const apiKey = process.env.GEMINI_API_KEY;

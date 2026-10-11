@@ -1,62 +1,66 @@
 import TrackedCTA from '@/components/ui/TrackedCTA';
+import ClientLogos, { CONSTRUCTION_CLIENTS } from '@/components/ui/ClientLogos';
 import type { Metadata } from 'next';
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 
 export const metadata: Metadata = {
-  title: 'Fykos para Construtoras e Incorporadoras | Dexi Digital',
+  title: 'Gestão de carteira para construtoras e incorporadoras',
   description:
-    'O Fykos nutre o lead do pré-lançamento à proposta e faz a cobrança amigável das parcelas na venda com recursos próprios, sobre o CRM de vendas que você já usa.',
+    'Gestão de carteira para construtoras e incorporadoras que financiam com recursos próprios: emissão de boletos, gestão da carteira de ativos e cobrança que preserva o relacionamento. Carteira em dia, inadimplência sob controle e previsibilidade de recebimento.',
   keywords: [
-    'IA para construtoras',
+    'gestão de carteira',
+    'construtoras',
     'incorporadoras',
     'loteadoras',
-    'nutrição de leads',
-    'pré-lançamento imobiliário',
-    'cobrança amigável de parcelas',
+    'financiamento com recursos próprios',
     'venda com recursos próprios',
+    'emissão de boletos',
+    'cobrança de parcelas',
     'carteira de recebíveis',
-    'lançamento imobiliário',
+    'inadimplência',
+    'pré-lançamento imobiliário',
     'Fykos',
   ],
   openGraph: {
-    title: 'Fykos para Construtoras e Incorporadoras | Do pré-lançamento à última parcela',
+    title: 'Fykos para Construtoras e Incorporadoras | Carteira em dia, receita previsível',
     description:
-      'Nutre o lead antes do lançamento e faz a cobrança amigável das parcelas depois da venda, sobre o CRM de vendas e o ERP que você já usa. Zero migração.',
+      'Gestão de carteira para quem financia com recursos próprios: emissão de boletos, gestão da carteira de ativos e cobrança que preserva o relacionamento com o comprador.',
     type: 'website',
     locale: 'pt_BR',
   },
 };
 
+// Gestão de carteira é o centro; a nutrição de pré-lançamento entra como aplicação complementar.
 const MOMENTOS = [
+  {
+    overline: 'DEPOIS DA VENDA',
+    titulo: 'Gestão de carteira e cobrança',
+    corpo:
+      'Venda com recursos próprios é carteira longa. O Fykos cuida da emissão de boletos, acompanha cada parcela da carteira de ativos e cobra preservando o relacionamento: lembra antes do vencimento e, quando alguém atrasa, escala para o seu time negociar. A receita entra sem desgastar a relação com o comprador.',
+  },
   {
     overline: 'ANTES DO LANÇAMENTO',
     titulo: 'Nutrição que faz o lead chegar pronto',
     corpo:
       'O lead que aparece no dia do lançamento não pode chegar frio. O Fykos constrói e nutre a base desde o pré-lançamento: cada interessado recebe o contato certo na hora certa e chega ao plantão pronto para a proposta. Quem não fecha hoje continua na base, aquecido até o momento certo.',
   },
-  {
-    overline: 'DEPOIS DA VENDA',
-    titulo: 'Cobrança amigável das parcelas',
-    corpo:
-      'Venda com recursos próprios é carteira longa. O Fykos acompanha cada parcela e cobra preservando o relacionamento: lembra antes do vencimento e, quando alguém atrasa, escala para o seu time negociar. A receita entra sem desgastar a relação.',
-  },
 ];
 
 const DIFERENCIAIS = [
   {
-    titulo: 'Integra, não substitui',
+    titulo: 'Carteira acompanhada parcela a parcela',
     corpo:
-      'O Fykos roda sobre o CRM de vendas e o ERP que a construtora, incorporadora ou loteadora já usa. Conecta ao seu núcleo sem trocar de ferramenta, sem migrar dado, sem parar a operação.',
-  },
-  {
-    titulo: 'Nenhum lead morre',
-    corpo:
-      'Do pré-lançamento ao plantão, nutre quem demonstrou interesse e reaquece quem visitou e não fechou. O lead que não compra hoje continua na base, vivo até a hora certa de comprar. Nada esfria no meio do caminho.',
+      'Cada parcela da carteira de ativos fica acompanhada: boleto emitido, lembrete antes do vencimento e cobrança quando há atraso, com encaminhamento ao seu time para negociar. Inadimplência sob controle sem desgastar o relacionamento.',
   },
   {
     titulo: 'Comandos com inteligência, execução em trilhos',
     corpo:
-      'Determinístico e auditável: a cobrança amigável das parcelas segue régua aprovada, cada contato tem log, a operação respeita a LGPD e só escala depois que o ROI está aprovado. Sem improviso, sem alucinação.',
+      'Regras definidas e cada contato registrado: a cobrança segue a régua aprovada pela operação, cada contato fica auditável e a operação respeita a LGPD. Sem improviso na relação com quem comprou.',
+  },
+  {
+    titulo: 'Integra, não substitui',
+    corpo:
+      'O Fykos roda sobre o CRM de vendas e o ERP que a construtora, incorporadora ou loteadora já usa. Sem trocar de ferramenta e sem parar a operação.',
   },
 ];
 
@@ -79,42 +83,45 @@ export default function ConstrutorasPage() {
         <div className="container relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-overline mb-4 animate-fade-in-up-subtle">
-              FYKOS PARA CONSTRUTORAS E INCORPORADORAS
+              GESTÃO DE CARTEIRA PARA CONSTRUTORAS E INCORPORADORAS
             </p>
 
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
-              Lançou, gerou lead, e depois? A Dexi não deixa a{' '}
-              <span className="text-result">receita esfriar</span>, do pré-lançamento à última
-              parcela.
+              Na venda com recursos próprios, a receita só entra com a{' '}
+              <span className="text-result">carteira em dia</span>.
             </h1>
 
             <p className="text-lead text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto animate-fade-in-up delay-150">
-              O Fykos nutre o lead antes do lançamento, mantém o interessado aquecido até a proposta
-              e, na venda com recursos próprios, faz a cobrança amigável das parcelas, sobre o CRM
-              de vendas e o ERP que você já usa.
+              O Fykos faz a gestão de carteira para construtoras e incorporadoras que financiam com
+              recursos próprios: emissão de boletos, gestão da carteira de ativos e cobrança que
+              preserva o relacionamento com o comprador. Inadimplência sob controle e previsibilidade
+              de recebimento.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4 animate-fade-in-up delay-200">
               <TrackedCTA
-                type="validation"
-                location="hero"
+                type="aderencia"
+                location="construtoras-hero"
                 variant="money"
-                text="Agendar diagnóstico de 24h"
+                text="Avaliar aderência da minha operação"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Dois momentos: nutrição pré-lançamento e cobrança amigável */}
+      {/* Dois momentos: gestão de carteira (centro) e nutrição pré-lançamento (complementar) */}
       <section id="momentos" className="section bg-[var(--bg-primary)]">
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <div className="section-header text-center">
               <h2 className="text-h2">
-                A receita da incorporadora e da loteadora vive em dois momentos
+                Na venda com recursos próprios, a receita se realiza na carteira
               </h2>
-              <p className="text-lead">O Fykos cuida dos dois: antes do lançamento e depois da venda.</p>
+              <p className="text-lead">
+                A gestão de carteira é o centro. A nutrição de leads antes do lançamento entra como
+                aplicação complementar.
+              </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -135,9 +142,7 @@ export default function ConstrutorasPage() {
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <div className="section-header text-center">
-              <h2 className="text-h2">
-                Do pré-lançamento à última parcela, nenhuma receita fica no meio do caminho
-              </h2>
+              <h2 className="text-h2">Carteira em dia é receita previsível</h2>
               <p className="text-lead">
                 Os três pilares que sustentam o Fykos em qualquer setor, aqui na linguagem da
                 incorporadora e da loteadora.
@@ -184,19 +189,14 @@ export default function ConstrutorasPage() {
         </div>
       </section>
 
-      {/* Prova: TGV Empreendimentos */}
+      {/* Prova: logo do cliente, sem narrativa nem descrição de quem é quem */}
       <section id="prova" className="section bg-[var(--bg-primary)]">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-overline mb-2">PARCEIRO EM CONSTRUTORAS</p>
+            <p className="text-overline mb-2">QUEM JÁ USA</p>
             <div className="card p-8 md:p-10">
-              <h2 className="text-h3 mb-4">TGV Empreendimentos</h2>
-              <p className="text-body text-[var(--text-secondary)]">
-                Nosso parceiro em construtoras e incorporadoras. É com a TGV que provamos a cobrança
-                amigável do Fykos: a carteira de parcelas acompanhada sobre o sistema que a operação
-                já usa, com tanto êxito que hoje há cliente procurando a TGV proativamente, antes
-                mesmo de ser cobrado.
-              </p>
+              <h2 className="text-h3 mb-6">A cobrança de carteira do Fykos já roda em operação</h2>
+              <ClientLogos logos={CONSTRUCTION_CLIENTS} />
             </div>
           </div>
         </div>
@@ -207,19 +207,21 @@ export default function ConstrutorasPage() {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-xs font-bold tracking-[0.15em] uppercase text-white mb-4">
-              DIAGNÓSTICO DE 24H · SEM CUSTO
+              CONVERSA DE ADERÊNCIA
             </p>
             <h2 className="text-display-lg text-white mb-4">
-              Mapeamos seu funil e projetamos o ROI em 24 horas.
+              A receita da sua carteira já foi vendida. Falta recebê-la.
             </h2>
             <p className="text-lg text-white/90 mb-10 max-w-2xl mx-auto">
-              Se não fechar a conta, o diagnóstico é seu. Sem compromisso, sem migração.
+              Uma conversa para entender sua operação, os dados disponíveis e se existe uma
+              oportunidade concreta. Sem compromisso e sem pedir dados confidenciais de carteira
+              nesta etapa.
             </p>
             <TrackedCTA
-              type="validation"
-              location="cta-final"
+              type="aderencia"
+              location="construtoras-cta-final"
               variant="money"
-              text="Agendar diagnóstico de 24h"
+              text="Solicitar conversa de aderência"
             />
           </div>
         </div>
@@ -228,10 +230,10 @@ export default function ConstrutorasPage() {
       {/* Sticky CTA mobile */}
       <div className="fixed bottom-0 left-0 right-0 p-4 bg-[var(--bg-primary)]/90 backdrop-blur-md border-t border-[var(--border-subtle)] md:hidden z-50 flex justify-center shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
         <TrackedCTA
-          type="validation"
-          location="mobile-sticky"
+          type="aderencia"
+          location="construtoras-mobile-sticky"
           variant="money"
-          text="Agendar diagnóstico de 24h"
+          text="Avaliar aderência"
           className="w-full shadow-lg text-center flex justify-center items-center py-3 text-sm"
         />
       </div>

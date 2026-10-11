@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import TrackedCTA from '@/components/ui/TrackedCTA';
 
 export const metadata: Metadata = {
   title: 'Software Sob Medida | Soluções Enterprise com IA Integrada',
@@ -201,16 +202,23 @@ export default function CustomSoftwarePage() {
       <section className="section-cta-premium text-white">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
+            <p className="text-xs font-bold tracking-[0.15em] uppercase text-white mb-4">
+              CONVERSA DE ADERÊNCIA
+            </p>
             <h2 className="text-display-lg text-white mb-5">
               Software inteligente que converte
             </h2>
             <p className="text-lg text-white/70 mb-10">
-              Agende um diagnóstico gratuito e descubra como IA integrada
-              pode transformar seu software em uma máquina de vendas.
+              Uma conversa para entender sua operação, os dados disponíveis e se existe uma
+              oportunidade concreta. Sem compromisso e sem pedir dados confidenciais de carteira
+              nesta etapa.
             </p>
-            <Link href="/contato" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
-              Agendar Demonstração
-            </Link>
+            <TrackedCTA
+              type="aderencia"
+              location="software-sob-medida-cta-final"
+              variant="white"
+              text="Solicitar conversa de aderência"
+            />
           </div>
         </div>
       </section>

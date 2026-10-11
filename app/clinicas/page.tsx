@@ -3,9 +3,9 @@ import type { Metadata } from 'next';
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 
 export const metadata: Metadata = {
-  title: 'Fykos para Clínicas | Dexi Digital',
+  title: 'Fykos para Clínicas',
   description:
-    'O Fykos cria relacionamento contínuo com cada paciente: acompanha procedimentos recorrentes, antecipa retorno e renovação de receita e reduz o no-show, sobre o seu sistema de gestão e prontuário. Seja um caso-fundador com diagnóstico de 24h.',
+    'Agenda com buraco é receita que não volta. O Fykos mantém relacionamento contínuo com cada paciente: acompanha procedimentos recorrentes, antecipa retorno e renovação de receita médica e reduz o no-show. Estamos selecionando as primeiras clínicas como casos-fundadores.',
   keywords: [
     'IA para clínicas',
     'relacionamento com pacientes',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Fykos para Clínicas | A Dexi não deixa o paciente sumir',
     description:
-      'Relacionamento contínuo com o paciente: procedimentos recorrentes em dia, retorno e renovação de receita antecipados, menos no-show, sobre o seu sistema de gestão. Estamos selecionando as primeiras clínicas como casos-fundadores.',
+      'Agenda com buraco é receita que não volta. Relacionamento contínuo com o paciente: procedimentos recorrentes em dia, retorno e renovação de receita médica antecipados e menos no-show. Estamos selecionando as primeiras clínicas como casos-fundadores.',
     type: 'website',
     locale: 'pt_BR',
   },
@@ -29,19 +29,19 @@ export const metadata: Metadata = {
 
 const DIFERENCIAIS = [
   {
-    titulo: 'Integra, não substitui',
+    titulo: 'Relacionamento contínuo, não resgate de última hora',
     corpo:
-      'O Fykos roda sobre o sistema de gestão e a agenda clínica que você já usa. Conecta ao seu núcleo sem trocar de ferramenta, sem migrar prontuário, sem interromper o atendimento.',
-  },
-  {
-    titulo: 'Nenhum paciente some',
-    corpo:
-      'Relacionamento contínuo, não resgate de última hora. O Fykos acompanha quem faz procedimento recorrente: a soroterapia que exige aplicação semanal, a receita que precisa ser renovada e não pode esperar três meses por uma consulta, e remarca o retorno na hora certa, antes de a agenda abrir buraco.',
+      'O Fykos acompanha quem faz procedimento recorrente: a soroterapia que exige aplicação semanal, a receita médica que precisa ser renovada e não pode esperar três meses por uma consulta. E remarca o retorno na hora certa, antes de a agenda abrir buraco.',
   },
   {
     titulo: 'Comandos com inteligência, execução em trilhos',
     corpo:
-      'Determinístico e auditável: cada contato tem log, respeita a LGPD e dados sensíveis de saúde, e só escala depois que o ROI está aprovado. Inteligência para decidir, trilhos para executar.',
+      'Regras definidas e cada contato registrado: a execução segue as regras da clínica e respeita a LGPD e o cuidado com dados sensíveis de saúde. Inteligência para decidir, trilhos para executar com controle.',
+  },
+  {
+    titulo: 'Integra, não substitui',
+    corpo:
+      'O Fykos roda sobre o sistema de gestão e a agenda clínica que você já usa. Sem trocar de ferramenta e sem interromper o atendimento.',
   },
 ];
 
@@ -71,18 +71,18 @@ export default function ClinicasPage() {
             </h1>
 
             <p className="text-lead text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto animate-fade-in-up delay-150">
-              O Fykos cria relacionamento com cada paciente para que ele naturalmente não fique
-              parado: acompanha procedimentos recorrentes, antecipa retorno e renovação de receita
-              e reduz o no-show, sobre o seu sistema de gestão e prontuário, sem trocar de
-              ferramenta.
+              Cada paciente que não volta leva junto a receita do próximo procedimento. O Fykos
+              mantém relacionamento contínuo com quem já é paciente da clínica: acompanha
+              procedimentos recorrentes, antecipa retorno e renovação de receita médica e reduz o
+              no-show, para que a agenda vire previsibilidade de receita.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4 animate-fade-in-up delay-200">
               <TrackedCTA
-                type="validation"
-                location="hero"
+                type="aderencia"
+                location="clinicas-hero"
                 variant="money"
-                text="Agendar diagnóstico de 24h"
+                text="Avaliar aderência da minha operação"
               />
             </div>
           </div>
@@ -151,14 +151,15 @@ export default function ClinicasPage() {
                 Estamos selecionando as primeiras clínicas para provar o Fykos no setor.
               </h2>
               <p className="text-body text-[var(--text-secondary)] mb-8">
-                Quer ser um caso-fundador? Você entra cedo, ajuda a moldar a aplicação para a sua
-                rotina e sai com o funil mapeado. Diagnóstico de 24h, sem custo.
+                Quer ser um caso-fundador? Você entra cedo e ajuda a moldar a aplicação para a
+                rotina da sua clínica. O primeiro passo é uma conversa de aderência para avaliar se
+                existe uma oportunidade concreta.
               </p>
               <TrackedCTA
-                type="validation"
-                location="cliente-fundador"
+                type="aderencia"
+                location="clinicas-cliente-fundador"
                 variant="money"
-                text="Quero ser um caso-fundador"
+                text="Avaliar aderência da minha operação"
               />
             </div>
           </div>
@@ -170,19 +171,21 @@ export default function ClinicasPage() {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-xs font-bold tracking-[0.15em] uppercase text-white mb-4">
-              DIAGNÓSTICO DE 24H · SEM CUSTO
+              CONVERSA DE ADERÊNCIA
             </p>
             <h2 className="text-display-lg text-white mb-4">
-              Mapeamos sua agenda e projetamos o ROI em 24 horas.
+              Cada retorno que não acontece é receita que fica pelo caminho.
             </h2>
             <p className="text-lg text-white/90 mb-10 max-w-2xl mx-auto">
-              Se não fechar a conta, o diagnóstico é seu. Sem compromisso, sem migração.
+              Uma conversa para entender sua operação, os dados disponíveis e se existe uma
+              oportunidade concreta. Sem compromisso e sem pedir dados confidenciais de carteira
+              nesta etapa.
             </p>
             <TrackedCTA
-              type="validation"
-              location="cta-final"
+              type="aderencia"
+              location="clinicas-cta-final"
               variant="money"
-              text="Agendar diagnóstico de 24h"
+              text="Solicitar conversa de aderência"
             />
           </div>
         </div>
@@ -191,10 +194,10 @@ export default function ClinicasPage() {
       {/* Sticky CTA mobile */}
       <div className="fixed bottom-0 left-0 right-0 p-4 bg-[var(--bg-primary)]/90 backdrop-blur-md border-t border-[var(--border-subtle)] md:hidden z-50 flex justify-center shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
         <TrackedCTA
-          type="validation"
-          location="mobile-sticky"
+          type="aderencia"
+          location="clinicas-mobile-sticky"
           variant="money"
-          text="Agendar diagnóstico de 24h"
+          text="Avaliar aderência"
           className="w-full shadow-lg text-center flex justify-center items-center py-3 text-sm"
         />
       </div>

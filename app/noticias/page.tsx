@@ -4,7 +4,7 @@ import { getRecentNews } from '@/lib/news-db';
 import TrackedCTA from '@/components/ui/TrackedCTA';
 
 export const metadata: Metadata = {
-  title: 'Notícias de Tecnologia e IA | Dexi Digital',
+  title: 'Notícias de Tecnologia e IA',
   description:
     'Acompanhe as principais notícias de tecnologia e inteligência artificial, selecionadas diariamente pela Dexi Digital.',
 };
@@ -43,7 +43,7 @@ export default function NoticiasPage() {
         <div className="container">
           <div className="max-w-6xl mx-auto">
             <div className="mb-10 text-center">
-              <TrackedCTA type="validation" location="noticias" variant="money" text="Agendar diagnóstico gratuito" />
+              <TrackedCTA type="aderencia" location="noticias-topo" variant="money" text="Avaliar aderência da minha operação" />
             </div>
 
             {news.length === 0 ? (

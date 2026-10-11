@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import TrackedCTA from '@/components/ui/TrackedCTA';
 
 export const metadata: Metadata = {
   title: 'IA para Empresas | Concierge Digital de Vendas',
@@ -28,9 +29,9 @@ export default function EnterpriseAIPage() {
               <span className="text-display-gradient">Concierge Digital</span> de Vendas
             </h1>
             <p className="text-lead max-w-2xl animate-fade-in-up delay-100">
-              Não é um chatbot. É um assistente de vendas treinado em Neurolinguística
-              e Venda Consultiva, que entende o perfil do cliente em tempo real e
-              adapta a abordagem a cada turno da conversa.
+              Para que o lead que custou caro vire venda: um assistente de vendas treinado
+              em Neurolinguística e Venda Consultiva, que entende o perfil do cliente em
+              tempo real e adapta a abordagem a cada turno da conversa.
             </p>
           </div>
         </div>
@@ -42,7 +43,7 @@ export default function EnterpriseAIPage() {
           <div className="max-w-5xl mx-auto">
             <div className="section-header text-left">
               <h2 className="text-h2">O que nos diferencia</h2>
-              <p className="text-lead">Uma nova geração de IA comercial, muito além de chatbots genéricos</p>
+              <p className="text-lead">IA comercial treinada para a venda consultiva</p>
             </div>
 
             <div className="grid lg:grid-cols-3 gap-6 mb-12">
@@ -242,16 +243,23 @@ export default function EnterpriseAIPage() {
       <section className="section-cta-premium text-white">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
+            <p className="text-xs font-bold tracking-[0.15em] uppercase text-white mb-4">
+              CONVERSA DE ADERÊNCIA
+            </p>
             <h2 className="text-display-lg text-white mb-5">
               Transforme seu atendimento em vendas consultivas
             </h2>
             <p className="text-lg text-white/70 mb-10">
-              Agende um diagnóstico gratuito e veja como o Concierge Digital
-              pode aumentar sua conversão com IA que entende pessoas.
+              Uma conversa para entender sua operação, os dados disponíveis e se existe uma
+              oportunidade concreta. Sem compromisso e sem pedir dados confidenciais de carteira
+              nesta etapa.
             </p>
-            <Link href="/contato" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
-              Agendar Demonstração
-            </Link>
+            <TrackedCTA
+              type="aderencia"
+              location="ia-para-empresas-cta-final"
+              variant="white"
+              text="Solicitar conversa de aderência"
+            />
           </div>
         </div>
       </section>

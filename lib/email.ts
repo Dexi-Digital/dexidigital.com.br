@@ -54,7 +54,7 @@ const emailTemplates = {
     
     <p>Obrigado por baixar nosso guia <strong>"IA Empresarial sem Riscos"</strong>.</p>
     
-    <p>Este guia contém 10 passos práticos para implementar IA com governança, segurança e ROI mensurável, baseado em projetos reais com grandes empresas.</p>
+    <p>Este guia contém 10 passos práticos para implementar IA com governança, segurança e ROI mensurável.</p>
     
     <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
       <h3 style="margin-top: 0; color: #1a1a2e;">📥 Baixe seu material:</h3>
@@ -71,14 +71,14 @@ const emailTemplates = {
     
     <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
     
-    <h3 style="color: #1a1a2e;">Próximo passo?</h3>
-    <p>Agende um diagnóstico gratuito e descubra como aplicar IA na sua empresa com resultados em 90 dias.</p>
+    <h3 style="color: #1a1a2e;">Próximo passo: conversa de aderência</h3>
+    <p>Uma conversa para entender sua operação, os dados disponíveis e se existe uma oportunidade concreta. Sem compromisso e sem pedir dados confidenciais de carteira nesta etapa.</p>
     
-    <a href="https://dexidigital.com.br/contato" style="display: inline-block; background: #1a1a2e; color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">Obter Diagnóstico em 24h →</a>
+    <a href="https://dexidigital.com.br/contato?cta=email-pdf" style="display: inline-block; background: #1a1a2e; color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">Solicitar conversa de aderência →</a>
   </div>
   
   <div style="background: #f8fafc; padding: 20px; border-radius: 0 0 12px 12px; text-align: center; font-size: 14px; color: #6b7280;">
-    <p style="margin: 0;">Dexi Digital - Inteligência que Transforma</p>
+    <p style="margin: 0;">Dexi Digital | Tecnologia para decisões comerciais de alto valor</p>
     <p style="margin: 10px 0 0;">São Paulo, SP | contato@dexidigital.com.br</p>
   </div>
 </body>
@@ -123,14 +123,14 @@ const emailTemplates = {
     
     <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
     
-    <h3 style="color: #1a1a2e;">Precisa de ajuda especializada?</h3>
-    <p>Nossa equipe pode fazer uma análise completa do seu código e arquitetura.</p>
+    <h3 style="color: #1a1a2e;">Próximo passo: conversa de aderência</h3>
+    <p>Uma conversa para entender sua operação, os dados disponíveis e se existe uma oportunidade concreta. Sem compromisso e sem pedir dados confidenciais de carteira nesta etapa.</p>
     
-    <a href="https://dexidigital.com.br/contato" style="display: inline-block; background: #1a1a2e; color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">Obter Diagnóstico em 24h →</a>
+    <a href="https://dexidigital.com.br/contato?cta=email-checklist" style="display: inline-block; background: #1a1a2e; color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">Solicitar conversa de aderência →</a>
   </div>
   
   <div style="background: #f8fafc; padding: 20px; border-radius: 0 0 12px 12px; text-align: center; font-size: 14px; color: #6b7280;">
-    <p style="margin: 0;">Dexi Digital - Inteligência que Transforma</p>
+    <p style="margin: 0;">Dexi Digital | Tecnologia para decisões comerciais de alto valor</p>
     <p style="margin: 10px 0 0;">São Paulo, SP | contato@dexidigital.com.br</p>
   </div>
 </body>
@@ -139,7 +139,7 @@ const emailTemplates = {
   },
 
   calculator: {
-    subject: '📊 Seu Relatório de ROI em Dados',
+    subject: '📊 Sua simulação de ROI',
     getHtml: (nome: string, roiData?: LeadData['roiData']) => {
       const formatCurrency = (value: number) =>
         new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
@@ -159,7 +159,7 @@ const emailTemplates = {
   <div style="background: #fff; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
     <h2 style="color: #1a1a2e; margin-top: 0;">Olá, ${nome}! 👋</h2>
     
-    <p>Aqui está o relatório completo de ROI baseado nos dados que você informou.</p>
+    <p>Aqui está a simulação de ROI com os dados que você informou. Os valores são estimativas calculadas a partir desses dados, não garantia de resultado.</p>
     
     ${roiData ? `
     <div style="background: #f0fdf4; padding: 20px; border-radius: 8px; margin: 20px 0; border: 1px solid #86efac;">
@@ -174,24 +174,18 @@ const emailTemplates = {
     </div>
     ` : ''}
     
-    <p><strong>Este relatório inclui:</strong></p>
-    <ul style="padding-left: 20px;">
-      <li>📊 Cálculo personalizado baseado nos seus dados</li>
-      <li>📈 Benchmarks comparativos do setor</li>
-      <li>💡 Recomendações de implementação</li>
-      <li>📋 Próximos passos sugeridos</li>
-    </ul>
+    <p>A simulação usa só os dados que você informou e as premissas fixas da calculadora. Para saber se esse potencial existe de fato na sua operação, o próximo passo é a conversa de aderência abaixo.</p>
     
     <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
     
-    <h3 style="color: #1a1a2e;">Quer validar esses números?</h3>
-    <p>Agende uma conversa com nossos especialistas para uma análise mais aprofundada e personalizada.</p>
+    <h3 style="color: #1a1a2e;">Quer entender se esses números se aplicam à sua operação?</h3>
+    <p>Uma conversa para entender sua operação, os dados disponíveis e se existe uma oportunidade concreta. Sem compromisso e sem pedir dados confidenciais de carteira nesta etapa.</p>
     
-    <a href="https://dexidigital.com.br/contato" style="display: inline-block; background: #1a1a2e; color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">Obter Diagnóstico em 24h →</a>
+    <a href="https://dexidigital.com.br/contato?cta=email-calculator" style="display: inline-block; background: #1a1a2e; color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">Solicitar conversa de aderência →</a>
   </div>
 
   <div style="background: #f8fafc; padding: 20px; border-radius: 0 0 12px 12px; text-align: center; font-size: 14px; color: #6b7280;">
-    <p style="margin: 0;">Dexi Digital - Inteligência que Transforma</p>
+    <p style="margin: 0;">Dexi Digital | Tecnologia para decisões comerciais de alto valor</p>
     <p style="margin: 10px 0 0;">São Paulo, SP | contato@dexidigital.com.br</p>
   </div>
 </body>

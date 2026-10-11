@@ -3,7 +3,7 @@ import TrackedCTA from '@/components/ui/TrackedCTA';
 import CountUp from '@/components/ui/CountUp';
 
 export const metadata: Metadata = {
-  title: 'Resultados Reais | Prova em Operação | Dexi Digital',
+  title: 'Resultados Reais | Prova em Operação',
   description:
     'Prova do Fykos em operação real: venda de alto ticket de R$ 1 milhão conduzida por IA em 15 dias, 1.230 leads processados e R$ 1,79 milhão em pipeline mapeado. Números auditáveis, nomes de clientes preservados.',
   keywords: [
@@ -94,8 +94,7 @@ export default function CasesPage() {
                   <p className="text-body-sm text-[var(--text-secondary)]">
                     Vender um veículo de altíssimo ticket não é responder rápido: é conduzir uma
                     jornada longa, com muitas idas e vindas, sem deixar o lead esfriar entre uma etapa
-                    e outra. É exatamente onde a IA de prateleira para: responde e devolve para o
-                    humano.
+                    e outra.
                   </p>
                 </div>
                 <div>
@@ -202,7 +201,7 @@ export default function CasesPage() {
             <p className="text-body-sm text-[var(--text-tertiary)]">
               Todos os resultados são de operações reais de clientes da Dexi Digital. Os nomes são
               preservados por confidencialidade; os números podem ser demonstrados em uma conversa de
-              diagnóstico.
+              aderência.
             </p>
           </div>
         </div>
@@ -213,20 +212,21 @@ export default function CasesPage() {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-xs font-bold tracking-[0.15em] uppercase text-white mb-4">
-              DIAGNÓSTICO DE 24H · SEM CUSTO
+              CONVERSA DE ADERÊNCIA
             </p>
             <h2 className="text-display-lg text-white mb-4">
               Pronto para gerar o seu próximo número?
             </h2>
             <p className="text-lg text-white/90 mb-10 max-w-2xl mx-auto">
-              Mapeamos seu funil e projetamos o ROI em 24 horas. Se não fechar a conta, o diagnóstico
-              é seu.
+              Uma conversa para entender sua operação, os dados disponíveis e se existe uma
+              oportunidade concreta. Sem compromisso e sem pedir dados confidenciais de carteira
+              nesta etapa.
             </p>
             <TrackedCTA
-              type="validation"
-              location="cta-final"
+              type="aderencia"
+              location="cases-cta-final"
               variant="money"
-              text="Agendar diagnóstico de 24h"
+              text="Solicitar conversa de aderência"
             />
           </div>
         </div>

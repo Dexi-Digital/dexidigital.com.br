@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { GRUPOS, findGrupo } from '@/lib/seo';
 import { FAQSchema } from '@/components/seo/FAQSchema';
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
-import { getWhatsAppUrl } from '@/lib/whatsapp';
+import TrackedCTA from '@/components/ui/TrackedCTA';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -37,10 +37,6 @@ export default async function GrupoPage({ params }: PageProps) {
   const { slug } = await params;
   const data = findGrupo(slug);
   if (!data) notFound();
-
-  const whatsappUrl = getWhatsAppUrl(
-    `Olá! Gostaria de saber mais sobre a solução de IA para ${data.nome}. [ref: /setores/grupos/${slug}]`
-  );
 
   return (
     <main className="min-h-screen">
@@ -80,9 +76,12 @@ export default async function GrupoPage({ params }: PageProps) {
               ))}
             </div>
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-150">
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                {data.ctaText} →
-              </a>
+              <TrackedCTA
+                type="aderencia"
+                location={`grupos-${data.slug}-hero`}
+                variant="primary"
+                text="Avaliar aderência da minha operação"
+              />
             </div>
           </div>
         </div>
@@ -149,7 +148,7 @@ export default async function GrupoPage({ params }: PageProps) {
       <section className="section-lg">
         <div className="container">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-h2 mb-6">Por que Dexi, não Syonet?</h2>
+            <h2 className="text-h2 mb-6">O diferencial da Dexi</h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
               {data.diferencialDexi}
             </p>
@@ -183,14 +182,20 @@ export default async function GrupoPage({ params }: PageProps) {
       <section className="section-lg border-t border-[var(--border-subtle)]">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
+            <p className="text-overline mb-4">CONVERSA DE ADERÊNCIA</p>
             <h2 className="text-h2 mb-4">Pronto para unificar seu grupo?</h2>
             <p className="text-lead text-[var(--text-secondary)] mb-8">
-              Diagnóstico gratuito em 24h. Sem compromisso.
+              Uma conversa para entender sua operação, os dados disponíveis e se existe uma
+              oportunidade concreta. Sem compromisso e sem pedir dados confidenciais de carteira
+              nesta etapa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                {data.ctaText} →
-              </a>
+              <TrackedCTA
+                type="aderencia"
+                location={`grupos-${data.slug}-cta-final`}
+                variant="primary"
+                text="Solicitar conversa de aderência"
+              />
               <Link href="/comparativo/dexi-vs-syonet" className="btn btn-secondary">
                 Comparar com Syonet
               </Link>

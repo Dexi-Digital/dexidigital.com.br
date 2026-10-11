@@ -1240,3 +1240,12 @@ Páginas internas da Dexi que ainda prometem "diagnóstico de 24h" ou exibem nú
 - [ ] Integrações citadas no `/o-fykos` (Syonet, AutoConf) e "single-tenant com criptografia" seguem verdadeiras?
 - [ ] Cases: preencher `lib/provas.ts`, obter autorizações de marca e números, registrar `validadoEm`.
 - [ ] Deploy do site da Dexi **antes** do Fykos (o formulário do Fykos depende do CORS novo).
+
+## Rodada 3 (2026-10-11): pontos pendentes concluídos
+
+- Travessão: `lib/sem-travessao.ts` (13 testes) limpou 239 ocorrências em blog/SEO/pilares e é aplicado na leitura de posts do banco e de notícias (o conteúdo gerado vive só na VPS). O prompt do gerador (`lib/gemini.ts`) ganhou as regras 11 (sem travessão) e 12 (CTA de aderência, sem 24h/ROI garantido). Varredura do build: 0 travessões em 51 páginas pré-renderizadas, 517 posts e rotas dinâmicas.
+- Páginas internas alinhadas (4 subagentes, arquivos exclusivos): verticais, institucionais, setores, serviços, modelos de SEO, blog, notícias, e-mails e WhatsApp. `TrackedCTA type="validation"` virou sinônimo de `aderencia`.
+- Números sem metodologia e cases sem fonte atribuídos à Dexi nos posts legados viraram afirmações qualitativas; estatísticas de mercado com fonte de terceiros ficaram.
+- SEO: `alternates.canonical` saiu do layout (declarava /sobre, /contato etc. como duplicatas da home) e ficou só na home; telefone fictício do schema virou o número público.
+- Contraste: `.section-cta-premium` força títulos brancos (o `.text-display-lg` global vencia o `text-white` no tema claro).
+- Fykos: manifesto v1.1 sem "Sem alucinações"; link LGPD aponta para a seção de direitos da política de privacidade (`/legal/lgpd` não existe).

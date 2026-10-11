@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import FAQItem from '@/components/ui/FAQItem';
+import TrackedCTA from '@/components/ui/TrackedCTA';
 import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'WebOS | Sites, Blogs e Landing Pages com a Dexi Digital',
+  title: 'WebOS | Sites, Blogs e Landing Pages',
   description: 'Conheça o WebOS, o sistema da Dexi para criar sites institucionais, blogs e landing pages com design premium, CMS editável, SEO técnico e estrutura pronta para crescer.',
   keywords: ['sites institucionais', 'blogs corporativos', 'landing pages', 'CMS', 'SEO técnico', 'presença digital', 'Dexi Digital'],
   openGraph: {
@@ -63,7 +64,7 @@ const entregaveis = [
   },
   {
     title: 'Performance & Base Técnica',
-    description: 'Tecnologia moderna, leve e organizada. Melhor do que soluções improvisadas.',
+    description: 'Tecnologia moderna, leve e organizada, pronta para evoluir com o seu negócio.',
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -149,7 +150,7 @@ const faqs = [
   },
   {
     question: 'Como o WebOS se relaciona com o Fykos?',
-    answer: 'O WebOS ocupa a camada de presença digital web (site, blog, páginas), enquanto o Fykos ocupa a camada de inteligência, automação e operação. Os dois se complementam sem competir entre si.',
+    answer: 'O WebOS ocupa a camada de presença digital web (site, blog, páginas), enquanto o Fykos é o produto de inteligência e execução comercial. Os dois se complementam sem competir entre si.',
   },
 ];
 
@@ -169,9 +170,13 @@ export default function WebOSPage() {
               Sites institucionais, blogs e landing pages com design de alto padrão, estrutura editável e tecnologia pronta para acompanhar o crescimento do seu negócio.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-150">
-              <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
-                Solicitar diagnóstico
-              </a>
+              <TrackedCTA
+                type="aderencia"
+                location="webos-hero"
+                variant="primary"
+                text="Avaliar aderência da minha operação"
+                className="btn-lg"
+              />
               <Link href="/contato" className="btn btn-outline btn-lg">
                 Falar com a Dexi
               </Link>

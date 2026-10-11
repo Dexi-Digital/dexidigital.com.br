@@ -1,6 +1,8 @@
 import { DatabaseSync } from 'node:sqlite';
 import { mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
+// Com extensão: este módulo também roda direto no Node (scripts/generate-blog-post.mjs).
+import { semTravessao } from './sem-travessao.ts';
 
 export interface DbBlogPost {
   id: string;
@@ -89,13 +91,14 @@ function rowToPost(row: BlogPostRow): DbBlogPost {
   return {
     id: row.id,
     slug: row.slug,
-    title: row.title,
-    excerpt: row.excerpt,
-    content: row.content,
+    // Travessão é proibido no site; posts já gerados vivem só no banco da VPS.
+    title: semTravessao(row.title, { titulo: true }),
+    excerpt: semTravessao(row.excerpt),
+    content: semTravessao(row.content),
     category: row.category,
     readTime: row.read_time,
     author: row.author,
-    metaDescription: row.meta_description,
+    metaDescription: semTravessao(row.meta_description),
     focusKeyword: row.focus_keyword,
     vertical: row.vertical,
     cluster: row.cluster,

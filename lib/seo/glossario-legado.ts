@@ -3,7 +3,7 @@
  *
  * Eram 2.057 URLs em /glossario/ (1.698 conceitos + 359 duplicatas de slug do
  * WordPress, do tipo algoritmo-2, algoritmo-3...). Todas viraram 404 e, sete
- * meses depois, AINDA recebem entrada de busca — o Google continua indexando.
+ * meses depois, AINDA recebem entrada de busca, o Google continua indexando.
  *
  * A lista foi recuperada do Wayback Machine, não do repositório: o conteúdo
  * não foi migrado e não existe mais em lugar nenhum.
@@ -14,7 +14,7 @@
  *
  * Só há destino para termo que corresponde a um serviço VIVO da Dexi. Quem não
  * corresponde (havia "o que é zimbro" e "o que é jogo de cartas" ali dentro)
- * recebe 404 com a página de conteúdo — mandar isso para uma página comercial
+ * recebe 404 com a página de conteúdo, mandar isso para uma página comercial
  * seria soft 404, que o Google trata como erro de qualquer forma.
  */
 

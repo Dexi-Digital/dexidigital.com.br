@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
+import TrackedCTA from '@/components/ui/TrackedCTA';
 
 export const metadata: Metadata = {
   title: 'Inteligência de Dados',
@@ -104,15 +104,23 @@ export default function DataIntelligencePage() {
       <section className="section-cta-premium text-white">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
+            <p className="text-xs font-bold tracking-[0.15em] uppercase text-white mb-4">
+              CONVERSA DE ADERÊNCIA
+            </p>
             <h2 className="text-display-lg text-white mb-5">
               Transforme seus dados em vantagem competitiva
             </h2>
             <p className="text-lg text-white/70 mb-10">
-              Agende um diagnóstico gratuito para discutir seus desafios de dados.
+              Uma conversa para entender sua operação, os dados disponíveis e se existe uma
+              oportunidade concreta. Sem compromisso e sem pedir dados confidenciais de carteira
+              nesta etapa.
             </p>
-            <a href={WHATSAPP_DIAGNOSTIC_URL} target="_blank" rel="noopener noreferrer" className="btn bg-white text-[var(--color-primary-700)] hover:bg-white/90">
-              Obter Diagnóstico em 24h
-            </a>
+            <TrackedCTA
+              type="aderencia"
+              location="inteligencia-de-dados-cta-final"
+              variant="white"
+              text="Solicitar conversa de aderência"
+            />
           </div>
         </div>
       </section>

@@ -12,16 +12,16 @@ const ScrollTracker = dynamic(
     { ssr: false }
 );
 
-// Seções principais para tracking na home
+// Seções principais para tracking na home (ids de app/page.tsx)
 const HOME_SECTIONS = [
     'hero',
-    'resultados',
-    'validacao-24h',
-    'problemas',
-    'riscos',
-    'engenharia',
-    'automotivo-cta',
+    'a-dor',
+    'o-que-fazemos',
+    'para-quem',
+    'fykos',
+    'provas',
     'faq',
+    'cta',
 ];
 
 export default function AnalyticsWrapper() {

@@ -119,7 +119,7 @@ export default function CalculadoraROIPage() {
             </h1>
             <p className="text-lead max-w-2xl mx-auto animate-fade-in-up delay-100">
               Estime o retorno financeiro de um projeto de inteligência de dados.
-              Responda algumas perguntas e receba uma análise personalizada.
+              Responda algumas perguntas e receba uma estimativa a partir dos seus dados.
             </p>
           </div>
         </div>
@@ -348,16 +348,16 @@ export default function CalculadoraROIPage() {
                   </div>
 
                   <p className="text-xs text-[var(--text-muted)] text-center">
-                    * Estimativa baseada em benchmarks do setor. Resultados reais podem variar.
+                    * Simulação com premissas fixas de custo por hora, redução de horas manuais, ganho de receita e investimento de referência. É uma estimativa a partir dos dados informados, não garantia de resultado.
                   </p>
                 </div>
 
                 {/* Email capture for full report */}
                 {!emailSubmitted ? (
                   <div className="card p-8">
-                    <h3 className="text-h4 mb-4 text-center">Receba o relatório completo</h3>
+                    <h3 className="text-h4 mb-4 text-center">Receba esta simulação por email</h3>
                     <p className="text-body-sm text-[var(--text-secondary)] text-center mb-6">
-                      Inclui análise detalhada, comparativo com seu setor e recomendações personalizadas.
+                      Enviamos o resumo desta simulação para você consultar depois e compartilhar com o time.
                     </p>
                     <form onSubmit={handleSubmitEmail} className="space-y-4">
                       <div className="grid sm:grid-cols-2 gap-4">
@@ -388,7 +388,7 @@ export default function CalculadoraROIPage() {
                         <p className="text-[var(--color-error-600)] text-sm">{submitError}</p>
                       )}
                       <button type="submit" disabled={isSubmitting} className="btn btn-primary w-full">
-                        {isSubmitting ? 'Enviando...' : 'Enviar relatório completo'}
+                        {isSubmitting ? 'Enviando...' : 'Receber simulação por email'}
                       </button>
                     </form>
                   </div>
@@ -399,8 +399,8 @@ export default function CalculadoraROIPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <h3 className="text-h4 mb-2">Relatório enviado!</h3>
-                    <p className="text-body-sm text-[var(--text-secondary)]">Verifique seu email para acessar a análise completa.</p>
+                    <h3 className="text-h4 mb-2">Simulação enviada!</h3>
+                    <p className="text-body-sm text-[var(--text-secondary)]">Verifique seu email para acessar o resumo da simulação.</p>
                   </div>
                 )}
 

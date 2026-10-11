@@ -17,7 +17,7 @@ export const SOLUCOES: SolucaoPage[] = [
     title: 'Gestão de Leads para Concessionárias',
     metaTitle: 'Gestão de Leads Automotivo com IA | Dexi Digital',
     metaDescription:
-      'Gestão inteligente de leads para concessionárias. Resposta em segundos, qualificação automática e distribuição otimizada. Supere o Syonet com automação de IA.',
+      'Gestão inteligente de leads para concessionárias. Resposta em segundos, qualificação automática e distribuição otimizada. Transforme o lead que custou caro em venda com automação de IA.',
     keywords: [
       'gestão de leads automotivo',
       'CRM concessionária leads',
@@ -26,12 +26,12 @@ export const SOLUCOES: SolucaoPage[] = [
       'follow-up automático concessionária',
     ],
     answerSnippet:
-      'A gestão de leads em concessionárias brasileiras perde até 40% das oportunidades por demora no atendimento e falta de contexto. O Fykos da Dexi Digital resolve isso com resposta instantânea, qualificação automática por IA e distribuição inteligente para vendedores — sem depender de CRMs manuais como o Syonet.',
+      'A gestão de leads em concessionárias brasileiras perde até 40% das oportunidades por demora no atendimento e falta de contexto. O Fykos da Dexi Digital resolve isso com resposta instantânea, qualificação automática por IA e distribuição inteligente para vendedores, sem exigir a troca do CRM que a concessionária já usa.',
     sections: [
       {
         heading: 'O problema da gestão de leads tradicional',
         content:
-          'Concessionárias brasileiras recebem leads de múltiplas fontes: site, portais (Webmotors, iCarros), redes sociais, Google Ads e walk-in. Sem um sistema inteligente, esses leads caem em planilhas ou CRMs manuais onde morrem por falta de follow-up. O Syonet registra o lead, mas não age sobre ele. A Dexi vai além: o Fykos responde, qualifica e distribui automaticamente.',
+          'Concessionárias brasileiras recebem leads de múltiplas fontes: site, portais (Webmotors, iCarros), redes sociais, Google Ads e walk-in. Sem um sistema inteligente, esses leads caem em planilhas ou CRMs manuais onde morrem por falta de follow-up. Um CRM como o Syonet organiza o registro e o funil; a Dexi parte de outra abordagem: o Fykos responde, qualifica e distribui automaticamente.',
       },
       {
         heading: 'Resposta em segundos, não horas',
@@ -51,14 +51,14 @@ export const SOLUCOES: SolucaoPage[] = [
       {
         heading: 'Follow-up persistente sem ser invasivo',
         content:
-          'O Fykos mantém follow-up automatizado com cadência inteligente: mais intenso para leads quentes, mais espaçado para leads em fase de pesquisa. O sistema sabe quando insistir e quando recuar — algo que nenhum vendedor humano faz consistentemente.',
+          'O Fykos mantém follow-up automatizado com cadência inteligente: mais intenso para leads quentes, mais espaçado para leads em fase de pesquisa. O sistema sabe quando insistir e quando recuar, algo que nenhum vendedor humano faz consistentemente.',
       },
     ],
     resultados: [
-      '+45% de conversão de leads digitais',
+      'Mais conversão dos leads digitais que a concessionária já paga para gerar',
       'Tempo de resposta < 30 segundos',
-      'Redução de 60% em leads perdidos',
-      'ROI positivo a partir do segundo mês',
+      'Menos leads perdidos por demora ou falta de follow-up',
+      'Retorno acompanhado mês a mês em dashboard',
     ],
     faq: [
       {
@@ -79,7 +79,7 @@ export const SOLUCOES: SolucaoPage[] = [
     title: 'Integração DMS para Concessionárias',
     metaTitle: 'Integração DMS com IA | Unificação de Dados | Dexi Digital',
     metaDescription:
-      'Integre seu DMS com IA para unificar dados do showroom ao pós-venda. Compatible com todos os DMS do mercado brasileiro. Dexi Digital.',
+      'Integre seu DMS com IA para unificar dados do showroom ao pós-venda. Compatível com os principais DMS do mercado brasileiro. Dexi Digital.',
     keywords: [
       'integração DMS concessionária',
       'DMS automotivo integração',
@@ -112,16 +112,16 @@ export const SOLUCOES: SolucaoPage[] = [
       },
     ],
     resultados: [
-      'Unificação de dados em 100% dos pontos de contato',
-      '+25% de receita descoberta em oportunidades cross-departamento',
-      'Redução de 70% no tempo de consolidação de relatórios',
+      'Dados unificados do showroom ao pós-venda',
+      'Receita descoberta em oportunidades entre departamentos',
+      'Relatórios consolidados sem trabalho manual',
       'Integração em 2-4 semanas sem parar operações',
     ],
     faq: [
       {
         question: 'Com quais DMS o Fykos é compatível?',
         answer:
-          'O Fykos integra com os principais DMS do mercado brasileiro via API. Avaliamos a compatibilidade durante o diagnóstico inicial sem compromisso.',
+          'O Fykos integra com os principais DMS do mercado brasileiro via API. Avaliamos a compatibilidade na conversa de aderência, sem compromisso.',
       },
       {
         question: 'Preciso trocar meu DMS atual?',
@@ -145,7 +145,7 @@ export const SOLUCOES: SolucaoPage[] = [
       'concessionária digital',
     ],
     answerSnippet:
-      'O atendimento omnichannel da Dexi Digital unifica WhatsApp, site, portais automotivos e redes sociais em uma experiência contínua para o comprador de veículos. O Fykos garante que o cliente seja reconhecido em qualquer canal, com contexto completo da conversa — eliminando a frustração de repetir informações.',
+      'O atendimento omnichannel da Dexi Digital unifica WhatsApp, site, portais automotivos e redes sociais em uma experiência contínua para o comprador de veículos. O Fykos garante que o cliente seja reconhecido em qualquer canal, com contexto completo da conversa, eliminando a frustração de repetir informações.',
     sections: [
       {
         heading: 'O problema do atendimento fragmentado',
@@ -170,9 +170,9 @@ export const SOLUCOES: SolucaoPage[] = [
     ],
     resultados: [
       'Atendimento unificado em todos os canais do cliente',
-      '+40% de conversão com continuidade de contexto',
-      'NPS > 85 em atendimento digital',
-      'Redução de 60% em leads perdidos por canal',
+      'Mais conversão com continuidade de contexto',
+      'Cliente que não precisa repetir quem é a cada canal',
+      'Menos leads perdidos na troca de canal',
     ],
     faq: [
       {
@@ -202,12 +202,12 @@ export const SOLUCOES: SolucaoPage[] = [
       'CRM automotivo inteligente',
     ],
     answerSnippet:
-      'O CRM unificado da Dexi Digital para grupos automotivos consolida dados de todas as marcas, unidades e departamentos em uma plataforma inteligente. Diferente do Syonet que opera por silo, o Fykos entrega visão 360° do cliente com cross-sell entre marcas e predição de recompra.',
+      'O CRM unificado da Dexi Digital para grupos automotivos consolida dados de todas as marcas, unidades e departamentos em uma plataforma inteligente. O Fykos entrega visão 360° do cliente com cross-sell entre marcas e predição de recompra, sem exigir a troca do CRM que o grupo já usa.',
     sections: [
       {
         heading: 'CRM tradicional vs. CRM inteligente',
         content:
-          'O CRM tradicional (incluindo Syonet) é um banco de dados glorificado: registra contatos, anota interações e gera relatórios. O Fykos vai além: analisa padrões, prediz comportamento, sugere ações e executa follow-up autonomamente. A diferença entre registrar e agir.',
+          'O CRM tradicional (incluindo o Syonet) é um sistema de registro: organiza contatos, interações e relatórios. O Fykos parte de outra abordagem: analisa padrões, prediz comportamento, sugere ações e executa follow-up autonomamente. A diferença entre registrar e agir.',
       },
       {
         heading: 'Visão consolidada do grupo',
@@ -222,13 +222,13 @@ export const SOLUCOES: SolucaoPage[] = [
       {
         heading: 'Predição de recompra e churn',
         content:
-          'Modelos de machine learning analisam ciclo de propriedade, histórico de interações e dados de mercado para prever quando cada cliente está pronto para trocar de carro — e qual modelo sugerir.',
+          'Modelos de machine learning analisam ciclo de propriedade, histórico de interações e dados de mercado para prever quando cada cliente está pronto para trocar de carro, e qual modelo sugerir.',
       },
     ],
     resultados: [
       'Dados consolidados de todas as marcas e unidades',
-      '+30% de receita com cross-sell entre marcas',
-      'Predição de recompra com 75% de acurácia',
+      'Mais receita com cross-sell entre marcas',
+      'Predição do momento de recompra de cada cliente',
       'Relatórios consolidados em segundos (vs. dias)',
     ],
     faq: [

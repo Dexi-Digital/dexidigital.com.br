@@ -25,7 +25,7 @@ export const INTEGRACOES: IntegracaoPage[] = [
       'WhatsApp Business IA',
     ],
     answerSnippet:
-      'A integração do WhatsApp Business API com o Fykos da Dexi Digital transforma o WhatsApp da concessionária de um canal manual em um canal inteligente: resposta instantânea a leads, qualificação automática, distribuição para vendedores com briefing e follow-up persistente — tudo via API oficial.',
+      'A integração do WhatsApp Business API com o Fykos da Dexi Digital transforma o WhatsApp da concessionária de um canal manual em um canal inteligente: resposta instantânea a leads, qualificação automática, distribuição para vendedores com briefing e follow-up persistente, tudo via API oficial.',
     sections: [
       {
         heading: 'Por que WhatsApp é o canal #1',
@@ -45,7 +45,7 @@ export const INTEGRACOES: IntegracaoPage[] = [
       {
         heading: 'Compliance e segurança',
         content:
-          'A integração via WhatsApp Business API (oficial) garante compliance com as políticas da Meta, LGPD e regulamentações do setor. Todas as mensagens são registradas e auditáveis. Sem risco de bloqueio por uso irregular.',
+          'A integração via WhatsApp Business API (oficial) garante compliance com as políticas da Meta, LGPD e regulamentações do setor. Todas as mensagens são registradas e auditáveis, o que reduz o risco de bloqueio por uso irregular.',
       },
     ],
     faq: [
@@ -127,7 +127,7 @@ export const INTEGRACOES: IntegracaoPage[] = [
       'Facebook Ads concessionária',
     ],
     answerSnippet:
-      'A integração do Fykos com Google Ads e Meta Ads garante que cada lead de mídia paga seja respondido em segundos e qualificado automaticamente. O resultado: o investimento em mídia converte mais porque nenhum lead é desperdiçado por demora ou falta de follow-up.',
+      'A integração do Fykos com Google Ads e Meta Ads garante que cada lead de mídia paga seja respondido em segundos e qualificado automaticamente. O objetivo: fazer o investimento em mídia render mais, com menos lead pago desperdiçado por demora ou falta de follow-up.',
     sections: [
       {
         heading: 'O desperdício invisível',
@@ -159,7 +159,7 @@ export const INTEGRACOES: IntegracaoPage[] = [
       {
         question: 'Consigo ver o custo por venda (não só custo por lead)?',
         answer:
-          'Sim. O sistema rastreia do clique à venda fechada, permitindo calcular o custo real por veículo vendido — não apenas o custo por lead.',
+          'Sim. O sistema rastreia do clique à venda fechada, permitindo calcular o custo real por veículo vendido, não apenas o custo por lead.',
       },
     ],
     ctaText: 'Otimizar ROI da minha mídia paga',

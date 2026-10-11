@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { INTEGRACOES, findIntegracao } from '@/lib/seo';
 import { FAQSchema } from '@/components/seo/FAQSchema';
-import { getWhatsAppUrl } from '@/lib/whatsapp';
+import TrackedCTA from '@/components/ui/TrackedCTA';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -18,13 +18,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const data = findIntegracao(slug);
   if (!data) return {};
 
+  // O layout já acrescenta "| Dexi Digital": tira o sufixo do dado para não duplicar.
+  const titulo = data.metaTitle.replace(/\s*\|\s*Dexi Digital\s*$/i, '');
+
   return {
-    title: data.metaTitle,
+    title: titulo,
     description: data.metaDescription,
     keywords: data.keywords,
     alternates: { canonical: `/integracoes/${slug}` },
     openGraph: {
-      title: data.metaTitle,
+      title: `${titulo} | Dexi Digital`,
       description: data.metaDescription,
       url: `https://dexidigital.com.br/integracoes/${slug}`,
       type: 'article',
@@ -36,10 +39,6 @@ export default async function IntegracaoPage({ params }: PageProps) {
   const { slug } = await params;
   const data = findIntegracao(slug);
   if (!data) notFound();
-
-  const whatsappUrl = getWhatsAppUrl(
-    `Olá! Gostaria de saber mais sobre a integração ${data.title}. [ref: /integracoes/${slug}]`
-  );
 
   return (
     <main className="min-h-screen">
@@ -61,9 +60,13 @@ export default async function IntegracaoPage({ params }: PageProps) {
             <p className="text-lead text-[var(--text-secondary)] max-w-3xl mb-10 animate-fade-in-up delay-100">
               {data.answerSnippet}
             </p>
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary animate-fade-in-up delay-150">
-              {data.ctaText} →
-            </a>
+            <TrackedCTA
+              type="aderencia"
+              location={`integracoes-${slug}-hero`}
+              variant="primary"
+              text="Avaliar aderência da minha operação"
+              className="animate-fade-in-up delay-150"
+            />
           </div>
         </div>
       </section>
@@ -108,13 +111,19 @@ export default async function IntegracaoPage({ params }: PageProps) {
       <section className="section-lg border-t border-[var(--border-subtle)]">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-h2 mb-4">Pronto para integrar?</h2>
+            <p className="text-overline mb-2">CONVERSA DE ADERÊNCIA</p>
+            <h2 className="text-h2 mb-4">Faz sentido para a sua operação?</h2>
             <p className="text-lead text-[var(--text-secondary)] mb-8">
-              Implementação em 2-4 semanas. Diagnóstico gratuito.
+              Uma conversa para entender sua operação, os dados disponíveis e se existe uma
+              oportunidade concreta. Sem compromisso e sem pedir dados confidenciais de carteira nesta
+              etapa.
             </p>
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-              {data.ctaText} →
-            </a>
+            <TrackedCTA
+              type="aderencia"
+              location={`integracoes-${slug}-cta-final`}
+              variant="primary"
+              text="Solicitar conversa de aderência"
+            />
           </div>
         </div>
       </section>
