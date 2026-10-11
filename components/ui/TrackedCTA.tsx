@@ -5,7 +5,7 @@ import { trackCTAClick, trackWhatsAppClick } from '@/lib/tracking';
 import { WHATSAPP_DIAGNOSTIC_URL, WHATSAPP_AUTOMOTIVO_URL } from '@/lib/whatsapp';
 
 type CTAVariant = 'primary' | 'secondary' | 'white' | 'link' | 'money';
-type CTAType = 'validation' | 'whatsapp' | 'synapse' | 'contact' | 'material' | 'custom';
+type CTAType = 'validation' | 'whatsapp' | 'synapse' | 'contact' | 'material' | 'aderencia' | 'custom';
 
 interface TrackedCTAProps {
   /** Tipo de CTA padronizado */
@@ -49,6 +49,10 @@ const CTA_CONFIG: Record<CTAType, { text: string; href?: string; isExternal?: bo
     text: 'Acessar Material',
     href: '/materiais/guia-ia-empresarial',
   },
+  aderencia: {
+    text: 'Avaliar aderência da minha operação',
+    href: '/contato',
+  },
   custom: {
     text: 'Saiba Mais',
   },
@@ -78,6 +82,10 @@ export default function TrackedCTA({
   let finalHref = href || config.href || '/';
   if (type === 'whatsapp' || type === 'validation') {
     finalHref = sector === 'automotivo' ? WHATSAPP_AUTOMOTIVO_URL : WHATSAPP_DIAGNOSTIC_URL;
+  }
+  // Conversa de aderência: o formulário registra de qual CTA a pessoa veio.
+  if (type === 'aderencia' && !href) {
+    finalHref = `/contato?cta=${encodeURIComponent(location)}`;
   }
 
   const isExternal = config.isExternal || finalHref.startsWith('http');

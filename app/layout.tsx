@@ -20,18 +20,18 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Dexi Digital - Inteligência de Dados e Software com IA Acelerada',
+    default: 'Dexi Digital | Tecnologia para decisões comerciais de alto valor',
     template: '%s | Dexi Digital',
   },
   description:
-    'Desenvolvimento de software sob medida e inteligência de dados com IA acelerada e supervisão técnica humana. 10+ anos de experiência com grupos automotivos e grandes corporações.',
+    'A Dexi desenvolve sistemas que transformam dados da operação em prioridades e ações comerciais, com regras, supervisão e rastreabilidade — sem exigir a troca do CRM. Criadora do Fykos.',
   keywords: [
+    'inteligência comercial',
+    'execução comercial',
+    'priorização de oportunidades',
     'inteligência de dados',
-    'IA empresarial',
-    'software sob medida',
-    'data intelligence',
-    'AI acelerada',
-    'desenvolvimento enterprise',
+    'Fykos',
+    'integração com CRM',
   ],
   authors: [{ name: 'Dexi Digital' }],
   creator: 'Dexi Digital',
@@ -45,23 +45,23 @@ export const metadata: Metadata = {
     locale: 'pt_BR',
     url: 'https://dexidigital.com.br',
     siteName: 'Dexi Digital',
-    title: 'Dexi Digital | Fykos: Sistema Operacional de Receita',
+    title: 'Dexi Digital | Tecnologia para decisões comerciais de alto valor',
     description:
-      'O Fykos reinventa o CRM e transforma seus dados em receita, sobre os sistemas que sua operação já usa. Não é IA genérica. É engenharia de receita.',
+      'A Dexi desenvolve sistemas que transformam dados da operação em prioridades e ações comerciais, com regras, supervisão e rastreabilidade — sem exigir a troca do CRM. Criadora do Fykos.',
     images: [
       {
         url: '/og-image-home.jpg',
         width: 1200,
         height: 630,
-        alt: 'Dexi Digital: Fykos, Sistema Operacional de Receita',
+        alt: 'Dexi Digital: tecnologia para decisões comerciais de alto valor',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dexi Digital | Fykos: Sistema Operacional de Receita',
+    title: 'Dexi Digital | Tecnologia para decisões comerciais de alto valor',
     description:
-      'O Fykos reinventa o CRM e transforma seus dados em receita, sobre os sistemas que sua operação já usa. Não é IA genérica. É engenharia de receita.',
+      'A Dexi desenvolve sistemas que transformam dados da operação em prioridades e ações comerciais, com regras, supervisão e rastreabilidade — sem exigir a troca do CRM. Criadora do Fykos.',
     images: ['/og-image-home.jpg'],
   },
   robots: {

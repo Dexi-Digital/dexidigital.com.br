@@ -1,12 +1,12 @@
 # Dexi Digital
 
-> Consultoria de IA e inteligência de dados focada em resultados de vendas. Criadora do Fykos, um Sistema Operacional de Receita que reinventa o CRM usando dados e IA sobre os sistemas que a operação já usa.
+> A Dexi Digital desenvolve tecnologia para decisões comerciais de alto valor: sistemas que transformam dados da operação em prioridades e ações comerciais, sem exigir a troca do CRM. Criadora do Fykos, produto de inteligência e execução comercial.
 
-A Dexi Digital combina engenharia de software crítico com IA aplicada para transformar dados operacionais em receita. Atua principalmente com grupos automotivos (concessionárias), clínicas de procedimentos e construtoras/incorporadoras no Brasil. O produto principal, Fykos, atua sobre o CRM existente do cliente — não exige migração de sistema.
+A Dexi integra CRM, estoque, histórico e fontes operacionais autorizadas para identificar oportunidades relevantes, orquestra a próxima ação com regras de negócio e executa processos com supervisão e rastreabilidade. Atua principalmente com grupos automotivos, além de construtoras/incorporadoras e clínicas no Brasil. O Fykos atua sobre os sistemas comerciais existentes — não exige migração de CRM.
 
 ## Produto
 
-- [O Fykos](https://dexidigital.com.br/o-fykos): o que é o Fykos e como reinventa o CRM com dados e IA
+- [O Fykos](https://dexidigital.com.br/o-fykos): produto de inteligência e execução comercial da Dexi — da oportunidade identificada à ação executada, com controle
 - [Metodologia](https://dexidigital.com.br/metodologia): como a Dexi implementa e opera o Fykos
 - [WebOS](https://dexidigital.com.br/produtos/webos): produto de infraestrutura web da Dexi
 
@@ -43,4 +43,4 @@ Definições curtas, uma página por termo — o formato mais direto para respon
 ## Institucional
 
 - [Sobre](https://dexidigital.com.br/sobre): fundadores e histórico da empresa
-- [Contato](https://dexidigital.com.br/contato)
+- [Contato](https://dexidigital.com.br/contato): conversa de aderência

@@ -15,7 +15,7 @@ export const organizationSchema = {
   },
   image: 'https://dexidigital.com.br/og-image-home.jpg',
   description:
-    'A Dexi Digital é uma empresa de software. Criou o Fykos, um Sistema Operacional de Receita que usa dados e IA sobre o CRM e os sistemas que a operação já usa, sem exigir migração. Atende operações de ticket alto e ciclo longo: grupos automotivos e concessionárias, clínicas de procedimento e construtoras e incorporadoras.',
+    'A Dexi Digital desenvolve tecnologia para decisões comerciais de alto valor: sistemas que transformam dados da operação em prioridades e ações comerciais, integrando as fontes existentes, com regras, supervisão e rastreabilidade, sem exigir a troca do CRM. Criou o Fykos, produto de inteligência e execução comercial. Atende grupos automotivos e outras operações em que cada oportunidade tem valor alto.',
   foundingDate: '2014',
   address: {
     '@type': 'PostalAddress',
@@ -34,6 +34,9 @@ export const organizationSchema = {
     name: 'Brazil',
   },
   knowsAbout: [
+    'Inteligência comercial',
+    'Execução comercial',
+    'Priorização de oportunidades',
     'Sistema Operacional de Receita',
     'Fykos',
     'IA sobre CRM existente',
@@ -50,7 +53,7 @@ export const organizationSchema = {
     'Integração com DMS e CRM',
     'Governança de IA',
   ],
-  slogan: 'IA como acelerador, nunca sozinha.',
+  slogan: 'Tecnologia para decisões comerciais de alto valor.',
   sameAs: [
     'https://linkedin.com/company/dexi-digital',
     'https://github.com/dexi-digital',
@@ -62,9 +65,9 @@ export const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
   '@id': 'https://dexidigital.com.br/#localbusiness',
-  name: 'Dexi Digital - Consultoria de IA e Inteligência de Dados',
+  name: 'Dexi Digital',
   description:
-    'Consultoria estratégica de IA e inteligência de dados para empresas enterprise no Brasil. Especializada em transformar processos de vendas complexos em alta conversão através de tecnologia brasileira.',
+    'Tecnologia para decisões comerciais de alto valor: integração de dados da operação, priorização de oportunidades e execução comercial com rastreabilidade.',
   url: 'https://dexidigital.com.br',
   telephone: '+55-34-99999-9999',
   email: 'contato@dexidigital.com.br',
@@ -89,11 +92,10 @@ export const localBusinessSchema = {
   priceRange: '$$$',
   openingHours: 'Mo-Fr 09:00-18:00',
   serviceType: [
-    'Sistema Operacional de Receita (Fykos)',
+    'Fykos: inteligência e execução comercial',
     'Engenharia de Dados & Ativos de Inteligência',
     'Desenvolvimento de Sistemas de Missão Crítica',
-    'IA para Grupos Automotivos',
-    'Consultoria de IA para Vendas',
+    'Inteligência comercial para grupos automotivos',
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -103,8 +105,9 @@ export const localBusinessSchema = {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Diagnóstico de Potencial de IA',
-          description: 'Análise gratuita do potencial de IA para sua empresa em 24h',
+          name: 'Conversa de aderência',
+          description:
+            'Avaliação da aderência da operação comercial: volume, dados disponíveis e viabilidade de implementação.',
         },
       },
     ],
@@ -117,7 +120,7 @@ export const websiteSchema = {
   '@id': 'https://dexidigital.com.br/#website',
   url: 'https://dexidigital.com.br',
   name: 'Dexi Digital',
-  description: 'Inteligência de Dados e Software com IA Acelerada',
+  description: 'Tecnologia para decisões comerciais de alto valor',
   publisher: {
     '@id': 'https://dexidigital.com.br/#organization',
   },
@@ -277,62 +280,12 @@ export const servicesSchema = [
   },
 ];
 
-export const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  '@id': 'https://dexidigital.com.br/#faq',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'A Dexi substitui desenvolvedores por IA?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Não. IA acelera tarefas repetitivas e prototipagem, mas toda solução passa por revisão técnica humana especializada. Arquitetura, segurança, escalabilidade e manutenibilidade são validadas por engenheiros experientes. IA é ferramenta, não substituta.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Como a Dexi garante segurança em soluções com IA?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Implementamos governança desde o início: rastreabilidade de decisões, explicabilidade de modelos, controle de acesso, auditoria completa e compliance com LGPD/GDPR. IA empresarial exige controle total, não caixas-pretas.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Quanto tempo leva um projeto típico?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Depende da complexidade. MVPs de inteligência de dados: 4-8 semanas. Sistemas enterprise completos: 3-6 meses. Sempre com entregas incrementais e validação contínua. Agilidade sem comprometer qualidade.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'A Dexi trabalha com empresas de que porte?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Focamos em médias e grandes empresas (50+ funcionários) com desafios complexos de dados e software. Grupos automotivos, corporações multi-unidade, empresas em crescimento acelerado. Clientes que não podem falhar.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Como funciona o suporte pós-entrega?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Todo projeto inclui documentação técnica completa, testes automatizados e período de garantia. Oferecemos contratos de suporte contínuo com SLA definido, evolução de features e monitoramento proativo.',
-      },
-    },
-  ],
-};
-
 export function getHomePageSchemas() {
   // organizationSchema e websiteSchema NAO entram aqui: o layout raiz ja os
   // emite em toda pagina. Repetir gerava dois Organization com o mesmo @id
-  // no HTML da home.
-  return [
-    ...servicesSchema,
-    faqSchema,
-  ];
+  // no HTML da home. O FAQPage da home sai do proprio app/page.tsx, a partir
+  // das mesmas perguntas exibidas na pagina.
+  return [...servicesSchema];
 }
 
 export function getArticleSchema(article: {

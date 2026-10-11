@@ -53,13 +53,13 @@ export default function Header() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary-500)] rounded-lg transition-base">
-              <span className="sr-only">Dexi Digital - Sistema Operacional de Receita</span>
+              <span className="sr-only">Dexi Digital</span>
               <div className="relative h-10 w-auto">
                 <Image
                   src={resolvedTheme === 'dark'
                     ? '/images/brand/Dexi White logo Transparent bg.svg'
                     : '/images/brand/logo.svg'}
-                  alt="Dexi Digital - Sistema Operacional de Receita"
+                  alt="Dexi Digital"
                   width={180}
                   height={48}
                   className="h-full w-auto object-contain"
@@ -208,7 +208,7 @@ export default function Header() {
                 </svg>
               )}
             </button>
-            <TrackedCTA type="validation" location="header" variant="money" text="Agendar diagnóstico" className="text-sm" />
+            <TrackedCTA type="aderencia" location="header" variant="money" text="Avaliar aderência" className="text-sm" />
           </div>
         </div>
 
@@ -286,7 +286,7 @@ export default function Header() {
                   )}
                 </button>
                 <div onClick={() => setMobileMenuOpen(false)}>
-                  <TrackedCTA type="validation" location="header-mobile" variant="money" text="Agendar diagnóstico" className="w-full text-center text-sm" />
+                  <TrackedCTA type="aderencia" location="header-mobile" variant="money" text="Avaliar aderência" className="w-full text-center text-sm" />
                 </div>
               </div>
             </div>

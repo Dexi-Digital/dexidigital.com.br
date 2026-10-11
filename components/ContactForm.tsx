@@ -2,24 +2,43 @@
 
 import { useState } from 'react';
 import { trackFormSubmit } from '@/lib/tracking';
+import { SEGMENTOS, TAMANHOS_OPERACAO, DESAFIOS } from '@/lib/lead-aderencia';
+
+const CAMPOS_INICIAIS = {
+  nome: '',
+  cargo: '',
+  empresa: '',
+  email: '',
+  whatsapp: '',
+  segmento: '',
+  tamanhoOperacao: '',
+  desafio: '',
+  crm: '',
+};
+
+const CHAVES_UTM = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+
+const ERRO_PADRAO =
+  'Não foi possível enviar agora. Tente novamente ou escreva para contato@dexidigital.com.br';
+
+// De onde a pessoa veio: CTA clicado (?cta=), página e UTMs presentes na URL.
+function rastreioDaPagina() {
+  const params = new URLSearchParams(window.location.search);
+  const utm: Record<string, string> = {};
+  for (const chave of CHAVES_UTM) {
+    const valor = params.get(chave);
+    if (valor) utm[chave] = valor;
+  }
+  return { cta: params.get('cta') ?? 'direto', pagina: window.location.href, utm };
+}
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    phone: '',
-    companySize: '',
-    sector: '',
-    challenge: '',
-    urgency: '',
-    message: '',
-  });
+  const [formData, setFormData] = useState(CAMPOS_INICIAIS);
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     setFormData({
       ...formData,
@@ -40,47 +59,38 @@ export default function ContactForm() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ ...formData, eventId }),
+        body: JSON.stringify({ ...formData, origem: 'dexi', ...rastreioDaPagina(), eventId }),
       });
 
       if (!response.ok) {
-        throw new Error('Erro ao enviar mensagem');
+        const corpo = await response.json().catch(() => null);
+        throw new Error(typeof corpo?.error === 'string' ? corpo.error : ERRO_PADRAO);
       }
 
       setStatus('success');
       trackFormSubmit('contact_form', true, eventId);
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        phone: '',
-        companySize: '',
-        sector: '',
-        challenge: '',
-        urgency: '',
-        message: '',
-      });
+      setFormData(CAMPOS_INICIAIS);
     } catch (error) {
       setStatus('error');
-      setErrorMessage('Erro ao enviar mensagem. Tente novamente ou envie um email para contato@dexidigital.com.br');
+      setErrorMessage(error instanceof Error && error.message ? error.message : ERRO_PADRAO);
       trackFormSubmit('contact_form', false);
     }
   };
 
   if (status === 'success') {
     return (
-      <div className="text-center py-8 animate-fade-in-up">
+      <div className="text-center py-8 animate-fade-in-up" role="status">
         <div className="w-16 h-16 bg-[var(--color-success-100)] dark:bg-[var(--color-success-900)]/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
           <svg className="w-8 h-8 text-[var(--color-success-600)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-h3 mb-2">Mensagem enviada!</h3>
+        <h3 className="text-h3 mb-2">Solicitação recebida</h3>
         <p className="text-body-sm text-[var(--text-secondary)] mb-6">
-          Obrigado pelo contato. Responderemos em até 24 horas.
+          Vamos analisar as informações e entrar em contato para agendar a conversa de aderência.
         </p>
         <button onClick={() => setStatus('idle')} className="btn btn-ghost">
-          Enviar outra mensagem
+          Enviar outra solicitação
         </button>
       </div>
     );
@@ -88,179 +98,170 @@ export default function ContactForm() {
 
   const inputClasses = "w-full px-4 py-3 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-primary)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)] focus:border-transparent transition-base";
   const labelClasses = "block text-sm font-medium text-[var(--text-primary)] mb-1.5";
+  const obrigatorio = <span className="text-[var(--color-error-500)]">*</span>;
+  const opcional = <span className="font-normal text-[var(--text-tertiary)]">(opcional)</span>;
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
-      <div>
-        <label htmlFor="name" className={labelClasses}>
-          Nome completo <span className="text-[var(--color-error-500)]">*</span>
-        </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          required
-          value={formData.name}
-          onChange={handleChange}
-          className={inputClasses}
-          placeholder="João Silva"
-        />
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label htmlFor="nome" className={labelClasses}>
+            Nome {obrigatorio}
+          </label>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            required
+            autoComplete="name"
+            value={formData.nome}
+            onChange={handleChange}
+            className={inputClasses}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="cargo" className={labelClasses}>
+            Cargo {obrigatorio}
+          </label>
+          <input
+            type="text"
+            id="cargo"
+            name="cargo"
+            required
+            autoComplete="organization-title"
+            value={formData.cargo}
+            onChange={handleChange}
+            className={inputClasses}
+            placeholder="Ex.: Diretor comercial"
+          />
+        </div>
+      </div>
+
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label htmlFor="empresa" className={labelClasses}>
+            Empresa {obrigatorio}
+          </label>
+          <input
+            type="text"
+            id="empresa"
+            name="empresa"
+            required
+            autoComplete="organization"
+            value={formData.empresa}
+            onChange={handleChange}
+            className={inputClasses}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="email" className={labelClasses}>
+            E-mail corporativo {obrigatorio}
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            autoComplete="email"
+            value={formData.email}
+            onChange={handleChange}
+            className={inputClasses}
+          />
+        </div>
       </div>
 
       <div>
-        <label htmlFor="email" className={labelClasses}>
-          Email corporativo <span className="text-[var(--color-error-500)]">*</span>
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          value={formData.email}
-          onChange={handleChange}
-          className={inputClasses}
-          placeholder="joao@empresa.com.br"
-        />
-      </div>
-
-      <div>
-        <label htmlFor="company" className={labelClasses}>
-          Empresa <span className="text-[var(--color-error-500)]">*</span>
-        </label>
-        <input
-          type="text"
-          id="company"
-          name="company"
-          required
-          value={formData.company}
-          onChange={handleChange}
-          className={inputClasses}
-          placeholder="Nome da empresa"
-        />
-      </div>
-
-      <div>
-        <label htmlFor="phone" className={labelClasses}>
-          Telefone
+        <label htmlFor="whatsapp" className={labelClasses}>
+          WhatsApp {opcional}
         </label>
         <input
           type="tel"
-          id="phone"
-          name="phone"
-          value={formData.phone}
+          id="whatsapp"
+          name="whatsapp"
+          autoComplete="tel"
+          value={formData.whatsapp}
           onChange={handleChange}
           className={inputClasses}
           placeholder="(00) 00000-0000"
         />
       </div>
 
-      <div className="grid sm:grid-cols-2 gap-4">
-        <div>
-          <label htmlFor="companySize" className={labelClasses}>
-            Tamanho da empresa <span className="text-[var(--color-error-500)]">*</span>
-          </label>
-          <select
-            id="companySize"
-            name="companySize"
-            required
-            value={formData.companySize}
-            onChange={handleChange}
-            className={inputClasses}
-          >
-            <option value="">Selecione</option>
-            <option value="1-10">1-10 funcionários</option>
-            <option value="11-50">11-50 funcionários</option>
-            <option value="51-200">51-200 funcionários</option>
-            <option value="201-500">201-500 funcionários</option>
-            <option value="500+">500+ funcionários</option>
-          </select>
-        </div>
-
-        <div>
-          <label htmlFor="sector" className={labelClasses}>
-            Setor <span className="text-[var(--color-error-500)]">*</span>
-          </label>
-          <select
-            id="sector"
-            name="sector"
-            required
-            value={formData.sector}
-            onChange={handleChange}
-            className={inputClasses}
-          >
-            <option value="">Selecione</option>
-            <option value="automotivo">Automotivo / Concessionárias</option>
-            <option value="varejo">Varejo / E-commerce</option>
-            <option value="financeiro">Financeiro / Seguros</option>
-            <option value="saude">Saúde</option>
-            <option value="logistica">Logística / Transporte</option>
-            <option value="manufatura">Manufatura / Indústria</option>
-            <option value="tecnologia">Tecnologia / SaaS</option>
-            <option value="outro">Outro</option>
-          </select>
-        </div>
-      </div>
-
       <div>
-        <label htmlFor="challenge" className={labelClasses}>
-          Principal desafio <span className="text-[var(--color-error-500)]">*</span>
+        <label htmlFor="segmento" className={labelClasses}>
+          Segmento {obrigatorio}
         </label>
         <select
-          id="challenge"
-          name="challenge"
+          id="segmento"
+          name="segmento"
           required
-          value={formData.challenge}
+          value={formData.segmento}
           onChange={handleChange}
           className={inputClasses}
         >
-          <option value="">Selecione o desafio principal</option>
-          <option value="conversao-leads">Baixa conversão de leads em vendas</option>
-          <option value="dados-fragmentados">Dados fragmentados / sem visão unificada</option>
-          <option value="processos-manuais">Processos manuais que precisam de automação</option>
-          <option value="decisoes-dados">Dificuldade em tomar decisões baseadas em dados</option>
-          <option value="sistema-legado">Sistema legado que precisa ser modernizado</option>
-          <option value="ia-implementar">Quero implementar IA mas não sei por onde começar</option>
-          <option value="outro">Outro desafio</option>
+          <option value="">Selecione</option>
+          {SEGMENTOS.map((o) => (
+            <option key={o.value} value={o.value}>{o.label}</option>
+          ))}
         </select>
       </div>
 
       <div>
-        <label htmlFor="urgency" className={labelClasses}>
-          Urgência <span className="text-[var(--color-error-500)]">*</span>
+        <label htmlFor="tamanhoOperacao" className={labelClasses}>
+          Tamanho da operação {obrigatorio}
         </label>
         <select
-          id="urgency"
-          name="urgency"
+          id="tamanhoOperacao"
+          name="tamanhoOperacao"
           required
-          value={formData.urgency}
+          value={formData.tamanhoOperacao}
           onChange={handleChange}
           className={inputClasses}
         >
-          <option value="">Qual a urgência?</option>
-          <option value="imediato">Imediato - preciso resolver agora</option>
-          <option value="1-3-meses">1-3 meses - planejando para breve</option>
-          <option value="3-6-meses">3-6 meses - explorando opções</option>
-          <option value="pesquisa">Apenas pesquisando</option>
+          <option value="">Volume aproximado de oportunidades</option>
+          {TAMANHOS_OPERACAO.map((o) => (
+            <option key={o.value} value={o.value}>{o.label}</option>
+          ))}
         </select>
       </div>
 
       <div>
-        <label htmlFor="message" className={labelClasses}>
-          Detalhes adicionais (opcional)
+        <label htmlFor="desafio" className={labelClasses}>
+          Desafio mais relevante {obrigatorio}
         </label>
-        <textarea
-          id="message"
-          name="message"
-          value={formData.message}
+        <select
+          id="desafio"
+          name="desafio"
+          required
+          value={formData.desafio}
           onChange={handleChange}
-          rows={4}
           className={inputClasses}
-          placeholder="Conte mais sobre seu contexto, sistemas atuais, expectativas..."
+        >
+          <option value="">Selecione</option>
+          {DESAFIOS.map((o) => (
+            <option key={o.value} value={o.value}>{o.label}</option>
+          ))}
+        </select>
+      </div>
+
+      <div>
+        <label htmlFor="crm" className={labelClasses}>
+          CRM atual {opcional}
+        </label>
+        <input
+          type="text"
+          id="crm"
+          name="crm"
+          value={formData.crm}
+          onChange={handleChange}
+          className={inputClasses}
+          placeholder="Ex.: Syonet, Salesforce, RD Station"
         />
       </div>
 
       {status === 'error' && (
-        <div className="p-4 bg-[var(--color-error-50)] dark:bg-[var(--color-error-900)]/20 border border-[var(--color-error-200)] dark:border-[var(--color-error-800)] rounded-xl animate-fade-in">
+        <div className="p-4 bg-[var(--color-error-50)] dark:bg-[var(--color-error-900)]/20 border border-[var(--color-error-200)] dark:border-[var(--color-error-800)] rounded-xl animate-fade-in" role="alert">
           <p className="text-sm text-[var(--color-error-600)]">{errorMessage}</p>
         </div>
       )}
@@ -279,10 +280,13 @@ export default function ContactForm() {
             Enviando...
           </>
         ) : (
-          'Solicitar Diagnóstico Gratuito'
+          'Solicitar conversa de aderência'
         )}
       </button>
+
+      <p className="text-xs text-[var(--text-tertiary)] text-center">
+        Nesta etapa não pedimos dados confidenciais de carteira.
+      </p>
     </form>
   );
 }
-

@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,7 +8,7 @@ export default function Footer() {
     services: [
       { name: 'Engenharia de Dados & Ativos de Inteligência', href: '/servicos/inteligencia-de-dados' },
       { name: 'Desenvolvimento de Sistemas de Missão Crítica', href: '/servicos/software-sob-medida' },
-      { name: 'Sistema Operacional de Receita (Fykos)', href: '/servicos/ia-para-empresas' },
+      { name: 'Fykos: inteligência e execução comercial', href: '/servicos/ia-para-empresas' },
     ],
     company: [
       { name: 'Sobre', href: '/sobre' },
@@ -43,10 +42,10 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm text-white/60 leading-relaxed mb-4">
-              A Dexi é uma empresa de software. Criamos o Fykos, um Sistema Operacional de Receita que reinventa o CRM e usa dados e IA para colocar dinheiro no bolso do dono, sobre os sistemas que sua operação já usa.
+              A Dexi desenvolve sistemas que transformam dados da operação em prioridades e ações comerciais. Criou o Fykos, produto de inteligência e execução comercial.
             </p>
             <p className="text-sm text-white/40">
-              Para operações onde a precisão é inegociável.
+              Integração, regras, supervisão e rastreabilidade.
             </p>
           </div>
 
@@ -91,15 +90,13 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href={WHATSAPP_DIAGNOSTIC_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/contato?cta=footer"
                   className="inline-flex items-center text-sm font-semibold text-[var(--color-primary-400)] hover:text-[var(--color-primary-300)] transition-base group"
                 >
-                  Validar Impacto no EBITDA
+                  Avaliar aderência
                   <span className="ml-1 group-hover:translate-x-0.5 transition-transform">→</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -109,17 +106,17 @@ export default function Footer() {
         <div className="mt-14 pt-10 border-t border-white/10">
           <div className="text-center mb-10">
             <p className="text-lg md:text-xl font-semibold text-white tracking-tight mb-2">
-              Inteligência nos comandos, trilhos na execução.
+              Tecnologia para decisões comerciais de alto valor.
             </p>
             <p className="text-sm text-white/40">
-            O Fykos converte dados complexos em receita, sobre o sistema que você já usa. Tecnologia brasileira com execução validada em líderes.
+              Dados da operação transformados em prioridades e ações, sem trocar o CRM.
             </p>
           </div>
 
           {/* Bottom bar */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-6 border-t border-white/5">
             <p className="text-xs text-white/40">
-              © {currentYear} Dexi Digital. Engenharia de receita. Tecnologia validada em operações.
+              © {currentYear} Dexi Digital. Tecnologia para decisões comerciais de alto valor.
             </p>
             <div className="flex gap-6">
               {navigation.legal.map((item) => (
