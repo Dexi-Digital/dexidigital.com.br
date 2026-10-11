@@ -11,7 +11,7 @@ export const AUTOMOTIVE_CLIENTS: ClientLogo[] = [
   { name: 'Vamaq Motors', src: '/images/clients/vamaq.svg' },
 ];
 
-/** Cliente de construtoras/incorporadoras (/construtoras) */
+/** Clientes de construtoras/incorporadoras (/construtoras); na página, sempre "alguns dos clientes" */
 export const CONSTRUCTION_CLIENTS: ClientLogo[] = [
   { name: 'TGV Empreendimentos', src: '/images/clients/tgv.png' },
 ];

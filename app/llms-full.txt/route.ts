@@ -52,7 +52,7 @@ export async function GET() {
     '',
     '- Grupos automotivos e concessionárias',
     '- Clínicas de procedimento (soroterapia, injetáveis, estética avançada)',
-    '- Construtoras e incorporadoras (gestão de carteira para quem financia com recursos próprios: boletos, carteira de ativos e cobrança)',
+    '- Construtoras e incorporadoras (gestão de carteira para quem financia com recursos próprios: cobrança periódica com o boleto gerado no sistema da empresa e encaminhamento para renegociação humana)',
     '',
     '## Como a Dexi trabalha',
     '',

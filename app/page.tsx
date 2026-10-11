@@ -80,7 +80,7 @@ const SETORES = [
   {
     nome: 'Construtoras e incorporadoras',
     href: '/construtoras',
-    texto: 'Gestão de carteira para quem financia com recursos próprios: emissão de boletos, gestão da carteira de ativos e cobrança.',
+    texto: 'Gestão de carteira para quem financia com recursos próprios: cobrança periódica com o boleto do seu sistema e renegociação encaminhada ao seu time.',
   },
   {
     nome: 'Clínicas',

@@ -48,7 +48,7 @@ const CTA_CONFIG: Record<CTAType, { text: string; href?: string; isExternal?: bo
   },
   material: {
     text: 'Acessar Material',
-    href: '/materiais/guia-ia-empresarial',
+    href: '/materiais/calculadora-roi',
   },
   aderencia: {
     text: 'Avaliar aderência da minha operação',

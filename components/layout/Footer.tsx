@@ -18,8 +18,8 @@ export default function Footer() {
       { name: 'Contato', href: '/contato' },
     ],
     legal: [
-      { name: 'Política de Privacidade', href: '/privacidade' },
-      { name: 'Termos de Uso', href: '/termos' },
+      { name: 'Política de Privacidade', href: '/politica-de-privacidade-fykos' },
+      { name: 'Termos de Uso', href: '/termos-de-uso-fykos' },
     ],
   };
 

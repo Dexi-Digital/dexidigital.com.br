@@ -128,11 +128,27 @@ const nextConfig: NextConfig = {
         destination: '/glossario-ia-automotiva/execucao-autonoma-ia',
         permanent: true,
       },
-      // Legacy materials/resources
+      // Legacy materials/resources. O guia "IA Empresarial" saiu do ar em out/2026.
       {
         source: '/recursos',
-        destination: '/materiais/guia-ia-empresarial',
+        destination: '/blog',
         permanent: false,
+      },
+      {
+        source: '/materiais/guia-ia-empresarial',
+        destination: '/blog',
+        permanent: true,
+      },
+      // O rodapé apontava para /privacidade e /termos, que nunca existiram.
+      {
+        source: '/privacidade',
+        destination: '/politica-de-privacidade-fykos',
+        permanent: true,
+      },
+      {
+        source: '/termos',
+        destination: '/termos-de-uso-fykos',
+        permanent: true,
       },
       {
         source: '/calculadora',

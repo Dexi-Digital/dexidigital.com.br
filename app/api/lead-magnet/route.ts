@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate type
-    const validTypes = ['pdf', 'checklist', 'calculator'] as const;
+    const validTypes = ['checklist', 'calculator'] as const;
     type ValidType = typeof validTypes[number];
 
     if (!validTypes.includes(type as ValidType)) {
@@ -141,7 +141,6 @@ export async function POST(request: NextRequest) {
 
 function getDefaultTitle(type: string): string {
   const titles: Record<string, string> = {
-    pdf: 'Guia: IA Empresarial sem Riscos',
     checklist: 'Checklist: Qualidade de Software',
     calculator: 'Calculadora de ROI em Dados',
   };

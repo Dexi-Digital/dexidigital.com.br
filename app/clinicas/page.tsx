@@ -5,7 +5,7 @@ import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 export const metadata: Metadata = {
   title: 'Fykos para Clínicas',
   description:
-    'Agenda com buraco é receita que não volta. O Fykos mantém relacionamento contínuo com cada paciente: acompanha procedimentos recorrentes, antecipa retorno e renovação de receita médica e reduz o no-show. Estamos selecionando as primeiras clínicas como casos-fundadores.',
+    'Agenda com buraco é receita que não volta. O Fykos foi desenhado para manter relacionamento contínuo com cada paciente: retorno, procedimentos recorrentes e renovação de receita médica na hora certa. Estamos selecionando as primeiras clínicas como casos-fundadores.',
   keywords: [
     'IA para clínicas',
     'relacionamento com pacientes',
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     'Fykos',
   ],
   openGraph: {
-    title: 'Fykos para Clínicas | A Dexi não deixa o paciente sumir',
+    title: 'Fykos para Clínicas | Relacionamento contínuo com o paciente',
     description:
-      'Agenda com buraco é receita que não volta. Relacionamento contínuo com o paciente: procedimentos recorrentes em dia, retorno e renovação de receita médica antecipados e menos no-show. Estamos selecionando as primeiras clínicas como casos-fundadores.',
+      'Agenda com buraco é receita que não volta. Relacionamento contínuo com o paciente: retorno, procedimentos recorrentes e renovação de receita médica na hora certa. Estamos selecionando as primeiras clínicas como casos-fundadores.',
     type: 'website',
     locale: 'pt_BR',
   },
@@ -31,7 +31,7 @@ const DIFERENCIAIS = [
   {
     titulo: 'Relacionamento contínuo, não resgate de última hora',
     corpo:
-      'O Fykos acompanha quem faz procedimento recorrente: a soroterapia que exige aplicação semanal, a receita médica que precisa ser renovada e não pode esperar três meses por uma consulta. E remarca o retorno na hora certa, antes de a agenda abrir buraco.',
+      'A aplicação para clínicas acompanha quem faz procedimento recorrente: a soroterapia que exige aplicação semanal, a receita médica que precisa ser renovada e não pode esperar três meses por uma consulta. E propõe a remarcação do retorno antes de a agenda abrir buraco.',
   },
   {
     titulo: 'Comandos com inteligência, execução em trilhos',
@@ -66,15 +66,14 @@ export default function ClinicasPage() {
             <p className="text-overline mb-4 animate-fade-in-up-subtle">FYKOS PARA CLÍNICAS</p>
 
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
-              Agenda com buraco é receita que não volta. A Dexi não deixa o{' '}
-              <span className="text-result">paciente sumir</span>.
+              Agenda com buraco é receita que não volta. O Fykos foi feito para o{' '}
+              <span className="text-result">paciente voltar</span>.
             </h1>
 
             <p className="text-lead text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto animate-fade-in-up delay-150">
-              Cada paciente que não volta leva junto a receita do próximo procedimento. O Fykos
-              mantém relacionamento contínuo com quem já é paciente da clínica: acompanha
-              procedimentos recorrentes, antecipa retorno e renovação de receita médica e reduz o
-              no-show, para que a agenda vire previsibilidade de receita.
+              Cada paciente que não volta leva junto a receita do próximo procedimento. O Fykos foi
+              desenhado para manter o relacionamento contínuo: retorno, procedimentos recorrentes e
+              renovação de receita médica na hora certa.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4 animate-fade-in-up delay-200">

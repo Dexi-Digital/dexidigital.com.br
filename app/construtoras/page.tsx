@@ -6,7 +6,7 @@ import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 export const metadata: Metadata = {
   title: 'Gestão de carteira para construtoras e incorporadoras',
   description:
-    'Gestão de carteira para construtoras e incorporadoras que financiam com recursos próprios: emissão de boletos, gestão da carteira de ativos e cobrança que preserva o relacionamento. Carteira em dia, inadimplência sob controle e previsibilidade de recebimento.',
+    'Gestão de carteira para construtoras e incorporadoras que financiam com recursos próprios: cobrança periódica com o boleto gerado no seu sistema e renegociação encaminhada ao seu time quando o comprador pede. Carteira em dia e previsibilidade de recebimento.',
   keywords: [
     'gestão de carteira',
     'construtoras',
@@ -14,8 +14,8 @@ export const metadata: Metadata = {
     'loteadoras',
     'financiamento com recursos próprios',
     'venda com recursos próprios',
-    'emissão de boletos',
     'cobrança de parcelas',
+    'renegociação de parcelas',
     'carteira de recebíveis',
     'inadimplência',
     'pré-lançamento imobiliário',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Fykos para Construtoras e Incorporadoras | Carteira em dia, receita previsível',
     description:
-      'Gestão de carteira para quem financia com recursos próprios: emissão de boletos, gestão da carteira de ativos e cobrança que preserva o relacionamento com o comprador.',
+      'Gestão de carteira para quem financia com recursos próprios: cobrança periódica com o boleto do seu sistema e renegociação encaminhada ao seu time.',
     type: 'website',
     locale: 'pt_BR',
   },
@@ -36,7 +36,7 @@ const MOMENTOS = [
     overline: 'DEPOIS DA VENDA',
     titulo: 'Gestão de carteira e cobrança',
     corpo:
-      'Venda com recursos próprios é carteira longa. O Fykos cuida da emissão de boletos, acompanha cada parcela da carteira de ativos e cobra preservando o relacionamento: lembra antes do vencimento e, quando alguém atrasa, escala para o seu time negociar. A receita entra sem desgastar a relação com o comprador.',
+      'Venda com recursos próprios é carteira longa. O Fykos faz a cobrança periódica de cada comprador com o boleto que o seu sistema já gera e, quando alguém pede para renegociar, encaminha a conversa ao seu time. A receita entra sem desgastar a relação com quem comprou.',
   },
   {
     overline: 'ANTES DO LANÇAMENTO',
@@ -48,9 +48,9 @@ const MOMENTOS = [
 
 const DIFERENCIAIS = [
   {
-    titulo: 'Carteira acompanhada parcela a parcela',
+    titulo: 'Cobrança periódica, renegociação com o seu time',
     corpo:
-      'Cada parcela da carteira de ativos fica acompanhada: boleto emitido, lembrete antes do vencimento e cobrança quando há atraso, com encaminhamento ao seu time para negociar. Inadimplência sob controle sem desgastar o relacionamento.',
+      'Cada comprador recebe a cobrança no ritmo que a operação definiu, com o código de barras do boleto que o seu sistema já emite. Quem pede para renegociar vai direto para o seu time, com o histórico da conversa registrado.',
   },
   {
     titulo: 'Comandos com inteligência, execução em trilhos',
@@ -92,10 +92,9 @@ export default function ConstrutorasPage() {
             </h1>
 
             <p className="text-lead text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto animate-fade-in-up delay-150">
-              O Fykos faz a gestão de carteira para construtoras e incorporadoras que financiam com
-              recursos próprios: emissão de boletos, gestão da carteira de ativos e cobrança que
-              preserva o relacionamento com o comprador. Inadimplência sob controle e previsibilidade
-              de recebimento.
+              O Fykos faz a cobrança periódica da carteira de quem financia com recursos próprios,
+              com o boleto que o seu sistema já gera, e encaminha ao seu time quem pede para
+              renegociar. Parcelas em dia e recebimento previsível.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4 animate-fade-in-up delay-200">
@@ -178,24 +177,27 @@ export default function ConstrutorasPage() {
                 CRM de vendas
               </span>
               <span className="card px-6 py-3 text-body-sm font-semibold text-[var(--text-primary)]">
-                ERP da obra
+                ERP ou sistema financeiro
               </span>
             </div>
             <p className="text-body-sm text-[var(--text-secondary)] max-w-2xl mx-auto">
-              O mesmo motor conecta ao sistema-núcleo da sua operação: não troca de sistema,
-              ganha uma camada de inteligência sobre ele.
+              O boleto continua saindo do seu sistema: o Fykos busca o código de barras lá e cuida
+              da cobrança. Não troca de sistema, ganha uma camada de inteligência sobre ele.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Prova: logo do cliente, sem narrativa nem descrição de quem é quem */}
+      {/* Prova: logos sempre como amostra no plural ("alguns dos clientes"), sem dizer quantos são */}
       <section id="prova" className="section bg-[var(--bg-primary)]">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-overline mb-2">QUEM JÁ USA</p>
             <div className="card p-8 md:p-10">
-              <h2 className="text-h3 mb-6">A cobrança de carteira do Fykos já roda em operação</h2>
+              <h2 className="text-h3 mb-4">A cobrança de carteira do Fykos já roda em operação</h2>
+              <p className="text-body-sm text-[var(--text-tertiary)] mb-6">
+                Alguns dos clientes atendidos
+              </p>
               <ClientLogos logos={CONSTRUCTION_CLIENTS} />
             </div>
           </div>

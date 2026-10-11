@@ -123,7 +123,7 @@ export const PILLARS: Pillar[] = [
   {
     slug: 'carteira-incorporadora',
     title: 'Repasse, distrato e carteira: o cliente que já comprou',
-    description: 'Gestão da carteira de quem financia com recursos próprios: boletos, cobrança e o cliente que já comprou.',
+    description: 'Gestão da carteira de quem financia com recursos próprios: cobrança, renegociação e o cliente que já comprou.',
     vertical: 'Construção e incorporação',
     cluster: '4. Repasse, distrato e carteira',
   },

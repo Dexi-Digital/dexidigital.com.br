@@ -8,18 +8,22 @@ interface RateLimitEntry {
   resetTime: number;
 }
 
-// In-memory store (resets on server restart)
-const rateLimitStore = new Map<string, RateLimitEntry>();
+// In-memory store (resets on server restart). Uma contagem por limite: antes
+// era uma só por IP, e as chamadas de /api/identify (uma por página visitada)
+// gastavam a cota dos formulários de contato e newsletter.
+const rateLimitStores = new Map<RateLimitConfig, Map<string, RateLimitEntry>>();
 
 // Clean up expired entries periodically
 setInterval(() => {
   const now = Date.now();
-  for (const [key, entry] of rateLimitStore.entries()) {
-    if (now > entry.resetTime) {
-      rateLimitStore.delete(key);
+  for (const store of rateLimitStores.values()) {
+    for (const [key, entry] of store.entries()) {
+      if (now > entry.resetTime) {
+        store.delete(key);
+      }
     }
   }
-}, 60000); // Clean up every minute
+}, 60000).unref?.(); // Clean up every minute; unref: não segura o processo (testes)
 
 export interface RateLimitConfig {
   /** Maximum number of requests allowed in the window */
@@ -48,6 +52,11 @@ export function checkRateLimit(
   const windowMs = config.windowSeconds * 1000;
   const key = identifier;
 
+  let rateLimitStore = rateLimitStores.get(config);
+  if (!rateLimitStore) {
+    rateLimitStore = new Map();
+    rateLimitStores.set(config, rateLimitStore);
+  }
   const entry = rateLimitStore.get(key);
 
   // If no entry or expired, create new entry
@@ -115,6 +124,8 @@ export const RATE_LIMITS = {
   contactForm: { maxRequests: 5, windowSeconds: 300 },
   // Lead magnet: 10 requests per 10 minutes
   leadMagnet: { maxRequests: 10, windowSeconds: 600 },
+  // Newsletter do blog: 5 requests per 10 minutes
+  newsletter: { maxRequests: 5, windowSeconds: 600 },
   // Identify API: 30 requests per minute (higher for analytics)
   identify: { maxRequests: 30, windowSeconds: 60 },
 } as const;

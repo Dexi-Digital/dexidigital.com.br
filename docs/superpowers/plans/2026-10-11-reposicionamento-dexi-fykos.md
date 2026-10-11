@@ -1249,3 +1249,13 @@ Páginas internas da Dexi que ainda prometem "diagnóstico de 24h" ou exibem nú
 - SEO: `alternates.canonical` saiu do layout (declarava /sobre, /contato etc. como duplicatas da home) e ficou só na home; telefone fictício do schema virou o número público.
 - Contraste: `.section-cta-premium` força títulos brancos (o `.text-display-lg` global vencia o `text-white` no tema claro).
 - Fykos: manifesto v1.1 sem "Sem alucinações"; link LGPD aponta para a seção de direitos da política de privacidade (`/legal/lgpd` não existe).
+
+## Rodada 4 (2026-10-11): respostas do checklist editorial
+
+- Construtoras: o Fykos não emite boleto (lê o código de barras do sistema da empresa) e a gestão da carteira de ativos não está em produção. O que roda: um agente de cobrança periódica que encaminha para renegociação humana quando o cliente pede. Textos de `/construtoras`, home, llms, pilares, opção do formulário e nó Vault do Fykos reescritos com isso.
+- Logos: sempre no plural ("alguns dos clientes atendidos"), mesmo com uma marca só.
+- Clínicas: sem nenhum caso. A página descreve capacidade ("foi desenhado para") e mantém o convite a caso-fundador; saíram "reduz o no-show" e "não deixa o paciente sumir".
+- Guia "IA Empresarial sem Riscos" excluído (página, tipo `pdf` do lead magnet, e-mail, sitemap); `/materiais/guia-ia-empresarial` e `/recursos` redirecionam para `/blog`.
+- Newsletter do `/blog`: `POST /api/newsletter` grava em `leads` (source `blog_newsletter`, sem duplicar e-mail) e avisa a caixa interna por Resend. Sem integração nova.
+- Rate limit: a contagem era uma só por IP para todas as rotas, e cada página visitada (`/api/identify`) gastava a cota dos formulários. Agora cada limite conta separado (`lib/rate-limit.test.ts`).
+- Rodapé: "Política de Privacidade" e "Termos de Uso" apontavam para `/privacidade` e `/termos` (404). Agora vão para as páginas existentes, que cobrem também o site; as URLs antigas redirecionam.

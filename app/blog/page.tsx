@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { getAllArticles } from '@/lib/blog-data';
 import { getPublishedDbPosts } from '@/lib/blog-db';
 import { BlogGrid, type BlogCard } from '@/components/blog/BlogGrid';
+import NewsletterForm from '@/components/blog/NewsletterForm';
 
 export const metadata: Metadata = {
   title: 'Blog | Onde a receita vaza, e como fechar',
@@ -73,14 +74,7 @@ export default function BlogPage() {
             <p className="text-lead mb-8">
               Análises sobre receita, previsibilidade de venda e execução comercial em operações em que cada oportunidade vale muito.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="seu@email.com"
-                className="flex-1 px-4 py-3 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-primary)] text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)] focus:border-transparent transition-base"
-              />
-              <button className="btn btn-primary">Acessar Intelligence Hub</button>
-            </div>
+            <NewsletterForm />
           </div>
         </div>
       </section>

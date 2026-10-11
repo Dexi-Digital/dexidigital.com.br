@@ -37,7 +37,7 @@ export const DESAFIOS: Opcao[] = [
   { value: 'carteira-parada', label: 'Carteira e base de contatos sem reativação' },
   { value: 'entrada-demanda', label: 'Atendimento de entrada sem qualificação ou sem transição ao vendedor' },
   { value: 'rastreabilidade', label: 'Pouca rastreabilidade das ações comerciais' },
-  { value: 'gestao-carteira', label: 'Gestão de carteira com financiamento próprio: boletos e cobrança' },
+  { value: 'gestao-carteira', label: 'Gestão de carteira com financiamento próprio: cobrança e renegociação' },
   { value: 'outro', label: 'Outro' },
 ];
 

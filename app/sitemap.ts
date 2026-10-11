@@ -171,12 +171,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Materiais e recursos para C-Level
   const materialPages: MetadataRoute.Sitemap = [
     {
-      url: `${baseUrl}/materiais/guia-ia-empresarial`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.75,
-    },
-    {
       url: `${baseUrl}/materiais/calculadora-roi`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
