@@ -1,12 +1,12 @@
 # Dexi Digital
 
-> A Dexi Digital desenvolve tecnologia para decisões comerciais de alto valor: sistemas que transformam dados da operação em prioridades e ações comerciais, sem exigir a troca do CRM. Criadora do Fykos, produto de inteligência e execução comercial.
+> A Dexi Digital desenvolve tecnologia para decisões comerciais de alto valor: sistemas que transformam dados da operação em prioridades e ações comerciais. Criadora do Fykos, produto de inteligência e execução comercial.
 
-A Dexi integra CRM, estoque, histórico e fontes operacionais autorizadas para identificar oportunidades relevantes, orquestra a próxima ação com regras de negócio e executa processos com supervisão e rastreabilidade. Atua principalmente com grupos automotivos, além de construtoras/incorporadoras e clínicas no Brasil. O Fykos atua sobre os sistemas comerciais existentes — não exige migração de CRM.
+A Dexi identifica oportunidades relevantes nos dados da operação, orquestra a próxima ação com regras de negócio e executa processos com supervisão e rastreabilidade, para que a receita que já está na base vire previsibilidade de venda. Atua principalmente com grupos automotivos, além de construtoras e incorporadoras (gestão de carteira para quem financia com recursos próprios: boletos, carteira de ativos e cobrança) e clínicas no Brasil.
 
 ## Produto
 
-- [O Fykos](https://dexidigital.com.br/o-fykos): produto de inteligência e execução comercial da Dexi — da oportunidade identificada à ação executada, com controle
+- [O Fykos](https://dexidigital.com.br/o-fykos): produto de inteligência e execução comercial da Dexi: da oportunidade identificada à ação executada, com controle
 - [Metodologia](https://dexidigital.com.br/metodologia): como a Dexi implementa e opera o Fykos
 - [WebOS](https://dexidigital.com.br/produtos/webos): produto de infraestrutura web da Dexi
 
@@ -30,7 +30,7 @@ A Dexi integra CRM, estoque, histórico e fontes operacionais autorizadas para i
 
 ## Glossário
 
-Definições curtas, uma página por termo — o formato mais direto para responder "o que é X" no contexto de operação comercial com IA.
+Definições curtas, uma página por termo: o formato mais direto para responder "o que é X" no contexto de operação comercial com IA.
 
 - [Glossário de IA aplicada ao automotivo](https://dexidigital.com.br/glossario-ia-automotiva)
 - [O que é o Fykos](https://dexidigital.com.br/glossario-ia-automotiva/fykos): o Sistema Operacional de Receita da Dexi

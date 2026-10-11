@@ -4,9 +4,9 @@ import type { Metadata } from 'next';
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 
 export const metadata: Metadata = {
-  title: 'Fykos para Grupos Automotivos e Concessionárias | Dexi Digital',
+  title: 'Fykos para Grupos Automotivos e Concessionárias',
   description:
-    'Sistema de receita sobre o seu DMS e Syonet: qualifica, reaquece e ressuscita cada lead. +45% de conversão e R$ 7M+ recuperados em grupos automotivos, sem migrar de sistema.',
+    'Cada lead que chega ao seu grupo já custou caro. O Fykos acompanha cada oportunidade até o momento de compra, para que essa receita fique na base e vire previsibilidade de venda.',
   keywords: [
     'IA para concessionárias',
     'atendimento com inteligência artificial',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Fykos para Grupos Automotivos | A Dexi não deixa a receita esfriar',
     description:
-      'Qualifica, reaquece e ressuscita cada oportunidade sobre o DMS e o Syonet que sua concessionária já usa. Zero migração.',
+      'Cada lead que chega ao seu grupo já custou caro. O Fykos acompanha cada oportunidade até o momento de compra, para que essa receita fique na base e vire previsibilidade de venda.',
     type: 'website',
     locale: 'pt_BR',
   },
@@ -144,9 +144,9 @@ export default function AutomotivoPage() {
             </h1>
 
             <p className="text-lead text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto animate-fade-in-up delay-150">
-              Sistema de receita sobre o seu DMS e Syonet: qualifica, reaquece e ressuscita cada
-              oportunidade, e mantém quem ainda não está pronto nutrido até o momento de compra.
-              A receita não vai embora: fica na base e vira previsibilidade de venda.
+              Cada lead que chega ao seu grupo já custou caro. O Fykos acompanha cada oportunidade
+              até o momento de compra, para que essa receita fique na base e vire previsibilidade de
+              venda.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4 animate-fade-in-up delay-200">

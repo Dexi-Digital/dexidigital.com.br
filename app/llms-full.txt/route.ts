@@ -42,9 +42,9 @@ export async function GET() {
   }
 
   const linhas: string[] = [
-    '# Dexi Digital — conteúdo completo',
+    '# Dexi Digital: conteúdo completo',
     '',
-    '> A Dexi Digital desenvolve tecnologia para decisões comerciais de alto valor: sistemas que transformam dados da operação em prioridades e ações comerciais, sem exigir a troca do CRM. Criadora do Fykos, produto de inteligência e execução comercial.',
+    '> A Dexi Digital desenvolve tecnologia para decisões comerciais de alto valor: sistemas que transformam dados da operação em prioridades e ações comerciais. Criadora do Fykos, produto de inteligência e execução comercial.',
     '',
     '## Quem a Dexi atende',
     '',
@@ -52,7 +52,7 @@ export async function GET() {
     '',
     '- Grupos automotivos e concessionárias',
     '- Clínicas de procedimento (soroterapia, injetáveis, estética avançada)',
-    '- Construtoras e incorporadoras',
+    '- Construtoras e incorporadoras (gestão de carteira para quem financia com recursos próprios: boletos, carteira de ativos e cobrança)',
     '',
     '## Como a Dexi trabalha',
     '',
@@ -65,7 +65,7 @@ export async function GET() {
   for (const [vertical, pilares] of porVertical) {
     linhas.push(`### ${vertical}`, '');
     for (const p of pilares) {
-      linhas.push(`- **${p.title}** — ${p.description}`);
+      linhas.push(`- **${p.title}**: ${p.description}`);
       linhas.push(`  ${base}/${p.slug}`);
     }
     linhas.push('');

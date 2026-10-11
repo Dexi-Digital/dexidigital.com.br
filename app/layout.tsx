@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: '%s | Dexi Digital',
   },
   description:
-    'A Dexi desenvolve sistemas que transformam dados da operação em prioridades e ações comerciais, com regras, supervisão e rastreabilidade — sem exigir a troca do CRM. Criadora do Fykos.',
+    'A Dexi transforma dados da operação em prioridades e ações comerciais, para que as oportunidades da sua base virem receita e previsibilidade de venda. Criadora do Fykos.',
   keywords: [
     'inteligência comercial',
     'execução comercial',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     siteName: 'Dexi Digital',
     title: 'Dexi Digital | Tecnologia para decisões comerciais de alto valor',
     description:
-      'A Dexi desenvolve sistemas que transformam dados da operação em prioridades e ações comerciais, com regras, supervisão e rastreabilidade — sem exigir a troca do CRM. Criadora do Fykos.',
+      'A Dexi transforma dados da operação em prioridades e ações comerciais, para que as oportunidades da sua base virem receita e previsibilidade de venda. Criadora do Fykos.',
     images: [
       {
         url: '/og-image-home.jpg',
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Dexi Digital | Tecnologia para decisões comerciais de alto valor',
     description:
-      'A Dexi desenvolve sistemas que transformam dados da operação em prioridades e ações comerciais, com regras, supervisão e rastreabilidade — sem exigir a troca do CRM. Criadora do Fykos.',
+      'A Dexi transforma dados da operação em prioridades e ações comerciais, para que as oportunidades da sua base virem receita e previsibilidade de venda. Criadora do Fykos.',
     images: ['/og-image-home.jpg'],
   },
   robots: {

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import FAQItem from '@/components/ui/FAQItem';
 import TrackedCTA from '@/components/ui/TrackedCTA';
+import ClientLogos from '@/components/ui/ClientLogos';
 import { FAQSchema } from '@/components/seo/FAQSchema';
 import { getHomePageSchemas, localBusinessSchema } from '@/lib/structured-data';
 import { CAMPOS_CASO, casosPublicaveis, nomeExibido } from '@/lib/provas';
@@ -8,7 +9,7 @@ import type { Metadata } from 'next';
 
 const TITULO = 'Dexi Digital | Tecnologia para decisões comerciais de alto valor';
 const DESCRICAO =
-  'A Dexi desenvolve sistemas que transformam dados da operação em prioridades e ações comerciais, com regras, supervisão e rastreabilidade — sem exigir a troca do CRM. Criadora do Fykos.';
+  'A Dexi transforma dados da operação em prioridades e ações comerciais, para que as oportunidades da sua base virem receita e previsibilidade de venda. Criadora do Fykos.';
 
 export const metadata: Metadata = {
   title: TITULO,
@@ -73,17 +74,17 @@ const SETORES = [
   {
     nome: 'Automotivo',
     href: '/automotivo',
-    texto: 'Grupos automotivos e concessionárias, sobre o CRM, o estoque e o histórico de atendimento.',
+    texto: 'Grupos automotivos e concessionárias: cada lead custou caro para chegar e precisa virar venda, não ficar parado na base.',
   },
   {
     nome: 'Construtoras e incorporadoras',
     href: '/construtoras',
-    texto: 'Carteiras longas, em que acompanhar cada cliente ao longo do contrato faz diferença.',
+    texto: 'Gestão de carteira para quem financia com recursos próprios: emissão de boletos, gestão da carteira de ativos e cobrança.',
   },
   {
     nome: 'Clínicas',
     href: '/clinicas',
-    texto: 'Retorno, recorrência e relacionamento contínuo com pacientes, sobre o sistema de gestão.',
+    texto: 'Retorno, recorrência e relacionamento contínuo com pacientes.',
   },
 ];
 
@@ -92,7 +93,7 @@ const FAQ_HOME = [
   {
     question: 'Preciso trocar o meu CRM?',
     answer:
-      'Não. A Dexi integra as fontes que a operação já usa — CRM, estoque, histórico de atendimento e outras fontes autorizadas — e trabalha sobre elas.',
+      'Não. A Dexi integra as fontes que a operação já usa (CRM, estoque, histórico de atendimento e outras fontes autorizadas) e trabalha sobre elas.',
   },
   {
     question: 'Para que tipo de operação isso faz sentido?',
@@ -151,10 +152,8 @@ export default function HomePage() {
             </h1>
 
             <p className="text-lead text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto animate-fade-in-up delay-150">
-              A Dexi desenvolve sistemas que transformam dados da operação em prioridades e ações
-              comerciais. Integramos fontes existentes, identificamos oportunidades relevantes e
-              executamos processos com regras, supervisão e rastreabilidade — sem exigir que sua
-              empresa substitua o CRM.
+              A Dexi transforma dados da operação em prioridades e ações comerciais, para que as
+              oportunidades que já estão na sua base virem receita e previsibilidade de venda.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-200">
@@ -278,14 +277,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Provas: só cases completos e autorizados; sem eles, o método */}
+      {/* Provas: logos como amostra dos grupos atendidos (sem descrever quem é quem);
+          cases com números só completos e autorizados, senão o método */}
       <section id="provas" className="section bg-[var(--bg-primary)]">
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <div className="section-header text-center">
               <p className="text-overline mb-2">PROVAS</p>
-              <h2 className="text-h2">Resultado com método, não número solto</h2>
-              <p className="text-lead">
+              <h2 className="text-h2">Grupos automotivos já rodam o Fykos na operação</h2>
+            </div>
+
+            <p className="text-body-sm text-[var(--text-tertiary)] text-center mb-6">
+              Alguns dos grupos atendidos
+            </p>
+            <ClientLogos className="mb-14" />
+
+            <div className="text-center mb-8">
+              <h3 className="text-h4 mb-3">Resultado com método, não número solto</h3>
+              <p className="text-body-sm text-[var(--text-secondary)] max-w-2xl mx-auto">
                 Cada número vem com período, volume analisado e critério de atribuição. Pipeline
                 influenciado não é apresentado como receita.
               </p>
@@ -313,8 +322,8 @@ export default function HomePage() {
             ) : (
               <div className="card p-6 md:p-10 text-left max-w-3xl mx-auto">
                 <p className="text-body text-[var(--text-secondary)] mb-6">
-                  Cada case que apresentamos traz os mesmos seis elementos. Números e marcas só são
-                  publicados com autorização do cliente — os cases documentados são apresentados na
+                  Cada case que apresentamos traz os mesmos seis elementos. Números só são
+                  publicados com autorização do cliente; os cases documentados são apresentados na
                   conversa de aderência.
                 </p>
                 <ul className="grid sm:grid-cols-2 gap-3">

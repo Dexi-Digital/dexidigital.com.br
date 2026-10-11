@@ -232,9 +232,9 @@ export const servicesSchema = [
     '@context': 'https://schema.org',
     '@type': 'Service',
     '@id': 'https://dexidigital.com.br/servicos/ia-para-empresas',
-    name: 'Sistema Operacional de Receita (Fykos)',
+    name: 'Fykos: inteligência e execução comercial',
     description:
-      'O Fykos reinventa o CRM: um ecossistema proprietário de dados e IA que não apenas responde, mas executa — sobre os sistemas que a operação já usa. Ganho de escala, qualificação imediata e redução de latência operacional, transformando dados em um motor de receita real para jornadas consultivas e operações multiunidade.',
+      'O Fykos é o produto de inteligência e execução comercial da Dexi: identifica oportunidades nos dados da operação, orienta a próxima ação e executa processos dentro de regras definidas, para que a receita que já está na base vire previsibilidade de venda.',
     provider: {
       '@id': 'https://dexidigital.com.br/#organization',
     },

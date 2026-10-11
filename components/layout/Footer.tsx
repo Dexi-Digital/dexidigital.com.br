@@ -24,7 +24,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#050608] text-white relative overflow-hidden">
+    <footer className="dark bg-[#050608] text-white relative overflow-hidden">
       {/* Subtle gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[rgba(33,150,243,0.03)] pointer-events-none" />
 
@@ -44,7 +44,7 @@ export default function Footer() {
             <p className="text-sm text-white/60 leading-relaxed mb-4">
               A Dexi desenvolve sistemas que transformam dados da operação em prioridades e ações comerciais. Criou o Fykos, produto de inteligência e execução comercial.
             </p>
-            <p className="text-sm text-white/40">
+            <p className="text-sm text-white/60">
               Integração, regras, supervisão e rastreabilidade.
             </p>
           </div>
@@ -108,19 +108,19 @@ export default function Footer() {
             <p className="text-lg md:text-xl font-semibold text-white tracking-tight mb-2">
               Tecnologia para decisões comerciais de alto valor.
             </p>
-            <p className="text-sm text-white/40">
-              Dados da operação transformados em prioridades e ações, sem trocar o CRM.
+            <p className="text-sm text-white/60">
+              Dados da operação transformados em prioridades e ações comerciais.
             </p>
           </div>
 
           {/* Bottom bar */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-6 border-t border-white/5">
-            <p className="text-xs text-white/40">
+            <p className="text-xs text-white/60">
               © {currentYear} Dexi Digital. Tecnologia para decisões comerciais de alto valor.
             </p>
             <div className="flex gap-6">
               {navigation.legal.map((item) => (
-                <Link key={item.name} href={item.href} className="text-xs text-white/40 hover:text-white/70 transition-base">
+                <Link key={item.name} href={item.href} className="text-xs text-white/60 hover:text-white transition-base">
                   {item.name}
                 </Link>
               ))}
