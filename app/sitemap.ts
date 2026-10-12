@@ -8,269 +8,151 @@ import { GLOSSARIO_TERMS } from '@/lib/seo/glossario';
 import { INTEGRACOES } from '@/lib/seo/integracoes';
 import { getAllArticles } from '@/lib/blog-data';
 import { getPublishedDbPosts } from '@/lib/blog-db';
+import { getRecentNews } from '@/lib/news-db';
 import { PILLARS } from '@/lib/pillars';
+import { ultimaEdicao, maisRecente } from '@/lib/datas-paginas';
 
 export const dynamic = 'force-dynamic';
 
+type Frequencia = NonNullable<MetadataRoute.Sitemap[number]['changeFrequency']>;
+
+const baseUrl = 'https://dexidigital.com.br';
+
+/**
+ * Uma URL do sitemap. O lastmod é a data real da última edição: o último
+ * commit nos arquivos da página (ver lib/datas-paginas.ts) ou, quando a página
+ * lista conteúdo, o conteúdo mais novo. Nunca a hora da requisição.
+ */
+function url(
+  rota: string,
+  arquivos: string[],
+  changeFrequency: Frequencia,
+  priority: number,
+  ...outrasDatas: (Date | string | null | undefined)[]
+): MetadataRoute.Sitemap[number] {
+  return {
+    url: rota === '/' ? baseUrl : `${baseUrl}${rota}`,
+    lastModified: maisRecente(ultimaEdicao(...arquivos), ...outrasDatas),
+    changeFrequency,
+    priority,
+  };
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://dexidigital.com.br';
-  const currentDate = new Date();
+  const posts = getPublishedDbPosts();
+  const artigos = getAllArticles();
+  const postMaisNovo = maisRecente(...artigos.map((a) => a.date), ...posts.map((p) => p.publishedAt));
 
-  // Páginas principais com alta prioridade
-  const mainPages: MetadataRoute.Sitemap = [
-    {
-      url: baseUrl,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/o-fykos`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.95,
-    },
-    {
-      url: `${baseUrl}/metodologia`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
+  const principais = [
+    url('/', ['app/page.tsx'], 'weekly', 1),
+    url('/o-fykos', ['app/o-fykos'], 'weekly', 0.95),
+    url('/metodologia', ['app/metodologia'], 'monthly', 0.9),
   ];
 
-  // Páginas de serviços
-  const servicePages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/servicos`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/servicos/ia-para-empresas`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/servicos/inteligencia-de-dados`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/servicos/software-sob-medida`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.85,
-    },
+  const servicos = [
+    url('/servicos', ['app/servicos/page.tsx'], 'monthly', 0.9),
+    url('/servicos/ia-para-empresas', ['app/servicos/ia-para-empresas'], 'monthly', 0.85),
+    url('/servicos/inteligencia-de-dados', ['app/servicos/inteligencia-de-dados'], 'monthly', 0.85),
+    url('/servicos/software-sob-medida', ['app/servicos/software-sob-medida'], 'monthly', 0.85),
   ];
 
-  // Páginas de setores
-  const sectorPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/automotivo`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.95,
-    },
-    {
-      url: `${baseUrl}/construtoras`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/clinicas`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/setores/automotivo-premium`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.85,
-    },
+  const setores = [
+    url('/automotivo', ['app/automotivo'], 'weekly', 0.95),
+    url('/construtoras', ['app/construtoras'], 'weekly', 0.9),
+    url('/clinicas', ['app/clinicas'], 'weekly', 0.9),
+    url('/setores/automotivo-premium', ['app/setores/automotivo-premium'], 'monthly', 0.85),
   ];
 
-  // SEO: Fábricas (segmentos automotivos)
-  const fabricaPages: MetadataRoute.Sitemap = FABRICAS.map((f) => ({
-    url: `${baseUrl}/setores/fabricas/${f.slug}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: 0.85,
-  }));
+  // Páginas geradas a partir de dados: valem o template e o arquivo de dados.
+  const fabricas = FABRICAS.map((f) =>
+    url(`/setores/fabricas/${f.slug}`, ['app/setores/fabricas', 'lib/seo/fabricas.ts'], 'monthly', 0.85),
+  );
+  const grupos = GRUPOS.map((g) =>
+    url(`/setores/grupos/${g.slug}`, ['app/setores/grupos', 'lib/seo/grupos.ts'], 'monthly', 0.85),
+  );
+  const solucoes = SOLUCOES.map((s) =>
+    url(`/solucoes/${s.slug}`, ['app/solucoes', 'lib/seo/solucoes.ts'], 'monthly', 0.8),
+  );
+  const comparativos = COMPARATIVOS.map((c) =>
+    url(`/comparativo/${c.slug}`, ['app/comparativo', 'lib/seo/comparativo.ts'], 'monthly', 0.85),
+  );
+  const guias = GUIAS.map((g) => url(`/guias/${g.slug}`, ['app/guias', 'lib/seo/guias.ts'], 'monthly', 0.75));
+  const glossario = [
+    url('/glossario-ia-automotiva', ['app/glossario-ia-automotiva/page.tsx', 'lib/seo/glossario.ts'], 'monthly', 0.7),
+    ...GLOSSARIO_TERMS.map((t) =>
+      url(
+        `/glossario-ia-automotiva/${t.slug}`,
+        ['app/glossario-ia-automotiva/[slug]', 'lib/seo/glossario.ts'],
+        'monthly',
+        0.65,
+      ),
+    ),
+  ];
+  const integracoes = INTEGRACOES.map((i) =>
+    url(`/integracoes/${i.slug}`, ['app/integracoes', 'lib/seo/integracoes.ts'], 'monthly', 0.75),
+  );
 
-  // SEO: Grupos Automotivos
-  const grupoPages: MetadataRoute.Sitemap = GRUPOS.map((g) => ({
-    url: `${baseUrl}/setores/grupos/${g.slug}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: 0.85,
-  }));
+  const produtos = [url('/produtos/webos', ['app/produtos/webos'], 'monthly', 0.9)];
 
-  // SEO: Soluções por Problema
-  const solucaoPages: MetadataRoute.Sitemap = SOLUCOES.map((s) => ({
-    url: `${baseUrl}/solucoes/${s.slug}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-  }));
-
-  // SEO: Comparativos (Dexi vs Syonet)
-  const comparativoPages: MetadataRoute.Sitemap = COMPARATIVOS.map((c) => ({
-    url: `${baseUrl}/comparativo/${c.slug}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: 0.85,
-  }));
-
-  // SEO: Guias de Transformação Digital
-  const guiaPages: MetadataRoute.Sitemap = GUIAS.map((g) => ({
-    url: `${baseUrl}/guias/${g.slug}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: 0.75,
-  }));
-
-  // SEO: Glossário IA Automotiva
-  const glossarioPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/glossario-ia-automotiva`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    },
-    ...GLOSSARIO_TERMS.map((t) => ({
-      url: `${baseUrl}/glossario-ia-automotiva/${t.slug}`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.65,
-    })),
+  const materiais = [
+    url('/materiais/calculadora-roi', ['app/materiais/calculadora-roi'], 'monthly', 0.8),
+    url('/materiais/checklist-qualidade', ['app/materiais/checklist-qualidade'], 'monthly', 0.7),
   ];
 
-  // SEO: Integrações
-  const integracaoPages: MetadataRoute.Sitemap = INTEGRACOES.map((i) => ({
-    url: `${baseUrl}/integracoes/${i.slug}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: 0.75,
-  }));
-
-  // Páginas de produtos
-  const productPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/produtos/webos`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
+  const institucionais = [
+    url('/sobre', ['app/sobre'], 'monthly', 0.6),
+    url('/contato', ['app/contato'], 'monthly', 0.8),
+    url('/cases', ['app/cases'], 'monthly', 0.7),
+    url('/faq', ['app/faq'], 'monthly', 0.5),
   ];
 
-  // Materiais e recursos para C-Level
-  const materialPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/materiais/calculadora-roi`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/materiais/checklist-qualidade`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-  ];
+  // Pilares listam os posts do próprio cluster: o post mais novo também conta.
+  const pilares = PILLARS.map((pilar) =>
+    url(
+      `/${pilar.slug}`,
+      ['app/[pillarSlug]', 'lib/pillars.ts'],
+      'weekly',
+      0.75,
+      ...posts.filter((p) => p.pillarLink === `/${pilar.slug}`).map((p) => p.publishedAt),
+    ),
+  );
 
-  // Páginas institucionais
-  const companyPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/sobre`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/contato`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/cases`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/faq`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-  ];
-
-  // Blog
-  const blogPostPages: MetadataRoute.Sitemap = [
-    ...getAllArticles().map((article) => ({
-      url: `${baseUrl}/blog/${article.slug}`,
-      lastModified: new Date(article.date),
+  const blog = [
+    url('/blog', ['app/blog/page.tsx'], 'weekly', 0.7, postMaisNovo),
+    ...artigos.map((artigo) => ({
+      url: `${baseUrl}/blog/${artigo.slug}`,
+      lastModified: maisRecente(artigo.date),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     })),
-    ...getPublishedDbPosts().map((post) => ({
+    ...posts.map((post) => ({
       url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: post.publishedAt ? new Date(post.publishedAt) : currentDate,
+      lastModified: maisRecente(post.publishedAt),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     })),
   ];
-  const blogPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    ...blogPostPages,
-  ];
 
-  // Notícias
-  const newsPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/noticias`,
-      lastModified: currentDate,
-      changeFrequency: 'daily',
-      priority: 0.6,
-    },
+  const noticias = [
+    url('/noticias', ['app/noticias'], 'daily', 0.6, getRecentNews()[0]?.publishedAt),
   ];
-
-  // Pilares (hubs de cluster do calendário editorial)
-  const pillarPages: MetadataRoute.Sitemap = PILLARS.map((pillar) => ({
-    url: `${baseUrl}/${pillar.slug}`,
-    lastModified: currentDate,
-    changeFrequency: 'weekly' as const,
-    priority: 0.75,
-  }));
 
   return [
-    ...mainPages,
-    ...servicePages,
-    ...sectorPages,
-    ...fabricaPages,
-    ...grupoPages,
-    ...solucaoPages,
-    ...comparativoPages,
-    ...guiaPages,
-    ...glossarioPages,
-    ...integracaoPages,
-    ...productPages,
-    ...materialPages,
-    ...companyPages,
-    ...pillarPages,
-    ...blogPages,
-    ...newsPages,
+    ...principais,
+    ...servicos,
+    ...setores,
+    ...fabricas,
+    ...grupos,
+    ...solucoes,
+    ...comparativos,
+    ...guias,
+    ...glossario,
+    ...integracoes,
+    ...produtos,
+    ...materiais,
+    ...institucionais,
+    ...pilares,
+    ...blog,
+    ...noticias,
   ];
 }

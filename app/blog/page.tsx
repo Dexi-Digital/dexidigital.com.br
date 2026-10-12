@@ -4,6 +4,7 @@ import { getAllArticles } from '@/lib/blog-data';
 import { getPublishedDbPosts } from '@/lib/blog-db';
 import { BlogGrid, type BlogCard } from '@/components/blog/BlogGrid';
 import NewsletterForm from '@/components/blog/NewsletterForm';
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Blog | Onde a receita vaza, e como fechar',
@@ -42,6 +43,7 @@ export default function BlogPage() {
 
   return (
     <main className="min-h-screen">
+      <BreadcrumbSchema trilha={[{ nome: 'Blog', url: '/blog' }]} />
       {/* Hero Section */}
       <section className="section-hero-premium py-24 md:py-32 border-b border-[var(--border-subtle)]">
         <div className="container">

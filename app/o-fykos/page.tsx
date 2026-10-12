@@ -1,5 +1,6 @@
 import TrackedCTA from '@/components/ui/TrackedCTA';
 import type { Metadata } from 'next';
+import { getFykosSchema } from '@/lib/structured-data';
 
 const DESCRICAO =
   'O Fykos é o produto da Dexi para inteligência e execução comercial: atua sobre os sistemas existentes, identifica oportunidades, orienta a próxima ação e executa processos dentro de regras definidas, com rastreabilidade.';
@@ -88,6 +89,10 @@ const CAMADAS = [
 export default function OFykosPage() {
   return (
     <main className="min-h-screen bg-[var(--bg-primary)] pb-24 md:pb-0 relative">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getFykosSchema(DESCRICAO)) }}
+      />
       {/* Hero: fundo por imagem (dark/light por tema) */}
       <section
         id="hero"

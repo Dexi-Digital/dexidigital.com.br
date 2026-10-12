@@ -114,6 +114,27 @@ export const localBusinessSchema = {
   },
 };
 
+/**
+ * O Fykos como produto da Dexi. Fica só em /o-fykos, não no layout: o teste
+ * de resultados avançados do Google pede preço ou avaliação em
+ * SoftwareApplication e acusa erro sem eles, e o Fykos não tem preço público.
+ * Assim a home, os posts, o comparativo e o glossário seguem sem erro.
+ */
+export function getFykosSchema(descricao: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    '@id': 'https://dexidigital.com.br/o-fykos#app',
+    name: 'Fykos',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web',
+    description: descricao,
+    url: 'https://dexidigital.com.br/o-fykos',
+    sameAs: ['https://fykos.com.br'],
+    publisher: { '@id': 'https://dexidigital.com.br/#organization' },
+  };
+}
+
 export const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
@@ -305,10 +326,14 @@ export function getArticleSchema(article: {
     description: article.metaDescription,
     datePublished: article.date,
     dateModified: article.date,
+    // Sem autoria individual no blog, o autor é a própria organização, com o
+    // mesmo nome do nó Organization. Com o nome do post ("Equipe Dexi
+    // Digital"), o mesmo @id aparecia com dois nomes.
     author: {
       '@type': 'Organization',
       '@id': 'https://dexidigital.com.br/#organization',
-      name: article.author,
+      name: 'Dexi Digital',
+      url: 'https://dexidigital.com.br',
     },
     publisher: {
       '@id': 'https://dexidigital.com.br/#organization',

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { INTEGRACOES, findIntegracao } from '@/lib/seo';
 import { FAQSchema } from '@/components/seo/FAQSchema';
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 import TrackedCTA from '@/components/ui/TrackedCTA';
 
 interface PageProps {
@@ -43,6 +44,7 @@ export default async function IntegracaoPage({ params }: PageProps) {
   return (
     <main className="min-h-screen">
       <FAQSchema faqs={data.faq} pageName={data.title} />
+      <BreadcrumbSchema trilha={[{ nome: data.title, url: `/integracoes/${data.slug}` }]} />
 
       {/* Hero */}
       <section className="section-hero-premium py-24 md:py-32 border-b border-[var(--border-subtle)]">

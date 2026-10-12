@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { GLOSSARIO_TERMS, findGlossarioTerm, GLOSSARIO_CATEGORIES } from '@/lib/seo/glossario';
 import { FAQSchema } from '@/components/seo/FAQSchema';
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -95,6 +96,12 @@ export default async function GlossarioTermPage({ params }: PageProps) {
   return (
     <main className="min-h-screen">
       <FAQSchema faqs={term.faq} pageName={term.title} />
+      <BreadcrumbSchema
+        trilha={[
+          { nome: 'Glossário de IA automotiva', url: '/glossario-ia-automotiva' },
+          { nome: term.title, url: `/glossario-ia-automotiva/${term.slug}` },
+        ]}
+      />
 
       {/* Hero */}
       <section className="section-hero-premium py-20 md:py-28 border-b border-[var(--border-subtle)]">

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getArticleBySlug, getAllArticles } from '@/lib/blog-data';
 import { getDbPostBySlug } from '@/lib/blog-db';
+import { semLegendaWordPress } from '@/lib/conteudo-legado';
 import { getArticleSchema } from '@/lib/structured-data';
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 import TrackedCTA from '@/components/ui/TrackedCTA';
@@ -19,7 +20,7 @@ export const dynamic = 'force-dynamic';
 
 function findArticle(slug: string) {
   const legacy = getArticleBySlug(slug);
-  if (legacy) return legacy;
+  if (legacy) return { ...legacy, content: semLegendaWordPress(legacy.content) };
   const dbPost = getDbPostBySlug(slug);
   if (!dbPost || dbPost.status !== 'published') return undefined;
   return {

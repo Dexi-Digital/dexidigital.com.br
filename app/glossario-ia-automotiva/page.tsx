@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { GLOSSARIO_TERMS, GLOSSARIO_CATEGORIES } from '@/lib/seo/glossario';
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Glossário IA Automotiva | Termos e Conceitos',
@@ -23,6 +24,7 @@ export default function GlossarioPage() {
 
   return (
     <main className="min-h-screen">
+      <BreadcrumbSchema trilha={[{ nome: 'Glossário de IA automotiva', url: '/glossario-ia-automotiva' }]} />
       {/* Hero */}
       <section className="section-hero-premium py-24 md:py-32 border-b border-[var(--border-subtle)]">
         <div className="container">
