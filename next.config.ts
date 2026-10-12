@@ -160,7 +160,13 @@ const nextConfig: NextConfig = {
         destination: '/materiais/calculadora-roi',
         permanent: true,
       },
-      // Consolidação de posts canibais — ver lib/blog-redirects.ts
+      // O comparativo com o Syonet tinha afirmações sem fonte e saiu (ver lib/seo/comparativo.ts).
+      {
+        source: '/comparativo/dexi-vs-syonet',
+        destination: '/comparativo/dexi-vs-crm-tradicional',
+        permanent: true,
+      },
+      // Posts consolidados em outro post: ver lib/blog-redirects.ts
       ...BLOG_REDIRECTS.map(([origem, destino]) => ({
         source: `/blog/${origem}`,
         destination: `/blog/${destino}`,

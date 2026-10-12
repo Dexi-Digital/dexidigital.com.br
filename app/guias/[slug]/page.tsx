@@ -136,8 +136,8 @@ export default async function GuiaPage({ params }: PageProps) {
                 variant="primary"
                 text="Solicitar conversa de aderência"
               />
-              <Link href="/comparativo/dexi-vs-syonet" className="btn btn-secondary">
-                Ver comparativo Dexi vs Syonet
+              <Link href="/comparativo/dexi-vs-crm-tradicional" className="btn btn-secondary">
+                CRM e inteligência comercial
               </Link>
             </div>
           </div>

@@ -10,6 +10,16 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
+// "2026-10-12" -> "12 de outubro de 2026", sem depender do fuso do servidor.
+function formatarData(iso: string): string {
+  return new Date(`${iso}T12:00:00Z`).toLocaleDateString('pt-BR', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+}
+
 export async function generateStaticParams() {
   return COMPARATIVOS.map((c) => ({ slug: c.slug }));
 }
@@ -59,8 +69,11 @@ export default async function ComparativoPage({ params }: PageProps) {
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
               {data.title}
             </h1>
-            <p className="text-lead text-[var(--text-secondary)] max-w-3xl mb-10 animate-fade-in-up delay-100">
+            <p className="text-lead text-[var(--text-secondary)] max-w-3xl mb-6 animate-fade-in-up delay-100">
               {data.answerSnippet}
+            </p>
+            <p className="text-body-sm text-[var(--text-tertiary)]">
+              Revisado em <time dateTime={data.revisadoEm}>{formatarData(data.revisadoEm)}</time>
             </p>
           </div>
         </div>
@@ -76,8 +89,8 @@ export default async function ComparativoPage({ params }: PageProps) {
                 <thead>
                   <tr className="border-b-2 border-[var(--border-subtle)]">
                     <th className="text-left py-4 px-4 text-body-sm font-semibold text-[var(--text-tertiary)] uppercase tracking-wider">Critério</th>
-                    <th className="text-left py-4 px-4 text-body-sm font-semibold text-[var(--color-primary-500)] uppercase tracking-wider">Dexi Digital</th>
-                    <th className="text-left py-4 px-4 text-body-sm font-semibold text-[var(--text-tertiary)] uppercase tracking-wider">Concorrente</th>
+                    <th className="text-left py-4 px-4 text-body-sm font-semibold text-[var(--color-primary-500)] uppercase tracking-wider">{data.colunas.dexi}</th>
+                    <th className="text-left py-4 px-4 text-body-sm font-semibold text-[var(--text-tertiary)] uppercase tracking-wider">{data.colunas.outro}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -105,6 +118,21 @@ export default async function ComparativoPage({ params }: PageProps) {
                 <p className="text-[var(--text-secondary)] leading-relaxed">{s.content}</p>
               </div>
             ))}
+            {data.fontes.length > 0 && (
+              <div>
+                <h2 className="text-h3 text-[var(--text-primary)] mb-4">Fontes</h2>
+                <ul className="space-y-2 text-body-sm text-[var(--text-secondary)]">
+                  {data.fontes.map((f) => (
+                    <li key={f.url}>
+                      <a href={f.url} rel="noopener" className="underline hover:text-[var(--color-primary-500)]">
+                        {f.titulo}
+                      </a>
+                      , consultado em {formatarData(f.consultadoEm)}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
       </section>

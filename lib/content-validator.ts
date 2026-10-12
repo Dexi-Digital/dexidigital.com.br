@@ -71,7 +71,10 @@ export function validatePost(content: string, vertical: string, pillarLink: stri
     hasNamedSourceClaim,
     hasEnoughInternalLinks,
     passesClinicalSafety,
-    passed:
-      hasQuickAnswer && hasQuestionH2 && hasNamedSourceClaim && hasEnoughInternalLinks && passesClinicalSafety,
+    // hasNamedSourceClaim fica só como informação. Exigir um número com fonte em
+    // todo post empurrava o modelo a inventar a fonte; desde out/2026 o revisor
+    // (lib/revisor-blog.ts) abre cada link citado e cobra que a página mostre o
+    // número, e post sem número nenhum é aceito.
+    passed: hasQuickAnswer && hasQuestionH2 && hasEnoughInternalLinks && passesClinicalSafety,
   };
 }

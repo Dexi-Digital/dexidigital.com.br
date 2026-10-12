@@ -20,6 +20,22 @@ Origem: handoff de SEO de 11/10/2026 (Fase 1 até 18/10, Fase 2 até 31/10, Fase
 - **JSON-LD:** autor dos posts com o mesmo nome do nó Organization; BreadcrumbList no comparativo, nas integrações, no glossário e no /blog; SoftwareApplication do Fykos só em /o-fykos (o teste do Google acusa erro sem preço, e o Fykos não tem preço público).
 - **Inventário:** `scripts/inventario-blog.mjs` gera o CSV para a decisão da Lorrayne.
 
+## Feito em 12/10
+
+- **Inventário aplicado:** a Lorrayne mandou seguir a sugestão da triagem. Saíram com 410 os 495 posts do WordPress marcados 410, mais dois que a triagem deixou passar (notícia de câncer e TI hospitalar). Todos os destinos dos 89 redirects estavam entre eles, então as origens também passaram a responder 410 e `lib/blog-redirects.ts` ficou vazio. Ficaram 5 posts do WordPress, que passam pelo revisor (abaixo): o que ele não aprovar sai com 410.
+- **Automação do blog:** o agendamento duplicado do crontab do root (07:00, segunda a sábado) saiu; backup em `/root/crontab-backup-2026-10-12.txt`. Fica só `/etc/cron.d/dexi-blog-post`, às 09:00 de Brasília.
+- **Agente revisor** (`lib/revisor-blog.ts`), porque não há ninguém para revisar post a post. O post só vai ao ar com "aprovado":
+  1. checagens fixas sem IA (sobra de prompt, texto em inglês, "emite boleto", "carteira de ativos", ROI garantido);
+  2. cada link externo citado é aberto pelo leitor da Jina e o texto da página vai para o revisor: número de mercado sem link, com link que não abre ou cuja página não mostra o número é tratado como inventado;
+  3. um modelo diferente do redator (gemini-3.8-flash; o redator é o gemini-3.5-flash) confere tudo contra `lib/regras-editoriais.ts` e aponta trecho, regra e correção.
+  - "corrigir": o redator reescreve e o revisor confere de novo, até 2 vezes. "reprovado", "pendente" (falha do modelo) ou sem aprovação depois das correções: rascunho, fora do site. O parecer fica em `blog_posts.review_report`.
+  - O validador estrutural deixou de exigir um número com fonte em todo post: essa exigência empurrava o modelo a inventar a fonte.
+  - A chave do Gemini está no plano gratuito: sem modelos Pro e sem busca do Google. Por isso a conferência de fonte abre os links em vez de pesquisar.
+- **Revisão dos posts que já estavam no ar:** `scripts/revisar-blog.mjs` (ver cabeçalho). Corrige no mesmo endereço o que dá para corrigir e marca "removido" o resto; post "removido" responde 410 pelo `proxy.ts`, sem precisar entrar em `lib/blog-removidos.ts`. Roda todo dia às 10:30 de Brasília (`/etc/cron.d/dexi-blog-revisao`, `--aplicar --limite 4`), depois do post do dia.
+- **Cota do Gemini:** a chave está no plano gratuito, com 20 chamadas por dia por modelo. O post do dia gasta de 2 a 6; com o limite de 4 posts por execução, a revisão dos 80 antigos leva perto de três semanas. Com faturamento ativado na chave, dá para subir o `--limite` e terminar em um dia. Modelo sobrecarregado (503) ou sem cota fica de lado e o reserva assume (`MODELOS_REDATOR`, `MODELOS_REVISOR`, trocáveis por `GEMINI_MODELOS_REDATOR` e `GEMINI_MODELOS_REVISOR`).
+- **Comparativos:** os dois eram texto de IA sem fonte. O de Syonet saiu (301 para o de CRM); o de CRM foi reescrito só com o posicionamento aprovado; entrou `/comparativo/robo-de-atendimento-vs-inteligencia-comercial` (item 3.3 do handoff). A página mostra a data de revisão e, quando houver, as fontes.
+- **sameAs:** Instagram oficial (@dexi.digital) entrou; LinkedIn e GitHub conferidos (existem e são da Dexi).
+
 ## Quando o CSV voltar com as decisões
 
 1. Linhas com `410`: slug em `lib/blog-removidos.ts` e bloco removido de `lib/blog-data.ts` (post da automação: apagar a linha em `data/blog-posts.db` na VPS).
@@ -27,11 +43,12 @@ Origem: handoff de SEO de 11/10/2026 (Fase 1 até 18/10, Fase 2 até 31/10, Fase
 3. Rodar `node --test lib/*.test.ts`: o teste de consistência pega cadeia, sobreposição e link interno quebrado.
 4. Depois do deploy: `curl -sI` em amostras, sitemap sem as URLs, reenviar o sitemap no Search Console.
 
-## Depende da Lorrayne
+## Depende da Lorrayne (atualizado em 12/10)
 
-- Decisão do CSV (prazo 14/10).
-- `sameAs` da Organization: hoje LinkedIn e GitHub; confirmar que são os perfis oficiais e mandar os outros.
-- Autoria real: nome, bio curta e se a pessoa assina também os posts antigos que ficarem.
+Resolvido em 12/10: decisão do CSV, automação do blog, `sameAs`, textos dos comparativos (eram de IA). Autoria: a Organization continua como autora (não precisa ser pessoa; ver relatório de 12/10).
+
+Ainda em aberto:
+
 - Lista de integrações reais (Syonet, NBS, Dealernet, Dealerspace) antes de qualquer página `/integracoes/<sistema>`.
-- Textos e fontes dos comparativos. O `dexi-vs-syonet` atual tem afirmações sem fonte sobre o concorrente e números sobre o Fykos ("< 30 segundos", "qualquer DMS").
-- A automação do blog publica sozinha, sem revisão humana, e roda duas vezes por dia (crontab do root às 07:00 de segunda a sábado e `/etc/cron.d/dexi-blog-post` às 09:00). O handoff pede revisão humana antes de publicar.
+- Comparativo com concorrente citado por nome (Syonet, Dealerspace) só com fatos tirados do material público dele, com link e data em `fontes`.
+- As páginas de SEO em `lib/seo/` (fábricas, soluções, guias, glossário, integrações) foram escritas pela mesma IA e repetem afirmações sem prova ("< 30 segundos", "qualquer DMS", "perfil psicológico", "40%", "10 anos"). Candidatas a passar pelo revisor.

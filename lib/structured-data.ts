@@ -55,8 +55,9 @@ export const organizationSchema = {
   ],
   slogan: 'Tecnologia para decisões comerciais de alto valor.',
   sameAs: [
-    'https://linkedin.com/company/dexi-digital',
-    'https://github.com/dexi-digital',
+    'https://www.instagram.com/dexi.digital/',
+    'https://www.linkedin.com/company/dexi-digital',
+    'https://github.com/Dexi-Digital',
   ],
 };
 
@@ -315,6 +316,8 @@ export function getArticleSchema(article: {
   excerpt: string;
   metaDescription: string;
   date: string;
+  /** Última correção do texto, quando houve. */
+  dateModified?: string;
   author: string;
   category: string;
 }) {
@@ -325,7 +328,7 @@ export function getArticleSchema(article: {
     headline: article.title,
     description: article.metaDescription,
     datePublished: article.date,
-    dateModified: article.date,
+    dateModified: article.dateModified ?? article.date,
     // Sem autoria individual no blog, o autor é a própria organização, com o
     // mesmo nome do nó Organization. Com o nome do post ("Equipe Dexi
     // Digital"), o mesmo @id aparecia com dois nomes.

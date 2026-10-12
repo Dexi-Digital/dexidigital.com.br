@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from 'next/server';
 import { POSTS_REMOVIDOS } from '@/lib/blog-removidos';
+import { statusDoPost } from '@/lib/blog-db';
 
 const REMOVIDOS = new Set(POSTS_REMOVIDOS.map((slug) => `/blog/${slug}`));
 
@@ -29,13 +30,23 @@ const PAGINA_REMOVIDA = `<!doctype html>
 </body>
 </html>`;
 
+// Post da automação que o revisor tirou do ar (scripts/revisar-blog.mjs).
+function removidoPeloRevisor(pathname: string): boolean {
+  try {
+    return statusDoPost(pathname.slice('/blog/'.length)) === 'removido';
+  } catch {
+    return false; // Banco fora do ar não pode derrubar o blog: a página decide.
+  }
+}
+
 /**
- * 410 para os posts removidos na limpeza de SEO (ver lib/blog-removidos.ts).
- * Os redirects do next.config rodam antes daqui, então slug redirecionado
- * nunca chega a este ponto.
+ * 410 para os posts removidos: os da limpeza de SEO (lib/blog-removidos.ts) e
+ * os que o revisor tirou do ar (status "removido" no banco). Os redirects do
+ * next.config rodam antes daqui, então slug redirecionado nunca chega a este ponto.
  */
 export function proxy(request: NextRequest) {
-  if (!REMOVIDOS.has(request.nextUrl.pathname)) return NextResponse.next();
+  const { pathname } = request.nextUrl;
+  if (!REMOVIDOS.has(pathname) && !removidoPeloRevisor(pathname)) return NextResponse.next();
 
   return new NextResponse(PAGINA_REMOVIDA, {
     status: 410,

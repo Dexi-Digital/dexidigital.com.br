@@ -1,3 +1,18 @@
+/**
+ * Comparativos de categoria.
+ *
+ * Out/2026: as duas versões anteriores (Dexi vs Syonet e Dexi vs CRM
+ * tradicional) foram escritas por IA e traziam números e recursos sem prova
+ * ("< 30 segundos", "qualquer DMS", "40% dos leads", "perfil psicológico").
+ * O comparativo com o Syonet saiu (redirect em next.config.ts) e os textos
+ * abaixo usam só o que o posicionamento aprovado afirma sobre o Fykos.
+ *
+ * Regras para um comparativo novo:
+ * - Sobre o Fykos, só o que está em produção (ver lib/regras-editoriais.ts).
+ * - Sobre um concorrente com nome, só fato tirado do material público dele, com
+ *   o link em `fontes` e a data da consulta. Sem isso, compare categorias.
+ * - Nada de número sem fonte, superioridade sem prova ou exclusividade.
+ */
 export interface ComparativoPage {
   slug: string;
   title: string;
@@ -5,142 +20,192 @@ export interface ComparativoPage {
   metaDescription: string;
   keywords: string[];
   answerSnippet: string;
+  /** Data (AAAA-MM-DD) da última revisão do texto, mostrada na página. */
+  revisadoEm: string;
+  colunas: { dexi: string; outro: string };
   sections: { heading: string; content: string }[];
   tabelaComparativa: { criterio: string; dexi: string; concorrente: string }[];
   faq: { question: string; answer: string }[];
+  fontes: { titulo: string; url: string; consultadoEm: string }[];
   ctaText: string;
 }
 
 export const COMPARATIVOS: ComparativoPage[] = [
   {
-    slug: 'dexi-vs-syonet',
-    title: 'Dexi Digital vs Syonet',
-    metaTitle: 'Dexi Digital vs Syonet | Comparativo Completo | IA Automotiva',
+    slug: 'robo-de-atendimento-vs-inteligencia-comercial',
+    title: 'Robô de atendimento ou inteligência comercial?',
+    metaTitle: 'Robô de atendimento vs inteligência comercial: a diferença | Dexi Digital',
     metaDescription:
-      'Comparativo detalhado entre Dexi Digital (Fykos) e Syonet. Entenda a diferença entre a execução autônoma de IA e o CRM tradicional em conversão, velocidade e inteligência.',
+      'Robô de atendimento responde quem chega. Inteligência comercial identifica qual oportunidade merece atenção agora e executa a próxima ação. Entenda quando cada um faz sentido.',
     keywords: [
-      'Dexi vs Syonet',
-      'alternativa Syonet',
-      'Syonet concorrente',
-      'CRM automotivo comparativo',
-      'melhor CRM concessionária',
-      'Fykos vs Syonet',
+      'robô de atendimento vs inteligência comercial',
+      'chatbot ou inteligência comercial',
+      'inteligência comercial automotiva',
+      'chatbot concessionária',
+      'execução comercial com IA',
     ],
     answerSnippet:
-      'A principal diferença entre Dexi Digital e Syonet é a abordagem: o Syonet é uma plataforma de CRM automotivo, que organiza o funil e o histórico de atendimento. O Fykos da Dexi é um Sistema Operacional de Receita que age autonomamente, qualifica leads, responde clientes e entrega briefings estratégicos ao vendedor. O foco é financeiro: fazer o lead que custou caro virar venda e dar mais previsibilidade à receita.',
+      'Um robô de atendimento responde quem chega: tira dúvidas, coleta dados e passa o contato adiante. Inteligência comercial começa antes da conversa: cruza CRM, estoque e histórico para identificar qual oportunidade merece atenção agora, prioriza a próxima ação e acompanha o resultado. A diferença pesa quando cada oportunidade vale muito.',
+    revisadoEm: '2026-10-12',
+    colunas: { dexi: 'Inteligência comercial (Fykos)', outro: 'Robô de atendimento' },
     sections: [
       {
-        heading: 'CRM passivo vs. Execução autônoma de IA',
+        heading: 'O que um robô de atendimento resolve',
         content:
-          'O Syonet é uma plataforma de CRM automotivo consolidada no mercado brasileiro. Registra leads, organiza funis e gera relatórios. Na abordagem de CRM, a equipe conduz cada etapa: ler o lead, responder, anotar e acompanhar. O Fykos da Dexi inverte essa lógica: o sistema age primeiro, responde, qualifica, perfila, e entrega ao vendedor um lead pronto para fechar.',
+          'O robô de atendimento existe para dar conta do volume de conversas: responde perguntas frequentes, atende fora do horário, coleta dados básicos e encaminha o contato para a equipe. Quando o problema da operação é fila de mensagens repetidas, ele resolve bem.',
       },
       {
-        heading: 'Velocidade de resposta',
+        heading: 'O que fica de fora da conversa',
         content:
-          'Em um CRM, a resposta ao lead depende de o vendedor acessar o sistema. Com o Fykos, o lead recebe resposta em menos de 30 segundos via WhatsApp, com informação personalizada sobre o veículo de interesse. No mercado premium, quem responde primeiro vende.',
+          'O robô age quando o cliente escreve. Mas boa parte das oportunidades de alto valor não chega como mensagem: uma mudança de estoque, uma condição comercial nova, um contato que voltou a demonstrar intenção. Esses sinais ficam espalhados entre sistemas e equipes, e ninguém é avisado. Quando a oportunidade é valiosa, o custo não é uma mensagem sem resposta: é uma decisão comercial que não aconteceu.',
       },
       {
-        heading: 'Inteligência de perfilamento',
+        heading: 'Como a inteligência comercial trabalha',
         content:
-          'Em um CRM, o lead é organizado pelos dados declarados: nome, telefone, veículo de interesse. O Fykos vai além: analisa linguagem, comportamento de navegação e padrões de interação para criar um perfil psicológico do comprador, performance vs. segurança, urgência vs. pesquisa, ticket alto vs. entry-level.',
+          'O Fykos atua sobre os sistemas comerciais que a operação já usa. Detecta sinais de estoque, CRM e histórico de atendimento; prioriza as oportunidades relevantes com contexto e critérios comerciais; executa a próxima ação (inicia abordagens, qualifica, notifica responsáveis e encaminha exceções ao humano); e verifica resultados, falhas e motivos de escalonamento. O atendimento receptivo é uma das aplicações, não o produto inteiro.',
       },
       {
-        heading: 'Integração e flexibilidade',
+        heading: 'Regras, supervisão e trilha',
         content:
-          'O Syonet é o sistema onde a operação registra e gerencia o atendimento. O Fykos é uma camada inteligente que se integra com qualquer DMS, CRM (incluindo o próprio Syonet) e plataforma de comunicação. Não exige migração, complementa o que a concessionária já tem.',
+          'A inteligência interpreta o contexto, e conectores, regras e validações controlam a execução. Cada etapa relevante fica registrada e pode ser acompanhada e auditada. Integrações, observabilidade, limites e tratamento de exceções ajudam a reduzir falhas; nenhum sistema elimina todo risco, e a operação sabe o que aconteceu em cada caso.',
       },
       {
-        heading: 'Suporte e evolução',
+        heading: 'Quando cada um faz sentido',
         content:
-          'A Dexi Digital é uma consultoria de IA com 10 anos de experiência em engenharia de software. Não vendemos licença e sumimos, acompanhamos resultados, otimizamos continuamente e evoluímos a plataforma com base em dados reais da operação.',
+          'Se o desafio é responder um volume alto de perguntas parecidas, um robô de atendimento costuma bastar. Se cada oportunidade vale muito e os sinais que importam estão em mais de um sistema, como em grupos automotivos, a inteligência comercial é o que evita a decisão perdida. A aplicação depende de volume, dados disponíveis e viabilidade de implementação, e é isso que a conversa de aderência avalia.',
       },
     ],
     tabelaComparativa: [
-      { criterio: 'Resposta ao lead', dexi: '< 30 segundos (automática)', concorrente: 'Conduzida pela equipe no CRM' },
-      { criterio: 'Qualificação de lead', dexi: 'IA com perfilamento comportamental', concorrente: 'Feita pela equipe de vendas' },
-      { criterio: 'Follow-up', dexi: 'Automático com cadência inteligente', concorrente: 'Executado pela equipe de vendas' },
-      { criterio: 'Integração DMS', dexi: 'API aberta, qualquer DMS', concorrente: 'Conforme integrações do fornecedor' },
-      { criterio: 'Cross-sell entre marcas', dexi: 'Automático com ML', concorrente: 'Conduzido pela equipe a partir dos dados do CRM' },
-      { criterio: 'Predição de recompra', dexi: 'Machine learning preditivo', concorrente: 'Análise a partir de relatórios' },
-      { criterio: 'WhatsApp nativo', dexi: 'Sim, com Business API', concorrente: 'Conforme integrações do fornecedor' },
-      { criterio: 'Dashboards em tempo real', dexi: 'Sim, consolidados por grupo', concorrente: 'Relatórios do CRM' },
+      {
+        criterio: 'Quando age',
+        dexi: 'Quando um sinal muda: estoque, condição comercial, intenção do contato',
+        concorrente: 'Quando o cliente manda mensagem',
+      },
+      {
+        criterio: 'Dados que usa',
+        dexi: 'CRM, estoque, histórico e fontes operacionais autorizadas',
+        concorrente: 'Em geral, a conversa e o que o cliente informa',
+      },
+      {
+        criterio: 'Objetivo',
+        dexi: 'Priorizar e executar a próxima ação comercial',
+        concorrente: 'Responder e encaminhar o atendimento',
+      },
+      {
+        criterio: 'Papel do time',
+        dexi: 'Recebe oportunidades e exceções com contexto',
+        concorrente: 'Recebe o contato depois da triagem',
+      },
+      {
+        criterio: 'Acompanhamento',
+        dexi: 'Registra eventos, falhas, resultados e motivos de escalonamento',
+        concorrente: 'Registra a conversa',
+      },
     ],
     faq: [
       {
-        question: 'A Dexi substitui completamente o Syonet?',
+        question: 'O Fykos também faz atendimento receptivo?',
         answer:
-          'Pode funcionar como substituto ou complemento. O Fykos pode começar rodando junto com o Syonet, e a migração, se fizer sentido, acontece de forma gradual conforme validam resultados.',
+          'Sim. Entrada de demanda, com qualificação, contexto e transição ao vendedor, é uma das aplicações. A diferença é que o atendimento é uma parte do trabalho: o Fykos também age quando ninguém escreveu, a partir dos sinais da operação.',
       },
       {
-        question: 'O Syonet não oferece IA também?',
+        question: 'Preciso trocar o CRM ou o robô que já uso?',
         answer:
-          'O Syonet tem funcionalidades de automação. A diferença está na abordagem: o Fykos foi desenhado para agir autonomamente (responde, qualifica, perfila) e entregar ao vendedor o lead com contexto, enquanto um CRM organiza o atendimento que a equipe conduz.',
+          'Não é pré-requisito. O Fykos atua sobre os sistemas comerciais existentes, sem exigir que a empresa substitua o CRM. O que muda e o que fica é avaliado na conversa de aderência.',
       },
       {
-        question: 'Quanto custa trocar do Syonet para a Dexi?',
+        question: 'Para que tipo de operação faz sentido?',
         answer:
-          'O investimento varia conforme o porte da operação. Na conversa de aderência, olhamos a operação atual e avaliamos se o Fykos faz sentido financeiro antes de qualquer compromisso.',
+          'Operações em que cada oportunidade tem alto valor e a decisão comercial depende de dados em mais de um sistema, como grupos automotivos. A aplicação depende de volume, dados disponíveis e viabilidade de implementação.',
       },
     ],
-    ctaText: 'Avaliar aderência com a Dexi Digital',
+    fontes: [],
+    ctaText: 'Avaliar aderência da minha operação',
   },
   {
     slug: 'dexi-vs-crm-tradicional',
-    title: 'Dexi Digital vs CRM Tradicional',
-    metaTitle: 'IA Automotiva vs CRM Tradicional | Por que Mudar | Dexi Digital',
+    title: 'CRM e inteligência comercial: o que muda',
+    metaTitle: 'CRM vs inteligência comercial: o que muda na operação | Dexi Digital',
     metaDescription:
-      'Entenda por que CRMs tradicionais não acompanham o mercado automotivo moderno. Execução autônoma de IA vs. formulários manuais. Dexi Digital.',
+      'O CRM registra o que aconteceu. A inteligência comercial do Fykos identifica o que merece atenção agora e executa a próxima ação, sem substituir o CRM.',
     keywords: [
-      'CRM automotivo tradicional',
-      'CRM vs IA automotivo',
-      'alternativa CRM concessionária',
-      'IA vs CRM vendas',
-      'evolução CRM automotivo',
+      'CRM vs inteligência comercial',
+      'CRM automotivo',
+      'inteligência comercial sobre o CRM',
+      'alternativa ao CRM tradicional',
+      'execução comercial com IA',
     ],
     answerSnippet:
-      'CRMs tradicionais foram projetados para uma era em que o vendedor controlava a informação. Hoje, o comprador chega ao showroom com mais informação que o vendedor. O Fykos da Dexi Digital é a evolução: IA que executa a venda, não apenas registra dados.',
+      'O CRM registra o que aconteceu: leads, atendimentos, etapas do funil. A inteligência comercial do Fykos trabalha sobre esse registro: observa dados e eventos, identifica situações que exigem atenção, orienta a próxima ação e executa processos dentro de regras definidas. Não substitui o CRM; atua sobre os sistemas que a operação já usa.',
+    revisadoEm: '2026-10-12',
+    colunas: { dexi: 'Inteligência comercial (Fykos)', outro: 'CRM' },
     sections: [
       {
-        heading: 'A era do CRM acabou',
+        heading: 'O que o CRM faz bem',
         content:
-          'O CRM automotivo foi revolucionário nos anos 2000: pela primeira vez, concessionárias podiam rastrear leads. Mas o mercado evoluiu e o CRM não. O comprador moderno pesquisa online, compara preços, lê avaliações e chega ao showroom decidido. O CRM que registra "lead recebido às 14h" não acompanha essa velocidade.',
+          'O CRM é o sistema de registro da operação comercial: guarda o histórico de cada cliente, organiza o funil e gera os relatórios que a gestão acompanha. Sem ele, não há memória comercial. Nada aqui sugere tirar o CRM do lugar.',
       },
       {
-        heading: 'O vendedor não é o gargalo, o processo é',
+        heading: 'Onde a oportunidade escapa',
         content:
-          'Vendedores de concessionárias são competentes. O problema é o processo: lead entra → vendedor acessa CRM → lê informações → busca veículo → responde. Esse processo de 5 etapas manuais leva horas. Com o Fykos, o lead recebe resposta em segundos e o vendedor recebe briefing pronto.',
+          'O CRM registra o que aconteceu. Mas quem identifica o que merece atenção agora? Uma mudança de estoque, uma condição comercial, um contato que voltou a demonstrar intenção: sinais importantes podem passar despercebidos entre sistemas e equipes, porque o CRM espera que alguém olhe para eles.',
       },
       {
-        heading: 'Dados estáticos vs. infraestrutura de liquidez',
+        heading: 'O que a camada de inteligência acrescenta',
         content:
-          'O CRM armazena dados. O Fykos opera sobre uma infraestrutura de três camadas: ingestão de sinais (ERP, WhatsApp, voz), inteligência comportamental (score de probabilidade e intenção) e governança enterprise RAG. O resultado: fluxo de caixa preditivo, predição de recompra e follow-ups que reengajam leads frios.',
+          'O Fykos conecta CRM, estoque, histórico e fontes operacionais autorizadas para reconhecer oportunidades com contexto. Aplica regras de negócio para priorizar a próxima ação, aciona fluxos e pessoas, e registra eventos, falhas e resultados para permitir análise e melhoria. O time comercial continua decidindo; passa a decidir sobre o que importa.',
       },
       {
-        heading: 'O custo real do CRM manual',
+        heading: 'Quando faz sentido',
         content:
-          'Uma concessionária média perde 40% dos leads por falta de follow-up adequado. Com ticket médio de R$ 150 mil e 200 leads/mês, isso representa R$ 12M/ano em oportunidades perdidas. Com o Fykos, a média de qualificação é de 4 mensagens por sessão.',
+          'Em operações nas quais cada oportunidade vale muito e a decisão comercial depende de integração, continuidade e controle, como grupos automotivos. A aplicação depende de volume, dados disponíveis e viabilidade de implementação, e a conversa de aderência existe para avaliar isso antes de qualquer compromisso.',
       },
     ],
     tabelaComparativa: [
-      { criterio: 'Paradigma', dexi: 'Execução autônoma', concorrente: 'Registro manual' },
-      { criterio: 'Tempo de resposta', dexi: '< 30 segundos', concorrente: '1-24 horas' },
-      { criterio: 'Qualificação de leads', dexi: 'Automática com IA', concorrente: 'Critério do vendedor' },
-      { criterio: 'Follow-up', dexi: 'Automático e persistente', concorrente: 'Quando o vendedor lembrar' },
-      { criterio: 'Análise preditiva', dexi: 'Machine learning nativo', concorrente: 'Inexistente' },
-      { criterio: 'ROI mensurável', dexi: 'Dashboard em tempo real', concorrente: 'Relatório mensal' },
+      {
+        criterio: 'Papel na operação',
+        dexi: 'Identifica o que merece atenção e aciona a próxima ação',
+        concorrente: 'Registra o que aconteceu e organiza o funil',
+      },
+      {
+        criterio: 'Quem inicia a ação',
+        dexi: 'O sistema, dentro de regras definidas, com o humano nas exceções',
+        concorrente: 'A equipe, a partir do que está registrado',
+      },
+      {
+        criterio: 'Dados que cruza',
+        dexi: 'CRM, estoque, histórico e fontes operacionais autorizadas',
+        concorrente: 'O que a equipe registra e as integrações do próprio CRM',
+      },
+      {
+        criterio: 'Rastreabilidade',
+        dexi: 'Eventos, falhas, resultados e motivos de escalonamento',
+        concorrente: 'Histórico de atendimento',
+      },
+      {
+        criterio: 'Relação entre os dois',
+        dexi: 'Atua sobre o CRM existente',
+        concorrente: 'Continua como sistema de registro',
+      },
     ],
     faq: [
       {
         question: 'Preciso abandonar meu CRM atual?',
         answer:
-          'Não. O Fykos funciona como camada inteligente sobre qualquer CRM. Você pode manter o sistema atual e adicionar execução autônoma de IA por cima.',
+          'Não. O Fykos atua sobre os sistemas comerciais existentes, sem exigir que a empresa substitua o CRM.',
       },
       {
-        question: 'A IA não vai eliminar vendedores?',
+        question: 'A IA substitui o vendedor?',
         answer:
-          'Não. A IA elimina o trabalho operacional (qualificar, responder, agendar). O vendedor foca no que faz melhor: construir relacionamento e fechar a venda.',
+          'Não. O Fykos prioriza oportunidades, executa processos dentro de regras definidas e encaminha exceções ao humano quando necessário. A decisão comercial continua com o time.',
+      },
+      {
+        question: 'Como saber se faz sentido para a minha operação?',
+        answer:
+          'Depende de volume, dados disponíveis e viabilidade de implementação. A conversa de aderência olha a operação atual e avalia se existe uma oportunidade concreta, antes de qualquer compromisso.',
       },
     ],
+    fontes: [],
     ctaText: 'Avaliar aderência da IA à minha operação',
   },
 ];

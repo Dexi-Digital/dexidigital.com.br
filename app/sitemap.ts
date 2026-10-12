@@ -41,7 +41,7 @@ function url(
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getPublishedDbPosts();
   const artigos = getAllArticles();
-  const postMaisNovo = maisRecente(...artigos.map((a) => a.date), ...posts.map((p) => p.publishedAt));
+  const postMaisNovo = maisRecente(...artigos.map((a) => a.date), ...posts.flatMap((p) => [p.publishedAt, p.updatedAt]));
 
   const principais = [
     url('/', ['app/page.tsx'], 'weekly', 1),
@@ -113,7 +113,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ['app/[pillarSlug]', 'lib/pillars.ts'],
       'weekly',
       0.75,
-      ...posts.filter((p) => p.pillarLink === `/${pilar.slug}`).map((p) => p.publishedAt),
+      ...posts.filter((p) => p.pillarLink === `/${pilar.slug}`).flatMap((p) => [p.publishedAt, p.updatedAt]),
     ),
   );
 
@@ -127,7 +127,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...posts.map((post) => ({
       url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: maisRecente(post.publishedAt),
+      lastModified: maisRecente(post.publishedAt, post.updatedAt),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     })),

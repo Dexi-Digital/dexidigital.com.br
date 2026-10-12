@@ -1,19 +1,28 @@
 #!/usr/bin/env node
 /**
  * Blog Post Generation Script
- * Pega a próxima pauta do topic bank (Faixa B), deduplica, gera via Gemini,
- * valida, e publica direto (ou marca como rascunho se falhar a validação).
+ * Pega a próxima pauta do topic bank (Faixa B), deduplica, gera via Gemini e
+ * passa pelo revisor (lib/revisor-blog.ts). Só publica o que o revisor aprovar;
+ * quando ele pede correção, o redator reescreve e o revisor confere de novo, até
+ * MAX_CORRECOES vezes. Reprovado, pendente ou sem aprovação depois das correções
+ * fica como rascunho (não aparece no /blog), com o parecer salvo no banco.
  *
- * Usage: node --env-file=.env.local scripts/generate-blog-post.mjs
+ * Usage: node --env-file=.env.local scripts/generate-blog-post.mjs [--simular]
+ *   --simular: gera, revisa e corrige, mas não grava nada (nem post, nem pauta).
  */
 
 import { getNextBacklogTopic, markTopicStatus, getPublishedTitlesForVertical } from '../lib/topic-bank-db.ts';
 import { isDuplicateTitle } from '../lib/topic-deduplicator.ts';
-import { generatePost } from '../lib/gemini.ts';
+import { generatePost, corrigirPost } from '../lib/gemini.ts';
 import { validatePost } from '../lib/content-validator.ts';
+import { revisarPost, problemasDeEstrutura } from '../lib/revisor-blog.ts';
+import { semTravessao } from '../lib/sem-travessao.ts';
 import { insertPost } from '../lib/blog-db.ts';
 import { getAllArticles } from '../lib/blog-data.ts';
 import { notifyPostPublished, notifyGenerationFailed } from '../lib/slack.ts';
+
+const MAX_CORRECOES = 2;
+const SIMULAR = process.argv.includes('--simular');
 
 function slugify(title) {
   return title
@@ -29,6 +38,15 @@ function slugify(title) {
 function estimateReadTime(content) {
   const words = content.trim().split(/\s+/).filter(Boolean).length;
   return `${Math.max(3, Math.round(words / 200))} min`;
+}
+
+// Travessão é proibido no site: corrigido aqui, sem gastar uma rodada do revisor.
+function semTravessaoNoPost(post) {
+  return {
+    title: semTravessao(post.title, { titulo: true }),
+    excerpt: semTravessao(post.excerpt),
+    content: semTravessao(post.content),
+  };
 }
 
 // Guardado fora de main() para que o handler de erro lá embaixo saiba qual
@@ -53,32 +71,59 @@ async function main() {
   }
 
   console.log('Gerando rascunho via Gemini...');
-  const generated = await generatePost(topic);
-  console.log(`Gerado: "${generated.title}"`);
+  let post = semTravessaoNoPost(await generatePost(topic));
+  console.log(`Gerado: "${post.title}"`);
 
-  console.log('Validando...');
-  const report = validatePost(generated.content, topic.vertical, topic.pillarLink);
-  console.log('Relatório do Validator:', JSON.stringify(report));
+  let report;
+  let revisao;
+  let rodadas = 0;
+  for (;;) {
+    report = validatePost(post.content, topic.vertical, topic.pillarLink);
+    revisao = await revisarPost(
+      { titulo: post.title, resumo: post.excerpt, conteudo: post.content },
+      { extras: problemasDeEstrutura(report, topic.pillarLink) }
+    );
+    rodadas++;
+    console.log(`Revisão ${rodadas}: ${revisao.veredito}${revisao.erro ? ` (${revisao.erro.slice(0, 200)})` : ''}`);
+    for (const p of revisao.problemas) console.log(`  - [${p.regra}] ${p.motivo} | "${p.trecho.slice(0, 120)}"`);
 
-  const slug = slugify(generated.title);
-  const status = report.passed ? 'published' : 'draft';
+    if (revisao.veredito !== 'corrigir' || rodadas > MAX_CORRECOES) break;
+    console.log('Corrigindo o que o revisor apontou...');
+    try {
+      post = semTravessaoNoPost(await corrigirPost(topic, post, revisao.problemas));
+    } catch (error) {
+      // Sem a correção, vale o último parecer ("corrigir"): o post fica como rascunho.
+      console.error('Correção falhou:', error);
+      break;
+    }
+  }
+
+  const slug = slugify(post.title);
+  const status = revisao.veredito === 'aprovado' ? 'published' : 'draft';
+
+  if (SIMULAR) {
+    console.log(`Simulação: seria ${status} como /blog/${slug} depois de ${rodadas} revisão(ões). Nada foi gravado.`);
+    console.log(post.content.slice(0, 1500));
+    return;
+  }
 
   const postId = insertPost(
     {
       id: slug,
       slug,
-      title: generated.title,
-      excerpt: generated.excerpt,
-      content: generated.content,
+      title: post.title,
+      excerpt: post.excerpt,
+      content: post.content,
       category: topic.vertical,
-      readTime: estimateReadTime(generated.content),
+      readTime: estimateReadTime(post.content),
       author: 'Equipe Dexi Digital',
-      metaDescription: generated.excerpt,
+      metaDescription: post.excerpt,
       focusKeyword: topic.keyword,
       vertical: topic.vertical,
       cluster: topic.cluster,
       pillarLink: topic.pillarLink,
       validatorReport: JSON.stringify(report),
+      reviewReport: JSON.stringify({ ...revisao, rodadas }),
     },
     status
   );
@@ -88,13 +133,13 @@ async function main() {
   if (status === 'published') {
     console.log(`Publicado: /blog/${slug}`);
     await notifyPostPublished({
-      title: generated.title,
+      title: post.title,
       slug,
       vertical: topic.vertical,
-      readTime: estimateReadTime(generated.content),
+      readTime: estimateReadTime(post.content),
     });
   } else {
-    console.log(`Reprovado no Validator — salvo como rascunho (não aparece no /blog): ${slug}`);
+    console.log(`Revisor não aprovou (${revisao.veredito}): salvo como rascunho, não aparece no /blog: ${slug}`);
   }
 }
 

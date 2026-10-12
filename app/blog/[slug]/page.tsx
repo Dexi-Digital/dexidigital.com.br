@@ -30,6 +30,7 @@ function findArticle(slug: string) {
     category: dbPost.category,
     readTime: dbPost.readTime,
     date: dbPost.publishedAt ?? new Date().toISOString(),
+    dateModified: dbPost.updatedAt ?? undefined,
     author: dbPost.author,
     metaDescription: dbPost.metaDescription,
     focusKeyword: dbPost.focusKeyword,
