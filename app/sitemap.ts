@@ -105,15 +105,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // Pilares listam os posts do próprio cluster: o post mais novo também conta.
-  const pilares = PILLARS.map((pilar) =>
-    url(
-      `/${pilar.slug}`,
-      ['app/[pillarSlug]', 'lib/pillars.ts'],
-      'weekly',
-      0.75,
-      ...posts.filter((p) => p.pillarLink === `/${pilar.slug}`).flatMap((p) => [p.publishedAt, p.updatedAt]),
-    ),
-  );
+  // Pilar sem post está com noindex (só tem o "volte em breve") e fica de fora.
+  const pilares = PILLARS.map((pilar) => ({
+    pilar,
+    doPilar: posts.filter((p) => p.pillarLink === `/${pilar.slug}`),
+  }))
+    .filter(({ doPilar }) => doPilar.length > 0)
+    .map(({ pilar, doPilar }) =>
+      url(
+        `/${pilar.slug}`,
+        ['app/[pillarSlug]', 'lib/pillars.ts'],
+        'weekly',
+        0.75,
+        ...doPilar.flatMap((p) => [p.publishedAt, p.updatedAt]),
+      ),
+    );
 
   const blog = [
     url('/blog', ['app/blog/page.tsx'], 'weekly', 0.7, postMaisNovo),

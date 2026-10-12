@@ -19,9 +19,14 @@ export async function generateMetadata({ params }: PillarPageProps): Promise<Met
     return { title: 'Página não encontrada' };
   }
 
+  // Pilar sem post publicado é só um "volte em breve": fica fora do índice (e do
+  // sitemap) até o primeiro post do cluster sair.
+  const semConteudo = getPostsByPillarLink(`/${pillar.slug}`).length === 0;
+
   return {
     title: pillar.title,
     description: pillar.description,
+    ...(semConteudo && { robots: { index: false, follow: true } }),
   };
 }
 
