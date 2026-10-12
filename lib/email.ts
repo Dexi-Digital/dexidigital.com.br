@@ -21,7 +21,7 @@ const INTERNAL_EMAIL = process.env.INTERNAL_NOTIFICATION_EMAIL || 'contato@dexid
 export interface LeadData {
   nome: string;
   email: string;
-  type: 'checklist' | 'calculator';
+  type: 'calculator';
   title: string;
   // Calculator specific data
   roiData?: {
@@ -34,60 +34,9 @@ export interface LeadData {
   };
 }
 
-// Email templates for each lead magnet type
+// Template do único material com envio por e-mail. O Checklist de Qualidade
+// saiu em out/2026: o PDF nunca existiu e o tema era de software house.
 const emailTemplates = {
-  checklist: {
-    subject: '✅ Seu Checklist: Qualidade de Software',
-    getHtml: (nome: string) => `
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-  <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 30px; border-radius: 12px 12px 0 0;">
-    <h1 style="color: #fff; margin: 0; font-size: 24px;">Dexi Digital</h1>
-  </div>
-  
-  <div style="background: #fff; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
-    <h2 style="color: #1a1a2e; margin-top: 0;">Olá, ${nome}! 👋</h2>
-    
-    <p>Obrigado por baixar nosso <strong>Checklist de Qualidade de Software</strong>.</p>
-    
-    <p>Com mais de 50 itens de verificação, este checklist vai ajudar você a avaliar e melhorar a qualidade técnica do seu software.</p>
-    
-    <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
-      <h3 style="margin-top: 0; color: #1a1a2e;">📥 Baixe seu material:</h3>
-      <a href="https://dexidigital.com.br/downloads/checklist-qualidade.pdf" style="display: inline-block; background: #2563eb; color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">Acessar Checklist em PDF</a>
-    </div>
-    
-    <p><strong>Categorias cobertas:</strong></p>
-    <ul style="padding-left: 20px;">
-      <li>🏗️ Arquitetura e Design</li>
-      <li>📝 Qualidade de Código</li>
-      <li>🔒 Segurança</li>
-      <li>⚡ Performance</li>
-      <li>🚀 DevOps e CI/CD</li>
-    </ul>
-    
-    <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
-    
-    <h3 style="color: #1a1a2e;">Próximo passo: conversa de aderência</h3>
-    <p>Uma conversa para entender sua operação, os dados disponíveis e se existe uma oportunidade concreta. Sem compromisso e sem pedir dados confidenciais de carteira nesta etapa.</p>
-    
-    <a href="https://dexidigital.com.br/contato?cta=email-checklist" style="display: inline-block; background: #1a1a2e; color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">Solicitar conversa de aderência →</a>
-  </div>
-  
-  <div style="background: #f8fafc; padding: 20px; border-radius: 0 0 12px 12px; text-align: center; font-size: 14px; color: #6b7280;">
-    <p style="margin: 0;">Dexi Digital | Tecnologia para decisões comerciais de alto valor</p>
-    <p style="margin: 10px 0 0;">São Paulo, SP | contato@dexidigital.com.br</p>
-  </div>
-</body>
-</html>
-    `,
-  },
-
   calculator: {
     subject: '📊 Sua simulação de ROI',
     getHtml: (nome: string, roiData?: LeadData['roiData']) => {
@@ -107,7 +56,7 @@ const emailTemplates = {
   </div>
   
   <div style="background: #fff; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
-    <h2 style="color: #1a1a2e; margin-top: 0;">Olá, ${nome}! 👋</h2>
+    <h2 style="color: #1a1a2e; margin-top: 0;">Olá, ${escaparHtml(nome)}! 👋</h2>
     
     <p>Aqui está a simulação de ROI com os dados que você informou. Os valores são estimativas calculadas a partir desses dados, não garantia de resultado.</p>
     
@@ -136,7 +85,7 @@ const emailTemplates = {
 
   <div style="background: #f8fafc; padding: 20px; border-radius: 0 0 12px 12px; text-align: center; font-size: 14px; color: #6b7280;">
     <p style="margin: 0;">Dexi Digital | Tecnologia para decisões comerciais de alto valor</p>
-    <p style="margin: 10px 0 0;">São Paulo, SP | contato@dexidigital.com.br</p>
+    <p style="margin: 10px 0 0;">Uberlândia, MG | contato@dexidigital.com.br</p>
   </div>
 </body>
 </html>
@@ -149,10 +98,7 @@ const emailTemplates = {
 export async function sendLeadMagnetEmail(data: LeadData): Promise<{ success: boolean; error?: string }> {
   try {
     const template = emailTemplates[data.type];
-
-    const html = data.type === 'calculator'
-      ? template.getHtml(data.nome, data.roiData)
-      : template.getHtml(data.nome);
+    const html = template.getHtml(data.nome, data.roiData);
 
     const resend = getResend();
     const { error } = await resend.emails.send({
@@ -179,7 +125,6 @@ export async function sendInternalNotification(data: LeadData): Promise<void> {
   try {
     const resend = getResend();
     const typeLabels = {
-      checklist: 'Checklist Qualidade',
       calculator: 'Calculadora ROI',
     };
 
@@ -196,11 +141,11 @@ export async function sendInternalNotification(data: LeadData): Promise<void> {
   <table style="border-collapse: collapse; width: 100%; max-width: 500px;">
     <tr style="border-bottom: 1px solid #eee;">
       <td style="padding: 10px; font-weight: bold;">Nome:</td>
-      <td style="padding: 10px;">${data.nome}</td>
+      <td style="padding: 10px;">${escaparHtml(data.nome)}</td>
     </tr>
     <tr style="border-bottom: 1px solid #eee;">
       <td style="padding: 10px; font-weight: bold;">Email:</td>
-      <td style="padding: 10px;"><a href="mailto:${data.email}">${data.email}</a></td>
+      <td style="padding: 10px;"><a href="mailto:${escaparHtml(data.email)}">${escaparHtml(data.email)}</a></td>
     </tr>
     <tr style="border-bottom: 1px solid #eee;">
       <td style="padding: 10px; font-weight: bold;">Material:</td>

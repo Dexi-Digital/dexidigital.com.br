@@ -50,7 +50,7 @@ const SECOES = [
           O Fykos conecta empresas clientes (concessionárias, grupos automotivos, clínicas,
           construtoras e incorporadoras) ao WhatsApp Business Platform, da Meta, para qualificar,
           nutrir, reaquecer e acompanhar o relacionamento com os clientes dessas empresas, sobre o
-          DMS, o Syonet, o CRM ou o sistema de gestão que cada empresa já usa.
+          DMS, o CRM ou o sistema de gestão que cada empresa já usa.
         </p>
         <p>
           Fazemos o possível para manter o Fykos disponível e funcionando corretamente, mas não
@@ -173,7 +173,7 @@ const SECOES = [
           O Fykos é fornecido "como está" e "conforme disponível". Na medida permitida pela lei
           brasileira, a Dexi não garante que o serviço será ininterrupto, livre de erros, ou que
           qualquer resultado comercial específico (como um volume de conversão) será alcançado. As
-          projeções e faixas de resultado mencionadas em diagnósticos ou materiais comerciais são
+          projeções e faixas de resultado mencionadas em conversas de aderência, simulações ou materiais comerciais são
           estimativas, não garantias.
         </p>
       </>
@@ -303,7 +303,7 @@ export default function TermosDeUsoFykosPage() {
           <p className="text-overline mb-4">FYKOS · DEXI DIGITAL</p>
           <h1 className="text-h1 mb-4">Termos de Uso do Fykos</h1>
           <p className="text-body-sm text-[var(--text-secondary)] mb-12">
-            Última atualização: 20 de julho de 2026.
+            Última atualização: 12 de outubro de 2026.
           </p>
 
           <div className="space-y-12">

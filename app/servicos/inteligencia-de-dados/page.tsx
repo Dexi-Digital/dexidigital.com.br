@@ -5,7 +5,7 @@ import TrackedCTA from '@/components/ui/TrackedCTA';
 export const metadata: Metadata = {
   title: 'Inteligência de Dados',
   description:
-    'Analytics avançado, machine learning e data warehousing. Transforme dados em decisões estratégicas com governança e escalabilidade enterprise.',
+    'Engenharia de dados para decisões comerciais: organizamos os dados da operação para que oportunidades virem prioridades e ações. Pipelines, painéis e governança com LGPD.',
 };
 
 export default function DataIntelligencePage() {
@@ -29,8 +29,8 @@ export default function DataIntelligencePage() {
               Inteligência de <span className="text-display-gradient">Dados</span>
             </h1>
             <p className="text-lead max-w-2xl animate-fade-in-up delay-100">
-              Analytics avançado, machine learning e data warehousing.
-              Transforme dados em decisões estratégicas com governança e escalabilidade.
+              Organizamos os dados da operação para que a decisão comercial saia de dado,
+              não de achismo. Pipelines, modelagem e governança.
             </p>
           </div>
         </div>
@@ -45,14 +45,14 @@ export default function DataIntelligencePage() {
             </div>
             <div className="grid md:grid-cols-2 gap-4">
               {[
-                'Dashboards executivos em tempo real',
-                'Modelos preditivos para demanda e churn',
-                'Data warehouse moderno (Snowflake, BigQuery)',
-                'Governança e compliance (LGPD, SOC2)',
                 'Pipelines de dados automatizados',
-                'Análise de dados exploratória',
-                'Visualizações interativas',
-                'Integração com sistemas existentes',
+                'Modelagem e organização dos dados da operação',
+                'Data warehouse na nuvem',
+                'Painéis de acompanhamento para a gestão',
+                'Análise exploratória de dados',
+                'Governança de dados e LGPD',
+                'Integração com os sistemas existentes, quando o projeto pede',
+                'Base de contexto para o Fykos priorizar e agir',
               ].map((item) => (
                 <div key={item} className="card p-4 flex items-start gap-3">
                   <svg className="w-5 h-5 text-[var(--color-primary-500)] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -71,28 +71,28 @@ export default function DataIntelligencePage() {
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="section-header text-left">
-              <h2 className="text-h2">Casos de uso</h2>
+              <h2 className="text-h2">Onde se aplica</h2>
             </div>
             <div className="space-y-4">
               <div className="card card-interactive p-6">
                 <h3 className="text-h5 mb-3">Grupos Automotivos</h3>
                 <p className="text-body-sm text-[var(--text-secondary)]">
-                  Unificação de dados de showroom, oficina e pós-venda para
-                  visão 360° do cliente, previsão de demanda e otimização de estoque.
+                  Juntar dados de atendimento, estoque e carteira para enxergar onde a
+                  receita escapa e qual oportunidade merece atenção agora.
                 </p>
               </div>
               <div className="card card-interactive p-6">
-                <h3 className="text-h5 mb-3">Varejo e E-commerce</h3>
+                <h3 className="text-h5 mb-3">Construtoras e Incorporadoras</h3>
                 <p className="text-body-sm text-[var(--text-secondary)]">
-                  Análise de comportamento do cliente, recomendações
-                  personalizadas, previsão de churn e otimização de pricing.
+                  Organizar a carteira de compradores de quem financia com recursos
+                  próprios, para dar previsibilidade ao recebimento.
                 </p>
               </div>
               <div className="card card-interactive p-6">
-                <h3 className="text-h5 mb-3">Logística e Supply Chain</h3>
+                <h3 className="text-h5 mb-3">Clínicas de Procedimentos</h3>
                 <p className="text-body-sm text-[var(--text-secondary)]">
-                  Otimização de rotas, previsão de demanda, gestão de estoque e
-                  análise de performance de fornecedores.
+                  Entender a margem de cada procedimento e quem deixou de voltar,
+                  para orientar a decisão comercial.
                 </p>
               </div>
             </div>

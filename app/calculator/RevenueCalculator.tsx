@@ -71,7 +71,7 @@ export default function RevenueCalculator() {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-overline mb-4 animate-fade-in-up-subtle">
-              Sistema Operacional de Receita · por Dexi
+              Fykos · por Dexi
             </p>
             <h1 className="text-display-lg md:text-display-xl text-[var(--text-primary)] mb-4 animate-fade-in-up delay-75">
               Calculadora de <span className="text-result">Receita Recuperável</span>
@@ -164,11 +164,7 @@ export default function RevenueCalculator() {
                     <Field
                       id="qualificacao"
                       label="Taxa de reativação da base"
-                      badge={
-                        <span className="badge badge-primary gap-1">
-                          <ShieldIcon className="h-3 w-3" /> validado
-                        </span>
-                      }
+                      badge={<span className="badge badge-primary">premissa</span>}
                       value={qualificacao}
                       display={`${pct1(qualificacao)}%`}
                       sliderValue={qualificacao}
@@ -182,7 +178,7 @@ export default function RevenueCalculator() {
                       accent="primary"
                     />
                     <p className="mt-3 text-xs leading-relaxed text-[var(--text-tertiary)]">
-                      Alertas gerados sobre a base parada. Validado em duas operações reais e independentes.
+                      Alertas gerados sobre a base parada. É uma premissa da simulação: ajuste para a realidade da sua base.
                     </p>
                   </div>
 
@@ -268,7 +264,7 @@ export default function RevenueCalculator() {
                     main={formatInt(alertas)}
                     sub={`${pct1(qualificacao)}% da base`}
                     pct={qualificacao}
-                    badge="validado"
+                    badge="premissa"
                   />
                   <FunnelStep
                     tone="sales"
@@ -519,14 +515,6 @@ function FunnelStep({
 // ---------------------------------------------------------------------------
 // Ícones inline (sem dependência de biblioteca)
 // ---------------------------------------------------------------------------
-
-function ShieldIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-    </svg>
-  );
-}
 
 function TrendingIcon({ className }: { className?: string }) {
   return (

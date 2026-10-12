@@ -19,7 +19,7 @@ const faqCategories = [
       },
       {
         question: 'Qual é o diferencial da Dexi em relação a outras consultorias?',
-        answer: 'Nosso diferencial é a combinação de IA como acelerador com revisão técnica humana especializada. Não substituímos especialistas por IA: usamos IA para acelerar entregas enquanto engenheiros sêniors garantem qualidade, segurança e governança. Além disso, atuamos com foco em operações em que cada oportunidade tem valor alto, como grupos automotivos.',
+        answer: 'Nosso diferencial é a combinação de IA como acelerador com revisão técnica humana especializada. Não substituímos especialistas por IA: usamos IA para acelerar entregas, e engenheiros sêniores revisam qualidade, segurança e governança. Além disso, atuamos com foco em operações em que cada oportunidade tem valor alto, como grupos automotivos.',
       },
       {
         question: 'A Dexi trabalha com empresas de que porte?',
@@ -36,11 +36,11 @@ const faqCategories = [
       },
       {
         question: 'Como a Dexi garante segurança em soluções com IA?',
-        answer: 'Implementamos governança desde o início: rastreabilidade de decisões, explicabilidade de modelos, controle de acesso, auditoria completa e compliance com LGPD/GDPR. IA empresarial exige controle total, não caixas-pretas. Todos os modelos são documentados e auditáveis.',
+        answer: 'Com governança desde o início: regras definidas para o que a IA pode executar, controle de acesso, registro auditável das decisões de maior impacto, encaminhamento das exceções a uma pessoa e conformidade com a LGPD. IA empresarial exige controle, não caixas-pretas.',
       },
       {
         question: 'Vocês usam ChatGPT ou outras IAs públicas nos projetos?',
-        answer: 'Usamos LLMs como ferramentas de desenvolvimento, mas nunca enviamos dados sensíveis de clientes para APIs públicas. Para soluções em produção, implementamos modelos privados, on-premise ou em cloud dedicada, garantindo total controle sobre os dados.',
+        answer: 'Usamos modelos de linguagem de provedores contratados. As conversas dos clientes finais não são usadas para treinar modelos de uso público, e dado sensível só vai para um provedor de IA com acordo de confidencialidade e de não uso para treinamento, como descreve a política de privacidade do Fykos.',
       },
     ],
   },
@@ -74,7 +74,7 @@ const faqCategories = [
       },
       {
         question: 'Como funciona o suporte pós-entrega?',
-        answer: 'Todo projeto inclui documentação técnica completa, testes automatizados e período de garantia. Oferecemos contratos de suporte contínuo com SLA definido, evolução de features e monitoramento proativo.',
+        answer: 'Todo projeto inclui documentação técnica e testes automatizados. Depois da entrega, oferecemos suporte contínuo, evolução de funcionalidades e monitoramento.',
       },
     ],
   },

@@ -19,13 +19,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const data = findGrupo(slug);
   if (!data) return {};
 
+  // O layout já acrescenta "| Dexi Digital": tira o sufixo do dado para não duplicar.
+  const titulo = data.metaTitle.replace(/\s*\|\s*Dexi Digital\s*$/i, '');
+
   return {
-    title: data.metaTitle,
+    title: titulo,
     description: data.metaDescription,
     keywords: data.keywords,
     alternates: { canonical: `/setores/grupos/${slug}` },
     openGraph: {
-      title: data.metaTitle,
+      title: `${titulo} | Dexi Digital`,
       description: data.metaDescription,
       url: `https://dexidigital.com.br/setores/grupos/${slug}`,
       type: 'article',
@@ -62,7 +65,7 @@ export default async function GrupoPage({ params }: PageProps) {
             </nav>
             <p className="text-overline mb-4 animate-fade-in-up-subtle">IA PARA {data.nome.toUpperCase()}</p>
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
-              Inteligência Unificada para{' '}
+              Inteligência comercial para{' '}
               <span className="text-display-gradient">{data.nome}</span>
             </h1>
             <p className="text-lead text-[var(--text-secondary)] max-w-3xl mb-8 animate-fade-in-up delay-100">
@@ -91,7 +94,7 @@ export default async function GrupoPage({ params }: PageProps) {
       <section className="section-lg bg-[var(--bg-surface)]">
         <div className="container">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-h2 mb-10">Desafios de um grupo multi-marca</h2>
+            <h2 className="text-h2 mb-10">Desafios do grupo</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {data.desafios.map((d) => (
                 <div key={d.titulo} className="card p-6">
@@ -108,7 +111,7 @@ export default async function GrupoPage({ params }: PageProps) {
       <section className="section-lg">
         <div className="container">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-h2 mb-10">Como a Dexi potencializa seu grupo</h2>
+            <h2 className="text-h2 mb-10">Como o Fykos atua no grupo</h2>
             <div className="space-y-8">
               {data.solucoes.map((s, i) => (
                 <div key={s.titulo} className="card card-interactive p-8">
@@ -132,7 +135,7 @@ export default async function GrupoPage({ params }: PageProps) {
       <section className="section-lg bg-[var(--bg-surface)] border-y border-[var(--border-subtle)]">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-h2 mb-10">Resultados esperados</h2>
+            <h2 className="text-h2 mb-10">Onde está o valor</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {data.resultadosEsperados.map((r) => (
                 <div key={r} className="card p-6">
@@ -183,7 +186,7 @@ export default async function GrupoPage({ params }: PageProps) {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-overline mb-4">CONVERSA DE ADERÊNCIA</p>
-            <h2 className="text-h2 mb-4">Pronto para unificar seu grupo?</h2>
+            <h2 className="text-h2 mb-4">Faz sentido para o seu grupo?</h2>
             <p className="text-lead text-[var(--text-secondary)] mb-8">
               Uma conversa para entender sua operação, os dados disponíveis e se existe uma
               oportunidade concreta. Sem compromisso e sem pedir dados confidenciais de carteira

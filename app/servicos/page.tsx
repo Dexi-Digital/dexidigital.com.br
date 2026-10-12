@@ -3,48 +3,48 @@ import Link from 'next/link';
 import TrackedCTA from '@/components/ui/TrackedCTA';
 
 export const metadata: Metadata = {
-  title: 'Serviços | Inteligência de Dados, Software e IA Empresarial',
+  title: 'Serviços | Fykos, engenharia de dados e software sob medida',
   description:
-    'Soluções enterprise: data intelligence, software sob medida e IA governada. Dashboards, machine learning, APIs e sistemas escaláveis para grandes empresas.',
+    'O Fykos, engenharia de dados e software sob medida para que as oportunidades da operação virem receita e previsibilidade de venda.',
 };
 
 export default function ServicesPage() {
   const services = [
     {
-      title: 'Arquitetura de IA que Executa (Fykos)',
-      slug: 'ia-para-empresas',
+      title: 'Fykos: inteligência e execução comercial',
+      href: '/o-fykos',
       description:
         'Inteligência e execução comercial para que as oportunidades da sua base virem receita e previsibilidade de venda. O Fykos identifica o que merece atenção, prioriza a próxima ação e executa com regras definidas, em jornadas consultivas e operações multiunidade.',
       benefits: [
-        'Perfilamento neurolinguístico em tempo real',
-        'Distinção automática de valores (performance vs. segurança)',
-        'Handoff inteligente com briefing para vendedores',
-        'IA governada, auditável e integrada ao CRM',
+        'Prioriza oportunidades com contexto e critérios comerciais',
+        'Atendimento com qualificação e passagem ao vendedor com o histórico',
+        'Retoma a carteira quando uma condição relevante muda',
+        'Regras, supervisão humana nas exceções e trilha auditável',
       ],
       featured: true,
     },
     {
       title: 'Desenvolvimento de Sistemas de Missão Crítica',
-      slug: 'software-sob-medida',
+      href: '/servicos/software-sob-medida',
       description:
-        'Nossa expertise de 10 anos em engenharia para criar soluções proprietárias sob medida. Construímos a "última milha" da integração tecnológica, garantindo que a inovação se conecte aos sistemas legados e processos core da sua empresa.',
+        'Engenharia para criar sistemas sob medida que se conectam aos sistemas e processos centrais da empresa, com IA onde ela resolve um problema do negócio.',
       benefits: [
-        'Arquitetura moderna com IA conversacional nativa',
+        'Arquitetura pensada para crescer com a operação',
         'Testes automatizados e CI/CD',
-        'Integração com CRM, ERP e sistemas legados',
+        'Integração com CRM, ERP e sistemas existentes, quando o projeto pede',
         'Suporte e evolução contínua',
       ],
     },
     {
       title: 'Engenharia de Dados & Ativos de Inteligência',
-      slug: 'inteligencia-de-dados',
+      href: '/servicos/inteligencia-de-dados',
       description:
-        'Transformamos dados brutos em combustível para a tomada de decisão autônoma. Estruturamos a base necessária para que o Fykos opere com precisão, conectando CRM, ERP, WhatsApp e voz em ativos proprietários auditáveis.',
+        'Organizamos os dados da operação para que a decisão comercial saia de dado, não de achismo. É a base que dá contexto ao Fykos para priorizar e agir.',
       benefits: [
-        'Dashboards executivos em tempo real',
-        'Modelos preditivos para demanda e churn',
-        'Data warehouse moderno (Snowflake, BigQuery)',
-        'Governança e compliance (LGPD, SOC2)',
+        'Pipelines de dados automatizados',
+        'Painéis de acompanhamento para a gestão',
+        'Modelagem e organização dos dados da operação',
+        'Governança de dados e LGPD',
       ],
     },
   ];
@@ -57,7 +57,7 @@ export default function ServicesPage() {
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-overline mb-4 animate-fade-in-up-subtle">Soluções Enterprise</p>
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
-              IA que <span className="text-display-gradient">entende pessoas</span>
+              Tecnologia para <span className="text-display-gradient">decisões comerciais</span>
             </h1>
             <p className="text-lead max-w-2xl mx-auto animate-fade-in-up delay-100">
               Inteligência e execução comercial, software com IA integrada e inteligência de dados
@@ -73,7 +73,7 @@ export default function ServicesPage() {
           <div className="max-w-5xl mx-auto">
             <div className="space-y-8">
               {services.map((service, index) => (
-                <div key={service.slug} className="card card-interactive p-8 md:p-10">
+                <div key={service.href} className="card card-interactive p-8 md:p-10">
                   <div className="flex flex-col lg:flex-row gap-8">
                     <div className="flex-1">
                       <div className="flex items-center gap-4 mb-5">
@@ -97,7 +97,7 @@ export default function ServicesPage() {
                           </li>
                         ))}
                       </ul>
-                      <Link href={`/servicos/${service.slug}`} className="text-sm font-semibold text-[var(--color-primary-600)] hover:text-[var(--color-primary-700)] transition-base">
+                      <Link href={service.href} className="text-sm font-semibold text-[var(--color-primary-600)] hover:text-[var(--color-primary-700)] transition-base">
                         Saiba mais sobre {service.title} →
                       </Link>
                     </div>

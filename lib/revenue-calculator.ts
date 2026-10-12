@@ -1,9 +1,10 @@
 /**
  * Calculadora de Receita Recuperável — lógica pura (sem React).
  *
- * Metodologia Fykos: da base de cotações paradas, uma fração validada
+ * Simulação: da base de cotações paradas, uma fração (premissa ajustável)
  * vira alerta qualificado; dessa fração, a taxa de fechamento do cliente
- * vira venda. Receita = vendas × ticket médio.
+ * vira venda. Receita = vendas × ticket médio. Desde out/2026 a taxa não é
+ * apresentada como "validada": não há metodologia publicada que sustente.
  */
 
 export const BASE_MIN = 50;

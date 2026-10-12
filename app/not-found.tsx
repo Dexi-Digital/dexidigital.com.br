@@ -48,9 +48,9 @@ export default function NotFound() {
             <h2 className="text-h5 mb-4 text-[var(--text-primary)]">Serviços</h2>
             <ul className="space-y-3">
               <li>
-                <Link href="/servicos/ia-para-empresas" className="text-[var(--color-primary-600)] hover:underline flex items-center gap-2">
+                <Link href="/o-fykos" className="text-[var(--color-primary-600)] hover:underline flex items-center gap-2">
                   <span>→</span>
-                  <span><strong>Arquitetura de IA que Executa (Fykos)</strong>: inteligência e execução comercial</span>
+                  <span><strong>Fykos</strong>: inteligência e execução comercial</span>
                 </Link>
               </li>
               <li>
@@ -91,7 +91,7 @@ export default function NotFound() {
 
           {/* Trust Signal */}
           <p className="text-sm text-[var(--text-tertiary)] mt-8">
-            10+ anos de engenharia • Criadora do Fykos
+            Tecnologia para decisões comerciais de alto valor • Criadora do Fykos
           </p>
         </div>
       </div>

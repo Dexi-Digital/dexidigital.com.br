@@ -14,37 +14,37 @@ const steps = [
   {
     number: '01',
     title: 'Imersão & Análise Detalhada',
-    duration: '1-2 semanas',
+    fase: 'Início',
     description: 'Mapeamos gargalos operacionais e onde estão as oportunidades com maior potencial de receita e previsibilidade de venda.',
     deliverables: ['Blueprint de Processos Críticos', 'Matriz de Priorização "Quick Wins"'],
   },
   {
     number: '02',
     title: 'Mapeamento de Fluxos Críticos',
-    duration: '2-3 semanas',
-    description: 'Desenho da arquitetura de interoperabilidade entre o Fykos e seus sistemas legados (DMS, CRM, ERP).',
+    fase: 'Desenho',
+    description: 'Quando o projeto pede, desenho da integração entre o Fykos e os sistemas da operação (DMS, CRM, ERP), com as fontes que a empresa autorizar.',
     deliverables: ['Inventário de Ativos de Dados', 'Relatório de Higiene e Qualidade de Dados', 'Mapa de Arquitetura de Integração', 'Protocolo de Governança e Ética de Dados'],
   },
   {
     number: '03',
     title: 'Engenharia de Adaptação (Custom)',
-    duration: '2-4 semanas',
+    fase: 'Adaptação',
     description: 'Nossa expertise sênior entra para customizar o core do Fykos, garantindo que a tecnologia se molde ao seu DNA corporativo.',
     deliverables: ['Documento de Arquitetura Proprietária', 'Especificação Técnica de Integração Legada', 'Matriz de Riscos e Requisitos de Infra', 'Plano de Segurança e Soberania Digital'],
   },
   {
     number: '04',
     title: 'Orquestração & Deploy Enterprise',
-    duration: '4-8 semanas',
+    fase: 'Ativação assistida',
     description: 'Ativação controlada da IA com camadas de segurança, garantindo uma transição fluida para a execução com regras definidas e supervisão humana.',
     deliverables: ['Operação Assistida (Pilot Deployment)', 'Dashboards de Monitoramento de Performance', 'Manual de Governança "Human-in-the-loop"'],
   },
   {
     number: '05',
     title: 'Evolução de Ativos & Escala',
-    duration: 'Contínuo',
+    fase: 'Contínuo',
     description: 'Manutenção do ciclo de aprendizado. O software não é estático; ele valoriza como um ativo conforme o raciocínio da IA evolui.',
-    deliverables: ['Ecossistema de IA em Produção', 'Roadmap de Evolução e Novas Funcionalidades', 'SLA de Sustentação Crítica e Performance'],
+    deliverables: ['Ecossistema de IA em Produção', 'Roadmap de Evolução e Novas Funcionalidades', 'Sustentação e acompanhamento de performance'],
   },
 ];
 
@@ -59,7 +59,7 @@ export default function MetodologiaPage() {
     url: 'https://dexidigital.com.br/metodologia',
     etapas: steps.map((step) => ({
       nome: step.title,
-      texto: `${step.description} Duração: ${step.duration}. Entregáveis: ${step.deliverables.join('; ')}.`,
+      texto: `${step.description} Fase: ${step.fase}. Entregáveis: ${step.deliverables.join('; ')}.`,
     })),
   });
 
@@ -102,7 +102,7 @@ export default function MetodologiaPage() {
                   </svg>
                 </div>
                 <h3 className="text-h5 mb-3">Supervisão de Engenharia (Human-in-the-loop)</h3>
-                <p className="text-body-sm text-[var(--text-secondary)]">A IA orquestra a execução, mas nossos engenheiros sêniores garantem a integridade técnica. Unimos a velocidade da IA ao discernimento humano de elite para blindar a operação contra riscos e erros críticos.</p>
+                <p className="text-body-sm text-[var(--text-secondary)]">A IA orquestra a execução, e engenheiros sêniores acompanham a integridade técnica. A velocidade da IA com o discernimento humano nas exceções, para reduzir riscos e erros críticos.</p>
               </div>
               <div className="card card-feature p-8 text-center group">
                 <div className="w-14 h-14 rounded-xl bg-[var(--color-primary-100)] dark:bg-[var(--color-primary-900)]/30 flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform">
@@ -120,7 +120,7 @@ export default function MetodologiaPage() {
                   </svg>
                 </div>
                 <h3 className="text-h5 mb-3">Soberania Digital &amp; Compliance Enterprise</h3>
-                <p className="text-body-sm text-[var(--text-secondary)]">Segurança não é um acessório, é a base. Construímos sistemas de IA com trilhas de auditoria completas, garantindo que cada decisão da IA seja rastreável, ética e em total conformidade com os riscos corporativos.</p>
+                <p className="text-body-sm text-[var(--text-secondary)]">Segurança não é um acessório, é a base. Construímos sistemas de IA com trilhas de auditoria, para que cada decisão da IA seja rastreável e possa ser revista.</p>
               </div>
             </div>
           </div>
@@ -155,7 +155,7 @@ export default function MetodologiaPage() {
                     <div className="flex-1">
                       <div className="flex flex-wrap items-center gap-3 mb-3">
                         <h3 className="text-h4">{step.title}</h3>
-                        <span className="px-3 py-1 text-xs font-semibold bg-[var(--color-primary-600)] text-white rounded-full">{step.duration}</span>
+                        <span className="px-3 py-1 text-xs font-semibold bg-[var(--color-primary-600)] text-white rounded-full">{step.fase}</span>
                       </div>
                       <p className="text-body-sm text-[var(--text-secondary)] mb-4">{step.description}</p>
                       <div>

@@ -30,7 +30,7 @@ const REGRAS: RegraLegado[] = [
       /dado|data|sql|bi-|business-intelligence|analytic|analise|estatistic|etl|warehouse|lake|dashboard|metrica|kpi|relatorio|indicador|mineracao|olap|query|consulta/,
   },
   {
-    destino: '/servicos/ia-para-empresas',
+    destino: '/o-fykos',
     padrao:
       /(^|-)ia(-|$)|inteligencia-artificial|artificial-intelligence|machine-learning|aprendizado-de-maquina|rede-neural|neural|deep-learning|algoritmo|chatbot|bot|nlp|linguagem-natural|automacao|rpa|robot|visao-computacional|reconhecimento/,
   },

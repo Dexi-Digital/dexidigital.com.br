@@ -2,7 +2,7 @@
 
 > A Dexi Digital desenvolve tecnologia para decisões comerciais de alto valor: sistemas que transformam dados da operação em prioridades e ações comerciais. Criadora do Fykos, produto de inteligência e execução comercial.
 
-A Dexi identifica oportunidades relevantes nos dados da operação, orquestra a próxima ação com regras de negócio e executa processos com supervisão e rastreabilidade, para que a receita que já está na base vire previsibilidade de venda. Atua principalmente com grupos automotivos, além de construtoras e incorporadoras (gestão de carteira para quem financia com recursos próprios: cobrança periódica com o boleto gerado no sistema da empresa e encaminhamento para renegociação humana) e clínicas no Brasil.
+A Dexi identifica oportunidades relevantes nos dados da operação, orquestra a próxima ação com regras de negócio e executa processos com supervisão e rastreabilidade, para que a receita que já está na base vire previsibilidade de venda. Atua principalmente com grupos automotivos, além de construtoras e incorporadoras (gestão de carteira para quem financia com recursos próprios: cobrança periódica com o código de barras tirado do sistema da empresa e encaminhamento para renegociação humana) e clínicas no Brasil.
 
 ## Produto
 
@@ -14,7 +14,6 @@ A Dexi identifica oportunidades relevantes nos dados da operação, orquestra a 
 
 - [Inteligência de Dados](https://dexidigital.com.br/servicos/inteligencia-de-dados)
 - [Software Sob Medida](https://dexidigital.com.br/servicos/software-sob-medida)
-- [IA para Empresas](https://dexidigital.com.br/servicos/ia-para-empresas)
 
 ## Setores atendidos
 
@@ -25,7 +24,7 @@ A Dexi identifica oportunidades relevantes nos dados da operação, orquestra a 
 ## Prova e conteúdo
 
 - [Cases](https://dexidigital.com.br/cases): resultados documentados de clientes
-- [Blog](https://dexidigital.com.br/blog): artigos sobre IA empresarial, inteligência de dados e software enterprise
+- [Blog](https://dexidigital.com.br/blog): artigos para quem gere a operação comercial de grupos automotivos, incorporadoras e clínicas
 - [Notícias](https://dexidigital.com.br/noticias): curadoria diária de notícias de tecnologia e IA
 
 ## Glossário
@@ -33,7 +32,7 @@ A Dexi identifica oportunidades relevantes nos dados da operação, orquestra a 
 Definições curtas, uma página por termo: o formato mais direto para responder "o que é X" no contexto de operação comercial com IA.
 
 - [Glossário de IA aplicada ao automotivo](https://dexidigital.com.br/glossario-ia-automotiva)
-- [O que é o Fykos](https://dexidigital.com.br/glossario-ia-automotiva/fykos): o Sistema Operacional de Receita da Dexi
+- [O que é o Fykos](https://dexidigital.com.br/glossario-ia-automotiva/fykos): o produto de inteligência e execução comercial da Dexi
 - [O que é execução autônoma de IA](https://dexidigital.com.br/glossario-ia-automotiva/execucao-autonoma-ia)
 - [O que é Shadow CRM](https://dexidigital.com.br/glossario-ia-automotiva/shadow-crm): quando a operação real acontece fora do CRM oficial
 - [O que é DMS](https://dexidigital.com.br/glossario-ia-automotiva/dms-automotivo): Dealer Management System, o sistema de gestão da concessionária

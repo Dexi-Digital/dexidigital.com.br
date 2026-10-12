@@ -31,7 +31,7 @@ const SECOES = [
           O Fykos conecta empresas clientes (concessionárias, grupos automotivos, clínicas,
           construtoras e incorporadoras) ao WhatsApp Business Platform, da Meta, para qualificar,
           nutrir, reaquecer e acompanhar o relacionamento com os clientes dessas empresas, sobre o
-          DMS, o Syonet, o CRM ou o sistema de gestão que cada empresa já usa.
+          DMS, o CRM ou o sistema de gestão que cada empresa já usa.
         </p>
         <p>
           Esta Política de Privacidade explica quais dados pessoais são tratados quando alguém troca
@@ -84,7 +84,7 @@ const SECOES = [
           trocadas (texto, áudio transcrito, mídia enviada), horário e histórico da conversa, e sinais
           de intenção de compra ou interesse extraídos da conversa (por exemplo, qual produto ou
           serviço foi mencionado). Esses dados chegam ao Fykos através da API oficial do WhatsApp
-          Business Platform, da Meta, e ficam vinculados ao sistema (DMS, Syonet, CRM ou ERP) que a
+          Business Platform, da Meta, e ficam vinculados ao sistema (DMS, CRM ou ERP) que a
           empresa cliente já utiliza.
         </p>
         <h3 className="text-h4 mt-6 mb-2">3.2 Conta na plataforma Fykos</h3>
@@ -96,7 +96,7 @@ const SECOES = [
         <h3 className="text-h4 mt-6 mb-2">3.3 Site institucional dexidigital.com.br</h3>
         <p>
           Ao visitar este site, coletamos: dados enviados voluntariamente em formulários de contato
-          e diagnóstico (nome, e-mail, telefone, empresa, mensagem); dados de navegação via Google
+          e de conversa de aderência (nome, e-mail, telefone, empresa, mensagem); dados de navegação via Google
           Analytics (páginas visitadas, origem do acesso, dispositivo e localização aproximada); e um
           identificador de dispositivo gerado por uma tecnologia de fingerprinting (reconhecimento de
           navegador), usado para reconhecer visitantes recorrentes e associar o acesso ao contato
@@ -117,7 +117,7 @@ const SECOES = [
             cliente, execução do contrato entre a Dexi e a empresa cliente (LGPD, art. 7º, V).
           </li>
           <li>
-            Sincronizar a conversa com o DMS, o Syonet, o CRM ou o ERP da empresa cliente, execução
+            Sincronizar a conversa com o DMS, o CRM ou o ERP da empresa cliente, execução
             do contrato (LGPD, art. 7º, V).
           </li>
           <li>
@@ -169,8 +169,8 @@ const SECOES = [
             a Política de Dados da Meta, necessária para o envio e recebimento das mensagens.
           </li>
           <li>
-            <strong>Sistemas-núcleo integrados</strong> pela empresa cliente (DMS da montadora,
-            Syonet, outros CRMs, ERPs ou sistemas de gestão), apenas mediante autorização e
+            <strong>Sistemas-núcleo integrados</strong> pela empresa cliente (DMS, CRM, ERP ou outro
+            sistema de gestão), apenas mediante autorização e
             configuração da própria empresa cliente.
           </li>
           <li>
@@ -320,7 +320,7 @@ export default function PoliticaPrivacidadeFykosPage() {
           <p className="text-overline mb-4">FYKOS · DEXI DIGITAL</p>
           <h1 className="text-h1 mb-4">Política de Privacidade do Fykos</h1>
           <p className="text-body-sm text-[var(--text-secondary)] mb-12">
-            Última atualização: 20 de julho de 2026.
+            Última atualização: 12 de outubro de 2026.
           </p>
 
           <div className="space-y-12">

@@ -1,3 +1,13 @@
+/**
+ * Guias (/guias/<slug>).
+ *
+ * Out/2026: as versões anteriores foram escritas por IA e traziam estatística
+ * sem fonte ("92% pesquisam online", "R$ 350 bilhões/ano"), números do Fykos
+ * ("< 30 segundos", "4 mensagens por sessão", "10 anos"), recursos que não
+ * existem (perfil psicológico, RAG, fluxo de caixa preditivo) e comparação com
+ * CRM citado por nome. Os textos abaixo usam só o que lib/regras-editoriais.ts
+ * afirma sobre o Fykos e tratam o mercado sem número.
+ */
 export interface GuiaPage {
   slug: string;
   title: string;
@@ -14,9 +24,9 @@ export const GUIAS: GuiaPage[] = [
   {
     slug: 'transformacao-digital-concessionaria',
     title: 'Transformação Digital para Concessionárias',
-    metaTitle: 'Transformação Digital para Concessionárias | Guia Completo | Dexi Digital',
+    metaTitle: 'Transformação Digital para Concessionárias | Guia | Dexi Digital',
     metaDescription:
-      'Guia completo de transformação digital para concessionárias. Do DMS legado à IA automotiva. Passo a passo para modernizar sua operação.',
+      'O que a transformação digital muda de verdade numa concessionária: dados, atendimento e decisão comercial. Princípios para começar pelo que traz receita.',
     keywords: [
       'transformação digital concessionária',
       'digitalização concessionária',
@@ -25,54 +35,54 @@ export const GUIAS: GuiaPage[] = [
       'tecnologia automotiva dealer',
     ],
     answerSnippet:
-      'A transformação digital em concessionárias vai além de ter um site bonito. Envolve unificar dados, automatizar processos de venda, implementar IA para atendimento e criar uma experiência omnichannel que acompanha o comprador do primeiro clique à entrega do veículo.',
+      'Transformação digital em concessionária não é ter um site bonito nem trocar de sistema. É fazer os dados que a operação já tem virarem decisão comercial: responder o lead que custou caro, priorizar o que merece atenção agora e acompanhar o resultado de cada ação.',
     sections: [
       {
-        heading: 'Por que transformar agora',
+        heading: 'Por que agora',
         content:
-          'O comprador automotivo brasileiro mudou. 92% pesquisam online antes de visitar o showroom. 78% preferem iniciar o atendimento por WhatsApp. 65% desistem se não recebem resposta em 1 hora. A concessionária que não se adaptar perderá mercado para quem se adaptar.',
+          'O comprador chega à concessionária depois de pesquisar online e espera resposta rápida pelo canal que escolheu, muitas vezes o WhatsApp. Cada lead tem custo de mídia por trás, e a operação que demora a responder ou perde o contexto entre canais paga por oportunidades que não viram venda.',
       },
       {
-        heading: 'Os 4 pilares da concessionária digital',
+        heading: 'Os quatro pilares da concessionária digital',
         content:
-          'Pilar 1: Dados unificados (DMS + CRM + pós-venda em visão única). Pilar 2: Atendimento inteligente (resposta instantânea com IA). Pilar 3: Experiência omnichannel (continuidade entre digital e presencial). Pilar 4: Decisão baseada em dados (dashboards e análise preditiva).',
+          'Dados conectados: o que está no CRM, no estoque e no histórico de atendimento precisa conversar. Atendimento com contexto: quem responde sabe quem é o cliente e o que ele procura. Prioridade clara: o time sabe onde agir primeiro. Decisão acompanhada: cada ação fica registrada, com resultado, falha e motivo.',
       },
       {
         heading: 'Por onde começar',
         content:
-          'Comece pelo pilar com maior impacto imediato: atendimento inteligente. Implementar resposta automática a leads via WhatsApp é o passo com melhor relação esforço/resultado. Em 2-4 semanas, o atendimento inteligente já está rodando e a concessionária passa a medir o efeito na conversão.',
+          'Comece pelo ponto em que a receita escapa hoje. Em muitas operações, é o lead que chega e não recebe resposta nem acompanhamento. Atacar esse ponto primeiro permite medir o efeito na venda antes de ampliar o projeto.',
       },
       {
         heading: 'Erros comuns na transformação digital',
         content:
-          'Erro 1: Comprar tecnologia sem estratégia (CRM sem processo definido é planilha cara). Erro 2: Automatizar o processo errado (se o processo manual é ruim, automatizá-lo amplifica o problema). Erro 3: Ignorar a equipe (tecnologia sem adesão do time é investimento perdido).',
+          'Erro 1: comprar tecnologia sem processo (CRM sem processo definido é planilha cara). Erro 2: automatizar o processo errado (se o processo manual é ruim, automatizar amplia o problema). Erro 3: ignorar o time (tecnologia sem adesão de quem vende é investimento perdido).',
       },
       {
-        heading: 'Quanto investir',
+        heading: 'Como avaliar o investimento',
         content:
-          'O investimento em transformação digital deve se pagar em 3-6 meses. A regra é: se o custo mensal da plataforma é menor que o valor de 2 leads convertidos, o investimento faz sentido. Para uma concessionária premium com ticket médio de R$ 200 mil, isso significa que converter 2 leads a mais por mês já paga toda a tecnologia.',
+          'A conta certa compara o custo da tecnologia com a receita que hoje escapa: leads pagos sem resposta, clientes da carteira que ninguém retomou, oportunidades que dependem de alguém lembrar. Se essa perda é maior que o investimento, o projeto faz sentido. A conversa de aderência existe para levantar esses números com os dados da própria operação.',
       },
     ],
     faq: [
       {
         question: 'Quanto tempo leva a transformação digital de uma concessionária?',
         answer:
-          'O atendimento inteligente entra em operação em 2-4 semanas, e a partir daí a conversão passa a ser medida. A transformação completa (dados + IA + omnichannel) leva de 3 a 6 meses.',
+          'Depende de volume, dados disponíveis e viabilidade de implementação. Começar por um ponto de perda de receita permite medir o efeito antes de ampliar; o prazo de cada etapa é definido na conversa de aderência.',
       },
       {
         question: 'Preciso trocar todos os meus sistemas?',
         answer:
-          'Não. A abordagem da Dexi é agregar inteligência sobre os sistemas existentes, não substituí-los. Integramos com o que a concessionária já usa.',
+          'Não. A abordagem da Dexi é agregar inteligência sobre os sistemas que a operação já usa, sem exigir a troca do CRM. Quando o projeto pede, a Dexi integra o Fykos ao CRM, ao DMS ou ao ERP da operação.',
       },
     ],
-    ctaText: 'Iniciar transformação digital',
+    ctaText: 'Avaliar aderência da minha operação',
   },
   {
     slug: 'ia-automotiva-brasil',
-    title: 'IA Automotiva no Brasil: Cenário e Oportunidades',
-    metaTitle: 'IA Automotiva no Brasil | Cenário Completo | Dexi Digital',
+    title: 'IA Automotiva no Brasil: onde ela muda a venda',
+    metaTitle: 'IA Automotiva no Brasil | O que muda na venda | Dexi Digital',
     metaDescription:
-      'Panorama completo da IA automotiva no Brasil. Como concessionárias e fábricas estão usando inteligência artificial para vender mais e melhor.',
+      'Onde a inteligência artificial muda a venda de veículos: atendimento com contexto, prioridade para o time e retomada de oportunidades, com regras e supervisão.',
     keywords: [
       'IA automotiva Brasil',
       'inteligência artificial concessionária',
@@ -81,90 +91,89 @@ export const GUIAS: GuiaPage[] = [
       'futuro concessionária IA',
     ],
     answerSnippet:
-      'O Brasil é um dos mercados mais promissores para IA automotiva. Com mais de 4.500 concessionárias e um mercado de R$ 350 bilhões/ano, a oportunidade para tecnologia que aumenta conversão e reduz custo operacional é gigantesca. A Dexi Digital atua nessa transformação com o Fykos.',
+      'No varejo automotivo, cada oportunidade vale muito e os sinais que importam ficam espalhados entre CRM, estoque e conversas. A IA aplicada à venda junta esses sinais, identifica o que merece atenção agora e executa a próxima ação dentro de regras definidas. A Dexi atua nessa frente com o Fykos.',
     sections: [
       {
-        heading: 'O mercado automotivo brasileiro em números',
+        heading: 'O que mudou no comprador',
         content:
-          'O Brasil tem mais de 4.500 concessionárias de veículos novos, movimenta R$ 350 bilhões por ano e emprega mais de 300 mil pessoas diretamente. Apesar do tamanho, a maioria das operações ainda funciona com processos manuais e tecnologia defasada.',
+          'O comprador chega à loja depois de pesquisar online, compara condições e espera resposta rápida. Ao mesmo tempo, muitas operações ainda dependem de alguém ler o lead, procurar o veículo e lembrar do retorno. A distância entre o que o comprador espera e o que a operação entrega é onde a venda escapa.',
       },
       {
-        heading: 'Como a IA está mudando o jogo',
+        heading: 'Onde a IA ajuda de verdade',
         content:
-          'As operações pioneiras em IA estão vendo resultados concretos: resposta qualificada em menos de 30 segundos, micro-segmentação em tempo real e follow-ups inteligentes que reengajam leads frios com média de apenas 4 mensagens por sessão. A IA não substitui o vendedor, cria uma workforce híbrida onde a IA qualifica e o humano fecha.',
+          'Atender o lead que chega com qualificação e contexto, e passar ao vendedor no momento certo. Ajudar o time a priorizar as oportunidades com mais chance de virar venda. Retomar contatos da carteira quando uma condição relevante muda, como estoque ou condição comercial. A IA não substitui o vendedor: tira dele o trabalho de garimpar e deixa a negociação com quem sabe negociar.',
       },
       {
-        heading: 'Os três pilares da IA automotiva moderna',
+        heading: 'Regras, supervisão e trilha',
         content:
-          'Pilar 1: Inteligência conversacional, análise de tom, intenção e perfil psicológico em tempo real. Pilar 2: Infraestrutura de liquidez, transformação de dados brutos em ativos de inteligência com fluxo de caixa preditivo. Pilar 3: Governança enterprise (RAG), IA que decide com base em dados oficiais e com soberania do cliente.',
+          'IA na venda precisa de limite. A inteligência interpreta o contexto, e conectores, regras e validações controlam a execução. Cada etapa relevante fica registrada e pode ser auditada, e as exceções vão para o humano. Nenhum sistema elimina todo risco; a operação precisa saber o que aconteceu em cada caso.',
       },
       {
         heading: 'O papel da Dexi Digital',
         content:
-          'A Dexi Digital é especializada em IA automotiva. Combinamos 10 anos de engenharia de software com expertise em vendas de alto ticket. O Fykos opera sobre uma arquitetura de três camadas (ingestão de sinais, inteligência comportamental e governança RAG) que garante precisão, escala e soberania digital.',
+          'A Dexi desenvolve sistemas que transformam dados da operação em prioridades e ações comerciais. O Fykos, produto da Dexi, detecta sinais, prioriza oportunidades, executa a próxima ação e verifica o resultado, atuando sobre os sistemas que a operação já usa, sem exigir a troca do CRM.',
       },
     ],
     faq: [
       {
         question: 'A IA funciona para concessionárias de veículos populares?',
         answer:
-          'Sim, mas com ROI diferente. Em concessionárias de alto volume, a IA brilha na gestão de volume (milhares de leads/mês). Em concessionárias premium, brilha na qualidade do atendimento.',
+          'Depende do valor por oportunidade, do volume e dos dados disponíveis. O Fykos foi pensado para operações em que cada oportunidade vale muito; a conversa de aderência avalia se faz sentido financeiro para a sua.',
       },
       {
         question: 'A Dexi atende apenas marcas premium?',
         answer:
-          'Não. O Fykos é adaptável para qualquer segmento. Nossa expertise é mais profunda em premium e alto ticket, mas a tecnologia funciona para qualquer operação automotiva.',
+          'Não. O foco são operações em que cada oportunidade tem alto valor e a decisão comercial depende de dados em mais de um sistema. A aplicação depende de volume, dados disponíveis e viabilidade de implementação.',
       },
     ],
-    ctaText: 'Conversar com especialista em IA automotiva',
+    ctaText: 'Avaliar aderência da minha operação',
   },
   {
     slug: 'como-escolher-crm-automotivo',
     title: 'Como Escolher o CRM Automotivo Certo',
     metaTitle: 'Como Escolher CRM Automotivo | Guia de Decisão | Dexi Digital',
     metaDescription:
-      'Guia de decisão para escolher o CRM automotivo certo. Critérios técnicos, perguntas que ninguém faz e por que a era do CRM passivo acabou.',
+      'Critérios para escolher o CRM da concessionária e o que nenhum CRM faz sozinho: identificar qual oportunidade merece atenção agora.',
     keywords: [
       'escolher CRM automotivo',
       'melhor CRM concessionária',
       'CRM automotivo comparativo',
       'CRM concessionária avaliação',
-      'Syonet alternativas',
     ],
     answerSnippet:
-      'A escolha do CRM automotivo deve considerar 5 critérios: velocidade de resposta ao lead, integração com WhatsApp, capacidade de predição, integração com DMS existente e ROI mensurável. CRMs focados em registro e gestão de leads (como o Syonet) e plataformas de execução autônoma de IA (como o Fykos) seguem abordagens diferentes: um organiza o atendimento, o outro age sobre o lead.',
+      'Escolha o CRM automotivo pelo processo comercial que ele precisa sustentar, pela adesão do time e pela qualidade dos dados que ele guarda. A Dexi não vende CRM: o Fykos atua sobre o CRM que a operação escolher. Por isso este guia trata do que o CRM precisa fazer bem e do que nenhum CRM faz sozinho.',
     sections: [
       {
-        heading: '5 critérios que importam de verdade',
+        heading: 'Critérios que importam',
         content:
-          'Critério 1: O sistema responde leads automaticamente ou apenas registra? Critério 2: Integra nativamente com WhatsApp Business API? Critério 3: Oferece análise preditiva ou apenas relatórios históricos? Critério 4: Conecta com seu DMS atual sem exigir migração? Critério 5: Você consegue medir ROI mês a mês?',
+          'Aderência ao processo: o CRM precisa refletir como a loja vende, do lead à entrega. Adesão do time: sistema que o vendedor não usa não registra nada. Qualidade do registro: histórico completo de cada cliente, sem duplicidade. Relatórios que a gestão usa de fato. Troca de dados com os outros sistemas da operação, para o CRM não virar uma ilha.',
       },
       {
-        heading: 'Perguntas que o fornecedor não quer que você faça',
+        heading: 'Perguntas para fazer ao fornecedor',
         content:
-          'Pergunta 1: Qual o tempo médio de resposta ao lead no seu sistema? Se for > 30 segundos, não é automação, é notificação. Pergunta 2: Me mostre um cliente que mediu ROI real. Se não conseguir, é custo operacional, não investimento. Pergunta 3: O que acontece com leads fora do horário comercial? Se a resposta for "espera o vendedor", você perde 40% dos leads.',
+          'Quem já usa o sistema numa operação parecida com a sua, e o que mudou depois? O que acontece com o lead que chega fora do horário comercial? Como os dados saem do sistema se você precisar deles em outra ferramenta? Qual é o custo total, contando implantação, treinamento e licenças?',
       },
       {
-        heading: 'A evolução do CRM: de registro para execução',
+        heading: 'O que nenhum CRM faz sozinho',
         content:
-          'O futuro do CRM automotivo não é um formulário mais bonito. É uma plataforma que age: responde leads, qualifica intenção, perfila comportamento e entrega ao vendedor um briefing completo. Essa é a diferença entre CRM (registro) e execução autônoma de IA (ação).',
+          'O CRM registra o que aconteceu. Mas quem identifica o que merece atenção agora? Uma mudança de estoque, uma condição comercial nova, um cliente da carteira que voltou a demonstrar intenção: esses sinais ficam entre sistemas e equipes, e o CRM espera que alguém olhe para eles. É aí que a inteligência comercial entra, sobre o CRM, não no lugar dele.',
       },
       {
-        heading: 'Checklist de avaliação',
+        heading: 'Onde o Fykos entra',
         content:
-          'Use este checklist antes de contratar: resposta automática a leads (sim/não), WhatsApp Business API nativo (sim/não), integração com seu DMS (sim/não), dashboards em tempo real (sim/não), predição de recompra (sim/não), ROI mensurável (sim/não). Se o fornecedor não marca todos os itens, considere alternativas.',
+          'O Fykos detecta sinais, prioriza oportunidades, executa a próxima ação dentro de regras definidas e registra resultados, falhas e motivos de escalonamento. Atua sobre o CRM que a operação já usa ou vai escolher; quando o projeto pede, a Dexi integra o Fykos ao CRM, ao DMS ou ao ERP.',
       },
     ],
     faq: [
       {
-        question: 'Syonet é um bom CRM automotivo?',
+        question: 'Preciso trocar de CRM para usar o Fykos?',
         answer:
-          'O Syonet é um CRM automotivo consolidado para registro e gestão de leads. Para concessionárias que precisam apenas de organização, pode ser suficiente. Para quem busca conversão ativa e execução autônoma de IA, o Fykos da Dexi foi desenhado para isso.',
+          'Não. O Fykos atua sobre os sistemas que a operação já usa, sem exigir a troca do CRM.',
       },
       {
-        question: 'Existe CRM automotivo gratuito?',
+        question: 'CRM genérico serve para concessionária?',
         answer:
-          'Existem CRMs genéricos gratuitos (HubSpot, Bitrix24), mas nenhum é otimizado para o setor automotivo. O custo de adaptar um CRM genérico geralmente supera o investimento em uma solução especializada.',
+          'Pode servir, se o processo comercial da loja couber nele e o time usar. O ponto de atenção é o custo de adaptar: etapas, campos e relatórios do varejo automotivo precisam existir de forma natural, ou o registro fica incompleto.',
       },
     ],
     ctaText: 'Avaliar aderência com a Dexi Digital',

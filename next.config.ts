@@ -51,18 +51,24 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/consultoria-ia',
-        destination: '/servicos/ia-para-empresas',
+        destination: '/o-fykos',
         permanent: true,
       },
       {
         source: '/consultoria-de-ia',
-        destination: '/servicos/ia-para-empresas',
+        destination: '/o-fykos',
+        permanent: true,
+      },
+      // A página de serviço do Fykos descrevia recursos que não existem; o produto está em /o-fykos.
+      {
+        source: '/servicos/ia-para-empresas',
+        destination: '/o-fykos',
         permanent: true,
       },
       // Legacy service URLs
       {
         source: '/servicos/consultoria-ia',
-        destination: '/servicos/ia-para-empresas',
+        destination: '/o-fykos',
         permanent: true,
       },
       {

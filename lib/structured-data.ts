@@ -37,7 +37,6 @@ export const organizationSchema = {
     'Inteligência comercial',
     'Execução comercial',
     'Priorização de oportunidades',
-    'Sistema Operacional de Receita',
     'Fykos',
     'IA sobre CRM existente',
     'Vazamento de receita no funil comercial',
@@ -156,7 +155,7 @@ export const servicesSchema = [
     '@id': 'https://dexidigital.com.br/servicos/inteligencia-de-dados',
     name: 'Engenharia de Dados & Ativos de Inteligência',
     description:
-      'Transformamos dados brutos em combustível para a tomada de decisão. Estruturamos a base necessária para que o Fykos opere com precisão, conectando CRM, ERP, WhatsApp e voz em ativos proprietários auditáveis.',
+      'Organizamos os dados da operação para que a decisão comercial saia de dado, não de achismo. É a base que dá contexto ao Fykos para priorizar e agir.',
     provider: {
       '@id': 'https://dexidigital.com.br/#organization',
     },
@@ -173,28 +172,28 @@ export const servicesSchema = [
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Dashboards executivos em tempo real',
+            name: 'Painéis de acompanhamento para a gestão',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Modelos preditivos para demanda e churn',
+            name: 'Modelagem e organização dos dados da operação',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Data warehouse moderno (Snowflake, BigQuery)',
+            name: 'Data warehouse na nuvem',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Governança e compliance (LGPD, SOC2)',
+            name: 'Governança de dados e LGPD',
           },
         },
       ],
@@ -253,7 +252,7 @@ export const servicesSchema = [
   {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    '@id': 'https://dexidigital.com.br/servicos/ia-para-empresas',
+    '@id': 'https://dexidigital.com.br/o-fykos#servico',
     name: 'Fykos: inteligência e execução comercial',
     description:
       'O Fykos é o produto de inteligência e execução comercial da Dexi: identifica oportunidades nos dados da operação, orienta a próxima ação e executa processos dentro de regras definidas, para que a receita que já está na base vire previsibilidade de venda.',
@@ -280,7 +279,7 @@ export const servicesSchema = [
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Integração com sistemas existentes',
+            name: 'Integração com sistemas existentes, quando o projeto pede',
           },
         },
         {

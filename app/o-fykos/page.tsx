@@ -12,7 +12,6 @@ export const metadata: Metadata = {
     'Fykos',
     'inteligência comercial',
     'execução comercial',
-    'Sistema Operacional de Receita',
     'camada de inteligência sobre CRM',
     'priorização de oportunidades',
     'reativação de carteira',
@@ -64,7 +63,7 @@ const CAMADAS = [
     n: '01',
     titulo: 'Conectores: integra, não substitui',
     corpo:
-      'O Fykos se conecta aos sistemas que a operação já usa (CRM, estoque e demais fontes autorizadas) por API e webhook, cada um com sua camada de autenticação. Não exige troca de ferramenta nem migração de base.',
+      'Quando o projeto pede, a Dexi conecta o Fykos aos sistemas que a operação já usa (CRM, estoque e demais fontes autorizadas) por API ou webhook, cada conexão com sua autenticação. Não exige troca de ferramenta nem migração de base.',
   },
   {
     n: '02',
@@ -235,24 +234,12 @@ export default function OFykosPage() {
             </div>
 
             <div className="mt-10 card p-6 md:p-8 text-left">
-              <h3 className="text-h5 mb-4">Integrações e infraestrutura</h3>
-              <div className="flex flex-wrap gap-3 mb-4">
-                {['Syonet', 'AutoConf'].map((sis) => (
-                  <span
-                    key={sis}
-                    className="card px-5 py-2 text-body-sm font-semibold text-[var(--text-primary)]"
-                  >
-                    {sis}
-                  </span>
-                ))}
-                <span className="card px-5 py-2 text-body-sm font-medium text-[var(--text-tertiary)]">
-                  novas integrações sob demanda
-                </span>
-              </div>
+              <h3 className="text-h5 mb-4">Integração e infraestrutura</h3>
               <p className="text-body-sm text-[var(--text-secondary)] mb-4">
-                Integrações em produção hoje, conectadas por API e webhook, cada uma com sua camada de
-                autenticação. Infraestrutura isolada por cliente (single-tenant), com criptografia; como
-                é cloud-agnostic, o Fykos roda na nuvem homologada pela operação.
+                Não há catálogo de integrações prontas: cada conexão é construída para o cliente que
+                precisa dela, por API ou webhook, com sua própria autenticação. Infraestrutura isolada
+                por cliente (single-tenant), com criptografia; como é cloud-agnostic, o Fykos roda na
+                nuvem homologada pela operação.
               </p>
               <a
                 href="https://fykos.com.br/#nos"

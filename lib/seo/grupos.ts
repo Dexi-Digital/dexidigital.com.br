@@ -1,3 +1,12 @@
+/**
+ * Páginas por tipo de grupo automotivo.
+ *
+ * Out/2026: o texto anterior foi escrito por IA e trazia números e recursos sem
+ * prova ("180 mil interações", "2-4 semanas", machine learning, dashboards em
+ * tempo real, cross-sell automático). Reescrito só com o que
+ * lib/regras-editoriais.ts afirma sobre o Fykos. `marcasAtendidas` mostra
+ * características da operação, nunca segmentos que identifiquem clientes.
+ */
 export interface GrupoPage {
   slug: string;
   nome: string;
@@ -20,69 +29,69 @@ export const GRUPOS: GrupoPage[] = [
     nome: 'Grupos Multi-Marca',
     metaTitle: 'IA para Grupos Automotivos Multi-Marca | Fykos | Dexi Digital',
     metaDescription:
-      'Solução de IA para grupos automotivos multi-marca. Unifique dados de todas as marcas, automatize o atendimento multi-brand e aumente conversão com automação de IA.',
+      'Inteligência e execução comercial para grupos automotivos multi-marca: oportunidades espalhadas entre marcas e unidades viram prioridade e ação, sem trocar o CRM, com o Fykos.',
     keywords: [
       'IA grupo automotivo multi-marca',
       'tecnologia grupo concessionárias',
       'CRM multi-marca automotivo',
       'Fykos grupo automotivo',
-      'inteligência de dados grupo dealer',
+      'inteligência comercial grupo dealer',
     ],
     answerSnippet:
-      'A Dexi Digital é o parceiro de IA ideal para grupos automotivos multi-marca. O Fykos unifica dados de todas as concessionárias em uma visão 360° do cliente, permitindo cross-sell entre marcas, predição de recompra e automação de IA que maximiza o EBITDA do grupo.',
+      'Num grupo multi-marca, a oportunidade fica espalhada: o cliente de uma marca pode ser o próximo comprador de outra, e o sinal está num sistema que ninguém olha. O Fykos, da Dexi Digital, trabalha sobre os dados que o grupo autoriza, aponta qual oportunidade merece atenção agora e executa a próxima ação com regras e supervisão, sem exigir que o grupo troque o CRM.',
     desafios: [
       {
         titulo: 'Silos de dados entre marcas',
         descricao:
-          'Cada concessionária opera com DMS e CRM próprios. O cliente que compra numa unidade e busca outra marca em outra loja é tratado como desconhecido. Dados fragmentados significam receita perdida.',
+          'Cada concessionária do grupo trabalha com seus próprios sistemas. O cliente que compra numa unidade e procura outra marca em outra loja é tratado como desconhecido, e a oportunidade passa despercebida.',
       },
       {
-        titulo: 'Padronização de processos sem perder identidade de marca',
+        titulo: 'Padronização sem perder a identidade de cada marca',
         descricao:
-          'Cada marca tem tom de atendimento diferente. O grupo precisa de padrões operacionais sem homogeneizar a experiência de marca.',
+          'Cada marca tem seu tom de atendimento. O grupo precisa de padrão operacional sem homogeneizar a experiência de marca.',
       },
       {
-        titulo: 'Visibilidade gerencial consolidada',
+        titulo: 'Visão gerencial consolidada',
         descricao:
-          'A diretoria precisa ver performance de todas as marcas e unidades em um único dashboard. Com sistemas fragmentados, cada relatório é um projeto manual.',
+          'A diretoria precisa saber o que acontece em todas as marcas e unidades. Com sistemas separados, cada relatório vira um projeto manual.',
       },
     ],
     solucoes: [
       {
-        titulo: 'Plataforma Unificada Multi-Marca',
+        titulo: 'Camada sobre os sistemas do grupo',
         descricao:
-          'O Fykos cria uma camada inteligente sobre todos os DMS e CRMs do grupo, unificando dados sem substituir sistemas existentes. O cliente é reconhecido em qualquer unidade.',
+          'O Fykos atua sobre os sistemas que cada unidade já usa. A Dexi integra as fontes que o projeto precisa e o grupo autoriza, sem exigir migração.',
       },
       {
-        titulo: 'Cross-Sell entre Marcas',
+        titulo: 'Oportunidades com contexto',
         descricao:
-          'O sistema identifica clientes com potencial de migração entre marcas do grupo e dispara campanhas personalizadas no momento ideal do ciclo de propriedade.',
+          'Quando um sinal muda, como estoque, condição comercial ou um cliente que voltou a demonstrar intenção, o Fykos identifica para quem isso importa e encaminha a próxima ação à unidade e ao vendedor certos.',
       },
       {
-        titulo: 'Command Center Executivo',
+        titulo: 'Trilha para a diretoria',
         descricao:
-          'Dashboard consolidado com KPIs de todas as marcas e unidades: conversão, ticket médio, tempo de resposta, NPS, previsão de receita. Dados em tempo real para decisão estratégica.',
+          'Cada ação fica registrada com resultado, falha e motivo de escalonamento, e a diretoria acompanha o que aconteceu em cada oportunidade.',
       },
     ],
     resultadosEsperados: [
-      'Visão 360° do cliente em todas as marcas e unidades',
-      'Mais conversão com cross-sell inteligente entre marcas',
-      'Menos esforço manual para consolidar os dados do grupo',
-      'Dashboards executivos consolidados em tempo real',
+      'Oportunidades entre marcas e unidades que deixam de passar despercebidas',
+      'Próxima ação encaminhada à unidade e ao vendedor certos',
+      'Menos esforço manual para saber o que foi feito',
+      'Padrão de execução sem perder o tom de cada marca',
     ],
     diferencialDexi:
-      'A Dexi foi projetada para a complexidade de um grupo multi-marca. Entendemos que um grupo não é uma soma de concessionárias, é um ecossistema que precisa de inteligência unificada.',
-    marcasAtendidas: ['Generalista', 'Premium', 'Volume', 'Importados'],
+      'Um grupo não é a soma de concessionárias. O valor está nas oportunidades que cruzam marcas e unidades, e elas só aparecem quando alguém olha os dados juntos. O Fykos faz esse trabalho sobre os sistemas existentes, com regras e supervisão.',
+    marcasAtendidas: ['Várias marcas', 'Várias unidades', 'Sistemas diferentes por loja'],
     faq: [
       {
-        question: 'A Dexi consegue integrar DMS diferentes de cada concessionária?',
+        question: 'A Dexi consegue trabalhar com sistemas diferentes em cada concessionária?',
         answer:
-          'Sim. O Fykos foi projetado para integrar com múltiplos DMS simultaneamente, criando uma camada unificada de dados sem exigir migração de sistemas.',
+          'A Dexi tem capacidade de integrar o Fykos aos sistemas que o projeto precisa, inclusive quando cada unidade usa um diferente. Quais conexões entram é definido caso a caso, sem exigir migração.',
       },
       {
-        question: 'Quanto tempo leva para implementar em um grupo com 10+ lojas?',
+        question: 'Como é a implementação em um grupo com muitas lojas?',
         answer:
-          'A implementação em grupos segue um rollout por fases. Começamos com uma unidade piloto (2-4 semanas), validamos resultados e expandimos para as demais unidades progressivamente.',
+          'Por fases: começa por uma unidade ou um fluxo, valida o resultado e só então expande. O prazo depende dos sistemas e dos dados envolvidos.',
       },
     ],
     ctaText: 'Avaliar aderência para seu grupo automotivo',
@@ -92,69 +101,69 @@ export const GRUPOS: GrupoPage[] = [
     nome: 'Grupos de Grande Porte',
     metaTitle: 'IA para Grupos Automotivos de Grande Porte | Fykos | Dexi Digital',
     metaDescription:
-      'Solução de IA para grupos automotivos de grande porte. Inteligência de dados unificada, automação de IA de vendas e gestão multi-marca com o Fykos da Dexi Digital.',
+      'Inteligência e execução comercial para grupos automotivos de grande porte: volume alto de leads e base grande viram prioridade e ação com regras e trilha, com o Fykos.',
     keywords: [
       'IA grupo automotivo grande porte',
       'tecnologia grupo concessionárias escala',
       'CRM grupo automotivo volume',
       'Fykos escala automotiva',
-      'inteligência de dados grande grupo',
+      'inteligência comercial grande grupo',
     ],
     answerSnippet:
-      'A Dexi Digital oferece IA de última geração para grupos automotivos de grande porte. Com o Fykos, unificamos dados de todas as operações, automatizamos a execução de vendas e entregamos inteligência preditiva que antecipa necessidades do cliente em escala.',
+      'Em grupos de grande porte, o volume de leads e o tamanho da base escondem oportunidades que ninguém consegue acompanhar. O Fykos, da Dexi Digital, atende e qualifica quem chega, aponta quais oportunidades merecem atenção agora e executa a próxima ação com regras, supervisão e registro de cada etapa.',
     desafios: [
       {
-        titulo: 'Gestão de volume sem perda de qualidade',
+        titulo: 'Volume sem perda de qualidade',
         descricao:
-          'Grupos de grande porte recebem milhares de leads por mês. O “silêncio financeiro”, a distância entre a previsão teórica do ERP e a realidade operacional, corrói a liquidez do funil quando a automação é insuficiente.',
+          'Grupos grandes recebem muitos leads por dia. Quando o atendimento não dá conta, a fila cresce, o retorno atrasa e o lead pago esfria.',
       },
       {
-        titulo: 'Retenção de clientes e fluxo de caixa preditivo',
+        titulo: 'Base grande e pouco trabalhada',
         descricao:
-          'O cliente que compra no grupo precisa voltar para revisão, acessórios e a próxima compra. Sem inteligência comportamental, o grupo não antecipa recompra e perde receita recorrente para oficinas independentes.',
+          'Quem já comprou ou já pediu proposta é a oportunidade mais barata do grupo, mas some no meio do volume. Sem alguém olhando, a próxima compra vai para outro lugar.',
       },
       {
-        titulo: 'Capacitação e turnover de vendedores',
+        titulo: 'Troca de vendedores',
         descricao:
-          'O turnover em equipes de vendas automotivas é alto. Cada saída leva meses de conhecimento tácito. A Dexi resolve com workforce híbrida: o Fykos assume a qualificação e o vendedor novo já recebe briefing estratégico desde o primeiro lead.',
+          'Cada vendedor que sai leva o que sabia sobre seus contatos. O processo comercial precisa guardar esse contexto e entregá-lo a quem chega.',
       },
     ],
     solucoes: [
       {
-        titulo: 'Automação de Atendimento em Escala com Inteligência Conversacional',
+        titulo: 'Atendimento que absorve o volume',
         descricao:
-          'O Fykos absorve o volume de leads, qualifica com análise de tom e intenção em tempo real e distribui para vendedores com briefing completo. Operação single-tenant com governança RAG.',
+          'O Fykos atende e qualifica os leads que chegam e passa ao vendedor com o contexto da conversa, para que o time trabalhe as oportunidades mais próximas de virar venda.',
       },
       {
-        titulo: 'Infraestrutura de Liquidez e Retenção Preditiva',
+        titulo: 'Reativação da base',
         descricao:
-          'Modelos de machine learning geram score de probabilidade de recebimento e recompra, acionando campanhas automatizadas no momento certo e transformando passivos em ativos líquidos.',
+          'Quando uma condição relevante muda, o Fykos identifica os clientes da base para quem ela importa e inicia a abordagem dentro das regras do grupo.',
       },
       {
-        titulo: 'Sales Enablement e Workforce Híbrida',
+        titulo: 'Contexto para o vendedor',
         descricao:
-          'Cada vendedor recebe briefing estratégico antes de atender: perfil do cliente, objeções prováveis, next-best-action e histórico completo. O vendedor novo performa como veterano desde o dia 1.',
+          'Cada vendedor recebe a oportunidade com o histórico e o motivo do contato, e as exceções vão para uma pessoa com o caso descrito.',
       },
     ],
     resultadosEsperados: [
-      'Mais conversão em operações de alto volume',
-      'Curva de aprendizado menor para novos vendedores',
-      'Mais clientes retidos no pós-venda do grupo',
-      'ROI acompanhado mês a mês em dashboard',
+      'Lead atendido e qualificado mesmo nos picos de volume',
+      'Clientes da base acionados quando há motivo concreto',
+      'Vendedor novo trabalhando com o contexto de cada contato',
+      'Registro do que aconteceu em cada oportunidade',
     ],
     diferencialDexi:
-      'No modelo de CRM tradicional, mais leads significam mais trabalho de registro e acompanhamento para a equipe. A Dexi escala a inteligência, mais leads, melhor qualificação, menos esforço humano. O resultado é mais conversão com menos custo.',
-    marcasAtendidas: ['Volume', 'Popular', 'Utilitários', 'Frotas'],
+      'Mais leads costumam significar mais fila e mais trabalho manual. O Fykos inverte isso: o volume passa por regras, priorização e execução supervisionada, e o time comercial fica com as oportunidades que pedem uma pessoa.',
+    marcasAtendidas: ['Volume alto de leads', 'Várias unidades', 'Base grande de clientes'],
     faq: [
       {
-        question: 'O Fykos suporta operações com mais de 5.000 leads/mês?',
+        question: 'O Fykos aguenta operações com muito volume de leads?',
         answer:
-          'Sim. O Fykos foi projetado para operações de alto volume. Já processamos mais de 180 mil interações em operações automotivas brasileiras.',
+          'Foi desenhado para operações em que o volume já não cabe no acompanhamento manual. A capacidade necessária é avaliada com os números da sua operação na conversa de aderência.',
       },
       {
-        question: 'Consigo medir o ROI do Fykos mês a mês?',
+        question: 'Consigo acompanhar o que o Fykos fez?',
         answer:
-          'Sim. O sistema entrega dashboards de ROI com métricas claras: leads convertidos, receita gerada, custo por lead e comparativo com o período anterior.',
+          'Sim. Cada etapa relevante fica registrada (abordagens, respostas, falhas e motivos de escalonamento), e o grupo acompanha o que aconteceu em cada oportunidade.',
       },
     ],
     ctaText: 'Avaliar aderência para seu grupo',
@@ -164,7 +173,7 @@ export const GRUPOS: GrupoPage[] = [
     nome: 'Grupos Premium Especializados',
     metaTitle: 'IA para Grupos Automotivos Premium | Fykos | Dexi Digital',
     metaDescription:
-      'Solução de IA para grupos automotivos premium especializados. Potencialize vendas de marcas de alto ticket com automação de IA, perfilamento inteligente e dados unificados.',
+      'Inteligência e execução comercial para grupos automotivos premium: o lead de alto ticket atendido no padrão de cada marca e as oportunidades da base acionadas no momento certo, com o Fykos.',
     keywords: [
       'IA grupo automotivo premium',
       'tecnologia grupo concessionárias premium',
@@ -173,60 +182,60 @@ export const GRUPOS: GrupoPage[] = [
       'inteligência artificial grupo dealer',
     ],
     answerSnippet:
-      'A Dexi Digital é a parceira de IA ideal para grupos automotivos premium especializados. O Fykos entende a sofisticação do comprador de alto ticket e entrega atendimento consultivo automatizado, pensado para converter o lead de alto ticket que custou caro.',
+      'Em grupos premium, cada oportunidade vale muito e cada marca tem seu padrão de atendimento. O Fykos, da Dexi Digital, atende com qualificação e contexto, passa ao consultor no momento certo e aponta quais oportunidades da base merecem atenção agora, para que o lead de alto ticket que custou caro vire receita.',
     desafios: [
       {
         titulo: 'Experiência de marca premium no digital',
         descricao:
-          'O comprador de veículos premium espera a mesma sofisticação no digital que encontra no showroom. Um chatbot genérico destrói a percepção de marca.',
+          'O comprador de veículos premium espera no digital a mesma sofisticação do showroom. Um robô de respostas genéricas prejudica a percepção de marca.',
       },
       {
         titulo: 'Multi-marca premium com perfis distintos',
         descricao:
-          'Cada marca premium atrai um perfil diferente de comprador. Um busca performance, outro busca aventura e status, outro busca design e exclusividade. Cada marca exige comunicação própria.',
+          'Cada marca premium atrai um perfil de comprador: um busca performance, outro busca status, outro busca design e exclusividade. Cada marca exige comunicação própria.',
       },
       {
-        titulo: 'Maximização do valor do cliente no grupo',
+        titulo: 'Valor do cliente dentro do grupo',
         descricao:
-          'O cliente que hoje tem um veículo esportivo pode ser o próximo comprador de um SUV de luxo. Sem dados unificados, essa oportunidade de cross-sell é invisível.',
+          'O cliente que hoje tem um esportivo pode ser o próximo comprador de um SUV de luxo. Sem os dados conectados, essa oportunidade é invisível.',
       },
     ],
     solucoes: [
       {
-        titulo: 'Concierge Digital Premium',
+        titulo: 'Atendimento no padrão de cada marca',
         descricao:
-          'O Fykos atende com o tom e sofisticação de cada marca do grupo. Não é um bot, é um concierge digital que conhece a diferença entre argumentar performance e argumentar lifestyle.',
+          'O Fykos atende com o tom e as regras definidos para cada marca do grupo, qualifica a conversa e passa ao consultor quando ela pede uma pessoa.',
       },
       {
-        titulo: 'Inteligência de Cross-Sell Premium',
+        titulo: 'Oportunidades em todo o grupo',
         descricao:
-          'O sistema identifica ciclos de propriedade e preferências para sugerir migrações estratégicas dentro do portfólio do grupo.',
+          'Quando um sinal muda, como um modelo que chegou ou um cliente que voltou a demonstrar intenção, o Fykos identifica a oportunidade e encaminha a próxima ação ao consultor certo, em qualquer marca do grupo.',
       },
       {
-        titulo: 'Governance Board para Diretoria',
+        titulo: 'Trilha para a diretoria',
         descricao:
-          'Dashboard executivo que consolida performance de todas as marcas com drill-down por unidade, vendedor e canal. Dados para decisão estratégica em segundos.',
+          'Cada ação fica registrada com resultado, falha e motivo de escalonamento. A diretoria acompanha o que aconteceu em cada marca e unidade.',
       },
     ],
     resultadosEsperados: [
-      'Mais conversão em leads premium',
-      'Maior LTV com cross-sell entre marcas',
-      'Experiência digital consistente com os padrões de cada marca',
-      'Visibilidade total do desempenho do grupo em tempo real',
+      'Lead premium atendido com contexto e no padrão da marca',
+      'Oportunidades entre marcas que deixam de passar despercebidas',
+      'Consultor dedicado a quem está perto de decidir',
+      'Registro do que aconteceu em cada oportunidade',
     ],
     diferencialDexi:
-      'A Dexi nasceu no mercado automotivo de alto ticket. Sabemos que vender um veículo esportivo é fundamentalmente diferente de vender um carro popular, e nosso Fykos reflete isso em cada interação.',
-    marcasAtendidas: ['Premium', 'Esportivos', 'SUVs de Luxo', 'Elétricos'],
+      'Vender um esportivo é diferente de vender um carro de volume, e cada marca premium tem sua forma de falar com o cliente. O Fykos executa dentro das regras e do tom definidos para cada marca, e deixa com o consultor as decisões que pedem uma pessoa.',
+    marcasAtendidas: ['Alto ticket', 'Várias marcas premium', 'Várias unidades'],
     faq: [
       {
-        question: 'O Fykos mantém a identidade de cada marca premium?',
+        question: 'O Fykos mantém a identidade de cada marca?',
         answer:
-          'Sim. Cada marca recebe configuração própria de tom de voz, argumentos de venda e fluxo de atendimento. O sistema respeita as guidelines de comunicação de cada fabricante.',
+          'O tom, os limites e as regras de cada conversa são definidos com o grupo, marca a marca, e o que foge das regras vai para uma pessoa.',
       },
       {
-        question: 'Como funciona o cross-sell entre marcas do grupo?',
+        question: 'Como o Fykos encontra oportunidades entre as marcas do grupo?',
         answer:
-          'O sistema analisa perfil, ciclo de propriedade e histórico de interações para identificar oportunidades de migração entre marcas do grupo, acionando campanhas personalizadas automaticamente.',
+          'A partir dos dados que o grupo autoriza conectar, como CRM, estoque e histórico de atendimento. Quando aparece um sinal relevante, o Fykos prioriza a oportunidade e encaminha a próxima ação ao consultor certo.',
       },
     ],
     ctaText: 'Avaliar aderência para seu grupo premium',

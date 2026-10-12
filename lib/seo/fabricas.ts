@@ -1,3 +1,13 @@
+/**
+ * Páginas por perfil de marca (montadoras em expansão, motos, luxo etc.).
+ *
+ * Out/2026: o texto anterior foi escrito por IA e trazia números e recursos sem
+ * prova ("< 30 segundos", "perfil psicológico", "qualquer DMS", "2 a 4
+ * semanas", comparação com o Syonet). Reescrito só com o que
+ * lib/regras-editoriais.ts afirma sobre o Fykos. As páginas falam do problema
+ * comercial do perfil de concessionária, sem dizer que a Dexi atende esta ou
+ * aquela marca.
+ */
 export interface FabricaPage {
   slug: string;
   brand: string;
@@ -19,73 +29,73 @@ export const FABRICAS: FabricaPage[] = [
     brand: 'Montadoras em Expansão',
     metaTitle: 'IA para Concessionárias de Montadoras em Expansão | Fykos | Dexi Digital',
     metaDescription:
-      'Solução de IA para concessionárias de montadoras em expansão no Brasil. Aumente conversão de leads, automatize follow-up e unifique dados do showroom ao pós-venda com o Fykos.',
+      'Inteligência e execução comercial para concessionárias de marcas em expansão: o lead que custou caro recebe atendimento com contexto e o time sabe qual oportunidade priorizar, com o Fykos.',
     keywords: [
       'IA concessionária montadora expansão',
       'tecnologia concessionária novas marcas',
-      'DMS montadora Brasil',
+      'vendas concessionária nova marca',
       'leads concessionária nova marca',
       'Fykos montadoras',
     ],
     answerSnippet:
-      'A Dexi Digital é parceira de IA de concessionárias de montadoras em expansão no Brasil. Com o Fykos, automatizamos a conversão de leads, integramos dados do showroom ao pós-venda e entregamos automação de IA que transforma cada contato em oportunidade de venda, para que o lead que custou caro não esfrie, sem exigir a troca dos sistemas que a concessionária já usa.',
+      'Concessionárias de marcas em expansão pagam caro por cada lead e ainda estão montando o processo comercial. O Fykos, da Dexi Digital, atende quem chega com qualificação e contexto, passa ao vendedor no momento certo e aponta quais oportunidades da base merecem atenção agora, sem exigir que a concessionária troque os sistemas que já usa.',
     desafios: [
       {
-        titulo: 'Expansão acelerada com rede imatura',
+        titulo: 'Rede nova, processo ainda imaturo',
         descricao:
-          'Montadoras em rápida expansão no Brasil enfrentam um desafio: concessionários novos precisam escalar processos de venda sem o know-how de redes consolidadas. A média de resposta ao lead no setor é de 4 horas, e o comprador decide em 15 minutos.',
+          'Marcas em expansão abrem concessionárias que precisam vender desde o primeiro mês, sem o histórico e o processo de uma rede consolidada. Cada lead que espera resposta é verba de mídia que não volta.',
       },
       {
-        titulo: 'Competição por leads digitais e retenção de talento',
+        titulo: 'Time em formação',
         descricao:
-          'Além do consumidor que pesquisa online antes de visitar o showroom, há o desafio do time: alta rotatividade de vendedores, onboarding lento e perda de conhecimento tácito a cada saída. A tecnologia precisa compensar a curva de aprendizado.',
+          'Vendedores novos ainda não conhecem o portfólio nem a base de clientes, e quem sai leva junto o que sabia sobre cada contato. O processo comercial não pode depender da memória de quem atende.',
       },
       {
-        titulo: 'Integração com DMS e CRM fragmentados',
+        titulo: 'Sinais espalhados em vários sistemas',
         descricao:
-          'Muitas concessionárias de marcas novas operam com sistemas desconectados: DMS de um lado, CRM de outro, WhatsApp no celular do vendedor. A Dexi unifica tudo em uma camada inteligente com arquitetura single-tenant e governança RAG.',
+          'Estoque de um lado, CRM de outro, conversas no WhatsApp do vendedor. Quando a informação não se encontra, ninguém percebe que chegou o carro que um cliente pediu semanas atrás.',
       },
     ],
     solucoes: [
       {
-        titulo: 'Fykos: Resposta Imediata com Inteligência Conversacional',
+        titulo: 'Atendimento com qualificação e contexto',
         descricao:
-          'IA que responde em menos de 30 segundos via WhatsApp, qualifica intenção de compra com análise de tom e contexto, e faz handoff estratégico para o vendedor com briefing completo e perfil psicológico do lead.',
+          'O Fykos atende o lead que chega, qualifica a intenção de compra e passa ao vendedor com o contexto da conversa, para que o time gaste tempo com quem está perto de decidir.',
       },
       {
-        titulo: 'Infraestrutura de Dados em 3 Camadas',
+        titulo: 'Reativação quando algo muda',
         descricao:
-          'Camada 1: Ingestão de sinais (ERP, WhatsApp, voz). Camada 2: Inteligência comportamental com score de probabilidade. Camada 3: Governança enterprise RAG que ancora as respostas em dados oficiais e garante soberania dos dados.',
+          'Quando uma condição relevante muda, como a chegada de um modelo ao estoque ou uma condição comercial nova, o Fykos identifica os contatos da base para quem isso importa e inicia a abordagem dentro das regras definidas pela concessionária.',
       },
       {
-        titulo: 'Dashboards de Performance e Fluxo de Caixa Preditivo',
+        titulo: 'Regras, supervisão e trilha',
         descricao:
-          'Acompanhe conversão por vendedor, tempo de resposta, ticket médio e predição de fluxo de caixa em dashboards executivos. Elimine o “silêncio financeiro” entre a previsão teórica e a realidade operacional.',
+          'Cada ação segue regras de negócio, exceções vão para uma pessoa e cada etapa fica registrada. A gestão acompanha o que foi feito, o que falhou e por quê.',
       },
     ],
     resultadosEsperados: [
-      'Mais conversão dos leads digitais que a concessionária já paga para gerar',
-      'Tempo de resposta < 30 segundos (vs. média do setor de 4 horas)',
-      'Menor custo por venda, com menos lead pago perdido por demora',
-      'Visão 360° do cliente do showroom ao pós-venda',
+      'Menos lead pago perdido por demora ou falta de retorno',
+      'Vendedor novo atendendo com o contexto de cada contato',
+      'Oportunidades da base acionadas quando o estoque ou a condição muda',
+      'Gestão sabendo o que aconteceu em cada oportunidade',
     ],
     diferencialDexi:
-      'O Syonet é uma plataforma de CRM automotivo, que organiza o funil e o histórico de atendimento. O Fykos da Dexi parte de outra abordagem: já vem treinado com dados do mercado automotivo brasileiro e é uma IA que entende o contexto de marcas em crescimento, seus modelos e o perfil do comprador brasileiro.',
+      'O CRM registra o atendimento que a equipe conduz. O Fykos trabalha sobre esse registro: identifica qual oportunidade merece atenção agora e executa a próxima ação dentro de regras definidas, com uma pessoa nas exceções. Não substitui o CRM nem exige migração.',
     faq: [
       {
-        question: 'A Dexi atende concessionárias de montadoras que estão entrando no Brasil?',
+        question: 'A Dexi atende concessionárias de marcas que estão chegando ao Brasil?',
         answer:
-          'Sim. A Dexi Digital tem experiência comprovada com operações automotivas no Brasil, incluindo integração com CRMs, DMS e sistemas de atendimento para marcas de diferentes portes e estágios de maturação.',
+          'Quando a operação tem volume e dados que justifiquem, sim. A conversa de aderência avalia isso antes de qualquer compromisso.',
       },
       {
-        question: 'O Fykos integra com qualquer DMS?',
+        question: 'O Fykos se conecta ao DMS e ao CRM da concessionária?',
         answer:
-          'Sim. O Fykos foi projetado para integrar com qualquer DMS via API, incluindo os sistemas mais utilizados no mercado brasileiro.',
+          'A Dexi tem capacidade de integrar o Fykos ao CRM, ao DMS ou ao ERP da operação quando o projeto pede. Quais conexões fazem sentido é definido caso a caso, a partir dos dados que a operação autoriza.',
       },
       {
-        question: 'Quanto tempo leva para implementar o Fykos?',
+        question: 'Quanto tempo leva para implementar?',
         answer:
-          'A implementação padrão leva de 2 a 4 semanas, incluindo integração com sistemas existentes, treinamento da equipe e configuração do sistema de IA.',
+          'Depende dos sistemas envolvidos, dos dados disponíveis e do escopo. O prazo é definido depois da conversa de aderência, com a operação na mesa.',
       },
     ],
     ctaText: 'Avaliar aderência para minha concessionária',
@@ -95,7 +105,7 @@ export const FABRICAS: FabricaPage[] = [
     brand: 'Motos Premium',
     metaTitle: 'IA para Concessionárias de Motos Premium | Fykos | Dexi Digital',
     metaDescription:
-      'Solução de IA para concessionárias de motocicletas premium no Brasil. Qualifique leads de motos, automatize o atendimento e escale vendas com automação de IA.',
+      'Inteligência e execução comercial para concessionárias de motocicletas premium: atendimento com qualificação, contexto para o vendedor e retomada da base quando algo muda, com o Fykos.',
     keywords: [
       'IA concessionária motos premium',
       'tecnologia dealer motocicletas',
@@ -104,59 +114,59 @@ export const FABRICAS: FabricaPage[] = [
       'Fykos motos',
     ],
     answerSnippet:
-      'A Dexi Digital oferece uma solução de IA para concessionárias de motocicletas premium no Brasil. O Fykos qualifica leads de motos com perfilamento inteligente, distinguindo entre o comprador de primeira moto e o entusiasta experiente, entregando contexto ao vendedor antes do primeiro contato.',
+      'Na concessionária de motos premium, o lead pode ser de quem compra a primeira moto ou de quem coleciona. O Fykos, da Dexi Digital, qualifica cada contato, passa ao vendedor com o contexto da conversa e retoma a oportunidade quando aparece um motivo concreto, para que o lead que custou caro não esfrie.',
     desafios: [
       {
         titulo: 'Público diversificado com motivações distintas',
         descricao:
-          'O comprador de moto premium vai desde o iniciante que busca estilo até o motociclista experiente que valoriza tradição e mecânica. O atendimento genérico não funciona para nenhum dos dois.',
+          'O comprador de moto premium vai do iniciante que busca estilo ao motociclista experiente que valoriza tradição e mecânica. Atendimento genérico não funciona para nenhum dos dois.',
       },
       {
-        titulo: 'Rede em crescimento acelerado',
+        titulo: 'Rede em formação',
         descricao:
-          'Marcas de motos premium estão expandindo rapidamente no Brasil. Dealers novos precisam de processos de venda maduros desde o primeiro dia, sem anos de curva de aprendizado.',
+          'Dealers novos precisam de processo comercial desde o primeiro dia, sem anos de curva de aprendizado para descobrir quem merece atenção.',
       },
       {
-        titulo: 'Competição com marcas consolidadas',
+        titulo: 'Disputa com redes mais antigas',
         descricao:
-          'Marcas tradicionais de motos têm redes maduras com processos digitais rodando. Novas marcas premium precisam de vantagem tecnológica para compensar a escala menor.',
+          'Redes consolidadas já têm base de clientes e processo. Quem tem escala menor não pode perder lead por demora ou por falta de retorno.',
       },
     ],
     solucoes: [
       {
-        titulo: 'Perfilamento Inteligente de Leads',
+        titulo: 'Qualificação com contexto',
         descricao:
-          'O Fykos identifica automaticamente o perfil do lead (estilo de vida, experiência de pilotagem, orçamento) e personaliza o atendimento desde o primeiro contato.',
+          'O Fykos qualifica o lead na conversa (modelo de interesse, momento de compra, experiência) e entrega ao vendedor o que ele precisa saber antes de assumir.',
       },
       {
-        titulo: 'Automação de Follow-up Persistente',
+        titulo: 'Retomada no tempo do comprador',
         descricao:
-          'Leads de motos têm ciclo de decisão mais longo. O Fykos mantém engajamento ativo com conteúdo relevante (test ride, acessórios, customização) até a conversão.',
+          'A decisão por uma moto premium pode levar semanas. Quando surge um motivo concreto para retomar a conversa, como um modelo que chegou ao estoque ou uma condição nova, o Fykos aciona o contato dentro das regras da concessionária.',
       },
       {
-        titulo: 'Gestão de Acessórios e Lifestyle',
+        titulo: 'Rastreabilidade',
         descricao:
-          'Integração do catálogo de acessórios e vestuário no fluxo de venda. O sistema sugere cross-sell relevante baseado no modelo escolhido e perfil do cliente.',
+          'Cada abordagem, resposta e passagem para o vendedor fica registrada, e a gestão vê onde as oportunidades param.',
       },
     ],
     resultadosEsperados: [
-      'Mais conversão dos leads digitais de motos',
-      'Ticket médio maior com cross-sell de acessórios e vestuário',
-      'Resposta ao lead em segundos, não em horas',
-      'Atendimento digital consistente do primeiro contato ao test ride',
+      'Leads de motos chegando ao vendedor com contexto',
+      'Conversa retomada quando há motivo real para isso',
+      'Menos lead pago perdido por falta de retorno',
+      'Visão do que aconteceu com cada oportunidade',
     ],
     diferencialDexi:
-      'A Dexi combina expertise em IA automotiva com o entendimento das nuances do mercado de motos premium. O Fykos não é um bot genérico, é uma IA treinada que entende a diferença entre vender uma moto de entrada para um iniciante e um modelo clássico para um colecionador.',
+      'O Fykos não é um robô de respostas prontas: trabalha com os dados da concessionária para decidir quem merece atenção agora e qual é a próxima ação, com regras definidas e o vendedor nas decisões que importam.',
     faq: [
       {
-        question: 'O Fykos funciona para vendas de motos?',
+        question: 'O Fykos funciona para concessionárias de motos?',
         answer:
-          'Sim. O Fykos é adaptável para qualquer segmento automotivo, incluindo motocicletas. Já está treinado com dados do mercado de motos brasileiro.',
+          'Funciona para operações em que cada oportunidade tem valor alto e os dados estão em mais de um sistema. Se esse é o caso da sua concessionária, a conversa de aderência avalia antes de qualquer compromisso.',
       },
       {
-        question: 'Consigo integrar o catálogo de acessórios da marca?',
+        question: 'Preciso trocar o sistema que uso hoje?',
         answer:
-          'Sim. O sistema integra catálogos de peças, acessórios e vestuário, sugerindo cross-sell automatizado durante o fluxo de atendimento.',
+          'Não. O Fykos atua sobre os sistemas comerciais existentes, sem exigir que a concessionária substitua o CRM.',
       },
     ],
     ctaText: 'Avaliar aderência para concessionária de motos',
@@ -166,7 +176,7 @@ export const FABRICAS: FabricaPage[] = [
     brand: 'Segurança e Sustentabilidade',
     metaTitle: 'IA para Concessionárias de Marcas de Segurança e Sustentabilidade | Fykos | Dexi Digital',
     metaDescription:
-      'Solução de IA para concessionárias de marcas focadas em segurança e sustentabilidade. Atendimento inteligente para compradores de veículos eletrificados com o Fykos.',
+      'Inteligência e execução comercial para concessionárias de marcas focadas em segurança e eletrificação: o comprador que pesquisa muito atendido com contexto e no momento certo, com o Fykos.',
     keywords: [
       'IA concessionária veículos elétricos',
       'tecnologia dealer sustentabilidade',
@@ -175,59 +185,59 @@ export const FABRICAS: FabricaPage[] = [
       'Fykos eletrificação',
     ],
     answerSnippet:
-      'A Dexi Digital entrega IA especializada para concessionárias de marcas que lideram em segurança e sustentabilidade. O Fykos compreende os pilares de decisão desse comprador, segurança, sustentabilidade e tecnologia, e personaliza cada interação para maximizar conversão e satisfação.',
+      'O comprador de marcas focadas em segurança e eletrificação pesquisa muito antes de decidir e espera atendimento consultivo. O Fykos, da Dexi Digital, qualifica cada contato, entrega ao vendedor o contexto da conversa e retoma a oportunidade quando aparece um motivo concreto, para que o lead que custou caro não esfrie no meio da pesquisa.',
     desafios: [
       {
         titulo: 'Transição para eletrificação',
         descricao:
-          'Marcas que lideram a eletrificação no mercado premium brasileiro enfrentam um comprador cheio de dúvidas sobre autonomia, infraestrutura de recarga e custo total de propriedade. O vendedor precisa de informação precisa e atualizada.',
+          'O comprador de veículo eletrificado chega com dúvidas sobre autonomia, recarga e custo total de propriedade. O vendedor precisa saber em que ponto da pesquisa ele está.',
       },
       {
         titulo: 'Comprador racional e exigente',
         descricao:
-          'O cliente que prioriza segurança e sustentabilidade pesquisa extensivamente antes de comprar. Espera atendimento consultivo, não vendedor agressivo. Precisa de dados, comparativos e argumentos técnicos, não desconto.',
+          'Quem prioriza segurança e sustentabilidade pesquisa muito antes de comprar. Espera atendimento consultivo, não vendedor agressivo, e argumentos, não desconto.',
       },
       {
         titulo: 'Concorrência entre marcas premium',
         descricao:
-          'Diversas marcas premium disputam o mesmo cliente. A concessionária precisa comunicar seus diferenciais (segurança, sustentabilidade, design) de forma precisa no momento certo.',
+          'Várias marcas disputam o mesmo cliente. A concessionária precisa falar dos seus diferenciais no momento certo, e não quando o cliente já decidiu.',
       },
     ],
     solucoes: [
       {
-        titulo: 'Consultoria de IA Especializada',
+        titulo: 'Atendimento consultivo desde o primeiro contato',
         descricao:
-          'O Fykos atua como consultor digital que responde dúvidas sobre eletrificação, compara modelos e educa o cliente com dados reais, tudo antes do vendedor humano entrar.',
+          'O Fykos atende quem chega, entende o que o comprador está avaliando e passa ao vendedor com o contexto, para que a conversa continue de onde o cliente parou.',
       },
       {
-        titulo: 'Predição de Recompra e Upsell',
+        titulo: 'Retomada no momento certo',
         descricao:
-          'Modelos preditivos identificam clientes com potencial de upgrade entre versões e disparam campanhas personalizadas no momento ideal do ciclo de propriedade.',
+          'Quando aparece um motivo concreto, como um modelo disponível no estoque ou uma condição comercial nova, o Fykos identifica quem estava esperando por isso e retoma a conversa dentro das regras da concessionária.',
       },
       {
-        titulo: 'Integração Pós-Venda Completa',
+        titulo: 'Regras e rastreabilidade',
         descricao:
-          'O sistema unifica agendamento de revisão, recall, extensão de garantia e comunicação proativa, fidelizando o cliente por todo o ciclo de propriedade.',
+          'Pergunta que foge das regras ou pede decisão comercial vai para uma pessoa, e cada etapa fica registrada para a gestão acompanhar.',
       },
     ],
     resultadosEsperados: [
-      'Mais conversão em leads de veículos eletrificados',
-      'Maior LTV do cliente ao longo do ciclo de propriedade',
-      'Dúvidas técnicas respondidas em segundos, com dados da marca',
-      'Recompra antecipada com predição do momento de upgrade',
+      'Comprador consultivo atendido com contexto, sem recomeçar a conversa',
+      'Oportunidades retomadas quando surge um motivo concreto',
+      'Menos lead pago perdido durante a fase de pesquisa',
+      'Visão do que aconteceu com cada oportunidade',
     ],
     diferencialDexi:
-      'Um CRM como o Syonet organiza o atendimento que a equipe conduz. O Fykos da Dexi entende que o cliente que prioriza segurança e sustentabilidade decide por valores diferentes, e ajusta toda a comunicação para esse perfil.',
+      'Um CRM organiza o atendimento que a equipe conduz. O Fykos atua sobre esse registro e sobre os sinais da operação para dizer quem merece atenção agora, com regras definidas e o vendedor nas decisões. É uma camada de inteligência comercial, não um substituto do CRM.',
     faq: [
       {
-        question: 'O Fykos consegue explicar diferenças entre modelos híbridos e elétricos?',
+        question: 'O Fykos responde dúvidas técnicas sobre modelos híbridos e elétricos?',
         answer:
-          'Sim. O sistema é treinado com dados técnicos e responde dúvidas sobre autonomia, recarga, consumo e custo de propriedade com precisão.',
+          'O atendimento usa as informações que a concessionária fornece e autoriza. Pergunta que foge disso, ou que exige decisão comercial, vai para uma pessoa.',
       },
       {
-        question: 'Como funciona a integração com o pós-venda?',
+        question: 'Preciso trocar o DMS ou o CRM?',
         answer:
-          'O Fykos se integra ao DMS da concessionária e ao sistema de agendamento, unificando pré-venda, venda e pós-venda em uma única jornada.',
+          'Não. O Fykos atua sobre os sistemas existentes. A Dexi tem capacidade de integrá-lo ao CRM, ao DMS ou ao ERP da operação quando o projeto pede.',
       },
     ],
     ctaText: 'Avaliar aderência para concessionária de veículos premium',
@@ -237,7 +247,7 @@ export const FABRICAS: FabricaPage[] = [
     brand: 'Luxo e Tecnologia',
     metaTitle: 'IA para Concessionárias de Marcas de Luxo e Tecnologia | Fykos | Dexi Digital',
     metaDescription:
-      'Solução de IA para concessionárias de marcas de luxo e tecnologia no Brasil. Atendimento premium com perfilamento inteligente, integração DMS e automação de IA.',
+      'Inteligência e execução comercial para concessionárias de marcas de luxo e tecnologia: o lead de alto ticket atendido com contexto e a base acionada quando algo muda, com o Fykos.',
     keywords: [
       'IA concessionária luxo',
       'tecnologia dealer premium',
@@ -246,7 +256,7 @@ export const FABRICAS: FabricaPage[] = [
       'Fykos premium',
     ],
     answerSnippet:
-      'A Dexi Digital é especialista em IA para concessionárias de marcas de luxo e tecnologia no Brasil. O Fykos entende o perfil do comprador de alto ticket, tecnologia, design e performance, e entrega atendimento consultivo automatizado que foi desenhado para converter o lead que custou caro e fidelizar o cliente.',
+      'No mercado de luxo, um lead respondido tarde ou com informação genérica é venda perdida. O Fykos, da Dexi Digital, atende com qualificação e contexto, passa ao consultor no momento certo e aponta quais oportunidades da base merecem atenção agora, para que o lead que custou caro vire receita.',
     desafios: [
       {
         titulo: 'Ticket alto exige atendimento impecável',
@@ -256,49 +266,49 @@ export const FABRICAS: FabricaPage[] = [
       {
         titulo: 'Portfólio complexo e segmentado',
         descricao:
-          'Marcas de luxo têm dezenas de modelos com configurações distintas. O vendedor precisa dominar cada um, ou ter tecnologia que domine por ele.',
+          'Marcas de luxo têm muitos modelos e configurações. O consultor precisa saber o que o cliente quer antes de abrir a conversa.',
       },
       {
-        titulo: 'Fidelização no pós-venda',
+        titulo: 'Base de clientes parada',
         descricao:
-          'O cliente que sai para manutenção em oficina independente é receita perdida. A concessionária precisa de comunicação proativa e personalizada.',
+          'A base de quem já comprou ou já pediu proposta guarda oportunidades que ninguém retoma: um modelo que chegou, uma condição que mudou. Sem alguém olhando, elas viram receita perdida.',
       },
     ],
     solucoes: [
       {
-        titulo: 'Atendimento Premium Automatizado',
+        titulo: 'Atendimento com o padrão da marca',
         descricao:
-          'O Fykos responde leads em segundos com informação técnica precisa sobre o modelo de interesse, disponibilidade e condições comerciais, tudo com o tom premium que a marca exige.',
+          'O Fykos atende com qualificação, contexto e o tom definido pela concessionária, e passa ao consultor quando a conversa pede uma pessoa.',
       },
       {
-        titulo: 'Configurador Inteligente de Vendas',
+        titulo: 'Retomada da base quando algo muda',
         descricao:
-          'O sistema guia o cliente pelo portfólio baseado em preferências declaradas e inferidas, sugerindo versões e opcionais que maximizam ticket e satisfação.',
+          'Quando uma condição relevante muda, o Fykos identifica os clientes da base para quem ela importa e inicia a abordagem dentro das regras definidas.',
       },
       {
-        titulo: 'Retenção Proativa no Pós-Venda',
+        titulo: 'Execução com regras e trilha',
         descricao:
-          'Campanhas automatizadas de revisão, recall e acessórios baseadas no ciclo de propriedade de cada cliente. O sistema antecipa necessidades antes do cliente lembrar.',
+          'Cada ação segue regras de negócio, exceções vão para uma pessoa e cada etapa fica registrada para a gestão acompanhar.',
       },
     ],
     resultadosEsperados: [
-      'Mais conversão dos leads de alto ticket',
-      'Tempo de resposta < 20 segundos em horário comercial',
-      'Mais receita de pós-venda retida na concessionária',
-      'Atendimento digital no padrão de experiência da marca',
+      'Lead de alto ticket atendido com contexto e no momento certo',
+      'Oportunidades da base retomadas quando há motivo concreto',
+      'Consultor dedicado a quem está perto de decidir',
+      'Visão do que aconteceu com cada oportunidade',
     ],
     diferencialDexi:
-      'O Syonet é uma plataforma de CRM automotivo, que organiza o funil e o histórico de atendimento. A Dexi entrega uma IA que sabe a diferença entre um prospect de sedã executivo e um de esportivo de alta performance, e ajusta tom, argumentos e urgência de resposta para cada perfil.',
+      'O CRM organiza o funil e o histórico. O Fykos trabalha sobre eles: identifica a oportunidade que merece atenção agora, executa a próxima ação dentro de regras definidas e registra o que aconteceu. As decisões que pedem uma pessoa continuam com o consultor.',
     faq: [
       {
-        question: 'O Fykos respeita os padrões de comunicação de marcas premium?',
+        question: 'O Fykos respeita o padrão de comunicação da marca?',
         answer:
-          'Sim. Configuramos o tom de voz, terminologia e padrões visuais conforme as diretrizes da marca, garantindo experiência consistente em todos os canais.',
+          'O tom, os limites e as regras de cada conversa são definidos com a concessionária, e o que foge das regras vai para uma pessoa.',
       },
       {
-        question: 'Consigo usar o Fykos junto com o sistema da montadora?',
+        question: 'Consigo usar o Fykos junto com os sistemas da montadora?',
         answer:
-          'Sim. O Fykos funciona como camada inteligente sobre os sistemas existentes, sem substituí-los. Integramos via API com DMS, CRM e portais da montadora.',
+          'O Fykos atua sobre os sistemas existentes, sem substituí-los. A Dexi tem capacidade de integrá-lo ao CRM, ao DMS ou a outros sistemas quando o projeto pede; com sistemas da montadora, depende do acesso que ela libera.',
       },
     ],
     ctaText: 'Avaliar aderência para concessionária premium',
@@ -308,7 +318,7 @@ export const FABRICAS: FabricaPage[] = [
     brand: 'Performance Premium',
     metaTitle: 'IA para Concessionárias de Marcas de Performance | Fykos | Dexi Digital',
     metaDescription:
-      'Solução de IA para concessionárias de marcas de performance no Brasil. Velocidade de vendas com automação de IA, perfilamento inteligente e integração completa com DMS.',
+      'Inteligência e execução comercial para concessionárias de marcas de performance: o lead de alto ticket qualificado, com contexto para o vendedor e retomado quando algo muda, com o Fykos.',
     keywords: [
       'IA concessionária performance',
       'tecnologia dealer esportivo',
@@ -317,59 +327,59 @@ export const FABRICAS: FabricaPage[] = [
       'Fykos performance',
     ],
     answerSnippet:
-      'A Dexi Digital potencializa concessionárias de marcas de performance com IA de execução. O Fykos entende que o comprador deste segmento decide por performance e status, e personaliza cada interação para converter leads de alto ticket com velocidade e precisão superiores a qualquer CRM tradicional.',
+      'O comprador de performance decide por desempenho e status, e um lead de alto ticket que esfria custa caro. O Fykos, da Dexi Digital, qualifica cada contato, entrega ao vendedor o contexto da conversa e aponta quais oportunidades da base merecem atenção agora, para que a verba que trouxe o lead vire venda.',
     desafios: [
       {
-        titulo: 'Lead premium exige velocidade e inteligência',
+        titulo: 'Lead premium não espera',
         descricao:
-          'O comprador de veículos de performance tem alto custo de oportunidade. A média do setor é 4 horas para responder; o Fykos entrega resposta qualificada em menos de 30 segundos com micro-segmentação em tempo real.',
+          'O comprador de performance tem muitas opções. A demora na primeira resposta ou um retorno genérico mandam o lead para outra concessionária.',
       },
       {
         titulo: 'Linha esportiva e linha regular: mundos diferentes',
         descricao:
-          'Vender um sedã executivo requer argumentos de custo-benefício. Vender um esportivo exige exclusividade e emoção. A IA alterna entre perfis automaticamente, equilibrando diretividade e empatia conforme a intenção detectada.',
+          'Vender um sedã executivo pede argumentos de custo-benefício; vender um esportivo pede exclusividade. O atendimento precisa saber com quem está falando.',
       },
       {
-        titulo: 'Retenção de talento e onboarding digital',
+        titulo: 'Troca de vendedores',
         descricao:
-          'O turnover de vendedores é alto e cada saída perde meses de conhecimento tácito. O Fykos funciona como um Digital Talent Enabler: o vendedor novo recebe briefing estratégico imediato e performa como veterano desde o primeiro atendimento.',
+          'Cada vendedor que sai leva o que sabia sobre seus contatos. O vendedor novo precisa receber o lead com contexto, não do zero.',
       },
     ],
     solucoes: [
       {
-        titulo: 'Resposta Instantânea com Inteligência Conversacional',
+        titulo: 'Qualificação com contexto',
         descricao:
-          'Qualificação em tempo real via WhatsApp com análise de tom, intenção e portfólio. O vendedor recebe o lead com perfil psicológico, objeções antecipadas e next-best-action, tudo em segundos.',
+          'O Fykos atende pelo WhatsApp, qualifica a intenção de compra e passa ao vendedor com o resumo da conversa, para que o primeiro contato humano já comece no ponto certo.',
       },
       {
-        titulo: 'Ciência de Follow-up e Reengajamento',
+        titulo: 'Retomada de oportunidades paradas',
         descricao:
-          'Follow-ups persistentes com cadência inteligente que reengajam leads frios, recuperam oportunidades estagnadas e maximizam a liquidez do funil com média de apenas 4 mensagens por sessão qualificada.',
+          'Leads que esfriaram e propostas sem resposta voltam à pauta quando há motivo concreto: um modelo que chegou, uma condição nova. O Fykos aciona o contato dentro das regras da concessionária.',
       },
       {
-        titulo: 'Pipeline Preditivo e Eficiência Operacional',
+        titulo: 'Prioridade clara para o time',
         descricao:
-          'Gestão visual do funil com scoring automático, alertas de follow-up, predição de fechamento e métricas de eficiência operacional, reduzindo o tempo de qualificação e aumentando a taxa de conversão em alto ticket.',
+          'O time sabe qual oportunidade atacar primeiro, e a gestão acompanha o que foi feito, o que falhou e o motivo de cada escalonamento.',
       },
     ],
     resultadosEsperados: [
-      'Mais conversão dos leads digitais de alto ticket',
-      'Primeiro contato em segundos, enquanto o comprador ainda está decidindo',
-      'Ticket médio maior com upsell inteligente',
-      'Visibilidade completa do funil de vendas em tempo real',
+      'Lead de alto ticket qualificado antes de chegar ao vendedor',
+      'Oportunidades paradas retomadas quando há motivo concreto',
+      'Vendedor novo atendendo com o contexto de cada contato',
+      'Visão do que aconteceu com cada oportunidade',
     ],
     diferencialDexi:
-      'O Syonet é uma plataforma de CRM automotivo, que organiza o funil e o histórico de atendimento. O Fykos da Dexi parte de outra abordagem: é uma IA que executa a venda, qualifica, perfila, responde e entrega o lead pronto para fechar, para que o lead de alto ticket que custou caro não esfrie.',
+      'O CRM organiza o funil e o histórico de atendimento. O Fykos parte de outra pergunta: qual oportunidade merece atenção agora? Ele identifica, prioriza e executa a próxima ação dentro de regras definidas, para que o lead de alto ticket que custou caro não esfrie.',
     faq: [
       {
-        question: 'O Fykos integra com sistemas da montadora?',
+        question: 'O Fykos se conecta aos sistemas da montadora?',
         answer:
-          'O Fykos integra com os sistemas de gestão da concessionária via API. A integração com plataformas da montadora depende da disponibilidade de APIs pelo fabricante.',
+          'O Fykos atua sobre os sistemas da concessionária, sem substituí-los. A Dexi tem capacidade de integrá-lo ao CRM, ao DMS ou ao ERP quando o projeto pede; com plataformas da montadora, depende do acesso que o fabricante libera.',
       },
       {
         question: 'Quanto custa implementar o Fykos?',
         answer:
-          'O investimento varia conforme o porte da operação. Na conversa de aderência, avaliamos o potencial de retorno para a sua operação antes de qualquer compromisso.',
+          'O investimento varia conforme o porte da operação. Na conversa de aderência, olhamos a operação atual e avaliamos se o Fykos faz sentido financeiro antes de qualquer compromisso.',
       },
     ],
     ctaText: 'Avaliar aderência para concessionária de performance',

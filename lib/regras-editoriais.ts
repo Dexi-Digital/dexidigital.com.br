@@ -17,6 +17,7 @@ export const FATOS_DO_FYKOS = [
   'Automotivo (grupos e concessionárias): atendimento receptivo com qualificação, contexto e transição ao vendedor; reativação de carteira quando uma condição relevante muda; apoio à priorização do time comercial.',
   'Construtoras e incorporadoras que financiam com recursos próprios: o único fluxo em produção é a cobrança periódica dos compradores, com o código de barras tirado do sistema do próprio cliente, e a passagem para renegociação humana quando o comprador pede. O Fykos NÃO emite boleto. Gestão da carteira de ativos NÃO está em produção.',
   'Clínicas de procedimentos: não há cliente nem caso. O texto só diz para que o Fykos foi desenhado, nunca resultado obtido (ex.: "reduz o no-show").',
+  'Integrações: não existe integração pronta com nenhum sistema de mercado (Syonet, NBS, Dealernet, Dealerspace, AutoConf, portais, CRMs ou ERPs citados por nome). A Dexi tem capacidade de integrar e integra quando o projeto de um cliente precisa. Fale em capacidade de integração, nunca em integração pronta ou "nativa".',
 ];
 
 export const PUBLICO =

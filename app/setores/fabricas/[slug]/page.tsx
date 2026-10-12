@@ -19,13 +19,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const data = findFabrica(slug);
   if (!data) return {};
 
+  // O layout já acrescenta "| Dexi Digital": tira o sufixo do dado para não duplicar.
+  const titulo = data.metaTitle.replace(/\s*\|\s*Dexi Digital\s*$/i, '');
+
   return {
-    title: data.metaTitle,
+    title: titulo,
     description: data.metaDescription,
     keywords: data.keywords,
     alternates: { canonical: `/setores/fabricas/${slug}` },
     openGraph: {
-      title: data.metaTitle,
+      title: `${titulo} | Dexi Digital`,
       description: data.metaDescription,
       url: `https://dexidigital.com.br/setores/fabricas/${slug}`,
       type: 'article',
@@ -62,7 +65,7 @@ export default async function FabricaPage({ params }: PageProps) {
             </nav>
             <p className="text-overline mb-4 animate-fade-in-up-subtle">IA AUTOMOTIVA: {data.brand.toUpperCase()}</p>
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
-              Execução Agêntica para{' '}
+              Inteligência comercial para{' '}
               <span className="text-display-gradient">{data.brand}</span>
             </h1>
             <p className="text-lead text-[var(--text-secondary)] max-w-3xl mb-10 animate-fade-in-up delay-100">
@@ -101,7 +104,7 @@ export default async function FabricaPage({ params }: PageProps) {
       <section className="section-lg">
         <div className="container">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-h2 mb-10">Como a Dexi resolve</h2>
+            <h2 className="text-h2 mb-10">Como o Fykos atua</h2>
             <div className="space-y-8">
               {data.solucoes.map((s, i) => (
                 <div key={s.titulo} className="card card-interactive p-8">
@@ -125,7 +128,7 @@ export default async function FabricaPage({ params }: PageProps) {
       <section className="section-lg bg-[var(--bg-surface)] border-y border-[var(--border-subtle)]">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-h2 mb-10">Resultados esperados</h2>
+            <h2 className="text-h2 mb-10">Onde está o valor</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {data.resultadosEsperados.map((r) => (
                 <div key={r} className="card p-6">
@@ -137,7 +140,7 @@ export default async function FabricaPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Diferencial vs Syonet */}
+      {/* Diferencial */}
       <section className="section-lg">
         <div className="container">
           <div className="max-w-3xl mx-auto">
@@ -176,7 +179,7 @@ export default async function FabricaPage({ params }: PageProps) {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-overline mb-4">CONVERSA DE ADERÊNCIA</p>
-            <h2 className="text-h2 mb-4">Pronto para transformar sua concessionária {data.brand}?</h2>
+            <h2 className="text-h2 mb-4">Faz sentido para a sua concessionária?</h2>
             <p className="text-lead text-[var(--text-secondary)] mb-8">
               Uma conversa para entender sua operação, os dados disponíveis e se existe uma
               oportunidade concreta. Sem compromisso e sem pedir dados confidenciais de carteira

@@ -50,8 +50,8 @@ export const PILLARS: Pillar[] = [
   },
   {
     slug: 'indice-vazamento-receita',
-    title: 'Índice Dexi de Vazamento de Receita, Automotivo',
-    description: 'Previsibilidade de receita e pós-venda no setor automotivo.',
+    title: 'Previsibilidade de receita e pós-venda no automotivo',
+    description: 'Onde a receita do grupo automotivo fica imprevisível, da venda ao pós-venda.',
     vertical: 'Automotivo',
     cluster: '6. Previsibilidade e pós-venda',
   },
@@ -130,14 +130,14 @@ export const PILLARS: Pillar[] = [
   {
     slug: 'crm-imobiliario',
     title: 'CRM imobiliário e integração de dados',
-    description: 'O que os principais CRMs imobiliários entregam via integração, e o que não.',
+    description: 'O que esperar da integração entre o CRM imobiliário e os outros sistemas da operação.',
     vertical: 'Construção e incorporação',
     cluster: '5. CRM imobiliário e integração',
   },
   {
     slug: 'indice-vgv',
-    title: 'Índice Dexi, Previsibilidade de VGV',
-    description: 'Previsibilidade de VGV e o Índice Dexi na incorporação.',
+    title: 'Previsibilidade de VGV na incorporação',
+    description: 'Como a incorporadora ganha previsibilidade de VGV entre lançamento, venda e carteira.',
     vertical: 'Construção e incorporação',
     cluster: '6. Previsibilidade de VGV',
   },

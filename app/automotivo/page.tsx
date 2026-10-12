@@ -15,8 +15,6 @@ export const metadata: Metadata = {
     'lead scoring automotivo',
     'automação de atendimento para concessionárias',
     'CRM automotivo',
-    'integração DMS',
-    'Syonet',
     'recuperação de leads automotivo',
     'nutrição de leads',
     'grupos automotivos',
@@ -43,9 +41,9 @@ const DIFERENCIAIS = [
       'Regras definidas e cada etapa relevante registrada: a execução segue as regras de negócio do grupo, cada contato fica auditável e a operação respeita a LGPD. Inteligência para decidir, trilhos para executar com controle.',
   },
   {
-    titulo: 'Integra, não substitui',
+    titulo: 'Não substitui o que já funciona',
     corpo:
-      'O Fykos roda sobre o CRM e o DMS que o grupo já usa, como o Syonet. Sem trocar de ferramenta e sem reescrever processo: uma camada de inteligência sobre o que já está no ar.',
+      'O Fykos atua sobre os sistemas que o grupo já usa. Quando o projeto pede, a Dexi conecta o Fykos ao CRM, ao DMS ou ao estoque, sem trocar de ferramenta e sem reescrever processo: uma camada de inteligência sobre o que já está no ar.',
   },
 ];
 
@@ -66,9 +64,9 @@ const PUBLICOS = [
   },
   {
     tag: 'Diretores de marca',
-    titulo: 'Insight de desempenho em tempo real, não em relatório de fim de mês',
+    titulo: 'O desempenho visto contato a contato, não só no relatório de fim de mês',
     corpo:
-      'Cada contato gera log auditável. O diretor vê onde a conversão trava, qual concessionária executa bem o ciclo de atendimento e qual campanha está reaquecendo carteira. Decisão orientada por dado, não por achismo.',
+      'Cada contato gera registro auditável. A diretoria acompanha onde a conversão trava, quais oportunidades foram retomadas e o que foi encaminhado ao time. Decisão orientada por dado, não por achismo.',
     icon: (
       <path
         strokeLinecap="round"
@@ -229,24 +227,11 @@ export default function AutomotivoPage() {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-overline mb-2">RODA SOBRE O QUE SUA OPERAÇÃO JÁ USA</p>
-            <h2 className="text-h2 mb-8">Integrações</h2>
-            <div className="flex flex-wrap gap-4 justify-center mb-6">
-              <span className="card px-6 py-3 text-body-sm font-semibold text-[var(--text-primary)]">
-                DMS das montadoras
-              </span>
-              <span className="card px-6 py-3 text-body-sm font-semibold text-[var(--text-primary)]">
-                Syonet
-              </span>
-              <span className="card px-6 py-3 text-body-sm font-semibold text-[var(--text-primary)]">
-                AutoConf
-              </span>
-              <span className="card px-6 py-3 text-body-sm font-medium text-[var(--text-tertiary)]">
-                NBS · em breve
-              </span>
-            </div>
+            <h2 className="text-h2 mb-6">Integração sob medida</h2>
             <p className="text-body-sm text-[var(--text-secondary)] max-w-2xl mx-auto">
-              O mesmo motor conecta ao sistema-núcleo da sua loja: não troca de sistema, ganha uma
-              camada de inteligência sobre ele.
+              O Fykos não pede troca de sistema. Quando o projeto precisa, a Dexi conecta o Fykos ao
+              CRM, ao DMS ou ao estoque do grupo, com as fontes que a operação autorizar. Cada
+              integração é feita para o cliente que precisa dela.
             </p>
           </div>
         </div>

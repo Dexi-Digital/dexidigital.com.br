@@ -6,7 +6,7 @@ import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 export const metadata: Metadata = {
   title: 'Glossário IA Automotiva | Termos e Conceitos',
   description:
-    'Glossário completo de IA automotiva: IA que executa, lead scoring, DMS, Shadow CRM e mais. Entenda os termos que estão transformando concessionárias no Brasil.',
+    'Glossário de IA aplicada à venda automotiva: execução autônoma, lead scoring, DMS, shadow CRM e o Fykos. O que cada termo significa na operação de uma concessionária.',
   keywords: [
     'glossário IA automotiva',
     'termos IA concessionária',
@@ -35,7 +35,7 @@ export default function GlossarioPage() {
               <span className="text-display-gradient">IA Automotiva</span>
             </h1>
             <p className="text-lead text-[var(--text-secondary)] max-w-2xl mx-auto animate-fade-in-up delay-100">
-              Os termos e conceitos que estão transformando concessionárias e grupos automotivos no Brasil.
+              Os termos que aparecem na conversa sobre IA, dados e venda em concessionárias e grupos automotivos.
             </p>
           </div>
         </div>

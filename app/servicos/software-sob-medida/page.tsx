@@ -3,9 +3,9 @@ import Link from 'next/link';
 import TrackedCTA from '@/components/ui/TrackedCTA';
 
 export const metadata: Metadata = {
-  title: 'Software Sob Medida | Soluções Enterprise com IA Integrada',
+  title: 'Software Sob Medida | Sistemas com IA onde ela resolve',
   description:
-    'Aplicações web e mobile enterprise com IA integrada. Sistemas de vendas com Concierge Digital, portais B2B e automações inteligentes construídas para durar.',
+    'Aplicações web e mobile sob medida, com IA onde ela resolve um problema do negócio. Arquitetura que cresce com a operação, testes automatizados e documentação.',
 };
 
 export default function CustomSoftwarePage() {
@@ -55,24 +55,24 @@ export default function CustomSoftwarePage() {
                 <div>
                   <h3 className="text-h4 mb-2">Software com IA Integrada</h3>
                   <p className="text-body text-[var(--text-secondary)]">
-                    Desenvolvemos aplicações que incorporam nosso Concierge Digital de Vendas e
-                    outras soluções de IA diretamente no core do sistema, não como add-ons,
-                    mas como parte fundamental da arquitetura.
+                    Quando a IA resolve um problema do negócio, ela entra no desenho do sistema
+                    desde o início, com regras, supervisão e registro do que foi executado, e
+                    não como um acessório colado depois.
                   </p>
                 </div>
               </div>
               <div className="grid md:grid-cols-3 gap-4 mt-6">
                 <div className="p-4 bg-[var(--bg-secondary)] rounded-xl">
                   <p className="text-h5 mb-1">Portais de vendas</p>
-                  <p className="text-body-sm text-[var(--text-secondary)]">Com Concierge Digital integrado e perfilamento de clientes</p>
+                  <p className="text-body-sm text-[var(--text-secondary)]">Com qualificação do contato e passagem ao vendedor</p>
                 </div>
                 <div className="p-4 bg-[var(--bg-secondary)] rounded-xl">
                   <p className="text-h5 mb-1">Sistemas B2B</p>
-                  <p className="text-body-sm text-[var(--text-secondary)]">Com recomendações inteligentes e automação de processos</p>
+                  <p className="text-body-sm text-[var(--text-secondary)]">Com automação de processos e regras de negócio</p>
                 </div>
                 <div className="p-4 bg-[var(--bg-secondary)] rounded-xl">
                   <p className="text-h5 mb-1">Apps mobile</p>
-                  <p className="text-body-sm text-[var(--text-secondary)]">Com assistentes de IA nativos e experiência personalizada</p>
+                  <p className="text-body-sm text-[var(--text-secondary)]">Para a operação e para o cliente final</p>
                 </div>
               </div>
             </div>
@@ -80,13 +80,13 @@ export default function CustomSoftwarePage() {
             <div className="grid md:grid-cols-2 gap-4">
               {[
                 'Arquitetura moderna (microserviços, serverless)',
-                'IA conversacional integrada (Concierge Digital)',
+                'IA aplicada com regras e supervisão',
                 'Testes automatizados e CI/CD',
                 'Documentação técnica completa',
                 'Aplicações web responsivas',
-                'Apps mobile nativos (iOS/Android)',
+                'Apps mobile (iOS/Android)',
                 'APIs RESTful e GraphQL',
-                'Integração com CRM, ERP e sistemas legados',
+                'Integração com CRM, ERP e sistemas legados, quando o projeto pede',
               ].map((item) => (
                 <div key={item} className="card p-4 flex items-start gap-3">
                   <svg className="w-5 h-5 text-[var(--color-primary-500)] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -145,7 +145,7 @@ export default function CustomSoftwarePage() {
                 </div>
                 <p className="text-body-sm text-[var(--text-secondary)]">
                   Deploy em produção com documentação completa, treinamento de
-                  equipes e suporte contínuo com SLA definido.
+                  equipes e suporte contínuo.
                 </p>
               </div>
             </div>
@@ -158,39 +158,35 @@ export default function CustomSoftwarePage() {
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="section-header text-left">
-              <h2 className="text-h2">Casos de aplicação</h2>
+              <h2 className="text-h2">Exemplos de aplicação</h2>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="card card-interactive p-6">
                 <h3 className="text-h5 mb-3">Portal de Vendas Automotivo</h3>
                 <p className="text-body-sm text-[var(--text-secondary)]">
-                  Sistema de showroom digital com Concierge Digital integrado.
-                  Identifica perfil do comprador (performance vs. segurança) e
-                  personaliza apresentação dos veículos em tempo real.
+                  Showroom digital que mostra o estoque, recebe o interesse do
+                  comprador e passa o contato ao vendedor com o contexto.
                 </p>
               </div>
               <div className="card card-interactive p-6">
                 <h3 className="text-h5 mb-3">Plataforma B2B com IA</h3>
                 <p className="text-body-sm text-[var(--text-secondary)]">
-                  Sistema de pedidos com recomendações inteligentes baseadas em
-                  histórico, sazonalidade e perfil do cliente. Aumenta ticket
-                  médio com cross-sell automatizado.
+                  Sistema de pedidos com regras de negócio, histórico do cliente
+                  e automação das etapas repetitivas.
                 </p>
               </div>
               <div className="card card-interactive p-6">
                 <h3 className="text-h5 mb-3">App de Atendimento Premium</h3>
                 <p className="text-body-sm text-[var(--text-secondary)]">
-                  Aplicativo móvel com assistente de IA que qualifica leads,
-                  agenda visitas e prepara briefings para vendedores antes
-                  do contato presencial.
+                  Aplicativo de atendimento que qualifica o contato e entrega ao
+                  vendedor o histórico da conversa antes do encontro presencial.
                 </p>
               </div>
               <div className="card card-interactive p-6">
                 <h3 className="text-h5 mb-3">Dashboard Comercial Inteligente</h3>
                 <p className="text-body-sm text-[var(--text-secondary)]">
-                  Painel executivo com insights de IA sobre pipeline, previsão
-                  de vendas e recomendações de ações prioritárias baseadas em
-                  análise preditiva.
+                  Painel executivo sobre o pipeline, com as oportunidades que
+                  merecem atenção agora e o que já foi feito em cada uma.
                 </p>
               </div>
             </div>

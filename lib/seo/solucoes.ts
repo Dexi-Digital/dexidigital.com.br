@@ -1,3 +1,13 @@
+/**
+ * Páginas de solução (/solucoes/<slug>).
+ *
+ * Out/2026: as versões anteriores foram escritas por IA e afirmavam o que o
+ * Fykos não faz ("< 30 segundos", integração com "todos os portais" e "qualquer
+ * DMS", Instagram e Messenger, machine learning, predição de recompra, migração
+ * de qualquer CRM). Saíram as páginas cuja premissa era um recurso inexistente
+ * (integração DMS, atendimento omnichannel, CRM unificado); a que ficou usa só
+ * o que lib/regras-editoriais.ts afirma sobre o produto.
+ */
 export interface SolucaoPage {
   slug: string;
   title: string;
@@ -17,7 +27,7 @@ export const SOLUCOES: SolucaoPage[] = [
     title: 'Gestão de Leads para Concessionárias',
     metaTitle: 'Gestão de Leads Automotivo com IA | Dexi Digital',
     metaDescription:
-      'Gestão inteligente de leads para concessionárias. Resposta em segundos, qualificação automática e distribuição otimizada. Transforme o lead que custou caro em venda com automação de IA.',
+      'O lead que a concessionária pagou para gerar merece resposta rápida, contexto e o vendedor certo. O Fykos qualifica, prioriza e passa ao time, sem trocar o CRM.',
     keywords: [
       'gestão de leads automotivo',
       'CRM concessionária leads',
@@ -26,223 +36,52 @@ export const SOLUCOES: SolucaoPage[] = [
       'follow-up automático concessionária',
     ],
     answerSnippet:
-      'A gestão de leads em concessionárias brasileiras perde até 40% das oportunidades por demora no atendimento e falta de contexto. O Fykos da Dexi Digital resolve isso com resposta instantânea, qualificação automática por IA e distribuição inteligente para vendedores, sem exigir a troca do CRM que a concessionária já usa.',
+      'Lead de concessionária custa caro e esfria rápido. O Fykos atende o lead que chega, qualifica com contexto e passa ao vendedor com o histórico da conversa. Quando uma condição relevante muda, como estoque ou condição comercial, retoma contatos que ficaram para trás. Tudo sobre os sistemas que a concessionária já usa, sem exigir a troca do CRM.',
     sections: [
       {
-        heading: 'O problema da gestão de leads tradicional',
+        heading: 'Onde o lead se perde',
         content:
-          'Concessionárias brasileiras recebem leads de múltiplas fontes: site, portais (Webmotors, iCarros), redes sociais, Google Ads e walk-in. Sem um sistema inteligente, esses leads caem em planilhas ou CRMs manuais onde morrem por falta de follow-up. Um CRM como o Syonet organiza o registro e o funil; a Dexi parte de outra abordagem: o Fykos responde, qualifica e distribui automaticamente.',
+          'Concessionárias recebem leads de várias fontes: site, portais, redes sociais, campanhas pagas e quem chega à loja. Cada lead tem custo de mídia por trás. Quando a resposta demora, chega sem contexto ou depende de alguém lembrar do retorno, esse investimento vira oportunidade perdida, e ninguém enxerga o tamanho da perda.',
       },
       {
-        heading: 'Resposta em segundos, não horas',
+        heading: 'Resposta rápida, com contexto',
         content:
-          'A média de resposta a leads automotivos no Brasil é de 4 horas. O comprador que espera 4 horas já visitou o concorrente. O Fykos responde em menos de 30 segundos via WhatsApp com informação relevante sobre o veículo de interesse, disponibilidade e condições. O vendedor recebe o lead já qualificado e engajado.',
+          'O Fykos atende o lead que chega pelo WhatsApp, entende o que ele procura e qualifica a conversa. Quem está pesquisando e quem está pronto para comprar recebem tratamentos diferentes, e o vendedor não começa do zero.',
       },
       {
-        heading: 'Qualificação automática por perfil',
+        heading: 'Transição ao vendedor',
         content:
-          'Nem todo lead vale o mesmo esforço. O Fykos classifica leads por temperatura (quente, morno, frio), intenção (compra, pesquisa, test drive) e potencial de ticket. O vendedor sabe exatamente quem priorizar e como abordar cada lead.',
+          'Quando o lead está pronto, o Fykos passa a conversa ao vendedor com o contexto do que foi dito e notifica o responsável. Exceções vão para o humano, dentro de regras definidas pela operação.',
       },
       {
-        heading: 'Distribuição inteligente para vendedores',
+        heading: 'Prioridade para o time',
         content:
-          'O sistema distribui leads para vendedores baseado em disponibilidade, especialização (novos vs. seminovos, marca específica) e performance histórica. Acabou a briga por leads e a distribuição manual pelo gerente.',
+          'O gestor não precisa adivinhar onde o time deve gastar energia. O Fykos ajuda a priorizar as oportunidades com mais chance de virar venda, a partir dos critérios comerciais da própria operação.',
       },
       {
-        heading: 'Follow-up persistente sem ser invasivo',
+        heading: 'Retomar o que ficou para trás',
         content:
-          'O Fykos mantém follow-up automatizado com cadência inteligente: mais intenso para leads quentes, mais espaçado para leads em fase de pesquisa. O sistema sabe quando insistir e quando recuar, algo que nenhum vendedor humano faz consistentemente.',
+          'Lead que esfriou não é lead perdido. Quando uma condição relevante muda, como um veículo que entrou no estoque ou uma condição comercial nova, o Fykos retoma o contato com contexto, em vez de mandar mensagem genérica.',
       },
     ],
     resultados: [
-      'Mais conversão dos leads digitais que a concessionária já paga para gerar',
-      'Tempo de resposta < 30 segundos',
-      'Menos leads perdidos por demora ou falta de follow-up',
-      'Retorno acompanhado mês a mês em dashboard',
+      'O lead que custou caro recebe resposta e acompanhamento',
+      'Vendedor recebe a conversa com contexto, sem começar do zero',
+      'Time comercial com prioridade clara sobre onde agir',
+      'Cada etapa registrada: o que foi feito, o que falhou e por quê',
     ],
     faq: [
       {
         question: 'O Fykos substitui o CRM da concessionária?',
         answer:
-          'Não. O Fykos funciona como camada inteligente sobre o CRM existente. Ele complementa, não substitui. Os dados continuam no CRM da concessionária.',
+          'Não. O Fykos atua sobre os sistemas que a concessionária já usa, sem exigir a troca do CRM.',
       },
       {
-        question: 'Funciona com leads de portais como Webmotors e iCarros?',
+        question: 'Leads de portais e do site entram no fluxo?',
         answer:
-          'Sim. O sistema integra com todos os principais portais automotivos brasileiros, além de Google Ads, Meta Ads e formulários do site.',
+          'Depende da operação. A Dexi tem capacidade de integrar o Fykos às fontes de lead, ao CRM e ao DMS quando o projeto pede. O que conectar, e em que ordem, é definido na conversa de aderência.',
       },
     ],
-    ctaText: 'Ver demonstração de gestão de leads',
-  },
-  {
-    slug: 'integracao-dms-concessionaria',
-    title: 'Integração DMS para Concessionárias',
-    metaTitle: 'Integração DMS com IA | Unificação de Dados | Dexi Digital',
-    metaDescription:
-      'Integre seu DMS com IA para unificar dados do showroom ao pós-venda. Compatível com os principais DMS do mercado brasileiro. Dexi Digital.',
-    keywords: [
-      'integração DMS concessionária',
-      'DMS automotivo integração',
-      'unificação dados concessionária',
-      'DMS IA integração',
-      'dados showroom pós-venda',
-    ],
-    answerSnippet:
-      'A integração DMS com IA da Dexi Digital unifica dados do showroom, oficina e pós-venda em uma visão completa do cliente. O Fykos se conecta a qualquer DMS do mercado brasileiro via API, criando uma camada inteligente que transforma dados fragmentados em inteligência acionável.',
-    sections: [
-      {
-        heading: 'O custo dos dados fragmentados',
-        content:
-          'A maioria das concessionárias opera com DMS, CRM, sistema de agendamento e WhatsApp desconectados. O vendedor não sabe que o cliente está com revisão atrasada. A oficina não sabe que o cliente pediu orçamento de um carro novo. Essa fragmentação custa até 30% de receita perdida em oportunidades invisíveis.',
-      },
-      {
-        heading: 'Integração sem migração',
-        content:
-          'O Fykos não exige troca de DMS. Conectamos via API com os principais sistemas do mercado e criamos uma camada unificada de dados. A concessionária mantém seus processos atuais enquanto ganha visibilidade total.',
-      },
-      {
-        heading: 'Visão 360° do cliente',
-        content:
-          'Com dados unificados, cada interação é informada: o vendedor sabe o histórico de compras, revisões, reclamações e preferências. A oficina sabe o potencial de recompra. O gerente vê o LTV real de cada cliente.',
-      },
-      {
-        heading: 'Automatização de processos entre departamentos',
-        content:
-          'O sistema cria fluxos automáticos entre departamentos: cliente completa revisão → campanha de acessórios. Cliente atinge 3 anos de propriedade → campanha de recompra. Veículo com recall → agendamento proativo.',
-      },
-    ],
-    resultados: [
-      'Dados unificados do showroom ao pós-venda',
-      'Receita descoberta em oportunidades entre departamentos',
-      'Relatórios consolidados sem trabalho manual',
-      'Integração em 2-4 semanas sem parar operações',
-    ],
-    faq: [
-      {
-        question: 'Com quais DMS o Fykos é compatível?',
-        answer:
-          'O Fykos integra com os principais DMS do mercado brasileiro via API. Avaliamos a compatibilidade na conversa de aderência, sem compromisso.',
-      },
-      {
-        question: 'Preciso trocar meu DMS atual?',
-        answer:
-          'Não. O Fykos funciona como uma camada sobre os sistemas existentes. Não exigimos migração de plataforma.',
-      },
-    ],
-    ctaText: 'Avaliar integração do meu DMS',
-  },
-  {
-    slug: 'atendimento-omnichannel-automotivo',
-    title: 'Atendimento Omnichannel para Concessionárias',
-    metaTitle: 'Atendimento Omnichannel Automotivo com IA | Dexi Digital',
-    metaDescription:
-      'Atendimento omnichannel para concessionárias com IA. WhatsApp, site, portais e redes sociais unificados em uma experiência contínua. Dexi Digital.',
-    keywords: [
-      'atendimento omnichannel concessionária',
-      'omnichannel automotivo',
-      'WhatsApp concessionária IA',
-      'atendimento multicanal automotivo',
-      'concessionária digital',
-    ],
-    answerSnippet:
-      'O atendimento omnichannel da Dexi Digital unifica WhatsApp, site, portais automotivos e redes sociais em uma experiência contínua para o comprador de veículos. O Fykos garante que o cliente seja reconhecido em qualquer canal, com contexto completo da conversa, eliminando a frustração de repetir informações.',
-    sections: [
-      {
-        heading: 'O problema do atendimento fragmentado',
-        content:
-          'O cliente manda mensagem no WhatsApp, depois liga, depois visita o showroom. Em cada canal, precisa repetir quem é e o que quer. Essa experiência fragmentada destrói confiança e gera perda de até 35% dos leads.',
-      },
-      {
-        heading: 'WhatsApp como canal principal',
-        content:
-          'O WhatsApp é o canal preferido de 90% dos compradores de veículos no Brasil. O Fykos transforma o WhatsApp da concessionária de um canal manual em um canal inteligente: resposta instantânea, qualificação automática e handoff para vendedores com contexto.',
-      },
-      {
-        heading: 'Continuidade entre canais',
-        content:
-          'O cliente que começou no site e migrou para WhatsApp não precisa repetir nada. O vendedor que recebe a visita no showroom sabe toda a jornada digital. Cada ponto de contato enriquece o perfil do cliente.',
-      },
-      {
-        heading: 'Métricas unificadas de atendimento',
-        content:
-          'Um dashboard que mostra tempo de resposta, taxa de conversão e NPS de todos os canais. O gerente identifica gargalos instantaneamente e toma ação baseada em dados, não em achismo.',
-      },
-    ],
-    resultados: [
-      'Atendimento unificado em todos os canais do cliente',
-      'Mais conversão com continuidade de contexto',
-      'Cliente que não precisa repetir quem é a cada canal',
-      'Menos leads perdidos na troca de canal',
-    ],
-    faq: [
-      {
-        question: 'O Fykos funciona com WhatsApp Business API?',
-        answer:
-          'Sim. Integramos diretamente com a WhatsApp Business API (oficial), garantindo compliance, multiplos atendentes e automação avançada.',
-      },
-      {
-        question: 'Consigo atender por Instagram e Facebook também?',
-        answer:
-          'Sim. O Fykos suporta WhatsApp, Instagram DM, Facebook Messenger e formulários do site como canais unificados.',
-      },
-    ],
-    ctaText: 'Implementar atendimento omnichannel',
-  },
-  {
-    slug: 'crm-unificado-grupo-automotivo',
-    title: 'CRM Unificado para Grupos Automotivos',
-    metaTitle: 'CRM Unificado com IA para Grupos Automotivos | Dexi Digital',
-    metaDescription:
-      'CRM unificado com IA para grupos automotivos multi-marca. Visão 360° do cliente, cross-sell inteligente e dashboards consolidados. Dexi Digital.',
-    keywords: [
-      'CRM grupo automotivo',
-      'CRM unificado multi-marca',
-      'CRM concessionária IA',
-      'gestão grupo automotivo',
-      'CRM automotivo inteligente',
-    ],
-    answerSnippet:
-      'O CRM unificado da Dexi Digital para grupos automotivos consolida dados de todas as marcas, unidades e departamentos em uma plataforma inteligente. O Fykos entrega visão 360° do cliente com cross-sell entre marcas e predição de recompra, sem exigir a troca do CRM que o grupo já usa.',
-    sections: [
-      {
-        heading: 'CRM tradicional vs. CRM inteligente',
-        content:
-          'O CRM tradicional (incluindo o Syonet) é um sistema de registro: organiza contatos, interações e relatórios. O Fykos parte de outra abordagem: analisa padrões, prediz comportamento, sugere ações e executa follow-up autonomamente. A diferença entre registrar e agir.',
-      },
-      {
-        heading: 'Visão consolidada do grupo',
-        content:
-          'Para grupos com múltiplas marcas e unidades, o Fykos consolida dados automaticamente. A diretoria vê performance do grupo inteiro, com drill-down por marca, unidade, vendedor e canal. Sem planilhas manuais, sem relatórios semanais.',
-      },
-      {
-        heading: 'Cross-sell entre marcas e unidades',
-        content:
-          'O cliente que comprou um veículo de entrada em uma marca pode ser o próximo comprador de um veículo premium em outra. O sistema identifica essas oportunidades automaticamente e aciona campanhas personalizadas.',
-      },
-      {
-        heading: 'Predição de recompra e churn',
-        content:
-          'Modelos de machine learning analisam ciclo de propriedade, histórico de interações e dados de mercado para prever quando cada cliente está pronto para trocar de carro, e qual modelo sugerir.',
-      },
-    ],
-    resultados: [
-      'Dados consolidados de todas as marcas e unidades',
-      'Mais receita com cross-sell entre marcas',
-      'Predição do momento de recompra de cada cliente',
-      'Relatórios consolidados em segundos (vs. dias)',
-    ],
-    faq: [
-      {
-        question: 'O Fykos substitui o Syonet?',
-        answer:
-          'O Fykos pode funcionar como complemento ao Syonet (camada inteligente sobre ele) ou como substituto completo, dependendo da necessidade do grupo.',
-      },
-      {
-        question: 'Consigo migrar dados do meu CRM atual?',
-        answer:
-          'Sim. Fazemos migração de dados de qualquer CRM, incluindo Syonet, com validação de integridade e mapeamento de campos.',
-      },
-    ],
-    ctaText: 'Avaliar CRM unificado para meu grupo',
+    ctaText: 'Avaliar aderência da minha operação',
   },
 ];

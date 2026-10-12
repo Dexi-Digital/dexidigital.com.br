@@ -51,7 +51,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const servicos = [
     url('/servicos', ['app/servicos/page.tsx'], 'monthly', 0.9),
-    url('/servicos/ia-para-empresas', ['app/servicos/ia-para-empresas'], 'monthly', 0.85),
     url('/servicos/inteligencia-de-dados', ['app/servicos/inteligencia-de-dados'], 'monthly', 0.85),
     url('/servicos/software-sob-medida', ['app/servicos/software-sob-medida'], 'monthly', 0.85),
   ];
@@ -96,7 +95,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const materiais = [
     url('/materiais/calculadora-roi', ['app/materiais/calculadora-roi'], 'monthly', 0.8),
-    url('/materiais/checklist-qualidade', ['app/materiais/checklist-qualidade'], 'monthly', 0.7),
   ];
 
   const institucionais = [

@@ -8,7 +8,7 @@ export default function Footer() {
     services: [
       { name: 'Engenharia de Dados & Ativos de Inteligência', href: '/servicos/inteligencia-de-dados' },
       { name: 'Desenvolvimento de Sistemas de Missão Crítica', href: '/servicos/software-sob-medida' },
-      { name: 'Fykos: inteligência e execução comercial', href: '/servicos/ia-para-empresas' },
+      { name: 'Fykos: inteligência e execução comercial', href: '/o-fykos' },
     ],
     company: [
       { name: 'Sobre', href: '/sobre' },

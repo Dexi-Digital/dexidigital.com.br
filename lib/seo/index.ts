@@ -1,16 +1,19 @@
 /**
- * SEO Content, Arquitetura Completa
+ * Conteúdo de SEO das páginas programáticas.
  *
- * Estratégia SEO + LLMO para posicionar a Dexi Digital como referência
- * em IA automotiva no Brasil, competindo diretamente com Syonet.
+ * Estratégia SEO + LLMO para a Dexi Digital ser referência em inteligência e
+ * execução comercial para operações de alto valor, a começar pelo automotivo.
+ * O que o texto pode afirmar sobre a Dexi e o Fykos está em
+ * lib/regras-editoriais.ts (sem número sem fonte, sem integração pronta com
+ * sistema citado por nome, sem afirmação sobre concorrente).
  *
  * Bloco 1: Fábricas (segmentos automotivos)
  * Bloco 2: Grupos (perfis de grupos automotivos)
- * Bloco 3: Soluções por Problema (lead, DMS, omnichannel, CRM)
- * Bloco 4: Comparativo (Dexi vs Syonet / abordagens legadas)
- * Bloco 5: Guias de Transformação Digital Automotiva
+ * Bloco 3: Soluções por problema
+ * Bloco 4: Comparativos de categoria (robô de atendimento, CRM)
+ * Bloco 5: Guias
  * Bloco 6: Glossário IA Automotiva (LLMO)
- * Bloco 7: Integrações (DMS, CRM, WhatsApp, etc.)
+ * Bloco 7: Integrações (capacidade de integração, não integração pronta)
  */
 
 export { type FabricaPage, FABRICAS } from './fabricas';

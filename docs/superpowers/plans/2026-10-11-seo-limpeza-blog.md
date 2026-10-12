@@ -36,6 +36,15 @@ Origem: handoff de SEO de 11/10/2026 (Fase 1 até 18/10, Fase 2 até 31/10, Fase
 - **Comparativos:** os dois eram texto de IA sem fonte. O de Syonet saiu (301 para o de CRM); o de CRM foi reescrito só com o posicionamento aprovado; entrou `/comparativo/robo-de-atendimento-vs-inteligencia-comercial` (item 3.3 do handoff). A página mostra a data de revisão e, quando houver, as fontes.
 - **sameAs:** Instagram oficial (@dexi.digital) entrou; LinkedIn e GitHub conferidos (existem e são da Dexi).
 
+## Feito em 12/10, segunda parte: páginas de SEO e integrações
+
+- A Lorrayne confirmou que **não existe integração pronta** com nenhum sistema de mercado: a Dexi integra quando o projeto de um cliente precisa. Isso entrou em `lib/regras-editoriais.ts` (vale para o blog e o revisor) e saiu do site: chips "Syonet / AutoConf / NBS em breve" em /automotivo e /o-fykos, exemplos com Syonet nos textos legais dos dois sites (data de atualização 12/10).
+- **Saíram com 410** (`lib/paginas-removidas.ts`, servido pelo `proxy.ts`): Checklist de Qualidade e o PDF que nunca existiu; integrações com portais e com Google/Meta Ads; soluções de integração com DMS, atendimento omnichannel e CRM unificado.
+- **/servicos/ia-para-empresas** (Concierge Digital "treinado em Neurolinguística", perfilamento psicológico) virou 308 para /o-fykos; rodapé, 404, glossário legado e redirects antigos apontam direto para /o-fykos.
+- Reescritos só com o que o Fykos faz: fábricas, grupos, /setores/automotivo-premium, soluções, guias, glossário, pilares, WhatsApp, /servicos e as duas páginas de serviço, /metodologia (sem prazos de implementação), FAQ (uso de IA alinhado à política de privacidade), calculadora ("premissa" no lugar de "validado em duas operações").
+- Varredura do texto renderizado das 58 páginas fora do blog: sem travessão e sem as afirmações proibidas.
+- Ficou de fora, para a Lorrayne: /cases (dados de operação real) e o card "Sócio Fundador" sem nome em /sobre.
+
 ## Quando o CSV voltar com as decisões
 
 1. Linhas com `410`: slug em `lib/blog-removidos.ts` e bloco removido de `lib/blog-data.ts` (post da automação: apagar a linha em `data/blog-posts.db` na VPS).
@@ -49,6 +58,5 @@ Resolvido em 12/10: decisão do CSV, automação do blog, `sameAs`, textos dos c
 
 Ainda em aberto:
 
-- Lista de integrações reais (Syonet, NBS, Dealernet, Dealerspace) antes de qualquer página `/integracoes/<sistema>`.
+- Página `/integracoes/<sistema>` só quando houver integração feita para um cliente (em 12/10 não há nenhuma).
 - Comparativo com concorrente citado por nome (Syonet, Dealerspace) só com fatos tirados do material público dele, com link e data em `fontes`.
-- As páginas de SEO em `lib/seo/` (fábricas, soluções, guias, glossário, integrações) foram escritas pela mesma IA e repetem afirmações sem prova ("< 30 segundos", "qualquer DMS", "perfil psicológico", "40%", "10 anos"). Candidatas a passar pelo revisor.
