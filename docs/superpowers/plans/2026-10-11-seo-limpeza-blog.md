@@ -43,7 +43,7 @@ Origem: handoff de SEO de 11/10/2026 (Fase 1 até 18/10, Fase 2 até 31/10, Fase
 - **/servicos/ia-para-empresas** (Concierge Digital "treinado em Neurolinguística", perfilamento psicológico) virou 308 para /o-fykos; rodapé, 404, glossário legado e redirects antigos apontam direto para /o-fykos.
 - Reescritos só com o que o Fykos faz: fábricas, grupos, /setores/automotivo-premium, soluções, guias, glossário, pilares, WhatsApp, /servicos e as duas páginas de serviço, /metodologia (sem prazos de implementação), FAQ (uso de IA alinhado à política de privacidade), calculadora ("premissa" no lugar de "validado em duas operações").
 - Varredura do texto renderizado das 58 páginas fora do blog: sem travessão e sem as afirmações proibidas.
-- Ficou de fora, para a Lorrayne: /cases (dados de operação real) e o card "Sócio Fundador" sem nome em /sobre.
+- /cases (dados de operação real) e o card "Sócio Fundador" sem nome em /sobre: a Lorrayne decidiu manter os dois como estão (12/10). Varredura futura não deve mexer neles.
 
 ## Quando o CSV voltar com as decisões
 
@@ -54,7 +54,7 @@ Origem: handoff de SEO de 11/10/2026 (Fase 1 até 18/10, Fase 2 até 31/10, Fase
 
 ## Depende da Lorrayne (atualizado em 12/10)
 
-Resolvido em 12/10: decisão do CSV, automação do blog, `sameAs`, textos dos comparativos (eram de IA). Autoria: a Organization continua como autora (não precisa ser pessoa; ver relatório de 12/10).
+Resolvido em 12/10: decisão do CSV, automação do blog, `sameAs`, textos dos comparativos (eram de IA). Autoria: a Organization continua como autora (não precisa ser pessoa; ver relatório de 12/10). /cases e /sobre ficam como estão.
 
 Ainda em aberto:
 
