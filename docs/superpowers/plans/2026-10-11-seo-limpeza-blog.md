@@ -22,7 +22,7 @@ Origem: handoff de SEO de 11/10/2026 (Fase 1 até 18/10, Fase 2 até 31/10, Fase
 
 ## Feito em 12/10
 
-- **Inventário aplicado:** a Lorrayne mandou seguir a sugestão da triagem. Saíram com 410 os 495 posts do WordPress marcados 410, mais dois que a triagem deixou passar (notícia de câncer e TI hospitalar). Todos os destinos dos 89 redirects estavam entre eles, então as origens também passaram a responder 410 e `lib/blog-redirects.ts` ficou vazio. Ficaram 5 posts do WordPress, que passam pelo revisor (abaixo): o que ele não aprovar sai com 410.
+- **Inventário aplicado:** a Lorrayne mandou seguir a sugestão da triagem. Saíram com 410 os 495 posts do WordPress marcados 410, mais dois que a triagem deixou passar (notícia de câncer e TI hospitalar). Todos os destinos dos 89 redirects estavam entre eles, então as origens também passaram a responder 410 e `lib/blog-redirects.ts` ficou vazio. Os 5 posts do WordPress que sobraram passaram pelo revisor (abaixo): 4 reprovados e 1 com correção pedida. Texto fixo do WordPress não passa pelo redator, então saíram todos com 410 e o blog ficou só com os posts da automação.
 - **Automação do blog:** o agendamento duplicado do crontab do root (07:00, segunda a sábado) saiu; backup em `/root/crontab-backup-2026-10-12.txt`. Fica só `/etc/cron.d/dexi-blog-post`, às 09:00 de Brasília.
 - **Agente revisor** (`lib/revisor-blog.ts`), porque não há ninguém para revisar post a post. O post só vai ao ar com "aprovado":
   1. checagens fixas sem IA (sobra de prompt, texto em inglês, "emite boleto", "carteira de ativos", ROI garantido);

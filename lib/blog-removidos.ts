@@ -620,4 +620,13 @@ export const POSTS_REMOVIDOS: string[] = [
   'supere-os-desafios-de-2024-com-habilidades-essenciais-para-desenvolvedores',
   'supere-os-desafios-de-2024-e-se-prepare-para-2025-7-habilidades-essenciais',
   'supere-os-desafios-de-2024-impulsione-a-inovacao-em-2025',
+  // 12/10: os 5 posts do WordPress que sobraram passaram pelo revisor
+  // (lib/revisor-blog.ts): 4 reprovados (B2B genérico, números sem fonte,
+  // integrações e prazos de ROI inventados) e 1 com correção pedida. Texto
+  // migrado do WordPress não é corrigido pelo redator, então saíram todos.
+  'ia-em-vendas-b2b-conversao',
+  'ia-para-gerar-leads-qualificados',
+  'automacao-de-crm-com-ia-como-transformar-seu-funil-de-vendas',
+  'crm-com-inteligencia-artificial',
+  'ia-no-crm-aplicacoes',
 ];

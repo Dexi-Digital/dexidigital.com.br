@@ -83,7 +83,8 @@ export const PROIBICOES: { regra: string; texto: string }[] = [
   },
   {
     regra: 'travessao',
-    texto: 'Travessão (—) ou meia-risca (–) usados como pontuação.',
+    texto:
+      'Travessão (—) usado como pontuação, ou meia-risca com espaço dos dois lados ( – ) no lugar dele. Intervalo numérico sem espaço (22–25%) é permitido.',
   },
 ];
 
