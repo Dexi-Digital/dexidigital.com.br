@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import { buildMeta } from '@/lib/seo/meta';
 import Link from 'next/link';
 import { getAllArticles } from '@/lib/blog-data';
 import { getPublishedDbPosts } from '@/lib/blog-db';
@@ -6,11 +6,12 @@ import { BlogGrid, type BlogCard } from '@/components/blog/BlogGrid';
 import NewsletterForm from '@/components/blog/NewsletterForm';
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 
-export const metadata: Metadata = {
+export const metadata = buildMeta({
   title: 'Blog | Onde a receita vaza, e como fechar',
   description:
-    'Artigos para quem vende alto ticket com ciclo longo (grupos automotivos, clínicas e incorporadoras): o que acontece entre o lead entrar e o negócio fechar, e onde a receita se perde nesse caminho.',
-};
+    'Para quem vende alto ticket com ciclo longo (grupos automotivos, clínicas e incorporadoras): onde a receita se perde entre o lead entrar e a venda.',
+  path: '/blog',
+});
 
 export const dynamic = 'force-dynamic';
 

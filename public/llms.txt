@@ -21,6 +21,12 @@ A Dexi identifica oportunidades relevantes nos dados da operação, orquestra a 
 - [Clínicas](https://dexidigital.com.br/clinicas): clínicas de procedimentos (soroterapia, injetáveis, estética avançada)
 - [Construtoras e Incorporadoras](https://dexidigital.com.br/construtoras)
 
+## Guias e soluções
+
+- [Soluções](https://dexidigital.com.br/solucoes): gestão de leads para concessionárias, comparativos com robô de atendimento e com CRM, WhatsApp Business e metodologia
+- [Setores automotivos](https://dexidigital.com.br/setores): como o Fykos atua por perfil de fábrica e de grupo automotivo
+- [Guias](https://dexidigital.com.br/guias): transformação digital na concessionária, IA na venda de veículos e como escolher o CRM
+
 ## Prova e conteúdo
 
 - [Cases](https://dexidigital.com.br/cases): resultados documentados de clientes

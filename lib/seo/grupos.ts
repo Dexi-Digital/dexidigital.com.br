@@ -9,6 +9,8 @@
  */
 export interface GrupoPage {
   slug: string;
+  /** Uma linha para o card nas páginas índice (/guias, /setores, /solucoes). */
+  resumo: string;
   nome: string;
   metaTitle: string;
   metaDescription: string;
@@ -26,10 +28,11 @@ export interface GrupoPage {
 export const GRUPOS: GrupoPage[] = [
   {
     slug: 'multi-marca',
+    resumo: 'Oportunidades espalhadas entre marcas e unidades viram prioridade e ação.',
     nome: 'Grupos Multi-Marca',
-    metaTitle: 'IA para Grupos Automotivos Multi-Marca | Fykos | Dexi Digital',
+    metaTitle: 'IA para Grupos Automotivos Multi-Marca',
     metaDescription:
-      'Inteligência e execução comercial para grupos automotivos multi-marca: oportunidades espalhadas entre marcas e unidades viram prioridade e ação, sem trocar o CRM, com o Fykos.',
+      'Grupos automotivos multi-marca: oportunidades espalhadas entre marcas e unidades viram prioridade e ação, sem trocar o CRM, com o Fykos.',
     keywords: [
       'IA grupo automotivo multi-marca',
       'tecnologia grupo concessionárias',
@@ -98,10 +101,11 @@ export const GRUPOS: GrupoPage[] = [
   },
   {
     slug: 'grande-porte',
+    resumo: 'Volume alto de leads e base grande, com regras e registro de cada etapa.',
     nome: 'Grupos de Grande Porte',
-    metaTitle: 'IA para Grupos Automotivos de Grande Porte | Fykos | Dexi Digital',
+    metaTitle: 'IA para Grupos Automotivos de Grande Porte',
     metaDescription:
-      'Inteligência e execução comercial para grupos automotivos de grande porte: volume alto de leads e base grande viram prioridade e ação com regras e trilha, com o Fykos.',
+      'Grupos automotivos de grande porte: volume alto de leads e base grande viram prioridade e ação, com regras e registro de cada etapa.',
     keywords: [
       'IA grupo automotivo grande porte',
       'tecnologia grupo concessionárias escala',
@@ -170,10 +174,11 @@ export const GRUPOS: GrupoPage[] = [
   },
   {
     slug: 'premium-especializado',
+    resumo: 'Cada marca com seu padrão de atendimento e cada oportunidade de alto valor.',
     nome: 'Grupos Premium Especializados',
-    metaTitle: 'IA para Grupos Automotivos Premium | Fykos | Dexi Digital',
+    metaTitle: 'IA para Grupos Automotivos Premium Especializados',
     metaDescription:
-      'Inteligência e execução comercial para grupos automotivos premium: o lead de alto ticket atendido no padrão de cada marca e as oportunidades da base acionadas no momento certo, com o Fykos.',
+      'Grupos automotivos premium: o lead de alto ticket atendido no padrão de cada marca e a base acionada no momento certo, com o Fykos.',
     keywords: [
       'IA grupo automotivo premium',
       'tecnologia grupo concessionárias premium',

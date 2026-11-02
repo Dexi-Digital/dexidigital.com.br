@@ -1,3 +1,4 @@
+import { buildMeta } from '@/lib/seo/meta';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -18,20 +19,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const term = findGlossarioTerm(slug);
   if (!term) return {};
 
-  // O layout já acrescenta "| Dexi Digital": tira o sufixo do dado para não duplicar.
-  const titulo = term.metaTitle.replace(/\s*\|\s*Dexi Digital\s*$/i, '');
-
-  return {
-    title: titulo,
+  return buildMeta({
+    title: term.metaTitle,
     description: term.metaDescription,
-    alternates: { canonical: `/glossario-ia-automotiva/${slug}` },
-    openGraph: {
-      title: `${titulo} | Dexi Digital`,
-      description: term.metaDescription,
-      url: `https://dexidigital.com.br/glossario-ia-automotiva/${slug}`,
-      type: 'article',
-    },
-  };
+    path: `/glossario-ia-automotiva/${slug}`,
+    type: 'article',
+  });
 }
 
 function markdownToHtml(md: string): string {
@@ -89,8 +82,14 @@ export default async function GlossarioTermPage({ params }: PageProps) {
   const category = GLOSSARIO_CATEGORIES[term.category];
   const bodyHtml = markdownToHtml(term.longDescription);
 
-  const relatedTerms = GLOSSARIO_TERMS
-    .filter((t) => t.category === term.category && t.slug !== term.slug)
+  // A lista curada do termo vem primeiro (ela liga termos de categorias
+  // diferentes); a mesma categoria só completa. Só pela categoria, DMS e
+  // shadow CRM não recebiam link de nenhum outro termo.
+  const relatedTerms = [
+    ...term.relatedTerms.map((s) => GLOSSARIO_TERMS.find((t) => t.slug === s)),
+    ...GLOSSARIO_TERMS.filter((t) => t.category === term.category),
+  ]
+    .filter((t, i, lista): t is (typeof GLOSSARIO_TERMS)[number] => !!t && t.slug !== term.slug && lista.indexOf(t) === i)
     .slice(0, 3);
 
   return (

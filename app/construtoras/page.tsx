@@ -1,12 +1,13 @@
+import { buildMeta } from '@/lib/seo/meta';
 import TrackedCTA from '@/components/ui/TrackedCTA';
 import ClientLogos, { CONSTRUCTION_CLIENTS } from '@/components/ui/ClientLogos';
-import type { Metadata } from 'next';
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 
-export const metadata: Metadata = {
+export const metadata = buildMeta({
   title: 'Gestão de carteira para construtoras e incorporadoras',
   description:
-    'Gestão de carteira para construtoras e incorporadoras que financiam com recursos próprios: cobrança periódica com o boleto gerado no seu sistema e renegociação encaminhada ao seu time quando o comprador pede. Carteira em dia e previsibilidade de recebimento.',
+    'Carteira em dia para construtoras e incorporadoras que financiam com recursos próprios: cobrança periódica com o boleto do seu sistema e renegociação.',
+  path: '/construtoras',
   keywords: [
     'gestão de carteira',
     'construtoras',
@@ -21,14 +22,7 @@ export const metadata: Metadata = {
     'pré-lançamento imobiliário',
     'Fykos',
   ],
-  openGraph: {
-    title: 'Fykos para Construtoras e Incorporadoras | Carteira em dia, receita previsível',
-    description:
-      'Gestão de carteira para quem financia com recursos próprios: cobrança periódica com o boleto do seu sistema e renegociação encaminhada ao seu time.',
-    type: 'website',
-    locale: 'pt_BR',
-  },
-};
+});
 
 // Gestão de carteira é o centro; a nutrição de pré-lançamento entra como aplicação complementar.
 const MOMENTOS = [

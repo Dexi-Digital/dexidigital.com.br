@@ -1,13 +1,13 @@
-import type { Metadata } from 'next';
+import { buildMeta } from '@/lib/seo/meta';
 import Link from 'next/link';
 import TrackedCTA from '@/components/ui/TrackedCTA';
 
-export const metadata: Metadata = {
-  title: 'Quem somos | Tecnologia para decisões comerciais de alto valor',
+export const metadata = buildMeta({
+  title: 'Quem somos | Tecnologia para decisões comerciais',
   description:
-    'A Dexi Digital é uma empresa de tecnologia para decisões comerciais de alto valor: transforma dados da operação em prioridades e ações comerciais, para que as oportunidades da base virem receita e previsibilidade de venda. Uma década de engenharia de software crítico por trás do Fykos, produto de inteligência e execução comercial.',
-  keywords: ['Dexi Digital', 'inteligência comercial', 'execução comercial', 'Fykos', 'inteligência de dados', 'quem somos'],
-};
+    'A Dexi Digital transforma dados da operação em prioridades e ações comerciais. Uma década de engenharia de software crítico por trás do Fykos.',
+  path: '/sobre',
+});
 
 const founders = [
   {

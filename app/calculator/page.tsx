@@ -1,25 +1,15 @@
-import type { Metadata } from 'next';
+import { buildMeta } from '@/lib/seo/meta';
 import RevenueCalculator from './RevenueCalculator';
 
 // Página de uso interno em calls de venda: acessível só pela URL,
 // sem link no site, fora do sitemap e sem indexação.
-export const metadata: Metadata = {
+export const metadata = buildMeta({
   title: 'Calculadora de Receita Recuperável',
   description:
     'Descubra quanto dinheiro está parado na sua base de cotações não fechadas e simule o pipeline reaberto em tempo real.',
-  robots: {
-    index: false,
-    follow: false,
-    googleBot: { index: false, follow: false },
-  },
-  alternates: { canonical: '/calculator' },
-  openGraph: {
-    title: 'Calculadora de Receita Recuperável | Dexi Digital',
-    description: 'Quanto de receita está parada na sua base de cotações não fechadas?',
-    type: 'website',
-    locale: 'pt_BR',
-  },
-};
+  path: '/calculator',
+  nofollow: true,
+});
 
 export default function CalculatorPage() {
   return <RevenueCalculator />;

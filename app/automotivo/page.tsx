@@ -1,12 +1,14 @@
+import { buildMeta } from '@/lib/seo/meta';
+import Link from 'next/link';
 import TrackedCTA from '@/components/ui/TrackedCTA';
 import ClientLogos from '@/components/ui/ClientLogos';
-import type { Metadata } from 'next';
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 
-export const metadata: Metadata = {
+export const metadata = buildMeta({
   title: 'Fykos para Grupos Automotivos e Concessionárias',
   description:
-    'Cada lead que chega ao seu grupo já custou caro. O Fykos acompanha cada oportunidade até o momento de compra, para que essa receita fique na base e vire previsibilidade de venda.',
+    'Cada lead que chega ao seu grupo já custou caro. O Fykos acompanha cada oportunidade até a compra, para essa receita virar previsibilidade de venda.',
+  path: '/automotivo',
   keywords: [
     'IA para concessionárias',
     'atendimento com inteligência artificial',
@@ -20,14 +22,7 @@ export const metadata: Metadata = {
     'grupos automotivos',
     'Fykos',
   ],
-  openGraph: {
-    title: 'Fykos para Grupos Automotivos | A Dexi não deixa a receita esfriar',
-    description:
-      'Cada lead que chega ao seu grupo já custou caro. O Fykos acompanha cada oportunidade até o momento de compra, para que essa receita fique na base e vire previsibilidade de venda.',
-    type: 'website',
-    locale: 'pt_BR',
-  },
-};
+});
 
 const DIFERENCIAIS = [
   {
@@ -247,6 +242,35 @@ export default function AutomotivoPage() {
               Alguns dos grupos atendidos
             </p>
             <ClientLogos />
+          </div>
+        </div>
+      </section>
+
+      {/* Por segmento: liga a página do vertical às índices e às páginas por perfil */}
+      <section id="por-segmento" className="section bg-[var(--bg-surface)] border-t border-[var(--border-subtle)]">
+        <div className="container">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-overline mb-2">POR SEGMENTO</p>
+            <h2 className="text-h3 mb-4">Cada marca e cada grupo vende de um jeito</h2>
+            <p className="text-body-sm text-[var(--text-secondary)] max-w-2xl mx-auto">
+              Veja como o Fykos atua por{' '}
+              <Link href="/setores" className="underline hover:text-[var(--color-primary-500)]">
+                perfil de fábrica e de grupo automotivo
+              </Link>
+              , em{' '}
+              <Link href="/setores/automotivo-premium" className="underline hover:text-[var(--color-primary-500)]">
+                grupos automotivos premium
+              </Link>{' '}
+              e na{' '}
+              <Link href="/solucoes/gestao-leads-automotivo" className="underline hover:text-[var(--color-primary-500)]">
+                gestão de leads para concessionárias
+              </Link>
+              . Para decidir com calma, leia os{' '}
+              <Link href="/guias" className="underline hover:text-[var(--color-primary-500)]">
+                guias de inteligência comercial
+              </Link>
+              .
+            </p>
           </div>
         </div>
       </section>

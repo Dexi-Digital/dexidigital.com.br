@@ -1,3 +1,4 @@
+import { buildMeta } from '@/lib/seo/meta';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -23,11 +24,12 @@ export async function generateMetadata({ params }: PillarPageProps): Promise<Met
   // sitemap) até o primeiro post do cluster sair.
   const semConteudo = getPostsByPillarLink(`/${pillar.slug}`).length === 0;
 
-  return {
+  return buildMeta({
     title: pillar.title,
     description: pillar.description,
-    ...(semConteudo && { robots: { index: false, follow: true } }),
-  };
+    path: `/${pillar.slug}`,
+    noindex: semConteudo,
+  });
 }
 
 export default async function PillarPage({ params }: PillarPageProps) {

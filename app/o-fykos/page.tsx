@@ -1,13 +1,15 @@
+import { buildMeta } from '@/lib/seo/meta';
 import TrackedCTA from '@/components/ui/TrackedCTA';
-import type { Metadata } from 'next';
 import { getFykosSchema } from '@/lib/structured-data';
 
 const DESCRICAO =
   'O Fykos é o produto da Dexi para inteligência e execução comercial: atua sobre os sistemas existentes, identifica oportunidades, orienta a próxima ação e executa processos dentro de regras definidas, com rastreabilidade.';
 
-export const metadata: Metadata = {
+export const metadata = buildMeta({
   title: 'O Fykos: inteligência e execução comercial',
-  description: DESCRICAO,
+  description:
+    'O Fykos, produto da Dexi, identifica oportunidades nos sistemas que a empresa já usa e executa a próxima ação comercial dentro de regras definidas.',
+  path: '/o-fykos',
   keywords: [
     'Fykos',
     'inteligência comercial',
@@ -16,13 +18,7 @@ export const metadata: Metadata = {
     'priorização de oportunidades',
     'reativação de carteira',
   ],
-  openGraph: {
-    title: 'O Fykos: inteligência e execução comercial',
-    description: DESCRICAO,
-    type: 'website',
-    locale: 'pt_BR',
-  },
-};
+});
 
 // Textos de funcionalidade: proposta editorial do reposicionamento. Conferir se
 // cada fluxo está em produção antes de publicar (ver plano de 2026-10-11).

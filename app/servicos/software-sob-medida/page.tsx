@@ -1,12 +1,13 @@
-import type { Metadata } from 'next';
+import { buildMeta } from '@/lib/seo/meta';
 import Link from 'next/link';
 import TrackedCTA from '@/components/ui/TrackedCTA';
 
-export const metadata: Metadata = {
+export const metadata = buildMeta({
   title: 'Software Sob Medida | Sistemas com IA onde ela resolve',
   description:
-    'Aplicações web e mobile sob medida, com IA onde ela resolve um problema do negócio. Arquitetura que cresce com a operação, testes automatizados e documentação.',
-};
+    'Aplicações web e mobile sob medida, com IA onde ela resolve um problema do negócio. Arquitetura que cresce com a operação, testes e documentação.',
+  path: '/servicos/software-sob-medida',
+});
 
 export default function CustomSoftwarePage() {
   return (

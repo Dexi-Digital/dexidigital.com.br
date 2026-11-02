@@ -1,3 +1,4 @@
+import { buildMeta } from '@/lib/seo/meta';
 import type { Metadata } from 'next';
 import type { ReactElement } from 'react';
 import Link from 'next/link';
@@ -55,17 +56,17 @@ export async function generateMetadata({ params }: BlogArticlePageProps): Promis
     };
   }
 
-  return {
+  // Título e descrição vêm do banco (posts da automação): o helper corta o
+  // que passar de 60 e 155 caracteres; o H1 da página segue com o título inteiro.
+  return buildMeta({
     title: article.title,
-    description: article.metaDescription,
-    openGraph: {
-      title: article.title,
-      description: article.metaDescription,
-      type: 'article',
-      publishedTime: article.date,
-      authors: [article.author],
-    },
-  };
+    description: article.metaDescription || article.excerpt,
+    path: `/blog/${article.slug}`,
+    type: 'article',
+    publishedTime: article.date,
+    modifiedTime: 'dateModified' in article ? article.dateModified : undefined,
+    authors: [article.author],
+  });
 }
 
 export default async function BlogArticlePage({ params }: BlogArticlePageProps) {

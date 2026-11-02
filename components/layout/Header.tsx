@@ -13,6 +13,14 @@ const areas = [
   { name: 'Construtoras e Incorporadoras', href: '/construtoras' },
 ];
 
+// Páginas índice do conteúdo: ficam no menu de todas as páginas para o crawler
+// achar as páginas filhas (eram órfãs, só no sitemap: Ahrefs, out/2026).
+const conteudo = [
+  { name: 'Soluções', href: '/solucoes' },
+  { name: 'Setores automotivos', href: '/setores' },
+  { name: 'Guias', href: '/guias' },
+];
+
 // Navegação horizontal (categoria Fykos)
 const navigation = [
   { name: 'Home', href: '/' },
@@ -21,22 +29,26 @@ const navigation = [
   { name: 'Contato', href: '/contato' },
 ];
 
-export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [areasOpen, setAreasOpen] = useState(false);
-  const { resolvedTheme, setTheme } = useTheme();
-  const areasRef = useRef<HTMLDivElement | null>(null);
+const linkDesktop =
+  'px-3 py-2 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-base rounded-lg hover:bg-[var(--overlay-subtle)]';
 
-  // Fecha o dropdown "Áreas atendidas" ao clicar fora ou pressionar Escape
+/**
+ * Menu suspenso do desktop (abre por hover, clique ou teclado). A lista fica
+ * sempre no DOM, escondida por CSS: assim os links saem no HTML do servidor e
+ * o crawler chega a eles a partir de qualquer página, sem executar JS.
+ */
+function MenuSuspenso({ rotulo, itens }: { rotulo: string; itens: { name: string; href: string }[] }) {
+  const [aberto, setAberto] = useState(false);
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  // Fecha ao clicar fora ou pressionar Escape
   useEffect(() => {
-    if (!areasOpen) return;
+    if (!aberto) return;
     const handleClick = (e: MouseEvent) => {
-      if (areasRef.current && !areasRef.current.contains(e.target as Node)) {
-        setAreasOpen(false);
-      }
+      if (ref.current && !ref.current.contains(e.target as Node)) setAberto(false);
     };
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setAreasOpen(false);
+      if (e.key === 'Escape') setAberto(false);
     };
     document.addEventListener('mousedown', handleClick);
     document.addEventListener('keydown', handleKeyDown);
@@ -44,7 +56,51 @@ export default function Header() {
       document.removeEventListener('mousedown', handleClick);
       document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [areasOpen]);
+  }, [aberto]);
+
+  return (
+    <div className="relative" ref={ref} onMouseEnter={() => setAberto(true)} onMouseLeave={() => setAberto(false)}>
+      <button
+        type="button"
+        className={`flex items-center gap-1 ${linkDesktop}`}
+        aria-expanded={aberto}
+        aria-haspopup="true"
+        onClick={() => setAberto(!aberto)}
+      >
+        {rotulo}
+        <svg
+          className={`h-4 w-4 transition-transform ${aberto ? 'rotate-180' : ''}`}
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="2"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+
+      <div className={`absolute left-0 top-full pt-2 w-64 ${aberto ? '' : 'hidden'}`}>
+        <div className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-2 shadow-xl animate-fade-in-down">
+          {itens.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="block px-3 py-2 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--color-primary-600)] hover:bg-[var(--overlay-subtle)] rounded-lg transition-base"
+              onClick={() => setAberto(false)}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
 
   return (
     <header className="bg-[var(--bg-glass)] dark:bg-[var(--bg-glass)] backdrop-blur-xl border-b border-[var(--border-subtle)] dark:border-[var(--border-subtle)] sticky top-0 z-50 transition-base">
@@ -117,76 +173,20 @@ export default function Header() {
 
           {/* Desktop navigation - horizontal (categoria) */}
           <div className="hidden lg:flex lg:items-center lg:gap-1">
-            <Link
-              href="/"
-              className="px-3 py-2 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-base rounded-lg hover:bg-[var(--overlay-subtle)]"
-            >
-              Home
-            </Link>
-
-            <Link
-              href="/o-fykos"
-              className="px-3 py-2 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-base rounded-lg hover:bg-[var(--overlay-subtle)]"
-            >
+            {/* Sem "Home" no desktop: o logo já leva à página inicial, e o espaço
+                ficou para o menu "Conteúdo". */}
+            <Link href="/o-fykos" className={linkDesktop}>
               O Fykos
             </Link>
 
-            {/* Áreas atendidas: dropdown (abre por hover no desktop e por clique/teclado) */}
-            <div
-              className="relative"
-              ref={areasRef}
-              onMouseEnter={() => setAreasOpen(true)}
-              onMouseLeave={() => setAreasOpen(false)}
-            >
-              <button
-                type="button"
-                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-base rounded-lg hover:bg-[var(--overlay-subtle)]"
-                aria-expanded={areasOpen}
-                aria-haspopup="true"
-                onClick={() => setAreasOpen(!areasOpen)}
-              >
-                Áreas atendidas
-                <svg
-                  className={`h-4 w-4 transition-transform ${areasOpen ? 'rotate-180' : ''}`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="2"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </button>
+            <MenuSuspenso rotulo="Áreas atendidas" itens={areas} />
+            <MenuSuspenso rotulo="Conteúdo" itens={conteudo} />
 
-              {areasOpen && (
-                <div className="absolute left-0 top-full pt-2 w-64">
-                  <div className="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-2 shadow-xl animate-fade-in-down">
-                    {areas.map((area) => (
-                      <Link
-                        key={area.name}
-                        href={area.href}
-                        className="block px-3 py-2 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--color-primary-600)] hover:bg-[var(--overlay-subtle)] rounded-lg transition-base"
-                        onClick={() => setAreasOpen(false)}
-                      >
-                        {area.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            <Link
-              href="/cases"
-              className="px-3 py-2 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-base rounded-lg hover:bg-[var(--overlay-subtle)]"
-            >
+            <Link href="/cases" className={linkDesktop}>
               Casos
             </Link>
 
-            <Link
-              href="/contato"
-              className="px-3 py-2 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-base rounded-lg hover:bg-[var(--overlay-subtle)]"
-            >
+            <Link href="/contato" className={linkDesktop}>
               Contato
             </Link>
           </div>
@@ -246,6 +246,21 @@ export default function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {area.name}
+                </Link>
+              ))}
+
+              {/* Conteúdo: soluções, setores, guias */}
+              <div className="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-[var(--text-tertiary)]">
+                Conteúdo
+              </div>
+              {conteudo.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block px-6 py-2 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--color-primary-600)] hover:bg-[var(--overlay-subtle)] rounded-lg transition-base"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
                 </Link>
               ))}
 

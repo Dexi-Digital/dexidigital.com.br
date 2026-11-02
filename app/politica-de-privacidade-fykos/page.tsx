@@ -1,18 +1,12 @@
-import type { Metadata } from 'next';
+import { buildMeta } from '@/lib/seo/meta';
 
-export const metadata: Metadata = {
+export const metadata = buildMeta({
   title: 'Política de Privacidade do Fykos',
   description:
     'Política de Privacidade do Fykos, plataforma de atendimento e qualificação de leads via WhatsApp Business Platform operada pela Dexi Digital.',
-  robots: {
-    index: false,
-    follow: false,
-    googleBot: {
-      index: false,
-      follow: false,
-    },
-  },
-};
+  path: '/politica-de-privacidade-fykos',
+  nofollow: true,
+});
 
 const SECOES = [
   {

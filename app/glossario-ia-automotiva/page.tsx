@@ -1,20 +1,20 @@
-import type { Metadata } from 'next';
+import { buildMeta } from '@/lib/seo/meta';
 import Link from 'next/link';
 import { GLOSSARIO_TERMS, GLOSSARIO_CATEGORIES } from '@/lib/seo/glossario';
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 
-export const metadata: Metadata = {
+export const metadata = buildMeta({
   title: 'Glossário IA Automotiva | Termos e Conceitos',
   description:
-    'Glossário de IA aplicada à venda automotiva: execução autônoma, lead scoring, DMS, shadow CRM e o Fykos. O que cada termo significa na operação de uma concessionária.',
+    'Glossário de IA aplicada à venda automotiva: execução autônoma, lead scoring, DMS, shadow CRM e o Fykos, explicados para a operação da concessionária.',
+  path: '/glossario-ia-automotiva',
   keywords: [
     'glossário IA automotiva',
     'termos IA concessionária',
     'glossário automotivo digital',
     'dicionário IA vendas',
   ],
-  alternates: { canonical: '/glossario-ia-automotiva' },
-};
+});
 
 export default function GlossarioPage() {
   const categories = Object.entries(GLOSSARIO_CATEGORIES) as [

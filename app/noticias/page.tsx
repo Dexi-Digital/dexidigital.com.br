@@ -1,13 +1,14 @@
-import type { Metadata } from 'next';
+import { buildMeta } from '@/lib/seo/meta';
 import Image from 'next/image';
 import { getRecentNews } from '@/lib/news-db';
 import TrackedCTA from '@/components/ui/TrackedCTA';
 
-export const metadata: Metadata = {
+export const metadata = buildMeta({
   title: 'Notícias de Tecnologia e IA',
   description:
     'Acompanhe as principais notícias de tecnologia e inteligência artificial, selecionadas diariamente pela Dexi Digital.',
-};
+  path: '/noticias',
+});
 
 export const dynamic = 'force-dynamic';
 

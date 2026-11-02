@@ -37,7 +37,7 @@ export const GLOSSARIO_TERMS: GlossarioTerm[] = [
     slug: 'execucao-autonoma-ia',
     title: 'Execução Autônoma de IA',
     category: 'tecnologia',
-    metaTitle: 'O que é Execução Autônoma de IA | Glossário IA Automotiva | Dexi Digital',
+    metaTitle: 'O que é Execução Autônoma de IA',
     metaDescription:
       'Execução autônoma de IA é quando o sistema, além de avisar, executa a próxima ação comercial dentro de regras definidas, com o humano nas exceções.',
     answerSnippet:
@@ -76,7 +76,7 @@ Quando cada oportunidade vale muito, depender de alguém lembrar de olhar o sist
     slug: 'fykos',
     title: 'Fykos',
     category: 'tecnologia',
-    metaTitle: 'O que é o Fykos | Inteligência e execução comercial | Dexi Digital',
+    metaTitle: 'O que é o Fykos: inteligência e execução comercial',
     metaDescription:
       'Fykos é o produto da Dexi Digital: inteligência e execução comercial sobre os sistemas que a empresa já usa, sem trocar o CRM.',
     answerSnippet:
@@ -119,9 +119,9 @@ A Dexi tem capacidade de integrar o Fykos ao CRM, DMS ou ERP da operação quand
     slug: 'perfilamento-inteligente',
     title: 'Perfilamento Inteligente de Leads',
     category: 'vendas',
-    metaTitle: 'Perfilamento Inteligente de Leads | IA Automotiva | Dexi Digital',
+    metaTitle: 'Perfilamento Inteligente de Leads',
     metaDescription:
-      'Perfilamento de leads é organizar cada contato por intenção, urgência e interesse, a partir do que ele diz e do histórico, para o vendedor chegar com contexto.',
+      'Perfilamento de leads é organizar cada contato por intenção, urgência e interesse, para o vendedor chegar com contexto. Entenda o conceito.',
     answerSnippet:
       'Perfilamento inteligente de leads é organizar cada contato por intenção de compra, urgência, faixa de interesse e canal preferido, a partir do que ele diz na conversa e do histórico com a empresa. O objetivo é o vendedor chegar à conversa com contexto, em vez de receber só nome, telefone e veículo de interesse.',
     longDescription: `## O que é perfilamento de leads
@@ -155,9 +155,9 @@ O vendedor que recebe o lead com contexto começa a conversa do ponto em que ela
     slug: 'lead-scoring-automotivo',
     title: 'Lead Scoring Automotivo',
     category: 'vendas',
-    metaTitle: 'Lead Scoring para Concessionárias | IA Automotiva | Dexi Digital',
+    metaTitle: 'Lead Scoring para Concessionárias',
     metaDescription:
-      'Lead scoring automotivo: como priorizar os leads da concessionária por intenção, ticket e urgência, e o que muda quando a pontuação acompanha cada interação.',
+      'Lead scoring automotivo: como priorizar os leads da concessionária por intenção, ticket e urgência, com a pontuação acompanhando cada interação.',
     answerSnippet:
       'Lead scoring automotivo é atribuir a cada lead da concessionária uma pontuação de prioridade com base em sinais de intenção, potencial de ticket e urgência da compra. Com IA, a pontuação pode ser revista a cada nova interação, em vez de ficar presa ao que o lead preencheu no formulário.',
     longDescription: `## Lead scoring no automotivo
@@ -191,9 +191,9 @@ O Fykos prioriza oportunidades usando contexto e critérios comerciais definidos
     slug: 'dms-automotivo',
     title: 'DMS (Dealer Management System)',
     category: 'operacoes',
-    metaTitle: 'O que é DMS Automotivo | Sistema de Gestão | Dexi Digital',
+    metaTitle: 'O que é DMS Automotivo: sistema de gestão',
     metaDescription:
-      'DMS (Dealer Management System) é o sistema de gestão central da concessionária: estoque, vendas, financeiro, oficina e peças. Entenda o papel dele na venda com IA.',
+      'DMS (Dealer Management System) é o sistema de gestão da concessionária: estoque, vendas, financeiro, oficina e peças. Entenda o papel dele na venda.',
     answerSnippet:
       'DMS (Dealer Management System) é o sistema de gestão central de uma concessionária, responsável por estoque, vendas, financeiro, oficina e peças. Na venda com IA, ele é uma fonte de sinais: uma mudança de estoque ou um evento de pós-venda pode indicar uma oportunidade comercial.',
     longDescription: `## O que é DMS
@@ -220,9 +220,9 @@ O DMS registra a operação. Uma camada de inteligência sobre ele pode transfor
     slug: 'shadow-crm',
     title: 'Shadow CRM',
     category: 'dados',
-    metaTitle: 'O que é Shadow CRM | Glossário IA Automotiva | Dexi Digital',
+    metaTitle: 'O que é Shadow CRM na concessionária',
     metaDescription:
-      'Shadow CRM é o registro paralelo que a operação mantém fora do CRM oficial: WhatsApp pessoal, planilhas e anotações. Entenda o custo para a gestão comercial.',
+      'Shadow CRM é o registro paralelo fora do CRM oficial: WhatsApp pessoal, planilhas e anotações. Entenda o custo dele para a gestão comercial.',
     answerSnippet:
       'Shadow CRM é o registro paralelo que a operação comercial mantém fora do CRM oficial: conversas no WhatsApp pessoal do vendedor, planilhas, anotações. A venda acontece, mas o sistema não vê, e a gestão perde o histórico e os sinais de que precisa para decidir.',
     longDescription: `## O que é shadow CRM

@@ -72,8 +72,11 @@ export function BlogGrid({ articles }: { articles: BlogCard[] }) {
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {shown.map((article) => (
-          <article key={article.slug} className="card card-interactive overflow-hidden">
+        {/* Todos os cards vão no HTML; os que passam do "Carregar mais" ficam
+            escondidos por CSS. Assim o crawler acha todo post a partir de /blog
+            sem executar JS (antes só os 12 primeiros tinham link no HTML). */}
+        {filtered.map((article, i) => (
+          <article key={article.slug} className={`card card-interactive overflow-hidden ${i < visible ? '' : 'hidden'}`}>
             <div className="p-6">
               <div className="flex items-center gap-2 mb-3">
                 <span className="px-3 py-1 text-xs font-semibold bg-[var(--color-primary-100)] dark:bg-[var(--color-primary-900)]/30 text-[var(--color-primary-700)] dark:text-[var(--color-primary-300)] rounded-full">

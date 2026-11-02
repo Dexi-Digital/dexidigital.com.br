@@ -91,15 +91,11 @@ export const localBusinessSchema = {
   ],
   priceRange: '$$$',
   openingHours: 'Mo-Fr 09:00-18:00',
-  serviceType: [
-    'Fykos: inteligência e execução comercial',
-    'Engenharia de Dados & Ativos de Inteligência',
-    'Desenvolvimento de Sistemas de Missão Crítica',
-    'Inteligência comercial para grupos automotivos',
-  ],
+  // `serviceType` não existe em ProfessionalService (só em Service): o
+  // validator.schema.org acusava erro na home. Os serviços entram no catálogo.
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'Serviços de Consultoria',
+    name: 'Serviços da Dexi Digital',
     itemListElement: [
       {
         '@type': 'Offer',
@@ -110,6 +106,15 @@ export const localBusinessSchema = {
             'Avaliação da aderência da operação comercial: volume, dados disponíveis e viabilidade de implementação.',
         },
       },
+      ...[
+        'Fykos: inteligência e execução comercial',
+        'Engenharia de Dados & Ativos de Inteligência',
+        'Desenvolvimento de Sistemas de Missão Crítica',
+        'Inteligência comercial para grupos automotivos',
+      ].map((name) => ({
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name },
+      })),
     ],
   },
 };

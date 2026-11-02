@@ -1,18 +1,19 @@
+import { buildMeta } from '@/lib/seo/meta';
 import Link from 'next/link';
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 import TrackedCTA from '@/components/ui/TrackedCTA';
-import type { Metadata } from 'next';
 
 // Out/2026: o texto anterior foi escrito por IA ("perfil psicológico",
 // "Neurolinguística Aplicada", "uma década de engenharia", "integramos
 // nativamente", cases sem atribuição). Reescrito só com o que
 // lib/regras-editoriais.ts afirma sobre o Fykos.
 
-export const metadata: Metadata = {
+export const metadata = buildMeta({
   title: 'IA para Grupos Automotivos Premium',
-  description: 'Inteligência e execução comercial para concessionárias e grupos automotivos premium: cada lead custou caro para chegar e precisa virar venda. O Fykos transforma dados da operação em prioridades e ações comerciais.',
-  keywords: ['IA para concessionárias', 'inteligência comercial automotiva', 'grupos automotivos premium', 'conversão de leads automotivo', 'tecnologia brasileira'],
-};
+  description:
+    'Grupos automotivos premium: cada lead custou caro e precisa virar venda. O Fykos transforma dados da operação em prioridades e ações comerciais.',
+  path: '/setores/automotivo-premium',
+});
 
 const challenges = [
   {

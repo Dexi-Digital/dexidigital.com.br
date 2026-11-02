@@ -1,20 +1,16 @@
+import { buildMeta } from '@/lib/seo/meta';
 import Link from 'next/link';
 import FAQItem from '@/components/ui/FAQItem';
 import TrackedCTA from '@/components/ui/TrackedCTA';
 import { WHATSAPP_DIAGNOSTIC_URL } from '@/lib/whatsapp';
-import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
+export const metadata = buildMeta({
   title: 'WebOS | Sites, Blogs e Landing Pages',
-  description: 'Conheça o WebOS, o sistema da Dexi para criar sites institucionais, blogs e landing pages com design premium, CMS editável, SEO técnico e estrutura pronta para crescer.',
+  description:
+    'WebOS, o sistema da Dexi para sites institucionais, blogs e landing pages: design, CMS editável, SEO técnico e estrutura pronta para crescer.',
+  path: '/produtos/webos',
   keywords: ['sites institucionais', 'blogs corporativos', 'landing pages', 'CMS', 'SEO técnico', 'presença digital', 'Dexi Digital'],
-  openGraph: {
-    title: 'WebOS | Sites, Blogs e Landing Pages com a Dexi Digital',
-    description: 'Conheça o WebOS, o sistema da Dexi para criar sites institucionais, blogs e landing pages com design premium, CMS editável, SEO técnico e estrutura pronta para crescer.',
-    type: 'website',
-    locale: 'pt_BR',
-  },
-};
+});
 
 const entregaveis = [
   {

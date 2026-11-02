@@ -1,12 +1,13 @@
-import type { Metadata } from 'next';
+import { buildMeta } from '@/lib/seo/meta';
 import Link from 'next/link';
 import TrackedCTA from '@/components/ui/TrackedCTA';
 
-export const metadata: Metadata = {
+export const metadata = buildMeta({
   title: 'Serviços | Fykos, engenharia de dados e software sob medida',
   description:
     'O Fykos, engenharia de dados e software sob medida para que as oportunidades da operação virem receita e previsibilidade de venda.',
-};
+  path: '/servicos',
+});
 
 export default function ServicesPage() {
   const services = [

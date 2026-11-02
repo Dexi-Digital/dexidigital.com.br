@@ -5,16 +5,15 @@ import ClientLogos from '@/components/ui/ClientLogos';
 import { FAQSchema } from '@/components/seo/FAQSchema';
 import { getHomePageSchemas, localBusinessSchema } from '@/lib/structured-data';
 import { CAMPOS_CASO, casosPublicaveis, nomeExibido } from '@/lib/provas';
-import type { Metadata } from 'next';
+import { buildMeta } from '@/lib/seo/meta';
+import { DESTAQUES_HOME } from '@/lib/seo/navegacao';
+import { CardConteudo } from '@/components/seo/ConteudosRelacionados';
 
-const TITULO = 'Dexi Digital | Tecnologia para decisões comerciais de alto valor';
-const DESCRICAO =
-  'A Dexi transforma dados da operação em prioridades e ações comerciais, para que as oportunidades da sua base virem receita e previsibilidade de venda. Criadora do Fykos.';
-
-export const metadata: Metadata = {
-  title: TITULO,
-  description: DESCRICAO,
-  alternates: { canonical: '/' },
+export const metadata = buildMeta({
+  title: 'Dexi Digital | Tecnologia para decisões comerciais',
+  description:
+    'Receita e previsibilidade de venda a partir das oportunidades da sua base: a Dexi transforma dados da operação em ações comerciais. Criadora do Fykos.',
+  path: '/',
   keywords: [
     'inteligência comercial',
     'execução comercial',
@@ -25,26 +24,7 @@ export const metadata: Metadata = {
     'grupos automotivos',
     'integração com CRM',
   ],
-  // ATENCAO: declarar `openGraph` aqui SUBSTITUI o do layout inteiro — o Next
-  // nao faz merge profundo. Sem repetir url/siteName/images, a home ficava sem
-  // og:image e sem og:url, e todo compartilhamento saia sem imagem.
-  openGraph: {
-    title: TITULO,
-    description: DESCRICAO,
-    type: 'website',
-    locale: 'pt_BR',
-    url: 'https://dexidigital.com.br',
-    siteName: 'Dexi Digital',
-    images: [
-      {
-        url: '/og-image-home.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Dexi Digital: tecnologia para decisões comerciais de alto valor',
-      },
-    ],
-  },
-};
+});
 
 // Sinais que passam despercebidos entre sistemas e equipes (bloco "A dor").
 const SINAIS = [
@@ -337,6 +317,39 @@ export default function HomePage() {
                 </ul>
               </div>
             )}
+          </div>
+        </div>
+      </section>
+
+      {/* Para aprofundar: links reais para os guias, a solução de leads e a
+          metodologia (eram páginas órfãs, só no sitemap) */}
+      <section id="aprofundar" className="section bg-[var(--bg-surface)] border-y border-[var(--border-subtle)]">
+        <div className="container">
+          <div className="max-w-5xl mx-auto">
+            <div className="section-header text-center">
+              <p className="text-overline mb-2">PARA APROFUNDAR</p>
+              <h2 className="text-h2">Guias e soluções para a venda automotiva</h2>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {DESTAQUES_HOME.map((item) => (
+                <CardConteudo key={item.href} item={item} />
+              ))}
+            </div>
+            <p className="mt-8 text-center text-body-sm text-[var(--text-secondary)]">
+              Veja também as{' '}
+              <Link href="/solucoes" className="underline hover:text-[var(--color-primary-500)]">
+                soluções e comparativos
+              </Link>
+              , os{' '}
+              <Link href="/setores" className="underline hover:text-[var(--color-primary-500)]">
+                setores automotivos
+              </Link>{' '}
+              e todos os{' '}
+              <Link href="/guias" className="underline hover:text-[var(--color-primary-500)]">
+                guias
+              </Link>
+              .
+            </p>
           </div>
         </div>
       </section>

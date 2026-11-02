@@ -1,14 +1,16 @@
+import { buildMeta } from '@/lib/seo/meta';
 import Link from 'next/link';
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 import { getHowToSchema } from '@/lib/structured-data';
 import TrackedCTA from '@/components/ui/TrackedCTA';
-import type { Metadata } from 'next';
+import { ConteudosRelacionados } from '@/components/seo/ConteudosRelacionados';
 
-export const metadata: Metadata = {
+export const metadata = buildMeta({
   title: 'Metodologia Dexi | Processo Consultivo de IA e Dados',
-  description: 'Conheça o Processo Dexi: metodologia consultiva em 5 etapas para implementar IA e inteligência de dados com governança, resultados mensuráveis e revisão técnica humana.',
-  keywords: ['metodologia consultoria IA', 'processo implementação IA', 'consultoria de dados', 'governança IA'],
-};
+  description:
+    'Metodologia em 5 etapas para levar IA e inteligência de dados à operação comercial, sobre os sistemas existentes, com governança e revisão técnica humana.',
+  path: '/metodologia',
+});
 
 const steps = [
   {
@@ -179,6 +181,8 @@ export default function MetodologiaPage() {
           </div>
         </div>
       </section>
+
+      <ConteudosRelacionados caminho="/metodologia" />
 
       {/* CTA Section */}
       <section className="section-cta-premium text-white">

@@ -81,12 +81,8 @@ const nextConfig: NextConfig = {
         destination: '/servicos/software-sob-medida',
         permanent: true,
       },
-      // Legacy sector URLs — /automotivo agora é página própria (vertical carro-chefe)
-      {
-        source: '/setores',
-        destination: '/automotivo',
-        permanent: false,
-      },
+      // Legacy sector URLs. /setores deixou de redirecionar em nov/2026: virou a
+      // página índice das fábricas e dos grupos (app/setores/page.tsx).
       {
         source: '/concessionarias',
         destination: '/automotivo',

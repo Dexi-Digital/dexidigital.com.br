@@ -3,7 +3,10 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { SOLUCOES, findSolucao } from '@/lib/seo';
 import { FAQSchema } from '@/components/seo/FAQSchema';
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 import TrackedCTA from '@/components/ui/TrackedCTA';
+import { ConteudosRelacionados } from '@/components/seo/ConteudosRelacionados';
+import { buildMeta } from '@/lib/seo/meta';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -18,21 +21,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const data = findSolucao(slug);
   if (!data) return {};
 
-  // O layout já acrescenta "| Dexi Digital": tira o sufixo do dado para não duplicar.
-  const titulo = data.metaTitle.replace(/\s*\|\s*Dexi Digital\s*$/i, '');
-
-  return {
-    title: titulo,
+  return buildMeta({
+    title: data.metaTitle,
     description: data.metaDescription,
+    path: `/solucoes/${slug}`,
+    type: 'article',
     keywords: data.keywords,
-    alternates: { canonical: `/solucoes/${slug}` },
-    openGraph: {
-      title: `${titulo} | Dexi Digital`,
-      description: data.metaDescription,
-      url: `https://dexidigital.com.br/solucoes/${slug}`,
-      type: 'article',
-    },
-  };
+  });
 }
 
 export default async function SolucaoPage({ params }: PageProps) {
@@ -43,6 +38,12 @@ export default async function SolucaoPage({ params }: PageProps) {
   return (
     <main className="min-h-screen">
       <FAQSchema faqs={data.faq} pageName={data.title} />
+      <BreadcrumbSchema
+        trilha={[
+          { nome: 'Soluções', url: '/solucoes' },
+          { nome: data.title, url: `/solucoes/${data.slug}` },
+        ]}
+      />
 
       {/* Hero */}
       <section className="section-hero-premium py-24 md:py-32 border-b border-[var(--border-subtle)]">
@@ -51,7 +52,7 @@ export default async function SolucaoPage({ params }: PageProps) {
             <nav className="text-sm text-[var(--text-tertiary)] mb-6">
               <Link href="/" className="hover:text-[var(--color-primary-500)]">Home</Link>
               <span className="mx-2">/</span>
-              <Link href="/servicos" className="hover:text-[var(--color-primary-500)]">Serviços</Link>
+              <Link href="/solucoes" className="hover:text-[var(--color-primary-500)]">Soluções</Link>
               <span className="mx-2">/</span>
               <span className="text-[var(--text-secondary)]">{data.title}</span>
             </nav>
@@ -124,6 +125,8 @@ export default async function SolucaoPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      <ConteudosRelacionados caminho={`/solucoes/${data.slug}`} />
 
       {/* CTA Final */}
       <section className="section-lg bg-[var(--bg-surface)] border-t border-[var(--border-subtle)]">

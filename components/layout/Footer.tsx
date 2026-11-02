@@ -5,16 +5,28 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const navigation = {
+    // Páginas índice e de apoio: no rodapé de todas as páginas para nenhuma
+    // ficar órfã (Ahrefs, out/2026).
+    content: [
+      { name: 'Soluções', href: '/solucoes' },
+      { name: 'Setores automotivos', href: '/setores' },
+      { name: 'Guias', href: '/guias' },
+      { name: 'Metodologia', href: '/metodologia' },
+      { name: 'Glossário de IA automotiva', href: '/glossario-ia-automotiva' },
+      { name: 'Calculadora de ROI', href: '/materiais/calculadora-roi' },
+    ],
     services: [
       { name: 'Engenharia de Dados & Ativos de Inteligência', href: '/servicos/inteligencia-de-dados' },
       { name: 'Desenvolvimento de Sistemas de Missão Crítica', href: '/servicos/software-sob-medida' },
       { name: 'Fykos: inteligência e execução comercial', href: '/o-fykos' },
+      { name: 'WebOS: sites, blogs e landing pages', href: '/produtos/webos' },
     ],
     company: [
       { name: 'Sobre', href: '/sobre' },
       { name: 'Cases', href: '/cases' },
       { name: 'Blog', href: '/blog' },
       { name: 'Notícias', href: '/noticias' },
+      { name: 'Perguntas frequentes', href: '/faq' },
       { name: 'Contato', href: '/contato' },
     ],
     legal: [
@@ -29,7 +41,7 @@ export default function Footer() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[rgba(33,150,243,0.03)] pointer-events-none" />
 
       <div className="container py-14 lg:py-20 relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.35fr_1fr_1fr_1fr] gap-10 lg:gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary-400)] rounded-lg transition-base">
@@ -47,6 +59,40 @@ export default function Footer() {
             <p className="text-sm text-white/60">
               Integração, regras, supervisão e rastreabilidade.
             </p>
+            {/* Contato fica com a marca: com a coluna Conteúdo, 5 colunas não cabiam no container de 70%. */}
+            <ul className="space-y-3 mt-6">
+              <li>
+                <a
+                  href="mailto:contato@dexidigital.com.br"
+                  className="text-sm text-white/60 hover:text-white transition-base break-all"
+                >
+                  contato@dexidigital.com.br
+                </a>
+              </li>
+              <li>
+                <Link
+                  href="/contato?cta=footer"
+                  className="inline-flex items-center text-sm font-semibold text-[var(--color-primary-400)] hover:text-[var(--color-primary-300)] transition-base group"
+                >
+                  Avaliar aderência
+                  <span className="ml-1 group-hover:translate-x-0.5 transition-transform">→</span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Conteúdo */}
+          <div>
+            <h3 className="text-sm font-bold text-white/90 mb-5 tracking-wider uppercase">Conteúdo</h3>
+            <ul className="space-y-3">
+              {navigation.content.map((item) => (
+                <li key={item.name}>
+                  <Link href={item.href} className="text-sm text-white/60 hover:text-white transition-base">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Services */}
@@ -74,30 +120,6 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="text-sm font-bold text-white/90 mb-5 tracking-wider uppercase">Contato</h3>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="mailto:contato@dexidigital.com.br"
-                  className="text-sm text-white/60 hover:text-white transition-base"
-                >
-                  contato@dexidigital.com.br
-                </a>
-              </li>
-              <li>
-                <Link
-                  href="/contato?cta=footer"
-                  className="inline-flex items-center text-sm font-semibold text-[var(--color-primary-400)] hover:text-[var(--color-primary-300)] transition-base group"
-                >
-                  Avaliar aderência
-                  <span className="ml-1 group-hover:translate-x-0.5 transition-transform">→</span>
-                </Link>
-              </li>
             </ul>
           </div>
         </div>

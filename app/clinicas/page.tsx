@@ -1,11 +1,12 @@
+import { buildMeta } from '@/lib/seo/meta';
 import TrackedCTA from '@/components/ui/TrackedCTA';
-import type { Metadata } from 'next';
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 
-export const metadata: Metadata = {
+export const metadata = buildMeta({
   title: 'Fykos para Clínicas',
   description:
-    'Agenda com buraco é receita que não volta. O Fykos foi desenhado para manter relacionamento contínuo com cada paciente: retorno, procedimentos recorrentes e renovação de receita médica na hora certa. Estamos selecionando as primeiras clínicas como casos-fundadores.',
+    'Agenda com buraco é receita que não volta. O Fykos foi desenhado para o relacionamento contínuo com o paciente: retorno e procedimentos recorrentes.',
+  path: '/clinicas',
   keywords: [
     'IA para clínicas',
     'relacionamento com pacientes',
@@ -18,14 +19,7 @@ export const metadata: Metadata = {
     'agenda clínica',
     'Fykos',
   ],
-  openGraph: {
-    title: 'Fykos para Clínicas | Relacionamento contínuo com o paciente',
-    description:
-      'Agenda com buraco é receita que não volta. Relacionamento contínuo com o paciente: retorno, procedimentos recorrentes e renovação de receita médica na hora certa. Estamos selecionando as primeiras clínicas como casos-fundadores.',
-    type: 'website',
-    locale: 'pt_BR',
-  },
-};
+});
 
 const DIFERENCIAIS = [
   {

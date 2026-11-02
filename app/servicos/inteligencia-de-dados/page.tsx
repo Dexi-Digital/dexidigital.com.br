@@ -1,12 +1,13 @@
-import type { Metadata } from 'next';
+import { buildMeta } from '@/lib/seo/meta';
 import Link from 'next/link';
 import TrackedCTA from '@/components/ui/TrackedCTA';
 
-export const metadata: Metadata = {
+export const metadata = buildMeta({
   title: 'Inteligência de Dados',
   description:
-    'Engenharia de dados para decisões comerciais: organizamos os dados da operação para que oportunidades virem prioridades e ações. Pipelines, painéis e governança com LGPD.',
-};
+    'Engenharia de dados para decisões comerciais: os dados da operação organizados para que oportunidades virem prioridades e ações, com governança e LGPD.',
+  path: '/servicos/inteligencia-de-dados',
+});
 
 export default function DataIntelligencePage() {
   return (

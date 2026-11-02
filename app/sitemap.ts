@@ -49,6 +49,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url('/metodologia', ['app/metodologia'], 'monthly', 0.9),
   ];
 
+  // Páginas índice: valem o template, o catálogo de links e os dados listados.
+  const indices = [
+    url('/solucoes', ['app/solucoes/page.tsx', 'lib/seo/navegacao.ts', 'lib/seo/solucoes.ts', 'lib/seo/comparativo.ts'], 'monthly', 0.85),
+    url('/setores', ['app/setores/page.tsx', 'lib/seo/navegacao.ts', 'lib/seo/fabricas.ts', 'lib/seo/grupos.ts'], 'monthly', 0.85),
+    url('/guias', ['app/guias/page.tsx', 'lib/seo/navegacao.ts', 'lib/seo/guias.ts'], 'monthly', 0.8),
+  ];
+
   const servicos = [
     url('/servicos', ['app/servicos/page.tsx'], 'monthly', 0.9),
     url('/servicos/inteligencia-de-dados', ['app/servicos/inteligencia-de-dados'], 'monthly', 0.85),
@@ -143,6 +150,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...principais,
+    ...indices,
     ...servicos,
     ...setores,
     ...fabricas,

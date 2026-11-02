@@ -15,6 +15,8 @@
  */
 export interface ComparativoPage {
   slug: string;
+  /** Uma linha para o card nas páginas índice (/guias, /setores, /solucoes). */
+  resumo: string;
   title: string;
   metaTitle: string;
   metaDescription: string;
@@ -33,10 +35,11 @@ export interface ComparativoPage {
 export const COMPARATIVOS: ComparativoPage[] = [
   {
     slug: 'robo-de-atendimento-vs-inteligencia-comercial',
+    resumo: 'O robô responde quem chega; a inteligência comercial decide qual oportunidade merece atenção agora.',
     title: 'Robô de atendimento ou inteligência comercial?',
-    metaTitle: 'Robô de atendimento vs inteligência comercial: a diferença | Dexi Digital',
+    metaTitle: 'Robô de atendimento vs inteligência comercial',
     metaDescription:
-      'Robô de atendimento responde quem chega. Inteligência comercial identifica qual oportunidade merece atenção agora e executa a próxima ação. Entenda quando cada um faz sentido.',
+      'Robô de atendimento responde quem chega. Inteligência comercial decide qual oportunidade merece atenção agora e age. Veja quando cada um faz sentido.',
     keywords: [
       'robô de atendimento vs inteligência comercial',
       'chatbot ou inteligência comercial',
@@ -124,8 +127,9 @@ export const COMPARATIVOS: ComparativoPage[] = [
   },
   {
     slug: 'dexi-vs-crm-tradicional',
+    resumo: 'O CRM registra o que aconteceu. Veja o que muda quando a próxima ação é priorizada e executada.',
     title: 'CRM e inteligência comercial: o que muda',
-    metaTitle: 'CRM vs inteligência comercial: o que muda na operação | Dexi Digital',
+    metaTitle: 'CRM vs inteligência comercial: o que muda',
     metaDescription:
       'O CRM registra o que aconteceu. A inteligência comercial do Fykos identifica o que merece atenção agora e executa a próxima ação, sem substituir o CRM.',
     keywords: [

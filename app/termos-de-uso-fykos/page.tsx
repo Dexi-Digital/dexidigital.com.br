@@ -1,18 +1,12 @@
-import type { Metadata } from 'next';
+import { buildMeta } from '@/lib/seo/meta';
 
-export const metadata: Metadata = {
+export const metadata = buildMeta({
   title: 'Termos de Uso do Fykos',
   description:
     'Termos de Uso do Fykos, plataforma de atendimento e qualificação de leads via WhatsApp Business Platform operada pela Dexi Digital.',
-  robots: {
-    index: false,
-    follow: false,
-    googleBot: {
-      index: false,
-      follow: false,
-    },
-  },
-};
+  path: '/termos-de-uso-fykos',
+  nofollow: true,
+});
 
 const SECOES = [
   {

@@ -10,6 +10,8 @@
  */
 export interface FabricaPage {
   slug: string;
+  /** Uma linha para o card nas páginas índice (/guias, /setores, /solucoes). */
+  resumo: string;
   brand: string;
   metaTitle: string;
   metaDescription: string;
@@ -26,10 +28,11 @@ export interface FabricaPage {
 export const FABRICAS: FabricaPage[] = [
   {
     slug: 'montadoras-expansao',
+    resumo: 'Marcas que ainda montam o processo comercial e pagam caro por cada lead.',
     brand: 'Montadoras em Expansão',
-    metaTitle: 'IA para Concessionárias de Montadoras em Expansão | Fykos | Dexi Digital',
+    metaTitle: 'IA para Concessionárias de Marcas em Expansão',
     metaDescription:
-      'Inteligência e execução comercial para concessionárias de marcas em expansão: o lead que custou caro recebe atendimento com contexto e o time sabe qual oportunidade priorizar, com o Fykos.',
+      'Concessionárias de marcas em expansão: o lead que custou caro atendido com contexto e o time sabendo qual oportunidade priorizar, com o Fykos.',
     keywords: [
       'IA concessionária montadora expansão',
       'tecnologia concessionária novas marcas',
@@ -102,10 +105,11 @@ export const FABRICAS: FabricaPage[] = [
   },
   {
     slug: 'motos-premium',
+    resumo: 'Da primeira moto ao colecionador: qualificação e contexto para o vendedor.',
     brand: 'Motos Premium',
-    metaTitle: 'IA para Concessionárias de Motos Premium | Fykos | Dexi Digital',
+    metaTitle: 'IA para Concessionárias de Motos Premium',
     metaDescription:
-      'Inteligência e execução comercial para concessionárias de motocicletas premium: atendimento com qualificação, contexto para o vendedor e retomada da base quando algo muda, com o Fykos.',
+      'Concessionárias de motos premium: lead qualificado, contexto para o vendedor e a base retomada quando algo muda, para o lead caro não esfriar.',
     keywords: [
       'IA concessionária motos premium',
       'tecnologia dealer motocicletas',
@@ -173,10 +177,11 @@ export const FABRICAS: FabricaPage[] = [
   },
   {
     slug: 'seguranca-sustentabilidade',
+    resumo: 'Comprador que pesquisa muito antes de decidir e espera atendimento consultivo.',
     brand: 'Segurança e Sustentabilidade',
-    metaTitle: 'IA para Concessionárias de Marcas de Segurança e Sustentabilidade | Fykos | Dexi Digital',
+    metaTitle: 'IA para Concessionárias de Segurança e Sustentabilidade',
     metaDescription:
-      'Inteligência e execução comercial para concessionárias de marcas focadas em segurança e eletrificação: o comprador que pesquisa muito atendido com contexto e no momento certo, com o Fykos.',
+      'Concessionárias de marcas de segurança e eletrificação: o comprador que pesquisa muito atendido com contexto e no momento certo, com o Fykos.',
     keywords: [
       'IA concessionária veículos elétricos',
       'tecnologia dealer sustentabilidade',
@@ -244,10 +249,11 @@ export const FABRICAS: FabricaPage[] = [
   },
   {
     slug: 'luxo-tecnologia',
+    resumo: 'Lead de alto ticket que não pode receber resposta tardia nem genérica.',
     brand: 'Luxo e Tecnologia',
-    metaTitle: 'IA para Concessionárias de Marcas de Luxo e Tecnologia | Fykos | Dexi Digital',
+    metaTitle: 'IA para Concessionárias de Luxo e Tecnologia',
     metaDescription:
-      'Inteligência e execução comercial para concessionárias de marcas de luxo e tecnologia: o lead de alto ticket atendido com contexto e a base acionada quando algo muda, com o Fykos.',
+      'Concessionárias de luxo e tecnologia: o lead de alto ticket atendido com contexto e a base acionada quando algo muda, com o Fykos.',
     keywords: [
       'IA concessionária luxo',
       'tecnologia dealer premium',
@@ -315,10 +321,11 @@ export const FABRICAS: FabricaPage[] = [
   },
   {
     slug: 'performance-premium',
+    resumo: 'Compra decidida por desempenho e status, em que cada lead que esfria custa caro.',
     brand: 'Performance Premium',
-    metaTitle: 'IA para Concessionárias de Marcas de Performance | Fykos | Dexi Digital',
+    metaTitle: 'IA para Concessionárias de Marcas de Performance',
     metaDescription:
-      'Inteligência e execução comercial para concessionárias de marcas de performance: o lead de alto ticket qualificado, com contexto para o vendedor e retomado quando algo muda, com o Fykos.',
+      'Concessionárias de marcas de performance: o lead de alto ticket qualificado, com contexto para o vendedor e retomado quando algo muda.',
     keywords: [
       'IA concessionária performance',
       'tecnologia dealer esportivo',

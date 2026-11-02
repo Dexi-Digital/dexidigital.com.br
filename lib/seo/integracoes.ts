@@ -12,6 +12,8 @@
  */
 export interface IntegracaoPage {
   slug: string;
+  /** Uma linha para o card nas páginas índice (/guias, /setores, /solucoes). */
+  resumo: string;
   title: string;
   metaTitle: string;
   metaDescription: string;
@@ -25,10 +27,11 @@ export interface IntegracaoPage {
 export const INTEGRACOES: IntegracaoPage[] = [
   {
     slug: 'whatsapp-business-concessionaria',
+    resumo: 'O lead do WhatsApp fora do celular do vendedor: atendimento com regras, contexto e registro de cada conversa.',
     title: 'WhatsApp Business para concessionárias',
-    metaTitle: 'WhatsApp Business para concessionárias: o lead fora do celular do vendedor | Dexi Digital',
+    metaTitle: 'WhatsApp Business para concessionárias',
     metaDescription:
-      'Quando o WhatsApp vive no celular de cada vendedor, o lead que custou caro esfria sem ninguém ver. Veja como o Fykos atende pelo WhatsApp Business com regras, contexto e registro.',
+      'Para concessionárias: o lead do WhatsApp não esfria no celular do vendedor. O Fykos atende pelo WhatsApp Business com regras, contexto e registro.',
     keywords: [
       'WhatsApp Business concessionária',
       'atendimento WhatsApp concessionária',

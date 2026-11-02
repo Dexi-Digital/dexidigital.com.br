@@ -10,6 +10,8 @@
  */
 export interface GuiaPage {
   slug: string;
+  /** Uma linha para o card nas páginas índice (/guias, /setores, /solucoes). */
+  resumo: string;
   title: string;
   metaTitle: string;
   metaDescription: string;
@@ -23,8 +25,9 @@ export interface GuiaPage {
 export const GUIAS: GuiaPage[] = [
   {
     slug: 'transformacao-digital-concessionaria',
+    resumo: 'Por onde começar para os dados que a concessionária já tem virarem decisão comercial e receita.',
     title: 'Transformação Digital para Concessionárias',
-    metaTitle: 'Transformação Digital para Concessionárias | Guia | Dexi Digital',
+    metaTitle: 'Transformação Digital para Concessionárias',
     metaDescription:
       'O que a transformação digital muda de verdade numa concessionária: dados, atendimento e decisão comercial. Princípios para começar pelo que traz receita.',
     keywords: [
@@ -79,10 +82,11 @@ export const GUIAS: GuiaPage[] = [
   },
   {
     slug: 'ia-automotiva-brasil',
+    resumo: 'Onde a IA muda a venda de veículos: atendimento com contexto, prioridade para o time e retomada de oportunidades.',
     title: 'IA Automotiva no Brasil: onde ela muda a venda',
-    metaTitle: 'IA Automotiva no Brasil | O que muda na venda | Dexi Digital',
+    metaTitle: 'IA Automotiva no Brasil: o que muda na venda',
     metaDescription:
-      'Onde a inteligência artificial muda a venda de veículos: atendimento com contexto, prioridade para o time e retomada de oportunidades, com regras e supervisão.',
+      'Onde a IA muda a venda de veículos: atendimento com contexto, prioridade para o time e retomada de oportunidades, com regras e supervisão.',
     keywords: [
       'IA automotiva Brasil',
       'inteligência artificial concessionária',
@@ -130,8 +134,9 @@ export const GUIAS: GuiaPage[] = [
   },
   {
     slug: 'como-escolher-crm-automotivo',
+    resumo: 'Critérios para escolher o CRM da concessionária e o que nenhum CRM faz sozinho.',
     title: 'Como Escolher o CRM Automotivo Certo',
-    metaTitle: 'Como Escolher CRM Automotivo | Guia de Decisão | Dexi Digital',
+    metaTitle: 'Como Escolher CRM Automotivo: guia de decisão',
     metaDescription:
       'Critérios para escolher o CRM da concessionária e o que nenhum CRM faz sozinho: identificar qual oportunidade merece atenção agora.',
     keywords: [

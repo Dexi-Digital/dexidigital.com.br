@@ -5,6 +5,8 @@ import { COMPARATIVOS, findComparativo } from '@/lib/seo';
 import { FAQSchema } from '@/components/seo/FAQSchema';
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 import TrackedCTA from '@/components/ui/TrackedCTA';
+import { ConteudosRelacionados } from '@/components/seo/ConteudosRelacionados';
+import { buildMeta } from '@/lib/seo/meta';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -29,21 +31,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const data = findComparativo(slug);
   if (!data) return {};
 
-  // O layout já acrescenta "| Dexi Digital": tira o sufixo do dado para não duplicar.
-  const titulo = data.metaTitle.replace(/\s*\|\s*Dexi Digital\s*$/i, '');
-
-  return {
-    title: titulo,
+  return buildMeta({
+    title: data.metaTitle,
     description: data.metaDescription,
+    path: `/comparativo/${slug}`,
+    type: 'article',
     keywords: data.keywords,
-    alternates: { canonical: `/comparativo/${slug}` },
-    openGraph: {
-      title: `${titulo} | Dexi Digital`,
-      description: data.metaDescription,
-      url: `https://dexidigital.com.br/comparativo/${slug}`,
-      type: 'article',
-    },
-  };
+  });
 }
 
 export default async function ComparativoPage({ params }: PageProps) {
@@ -54,7 +48,11 @@ export default async function ComparativoPage({ params }: PageProps) {
   return (
     <main className="min-h-screen">
       <FAQSchema faqs={data.faq} pageName={data.title} />
-      <BreadcrumbSchema trilha={[{ nome: data.title, url: `/comparativo/${data.slug}` }]} />
+      <BreadcrumbSchema
+        trilha={[
+          { nome: 'Soluções', url: '/solucoes' },
+          { nome: data.title, url: `/comparativo/${data.slug}` },
+        ]} />
 
       {/* Hero */}
       <section className="section-hero-premium py-24 md:py-32 border-b border-[var(--border-subtle)]">
@@ -63,7 +61,9 @@ export default async function ComparativoPage({ params }: PageProps) {
             <nav className="text-sm text-[var(--text-tertiary)] mb-6">
               <Link href="/" className="hover:text-[var(--color-primary-500)]">Home</Link>
               <span className="mx-2">/</span>
-              <span className="text-[var(--text-secondary)]">Comparativo</span>
+              <Link href="/solucoes" className="hover:text-[var(--color-primary-500)]">Soluções</Link>
+              <span className="mx-2">/</span>
+              <span className="text-[var(--text-secondary)]">{data.title}</span>
             </nav>
             <p className="text-overline mb-4 animate-fade-in-up-subtle">COMPARATIVO</p>
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
@@ -158,6 +158,8 @@ export default async function ComparativoPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      <ConteudosRelacionados caminho={`/comparativo/${data.slug}`} />
 
       {/* CTA Final */}
       <section className="section-lg border-t border-[var(--border-subtle)]">

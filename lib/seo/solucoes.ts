@@ -10,6 +10,8 @@
  */
 export interface SolucaoPage {
   slug: string;
+  /** Uma linha para o card nas páginas índice (/guias, /setores, /solucoes). */
+  resumo: string;
   title: string;
   metaTitle: string;
   metaDescription: string;
@@ -24,10 +26,11 @@ export interface SolucaoPage {
 export const SOLUCOES: SolucaoPage[] = [
   {
     slug: 'gestao-leads-automotivo',
+    resumo: 'O lead que custou caro recebe resposta, qualificação com contexto e o vendedor certo, sem trocar o CRM.',
     title: 'Gestão de Leads para Concessionárias',
-    metaTitle: 'Gestão de Leads Automotivo com IA | Dexi Digital',
+    metaTitle: 'Gestão de Leads Automotivo com IA',
     metaDescription:
-      'O lead que a concessionária pagou para gerar merece resposta rápida, contexto e o vendedor certo. O Fykos qualifica, prioriza e passa ao time, sem trocar o CRM.',
+      'Para concessionárias: o lead que custou caro recebe resposta, contexto e o vendedor certo. O Fykos qualifica, prioriza e passa ao time, sem trocar o CRM.',
     keywords: [
       'gestão de leads automotivo',
       'CRM concessionária leads',

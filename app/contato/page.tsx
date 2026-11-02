@@ -1,12 +1,12 @@
-import type { Metadata } from 'next';
+import { buildMeta } from '@/lib/seo/meta';
 import ContactForm from '@/components/ContactForm';
 
-export const metadata: Metadata = {
+export const metadata = buildMeta({
   title: 'Conversa de aderência',
   description:
-    'Solicite uma conversa de aderência: entendemos sua operação comercial, os sistemas em uso e o desafio mais relevante para avaliar se existe uma oportunidade concreta. Formulário curto, sem dados confidenciais de carteira.',
-  keywords: ['conversa de aderência', 'inteligência comercial', 'execução comercial', 'contato Dexi Digital', 'Fykos'],
-};
+    'Conversa de aderência: entendemos sua operação comercial, os sistemas em uso e o desafio mais relevante. Formulário curto, sem dados de carteira.',
+  path: '/contato',
+});
 
 // Como funciona a conversa: o que a pessoa pode esperar, sem prometer relatório de ROI.
 const ETAPAS = [

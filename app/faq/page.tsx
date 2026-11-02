@@ -1,13 +1,14 @@
+import { buildMeta } from '@/lib/seo/meta';
 import Link from 'next/link';
 import FAQItem from '@/components/ui/FAQItem';
 import TrackedCTA from '@/components/ui/TrackedCTA';
-import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
+export const metadata = buildMeta({
   title: 'FAQ | Perguntas Frequentes sobre a Dexi Digital e o Fykos',
-  description: 'Respostas às perguntas mais comuns sobre a Dexi Digital, o Fykos, inteligência de dados e software sob medida. Entenda como trabalhamos e como funciona a conversa de aderência.',
-  keywords: ['FAQ consultoria IA', 'perguntas frequentes IA', 'consultoria de dados FAQ', 'Dexi Digital perguntas'],
-};
+  description:
+    'Respostas às perguntas mais comuns sobre a Dexi Digital, o Fykos, inteligência de dados e software sob medida, e como funciona a conversa de aderência.',
+  path: '/faq',
+});
 
 const faqCategories = [
   {

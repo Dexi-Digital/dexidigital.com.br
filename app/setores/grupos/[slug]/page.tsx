@@ -5,6 +5,8 @@ import { GRUPOS, findGrupo } from '@/lib/seo';
 import { FAQSchema } from '@/components/seo/FAQSchema';
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 import TrackedCTA from '@/components/ui/TrackedCTA';
+import { ConteudosRelacionados } from '@/components/seo/ConteudosRelacionados';
+import { buildMeta } from '@/lib/seo/meta';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -19,21 +21,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const data = findGrupo(slug);
   if (!data) return {};
 
-  // O layout já acrescenta "| Dexi Digital": tira o sufixo do dado para não duplicar.
-  const titulo = data.metaTitle.replace(/\s*\|\s*Dexi Digital\s*$/i, '');
-
-  return {
-    title: titulo,
+  return buildMeta({
+    title: data.metaTitle,
     description: data.metaDescription,
+    path: `/setores/grupos/${slug}`,
+    type: 'article',
     keywords: data.keywords,
-    alternates: { canonical: `/setores/grupos/${slug}` },
-    openGraph: {
-      title: `${titulo} | Dexi Digital`,
-      description: data.metaDescription,
-      url: `https://dexidigital.com.br/setores/grupos/${slug}`,
-      type: 'article',
-    },
-  };
+  });
 }
 
 export default async function GrupoPage({ params }: PageProps) {
@@ -46,8 +40,7 @@ export default async function GrupoPage({ params }: PageProps) {
       <FAQSchema faqs={data.faq} pageName={`IA para ${data.nome}`} />
       <BreadcrumbSchema
         trilha={[
-          { nome: 'Setores', url: '/automotivo' },
-          { nome: 'Grupos', url: '/automotivo' },
+          { nome: 'Setores', url: '/setores' },
           { nome: data.nome, url: `/setores/grupos/${data.slug}` },
         ]}
       />
@@ -59,7 +52,7 @@ export default async function GrupoPage({ params }: PageProps) {
             <nav className="text-sm text-[var(--text-tertiary)] mb-6">
               <Link href="/" className="hover:text-[var(--color-primary-500)]">Home</Link>
               <span className="mx-2">/</span>
-              <Link href="/setores/automotivo-premium" className="hover:text-[var(--color-primary-500)]">Automotivo</Link>
+              <Link href="/setores" className="hover:text-[var(--color-primary-500)]">Setores</Link>
               <span className="mx-2">/</span>
               <span className="text-[var(--text-secondary)]">{data.nome}</span>
             </nav>
@@ -180,6 +173,8 @@ export default async function GrupoPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      <ConteudosRelacionados caminho={`/setores/grupos/${data.slug}`} />
 
       {/* CTA Final */}
       <section className="section-lg border-t border-[var(--border-subtle)]">

@@ -1,20 +1,13 @@
-import type { Metadata } from 'next';
+import { buildMeta } from '@/lib/seo/meta';
 import TrackedCTA from '@/components/ui/TrackedCTA';
 import CountUp from '@/components/ui/CountUp';
 
-export const metadata: Metadata = {
+export const metadata = buildMeta({
   title: 'Resultados Reais | Prova em Operação',
   description:
-    'Prova do Fykos em operação real: venda de alto ticket de R$ 1 milhão conduzida por IA em 15 dias, 1.230 leads processados e R$ 1,79 milhão em pipeline mapeado. Números auditáveis, nomes de clientes preservados.',
-  keywords: [
-    'resultados Fykos',
-    'case IA automotivo',
-    'venda de alto ticket com IA',
-    'pipeline mapeado com IA',
-    'recuperação de leads',
-    'ROI IA concessionária',
-  ],
-};
+    'Fykos em operação real: venda de R$ 1 milhão conduzida por IA em 15 dias, 1.230 leads processados e R$ 1,79 milhão em pipeline mapeado.',
+  path: '/cases',
+});
 
 const HERO_STATS = [
   { to: 1, prefix: 'R$ ', suffix: 'M', label: 'Venda de alto ticket conduzida por IA' },
