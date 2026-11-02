@@ -5,6 +5,7 @@ import { getPublishedDbPosts } from '@/lib/blog-db';
 import { BlogGrid, type BlogCard } from '@/components/blog/BlogGrid';
 import NewsletterForm from '@/components/blog/NewsletterForm';
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
+import { PILLARS } from '@/lib/pillars';
 
 export const metadata = buildMeta({
   title: 'Blog | Onde a receita vaza, e como fechar',
@@ -17,7 +18,12 @@ export const dynamic = 'force-dynamic';
 
 export default function BlogPage() {
   const legacyArticles = getAllArticles();
-  const dbPosts = getPublishedDbPosts().map((p) => ({
+  const publicados = getPublishedDbPosts();
+  // Temas (pilares) com post publicado: os mesmos que estão no sitemap. Sem esta
+  // lista, pilar com um post só recebia um único link interno.
+  const temas = PILLARS.filter((pilar) => publicados.some((p) => p.pillarLink === `/${pilar.slug}`));
+  const verticais = [...new Set(temas.map((t) => t.vertical))];
+  const dbPosts = publicados.map((p) => ({
     slug: p.slug,
     title: p.title,
     excerpt: p.excerpt,
@@ -68,6 +74,42 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
+
+      {/* Temas: links para os pilares que já têm post */}
+      {temas.length > 0 && (
+        <section className="section border-t border-[var(--border-subtle)]" aria-labelledby="temas-do-blog">
+          <div className="container">
+            <div className="max-w-6xl mx-auto">
+              <h2 id="temas-do-blog" className="text-h3 mb-8">
+                Temas do blog
+              </h2>
+              <div className="grid md:grid-cols-3 gap-8">
+                {verticais.map((vertical) => (
+                  <div key={vertical}>
+                    <h3 className="text-sm font-semibold uppercase tracking-wide text-[var(--text-tertiary)] mb-3">
+                      {vertical}
+                    </h3>
+                    <ul className="space-y-2">
+                      {temas
+                        .filter((t) => t.vertical === vertical)
+                        .map((t) => (
+                          <li key={t.slug}>
+                            <Link
+                              href={`/${t.slug}`}
+                              className="text-body-sm text-[var(--text-secondary)] hover:text-[var(--color-primary-600)] hover:underline"
+                            >
+                              {t.title}
+                            </Link>
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Newsletter CTA */}
       <section className="section-lg section-gradient">
