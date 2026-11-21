@@ -98,7 +98,7 @@ export default function ServicesPage() {
                           </li>
                         ))}
                       </ul>
-                      <Link href={service.href} className="text-sm font-semibold text-[var(--color-primary-600)] hover:text-[var(--color-primary-700)] transition-base">
+                      <Link href={service.href} className="text-sm font-semibold text-[var(--text-link)] hover:text-[var(--text-link-hover)] transition-base">
                         Saiba mais sobre {service.title} →
                       </Link>
                     </div>

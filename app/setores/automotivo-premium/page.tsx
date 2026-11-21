@@ -117,7 +117,7 @@ export default function AutomotivoPremiumPage() {
                     <p className="text-body-sm font-medium text-[var(--text-primary)]">{item.problem}</p>
                   </div>
                   <div className="mb-4">
-                    <span className="px-3 py-1 text-xs font-semibold bg-[var(--color-primary-100)] dark:bg-[var(--color-primary-900)]/30 text-[var(--color-primary-700)] dark:text-[var(--color-primary-300)] rounded-full mb-3 inline-block">Como o Fykos atua</span>
+                    <span className="px-3 py-1 text-xs font-semibold bg-[var(--color-primary-100)] dark:bg-[var(--color-primary-900)]/30 text-[var(--color-primary-900)] dark:text-[var(--color-primary-300)] rounded-full mb-3 inline-block">Como o Fykos atua</span>
                     <p className="text-body-sm text-[var(--text-secondary)]">{item.solution}</p>
                   </div>
                   <div className="pt-4 border-t border-[var(--border-subtle)]">

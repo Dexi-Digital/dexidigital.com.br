@@ -58,7 +58,7 @@ export function BlogGrid({ articles }: { articles: BlogCard[] }) {
               aria-pressed={ativa}
               className={`px-4 py-2 rounded-full text-sm font-semibold transition-base border ${
                 ativa
-                  ? 'bg-[var(--color-primary-600)] text-white border-transparent'
+                  ? 'bg-[var(--color-primary-800)] text-white border-transparent'
                   : 'bg-[var(--bg-primary)] text-[var(--text-secondary)] border-[var(--border-subtle)] hover:border-[var(--color-primary-400)]'
               }`}
             >
@@ -79,7 +79,7 @@ export function BlogGrid({ articles }: { articles: BlogCard[] }) {
           <article key={article.slug} className={`card card-interactive overflow-hidden ${i < visible ? '' : 'hidden'}`}>
             <div className="p-6">
               <div className="flex items-center gap-2 mb-3">
-                <span className="px-3 py-1 text-xs font-semibold bg-[var(--color-primary-100)] dark:bg-[var(--color-primary-900)]/30 text-[var(--color-primary-700)] dark:text-[var(--color-primary-300)] rounded-full">
+                <span className="px-3 py-1 text-xs font-semibold bg-[var(--color-primary-100)] dark:bg-[var(--color-primary-900)]/30 text-[var(--color-primary-900)] dark:text-[var(--color-primary-300)] rounded-full">
                   {article.category}
                 </span>
                 <span className="text-xs text-[var(--text-muted)]">{article.readTime}</span>
@@ -96,7 +96,7 @@ export function BlogGrid({ articles }: { articles: BlogCard[] }) {
                 </span>
                 <Link
                   href={`/blog/${article.slug}`}
-                  className="text-sm font-semibold text-[var(--color-primary-600)] hover:text-[var(--color-primary-700)] transition-base inline-flex items-center gap-1"
+                  className="text-sm font-semibold text-[var(--text-link)] hover:text-[var(--text-link-hover)] transition-base inline-flex items-center gap-1"
                 >
                   Ler mais
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">

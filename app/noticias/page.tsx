@@ -80,7 +80,7 @@ export default function NoticiasPage() {
                     </div>
                     <div className="p-6 flex flex-col flex-1">
                       <div className="flex items-center gap-2 mb-3">
-                        <span className="px-3 py-1 text-xs font-semibold bg-[var(--color-primary-100)] dark:bg-[var(--color-primary-900)]/30 text-[var(--color-primary-700)] dark:text-[var(--color-primary-300)] rounded-full">
+                        <span className="px-3 py-1 text-xs font-semibold bg-[var(--color-primary-100)] dark:bg-[var(--color-primary-900)]/30 text-[var(--color-primary-900)] dark:text-[var(--color-primary-300)] rounded-full">
                           {item.sourceName}
                         </span>
                         <span className="text-xs text-[var(--text-muted)]">{formatRelativeDate(item.publishedAt)}</span>
@@ -93,7 +93,7 @@ export default function NoticiasPage() {
                         href={item.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm font-semibold text-[var(--color-primary-600)] hover:text-[var(--color-primary-700)] transition-base inline-flex items-center gap-1 mt-auto"
+                        className="text-sm font-semibold text-[var(--text-link)] hover:text-[var(--text-link-hover)] transition-base inline-flex items-center gap-1 mt-auto"
                       >
                         Leia em {item.sourceName}
                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

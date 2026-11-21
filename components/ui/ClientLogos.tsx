@@ -1,12 +1,25 @@
 import React from 'react';
 
-export type ClientLogo = { name: string; src: string };
+/**
+ * `src` é o logo do próprio grupo, nunca o da montadora: com o logo da marca
+ * (as argolas da Audi, por exemplo) o visitante lê a montadora como cliente.
+ * Sem logo próprio, o nome aparece em texto. Marca de cliente só com
+ * autorização dele (spec de reposicionamento, out/2026).
+ */
+export type ClientLogo = {
+  name: string;
+  src?: string;
+  /** Arquivo feito para fundo escuro (texto branco no próprio logo). */
+  fundoEscuro?: boolean;
+};
 
 /** Clientes automotivos (home + /automotivo) */
 export const AUTOMOTIVE_CLIENTS: ClientLogo[] = [
-  { name: 'Audi Center Uberlândia', src: '/images/clients/audi-center.png' },
+  // audi-center.png é o logo da Audi (montadora), não o do Audi Center.
+  { name: 'Audi Center Uberlândia' },
   { name: 'Euroville GWM', src: '/images/clients/euroville-gwm.png' },
-  { name: 'Euroville Royal Enfield', src: '/images/clients/euroville-royal-enfield.png' },
+  // "Euroville / Uberlândia | Juiz de Fora" é texto branco no arquivo.
+  { name: 'Euroville Royal Enfield', src: '/images/clients/euroville-royal-enfield.png', fundoEscuro: true },
   { name: 'Attra Veículos', src: '/images/clients/attra.png' },
   { name: 'Vamaq Motors', src: '/images/clients/vamaq.svg' },
 ];
@@ -37,15 +50,25 @@ export default function ClientLogos({
         <div
           key={logo.name}
           title={logo.name}
-          className="flex items-center justify-center h-16 px-6 rounded-xl bg-white border border-[var(--border-subtle)] shadow-sm"
+          className={`flex items-center justify-center h-16 px-6 rounded-xl border border-[var(--border-subtle)] shadow-sm ${
+            logo.fundoEscuro ? 'bg-[#111117]' : 'bg-white'
+          }`}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={logo.src}
-            alt={logo.name}
-            loading="lazy"
-            className="max-h-8 w-auto object-contain grayscale opacity-80 transition duration-300 hover:grayscale-0 hover:opacity-100"
-          />
+          {logo.src ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={logo.src}
+              alt={logo.name}
+              loading="lazy"
+              className="max-h-8 w-auto object-contain grayscale opacity-80 transition duration-300 hover:grayscale-0 hover:opacity-100"
+            />
+          ) : (
+            // max-w quebra o nome em duas linhas: com ele numa linha só, o chip
+            // ficava largo e a faixa de 5 logos passava para duas linhas.
+            <span className="max-w-[6rem] text-center text-sm font-semibold leading-tight tracking-tight text-[var(--color-gray-700)]">
+              {logo.name}
+            </span>
+          )}
         </div>
       ))}
     </div>

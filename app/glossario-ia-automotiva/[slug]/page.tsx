@@ -113,7 +113,7 @@ export default async function GlossarioTermPage({ params }: PageProps) {
               <span className="mx-2">/</span>
               <span className="text-[var(--text-secondary)]">{term.title}</span>
             </nav>
-            <span className="inline-block px-3 py-1 bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-full text-xs font-semibold text-[var(--color-primary-500)] uppercase tracking-wider mb-4">
+            <span className="inline-block px-3 py-1 bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-full text-xs font-semibold text-[var(--text-link)] uppercase tracking-wider mb-4">
               {category.label}
             </span>
             <h1 className="text-display-lg md:text-display-xl text-[var(--text-primary)] mb-5">

@@ -45,7 +45,7 @@ export function ConteudosRelacionados({ caminho }: { caminho: string }) {
             <p className="mt-8">
               <Link
                 href={hub.href}
-                className="text-sm font-semibold text-[var(--color-primary-600)] hover:text-[var(--color-primary-700)] hover:underline"
+                className="text-sm font-semibold text-[var(--text-link)] hover:text-[var(--text-link-hover)] hover:underline"
               >
                 {hub.ancoraTodos} →
               </Link>

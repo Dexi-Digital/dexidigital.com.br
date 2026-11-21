@@ -241,7 +241,7 @@ export default function OFykosPage() {
                 href="https://fykos.com.br/#nos"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-semibold text-[var(--color-primary-600)] hover:underline"
+                className="text-sm font-semibold text-[var(--text-link)] hover:underline"
               >
                 Ver os componentes do Fykos (os sete nós) →
               </a>
@@ -265,7 +265,7 @@ export default function OFykosPage() {
               href="https://www.linkedin.com/in/lorrayne-paraiso"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-semibold text-[var(--color-primary-600)] hover:underline"
+              className="text-sm font-semibold text-[var(--text-link)] hover:underline"
             >
               Lorrayne Paraíso no LinkedIn →
             </a>

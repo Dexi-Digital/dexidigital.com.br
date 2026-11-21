@@ -150,14 +150,14 @@ export default function MetodologiaPage() {
                 >
                   <div className="flex flex-col md:flex-row gap-6">
                     <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-[var(--color-primary-600)] text-white rounded-2xl flex items-center justify-center text-xl font-bold shadow-lg">
+                      <div className="w-16 h-16 bg-[var(--color-primary-800)] text-white rounded-2xl flex items-center justify-center text-xl font-bold shadow-lg">
                         {step.number}
                       </div>
                     </div>
                     <div className="flex-1">
                       <div className="flex flex-wrap items-center gap-3 mb-3">
                         <h3 className="text-h4">{step.title}</h3>
-                        <span className="px-3 py-1 text-xs font-semibold bg-[var(--color-primary-600)] text-white rounded-full">{step.fase}</span>
+                        <span className="px-3 py-1 text-xs font-semibold bg-[var(--color-primary-800)] text-white rounded-full">{step.fase}</span>
                       </div>
                       <p className="text-body-sm text-[var(--text-secondary)] mb-4">{step.description}</p>
                       <div>

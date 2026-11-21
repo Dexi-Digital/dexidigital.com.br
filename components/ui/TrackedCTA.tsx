@@ -5,7 +5,7 @@ import { trackCTAClick, trackWhatsAppClick } from '@/lib/tracking';
 import { WHATSAPP_DIAGNOSTIC_URL, WHATSAPP_AUTOMOTIVO_URL } from '@/lib/whatsapp';
 
 type CTAVariant = 'primary' | 'secondary' | 'white' | 'link' | 'money';
-type CTAType = 'validation' | 'whatsapp' | 'synapse' | 'contact' | 'material' | 'aderencia' | 'custom';
+type CTAType = 'validation' | 'whatsapp' | 'synapse' | 'contact' | 'aderencia' | 'custom';
 
 interface TrackedCTAProps {
   /** Tipo de CTA padronizado */
@@ -46,10 +46,6 @@ const CTA_CONFIG: Record<CTAType, { text: string; href?: string; isExternal?: bo
     text: 'Iniciar Conversa',
     href: '/contato',
   },
-  material: {
-    text: 'Acessar Material',
-    href: '/materiais/calculadora-roi',
-  },
   aderencia: {
     text: 'Avaliar aderência da minha operação',
     href: '/contato',
@@ -64,7 +60,7 @@ const VARIANT_CLASSES: Record<CTAVariant, string> = {
   money: 'btn btn-lg btn-money',
   secondary: 'btn btn-secondary',
   white: 'btn bg-white text-[var(--color-primary-700)] hover:bg-white/90 shadow-lg font-bold',
-  link: 'text-sm font-medium text-[var(--color-primary-600)] hover:underline',
+  link: 'text-sm font-medium text-[var(--text-link)] hover:underline',
 };
 
 export default function TrackedCTA({

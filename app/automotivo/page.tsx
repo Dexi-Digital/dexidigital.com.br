@@ -7,7 +7,7 @@ import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 export const metadata = buildMeta({
   title: 'Fykos para Grupos Automotivos e Concessionárias',
   description:
-    'Cada lead que chega ao seu grupo já custou caro. O Fykos acompanha cada oportunidade até a compra, para essa receita virar previsibilidade de venda.',
+    'Cada lead que chega ao seu grupo já custou caro. O Fykos qualifica, reaquece e retoma oportunidades e atua sobre os sistemas que o grupo já usa.',
   path: '/automotivo',
   keywords: [
     'IA para concessionárias',
@@ -124,14 +124,13 @@ export default function AutomotivoPage() {
             </p>
 
             <h1 className="text-display-xl md:text-display-2xl text-[var(--text-primary)] mb-6 animate-fade-in-up delay-75">
-              O mercado responde o WhatsApp. A Dexi{' '}
-              <span className="text-result">não deixa a receita esfriar</span>.
+              O mercado responde o WhatsApp. O Fykos{' '}
+              <span className="text-result">retoma a oportunidade que esfriou</span>.
             </h1>
 
             <p className="text-lead text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto animate-fade-in-up delay-150">
-              Cada lead que chega ao seu grupo já custou caro. O Fykos acompanha cada oportunidade
-              até o momento de compra, para que essa receita fique na base e vire previsibilidade de
-              venda.
+              Cada lead que chega ao seu grupo já custou caro. O Fykos acompanha a oportunidade até o
+              momento de compra, para que essa receita fique na base e vire previsibilidade de venda.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4 animate-fade-in-up delay-200">
@@ -151,7 +150,7 @@ export default function AutomotivoPage() {
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <div className="section-header text-center">
-              <h2 className="text-h2">Três diferenciais que colocam dinheiro no bolso do dono</h2>
+              <h2 className="text-h2">Três diferenciais do Fykos no grupo automotivo</h2>
               <p className="text-lead">
                 Os três pilares que sustentam o Fykos em qualquer setor: aqui, na linguagem da
                 concessionária.

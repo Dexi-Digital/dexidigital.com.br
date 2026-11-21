@@ -80,7 +80,7 @@ export default async function PillarPage({ params }: PillarPageProps) {
                   <article key={post.id} className="card card-interactive overflow-hidden">
                     <div className="p-6">
                       <div className="flex items-center gap-2 mb-3">
-                        <span className="px-3 py-1 text-xs font-semibold bg-[var(--color-primary-100)] dark:bg-[var(--color-primary-900)]/30 text-[var(--color-primary-700)] dark:text-[var(--color-primary-300)] rounded-full">
+                        <span className="px-3 py-1 text-xs font-semibold bg-[var(--color-primary-100)] dark:bg-[var(--color-primary-900)]/30 text-[var(--color-primary-900)] dark:text-[var(--color-primary-300)] rounded-full">
                           {post.category}
                         </span>
                         <span className="text-xs text-[var(--text-muted)]">{post.readTime}</span>
@@ -89,7 +89,7 @@ export default async function PillarPage({ params }: PillarPageProps) {
                       <p className="text-body-sm text-[var(--text-secondary)] mb-4">{post.excerpt}</p>
                       <Link
                         href={`/blog/${post.slug}`}
-                        className="text-sm font-semibold text-[var(--color-primary-600)] hover:text-[var(--color-primary-700)] transition-base inline-flex items-center gap-1"
+                        className="text-sm font-semibold text-[var(--text-link)] hover:text-[var(--text-link-hover)] transition-base inline-flex items-center gap-1"
                       >
                         Ler mais
                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

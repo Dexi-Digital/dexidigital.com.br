@@ -13,7 +13,6 @@ export default function Footer() {
       { name: 'Guias', href: '/guias' },
       { name: 'Metodologia', href: '/metodologia' },
       { name: 'Glossário de IA automotiva', href: '/glossario-ia-automotiva' },
-      { name: 'Calculadora de ROI', href: '/materiais/calculadora-roi' },
     ],
     services: [
       { name: 'Engenharia de Dados & Ativos de Inteligência', href: '/servicos/inteligencia-de-dados' },

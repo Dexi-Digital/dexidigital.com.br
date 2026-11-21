@@ -18,7 +18,7 @@ export default function CustomSoftwarePage() {
           <div className="max-w-4xl mx-auto">
             <Link
               href="/servicos"
-              className="inline-flex items-center text-[var(--color-primary-600)] font-semibold mb-6 hover:text-[var(--color-primary-700)] transition-base"
+              className="inline-flex items-center text-[var(--text-link)] font-semibold mb-6 hover:text-[var(--text-link-hover)] transition-base"
             >
               <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
