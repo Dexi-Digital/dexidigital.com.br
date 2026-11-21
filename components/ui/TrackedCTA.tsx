@@ -60,7 +60,7 @@ const VARIANT_CLASSES: Record<CTAVariant, string> = {
   money: 'btn btn-lg btn-money',
   secondary: 'btn btn-secondary',
   white: 'btn bg-white text-[var(--color-primary-700)] hover:bg-white/90 shadow-lg font-bold',
-  link: 'text-sm font-medium text-[var(--color-primary-600)] hover:underline',
+  link: 'text-sm font-medium text-[var(--text-link)] hover:underline',
 };
 
 export default function TrackedCTA({

@@ -89,7 +89,7 @@ export default async function ComparativoPage({ params }: PageProps) {
                 <thead>
                   <tr className="border-b-2 border-[var(--border-subtle)]">
                     <th className="text-left py-4 px-4 text-body-sm font-semibold text-[var(--text-tertiary)] uppercase tracking-wider">Critério</th>
-                    <th className="text-left py-4 px-4 text-body-sm font-semibold text-[var(--color-primary-500)] uppercase tracking-wider">{data.colunas.dexi}</th>
+                    <th className="text-left py-4 px-4 text-body-sm font-semibold text-[var(--text-link)] uppercase tracking-wider">{data.colunas.dexi}</th>
                     <th className="text-left py-4 px-4 text-body-sm font-semibold text-[var(--text-tertiary)] uppercase tracking-wider">{data.colunas.outro}</th>
                   </tr>
                 </thead>

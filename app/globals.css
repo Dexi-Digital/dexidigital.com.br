@@ -296,7 +296,7 @@
   /* Brand gradient definitions */
   --gradient-primary: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-700) 100%);
   --gradient-primary-subtle: linear-gradient(135deg, var(--color-primary-400) 0%, var(--color-primary-600) 100%);
-  --gradient-primary-intense: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-primary-900) 100%);
+  --gradient-primary-intense: linear-gradient(135deg, var(--color-primary-700) 0%, var(--color-primary-900) 100%);
   --gradient-secondary: linear-gradient(135deg, var(--color-secondary-500) 0%, var(--color-secondary-700) 100%);
   --gradient-accent: linear-gradient(135deg, var(--color-accent-400) 0%, var(--color-primary-600) 100%);
 
@@ -358,9 +358,9 @@
   --text-tertiary: var(--color-gray-500);
   --text-muted: var(--color-gray-400);
   --text-inverse: #ffffff;
-  --text-brand: var(--color-primary-600);
-  --text-link: var(--color-primary-600);
-  --text-link-hover: var(--color-primary-700);
+  --text-brand: var(--color-primary-800);
+  --text-link: var(--color-primary-800);
+  --text-link-hover: var(--color-primary-900);
   --text-gradient: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-primary-800) 100%);
 
   /* Background Colors - Premium layered surfaces */
@@ -396,7 +396,7 @@
   --overlay-medium: rgba(0, 0, 0, 0.08);
 
   /* Result/"money" semantic layer (light) */
-  --text-result: var(--color-result-600);
+  --text-result: var(--color-result-700); /* 4,7:1; o 600 dava 3,3:1 em texto pequeno */
   --text-result-gradient: linear-gradient(135deg, #e5650d 0%, #bd510a 100%);
   --bg-result-subtle: rgba(255, 117, 24, 0.08);
   --border-result: rgba(255, 117, 24, 0.30);
@@ -406,7 +406,7 @@
   /* Text Colors - Refined for dark mode readability */
   --text-primary: #f4f4f5;
   --text-secondary: #a3a3a8;
-  --text-tertiary: #71717a;
+  --text-tertiary: #8b8b94; /* 5,6:1 nos cards escuros; o #71717a dava 3,9:1 */
   --text-muted: #52525b;
   --text-inverse: #09090b;
   --text-brand: var(--color-primary-400);
@@ -613,7 +613,7 @@ h6, .text-h6 {
   line-height: var(--line-height-normal);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-primary-600);
+  color: var(--color-primary-800); /* 5,2:1 ou mais; o 600 dava 3,6:1 */
 }
 
 .dark .text-overline {
@@ -696,12 +696,27 @@ h6, .text-h6 {
   white-space: nowrap;
   position: relative;
   overflow: hidden;
-  transition: all var(--duration-200) var(--ease-out);
+  /* Propriedades explícitas: com `all`, o contorno de foco nascia na cor do
+     texto e só chegava ao azul depois de 200 ms. */
+  transition-property: color, background-color, border-color, box-shadow, transform, opacity;
+  transition-duration: var(--duration-200);
+  transition-timing-function: var(--ease-out);
 }
 
+/* Foco visível em todo botão (WCAG 2.4.7). A sombra a 15% que ficava aqui não
+   aparecia em nenhum CTA (auditoria de 20/11/2026). Contorno com contraste de
+   3:1 ou mais sobre o fundo; branco na faixa de CTA azul. */
 .btn:focus-visible {
-  outline: none;
-  box-shadow: var(--focus-ring-shadow);
+  outline: 3px solid var(--color-primary-700);
+  outline-offset: 2px;
+}
+
+.dark .btn:focus-visible {
+  outline-color: var(--color-primary-400);
+}
+
+.section-cta-premium .btn:focus-visible {
+  outline-color: #ffffff;
 }
 
 .btn:disabled {
@@ -713,7 +728,8 @@ h6, .text-h6 {
 /* Primary button - Main CTA with gradient and elevation */
 .btn-primary {
   color: #ffffff;
-  background: var(--gradient-primary);
+  /* Começa no 700: branco sobre o 500 dava 3,1:1. */
+  background: linear-gradient(135deg, var(--color-primary-700) 0%, var(--color-primary-800) 100%);
   border-color: transparent;
   box-shadow: var(--shadow-elevation-1), var(--shadow-primary);
 }
@@ -805,7 +821,7 @@ h6, .text-h6 {
 
 .btn-outline:hover {
   color: #ffffff;
-  background: var(--gradient-primary);
+  background: var(--gradient-primary-intense);
   border-color: transparent;
   box-shadow: var(--shadow-primary);
 }
@@ -1359,7 +1375,7 @@ h6, .text-h6 {
 /* Badge variants */
 .badge-primary {
   background-color: var(--color-primary-100);
-  color: var(--color-primary-700);
+  color: var(--color-primary-900);
 }
 
 .badge-secondary {

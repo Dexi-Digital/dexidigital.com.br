@@ -314,7 +314,7 @@ export default function WebOSPage() {
                 </ul>
               </div>
               <div className="card p-6 border-l-4 border-[var(--color-primary-500)]">
-                <h3 className="text-h5 mb-4 text-[var(--color-primary-600)]">WebOS</h3>
+                <h3 className="text-h5 mb-4 text-[var(--text-link)]">WebOS</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3 text-body-sm text-[var(--text-secondary)]">
                     <svg className="w-5 h-5 text-[var(--color-success-500)] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

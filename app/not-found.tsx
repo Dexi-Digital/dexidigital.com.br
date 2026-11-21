@@ -26,19 +26,19 @@ export default function NotFound() {
             <h2 className="text-h5 mb-4 text-[var(--text-primary)]">Conteúdo</h2>
             <ul className="space-y-3 mb-6">
               <li>
-                <Link href="/blog" className="text-[var(--color-primary-600)] hover:underline flex items-center gap-2">
+                <Link href="/blog" className="text-[var(--text-link)] hover:underline flex items-center gap-2">
                   <span>→</span>
                   <span><strong>Blog</strong>: artigos sobre onde a receita vaza entre o lead entrar e o negócio fechar</span>
                 </Link>
               </li>
               <li>
-                <Link href="/glossario-ia-automotiva" className="text-[var(--color-primary-600)] hover:underline flex items-center gap-2">
+                <Link href="/glossario-ia-automotiva" className="text-[var(--text-link)] hover:underline flex items-center gap-2">
                   <span>→</span>
                   <span><strong>Glossário</strong>: definições de termos de IA, dados e operação comercial</span>
                 </Link>
               </li>
               <li>
-                <Link href="/noticias" className="text-[var(--color-primary-600)] hover:underline flex items-center gap-2">
+                <Link href="/noticias" className="text-[var(--text-link)] hover:underline flex items-center gap-2">
                   <span>→</span>
                   <span><strong>Notícias</strong>: curadoria diária de tecnologia e IA</span>
                 </Link>
@@ -48,25 +48,25 @@ export default function NotFound() {
             <h2 className="text-h5 mb-4 text-[var(--text-primary)]">Serviços</h2>
             <ul className="space-y-3">
               <li>
-                <Link href="/o-fykos" className="text-[var(--color-primary-600)] hover:underline flex items-center gap-2">
+                <Link href="/o-fykos" className="text-[var(--text-link)] hover:underline flex items-center gap-2">
                   <span>→</span>
                   <span><strong>Fykos</strong>: inteligência e execução comercial</span>
                 </Link>
               </li>
               <li>
-                <Link href="/servicos/inteligencia-de-dados" className="text-[var(--color-primary-600)] hover:underline flex items-center gap-2">
+                <Link href="/servicos/inteligencia-de-dados" className="text-[var(--text-link)] hover:underline flex items-center gap-2">
                   <span>→</span>
                   <span><strong>Engenharia de Dados & Ativos de Inteligência</strong>: Transforme dados em decisão</span>
                 </Link>
               </li>
               <li>
-                <Link href="/servicos/software-sob-medida" className="text-[var(--color-primary-600)] hover:underline flex items-center gap-2">
+                <Link href="/servicos/software-sob-medida" className="text-[var(--text-link)] hover:underline flex items-center gap-2">
                   <span>→</span>
                   <span><strong>Desenvolvimento de Sistemas de Missão Crítica</strong>: Software que escala</span>
                 </Link>
               </li>
               <li>
-                <Link href="/setores/automotivo-premium" className="text-[var(--color-primary-600)] hover:underline flex items-center gap-2">
+                <Link href="/setores/automotivo-premium" className="text-[var(--text-link)] hover:underline flex items-center gap-2">
                   <span>→</span>
                   <span><strong>IA para Grupos Automotivos</strong>: cada lead custou caro e precisa virar venda</span>
                 </Link>
