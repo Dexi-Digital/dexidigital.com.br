@@ -152,14 +152,22 @@ const nextConfig: NextConfig = {
         destination: '/termos-de-uso-fykos',
         permanent: true,
       },
+      // A calculadora de ROI saiu em nov/2026: o ROI vinha de premissas fixas que
+      // não apareciam na tela (1,5% do faturamento, 80% menos horas). Os links
+      // antigos levam à conversa de aderência, com a origem registrada.
+      {
+        source: '/materiais/calculadora-roi',
+        destination: '/contato?cta=calculadora',
+        permanent: true,
+      },
       {
         source: '/calculadora',
-        destination: '/materiais/calculadora-roi',
+        destination: '/contato?cta=calculadora',
         permanent: true,
       },
       {
         source: '/roi',
-        destination: '/materiais/calculadora-roi',
+        destination: '/contato?cta=calculadora',
         permanent: true,
       },
       // O comparativo com o Syonet tinha afirmações sem fonte e saiu (ver lib/seo/comparativo.ts).

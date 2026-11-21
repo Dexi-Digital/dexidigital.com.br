@@ -100,10 +100,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const produtos = [url('/produtos/webos', ['app/produtos/webos'], 'monthly', 0.9)];
 
-  const materiais = [
-    url('/materiais/calculadora-roi', ['app/materiais/calculadora-roi'], 'monthly', 0.8),
-  ];
-
   const institucionais = [
     url('/sobre', ['app/sobre'], 'monthly', 0.6),
     url('/contato', ['app/contato'], 'monthly', 0.8),
@@ -161,7 +157,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...glossario,
     ...integracoes,
     ...produtos,
-    ...materiais,
     ...institucionais,
     ...pilares,
     ...blog,
