@@ -6,7 +6,7 @@ import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 export const metadata = buildMeta({
   title: 'Gestão de carteira para construtoras e incorporadoras',
   description:
-    'Carteira em dia para construtoras e incorporadoras que financiam com recursos próprios: cobrança periódica com o boleto do seu sistema e renegociação.',
+    'Gestão de carteira para construtoras e incorporadoras que financiam com recursos próprios: cobrança periódica com o boleto do seu sistema e renegociação.',
   path: '/construtoras',
   keywords: [
     'gestão de carteira',
@@ -30,7 +30,7 @@ const MOMENTOS = [
     overline: 'DEPOIS DA VENDA',
     titulo: 'Gestão de carteira e cobrança',
     corpo:
-      'Venda com recursos próprios é carteira longa. O Fykos faz a cobrança periódica de cada comprador com o boleto que o seu sistema já gera e, quando alguém pede para renegociar, encaminha a conversa ao seu time. A receita entra sem desgastar a relação com quem comprou.',
+      'Venda com recursos próprios é carteira longa. O Fykos faz a cobrança periódica de cada comprador com o boleto que o seu sistema já gera e, quando alguém pede para renegociar, encaminha a conversa ao seu time.',
   },
   {
     overline: 'ANTES DO LANÇAMENTO',
@@ -88,7 +88,7 @@ export default function ConstrutorasPage() {
             <p className="text-lead text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto animate-fade-in-up delay-150">
               O Fykos faz a cobrança periódica da carteira de quem financia com recursos próprios,
               com o boleto que o seu sistema já gera, e encaminha ao seu time quem pede para
-              renegociar. Parcelas em dia e recebimento previsível.
+              renegociar.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4 animate-fade-in-up delay-200">
